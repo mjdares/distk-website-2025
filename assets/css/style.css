@@ -921,10 +921,6 @@ p {
   .hero__grid {
     grid-template-columns: 1fr;
   }
-
-  .hero__panel {
-    order: -1;
-  }
 }
 
 @media (max-width: 960px) {
