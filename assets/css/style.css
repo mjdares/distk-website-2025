@@ -106,6 +106,60 @@ img {
   mix-blend-mode: screen;
 }
 
+.success-page {
+  display: grid;
+  place-items: center;
+  padding: 4rem 1.5rem;
+}
+
+.success {
+  max-width: min(520px, 100%);
+  padding: 2.8rem 2.6rem;
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background:
+    radial-gradient(circle at 18% 12%, rgba(120, 122, 255, 0.2), transparent 60%),
+    rgba(6, 7, 22, 0.85);
+  box-shadow: var(--shadow);
+  display: grid;
+  gap: 1.8rem;
+  text-align: center;
+}
+
+.success__header h1 {
+  margin-bottom: 1rem;
+}
+
+.success__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(123, 125, 255, 0.4);
+  background: rgba(123, 125, 255, 0.12);
+  color: rgba(223, 225, 255, 0.85);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-size: 0.66rem;
+  font-weight: 600;
+  margin-bottom: 1.1rem;
+}
+
+.success__actions {
+  display: grid;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.success__actions .btn {
+  width: 100%;
+}
+
+.success__actions .btn--ghost {
+  border-color: rgba(255, 255, 255, 0.28);
+}
+
 .shooting-star {
   --x: 22vw;
   --duration: 5.2s;

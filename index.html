@@ -291,7 +291,15 @@
                 </li>
               </ul>
             </div>
-            <form class="contact__form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <form
+              class="contact__form"
+              name="contact"
+              method="POST"
+              action="/success.html"
+              data-netlify="true"
+              netlify
+              netlify-honeypot="bot-field"
+            >
               <input type="hidden" name="form-name" value="contact" />
               <p class="sr-only" aria-hidden="true">
                 <label for="contact-bot-field">Leave this field empty</label>
@@ -365,7 +373,9 @@
               class="footer__form"
               name="newsletter"
               method="POST"
+              action="/success.html"
               data-netlify="true"
+              netlify
               netlify-honeypot="bot-field-footer"
             >
               <input type="hidden" name="form-name" value="newsletter" />
