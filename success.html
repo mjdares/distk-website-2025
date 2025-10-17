@@ -5,6 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Message received | Distk</title>
     <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- Meta Pixel Code: replace YOUR_META_PIXEL_ID with your actual pixel ID -->
+    <script>
+      (function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = true;
+        n.version = '2.0';
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = true;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+
+      window.addEventListener('DOMContentLoaded', () => {
+        var pixelId = 'YOUR_META_PIXEL_ID';
+        if (pixelId === 'YOUR_META_PIXEL_ID') {
+          console.warn('Meta Pixel ID not set. Replace YOUR_META_PIXEL_ID in success.html before running ads.');
+          return;
+        }
+        fbq('init', pixelId);
+        fbq('track', 'PageView');
+        fbq('track', 'Lead');
+      });
+    </script>
+    <noscript>
+      <img
+        height="1"
+        width="1"
+        style="display: none"
+        src="https://www.facebook.com/tr?id=YOUR_META_PIXEL_ID&ev=Lead&noscript=1"
+        alt=""
+      />
+    </noscript>
   </head>
   <body class="success-page">
     <div class="success">
