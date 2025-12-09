@@ -15,45 +15,24 @@
       gtag('config', 'G-BWDTQ1JPL2');
     </script>
     <link rel="stylesheet" href="assets/css/style.css" />
-    <!-- Meta Pixel Code: replace YOUR_META_PIXEL_ID with your actual pixel ID -->
+    <!-- Meta Pixel Code -->
     <script>
-      (function (f, b, e, v, n, t, s) {
-        if (f.fbq) return;
-        n = f.fbq = function () {
-          n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
-        };
-        if (!f._fbq) f._fbq = n;
-        n.push = n;
-        n.loaded = true;
-        n.version = '2.0';
-        n.queue = [];
-        t = b.createElement(e);
-        t.async = true;
-        t.src = v;
-        s = b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t, s);
-      })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
-
-      window.addEventListener('DOMContentLoaded', () => {
-        var pixelId = 'YOUR_META_PIXEL_ID';
-        if (pixelId === 'YOUR_META_PIXEL_ID') {
-          console.warn('Meta Pixel ID not set. Replace YOUR_META_PIXEL_ID in success.html before running ads.');
-          return;
-        }
-        fbq('init', pixelId);
-        fbq('track', 'PageView');
-        fbq('track', 'Lead');
-      });
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1077520544213003');
+    fbq('track', 'PageView');
+    fbq('track', 'Lead');
     </script>
-    <noscript>
-      <img
-        height="1"
-        width="1"
-        style="display: none"
-        src="https://www.facebook.com/tr?id=YOUR_META_PIXEL_ID&ev=Lead&noscript=1"
-        alt=""
-      />
-    </noscript>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1077520544213003&ev=Lead&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
   </head>
   <body class="success-page">
     <div class="success">
