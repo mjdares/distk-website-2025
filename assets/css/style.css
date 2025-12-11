@@ -712,22 +712,48 @@ p {
 
 .logo-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.8rem;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1.4rem;
   text-align: center;
 }
 
-.logo-grid span {
-  padding: 1.6rem;
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+.logo-grid .client-logo {
+  padding: 1.4rem 1rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   background:
-    radial-gradient(circle at 50% 30%, rgba(114, 118, 255, 0.12), transparent 55%),
-    rgba(8, 9, 24, 0.82);
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: rgba(225, 226, 255, 0.78);
+    radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.15), transparent 70%),
+    rgba(12, 13, 28, 0.9);
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  color: rgba(235, 236, 255, 0.9);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.logo-grid .client-logo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(99, 102, 241, 0.1));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.logo-grid .client-logo:hover {
+  border-color: rgba(139, 92, 246, 0.4);
+  transform: translateY(-4px);
+  box-shadow:
+    0 10px 30px -10px rgba(99, 102, 241, 0.3),
+    0 0 20px rgba(139, 92, 246, 0.1);
+  color: #fff;
+}
+
+.logo-grid .client-logo:hover::before {
+  opacity: 1;
 }
 
 .insights-grid {
@@ -977,10 +1003,13 @@ p {
 
   .card-grid--three,
   .pillars,
-  .logo-grid,
   .insights-grid,
   .timeline {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .logo-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .timeline__item {
@@ -1023,10 +1052,19 @@ p {
 
   .card-grid--three,
   .pillars,
-  .logo-grid,
   .insights-grid,
   .timeline {
     grid-template-columns: 1fr;
+  }
+
+  .logo-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .logo-grid .client-logo {
+    padding: 1.2rem 0.8rem;
+    font-size: 0.82rem;
   }
 
   .timeline__item {
