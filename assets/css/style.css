@@ -710,15 +710,49 @@ p {
   box-shadow: var(--shadow);
 }
 
-.logo-grid {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 1.4rem;
-  text-align: center;
+/* Marquee for client logos */
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 1rem 0;
 }
 
-.logo-grid .client-logo {
-  padding: 1.4rem 1rem;
+.marquee::before,
+.marquee::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.marquee::before {
+  left: 0;
+  background: linear-gradient(90deg, var(--page-bg) 0%, transparent 100%);
+}
+
+.marquee::after {
+  right: 0;
+  background: linear-gradient(270deg, var(--page-bg) 0%, transparent 100%);
+}
+
+.marquee__track {
+  display: flex;
+  gap: 1.2rem;
+  width: max-content;
+  animation: marqueeScroll 35s linear infinite;
+}
+
+.marquee:hover .marquee__track {
+  animation-play-state: paused;
+}
+
+.client-logo {
+  flex-shrink: 0;
+  padding: 1.2rem 1.6rem;
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   background:
@@ -732,9 +766,10 @@ p {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
+  white-space: nowrap;
 }
 
-.logo-grid .client-logo::before {
+.client-logo::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -743,7 +778,7 @@ p {
   transition: opacity 0.3s ease;
 }
 
-.logo-grid .client-logo:hover {
+.client-logo:hover {
   border-color: rgba(139, 92, 246, 0.4);
   transform: translateY(-4px);
   box-shadow:
@@ -752,8 +787,17 @@ p {
   color: #fff;
 }
 
-.logo-grid .client-logo:hover::before {
+.client-logo:hover::before {
   opacity: 1;
+}
+
+@keyframes marqueeScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .insights-grid {
@@ -1008,9 +1052,6 @@ p {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .logo-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
 
   .timeline__item {
     padding: 1.8rem;
@@ -1057,15 +1098,6 @@ p {
     grid-template-columns: 1fr;
   }
 
-  .logo-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1rem;
-  }
-
-  .logo-grid .client-logo {
-    padding: 1.2rem 0.8rem;
-    font-size: 0.82rem;
-  }
 
   .timeline__item {
     padding: 1.6rem;
