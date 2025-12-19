@@ -624,6 +624,10 @@ p {
   gap: 2.4rem;
 }
 
+.card-grid--two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .card-grid--three {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
@@ -1019,6 +1023,7 @@ p {
     font-size: clamp(1.8rem, 4.6vw, 2.2rem);
   }
 
+  .card-grid--two,
   .card-grid--three,
   .pillars,
   .insights-grid,
@@ -1066,6 +1071,7 @@ p {
     padding: 1.8rem;
   }
 
+  .card-grid--two,
   .card-grid--three,
   .pillars,
   .insights-grid,
