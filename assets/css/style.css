@@ -355,9 +355,23 @@ p {
 
 .logo {
   display: inline-flex;
-  flex-direction: column;
-  gap: 0.2rem;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.75rem;
   line-height: 1.05;
+}
+
+.logo__image {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: contain;
+}
+
+.logo__text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
 }
 
 .logo__mark {
@@ -371,6 +385,12 @@ p {
   letter-spacing: 0.32em;
   text-transform: uppercase;
   color: rgba(221, 223, 255, 0.58);
+}
+
+/* Footer logo - slightly larger */
+.site-footer .logo__image {
+  width: 52px;
+  height: 52px;
 }
 
 .nav {
