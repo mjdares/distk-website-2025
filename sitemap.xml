@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- Homepage -->
+    <url>
+        <loc>https://distk.in/</loc>
+        <lastmod>2024-12-30</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- GEO/AEO/SEO Services -->
+    <url>
+        <loc>https://distk.in/geo-services.html</loc>
+        <lastmod>2024-12-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Privacy Policy -->
+    <url>
+        <loc>https://distk.in/privacy.html</loc>
+        <lastmod>2024-12-30</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.4</priority>
+    </url>
+
+    <!-- Success Page -->
+    <url>
+        <loc>https://distk.in/success.html</loc>
+        <lastmod>2024-12-30</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <!-- Terms and Conditions -->
+    <url>
+        <loc>https://distk.in/terms.html</loc>
+        <lastmod>2024-12-30</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.4</priority>
+    </url>
+
+    <!-- Shipping Policy -->
+    <url>
+        <loc>https://distk.in/shipping.html</loc>
+        <lastmod>2024-12-30</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.4</priority>
+    </url>
+
+    <!-- Refund Policy -->
+    <url>
+        <loc>https://distk.in/refund.html</loc>
+        <lastmod>2024-12-30</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.4</priority>
+    </url>
+</urlset>

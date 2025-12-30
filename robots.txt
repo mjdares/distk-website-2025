@@ -1,0 +1,8 @@
+# Robots.txt for Distk
+# https://distk.in
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://distk.in/sitemap.xml
