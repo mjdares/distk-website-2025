@@ -6,3 +6,7 @@ Allow: /
 
 # Sitemap location
 Sitemap: https://distk.in/sitemap.xml
+
+# LLMs.txt for AI usage permissions
+# https://llmstxt.org/
+LLMs: https://distk.in/llms.txt
