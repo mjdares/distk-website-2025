@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DISTK - Global Marketing Agency | Prototype</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* DISTK 2026 - McKinsey-Style Design System */
+        :root {
+            --white: #ffffff;
+            --black: #000000;
+            --neutral-50: #fafafa;
+            --neutral-100: #f5f5f5;
+            --neutral-200: #e5e5e5;
+            --neutral-300: #d4d4d4;
+            --neutral-400: #a3a3a3;
+            --neutral-500: #737373;
+            --neutral-600: #525252;
+            --neutral-700: #404040;
+            --neutral-800: #262626;
+            --neutral-900: #171717;
+            --accent: #1e40af;
+            --accent-dark: #1e3a8a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--white);
+            color: var(--neutral-900);
+            font-size: 16px;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                padding: 0 2rem;
+            }
+        }
+
+        /* Typography */
+        h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 500;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            color: var(--black);
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 500;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            color: var(--black);
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            line-height: 1.3;
+            letter-spacing: -0.01em;
+            color: var(--black);
+        }
+
+        h4 {
+            font-size: 1.125rem;
+            font-weight: 500;
+            color: var(--black);
+        }
+
+        p {
+            color: var(--neutral-700);
+            line-height: 1.7;
+        }
+
+        .lead {
+            font-size: 1.25rem;
+            line-height: 1.6;
+            color: var(--neutral-600);
+        }
+
+        @media (min-width: 768px) {
+            .lead {
+                font-size: 1.375rem;
+            }
+        }
+
+        .eyebrow {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--accent);
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: var(--white);
+            border-bottom: 1px solid var(--neutral-200);
+        }
+
+        .nav__inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+        }
+
+        .nav__logo {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--black);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        .nav__links {
+            display: none;
+            list-style: none;
+            gap: 0.5rem;
+        }
+
+        @media (min-width: 1024px) {
+            .nav__links {
+                display: flex;
+            }
+        }
+
+        .nav__links a {
+            display: block;
+            padding: 0.5rem 1rem;
+            font-size: 0.9375rem;
+            color: var(--neutral-600);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .nav__links a:hover {
+            color: var(--black);
+        }
+
+        .nav__cta {
+            display: none;
+            padding: 0.75rem 1.5rem;
+            background: var(--accent);
+            color: var(--white);
+            font-size: 0.875rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+
+        @media (min-width: 1024px) {
+            .nav__cta {
+                display: inline-block;
+            }
+        }
+
+        .nav__cta:hover {
+            background: var(--accent-dark);
+        }
+
+        .nav__toggle {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        @media (min-width: 1024px) {
+            .nav__toggle {
+                display: none;
+            }
+        }
+
+        .nav__toggle span {
+            width: 24px;
+            height: 2px;
+            background: var(--black);
+        }
+
+        /* Buttons */
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: var(--accent);
+            color: var(--white);
+            font-weight: 500;
+            font-size: 0.9375rem;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-dark);
+            transform: translateY(-1px);
+        }
+
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: transparent;
+            color: var(--black);
+            font-weight: 500;
+            font-size: 0.9375rem;
+            text-decoration: none;
+            border: 1.5px solid var(--black);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-outline:hover {
+            background: var(--black);
+            color: var(--white);
+        }
+
+        .link-arrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+            color: var(--black);
+            text-decoration: none;
+            transition: gap 0.2s;
+        }
+
+        .link-arrow:hover {
+            gap: 0.75rem;
+        }
+
+        .link-arrow svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* Sections */
+        .section {
+            padding: 6rem 0;
+        }
+
+        @media (min-width: 768px) {
+            .section {
+                padding: 8rem 0;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .section {
+                padding: 10rem 0;
+            }
+        }
+
+        .section--alt {
+            background: var(--neutral-100);
+        }
+
+        .section--light {
+            background: var(--neutral-50);
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            background: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero__grid {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(to right, var(--neutral-100) 1px, transparent 1px),
+                linear-gradient(to bottom, var(--neutral-100) 1px, transparent 1px);
+            background-size: 4rem 4rem;
+            opacity: 0.5;
+        }
+
+        .hero__content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        .hero__buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2.5rem;
+        }
+
+        /* Grid layouts */
+        .grid-2 {
+            display: grid;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .grid-2 {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 4rem;
+            }
+        }
+
+        .grid-3 {
+            display: grid;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .grid-3 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .grid-3 {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .grid-4 {
+            display: grid;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .grid-4 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .grid-4 {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        /* Cards */
+        .card {
+            background: var(--white);
+            border: 1px solid var(--neutral-200);
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+
+        .card:hover {
+            border-color: var(--black);
+            transform: translateY(-2px);
+        }
+
+        .card__number {
+            font-size: 3rem;
+            font-weight: 300;
+            color: var(--accent);
+            line-height: 1;
+        }
+
+        .card__title {
+            margin-top: 1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .card__desc {
+            font-size: 0.9375rem;
+            color: var(--neutral-600);
+        }
+
+        /* Service list */
+        .service-list {
+            border-top: 1px solid var(--neutral-200);
+        }
+
+        .service-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 2rem;
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--neutral-200);
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .service-item:hover {
+            background: var(--neutral-50);
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+            margin-left: -1.5rem;
+            margin-right: -1.5rem;
+        }
+
+        .service-item__number {
+            font-size: 0.875rem;
+            font-family: monospace;
+            color: var(--neutral-400);
+            margin-top: 0.25rem;
+        }
+
+        .service-item__content {
+            flex: 1;
+        }
+
+        .service-item__header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .service-item__title {
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: var(--black);
+            transition: color 0.2s;
+        }
+
+        .service-item:hover .service-item__title {
+            color: var(--accent);
+        }
+
+        .service-item__arrow {
+            width: 20px;
+            height: 20px;
+            color: var(--neutral-400);
+            transition: all 0.2s;
+        }
+
+        .service-item:hover .service-item__arrow {
+            color: var(--black);
+            transform: translateX(4px);
+        }
+
+        .service-item__desc {
+            font-size: 0.9375rem;
+            color: var(--neutral-600);
+        }
+
+        /* Industry tags */
+        .industry-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .industry-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .industry-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .industry-tag {
+            padding: 1.25rem 1.5rem;
+            background: var(--white);
+            border: 1px solid var(--neutral-200);
+            font-size: 0.9375rem;
+            font-weight: 500;
+            color: var(--black);
+            transition: all 0.2s;
+            cursor: default;
+        }
+
+        .industry-tag:hover {
+            border-color: var(--black);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        /* Stats */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            padding-top: 4rem;
+            margin-top: 4rem;
+            border-top: 1px solid var(--neutral-300);
+        }
+
+        .stat__number {
+            font-size: 2.5rem;
+            font-weight: 300;
+            color: var(--black);
+            margin-bottom: 0.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .stat__number {
+                font-size: 3rem;
+            }
+        }
+
+        .stat__label {
+            font-size: 0.875rem;
+            color: var(--neutral-600);
+        }
+
+        /* CTA Section */
+        .cta {
+            border-top: 1px solid var(--neutral-200);
+        }
+
+        .cta__inner {
+            display: grid;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        @media (min-width: 1024px) {
+            .cta__inner {
+                grid-template-columns: 1fr auto;
+                gap: 4rem;
+            }
+        }
+
+        .cta__text p {
+            font-size: 1.125rem;
+            color: var(--neutral-600);
+            margin-top: 1rem;
+        }
+
+        .cta__action {
+            text-align: left;
+        }
+
+        @media (min-width: 1024px) {
+            .cta__action {
+                text-align: right;
+            }
+        }
+
+        .cta__email {
+            margin-top: 1rem;
+            font-size: 0.875rem;
+            color: var(--neutral-500);
+        }
+
+        .cta__email a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .cta__email a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--neutral-900);
+            color: var(--white);
+            padding: 4rem 0 2rem;
+        }
+
+        .footer__grid {
+            display: grid;
+            gap: 3rem;
+        }
+
+        @media (min-width: 768px) {
+            .footer__grid {
+                grid-template-columns: 2fr 1fr 1fr 1fr;
+                gap: 2rem;
+            }
+        }
+
+        .footer__brand {
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+        }
+
+        .footer__desc {
+            color: var(--neutral-400);
+            font-size: 0.9375rem;
+            max-width: 300px;
+        }
+
+        .footer__title {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--neutral-500);
+            margin-bottom: 1.5rem;
+        }
+
+        .footer__links {
+            list-style: none;
+        }
+
+        .footer__links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer__links a {
+            color: var(--neutral-400);
+            text-decoration: none;
+            font-size: 0.9375rem;
+            transition: color 0.2s;
+        }
+
+        .footer__links a:hover {
+            color: var(--white);
+        }
+
+        .footer__bottom {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--neutral-800);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 1rem;
+            font-size: 0.875rem;
+            color: var(--neutral-500);
+        }
+
+        .footer__legal a {
+            color: var(--neutral-500);
+            text-decoration: none;
+            margin-left: 1.5rem;
+        }
+
+        .footer__legal a:hover {
+            color: var(--white);
+        }
+
+        /* Insight cards */
+        .insight-card {
+            background: var(--white);
+            border: 1px solid var(--neutral-200);
+            overflow: hidden;
+            text-decoration: none;
+            display: block;
+            transition: all 0.3s;
+        }
+
+        .insight-card:hover {
+            border-color: var(--black);
+            transform: translateY(-2px);
+        }
+
+        .insight-card__image {
+            aspect-ratio: 16/10;
+            background: var(--neutral-100);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .insight-card__image span {
+            font-size: 0.875rem;
+            color: var(--neutral-400);
+        }
+
+        .insight-card__content {
+            padding: 1.5rem;
+        }
+
+        .insight-card__title {
+            font-size: 1.125rem;
+            font-weight: 500;
+            color: var(--black);
+            margin-top: 0.75rem;
+            transition: color 0.2s;
+        }
+
+        .insight-card:hover .insight-card__title {
+            color: var(--accent);
+        }
+
+        /* Utility */
+        .mb-4 { margin-bottom: 1rem; }
+        .mb-6 { margin-bottom: 1.5rem; }
+        .mb-8 { margin-bottom: 2rem; }
+        .mb-12 { margin-bottom: 3rem; }
+        .mb-16 { margin-bottom: 4rem; }
+        .max-w-2xl { max-width: 42rem; }
+        .max-w-xl { max-width: 36rem; }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container nav__inner">
+            <a href="/" class="nav__logo">DISTK</a>
+            <ul class="nav__links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#approach">Approach</a></li>
+                <li><a href="#industries">Industries</a></li>
+                <li><a href="/blog/">Insights</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+            <a href="#contact" class="nav__cta">Contact</a>
+            <button class="nav__toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero__grid"></div>
+        <div class="container">
+            <div class="hero__content">
+                <p class="eyebrow mb-6">Global Marketing Agency</p>
+                <h1 class="mb-8">We engineer brands that define markets.</h1>
+                <p class="lead max-w-xl">
+                    Full-service marketing partner for enterprises across healthcare, real estate, manufacturing, technology, and beyond. From strategy to execution, we deliver measurable growth.
+                </p>
+                <div class="hero__buttons">
+                    <a href="#contact" class="btn-primary">Start a Conversation</a>
+                    <a href="#services" class="btn-outline">View Our Services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Approach -->
+    <section class="section section--alt" id="approach">
+        <div class="container">
+            <div class="max-w-2xl mb-16">
+                <p class="eyebrow mb-4">Our Approach</p>
+                <h2 class="mb-6">Strategy meets execution. Rigor meets creativity.</h2>
+                <p>We combine the analytical depth of management consulting with the creative excellence of a world-class agency. Every engagement follows our proven methodology.</p>
+            </div>
+
+            <div class="grid-4">
+                <div class="card">
+                    <span class="card__number">01</span>
+                    <h4 class="card__title">Diagnose</h4>
+                    <p class="card__desc">Deep analysis of your market position, competitive landscape, and growth opportunities. We understand before we act.</p>
+                </div>
+                <div class="card">
+                    <span class="card__number">02</span>
+                    <h4 class="card__title">Strategize</h4>
+                    <p class="card__desc">Custom frameworks designed around your specific challenges. No templates. No one-size-fits-all solutions.</p>
+                </div>
+                <div class="card">
+                    <span class="card__number">03</span>
+                    <h4 class="card__title">Execute</h4>
+                    <p class="card__desc">Hands-on implementation with embedded teams. We work as an extension of your organization, not a vendor.</p>
+                </div>
+                <div class="card">
+                    <span class="card__number">04</span>
+                    <h4 class="card__title">Optimize</h4>
+                    <p class="card__desc">Continuous refinement based on performance data. Every decision backed by analytics, every action measured.</p>
+                </div>
+            </div>
+
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat__number">40+</div>
+                    <div class="stat__label">Countries Served</div>
+                </div>
+                <div class="stat">
+                    <div class="stat__number">12+</div>
+                    <div class="stat__label">Industries</div>
+                </div>
+                <div class="stat">
+                    <div class="stat__number">100%</div>
+                    <div class="stat__label">Custom Engagements</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="section" id="services">
+        <div class="container">
+            <div class="grid-2" style="align-items: start;">
+                <div>
+                    <p class="eyebrow mb-4">What We Do</p>
+                    <h2 class="mb-6">Integrated capabilities for complex challenges.</h2>
+                    <p class="mb-8">We combine strategic thinking with executional excellence to solve the most demanding marketing challenges across industries.</p>
+                    <a href="#about" class="link-arrow">
+                        Learn About Us
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                    </a>
+                </div>
+                <div class="service-list">
+                    <a href="#" class="service-item">
+                        <span class="service-item__number">01</span>
+                        <div class="service-item__content">
+                            <div class="service-item__header">
+                                <span class="service-item__title">Growth Strategy</span>
+                                <svg class="service-item__arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                            </div>
+                            <p class="service-item__desc">Go-to-market frameworks, market expansion, and revenue acceleration strategies that transform business trajectories.</p>
+                        </div>
+                    </a>
+                    <a href="#" class="service-item">
+                        <span class="service-item__number">02</span>
+                        <div class="service-item__content">
+                            <div class="service-item__header">
+                                <span class="service-item__title">Search & Visibility</span>
+                                <svg class="service-item__arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                            </div>
+                            <p class="service-item__desc">SEO, Answer Engine Optimization, and digital presence strategies that ensure your brand leads in every search.</p>
+                        </div>
+                    </a>
+                    <a href="#" class="service-item">
+                        <span class="service-item__number">03</span>
+                        <div class="service-item__content">
+                            <div class="service-item__header">
+                                <span class="service-item__title">Performance Marketing</span>
+                                <svg class="service-item__arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                            </div>
+                            <p class="service-item__desc">Data-driven campaigns across paid channels, programmatic advertising, and conversion optimization.</p>
+                        </div>
+                    </a>
+                    <a href="#" class="service-item">
+                        <span class="service-item__number">04</span>
+                        <div class="service-item__content">
+                            <div class="service-item__header">
+                                <span class="service-item__title">Creative & Production</span>
+                                <svg class="service-item__arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                            </div>
+                            <p class="service-item__desc">Brand identity systems, video production, and design that captures attention and builds lasting impressions.</p>
+                        </div>
+                    </a>
+                    <a href="#" class="service-item">
+                        <span class="service-item__number">05</span>
+                        <div class="service-item__content">
+                            <div class="service-item__header">
+                                <span class="service-item__title">Innovation Lab</span>
+                                <svg class="service-item__arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                            </div>
+                            <p class="service-item__desc">Proprietary AI tools, research methodologies, and emerging technology applications for forward-thinking brands.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries -->
+    <section class="section section--light" id="industries">
+        <div class="container">
+            <div class="max-w-2xl mb-16">
+                <p class="eyebrow mb-4">Industries</p>
+                <h2 class="mb-6">Deep expertise across sectors.</h2>
+                <p>We bring sector-specific knowledge and proven methodologies to every engagement, understanding the unique dynamics of your market.</p>
+            </div>
+
+            <div class="industry-grid">
+                <div class="industry-tag">Healthcare</div>
+                <div class="industry-tag">Real Estate</div>
+                <div class="industry-tag">Manufacturing</div>
+                <div class="industry-tag">Defence</div>
+                <div class="industry-tag">D2C</div>
+                <div class="industry-tag">Retail</div>
+                <div class="industry-tag">Interiors</div>
+                <div class="industry-tag">Technology</div>
+                <div class="industry-tag">Finance</div>
+                <div class="industry-tag">Education</div>
+                <div class="industry-tag">Hospitality</div>
+                <div class="industry-tag">Automotive</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="grid-2" style="align-items: center;">
+                <div>
+                    <p class="eyebrow mb-4">Why DISTK</p>
+                    <h2 class="mb-6">A different kind of agency.</h2>
+                    <p class="mb-4">We are a global marketing agency headquartered in Bangalore, serving enterprises across 40+ countries. Our approach combines the strategic rigor of management consulting with the creative excellence of a world-class agency.</p>
+                    <p class="mb-8">We do not believe in templates or one-size-fits-all solutions. Every engagement is custom-built around your specific challenges, market dynamics, and growth objectives.</p>
+
+                    <div class="grid-2" style="gap: 1.5rem;">
+                        <div class="card" style="padding: 1.5rem;">
+                            <h4 style="margin-bottom: 0.5rem;">Full-Service Integration</h4>
+                            <p style="font-size: 0.875rem; color: var(--neutral-600);">Strategy through execution, all under one roof.</p>
+                        </div>
+                        <div class="card" style="padding: 1.5rem;">
+                            <h4 style="margin-bottom: 0.5rem;">Senior-Led Teams</h4>
+                            <p style="font-size: 0.875rem; color: var(--neutral-600);">Direct access to experienced strategists.</p>
+                        </div>
+                    </div>
+                </div>
+                <div style="position: relative;">
+                    <div style="aspect-ratio: 4/3; background: var(--neutral-100); display: flex; align-items: center; justify-content: center; border: 1px solid var(--neutral-200); position: relative; overflow: hidden;">
+                        <div class="hero__grid" style="opacity: 0.5;"></div>
+                        <div style="text-align: center; position: relative;">
+                            <div style="font-size: 3rem; font-weight: 300; color: var(--neutral-300);">DISTK</div>
+                            <div style="font-size: 0.75rem; color: var(--neutral-500); letter-spacing: 0.2em;">BANGALORE / GLOBAL</div>
+                        </div>
+                    </div>
+                    <div style="position: absolute; bottom: -1rem; right: -1rem; width: 6rem; height: 6rem; background: var(--accent);"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Insights -->
+    <section class="section section--light">
+        <div class="container">
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 1rem; margin-bottom: 3rem;">
+                <div>
+                    <p class="eyebrow mb-4">Insights</p>
+                    <h2>Perspectives that matter.</h2>
+                </div>
+                <a href="/blog/" class="link-arrow">
+                    All Insights
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                </a>
+            </div>
+
+            <div class="grid-3">
+                <a href="/blog/geo-aeo-seo-agency-2026.html" class="insight-card">
+                    <div class="insight-card__image"><span>GEO/AEO/SEO</span></div>
+                    <div class="insight-card__content">
+                        <p class="eyebrow">Strategy</p>
+                        <h3 class="insight-card__title">What is Answer Engine Optimization?</h3>
+                    </div>
+                </a>
+                <a href="/blog/ai-marketing-agency-2026.html" class="insight-card">
+                    <div class="insight-card__image"><span>AI Marketing</span></div>
+                    <div class="insight-card__content">
+                        <p class="eyebrow">Technology</p>
+                        <h3 class="insight-card__title">The Future of Search in the AI Age</h3>
+                    </div>
+                </a>
+                <a href="/blog/go-to-market-strategy-agency-2026.html" class="insight-card">
+                    <div class="insight-card__image"><span>GTM</span></div>
+                    <div class="insight-card__content">
+                        <p class="eyebrow">Growth</p>
+                        <h3 class="insight-card__title">GTM Frameworks for 2026</h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section cta" id="contact">
+        <div class="container">
+            <div class="cta__inner">
+                <div class="cta__text">
+                    <h2>Ready to transform your growth trajectory?</h2>
+                    <p>Let us show you what is possible. Schedule a conversation with our team to discuss your challenges and opportunities.</p>
+                </div>
+                <div class="cta__action">
+                    <a href="mailto:connect@distk.in" class="btn-primary">Start a Conversation</a>
+                    <p class="cta__email">Or email us at <a href="mailto:connect@distk.in">connect@distk.in</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div>
+                    <div class="footer__brand">DISTK</div>
+                    <p class="footer__desc">Operator-led revenue partner for enterprises. Strategy, execution, and growth under one roof.</p>
+                </div>
+                <div>
+                    <h4 class="footer__title">Services</h4>
+                    <ul class="footer__links">
+                        <li><a href="#">Growth Strategy</a></li>
+                        <li><a href="#">Search & Visibility</a></li>
+                        <li><a href="#">Performance Marketing</a></li>
+                        <li><a href="#">Creative & Production</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer__title">Company</h4>
+                    <ul class="footer__links">
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Insights</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer__title">Connect</h4>
+                    <ul class="footer__links">
+                        <li><a href="mailto:connect@distk.in">connect@distk.in</a></li>
+                        <li><a href="https://www.linkedin.com/company/distk-technologies" target="_blank">LinkedIn</a></li>
+                        <li><a href="#">Bangalore / Global</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <span>&copy; 2026 DISTK. All rights reserved.</span>
+                <div class="footer__legal">
+                    <a href="/privacy.html">Privacy</a>
+                    <a href="/terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
