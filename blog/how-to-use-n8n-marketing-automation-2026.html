@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete n8n guide for marketing automation 2026. Learn to self-host workflows, build custom integrations, and automate marketing with this open-source platform.">
+    <meta name="keywords" content="n8n 2026, n8n marketing automation, open source automation, self-hosted workflow, n8n tutorial, n8n guide, workflow automation">
+    <meta name="author" content="Distk">
+    <meta name="robots" content="index, follow">
+    <title>How to Use n8n for Marketing Automation 2026: Open-Source Workflow Guide | Distk</title>
+    <link rel="canonical" href="https://distk.in/blog/how-to-use-n8n-marketing-automation-2026.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="How to Use n8n for Marketing Automation 2026: Open-Source Workflow Guide">
+    <meta property="og:description" content="Master n8n for marketing automation in 2026. Build self-hosted workflows, create custom integrations, and own your automation infrastructure.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://distk.in/blog/how-to-use-n8n-marketing-automation-2026.html">
+    <meta property="og:image" content="https://distk.in/images/n8n-guide-2026.webp">
+    <meta property="og:site_name" content="Distk">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How to Use n8n for Marketing Automation 2026">
+    <meta name="twitter:description" content="Learn n8n open-source workflow automation for marketing. Self-host and build custom integrations.">
+
+    <!-- Schema.org Article -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "How to Use n8n for Marketing Automation 2026: Open-Source Workflow Guide",
+        "description": "Complete n8n guide for marketing automation 2026. Learn to self-host workflows, build custom integrations, and automate marketing.",
+        "image": "https://distk.in/images/n8n-guide-2026.webp",
+        "author": {
+            "@type": "Organization",
+            "name": "Distk",
+            "url": "https://distk.in"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Distk",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://distk.in/images/distk-logo.png"
+            }
+        },
+        "datePublished": "2026-01-22",
+        "dateModified": "2026-01-22",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://distk.in/blog/how-to-use-n8n-marketing-automation-2026.html"
+        }
+    }
+    </script>
+
+    <!-- Schema.org FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is n8n and how does it work in 2026?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "n8n is an open-source workflow automation platform that you can self-host or use via n8n Cloud. In 2026, n8n offers 400+ integrations, a visual workflow editor, and the ability to write custom code within workflows. It provides full control over your data and automation infrastructure."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is n8n free to use in 2026?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "n8n is free to self-host under the fair-code license with unlimited workflows and executions. n8n Cloud offers a free tier with 2,500 executions/month, with paid plans starting at $20/month for 5,000 executions. Self-hosting only costs your server expenses."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I install n8n for marketing automation?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "You can install n8n via Docker, npm, or use n8n Cloud. For Docker: run 'docker run -it --rm -p 5678:5678 n8nio/n8n'. For npm: run 'npm install n8n -g' then 'n8n start'. n8n Cloud requires no installation and is ready to use immediately."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is n8n better than Zapier for marketing automation?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "n8n is better for technical teams wanting full control, custom code capabilities, and cost savings at scale. Zapier is better for non-technical users needing more integrations and easier setup. n8n excels when data privacy, customization, or high-volume workflows are priorities."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I write custom code in n8n workflows?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, n8n allows you to write JavaScript or Python code within workflows using the Code node. You can also create custom nodes for specific integrations. This makes n8n extremely flexible for complex marketing automation scenarios that require custom logic."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://distk.in"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Blog",
+                "item": "https://distk.in/blog"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "How to Use n8n for Marketing Automation 2026",
+                "item": "https://distk.in/blog/how-to-use-n8n-marketing-automation-2026.html"
+            }
+        ]
+    }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.8;
+            color: #1a1a2e;
+            background: #ffffff;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #00d4ff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #00d4ff;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: #fff;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            max-width: 900px;
+            margin: 0 auto 1rem;
+            line-height: 1.3;
+        }
+
+        .hero-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+            color: #a0a0a0;
+            font-size: 0.95rem;
+        }
+
+        .article-container {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .article-content h2 {
+            font-size: 1.8rem;
+            margin: 2.5rem 0 1rem;
+            color: #1a1a2e;
+            border-left: 4px solid #00d4ff;
+            padding-left: 1rem;
+        }
+
+        .article-content h3 {
+            font-size: 1.4rem;
+            margin: 2rem 0 0.8rem;
+            color: #16213e;
+        }
+
+        .article-content h4 {
+            font-size: 1.15rem;
+            margin: 1.5rem 0 0.6rem;
+            color: #0f3460;
+        }
+
+        .article-content p {
+            margin-bottom: 1.2rem;
+            color: #333;
+            font-size: 1.05rem;
+        }
+
+        .article-content ul, .article-content ol {
+            margin: 1rem 0 1.5rem 1.5rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.6rem;
+            color: #333;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #e8f4f8 0%, #d1ecf1 100%);
+            border-left: 4px solid #00d4ff;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .info-box h4 {
+            color: #0f3460;
+            margin-bottom: 0.5rem;
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, #fff8e8 0%, #fff3cd 100%);
+            border-left: 4px solid #ffc107;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .code-box {
+            background: #1a1a2e;
+            color: #00d4ff;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid #e9ecef;
+        }
+
+        .feature-card h4 {
+            color: #1a1a2e;
+            margin-bottom: 0.5rem;
+        }
+
+        .step-box {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-left: 4px solid #00d4ff;
+        }
+
+        .step-box h4 {
+            color: #1a1a2e;
+            margin-bottom: 0.8rem;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            font-size: 0.95rem;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .comparison-table th {
+            background: #1a1a2e;
+            color: #fff;
+        }
+
+        .comparison-table tr:hover {
+            background: #f8f9fa;
+        }
+
+        .faq-section {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .faq-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .faq-item h3 {
+            color: #1a1a2e;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 10px;
+            margin: 3rem 0;
+        }
+
+        .cta-section h2 {
+            margin-bottom: 1rem;
+            border: none;
+            padding: 0;
+            color: #fff;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #00d4ff;
+            color: #1a1a2e;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0,212,255,0.4);
+        }
+
+        .footer {
+            background: #1a1a2e;
+            color: #fff;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer p {
+            color: #a0a0a0;
+            margin-top: 1rem;
+        }
+
+        .breadcrumb {
+            padding: 1rem 2rem;
+            background: #f8f9fa;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb a {
+            color: #00d4ff;
+            text-decoration: none;
+        }
+
+        .breadcrumb span {
+            color: #666;
+            margin: 0 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .article-container {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="/" class="logo">Dist<span>k</span></a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/#services">Services</a></li>
+                <li><a href="/#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="breadcrumb">
+        <a href="/">Home</a> <span>/</span> <a href="/blog">Blog</a> <span>/</span> How to Use n8n for Marketing Automation 2026
+    </div>
+
+    <section class="hero">
+        <h1>How to Use n8n for Marketing Automation 2026: Open-Source Workflow Guide</h1>
+        <p>Build powerful self-hosted workflows with full control over your marketing automation</p>
+        <div class="hero-meta">
+            <span>January 22, 2026</span>
+            <span>16 min read</span>
+            <span>Marketing Automation</span>
+        </div>
+    </section>
+
+    <article class="article-container">
+        <div class="article-content">
+            <p>n8n has emerged as a powerful alternative to proprietary automation platforms in 2026, offering marketers the ability to self-host their workflows, write custom code, and maintain complete control over their data. This guide will teach you how to leverage n8n for marketing automation, from installation to building sophisticated workflows.</p>
+
+            <h2>What is n8n in 2026?</h2>
+
+            <p>n8n (pronounced "n-eight-n") is an open-source workflow automation platform that allows you to connect applications and build automated processes. Unlike SaaS platforms like Zapier or Make.com, n8n can be self-hosted on your own servers, giving you full control over your data and unlimited workflow executions.</p>
+
+            <p>In 2026, n8n offers over 400 integrations, a visual workflow editor, the ability to write JavaScript or Python code within workflows, and features like webhooks, scheduling, and error handling. The platform is particularly popular among technical teams, agencies, and businesses with strict data privacy requirements.</p>
+
+            <div class="info-box">
+                <h4>n8n Key Benefits 2026</h4>
+                <p>Self-hosting option with unlimited executions, open-source code you can modify, custom code nodes for flexibility, no vendor lock-in, and significantly lower costs at scale compared to SaaS alternatives.</p>
+            </div>
+
+            <h2>Installing n8n for Marketing Automation</h2>
+
+            <h3>Option 1: n8n Cloud (Easiest)</h3>
+
+            <p>n8n Cloud is the managed hosting option that requires no technical setup:</p>
+
+            <div class="step-box">
+                <h4>Getting Started with n8n Cloud</h4>
+                <ol>
+                    <li>Visit n8n.io and click Start Free</li>
+                    <li>Create your account and verify email</li>
+                    <li>Access your cloud instance immediately</li>
+                    <li>Start building workflows with no setup required</li>
+                </ol>
+            </div>
+
+            <h3>Option 2: Docker Installation (Recommended for Self-Hosting)</h3>
+
+            <p>Docker provides the easiest self-hosting experience:</p>
+
+            <div class="code-box">
+                docker run -it --rm \<br>
+                &nbsp;&nbsp;--name n8n \<br>
+                &nbsp;&nbsp;-p 5678:5678 \<br>
+                &nbsp;&nbsp;-v ~/.n8n:/home/node/.n8n \<br>
+                &nbsp;&nbsp;n8nio/n8n
+            </div>
+
+            <p>For production environments, use Docker Compose with persistent storage and proper configuration.</p>
+
+            <h3>Option 3: npm Installation</h3>
+
+            <p>Install n8n globally via npm for quick testing:</p>
+
+            <div class="code-box">
+                npm install n8n -g<br>
+                n8n start
+            </div>
+
+            <h3>Option 4: Cloud Server Deployment</h3>
+
+            <p>Deploy n8n to cloud providers for reliable hosting:</p>
+
+            <ul>
+                <li><strong>DigitalOcean:</strong> Use the 1-click app or Docker droplet</li>
+                <li><strong>AWS:</strong> Deploy via EC2, ECS, or Lightsail</li>
+                <li><strong>Google Cloud:</strong> Use Compute Engine or Cloud Run</li>
+                <li><strong>Railway/Render:</strong> Easy deployment with free tiers</li>
+            </ul>
+
+            <div class="warning-box">
+                <h4>Self-Hosting Consideration</h4>
+                <p>Self-hosting requires managing updates, backups, and security. For teams without DevOps resources, n8n Cloud may be more practical despite the cost. Choose based on your technical capabilities and budget.</p>
+            </div>
+
+            <h2>Understanding the n8n Interface</h2>
+
+            <h3>Key Interface Elements</h3>
+
+            <ul>
+                <li><strong>Workflow Editor:</strong> Visual canvas for building workflows with drag-and-drop</li>
+                <li><strong>Node Panel:</strong> Browse and add integrations to your workflow</li>
+                <li><strong>Execution History:</strong> View past workflow runs and debug issues</li>
+                <li><strong>Credentials:</strong> Manage API keys and authentication</li>
+                <li><strong>Workflows:</strong> Organize and manage all your automations</li>
+                <li><strong>Variables:</strong> Store and reuse values across workflows</li>
+            </ul>
+
+            <h3>n8n Terminology</h3>
+
+            <ul>
+                <li><strong>Workflow:</strong> A complete automation consisting of connected nodes</li>
+                <li><strong>Node:</strong> An individual step in your workflow (trigger or action)</li>
+                <li><strong>Trigger Node:</strong> Starts the workflow (webhook, schedule, app event)</li>
+                <li><strong>Execution:</strong> One run of your workflow</li>
+                <li><strong>Credentials:</strong> Saved authentication for connected services</li>
+                <li><strong>Expression:</strong> Dynamic values using JavaScript syntax</li>
+            </ul>
+
+            <h2>Building Marketing Workflows in n8n 2026</h2>
+
+            <h3>Lead Capture and CRM Integration</h3>
+
+            <div class="step-box">
+                <h4>Workflow: Form Submission to CRM</h4>
+                <ol>
+                    <li><strong>Trigger:</strong> Webhook node receives form data</li>
+                    <li><strong>Transform:</strong> Set node formats data for CRM</li>
+                    <li><strong>Enrich:</strong> HTTP Request node fetches company data from Clearbit</li>
+                    <li><strong>Route:</strong> IF node checks lead score threshold</li>
+                    <li><strong>Action:</strong> HubSpot/Salesforce node creates or updates contact</li>
+                    <li><strong>Notify:</strong> Slack node alerts sales team for high-value leads</li>
+                </ol>
+            </div>
+
+            <h3>Email Marketing Automation</h3>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>Subscriber Sync</h4>
+                    <p>Sync contacts between your CRM and email platform with custom field mapping and segmentation logic.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Welcome Sequences</h4>
+                    <p>Trigger personalized welcome emails based on signup source and user attributes.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>List Hygiene</h4>
+                    <p>Automatically clean lists by removing bounced emails and managing unsubscribes.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Campaign Analytics</h4>
+                    <p>Pull email metrics and aggregate into custom dashboards and reports.</p>
+                </div>
+            </div>
+
+            <h3>Social Media Automation</h3>
+
+            <div class="step-box">
+                <h4>Workflow: Automated Content Distribution</h4>
+                <ol>
+                    <li><strong>Trigger:</strong> RSS Feed node monitors your blog</li>
+                    <li><strong>Process:</strong> Code node extracts title, description, and image</li>
+                    <li><strong>Generate:</strong> OpenAI node creates platform-specific captions</li>
+                    <li><strong>Branch:</strong> Split In Batches for each social platform</li>
+                    <li><strong>Post:</strong> Twitter, LinkedIn, Facebook nodes publish content</li>
+                    <li><strong>Log:</strong> Google Sheets node tracks published content</li>
+                </ol>
+            </div>
+
+            <h3>Customer Feedback and Reviews</h3>
+
+            <ul>
+                <li><strong>NPS collection:</strong> Trigger surveys after purchase and route responses</li>
+                <li><strong>Review requests:</strong> Send review requests to customers with positive feedback</li>
+                <li><strong>Support escalation:</strong> Alert team when negative feedback is received</li>
+                <li><strong>Sentiment analysis:</strong> Use AI to analyze and categorize feedback</li>
+            </ul>
+
+            <h2>Advanced n8n Features for Marketing</h2>
+
+            <h3>Using the Code Node</h3>
+
+            <p>The Code node allows you to write JavaScript or Python for custom logic:</p>
+
+            <div class="code-box">
+                // Example: Calculate lead score<br>
+                const item = $input.item.json;<br><br>
+                let score = 0;<br>
+                if (item.company_size > 100) score += 20;<br>
+                if (item.budget > 10000) score += 30;<br>
+                if (item.source === 'demo_request') score += 50;<br><br>
+                return { json: { ...item, lead_score: score } };
+            </div>
+
+            <h3>HTTP Request Node for Any API</h3>
+
+            <p>Connect to any service with an API using the HTTP Request node:</p>
+
+            <ul>
+                <li>Custom CRM integrations without native nodes</li>
+                <li>Internal tools and databases</li>
+                <li>Third-party data enrichment services</li>
+                <li>Proprietary marketing platforms</li>
+            </ul>
+
+            <h3>Error Handling and Retries</h3>
+
+            <p>Configure robust error handling for production workflows:</p>
+
+            <div class="step-box">
+                <h4>Error Handling Best Practices</h4>
+                <ul>
+                    <li>Enable "Continue on Fail" for non-critical nodes</li>
+                    <li>Use Error Trigger workflow to catch and handle failures</li>
+                    <li>Set up retry logic for transient failures</li>
+                    <li>Send alerts for critical workflow failures</li>
+                    <li>Log errors to a central tracking system</li>
+                </ul>
+            </div>
+
+            <h3>Scheduling and Triggers</h3>
+
+            <p>n8n offers multiple trigger options in 2026:</p>
+
+            <ul>
+                <li><strong>Schedule Trigger:</strong> Run workflows at specified intervals</li>
+                <li><strong>Webhook:</strong> Trigger from external HTTP requests</li>
+                <li><strong>App Triggers:</strong> React to events in connected apps</li>
+                <li><strong>Manual:</strong> Run workflows on-demand</li>
+                <li><strong>Cron:</strong> Use cron expressions for complex schedules</li>
+            </ul>
+
+            <h2>n8n Marketing Use Cases 2026</h2>
+
+            <h3>E-commerce Marketing</h3>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Trigger</th>
+                        <th>Workflow</th>
+                        <th>Outcome</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>New order</td>
+                        <td>Segment customer, trigger post-purchase sequence</td>
+                        <td>Improved retention</td>
+                    </tr>
+                    <tr>
+                        <td>Cart abandoned</td>
+                        <td>Wait 1 hour, check status, send reminder</td>
+                        <td>Recovered sales</td>
+                    </tr>
+                    <tr>
+                        <td>Product review</td>
+                        <td>Analyze sentiment, route to appropriate response</td>
+                        <td>Better reputation</td>
+                    </tr>
+                    <tr>
+                        <td>Low inventory</td>
+                        <td>Pause ads, notify team, update product pages</td>
+                        <td>Prevent overselling</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>B2B Marketing Automation</h3>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Use Case</th>
+                        <th>Workflow Components</th>
+                        <th>Result</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Lead scoring</td>
+                        <td>Webhook + Code node + CRM update</td>
+                        <td>Qualified leads prioritized</td>
+                    </tr>
+                    <tr>
+                        <td>Demo scheduling</td>
+                        <td>Form trigger + Calendly + CRM + Slack</td>
+                        <td>Automated sales handoff</td>
+                    </tr>
+                    <tr>
+                        <td>Webinar follow-up</td>
+                        <td>Zoom attendees + email sequence + CRM tag</td>
+                        <td>Nurtured webinar leads</td>
+                    </tr>
+                    <tr>
+                        <td>Content syndication</td>
+                        <td>CMS trigger + AI content + multi-platform post</td>
+                        <td>Expanded reach</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Agency Workflows</h3>
+
+            <ul>
+                <li><strong>Client reporting:</strong> Aggregate data from multiple platforms into custom reports</li>
+                <li><strong>Campaign management:</strong> Sync campaign settings across ad platforms</li>
+                <li><strong>Alert systems:</strong> Notify teams of budget pacing or performance issues</li>
+                <li><strong>Client onboarding:</strong> Automate account setup and access provisioning</li>
+            </ul>
+
+            <h2>n8n Pricing 2026</h2>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Option</th>
+                        <th>Cost</th>
+                        <th>Executions</th>
+                        <th>Best For</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Self-Hosted</td>
+                        <td>Free (server costs only)</td>
+                        <td>Unlimited</td>
+                        <td>Technical teams, high volume</td>
+                    </tr>
+                    <tr>
+                        <td>Cloud Free</td>
+                        <td>$0/month</td>
+                        <td>2,500/month</td>
+                        <td>Testing, small projects</td>
+                    </tr>
+                    <tr>
+                        <td>Cloud Starter</td>
+                        <td>$20/month</td>
+                        <td>5,000/month</td>
+                        <td>Small teams</td>
+                    </tr>
+                    <tr>
+                        <td>Cloud Pro</td>
+                        <td>$50/month</td>
+                        <td>15,000/month</td>
+                        <td>Growing businesses</td>
+                    </tr>
+                    <tr>
+                        <td>Enterprise</td>
+                        <td>Custom</td>
+                        <td>Custom</td>
+                        <td>Large organizations</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <h4>Cost Comparison</h4>
+                <p>Self-hosting n8n on a $10-20/month VPS provides unlimited executions. At scale, this can save thousands compared to SaaS platforms charging per task or operation.</p>
+            </div>
+
+            <h2>n8n vs Zapier vs Make.com 2026</h2>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>n8n</th>
+                        <th>Zapier</th>
+                        <th>Make.com</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Integrations</td>
+                        <td>400+</td>
+                        <td>7,000+</td>
+                        <td>1,500+</td>
+                    </tr>
+                    <tr>
+                        <td>Self-Hosting</td>
+                        <td>Yes</td>
+                        <td>No</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>Custom Code</td>
+                        <td>Full JS/Python</td>
+                        <td>Limited</td>
+                        <td>Limited</td>
+                    </tr>
+                    <tr>
+                        <td>Open Source</td>
+                        <td>Yes</td>
+                        <td>No</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>Ease of Use</td>
+                        <td>Technical</td>
+                        <td>Easy</td>
+                        <td>Moderate</td>
+                    </tr>
+                    <tr>
+                        <td>Best For</td>
+                        <td>Developers, privacy-focused</td>
+                        <td>Non-technical users</td>
+                        <td>Power users</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>n8n Best Practices 2026</h2>
+
+            <h3>Workflow Organization</h3>
+
+            <ol>
+                <li><strong>Use descriptive names:</strong> Name workflows clearly (e.g., "Lead-Capture-to-HubSpot")</li>
+                <li><strong>Add sticky notes:</strong> Document complex logic within workflows</li>
+                <li><strong>Use tags:</strong> Categorize workflows by function or client</li>
+                <li><strong>Version control:</strong> Export and track workflow JSON in Git</li>
+                <li><strong>Test environments:</strong> Maintain separate dev and production instances</li>
+            </ol>
+
+            <h3>Security Best Practices</h3>
+
+            <ul>
+                <li>Use environment variables for sensitive credentials</li>
+                <li>Enable authentication on your n8n instance</li>
+                <li>Keep n8n updated to the latest version</li>
+                <li>Use HTTPS for all webhook endpoints</li>
+                <li>Regularly audit credential access and usage</li>
+                <li>Implement IP allowlisting where possible</li>
+            </ul>
+
+            <h3>Performance Optimization</h3>
+
+            <ul>
+                <li><strong>Batch operations:</strong> Process multiple items together when possible</li>
+                <li><strong>Efficient queries:</strong> Limit data fetched to what is needed</li>
+                <li><strong>Webhook over polling:</strong> Use webhooks instead of scheduled polls</li>
+                <li><strong>Error handling:</strong> Prevent failed executions from blocking workflows</li>
+                <li><strong>Monitor resources:</strong> Track memory and CPU usage on self-hosted instances</li>
+            </ul>
+
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-section">
+                <div class="faq-item">
+                    <h3>What is n8n and how does it work in 2026?</h3>
+                    <p>n8n is an open-source workflow automation platform that you can self-host or use via n8n Cloud. In 2026, n8n offers 400+ integrations, a visual workflow editor, and the ability to write custom code within workflows. It provides full control over your data and automation infrastructure.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Is n8n free to use in 2026?</h3>
+                    <p>n8n is free to self-host under the fair-code license with unlimited workflows and executions. n8n Cloud offers a free tier with 2,500 executions/month, with paid plans starting at $20/month for 5,000 executions. Self-hosting only costs your server expenses.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>How do I install n8n for marketing automation?</h3>
+                    <p>You can install n8n via Docker, npm, or use n8n Cloud. For Docker: run 'docker run -it --rm -p 5678:5678 n8nio/n8n'. For npm: run 'npm install n8n -g' then 'n8n start'. n8n Cloud requires no installation and is ready to use immediately.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Is n8n better than Zapier for marketing automation?</h3>
+                    <p>n8n is better for technical teams wanting full control, custom code capabilities, and cost savings at scale. Zapier is better for non-technical users needing more integrations and easier setup. n8n excels when data privacy, customization, or high-volume workflows are priorities.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Can I write custom code in n8n workflows?</h3>
+                    <p>Yes, n8n allows you to write JavaScript or Python code within workflows using the Code node. You can also create custom nodes for specific integrations. This makes n8n extremely flexible for complex marketing automation scenarios that require custom logic.</p>
+                </div>
+            </div>
+
+            <h2>Conclusion</h2>
+
+            <p>n8n offers marketing teams unprecedented control over their automation infrastructure in 2026. While it requires more technical knowledge than SaaS alternatives, the benefits of self-hosting, custom code capabilities, and unlimited executions make it an excellent choice for teams with development resources or high-volume automation needs.</p>
+
+            <p>Start with n8n Cloud to learn the platform, then consider self-hosting as your needs grow. The visual workflow builder makes it accessible even for those new to automation, while the code nodes and HTTP requests provide the flexibility needed for complex marketing operations.</p>
+
+            <p>For organizations prioritizing data privacy, customization, or cost efficiency at scale, n8n provides a compelling alternative to proprietary platforms.</p>
+
+            <div class="cta-section">
+                <h2>Need Help with n8n Marketing Automation?</h2>
+                <p>Get expert assistance setting up and building powerful n8n workflows for your marketing.</p>
+                <a href="/#contact" class="cta-button">Get Automation Help</a>
+            </div>
+        </div>
+    </article>
+
+    <footer class="footer">
+        <a href="/" class="logo">Dist<span>k</span></a>
+        <p>&copy; 2026 Distk. All rights reserved.</p>
+    </footer>
+</body>
+</html>
