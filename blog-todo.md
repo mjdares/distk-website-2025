@@ -54,7 +54,7 @@ When resuming this task:
   - File: `how-to-use-figma-marketing-2026.html`
   - Focus: Design collaboration, prototyping, marketing assets
 
-- [ ] How to Use Webflow for Marketing Websites 2026
+- [DONE] How to Use Webflow for Marketing Websites 2026
   - File: `how-to-use-webflow-marketing-2026.html`
   - Focus: No-code websites, landing pages, CMS, SEO
 
@@ -131,8 +131,8 @@ When resuming this task:
 ## Progress Tracker
 
 - Total Blogs: 24
-- Completed: 10
-- Remaining: 14
+- Completed: 11
+- Remaining: 13
 
 Last Updated: 2026-01-25
-Last Blog Created: how-to-use-figma-marketing-2026.html
+Last Blog Created: how-to-use-webflow-marketing-2026.html
