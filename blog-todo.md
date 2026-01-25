@@ -62,7 +62,7 @@ When resuming this task:
   - File: `how-to-use-framer-landing-pages-2026.html`
   - Focus: AI website builder, animations, conversion optimization
 
-- [ ] How to Use Loom for Sales & Marketing 2026
+- [DONE] How to Use Loom for Sales & Marketing 2026
   - File: `how-to-use-loom-sales-marketing-2026.html`
   - Focus: Video messaging, sales outreach, async communication
 
@@ -131,8 +131,8 @@ When resuming this task:
 ## Progress Tracker
 
 - Total Blogs: 24
-- Completed: 12
-- Remaining: 12
+- Completed: 13
+- Remaining: 11
 
 Last Updated: 2026-01-25
-Last Blog Created: how-to-use-framer-landing-pages-2026.html
+Last Blog Created: how-to-use-loom-sales-marketing-2026.html
