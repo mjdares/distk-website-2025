@@ -22,7 +22,7 @@ When resuming this task:
   - File: `how-to-use-sora-video-ads-2026.html`
   - Focus: AI video generation, ad creatives, social video content
 
-- [ ] How to Use Runway ML for Marketing Videos 2026
+- [DONE] How to Use Runway ML for Marketing Videos 2026
   - File: `how-to-use-runway-ml-marketing-2026.html`
   - Focus: Video editing, Gen-3 Alpha, motion brush, video effects
 
@@ -131,8 +131,8 @@ When resuming this task:
 ## Progress Tracker
 
 - Total Blogs: 24
-- Completed: 2
-- Remaining: 22
+- Completed: 3
+- Remaining: 21
 
 Last Updated: 2026-01-25
-Last Blog Created: how-to-use-sora-video-ads-2026.html
+Last Blog Created: how-to-use-runway-ml-marketing-2026.html
