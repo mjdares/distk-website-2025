@@ -50,7 +50,7 @@ When resuming this task:
   - File: `how-to-use-canva-ai-marketing-2026.html`
   - Focus: Magic Studio, AI design, templates, brand kits
 
-- [ ] How to Use Figma for Marketing Teams 2026
+- [DONE] How to Use Figma for Marketing Teams 2026
   - File: `how-to-use-figma-marketing-2026.html`
   - Focus: Design collaboration, prototyping, marketing assets
 
@@ -131,8 +131,8 @@ When resuming this task:
 ## Progress Tracker
 
 - Total Blogs: 24
-- Completed: 9
-- Remaining: 15
+- Completed: 10
+- Remaining: 14
 
 Last Updated: 2026-01-25
-Last Blog Created: how-to-use-canva-ai-marketing-2026.html
+Last Blog Created: how-to-use-figma-marketing-2026.html
