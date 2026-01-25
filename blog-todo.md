@@ -18,7 +18,7 @@ When resuming this task:
   - File: `how-to-use-perplexity-marketing-research-2026.html`
   - Focus: AI search, competitive research, content research, real-time insights
 
-- [ ] How to Use Sora for Video Ad Creation 2026
+- [DONE] How to Use Sora for Video Ad Creation 2026
   - File: `how-to-use-sora-video-ads-2026.html`
   - Focus: AI video generation, ad creatives, social video content
 
@@ -131,8 +131,8 @@ When resuming this task:
 ## Progress Tracker
 
 - Total Blogs: 24
-- Completed: 1
-- Remaining: 23
+- Completed: 2
+- Remaining: 22
 
 Last Updated: 2026-01-25
-Last Blog Created: how-to-use-perplexity-marketing-research-2026.html
+Last Blog Created: how-to-use-sora-video-ads-2026.html
