@@ -26,7 +26,7 @@ When resuming this task:
   - File: `how-to-use-runway-ml-marketing-2026.html`
   - Focus: Video editing, Gen-3 Alpha, motion brush, video effects
 
-- [ ] How to Use Eleven Labs for Audio Marketing 2026
+- [DONE] How to Use Eleven Labs for Audio Marketing 2026
   - File: `how-to-use-eleven-labs-marketing-2026.html`
   - Focus: AI voiceovers, podcast production, audio ads, dubbing
 
@@ -131,8 +131,8 @@ When resuming this task:
 ## Progress Tracker
 
 - Total Blogs: 24
-- Completed: 3
-- Remaining: 21
+- Completed: 4
+- Remaining: 20
 
 Last Updated: 2026-01-25
-Last Blog Created: how-to-use-runway-ml-marketing-2026.html
+Last Blog Created: how-to-use-eleven-labs-marketing-2026.html
