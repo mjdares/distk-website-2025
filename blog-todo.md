@@ -78,7 +78,7 @@ When resuming this task:
   - File: `how-to-use-amplitude-marketing-2026.html`
   - Focus: Product analytics, cohort analysis, experimentation
 
-- [ ] How to Use Segment for Marketing Data 2026
+- [DONE] How to Use Segment for Marketing Data 2026
   - File: `how-to-use-segment-marketing-2026.html`
   - Focus: CDP, data integration, audience building
 
@@ -131,8 +131,8 @@ When resuming this task:
 ## Progress Tracker
 
 - Total Blogs: 24
-- Completed: 15
-- Remaining: 9
+- Completed: 16
+- Remaining: 8
 
 Last Updated: 2026-01-26
-Last Blog Created: how-to-use-amplitude-marketing-2026.html
+Last Blog Created: how-to-use-segment-marketing-2026.html
