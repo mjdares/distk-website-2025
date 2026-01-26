@@ -102,7 +102,7 @@ When resuming this task:
   - File: `how-to-use-lemlist-outreach-2026.html`
   - Focus: Personalization, multichannel, LinkedIn + email
 
-- [ ] How to Use Smartlead for Cold Outreach 2026
+- [DONE] How to Use Smartlead for Cold Outreach 2026
   - File: `how-to-use-smartlead-outreach-2026.html`
   - Focus: Unlimited mailboxes, AI warmup, unified inbox
 
@@ -131,8 +131,8 @@ When resuming this task:
 ## Progress Tracker
 
 - Total Blogs: 24
-- Completed: 19
-- Remaining: 5
+- Completed: 20
+- Remaining: 4
 
 Last Updated: 2026-01-26
-Last Blog Created: how-to-use-lemlist-outreach-2026.html
+Last Blog Created: how-to-use-smartlead-outreach-2026.html
