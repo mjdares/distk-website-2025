@@ -98,7 +98,7 @@ When resuming this task:
   - File: `how-to-use-instantly-cold-email-2026.html`
   - Focus: Email warmup, deliverability, sequences, lead management
 
-- [ ] How to Use Lemlist for Email Outreach 2026
+- [DONE] How to Use Lemlist for Email Outreach 2026
   - File: `how-to-use-lemlist-outreach-2026.html`
   - Focus: Personalization, multichannel, LinkedIn + email
 
@@ -131,8 +131,8 @@ When resuming this task:
 ## Progress Tracker
 
 - Total Blogs: 24
-- Completed: 18
-- Remaining: 6
+- Completed: 19
+- Remaining: 5
 
 Last Updated: 2026-01-26
-Last Blog Created: how-to-use-instantly-cold-email-2026.html
+Last Blog Created: how-to-use-lemlist-outreach-2026.html
