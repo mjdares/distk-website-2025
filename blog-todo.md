@@ -94,7 +94,7 @@ When resuming this task:
   - File: `how-to-use-apollo-lead-generation-2026.html`
   - Focus: B2B database, prospecting, email sequences, enrichment
 
-- [ ] How to Use Instantly for Cold Email 2026
+- [DONE] How to Use Instantly for Cold Email 2026
   - File: `how-to-use-instantly-cold-email-2026.html`
   - Focus: Email warmup, deliverability, sequences, lead management
 
@@ -131,8 +131,8 @@ When resuming this task:
 ## Progress Tracker
 
 - Total Blogs: 24
-- Completed: 17
-- Remaining: 7
+- Completed: 18
+- Remaining: 6
 
 Last Updated: 2026-01-26
-Last Blog Created: how-to-use-supermetrics-reporting-2026.html
+Last Blog Created: how-to-use-instantly-cold-email-2026.html
