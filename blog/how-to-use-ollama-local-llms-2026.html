@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Use Ollama for Local LLMs 2026: Complete Guide to Running AI Models Offline | Distk</title>
+    <meta name="description" content="Complete guide to using Ollama for running local AI models in 2026. Learn installation, model library, API integration, privacy benefits, and running Llama, Mistral, and custom LLMs offline.">
+    <meta name="keywords" content="Ollama tutorial 2026, local LLM, offline AI models, run AI locally, Ollama installation, local language models, privacy AI, self-hosted LLM">
+    <meta name="author" content="Distk">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://distk.in/blog/how-to-use-ollama-local-llms-2026.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://distk.in/blog/how-to-use-ollama-local-llms-2026.html">
+    <meta property="og:title" content="How to Use Ollama for Local LLMs 2026">
+    <meta property="og:description" content="Complete guide to running local AI models offline with Ollama in 2026.">
+    <meta property="og:image" content="https://distk.in/assets/images/og-image.jpg">
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Article","headline":"How to Use Ollama for Local LLMs 2026: Complete Guide to Running AI Models Offline","author":{"@type":"Organization","name":"Distk"},"publisher":{"@type":"Organization","name":"Distk","logo":{"@type":"ImageObject","url":"https://distk.in/assets/images/Logo.png"}},"datePublished":"2026-01-31","dateModified":"2026-01-31"}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Ollama in 2026?","acceptedAnswer":{"@type":"Answer","text":"Ollama in 2026 is an open-source tool that lets you run large language models (Llama 3.3, Mistral, Gemma, etc.) locally on your own computer—completely offline, free, and private. Works on Mac, Windows, Linux with simple command-line interface and OpenAI-compatible API."}},{"@type":"Question","name":"Is Ollama free in 2026?","acceptedAnswer":{"@type":"Answer","text":"Yes. Ollama is 100% free and open-source (MIT license). No API costs, no subscriptions, no data sent to cloud. Only cost is your computer hardware—works on laptops with 8GB+ RAM for smaller models, 16GB+ recommended for larger models."}},{"@type":"Question","name":"What AI models can I run with Ollama in 2026?","acceptedAnswer":{"@type":"Answer","text":"Ollama supports 100+ models in 2026: Llama 3.3 (Meta), Mistral 7B/22B, Gemma 2 (Google), Phi-3 (Microsoft), DeepSeek, Qwen, CodeLlama, and custom GGUF models. Models range from 1B to 405B parameters with quantized versions for consumer hardware."}}]}
+    </script>
+
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BWDTQ1JPL2"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-BWDTQ1JPL2');</script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/blog.css">
+</head>
+<body>
+    <div class="cosmic-layer" aria-hidden="true"><span class="shooting-star"></span><span class="shooting-star"></span></div>
+    <div class="page">
+        <header class="site-header" id="top">
+            <div class="container site-header__inner">
+                <a href="../" class="logo"><img src="../assets/images/Logo.png" alt="Distk" class="logo__image"><span class="logo__text"><span class="logo__mark">distk</span><span class="logo__tagline">Distribution is the Key</span></span></a>
+                <nav class="nav"><ul class="nav__links"><li><a href="../#services">Services</a></li><li><a href="./">Blog</a></li><li><a href="../about.html">About</a></li><li><a class="is-pill" href="../#contact">Schedule callback</a></li></ul></nav>
+            </div>
+        </header>
+        <main>
+            <article class="article">
+                <div class="article__container">
+                    <a href="./" class="article__back">← Back to Blog</a>
+                    <span class="article__category">AI & Development</span>
+                    <h1 class="article__title">How to Use Ollama for Local LLMs 2026: Complete Guide to Running AI Models Offline</h1>
+                    <div class="article__meta"><span>January 2026</span><span>22 min read</span></div>
+
+                    <div class="article__content">
+                        <p><strong>Ollama in 2026 is an open-source application that enables developers and businesses to run large language models (LLMs) like Llama 3.3, Mistral, and Gemma locally on their own hardware—completely offline, private, and free—with a simple command-line interface and OpenAI-compatible API for easy integration into applications.</strong> No cloud API costs, no data privacy concerns, no internet dependency—just download a model and run it on Mac, Windows, or Linux.</p>
+
+                        <h2>What Is Ollama in 2026?</h2>
+                        <p>Ollama is a tool that makes running large language models as easy as running a database. Instead of paying per API call to OpenAI, Anthropic, or Google, you download models to your computer and run them locally. Think of it like Docker for AI models—simple installation, easy model management, and standardized API access.</p>
+
+                        <table>
+                            <thead><tr><th>Aspect</th><th>Cloud AI (OpenAI, etc.)</th><th>Ollama (Local AI)</th></tr></thead>
+                            <tbody>
+                                <tr><td><strong>Cost</strong></td><td>$3-15 per million tokens</td><td>Free (hardware cost only)</td></tr>
+                                <tr><td><strong>Privacy</strong></td><td>Data sent to cloud servers</td><td>100% local, offline</td></tr>
+                                <tr><td><strong>Internet</strong></td><td>Required</td><td>Optional (only for downloads)</td></tr>
+                                <tr><td><strong>Speed</strong></td><td>Network latency + processing</td><td>Local processing only</td></tr>
+                                <tr><td><strong>Model Selection</strong></td><td>Fixed (GPT-4, Claude, etc.)</td><td>100+ models, custom fine-tunes</td></tr>
+                                <tr><td><strong>Hardware Required</strong></td><td>None (cloud)</td><td>8GB+ RAM recommended</td></tr>
+                                <tr><td><strong>Setup Time</strong></td><td>Instant (API key)</td><td>5-10 min install + download</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h2>Why Use Ollama in 2026?</h2>
+                        <ul>
+                            <li><strong>Zero API Costs 2026:</strong> Run unlimited queries with no per-token charges—pay only for electricity.</li>
+                            <li><strong>Complete Privacy 2026:</strong> Data never leaves your machine—critical for sensitive business data, healthcare, legal.</li>
+                            <li><strong>Offline Capability 2026:</strong> Works without internet after model download—essential for air-gapped environments, demos, travel.</li>
+                            <li><strong>Model Flexibility 2026:</strong> Run 100+ models (Llama, Mistral, Gemma, custom fine-tunes)—switch models instantly.</li>
+                            <li><strong>OpenAI-Compatible API 2026:</strong> Drop-in replacement for OpenAI API—migrate existing apps with minimal code changes.</li>
+                            <li><strong>Fast Local Inference 2026:</strong> No network latency—responses limited only by your hardware speed.</li>
+                            <li><strong>Open-Source 2026:</strong> MIT licensed, community-driven, transparent—no vendor lock-in.</li>
+                        </ul>
+
+                        <h2>How to Install Ollama 2026</h2>
+
+                        <h3>Installation on macOS 2026</h3>
+                        <pre><code># Download installer
+curl -fsSL https://ollama.com/install.sh | sh
+
+# Or use Homebrew
+brew install ollama
+
+# Verify installation
+ollama --version
+# Output: ollama version 0.5.2</code></pre>
+
+                        <h3>Installation on Linux 2026</h3>
+                        <pre><code># One-line install script
+curl -fsSL https://ollama.com/install.sh | sh
+
+# Start Ollama service
+sudo systemctl start ollama
+
+# Enable on boot
+sudo systemctl enable ollama
+
+# Check status
+ollama serve</code></pre>
+
+                        <h3>Installation on Windows 2026</h3>
+                        <ol>
+                            <li>Download installer from <strong>ollama.com/download</strong></li>
+                            <li>Run <code>OllamaSetup.exe</code></li>
+                            <li>Installation creates Windows service (auto-starts)</li>
+                            <li>Open Command Prompt or PowerShell → Type <code>ollama</code> to verify</li>
+                        </ol>
+
+                        <h3>System Requirements 2026</h3>
+                        <table>
+                            <thead><tr><th>Model Size</th><th>Min RAM</th><th>Recommended RAM</th><th>GPU (Optional)</th></tr></thead>
+                            <tbody>
+                                <tr><td><strong>Small (1-3B params)</strong></td><td>4GB</td><td>8GB</td><td>Not needed</td></tr>
+                                <tr><td><strong>Medium (7-13B params)</strong></td><td>8GB</td><td>16GB</td><td>6GB VRAM (faster)</td></tr>
+                                <tr><td><strong>Large (30-70B params)</strong></td><td>32GB</td><td>64GB</td><td>24GB VRAM (required for speed)</td></tr>
+                                <tr><td><strong>Extra Large (405B params)</strong></td><td>256GB</td><td>512GB</td><td>80GB+ VRAM (A100/H100)</td></tr>
+                            </tbody>
+                        </table>
+
+                        <p><strong>Note:</strong> Most users run 7B-13B models on laptops with 16GB RAM. Quantized models (Q4, Q5) reduce memory requirements.</p>
+
+                        <h2>How to Use Ollama: Basic Commands 2026</h2>
+
+                        <h3>Download and Run Your First Model 2026</h3>
+                        <pre><code># Pull Llama 3.3 (8B parameters, ~5GB download)
+ollama pull llama3.3
+
+# Run interactive chat
+ollama run llama3.3
+
+# Chat interface appears:
+>>> Write a Python function to calculate factorial
+# Model responds with code
+
+>>> /bye
+# Exit chat</code></pre>
+
+                        <h3>Essential Ollama Commands 2026</h3>
+                        <table>
+                            <thead><tr><th>Command</th><th>Purpose</th><th>Example</th></tr></thead>
+                            <tbody>
+                                <tr><td><code>ollama pull</code></td><td>Download model</td><td><code>ollama pull mistral</code></td></tr>
+                                <tr><td><code>ollama run</code></td><td>Start chat with model</td><td><code>ollama run llama3.3</code></td></tr>
+                                <tr><td><code>ollama list</code></td><td>Show installed models</td><td><code>ollama list</code></td></tr>
+                                <tr><td><code>ollama ps</code></td><td>Show running models</td><td><code>ollama ps</code></td></tr>
+                                <tr><td><code>ollama rm</code></td><td>Delete model</td><td><code>ollama rm llama2</code></td></tr>
+                                <tr><td><code>ollama serve</code></td><td>Start API server</td><td><code>ollama serve</code></td></tr>
+                                <tr><td><code>ollama create</code></td><td>Create custom model</td><td><code>ollama create mymodel -f Modelfile</code></td></tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Popular Models in Ollama 2026</h3>
+                        <table>
+                            <thead><tr><th>Model</th><th>Size</th><th>Best For</th><th>Pull Command</th></tr></thead>
+                            <tbody>
+                                <tr><td><strong>Llama 3.3 8B</strong></td><td>5GB</td><td>General purpose, fastest</td><td><code>ollama pull llama3.3</code></td></tr>
+                                <tr><td><strong>Llama 3.3 70B</strong></td><td>40GB</td><td>Advanced reasoning</td><td><code>ollama pull llama3.3:70b</code></td></tr>
+                                <tr><td><strong>Mistral 7B</strong></td><td>4.1GB</td><td>Coding, fast responses</td><td><code>ollama pull mistral</code></td></tr>
+                                <tr><td><strong>Gemma 2 9B</strong></td><td>5.4GB</td><td>Google's open model</td><td><code>ollama pull gemma2</code></td></tr>
+                                <tr><td><strong>Phi-3</strong></td><td>2.2GB</td><td>Small, efficient</td><td><code>ollama pull phi3</code></td></tr>
+                                <tr><td><strong>CodeLlama 13B</strong></td><td>7.3GB</td><td>Code generation</td><td><code>ollama pull codellama</code></td></tr>
+                                <tr><td><strong>DeepSeek Coder</strong></td><td>6.4GB</td><td>Advanced coding</td><td><code>ollama pull deepseek-coder</code></td></tr>
+                                <tr><td><strong>Mixtral 8x7B</strong></td><td>26GB</td><td>Mixture of experts</td><td><code>ollama pull mixtral</code></td></tr>
+                            </tbody>
+                        </table>
+
+                        <h2>Using Ollama API 2026</h2>
+
+                        <h3>Start Ollama API Server 2026</h3>
+                        <pre><code># Ollama automatically starts server on install
+# Default: http://localhost:11434
+
+# Check server status
+curl http://localhost:11434
+
+# Output: Ollama is running</code></pre>
+
+                        <h3>OpenAI-Compatible API 2026</h3>
+                        <p>Ollama provides OpenAI-compatible endpoints—drop-in replacement for OpenAI SDK:</p>
+
+                        <pre><code>from openai import OpenAI
+
+# Point to Ollama instead of OpenAI
+client = OpenAI(
+    base_url="http://localhost:11434/v1",
+    api_key="ollama"  # Not used, but required by SDK
+)
+
+response = client.chat.completions.create(
+    model="llama3.3",
+    messages=[
+        {"role": "system", "content": "You are a helpful assistant."},
+        {"role": "user", "content": "Explain quantum computing in simple terms"}
+    ]
+)
+
+print(response.choices[0].message.content)</code></pre>
+
+                        <h3>Native Ollama Python Library 2026</h3>
+                        <pre><code>import ollama
+
+# Simple chat
+response = ollama.chat(
+    model='llama3.3',
+    messages=[
+        {'role': 'user', 'content': 'Write a haiku about coding'}
+    ]
+)
+print(response['message']['content'])
+
+# Streaming response
+for chunk in ollama.chat(
+    model='llama3.3',
+    messages=[{'role': 'user', 'content': 'Count to 10'}],
+    stream=True
+):
+    print(chunk['message']['content'], end='', flush=True)</code></pre>
+
+                        <h3>Ollama REST API 2026</h3>
+                        <pre><code># Generate completion
+curl http://localhost:11434/api/generate -d '{
+  "model": "llama3.3",
+  "prompt": "Why is the sky blue?",
+  "stream": false
+}'
+
+# Chat endpoint
+curl http://localhost:11434/api/chat -d '{
+  "model": "mistral",
+  "messages": [
+    {"role": "user", "content": "What is 2+2?"}
+  ]
+}'
+
+# List models
+curl http://localhost:11434/api/tags
+
+# Model info
+curl http://localhost:11434/api/show -d '{"name": "llama3.3"}'</code></pre>
+
+                        <h2>Advanced Ollama Features 2026</h2>
+
+                        <h3>Custom Modelfiles 2026</h3>
+                        <p>Create custom models with specific prompts, temperature, context length:</p>
+
+                        <pre><code># Create file: Modelfile
+FROM llama3.3
+
+# Set system prompt
+SYSTEM You are a Python coding expert. Provide concise, executable code.
+
+# Set parameters
+PARAMETER temperature 0.7
+PARAMETER top_p 0.9
+PARAMETER top_k 40
+PARAMETER num_ctx 4096
+
+# Create custom model
+ollama create python-expert -f Modelfile
+
+# Use it
+ollama run python-expert "Write a binary search function"</code></pre>
+
+                        <h3>Multimodal Models (Vision) 2026</h3>
+                        <pre><code># Pull vision model (LLaVA)
+ollama pull llava
+
+# Analyze image
+ollama run llava "What's in this image? /path/to/image.jpg"
+
+# Python API
+import ollama
+
+response = ollama.chat(
+    model='llava',
+    messages=[{
+        'role': 'user',
+        'content': 'Describe this image',
+        'images': ['./screenshot.png']
+    }]
+)
+print(response['message']['content'])</code></pre>
+
+                        <h3>Model Quantization Levels 2026</h3>
+                        <p>Ollama offers quantized versions to reduce memory usage:</p>
+
+                        <table>
+                            <thead><tr><th>Quantization</th><th>Quality</th><th>Size Reduction</th><th>Use When</th></tr></thead>
+                            <tbody>
+                                <tr><td><strong>Q2</strong></td><td>Lowest</td><td>~75%</td><td>Very limited RAM</td></tr>
+                                <tr><td><strong>Q4</strong></td><td>Good</td><td>~50%</td><td>Most common (default)</td></tr>
+                                <tr><td><strong>Q5</strong></td><td>Better</td><td>~40%</td><td>Balance quality/size</td></tr>
+                                <tr><td><strong>Q8</strong></td><td>High</td><td>~20%</td><td>Max quality on consumer hardware</td></tr>
+                                <tr><td><strong>F16/F32</strong></td><td>Maximum</td><td>0%</td><td>Research, benchmarking</td></tr>
+                            </tbody>
+                        </table>
+
+                        <pre><code># Pull specific quantization
+ollama pull llama3.3:70b-q4  # 70B model, 4-bit quantization
+ollama pull mistral:7b-q8    # 7B model, 8-bit quantization</code></pre>
+
+                        <h2>Ollama Use Cases 2026</h2>
+
+                        <h3>1. Local Chatbot Development 2026</h3>
+                        <pre><code>import ollama
+from flask import Flask, request, jsonify
+
+app = Flask(__name__)
+
+@app.route('/chat', methods=['POST'])
+def chat():
+    user_message = request.json['message']
+
+    response = ollama.chat(
+        model='llama3.3',
+        messages=[
+            {'role': 'system', 'content': 'You are a helpful customer service bot.'},
+            {'role': 'user', 'content': user_message}
+        ]
+    )
+
+    return jsonify({'reply': response['message']['content']})
+
+app.run(port=5000)</code></pre>
+
+                        <h3>2. Document Q&A with RAG 2026</h3>
+                        <pre><code>import ollama
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain.embeddings import OllamaEmbeddings
+from langchain.vectorstores import Chroma
+
+# Load document
+with open('company-handbook.txt') as f:
+    text = f.read()
+
+# Split into chunks
+splitter = RecursiveCharacterTextSplitter(chunk_size=500)
+chunks = splitter.split_text(text)
+
+# Create embeddings (local with Ollama)
+embeddings = OllamaEmbeddings(model='llama3.3')
+vectorstore = Chroma.from_texts(chunks, embeddings)
+
+# Query
+query = "What is the vacation policy?"
+relevant_docs = vectorstore.similarity_search(query, k=3)
+context = "\n".join([doc.page_content for doc in relevant_docs])
+
+# Generate answer
+response = ollama.chat(
+    model='llama3.3',
+    messages=[{
+        'role': 'user',
+        'content': f'Context: {context}\n\nQuestion: {query}'
+    }]
+)
+print(response['message']['content'])</code></pre>
+
+                        <h3>3. Code Review Assistant 2026</h3>
+                        <pre><code>import ollama
+
+code = """
+def calculate_total(items):
+    total = 0
+    for item in items:
+        total = total + item['price'] * item['quantity']
+    return total
+"""
+
+prompt = f"""Review this Python code for:
+1. Bugs
+2. Performance issues
+3. Best practices
+4. Security concerns
+
+Code:
+{code}
+
+Provide specific suggestions."""
+
+response = ollama.chat(
+    model='codellama',
+    messages=[{'role': 'user', 'content': prompt}]
+)
+
+print(response['message']['content'])</code></pre>
+
+                        <h3>4. Data Analysis Assistant 2026</h3>
+                        <pre><code>import ollama
+import pandas as pd
+
+# Load data
+df = pd.read_csv('sales_data.csv')
+summary = df.describe().to_string()
+
+prompt = f"""Analyze this sales data summary and provide insights:
+
+{summary}
+
+Identify trends, anomalies, and recommendations."""
+
+response = ollama.chat(
+    model='llama3.3',
+    messages=[{'role': 'user', 'content': prompt}]
+)
+
+print(response['message']['content'])</code></pre>
+
+                        <h2>Ollama vs. Alternatives 2026</h2>
+
+                        <table>
+                            <thead><tr><th>Tool</th><th>Interface</th><th>Ease of Use</th><th>Best For</th></tr></thead>
+                            <tbody>
+                                <tr><td><strong>Ollama</strong></td><td>CLI + API</td><td>Easy (one command)</td><td>Developers, API integration</td></tr>
+                                <tr><td><strong>LM Studio</strong></td><td>GUI</td><td>Easiest (visual)</td><td>Non-technical users, testing models</td></tr>
+                                <tr><td><strong>llama.cpp</strong></td><td>CLI (lower level)</td><td>Advanced</td><td>Performance optimization, embedded systems</td></tr>
+                                <tr><td><strong>GPT4All</strong></td><td>Desktop app</td><td>Easy</td><td>Local ChatGPT alternative</td></tr>
+                                <tr><td><strong>Jan.ai</strong></td><td>Desktop app</td><td>Easy</td><td>Privacy-focused ChatGPT replacement</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h2>Common Ollama Mistakes to Avoid 2026</h2>
+
+                        <h3>Running Models Too Large for Your RAM 2026</h3>
+                        <p><strong>Mistake:</strong> Pulling 70B model on 16GB laptop → System freezes, swapping to disk.</p>
+                        <p><strong>Fix:</strong> Use <code>ollama list</code> to check model sizes before pulling. Stick to 7B-13B models on 16GB RAM. Use quantized versions (Q4) to reduce memory.</p>
+
+                        <h3>Not Setting Context Window 2026</h3>
+                        <p><strong>Mistake:</strong> Default context (2048 tokens) too small for long conversations.</p>
+                        <p><strong>Fix:</strong> Increase in Modelfile: <code>PARAMETER num_ctx 8192</code> or via API: <code>options={'num_ctx': 8192}</code></p>
+
+                        <h3>Expecting GPT-4 Quality from 7B Models 2026</h3>
+                        <p><strong>Mistake:</strong> Disappointed when Llama 7B doesn't match GPT-4 reasoning.</p>
+                        <p><strong>Fix:</strong> Understand model capabilities. 7B: Good for basic tasks, summaries, simple code. 70B+: Complex reasoning, analysis. Or use cloud API for critical tasks.</p>
+
+                        <h3>Not Enabling GPU Acceleration 2026</h3>
+                        <p><strong>Mistake:</strong> Running on CPU only when GPU available → 10x slower.</p>
+                        <p><strong>Fix:</strong> Ollama auto-detects GPU (NVIDIA/AMD). Verify: <code>ollama ps</code> shows GPU usage. Install CUDA drivers (NVIDIA) or ROCm (AMD) if not detected.</p>
+
+                        <h3>Forgetting to Stop Running Models 2026</h3>
+                        <p><strong>Mistake:</strong> Models stay loaded in RAM after exit → Consumes memory.</p>
+                        <p><strong>Fix:</strong> Check running models: <code>ollama ps</code>. Models auto-unload after 5 min idle, but can stop manually: <code>ollama stop llama3.3</code></p>
+
+                        <h2>FAQs: Ollama for Local LLMs 2026</h2>
+
+                        <h3>Can I use Ollama for commercial applications in 2026?</h3>
+                        <p>Yes. Ollama itself is MIT licensed (fully open). Model licenses vary: Llama 3.3 (permissive commercial), Mistral (Apache 2.0, fully open), Gemma 2 (terms of use, check restrictions). Always verify specific model license before commercial deployment.</p>
+
+                        <h3>How do I speed up Ollama inference in 2026?</h3>
+                        <p>Solutions: (1) Use GPU (10x faster than CPU), (2) Use smaller/quantized models (7B Q4 vs 70B F16), (3) Reduce context window if not needed, (4) Batch requests when possible, (5) Upgrade RAM (reduce swapping), (6) Use Metal (Mac M1/M2) or CUDA (NVIDIA) acceleration.</p>
+
+                        <h3>Can Ollama run multiple models simultaneously in 2026?</h3>
+                        <p>Yes, if you have RAM. Each model loads separately. Example: Run Llama 3.3 7B (5GB) + Mistral 7B (4GB) simultaneously requires ~10GB RAM minimum. Check available memory: <code>ollama ps</code> shows loaded models.</p>
+
+                        <h3>Does Ollama work on M1/M2 Macs in 2026?</h3>
+                        <p>Excellent performance! M1/M2/M3 chips use Metal acceleration. Mac with 16GB unified memory can run 13B models comfortably, 32GB handles 30B+ models. Unified memory architecture makes Macs ideal for local LLMs.</p>
+
+                        <h3>How do I update Ollama in 2026?</h3>
+                        <p>Mac/Linux: <code>curl -fsSL https://ollama.com/install.sh | sh</code> (re-run installer). Windows: Download latest installer from ollama.com. Models don't need re-download after Ollama update.</p>
+
+                        <h3>Can I fine-tune models with Ollama in 2026?</h3>
+                        <p>Ollama doesn't include fine-tuning tools directly. For fine-tuning: (1) Use external tools (Axolotl, Unsloth, LLaMA-Factory), (2) Fine-tune to GGUF format, (3) Import to Ollama: <code>ollama create mymodel -f Modelfile</code> with <code>FROM ./my-finetuned-model.gguf</code></p>
+
+                        <h3>Is Ollama secure for enterprise use in 2026?</h3>
+                        <p>Yes, highly secure: (1) All processing local (no data exfiltration), (2) No telemetry by default, (3) Open-source (auditable code), (4) Air-gap capable (offline). For enterprise: Run behind firewall, disable internet access, audit model sources, implement access controls.</p>
+
+                        <h2>Key Takeaways: Ollama for Local LLMs 2026</h2>
+                        <ul>
+                            <li>Ollama in 2026 is the easiest way to run large language models locally—one command to install, one command to run Llama 3.3, Mistral, Gemma, and 100+ models completely free and offline.</li>
+                            <li>Zero API costs after hardware investment—unlimited queries with no per-token charges. 16GB RAM laptop can run 7B-13B models comfortably for most business use cases.</li>
+                            <li>Complete data privacy and security—nothing leaves your machine. Critical for healthcare, legal, financial services, and any sensitive data processing.</li>
+                            <li>OpenAI-compatible API makes migration simple—existing apps using OpenAI SDK can switch to Ollama with 2-line code change (base_url change only).</li>
+                            <li>Model flexibility unmatched—switch between Llama (general), CodeLlama (coding), Mistral (fast), Mixtral (powerful), or custom fine-tuned models instantly.</li>
+                            <li>Common pitfalls: Don't run models larger than your RAM, enable GPU acceleration, use quantized models (Q4/Q5) for consumer hardware, increase context window for long conversations.</li>
+                            <li>Ready to implement local AI in your business for privacy and cost savings in 2026? Distk (distk.in) helps companies deploy Ollama-based solutions, build RAG systems, and create privacy-first AI applications.</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container footer__grid">
+                <div>
+                    <a href="../" class="logo">
+                        <img src="../assets/images/Logo.png" alt="Distk" class="logo__image">
+                        <span class="logo__text">
+                            <span class="logo__mark">distk</span>
+                            <span class="logo__tagline">Distribution is the Key</span>
+                        </span>
+                    </a>
+                    <p>Operator-led revenue partner for Indian startups and SMEs, stitching AI, distribution, and enablement into services that move the top line.</p>
+                </div>
+                <div>
+                    <h3>Visit</h3>
+                    <p>Bengaluru • Ahmedabad • Udaipur • Remote-first</p>
+                </div>
+                <div>
+                    <h3>Connect</h3>
+                    <ul class="footer__links">
+                        <li><a href="mailto:connect@distk.in">connect@distk.in</a></li>
+                        <li><a href="https://www.linkedin.com/company/distk-technologies" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                        <li><a href="../privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p class="footer__note">© <span id="current-year"></span> Distk. All rights reserved.</p>
+        </footer>
+    </div>
+    <script src="../assets/js/script.js"></script>
+</body>
+</html>
