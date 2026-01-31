@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | The Team & Philosophy Behind Distk</title>
+    <meta name="description" content="Meet the team behind Distk. Operator-led growth for Indian startups and SMEs, built on curiosity, distribution thinking, and honest execution.">
+    <meta name="keywords" content="Distk team, about Distk, Mayank Jain, growth marketing team India, digital marketing agency team, AI marketing agency India">
+    <meta name="author" content="Distk">
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://distk.in/about.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://distk.in/about.html">
+    <meta property="og:title" content="About Us | The Team & Philosophy Behind Distk">
+    <meta property="og:description" content="Meet the team behind Distk. Operator-led growth for Indian startups and SMEs.">
+    <meta property="og:image" content="https://distk.in/assets/images/og-image.jpg">
+    <meta property="og:site_name" content="Distk">
+    <meta property="og:locale" content="en_IN">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About Us | Distk">
+    <meta name="twitter:description" content="Meet the team behind Distk. Operator-led growth for Indian startups and SMEs.">
+    <meta name="twitter:image" content="https://distk.in/assets/images/og-image.jpg">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        "name": "About Distk",
+        "description": "Meet the team and philosophy behind Distk, an operator-led growth agency for Indian startups and SMEs.",
+        "url": "https://distk.in/about.html",
+        "mainEntity": {
+            "@type": "Organization",
+            "name": "Distk",
+            "url": "https://distk.in",
+            "founder": {
+                "@type": "Person",
+                "name": "Mayank Jain",
+                "jobTitle": "Founder",
+                "url": "https://curiouswithmayank.com"
+            }
+        }
+    }
+    </script>
+
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <link rel="apple-touch-icon" href="assets/images/Logo.png">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BWDTQ1JPL2"></script>
+    <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-BWDTQ1JPL2');</script>
+
+    <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init', '1077520544213003');fbq('track', 'PageView');</script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        .about-hero {
+            padding: 6rem 0 3rem;
+            text-align: center;
+        }
+        .about-hero h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .about-hero .lead {
+            font-size: 1.15rem;
+            color: var(--clr-text-muted, #94a3b8);
+            max-width: 640px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* Philosophy */
+        .philosophy {
+            padding: 3rem 0 4rem;
+        }
+        .philosophy__grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .philosophy__item h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .philosophy__item p {
+            color: var(--clr-text-muted, #94a3b8);
+            line-height: 1.7;
+        }
+
+        /* Team */
+        .team-section {
+            padding: 4rem 0;
+        }
+        .team-section h2 {
+            text-align: center;
+            margin-bottom: 0.75rem;
+        }
+        .team-section .section-sub {
+            text-align: center;
+            color: var(--clr-text-muted, #94a3b8);
+            max-width: 560px;
+            margin: 0 auto 3rem;
+            line-height: 1.6;
+        }
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .team-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: border-color 0.2s;
+        }
+        .team-card:hover {
+            border-color: rgba(255,255,255,0.12);
+        }
+        .team-card__name {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        .team-card__role {
+            font-size: 0.85rem;
+            color: var(--clr-accent, #ec4899);
+            margin-bottom: 1rem;
+            display: block;
+        }
+        .team-card__bio {
+            color: var(--clr-text-muted, #94a3b8);
+            font-size: 0.95rem;
+            line-height: 1.65;
+            margin-bottom: 1rem;
+        }
+        .team-card__links {
+            display: flex;
+            gap: 1rem;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .team-card__links a {
+            font-size: 0.85rem;
+            color: var(--clr-text-muted, #94a3b8);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .team-card__links a:hover {
+            color: #fff;
+        }
+
+        /* Open roles placeholder */
+        .team-card--open {
+            border-style: dashed;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-height: 220px;
+        }
+        .team-card--open p {
+            color: var(--clr-text-muted, #94a3b8);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+        .team-card--open a {
+            color: var(--clr-accent, #ec4899);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        /* Quote */
+        .founder-quote {
+            padding: 3rem 0 4rem;
+            text-align: center;
+        }
+        .founder-quote blockquote {
+            font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+            font-style: italic;
+            max-width: 640px;
+            margin: 0 auto;
+            line-height: 1.7;
+            color: var(--clr-text-muted, #94a3b8);
+        }
+        .founder-quote cite {
+            display: block;
+            margin-top: 1rem;
+            font-style: normal;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="cosmic-layer" aria-hidden="true">
+        <span class="shooting-star"></span>
+        <span class="shooting-star"></span>
+        <span class="shooting-star"></span>
+    </div>
+    <div class="page">
+        <header class="site-header" id="top">
+            <div class="container site-header__inner">
+                <a href="./" class="logo">
+                    <img src="assets/images/Logo.png" alt="Distk owl logo" class="logo__image">
+                    <span class="logo__text">
+                        <span class="logo__mark">distk</span>
+                        <span class="logo__tagline">Distribution is the Key</span>
+                    </span>
+                </a>
+                <nav class="nav" aria-label="Primary navigation">
+                    <button class="nav__toggle" aria-expanded="false" aria-controls="primary-navigation">
+                        <span class="nav__toggle-line"></span>
+                        <span class="nav__toggle-line"></span>
+                    </button>
+                    <ul class="nav__links" id="primary-navigation">
+                        <li><a href="./#services">Services</a></li>
+                        <li><a href="./#approach">Approach</a></li>
+                        <li><a href="./#impact">Impact</a></li>
+                        <li><a href="blog/">Blog</a></li>
+                        <li><a class="is-pill" href="./#contact">Schedule callback</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <!-- Hero -->
+            <section class="about-hero">
+                <div class="container">
+                    <p class="eyebrow">About Us</p>
+                    <h1>We build growth systems for businesses that make things.</h1>
+                    <p class="lead">Distk exists because distribution is the hardest part. Great products fail without it. We are a small, operator-led team that sits inside your business, connects the dots between sales, marketing, and technology, and builds systems that compound over time.</p>
+                </div>
+            </section>
+
+            <!-- Philosophy -->
+            <section class="philosophy">
+                <div class="container">
+                    <div class="philosophy__grid">
+                        <div class="philosophy__item">
+                            <h3>Operators, not advisors</h3>
+                            <p>We don't hand you a slide deck and disappear. We get into the work: setting up campaigns, writing copy, building automations, training your team. If it touches revenue, we're in the trenches with you.</p>
+                        </div>
+                        <div class="philosophy__item">
+                            <h3>Curiosity over playbooks</h3>
+                            <p>Every business is different. Cookie-cutter strategies produce cookie-cutter results. We start by listening, asking uncomfortable questions, and understanding the real constraints before proposing anything.</p>
+                        </div>
+                        <div class="philosophy__item">
+                            <h3>Distribution is the key</h3>
+                            <p>The name says it. Building a product is the beginning, not the end. We obsess over how your product reaches the right people, through the right channels, at the right time. That's the work that moves revenue.</p>
+                        </div>
+                        <div class="philosophy__item">
+                            <h3>Systems over heroics</h3>
+                            <p>A good month shouldn't depend on one person pulling an all-nighter. We build repeatable processes, automations, and measurement loops so your growth doesn't break when someone takes a day off.</p>
+                        </div>
+                        <div class="philosophy__item">
+                            <h3>AI as a tool, not a gimmick</h3>
+                            <p>We use AI where it genuinely helps: automating repetitive work, analysing data faster, scaling content production. We don't slap "AI-powered" on things for the sake of it. If a spreadsheet solves the problem, we use a spreadsheet.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Team -->
+            <section class="team-section">
+                <div class="container">
+                    <p class="eyebrow" style="text-align:center;">Team</p>
+                    <h2>The people behind the work</h2>
+                    <p class="section-sub">Small today, growing steadily. We hire for curiosity and craft.</p>
+
+                    <div class="team-grid">
+                        <!-- Mayank -->
+                        <div class="team-card">
+                            <p class="team-card__name">Mayank Jain</p>
+                            <span class="team-card__role">Founder</span>
+                            <p class="team-card__bio">Computer engineer turned generalist. 14+ years across sales, marketing, and technology. Runs the Curious with Mayank podcast and coaches founders at accelerators across India. Believes the best growth strategies come from understanding people first and funnels second.</p>
+                            <ul class="team-card__links">
+                                <li><a href="https://www.linkedin.com/in/themayankjain" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                                <li><a href="https://curiouswithmayank.com" target="_blank" rel="noopener noreferrer">Website</a></li>
+                                <li><a href="https://www.instagram.com/curiouswithmayank/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Open roles -->
+                        <div class="team-card team-card--open">
+                            <p>We're always looking for curious people who like building things.</p>
+                            <a href="mailto:connect@distk.in">Say hello &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quote -->
+            <section class="founder-quote">
+                <div class="container">
+                    <blockquote>
+                        "I believe curiosity is a leadership muscle. The more we practice it, the more humane and joyful our businesses become."
+                        <cite>Mayank Jain</cite>
+                    </blockquote>
+                </div>
+            </section>
+
+            <!-- CTA -->
+            <section class="section section--alt">
+                <div class="container" style="text-align: center; max-width: 700px;">
+                    <p class="eyebrow">Work with us</p>
+                    <h2>Let's figure out your growth together</h2>
+                    <p style="margin-bottom: 2rem;">No pitch decks. We'll have an honest conversation about where you are, where you want to be, and whether we're the right fit.</p>
+                    <a href="./#contact" class="btn btn--primary">Schedule a Callback</a>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container footer__grid">
+                <div>
+                    <a href="./" class="logo">
+                        <img src="assets/images/Logo.png" alt="Distk owl logo" class="logo__image">
+                        <span class="logo__text">
+                            <span class="logo__mark">distk</span>
+                            <span class="logo__tagline">Distribution is the Key</span>
+                        </span>
+                    </a>
+                    <p>We help Indian startups and SMEs sell better using AI tools, smart sales strategies, and team training.</p>
+                </div>
+                <div>
+                    <h3>Visit</h3>
+                    <p>Bengaluru &bull; Ahmedabad &bull; Udaipur &bull; Remote-first</p>
+                </div>
+                <div>
+                    <h3>Connect</h3>
+                    <ul class="footer__links">
+                        <li><a href="mailto:connect@distk.in">connect@distk.in</a></li>
+                        <li><a href="https://www.linkedin.com/company/distk-technologies" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p class="footer__note">&copy; <span id="current-year"></span> Distk. All rights reserved.</p>
+        </footer>
+    </div>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
