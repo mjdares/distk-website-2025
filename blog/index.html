@@ -138,6 +138,18 @@
                     <p class="eyebrow">Insights</p>
                     <h1 class="blog-header__title">The Distk Blog</h1>
                     <p class="blog-header__desc">Expert insights on digital marketing, AI automation, GEO/AEO/SEO, and growth strategies for 2026. Practical guides from our operator team.</p>
+
+                    <!-- Search Bar -->
+                    <div class="blog-search" style="margin-top: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                        <input
+                            type="text"
+                            id="blogSearch"
+                            placeholder="Search articles by keyword, topic, or service..."
+                            style="width: 100%; padding: 0.875rem 1.25rem; border: 1px solid #e5e7eb; border-radius: 8px; font-size: 1rem; font-family: 'Inter', sans-serif; outline: none; transition: all 0.2s;"
+                            aria-label="Search blog posts"
+                        >
+                        <div id="searchResults" style="margin-top: 0.5rem; font-size: 0.875rem; color: #6b7280;"></div>
+                    </div>
                 </div>
             </section>
 
@@ -145,6 +157,19 @@
                 <div class="container">
                     <div class="blog-grid">
                         <!-- Blog Card 1 -->
+                        <article class="blog-card">
+                            <span class="blog-card__category">Design & Creative</span>
+                            <h2 class="blog-card__title">
+                                <a href="how-to-use-canva-brand-graphics-2026.html">How to Use Canva for Brand Collateral & Graphics 2026: Complete Design Guide</a>
+                            </h2>
+                            <p class="blog-card__excerpt">Complete guide to using Canva for brand collateral, marketing graphics, and visual content in 2026. Learn templates, AI features, brand kit, and professional design workflows.</p>
+                            <div class="blog-card__meta">
+                                <span>January 2026</span>
+                                <span>18 min read</span>
+                            </div>
+                        </article>
+
+                        <!-- Blog Card 2 -->
                         <article class="blog-card">
                             <span class="blog-card__category">Growth Marketing</span>
                             <h2 class="blog-card__title">
@@ -2020,5 +2045,73 @@
         </footer>
     </div>
     <script src="../assets/js/script.js"></script>
+
+    <!-- Blog Search Script -->
+    <script>
+        (function() {
+            const searchInput = document.getElementById('blogSearch');
+            const searchResults = document.getElementById('searchResults');
+            const blogCards = document.querySelectorAll('.blog-card');
+
+            if (!searchInput) return;
+
+            // Add focus styling
+            searchInput.addEventListener('focus', function() {
+                this.style.borderColor = '#3b82f6';
+                this.style.boxShadow = '0 0 0 3px rgba(59, 130, 246, 0.1)';
+            });
+
+            searchInput.addEventListener('blur', function() {
+                this.style.borderColor = '#e5e7eb';
+                this.style.boxShadow = 'none';
+            });
+
+            // Search functionality
+            searchInput.addEventListener('input', function(e) {
+                const searchTerm = e.target.value.toLowerCase().trim();
+                let visibleCount = 0;
+
+                blogCards.forEach(card => {
+                    const title = card.querySelector('.blog-card__title')?.textContent.toLowerCase() || '';
+                    const excerpt = card.querySelector('.blog-card__excerpt')?.textContent.toLowerCase() || '';
+                    const category = card.querySelector('.blog-card__category')?.textContent.toLowerCase() || '';
+
+                    const matches = title.includes(searchTerm) ||
+                                  excerpt.includes(searchTerm) ||
+                                  category.includes(searchTerm);
+
+                    if (searchTerm === '' || matches) {
+                        card.style.display = '';
+                        visibleCount++;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                // Update search results text
+                if (searchTerm === '') {
+                    searchResults.textContent = '';
+                } else if (visibleCount === 0) {
+                    searchResults.textContent = 'No articles found. Try a different search term.';
+                    searchResults.style.color = '#ef4444';
+                } else if (visibleCount === 1) {
+                    searchResults.textContent = '1 article found';
+                    searchResults.style.color = '#6b7280';
+                } else {
+                    searchResults.textContent = visibleCount + ' articles found';
+                    searchResults.style.color = '#6b7280';
+                }
+            });
+
+            // Clear search on escape key
+            searchInput.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    this.value = '';
+                    this.dispatchEvent(new Event('input'));
+                    this.blur();
+                }
+            });
+        })();
+    </script>
 </body>
 </html>
