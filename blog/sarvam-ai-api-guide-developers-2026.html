@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarvam AI API Guide for Developers 2026: Speech, Translation & Indian Language Integration | Distk</title>
+    <meta name="description" content="Sarvam AI API developer guide 2026: Complete technical guide to integrating speech-to-text, TTS, translation, and chat APIs for 22 Indian languages with code examples.">
+    <meta name="keywords" content="Sarvam AI API guide 2026, Sarvam AI developer documentation, Indian language API, speech-to-text API India, Sarvam API integration, Saarika API, Bulbul TTS">
+    <meta name="author" content="Distk">
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://distk.in/blog/sarvam-ai-api-guide-developers-2026.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://distk.in/blog/sarvam-ai-api-guide-developers-2026.html">
+    <meta property="og:title" content="Sarvam AI API Guide for Developers 2026: Complete Integration Guide">
+    <meta property="og:description" content="Technical guide to integrating Sarvam AI APIs for Indian language speech, translation, and conversational AI.">
+    <meta property="og:image" content="https://distk.in/assets/images/og-image.jpg">
+    <meta property="og:site_name" content="Distk">
+    <meta property="og:locale" content="en_IN">
+    <meta property="article:published_time" content="2026-02-08T00:00:00+05:30">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sarvam AI API Guide for Developers 2026">
+    <meta name="twitter:description" content="Complete technical guide to Sarvam AI APIs for Indian language integration in 2026.">
+    <meta name="twitter:image" content="https://distk.in/assets/images/og-image.jpg">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Sarvam AI API Guide for Developers 2026: Speech, Translation & Indian Language Integration",
+        "description": "Complete technical guide to integrating Sarvam AI APIs for speech-to-text, TTS, translation, and chat for 22 Indian languages.",
+        "image": "https://distk.in/assets/images/og-image.jpg",
+        "author": {"@type": "Organization", "name": "Distk", "url": "https://distk.in"},
+        "publisher": {"@type": "Organization", "name": "Distk", "logo": {"@type": "ImageObject", "url": "https://distk.in/assets/images/Logo.png"}},
+        "datePublished": "2026-02-08",
+        "dateModified": "2026-02-08",
+        "mainEntityOfPage": {"@type": "WebPage", "@id": "https://distk.in/blog/sarvam-ai-api-guide-developers-2026.html"}
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How do I get started with Sarvam AI API in 2026?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Sign up at sarvam.ai to get ₹1,000 free API credits. Generate your API key from the dashboard, install the Python SDK with 'pip install sarvam-ai', and make your first API call. The quickstart guide at docs.sarvam.ai covers setup in under 5 minutes with code examples for all major APIs."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What programming languages does Sarvam AI SDK support in 2026?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Sarvam AI provides an official Python SDK and REST APIs that work with any programming language. The REST API can be called from JavaScript, Java, Go, Ruby, PHP, or any language that supports HTTP requests. The Python SDK offers the most streamlined integration with built-in helper functions."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What audio formats does Sarvam AI Speech-to-Text API support in 2026?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Sarvam AI's Saarika STT model supports WAV, MP3, AAC, AIFF, OGG, OPUS, FLAC, MP4/M4A, AMR, WMA, WebM, and PCM audio formats. For REST API, audio should be under 30 seconds. For longer audio, use the Batch API for asynchronous processing."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I use Sarvam AI API for real-time applications in 2026?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, Sarvam AI APIs are optimized for real-time applications with low latency since servers are based in India. The REST API for speech-to-text provides instant results for audio under 30 seconds. Text-to-speech and translation APIs return results in milliseconds. For streaming use cases, check the WebSocket API documentation."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+    <link rel="apple-touch-icon" href="../assets/images/Logo.png">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BWDTQ1JPL2"></script>
+    <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-BWDTQ1JPL2');</script>
+
+    <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init', '1077520544213003');fbq('track', 'PageView');</script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/blog.css">
+</head>
+<body>
+    <div class="cosmic-layer" aria-hidden="true">
+        <span class="shooting-star"></span>
+        <span class="shooting-star"></span>
+        <span class="shooting-star"></span>
+    </div>
+    <div class="page">
+        <header class="site-header" id="top">
+            <div class="container site-header__inner">
+                <a href="../" class="logo">
+                    <img src="../assets/images/Logo.png" alt="Distk owl logo" class="logo__image">
+                    <span class="logo__text">
+                        <span class="logo__mark">distk</span>
+                        <span class="logo__tagline">Distribution is the Key</span>
+                    </span>
+                </a>
+                <nav class="nav" aria-label="Primary navigation">
+                    <button class="nav__toggle" aria-expanded="false" aria-controls="primary-navigation">
+                        <span class="nav__toggle-line"></span>
+                        <span class="nav__toggle-line"></span>
+                    </button>
+                    <ul class="nav__links" id="primary-navigation">
+                        <li><a href="../#services">Services</a></li>
+                        <li><a href="../#approach">Approach</a></li>
+                        <li><a href="../#impact">Impact</a></li>
+                        <li><a href="./">Blog</a></li>
+                        <li><a href="../about.html">About</a></li><li><a class="is-pill" href="../#contact">Schedule callback</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <article class="article">
+                <div class="article__container">
+                    <a href="./" class="article__back">&larr; Back to Blog</a>
+                    <span class="article__category">Developer Guide</span>
+                    <h1 class="article__title">Sarvam AI API Guide for Developers 2026: Speech, Translation & Indian Language Integration</h1>
+                    <div class="article__meta">
+                        <span>February 2026</span>
+                        <span>20 min read</span>
+                        <span>By Distk Team</span>
+                    </div>
+
+                    <div class="article__content">
+                        <p><strong>Sarvam AI provides the most comprehensive API suite for Indian language AI in 2026, covering speech-to-text, text-to-speech, translation, transliteration, and chat completion across 22+ Indian languages.</strong> This developer guide walks you through integrating every Sarvam AI API with code examples, best practices, and production-ready patterns for building multilingual Indian applications.</p>
+
+                        <p>Whether you're adding Hindi voice support to your app, building a multilingual chatbot, or creating a translation pipeline for enterprise content, this guide provides the technical foundation you need.</p>
+
+                        <nav class="toc">
+                            <p class="toc__title">In This Guide</p>
+                            <ul>
+                                <li><a href="#setup">Setup & Authentication 2026</a></li>
+                                <li><a href="#stt-api">Speech-to-Text API (Saarika) 2026</a></li>
+                                <li><a href="#stt-translate">STT Translate API 2026</a></li>
+                                <li><a href="#tts-api">Text-to-Speech API (Bulbul) 2026</a></li>
+                                <li><a href="#translation">Translation API (Mayura) 2026</a></li>
+                                <li><a href="#transliteration">Transliteration API 2026</a></li>
+                                <li><a href="#chat">Chat Completion API 2026</a></li>
+                                <li><a href="#language-codes">Language Codes Reference 2026</a></li>
+                                <li><a href="#error-handling">Error Handling 2026</a></li>
+                                <li><a href="#rate-limits">Rate Limits & Optimization 2026</a></li>
+                                <li><a href="#production">Production Best Practices 2026</a></li>
+                                <li><a href="#faqs">FAQs: Sarvam AI API 2026</a></li>
+                                <li><a href="#takeaways">Key Takeaways 2026</a></li>
+                            </ul>
+                        </nav>
+
+                        <h2 id="setup">Setup & Authentication 2026</h2>
+
+                        <h3>Install Python SDK 2026</h3>
+                        <pre><code># Install the Sarvam AI Python SDK
+pip install sarvam-ai
+
+# Or with pip3
+pip3 install sarvam-ai</code></pre>
+
+                        <h3>Authentication 2026</h3>
+                        <p>All Sarvam AI APIs use API key authentication via the <code>API-Subscription-Key</code> header.</p>
+                        <pre><code># Environment variable (recommended)
+export SARVAM_API_KEY="your_api_key_here"
+
+# Python usage
+import os
+api_key = os.environ.get("SARVAM_API_KEY")</code></pre>
+
+                        <h3>Base URL 2026</h3>
+                        <pre><code>Base URL: https://api.sarvam.ai
+
+# Headers for all requests
+headers = {
+    "Content-Type": "application/json",
+    "API-Subscription-Key": "YOUR_API_KEY"
+}</code></pre>
+
+                        <h3>Quick Connectivity Test 2026</h3>
+                        <pre><code>import requests
+
+url = "https://api.sarvam.ai/translate"
+headers = {
+    "Content-Type": "application/json",
+    "API-Subscription-Key": "YOUR_API_KEY"
+}
+payload = {
+    "input": "Hello, how are you?",
+    "source_language_code": "en-IN",
+    "target_language_code": "hi-IN",
+    "model": "mayura:v1"
+}
+
+response = requests.post(url, json=payload, headers=headers)
+print(response.json())
+# Output: {"translated_text": "नमस्ते, आप कैसे हैं?"}</code></pre>
+
+                        <h2 id="stt-api">Speech-to-Text API (Saarika) 2026</h2>
+
+                        <p>Saarika is Sarvam's ASR model for transcribing Indian language audio with industry-leading accuracy.</p>
+
+                        <h3>REST API - Quick Transcription 2026</h3>
+                        <p>For audio under 30 seconds with instant results:</p>
+                        <pre><code>import requests
+
+url = "https://api.sarvam.ai/speech-to-text"
+headers = {
+    "API-Subscription-Key": "YOUR_API_KEY"
+}
+
+# Upload audio file
+with open("audio_hindi.wav", "rb") as f:
+    files = {"file": ("audio.wav", f, "audio/wav")}
+    data = {
+        "language_code": "hi-IN",
+        "model": "saarika:v2"
+    }
+    response = requests.post(url, headers=headers,
+                            files=files, data=data)
+
+result = response.json()
+print(result["transcript"])
+# Output: "आज का मौसम बहुत अच्छा है"</code></pre>
+
+                        <h3>Batch API - Long Audio 2026</h3>
+                        <p>For audio longer than 30 seconds, use the Batch API for asynchronous processing:</p>
+                        <pre><code># Step 1: Submit batch job
+url = "https://api.sarvam.ai/speech-to-text/batch"
+headers = {
+    "API-Subscription-Key": "YOUR_API_KEY"
+}
+
+with open("long_meeting.mp3", "rb") as f:
+    files = {"file": ("meeting.mp3", f, "audio/mpeg")}
+    data = {
+        "language_code": "hi-IN",
+        "model": "saarika:v2",
+        "with_diarization": "true"
+    }
+    response = requests.post(url, headers=headers,
+                            files=files, data=data)
+
+job_id = response.json()["job_id"]
+
+# Step 2: Poll for results
+import time
+while True:
+    status_url = f"https://api.sarvam.ai/speech-to-text/batch/{job_id}"
+    status = requests.get(status_url, headers=headers).json()
+    if status["status"] == "completed":
+        print(status["transcript"])
+        break
+    time.sleep(5)  # Wait 5 seconds before polling again</code></pre>
+
+                        <h3>Supported Audio Formats 2026</h3>
+                        <table>
+                            <thead>
+                                <tr><th>Format</th><th>Extension</th><th>MIME Type</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><strong>WAV</strong></td><td>.wav</td><td>audio/wav</td></tr>
+                                <tr><td><strong>MP3</strong></td><td>.mp3</td><td>audio/mpeg</td></tr>
+                                <tr><td><strong>AAC</strong></td><td>.aac</td><td>audio/aac</td></tr>
+                                <tr><td><strong>OGG</strong></td><td>.ogg</td><td>audio/ogg</td></tr>
+                                <tr><td><strong>OPUS</strong></td><td>.opus</td><td>audio/opus</td></tr>
+                                <tr><td><strong>FLAC</strong></td><td>.flac</td><td>audio/flac</td></tr>
+                                <tr><td><strong>M4A</strong></td><td>.m4a</td><td>audio/mp4</td></tr>
+                                <tr><td><strong>WebM</strong></td><td>.webm</td><td>audio/webm</td></tr>
+                                <tr><td><strong>AMR</strong></td><td>.amr</td><td>audio/amr</td></tr>
+                                <tr><td><strong>WMA</strong></td><td>.wma</td><td>audio/x-ms-wma</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h2 id="stt-translate">Speech-to-Text Translate API 2026</h2>
+
+                        <p>Combines transcription and translation in a single API call. Automatically detects the spoken language, transcribes it, and translates to English.</p>
+
+                        <pre><code>url = "https://api.sarvam.ai/speech-to-text-translate"
+headers = {
+    "API-Subscription-Key": "YOUR_API_KEY"
+}
+
+with open("tamil_audio.wav", "rb") as f:
+    files = {"file": ("audio.wav", f, "audio/wav")}
+    data = {
+        "model": "saarika:v2"
+        # No need to specify source language - auto-detected
+    }
+    response = requests.post(url, headers=headers,
+                            files=files, data=data)
+
+result = response.json()
+print(f"Detected: {result['language_code']}")
+print(f"Transcript: {result['transcript']}")
+print(f"Translation: {result['translated_text']}")
+# Detected: ta-IN
+# Transcript: "இன்று வானிலை மிகவும் நன்றாக உள்ளது"
+# Translation: "The weather is very nice today"</code></pre>
+
+                        <h2 id="tts-api">Text-to-Speech API (Bulbul) 2026</h2>
+
+                        <p>Bulbul generates natural-sounding speech in Indian languages with multiple voice options.</p>
+
+                        <h3>Basic TTS 2026</h3>
+                        <pre><code>url = "https://api.sarvam.ai/text-to-speech"
+headers = {
+    "Content-Type": "application/json",
+    "API-Subscription-Key": "YOUR_API_KEY"
+}
+
+payload = {
+    "input": "नमस्ते, मेरा नाम सर्वम है। मैं आपकी कैसे मदद कर सकता हूँ?",
+    "language_code": "hi-IN",
+    "model": "bulbul:v1",
+    "voice": "meera",  # Female Hindi voice
+    "speed": 1.0
+}
+
+response = requests.post(url, json=payload, headers=headers)
+
+# Save audio file
+with open("output.wav", "wb") as f:
+    f.write(response.content)</code></pre>
+
+                        <h3>Available Voices 2026</h3>
+                        <table>
+                            <thead>
+                                <tr><th>Language</th><th>Voice Name</th><th>Gender</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><strong>Hindi</strong></td><td>meera, arvind</td><td>Female, Male</td></tr>
+                                <tr><td><strong>Tamil</strong></td><td>amala, karthik</td><td>Female, Male</td></tr>
+                                <tr><td><strong>Telugu</strong></td><td>lakshmi, ravi</td><td>Female, Male</td></tr>
+                                <tr><td><strong>Bengali</strong></td><td>ananya, soham</td><td>Female, Male</td></tr>
+                                <tr><td><strong>Kannada</strong></td><td>kavya, pradeep</td><td>Female, Male</td></tr>
+                                <tr><td><strong>Malayalam</strong></td><td>devika, arun</td><td>Female, Male</td></tr>
+                                <tr><td><strong>Gujarati</strong></td><td>diya, harsh</td><td>Female, Male</td></tr>
+                                <tr><td><strong>Marathi</strong></td><td>sneha, sachin</td><td>Female, Male</td></tr>
+                                <tr><td><strong>English</strong></td><td>priya, raj</td><td>Female, Male</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h2 id="translation">Translation API (Mayura) 2026</h2>
+
+                        <h3>Basic Translation 2026</h3>
+                        <pre><code>url = "https://api.sarvam.ai/translate"
+headers = {
+    "Content-Type": "application/json",
+    "API-Subscription-Key": "YOUR_API_KEY"
+}
+
+payload = {
+    "input": "India's digital economy is growing rapidly with UPI transactions crossing 10 billion per month.",
+    "source_language_code": "en-IN",
+    "target_language_code": "hi-IN",
+    "model": "mayura:v1"
+}
+
+response = requests.post(url, json=payload, headers=headers)
+result = response.json()
+print(result["translated_text"])</code></pre>
+
+                        <h3>Multi-Language Batch Translation 2026</h3>
+                        <pre><code># Translate to multiple Indian languages at once
+source_text = "Welcome to our platform"
+target_languages = ["hi-IN", "ta-IN", "te-IN", "bn-IN", "mr-IN", "gu-IN"]
+
+for lang in target_languages:
+    payload = {
+        "input": source_text,
+        "source_language_code": "en-IN",
+        "target_language_code": lang,
+        "model": "mayura:v1"
+    }
+    response = requests.post(url, json=payload, headers=headers)
+    result = response.json()
+    print(f"{lang}: {result['translated_text']}")</code></pre>
+
+                        <h2 id="transliteration">Transliteration API 2026</h2>
+
+                        <p>Convert text between scripts while preserving pronunciation. Essential for handling romanized Indian language input common in chat and social media.</p>
+
+                        <pre><code>url = "https://api.sarvam.ai/transliterate"
+headers = {
+    "Content-Type": "application/json",
+    "API-Subscription-Key": "YOUR_API_KEY"
+}
+
+# Romanized Hindi to Devanagari
+payload = {
+    "input": "namaste aap kaise hain",
+    "source_language_code": "en-IN",
+    "target_language_code": "hi-IN"
+}
+
+response = requests.post(url, json=payload, headers=headers)
+print(response.json()["transliterated_text"])
+# Output: "नमस्ते आप कैसे हैं"</code></pre>
+
+                        <h2 id="chat">Chat Completion API (Sarvam-M) 2026</h2>
+
+                        <p>Multilingual conversational AI for building chatbots and assistants. Currently free for basic usage.</p>
+
+                        <pre><code>url = "https://api.sarvam.ai/chat/completions"
+headers = {
+    "Content-Type": "application/json",
+    "API-Subscription-Key": "YOUR_API_KEY"
+}
+
+payload = {
+    "model": "sarvam-m",
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful customer support assistant. Respond in the same language the user writes in."
+        },
+        {
+            "role": "user",
+            "content": "मेरा ऑर्डर कहाँ है? ऑर्डर नंबर #12345"
+        }
+    ],
+    "temperature": 0.7,
+    "max_tokens": 500
+}
+
+response = requests.post(url, json=payload, headers=headers)
+result = response.json()
+print(result["choices"][0]["message"]["content"])</code></pre>
+
+                        <h2 id="language-codes">Language Codes Reference 2026</h2>
+
+                        <table>
+                            <thead>
+                                <tr><th>Language</th><th>Code</th><th>Script</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><strong>Hindi</strong></td><td>hi-IN</td><td>Devanagari</td></tr>
+                                <tr><td><strong>Bengali</strong></td><td>bn-IN</td><td>Bengali</td></tr>
+                                <tr><td><strong>Tamil</strong></td><td>ta-IN</td><td>Tamil</td></tr>
+                                <tr><td><strong>Telugu</strong></td><td>te-IN</td><td>Telugu</td></tr>
+                                <tr><td><strong>Marathi</strong></td><td>mr-IN</td><td>Devanagari</td></tr>
+                                <tr><td><strong>Gujarati</strong></td><td>gu-IN</td><td>Gujarati</td></tr>
+                                <tr><td><strong>Kannada</strong></td><td>kn-IN</td><td>Kannada</td></tr>
+                                <tr><td><strong>Malayalam</strong></td><td>ml-IN</td><td>Malayalam</td></tr>
+                                <tr><td><strong>Odia</strong></td><td>od-IN</td><td>Odia</td></tr>
+                                <tr><td><strong>Punjabi</strong></td><td>pa-IN</td><td>Gurmukhi</td></tr>
+                                <tr><td><strong>Assamese</strong></td><td>as-IN</td><td>Bengali</td></tr>
+                                <tr><td><strong>Urdu</strong></td><td>ur-IN</td><td>Nastaliq</td></tr>
+                                <tr><td><strong>English</strong></td><td>en-IN</td><td>Latin</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h2 id="error-handling">Error Handling 2026</h2>
+
+                        <h3>Common Error Codes 2026</h3>
+                        <table>
+                            <thead>
+                                <tr><th>Code</th><th>Meaning</th><th>Solution</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><strong>401</strong></td><td>Invalid API key</td><td>Check your API-Subscription-Key header</td></tr>
+                                <tr><td><strong>402</strong></td><td>Insufficient credits</td><td>Top up credits on the dashboard</td></tr>
+                                <tr><td><strong>413</strong></td><td>Audio too large</td><td>Use Batch API for files over 30 seconds</td></tr>
+                                <tr><td><strong>415</strong></td><td>Unsupported format</td><td>Convert to a supported audio format</td></tr>
+                                <tr><td><strong>429</strong></td><td>Rate limit exceeded</td><td>Implement exponential backoff</td></tr>
+                                <tr><td><strong>500</strong></td><td>Server error</td><td>Retry with backoff, contact support if persistent</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Robust Error Handling Pattern 2026</h3>
+                        <pre><code>import requests
+import time
+
+def sarvam_api_call(url, payload, headers, max_retries=3):
+    """Make API call with retry logic and error handling."""
+    for attempt in range(max_retries):
+        try:
+            response = requests.post(url, json=payload,
+                                    headers=headers, timeout=30)
+            if response.status_code == 200:
+                return response.json()
+            elif response.status_code == 429:
+                wait_time = 2 ** attempt
+                time.sleep(wait_time)
+                continue
+            elif response.status_code == 402:
+                raise Exception("Insufficient credits")
+            else:
+                if attempt < max_retries - 1:
+                    time.sleep(1)
+                    continue
+                raise Exception(f"API error: {response.status_code}")
+        except requests.exceptions.Timeout:
+            if attempt < max_retries - 1:
+                time.sleep(2)
+                continue
+            raise
+    raise Exception("Max retries exceeded")</code></pre>
+
+                        <h2 id="rate-limits">Rate Limits & Optimization 2026</h2>
+
+                        <h3>Optimization Tips 2026</h3>
+                        <ul>
+                            <li><strong>Cache translations:</strong> Store repeated translations to avoid redundant API calls</li>
+                            <li><strong>Batch where possible:</strong> Group multiple short translations into fewer calls</li>
+                            <li><strong>Compress audio:</strong> Use OGG/OPUS for smaller file sizes with maintained quality</li>
+                            <li><strong>Specify language:</strong> Always provide language codes instead of relying on auto-detection</li>
+                            <li><strong>Use connection pooling:</strong> Reuse HTTP connections for multiple API calls</li>
+                        </ul>
+
+                        <h3>Credit-Saving Cache Pattern 2026</h3>
+                        <pre><code>import hashlib
+
+translation_cache = {}
+
+def translate_with_cache(text, source_lang, target_lang):
+    cache_key = hashlib.md5(
+        f"{text}:{source_lang}:{target_lang}".encode()
+    ).hexdigest()
+
+    if cache_key in translation_cache:
+        return translation_cache[cache_key]
+
+    payload = {
+        "input": text,
+        "source_language_code": source_lang,
+        "target_language_code": target_lang,
+        "model": "mayura:v1"
+    }
+    response = requests.post(
+        "https://api.sarvam.ai/translate",
+        json=payload, headers=headers
+    )
+    result = response.json()["translated_text"]
+    translation_cache[cache_key] = result
+    return result</code></pre>
+
+                        <h2 id="production">Production Best Practices 2026</h2>
+
+                        <h3>Security 2026</h3>
+                        <ul>
+                            <li><strong>Never hardcode API keys:</strong> Use environment variables or secret managers</li>
+                            <li><strong>Rotate keys regularly:</strong> Generate new keys periodically</li>
+                            <li><strong>Use server-side calls:</strong> Never expose API keys in frontend JavaScript</li>
+                            <li><strong>Set up alerts:</strong> Monitor for unusual credit consumption</li>
+                        </ul>
+
+                        <h3>Architecture Patterns 2026</h3>
+                        <ul>
+                            <li><strong>Build a proxy layer:</strong> Route all Sarvam API calls through your backend</li>
+                            <li><strong>Implement queuing:</strong> Use Redis/RabbitMQ for high-volume batch processing</li>
+                            <li><strong>Add monitoring:</strong> Track API latency, error rates, and credit usage</li>
+                            <li><strong>Cache aggressively:</strong> Cache translations, transliterations for repeated content</li>
+                            <li><strong>Handle failures gracefully:</strong> Fall back to English if translation fails</li>
+                        </ul>
+
+                        <h3>End-to-End Voice Pipeline 2026</h3>
+                        <pre><code>def voice_to_voice_pipeline(audio_file, target_language):
+    """
+    Complete pipeline: Listen in any Indian language,
+    understand, respond, and speak back.
+    """
+    # Step 1: Transcribe + Translate to English
+    transcript = speech_to_text_translate(audio_file)
+
+    # Step 2: Process with chat completion
+    response = chat_completion(
+        system="You are a helpful assistant.",
+        user=transcript["translated_text"]
+    )
+
+    # Step 3: Translate response to target language
+    translated = translate(
+        text=response, source="en-IN",
+        target=target_language
+    )
+
+    # Step 4: Generate speech in target language
+    audio = text_to_speech(
+        text=translated, language=target_language
+    )
+    return audio</code></pre>
+
+                        <section class="faq-section" id="faqs">
+                            <h2>FAQs: Sarvam AI API 2026</h2>
+                            <div class="faq-item">
+                                <h3>How do I get started with Sarvam AI API in 2026?</h3>
+                                <p>Sign up at sarvam.ai to get ₹1,000 free API credits. Generate your API key from the dashboard, install the Python SDK with 'pip install sarvam-ai', and make your first API call. The quickstart guide at docs.sarvam.ai covers setup in under 5 minutes with code examples for all major APIs.</p>
+                            </div>
+                            <div class="faq-item">
+                                <h3>What programming languages does Sarvam AI SDK support in 2026?</h3>
+                                <p>Sarvam AI provides an official Python SDK and REST APIs that work with any programming language. The REST API can be called from JavaScript, Java, Go, Ruby, PHP, or any language that supports HTTP requests. The Python SDK offers the most streamlined integration with built-in helper functions.</p>
+                            </div>
+                            <div class="faq-item">
+                                <h3>What audio formats does Sarvam AI Speech-to-Text API support in 2026?</h3>
+                                <p>Sarvam AI's Saarika STT model supports WAV, MP3, AAC, AIFF, OGG, OPUS, FLAC, MP4/M4A, AMR, WMA, WebM, and PCM audio formats. For REST API, audio should be under 30 seconds. For longer audio, use the Batch API for asynchronous processing.</p>
+                            </div>
+                            <div class="faq-item">
+                                <h3>Can I use Sarvam AI API for real-time applications in 2026?</h3>
+                                <p>Yes, Sarvam AI APIs are optimized for real-time applications with low latency since servers are based in India. The REST API for speech-to-text provides instant results for audio under 30 seconds. Text-to-speech and translation APIs return results in milliseconds. For streaming use cases, check the WebSocket API documentation.</p>
+                            </div>
+                        </section>
+
+                        <div class="key-takeaways" id="takeaways">
+                            <h2>Key Takeaways: Sarvam AI API 2026</h2>
+                            <ul>
+                                <li><strong>Comprehensive API Suite 2026:</strong> Sarvam covers STT (Saarika), TTS (Bulbul), Translation (Mayura), Transliteration, and Chat Completion for 22+ Indian languages in one platform.</li>
+                                <li><strong>Developer-Friendly 2026:</strong> Python SDK, REST APIs, starter notebooks, and comprehensive documentation at docs.sarvam.ai make integration straightforward.</li>
+                                <li><strong>Production-Ready 2026:</strong> Low-latency India-based servers, multiple audio format support, batch processing for long files, and enterprise SLAs for production workloads.</li>
+                                <li><strong>Cost-Effective 2026:</strong> Starting at ₹30/hour for STT and ₹1,000 free credits, Sarvam is 2-3x cheaper than global alternatives with better Indian language accuracy.</li>
+                                <li><strong>Build Complete Pipelines 2026:</strong> Chain STT → Translation → Chat → TTS for end-to-end multilingual voice applications serving India's 1.4 billion population.</li>
+                            </ul>
+                        </div>
+
+                        <div class="article-cta">
+                            <h3>Need Help Integrating Indian Language AI?</h3>
+                            <p>Distk helps businesses integrate Sarvam AI and other Indian language AI platforms into their products and workflows. From architecture design to production deployment, let's build your multilingual AI stack.</p>
+                            <a href="../#contact" class="btn btn--primary">Schedule a Callback</a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container footer__grid">
+                <div>
+                    <a href="../" class="logo">
+                        <img src="../assets/images/Logo.png" alt="Distk owl logo" class="logo__image">
+                        <span class="logo__text">
+                            <span class="logo__mark">distk</span>
+                            <span class="logo__tagline">Distribution is the Key</span>
+                        </span>
+                    </a>
+                    <p>Operator-led revenue partner for Indian startups and SMEs, stitching AI, distribution, and enablement into services that move the top line.</p>
+                </div>
+                <div>
+                    <h3>Visit</h3>
+                    <p>Bengaluru &bull; Ahmedabad &bull; Udaipur &bull; Remote-first</p>
+                </div>
+                <div>
+                    <h3>Connect</h3>
+                    <ul class="footer__links">
+                        <li><a href="mailto:connect@distk.in">connect@distk.in</a></li>
+                        <li><a href="https://www.linkedin.com/company/distk-technologies" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                        <li><a href="../privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p class="footer__note">&copy; <span id="current-year"></span> Distk. All rights reserved.</p>
+        </footer>
+    </div>
+    <script src="../assets/js/script.js"></script>
+</body>
+</html>
