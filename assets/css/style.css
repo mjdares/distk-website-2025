@@ -565,78 +565,130 @@ p {
 
 .hero__panel {
   display: flex;
-  align-items: stretch;
-}
-
-.hero__panel-body {
-  flex: 1;
-  padding: clamp(2rem, 4vw, 2.6rem);
-  border-radius: 26px;
-  background:
-    radial-gradient(circle at 18% 18%, rgba(120, 128, 255, 0.22), transparent 62%),
-    linear-gradient(165deg, rgba(10, 12, 28, 0.95), rgba(18, 20, 44, 0.7));
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: var(--shadow);
-  display: grid;
-  gap: 1.6rem;
-  transform: perspective(1100px)
-    rotateY(calc(var(--hero-tilt-x) * 0.08deg))
-    rotateX(calc(var(--hero-tilt-y) * -0.08deg));
-  transition: transform 0.6s ease;
-}
-
-.hero__signal {
-  display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  padding: 0.35rem 0.75rem;
-  border-radius: 999px;
-  background: rgba(102, 107, 255, 0.18);
-  color: rgba(221, 222, 255, 0.9);
-  font-size: 0.7rem;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
+  justify-content: center;
 }
 
-.hero__panel h2 {
-  margin: 0.8rem 0 0;
-  font-size: 1.8rem;
+/* ---- GLOBE ---- */
+.hero__globe-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.6rem;
 }
 
-.hero__list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  gap: 0.8rem;
-  color: rgba(225, 227, 255, 0.82);
+.hero__globe {
+  width: clamp(260px, 28vw, 380px);
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.hero__list li {
-  padding-left: 1.5rem;
+.globe__sphere {
   position: relative;
-}
-
-.hero__list li::before {
-  content: '';
-  position: absolute;
-  width: 8px;
-  height: 8px;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
-  background: linear-gradient(130deg, #6366f1, #8b5cf6);
-  left: 0;
-  top: 0.55rem;
+  background:
+    radial-gradient(circle at 35% 30%, rgba(120, 128, 255, 0.3), transparent 55%),
+    radial-gradient(circle at 65% 70%, rgba(99, 102, 241, 0.15), transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(10, 12, 28, 0.95), rgba(18, 20, 44, 0.85));
+  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 0 60px rgba(99, 102, 241, 0.2),
+    0 0 120px rgba(99, 102, 241, 0.08),
+    inset 0 0 60px rgba(99, 102, 241, 0.1);
+  overflow: hidden;
 }
 
-.hero__mission {
+.globe__ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.globe__ring--eq {
+  width: 100%;
+  height: 34%;
+  top: 33%;
+  left: 0;
+  border-radius: 50%;
+}
+
+.globe__ring--tropic-n {
+  width: 80%;
+  height: 26%;
+  top: 18%;
+  left: 10%;
+}
+
+.globe__ring--tropic-s {
+  width: 80%;
+  height: 26%;
+  top: 56%;
+  left: 10%;
+}
+
+.globe__ring--meridian {
+  width: 40%;
+  height: 100%;
+  top: 0;
+  left: 30%;
+}
+
+.globe__ring--meridian-2 {
+  width: 70%;
+  height: 100%;
+  top: 0;
+  left: 15%;
+}
+
+/* City dots on globe — positioned roughly where India sits */
+.globe__dot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #818cf8;
+  box-shadow: 0 0 10px rgba(129, 140, 248, 0.7), 0 0 24px rgba(129, 140, 248, 0.35);
+}
+
+.globe__dot--bengaluru {
+  bottom: 34%;
+  left: 58%;
+}
+
+.globe__dot--ahmedabad {
+  bottom: 42%;
+  left: 48%;
+}
+
+.globe__dot--udaipur {
+  bottom: 46%;
+  left: 46%;
+}
+
+.globe__dot--label {
+  width: auto;
+  height: auto;
+  background: none;
+  box-shadow: none;
+  bottom: 38%;
+  left: 63%;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(199, 210, 255, 0.8);
+}
+
+.hero__globe-caption {
   margin: 0;
-  padding: 1rem 1.25rem;
-  border-radius: 18px;
-  border: 1px solid rgba(120, 131, 255, 0.2);
-  background: linear-gradient(140deg, rgba(98, 104, 255, 0.18), rgba(82, 92, 240, 0.08));
-  color: rgba(230, 232, 255, 0.9);
-  font-weight: 500;
-  letter-spacing: 0.015em;
+  text-align: center;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  color: rgba(199, 210, 255, 0.75);
 }
 
 .card-grid {
@@ -1153,20 +1205,8 @@ p {
     padding: 1.8rem;
   }
 
-  .hero__panel {
-    padding-top: clamp(4rem, 12vw, 5.5rem);
-  }
-
-  .hero__panel-body {
-    margin-top: clamp(3rem, 10vw, 4.5rem);
-  }
-
-  .hero__owl {
-    top: clamp(-3.2rem, -9vw, -2.4rem);
-    right: 50%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: clamp(110px, 22vw, 170px);
+  .hero__globe {
+    width: clamp(220px, 50vw, 300px);
   }
 
   .contact {
@@ -1184,8 +1224,8 @@ p {
     grid-template-columns: 1fr;
   }
 
-  .hero__panel-body {
-    padding: 1.8rem;
+  .hero__globe {
+    width: clamp(200px, 60vw, 260px);
   }
 
   .card-grid--two,
@@ -1233,17 +1273,6 @@ p {
     margin-bottom: 2.2rem;
   }
 
-  .hero__panel {
-    padding-top: clamp(3.6rem, 14vw, 4.8rem);
-  }
-
-  .hero__panel-body {
-    margin-top: clamp(2.6rem, 12vw, 4rem);
-  }
-
-  .hero__owl {
-    width: clamp(96px, 30vw, 140px);
-  }
 
 }
 
@@ -1260,9 +1289,8 @@ p {
     padding: 1.6rem;
   }
 
-  .hero__panel-body {
-    padding: 1.6rem;
-    border-radius: 20px;
+  .hero__globe {
+    width: clamp(180px, 55vw, 240px);
   }
 
   .card,
@@ -1275,15 +1303,6 @@ p {
 
   .footer__grid {
     grid-template-columns: 1fr;
-  }
-
-  .hero__panel-body {
-    margin-top: 2.8rem;
-  }
-
-  .hero__owl {
-    top: -2.4rem;
-    width: 120px;
   }
 
   .hero__orbit {
