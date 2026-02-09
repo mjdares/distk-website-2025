@@ -99,14 +99,22 @@ body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-heigh
 .hero__sub{font-size:1.15rem;color:var(--mid);max-width:48ch;line-height:1.65;margin-bottom:2.2rem}
 .hero__actions{display:flex;gap:1rem;flex-wrap:wrap}
 .hero .container{display:grid;grid-template-columns:1.1fr 0.9fr;gap:3rem;align-items:center}
-.hero__panel{border:1.5px solid var(--light);padding:2rem}
-.hero__panel-head{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:1.2rem}
-.hero__panel ul{list-style:none;display:flex;flex-direction:column;gap:0.8rem}
-.hero__panel li{font-size:0.9rem;color:var(--mid);padding-left:1.2rem;position:relative;line-height:1.5}
-.hero__panel li::before{content:'';position:absolute;left:0;top:0.55rem;width:6px;height:6px;background:var(--accent)}
-.hero__panel-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--light);text-align:center}
-.hero__panel-stats strong{font-family:var(--mono);font-size:1.1rem;display:block;color:var(--ink)}
-.hero__panel-stats span{font-size:0.7rem;color:var(--mid)}
+.hero__panel{display:flex;align-items:center;justify-content:center}
+.hero__globe-wrap{display:flex;flex-direction:column;align-items:center;gap:1.4rem}
+.hero__globe{width:clamp(220px,22vw,320px);aspect-ratio:1;display:flex;align-items:center;justify-content:center}
+.globe__sphere{position:relative;width:100%;height:100%;border-radius:50%;background:radial-gradient(circle at 35% 30%,rgba(120,128,255,0.25),transparent 55%),radial-gradient(circle at 65% 70%,rgba(99,102,241,0.12),transparent 50%),radial-gradient(circle at 50% 50%,rgba(245,245,250,0.95),rgba(235,235,245,0.85));border:1.5px solid var(--light);box-shadow:0 0 40px rgba(99,102,241,0.08),inset 0 0 40px rgba(99,102,241,0.04);overflow:hidden}
+.globe__ring{position:absolute;border-radius:50%;border:1px solid rgba(0,0,0,0.06)}
+.globe__ring--eq{width:100%;height:34%;top:33%;left:0}
+.globe__ring--tropic-n{width:80%;height:26%;top:18%;left:10%}
+.globe__ring--tropic-s{width:80%;height:26%;top:56%;left:10%}
+.globe__ring--meridian{width:40%;height:100%;top:0;left:30%}
+.globe__ring--meridian-2{width:70%;height:100%;top:0;left:15%}
+.globe__dot{position:absolute;width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px rgba(200,30,30,0.4)}
+.globe__dot--bengaluru{bottom:34%;left:58%}
+.globe__dot--ahmedabad{bottom:42%;left:48%}
+.globe__dot--udaipur{bottom:46%;left:46%}
+.globe__dot--label{width:auto;height:auto;background:none;box-shadow:none;bottom:38%;left:63%;font-size:0.6rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--mid)}
+.hero__globe-caption{margin:0;text-align:center;font-size:0.85rem;letter-spacing:0.03em;color:var(--mid)}
 .btn{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.85rem 2rem;text-decoration:none;transition:all 0.25s;display:inline-block}
 .btn--fill{background:var(--accent);color:#fff}
 .btn--fill:hover{background:#c42a0e}
@@ -215,17 +223,21 @@ body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-heigh
       </div>
     </div>
     <aside class="hero__panel">
-      <div class="hero__panel-head">What you get</div>
-      <ul>
-        <li>Custom AI agents and chatbots for lead capture and support</li>
-        <li>GEO, AEO and SEO to rank on Google and every AI engine</li>
-        <li>Go-to-market strategy and sales enablement</li>
-        <li>Marketing automation, CRM workflows, and dashboards</li>
-      </ul>
-      <div class="hero__panel-stats">
-        <div><strong>20%+</strong><span>Revenue lift</span></div>
-        <div><strong>50+</strong><span>Brands</span></div>
-        <div><strong>15+</strong><span>Industries</span></div>
+      <div class="hero__globe-wrap">
+        <div class="hero__globe" aria-hidden="true">
+          <div class="globe__sphere">
+            <div class="globe__ring globe__ring--eq"></div>
+            <div class="globe__ring globe__ring--tropic-n"></div>
+            <div class="globe__ring globe__ring--tropic-s"></div>
+            <div class="globe__ring globe__ring--meridian"></div>
+            <div class="globe__ring globe__ring--meridian-2"></div>
+            <div class="globe__dot globe__dot--bengaluru" title="Bengaluru"></div>
+            <div class="globe__dot globe__dot--ahmedabad" title="Ahmedabad"></div>
+            <div class="globe__dot globe__dot--udaipur" title="Udaipur"></div>
+            <div class="globe__dot globe__dot--label">India</div>
+          </div>
+        </div>
+        <p class="hero__globe-caption">Serving 50+ brands across 15+ industries</p>
       </div>
     </aside>
   </div>
