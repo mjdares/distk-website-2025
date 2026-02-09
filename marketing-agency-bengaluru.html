@@ -103,6 +103,15 @@ body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-heigh
 .btn--fill:hover{background:#c42a0e}
 .btn--outline{border:1.5px solid var(--ink);color:var(--ink)}
 .btn--outline:hover{background:var(--ink);color:var(--paper)}
+.hero .container{display:grid;grid-template-columns:1.1fr 0.9fr;gap:3rem;align-items:center}
+.hero__panel{border:1.5px solid var(--light);padding:2rem}
+.hero__panel-head{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:1.2rem}
+.hero__panel ul{list-style:none;display:flex;flex-direction:column;gap:0.8rem}
+.hero__panel li{font-size:0.9rem;color:var(--mid);padding-left:1.2rem;position:relative;line-height:1.5}
+.hero__panel li::before{content:'';position:absolute;left:0;top:0.55rem;width:6px;height:6px;background:var(--accent)}
+.hero__panel-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--light);text-align:center}
+.hero__panel-stats strong{font-family:var(--mono);font-size:1.1rem;display:block;color:var(--ink)}
+.hero__panel-stats span{font-size:0.7rem;color:var(--mid)}
 
 /* ---- STATS BAR ---- */
 .stats{border-top:1px solid var(--light);border-bottom:1px solid var(--light);padding:2.2rem 0}
@@ -176,6 +185,7 @@ body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-heigh
   .clients__grid{grid-template-columns:1fr}
   .cta__layout{grid-template-columns:1fr;gap:2.5rem}
   .hero::before{font-size:8rem;right:-5%}
+  .hero .container{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -195,13 +205,29 @@ body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-heigh
 <!-- Hero -->
 <section class="hero">
   <div class="container">
-    <div class="hero__tag">Bengaluru, India</div>
-    <h1>Marketing Agency in <em>Bengaluru</em></h1>
-    <p class="hero__sub">We help Bengaluru businesses sell better and market more effectively using AI-powered strategy, automation, and hands-on execution. From Koramangala startups to Whitefield enterprises.</p>
-    <div class="hero__actions">
-      <a href="#contact" class="btn btn--fill">Start a project</a>
-      <a href="index.html#services" class="btn btn--outline">Our services</a>
+    <div>
+      <div class="hero__tag">Bengaluru, India</div>
+      <h1>Marketing Agency in <em>Bengaluru</em></h1>
+      <p class="hero__sub">We help Bengaluru businesses sell better and market more effectively using AI-powered strategy, automation, and hands-on execution. From Koramangala startups to Whitefield enterprises.</p>
+      <div class="hero__actions">
+        <a href="#contact" class="btn btn--fill">Start a project</a>
+        <a href="index.html#services" class="btn btn--outline">Our services</a>
+      </div>
     </div>
+    <aside class="hero__panel">
+      <div class="hero__panel-head">What you get</div>
+      <ul>
+        <li>Custom AI agents and chatbots for lead capture and support</li>
+        <li>GEO, AEO and SEO to rank on Google and every AI engine</li>
+        <li>Go-to-market strategy and sales enablement</li>
+        <li>Marketing automation, CRM workflows, and dashboards</li>
+      </ul>
+      <div class="hero__panel-stats">
+        <div><strong>20%+</strong><span>Revenue lift</span></div>
+        <div><strong>50+</strong><span>Brands</span></div>
+        <div><strong>15+</strong><span>Industries</span></div>
+      </div>
+    </aside>
   </div>
 </section>
 
@@ -288,45 +314,33 @@ body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-heigh
 <!-- Clients -->
 <section class="clients" id="clients">
   <div class="container">
-    <div class="section-tag">Bengaluru clients</div>
-    <h2 class="section-title">Trusted by teams across the city</h2>
+    <div class="section-tag">Our clients</div>
+    <h2 class="section-title">Trusted by 50+ brands across India</h2>
     <div class="clients__grid reveal">
-      <div class="c-card">
-        <div class="c-card__name">Furdo Interiors</div>
-        <div class="c-card__sector">Interior Design</div>
-      </div>
-      <div class="c-card">
-        <div class="c-card__name">SuperBolter</div>
-        <div class="c-card__sector">Interior Tech</div>
-      </div>
-      <div class="c-card">
-        <div class="c-card__name">Spicerack Kitchens</div>
-        <div class="c-card__sector">Interior Design</div>
-      </div>
-      <div class="c-card">
-        <div class="c-card__name">Paradise Stile Studio</div>
-        <div class="c-card__sector">Interior Solutions</div>
-      </div>
-      <div class="c-card">
-        <div class="c-card__name">Urban Tusker</div>
-        <div class="c-card__sector">Interior Design</div>
-      </div>
-      <div class="c-card">
-        <div class="c-card__name">Studio Wight</div>
-        <div class="c-card__sector">Interior Design</div>
-      </div>
-      <div class="c-card">
-        <div class="c-card__name">Anthara Designs</div>
-        <div class="c-card__sector">Interior Design</div>
-      </div>
-      <div class="c-card">
-        <div class="c-card__name">House of Singhal</div>
-        <div class="c-card__sector">Interior Design</div>
-      </div>
-      <div class="c-card">
-        <div class="c-card__name">NeuroBloom</div>
-        <div class="c-card__sector">Healthcare Tech</div>
-      </div>
+      <div class="c-card"><div class="c-card__name">Furdo Interiors</div><div class="c-card__sector">Interior Design</div></div>
+      <div class="c-card"><div class="c-card__name">Vherbal</div><div class="c-card__sector">Health &amp; Wellness</div></div>
+      <div class="c-card"><div class="c-card__name">Kiwi Kids</div><div class="c-card__sector">Education</div></div>
+      <div class="c-card"><div class="c-card__name">Spicerack Kitchens</div><div class="c-card__sector">Interior Design</div></div>
+      <div class="c-card"><div class="c-card__name">NeuroBloom</div><div class="c-card__sector">Healthcare Tech</div></div>
+      <div class="c-card"><div class="c-card__name">Chill Act</div><div class="c-card__sector">Special Needs Education</div></div>
+      <div class="c-card"><div class="c-card__name">PaySpaze</div><div class="c-card__sector">Fintech</div></div>
+      <div class="c-card"><div class="c-card__name">Techon Dater Systems</div><div class="c-card__sector">Industrial Tech</div></div>
+      <div class="c-card"><div class="c-card__name">Anthara Designs</div><div class="c-card__sector">Interior Design</div></div>
+      <div class="c-card"><div class="c-card__name">House of Singhal</div><div class="c-card__sector">Interior Design</div></div>
+      <div class="c-card"><div class="c-card__name">SuperBolter</div><div class="c-card__sector">Interior Tech</div></div>
+      <div class="c-card"><div class="c-card__name">Paradise Stile Studio</div><div class="c-card__sector">Interior Solutions</div></div>
+      <div class="c-card"><div class="c-card__name">Urban Tusker</div><div class="c-card__sector">Interior Design</div></div>
+      <div class="c-card"><div class="c-card__name">Gunmala.com</div><div class="c-card__sector">E-commerce</div></div>
+      <div class="c-card"><div class="c-card__name">Mayagreen Tech</div><div class="c-card__sector">CleanTech</div></div>
+      <div class="c-card"><div class="c-card__name">Maa Krupa Heritage Works</div><div class="c-card__sector">Heritage &amp; Crafts</div></div>
+      <div class="c-card"><div class="c-card__name">Akash Solar Lights</div><div class="c-card__sector">Renewable Energy</div></div>
+      <div class="c-card"><div class="c-card__name">Khokhawat Solar Energy</div><div class="c-card__sector">Renewable Energy</div></div>
+      <div class="c-card"><div class="c-card__name">Knee Resolve</div><div class="c-card__sector">Healthcare AI</div></div>
+      <div class="c-card"><div class="c-card__name">Anexee Info</div><div class="c-card__sector">Industrial Tech</div></div>
+      <div class="c-card"><div class="c-card__name">Studio Wight</div><div class="c-card__sector">Interior Design</div></div>
+      <div class="c-card"><div class="c-card__name">Spacolite Interiors</div><div class="c-card__sector">Interior Design</div></div>
+      <div class="c-card"><div class="c-card__name">Gaurav Naturo</div><div class="c-card__sector">Health &amp; Wellness</div></div>
+      <div class="c-card"><div class="c-card__name">Yuvsinrat Photography</div><div class="c-card__sector">Photography</div></div>
     </div>
   </div>
 </section>
