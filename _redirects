@@ -1,0 +1,22 @@
+# Redirect non-.html URLs to .html versions (prevents duplicate content)
+# These force Google to consolidate on the .html canonical version
+
+# Landing pages
+/marketing-agency-india        /marketing-agency-india.html        301!
+/marketing-agency-usa          /marketing-agency-usa.html          301!
+/marketing-agency-uk           /marketing-agency-uk.html           301!
+/marketing-agency-dubai        /marketing-agency-dubai.html        301!
+/marketing-agency-singapore    /marketing-agency-singapore.html    301!
+/marketing-agency-australia    /marketing-agency-australia.html    301!
+/marketing-agency-canada       /marketing-agency-canada.html       301!
+/marketing-agency-bengaluru    /marketing-agency-bengaluru.html    301!
+/marketing-agency-ahmedabad    /marketing-agency-ahmedabad.html    301!
+/marketing-agency-udaipur      /marketing-agency-udaipur.html      301!
+
+# Core pages
+/about      /about.html      301!
+/privacy    /privacy.html    301!
+/terms      /terms.html      301!
+/refund     /refund.html     301!
+/shipping   /shipping.html   301!
+/success    /success.html    301!
