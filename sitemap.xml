@@ -1407,6 +1407,14 @@
         <priority>0.4</priority>
     </url>
 
+    <!-- Turiyam AI Blog -->
+    <url>
+        <loc>https://distk.in/blog/turiyam-ai-genai-inference-platform-india-2026.html</loc>
+        <lastmod>2026-02-23</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
     <!-- Shipping Policy -->
     <url>
         <loc>https://distk.in/shipping.html</loc>
