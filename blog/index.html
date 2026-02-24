@@ -96,66 +96,180 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/blog.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --ink:#0a0a0a;
+      --paper:#fafafa;
+      --mid:#6b6b6b;
+      --light:#e8e8e8;
+      --accent:#e63312;
+      --accent-soft:rgba(230,51,18,0.08);
+      --mono:'Space Mono',monospace;
+      --sans:'Outfit',sans-serif;
+      --container:1120px;
+      --gutter:clamp(1.2rem,4vw,3rem);
+    }
+    html{font-size:16px;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+    body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+    .container{max-width:var(--container);margin:0 auto;padding:0 var(--gutter)}
+
+    /* NAV */
+    .nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,0.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--light)}
+    .nav__inner{display:flex;align-items:center;justify-content:space-between;max-width:var(--container);margin:0 auto;padding:0.9rem var(--gutter)}
+    .nav__logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;color:var(--ink)}
+    .nav__logo img{height:32px;width:auto}
+    .nav__logo span{font-family:var(--mono);font-weight:700;font-size:1.05rem;letter-spacing:-0.02em}
+    .nav__logo small{display:block;font-size:0.55rem;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);line-height:1}
+    .nav__links{display:flex;align-items:center;gap:2rem;list-style:none}
+    .nav__links a{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;color:var(--mid);transition:color 0.2s}
+    .nav__links a:hover,.nav__links a.is-active{color:var(--ink)}
+    .nav__cta{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.6rem 1.4rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s;white-space:nowrap}
+    .nav__cta:hover{background:var(--accent)}
+
+    /* HERO */
+    .hero{padding:8.5rem 0 4.5rem;position:relative;overflow:hidden}
+    .hero::before{content:'BLOG';position:absolute;right:-1%;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:clamp(7rem,20vw,17rem);font-weight:700;color:rgba(0,0,0,0.03);line-height:1;pointer-events:none;user-select:none;letter-spacing:-0.05em}
+    .hero__tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1.5rem}
+    .hero__tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+    .hero h1{font-family:var(--sans);font-weight:700;font-size:clamp(2.4rem,6vw,4.2rem);line-height:1.06;letter-spacing:-0.03em;margin-bottom:1rem}
+    .hero h1 em{font-style:normal;color:var(--accent)}
+    .hero__sub{font-size:1.05rem;color:var(--mid);max-width:52ch;line-height:1.65;margin-bottom:2rem}
+
+    /* SEARCH */
+    .search-wrap{max-width:520px}
+    .search-wrap input{width:100%;font-family:var(--sans);font-size:0.92rem;padding:0.85rem 1rem;border:1.5px solid var(--light);background:var(--paper);color:var(--ink);outline:none;transition:border-color 0.2s;border-radius:0}
+    .search-wrap input:focus{border-color:var(--accent)}
+    .search-wrap input::placeholder{color:var(--mid)}
+    .search-count{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.06em;color:var(--mid);margin-top:0.5rem;min-height:1rem}
+
+    /* STATS */
+    .stats{border-top:1px solid var(--light);border-bottom:1px solid var(--light);padding:2.2rem 0}
+    .stats__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;text-align:center}
+    .stats__num{font-family:var(--mono);font-size:clamp(1.5rem,2.8vw,2.1rem);font-weight:700;color:var(--ink);line-height:1.2}
+    .stats__label{font-size:0.75rem;color:var(--mid);margin-top:0.25rem;letter-spacing:0.02em}
+
+    /* BLOG GRID */
+    .blog-section{padding:4rem 0 5rem}
+    .section-tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:2.5rem}
+    .section-tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+    .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--light)}
+    .blog-card{background:var(--paper);padding:1.8rem;display:flex;flex-direction:column;gap:0.7rem;transition:background 0.25s;position:relative}
+    .blog-card:hover{background:#fff}
+    .blog-card__category{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:#fff;background:var(--ink);padding:0.22rem 0.55rem;display:inline-block;width:fit-content}
+    .blog-card__title{font-family:var(--sans);font-size:0.95rem;font-weight:600;line-height:1.42;letter-spacing:-0.01em}
+    .blog-card__title a{text-decoration:none;color:var(--ink);transition:color 0.2s}
+    .blog-card__title a:hover{color:var(--accent)}
+    .blog-card__excerpt{font-size:0.84rem;color:var(--mid);line-height:1.62;flex:1}
+    .blog-card__meta{display:flex;gap:1rem;flex-wrap:wrap;font-family:var(--mono);font-size:0.63rem;letter-spacing:0.05em;color:var(--mid);margin-top:auto;padding-top:0.75rem;border-top:1px solid var(--light)}
+
+    /* CTA */
+    .cta{padding:5rem 0;background:var(--ink);color:var(--paper)}
+    .cta__inner{display:grid;grid-template-columns:1.2fr 0.8fr;gap:4rem;align-items:center}
+    .cta .section-tag{color:var(--accent)}
+    .cta .section-tag::before{background:var(--accent)}
+    .cta h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3vw,2.4rem);letter-spacing:-0.025em;line-height:1.15;color:var(--paper);margin-bottom:1rem}
+    .cta p{color:rgba(255,255,255,0.58);font-size:0.95rem;line-height:1.65}
+    .btn{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.9rem 2.2rem;text-decoration:none;transition:all 0.25s;display:inline-block;border:none;cursor:pointer}
+    .btn--fill{background:var(--accent);color:#fff}
+    .btn--fill:hover{background:#c42a0e}
+    .btn--outline{border:1.5px solid rgba(255,255,255,0.3);color:var(--paper)}
+    .btn--outline:hover{border-color:var(--accent);color:var(--accent)}
+
+    /* FOOTER */
+    .foot{border-top:1px solid var(--light);padding:2.5rem 0}
+    .foot__inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem}
+    .foot__logo{display:flex;align-items:center;gap:0.5rem;text-decoration:none;color:var(--ink)}
+    .foot__logo img{height:28px;width:auto}
+    .foot__logo span{font-family:var(--mono);font-size:0.9rem;font-weight:700}
+    .foot__links{display:flex;gap:1.5rem;flex-wrap:wrap}
+    .foot__links a{font-family:var(--mono);font-size:0.67rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid);text-decoration:none;transition:color 0.2s}
+    .foot__links a:hover{color:var(--accent)}
+    .foot__copy{font-family:var(--mono);font-size:0.67rem;color:var(--mid)}
+    .foot__copy a{color:var(--accent);text-decoration:none}
+
+    /* REVEAL ANIMATION */
+    .reveal{opacity:0;transform:translateY(16px);transition:opacity 0.55s ease,transform 0.55s ease}
+    .reveal.is-visible{opacity:1;transform:none}
+
+    /* RESPONSIVE */
+    @media(max-width:900px){
+      .nav__links{display:none}
+      .blog-grid{grid-template-columns:repeat(2,1fr)}
+      .cta__inner{grid-template-columns:1fr;gap:2.5rem}
+      .stats__grid{grid-template-columns:repeat(2,1fr);gap:1.5rem}
+    }
+    @media(max-width:600px){
+      .hero{padding:6.5rem 0 3rem}
+      .blog-grid{grid-template-columns:1fr}
+      .foot__inner{flex-direction:column;align-items:flex-start}
+      .hero::before{font-size:5rem;right:-3%}
+    }
+    </style>
 </head>
 <body>
-    <div class="cosmic-layer" aria-hidden="true">
-        <span class="shooting-star"></span>
-        <span class="shooting-star"></span>
-        <span class="shooting-star"></span>
+
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="../" class="nav__logo">
+      <img src="../assets/images/Logo.png" alt="Distk" width="32" height="32">
+      <span>distk<small>Distribution is the Key</small></span>
+    </a>
+    <ul class="nav__links">
+      <li><a href="../#services">Services</a></li>
+      <li><a href="../#approach">Approach</a></li>
+      <li><a href="../#impact">Impact</a></li>
+      <li><a href="./" class="is-active">Blog</a></li>
+      <li><a href="../about.html">About</a></li>
+    </ul>
+    <a href="../#contact" class="nav__cta">Get a proposal</a>
+  </div>
+</nav>
+
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <div class="hero__tag">Distk Insights</div>
+    <h1>The <em>Distk</em> Blog</h1>
+    <p class="hero__sub">Expert guides on digital marketing, AI automation, GEO/AEO/SEO, performance ads, and growth strategy. Written by operators, not theorists.</p>
+    <div class="search-wrap">
+      <input type="text" id="blogSearch" placeholder="Search articles by keyword, topic or service…" aria-label="Search blog posts">
+      <div id="searchResults" class="search-count"></div>
     </div>
-    <div class="page">
-        <header class="site-header" id="top">
-            <div class="container site-header__inner">
-                <a href="../" class="logo">
-                    <img src="../assets/images/Logo.png" alt="Distk owl logo" class="logo__image">
-                    <span class="logo__text">
-                        <span class="logo__mark">distk</span>
-                        <span class="logo__tagline">Distribution is the Key</span>
-                    </span>
-                </a>
-                <nav class="nav" aria-label="Primary navigation">
-                    <button class="nav__toggle" aria-expanded="false" aria-controls="primary-navigation">
-                        <span class="nav__toggle-line"></span>
-                        <span class="nav__toggle-line"></span>
-                    </button>
-                    <ul class="nav__links" id="primary-navigation">
-                        <li><a href="../#services">Services</a></li>
-                        <li><a href="../#approach">Approach</a></li>
-                        <li><a href="../#impact">Impact</a></li>
-                        <li><a href="./" class="is-active">Blog</a></li>
-                        <li><a href="../about.html">About</a></li><li><a class="is-pill" href="../#contact">Schedule callback</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
+  </div>
+</section>
 
-        <main>
-            <section class="blog-header section">
-                <div class="container">
-                    <p class="eyebrow">Insights</p>
-                    <h1 class="blog-header__title">The Distk Blog</h1>
-                    <p class="blog-header__desc">Expert insights on digital marketing, AI automation, GEO/AEO/SEO, and growth strategies for 2026. Practical guides from our operator team.</p>
+<!-- Stats -->
+<section class="stats">
+  <div class="container">
+    <div class="stats__grid reveal">
+      <div>
+        <div class="stats__num">150+</div>
+        <div class="stats__label">Articles published</div>
+      </div>
+      <div>
+        <div class="stats__num">18+</div>
+        <div class="stats__label">Topic categories</div>
+      </div>
+      <div>
+        <div class="stats__num">2026</div>
+        <div class="stats__label">Always up to date</div>
+      </div>
+      <div>
+        <div class="stats__num">SEO+GEO</div>
+        <div class="stats__label">Optimised for all engines</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-                    <!-- Search Bar -->
-                    <div class="blog-search" style="margin-top: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
-                        <input
-                            type="text"
-                            id="blogSearch"
-                            placeholder="Search articles by keyword, topic, or service..."
-                            style="width: 100%; padding: 0.875rem 1.25rem; border: 1px solid #e5e7eb; border-radius: 8px; font-size: 1rem; font-family: 'Inter', sans-serif; outline: none; transition: all 0.2s;"
-                            aria-label="Search blog posts"
-                        >
-                        <div id="searchResults" style="margin-top: 0.5rem; font-size: 0.875rem; color: #6b7280;"></div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section">
-                <div class="container">
-                    <div class="blog-grid">
+<!-- Blog Grid -->
+<section class="blog-section">
+  <div class="container">
+    <div class="section-tag">All articles</div>
+    <div class="blog-grid" id="blogGrid">
                         <!-- Blog Card - FEATURED: Turiyam AI -->
                         <article class="blog-card" style="border: 3px solid #6C3CE1;">
                             <span class="blog-card__category" style="background: #6C3CE1;">AI Infrastructure</span>
@@ -2503,117 +2617,82 @@
                                 <span>22 min read</span>
                             </div>
                         </article>
-                    </div>
-                </div>
-            </section>
+    </div><!-- /.blog-grid -->
+  </div><!-- /.container -->
+</section><!-- /.blog-section -->
 
-            <!-- CTA Section -->
-            <section class="section section--alt">
-                <div class="container" style="text-align: center; max-width: 700px;">
-                    <p class="eyebrow">Ready to grow?</p>
-                    <h2>Let's Build Your Growth Engine</h2>
-                    <p style="margin-bottom: 2rem;">From performance ads to AI automation, GEO/AEO/SEO to GTM strategy—Distk delivers end-to-end growth for businesses serious about revenue.</p>
-                    <a href="../#contact" class="btn btn--primary">Schedule a Callback</a>
-                </div>
-            </section>
-        </main>
-
-        <footer class="site-footer">
-            <div class="container footer__grid">
-                <div>
-                    <a href="../" class="logo">
-                        <img src="../assets/images/Logo.png" alt="Distk owl logo" class="logo__image">
-                        <span class="logo__text">
-                            <span class="logo__mark">distk</span>
-                            <span class="logo__tagline">Distribution is the Key</span>
-                        </span>
-                    </a>
-                    <p>Operator-led revenue partner for Indian startups and SMEs, stitching AI, distribution, and enablement into services that move the top line.</p>
-                </div>
-                <div>
-                    <h3>Visit</h3>
-                    <p>Bengaluru • Ahmedabad • Udaipur • Remote-first</p>
-                </div>
-                <div>
-                    <h3>Connect</h3>
-                    <ul class="footer__links">
-                        <li><a href="mailto:connect@distk.in">connect@distk.in</a></li>
-                        <li><a href="https://www.linkedin.com/company/distk-technologies" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-                        <li><a href="../privacy.html">Privacy Policy</a></li>
-                    </ul>
-                </div>
-            </div>
-            <p class="footer__note">© <span id="current-year"></span> Distk. All rights reserved.</p>
-        </footer>
+<!-- CTA -->
+<section class="cta">
+  <div class="container">
+    <div class="cta__inner reveal">
+      <div>
+        <div class="section-tag">Ready to grow?</div>
+        <h2>Let's Build Your Growth Engine</h2>
+        <p>From performance ads to AI automation, GEO/AEO/SEO to GTM strategy — Distk delivers end-to-end growth for businesses serious about revenue.</p>
+      </div>
+      <div>
+        <a href="../#contact" class="btn btn--fill">Schedule a Callback</a>
+      </div>
     </div>
-    <script src="../assets/js/script.js"></script>
+  </div>
+</section>
 
-    <!-- Blog Search Script -->
-    <script>
-        (function() {
-            const searchInput = document.getElementById('blogSearch');
-            const searchResults = document.getElementById('searchResults');
-            const blogCards = document.querySelectorAll('.blog-card');
 
-            if (!searchInput) return;
+<!-- Footer -->
+<footer class="foot">
+  <div class="container">
+    <div class="foot__inner">
+      <a href="../" class="foot__logo">
+        <img src="../assets/images/Logo.png" alt="Distk">
+        <span>distk</span>
+      </a>
+      <nav class="foot__links" aria-label="Footer">
+        <a href="../about.html">About</a>
+        <a href="./">Blog</a>
+        <a href="../geo-services.html">GEO Services</a>
+        <a href="mailto:connect@distk.in">connect@distk.in</a>
+        <a href="https://www.linkedin.com/company/distk-technologies" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="../privacy.html">Privacy</a>
+      </nav>
+      <span class="foot__copy">&copy; 2026 Distk &middot; <a href="https://distk.in">distk.in</a></span>
+    </div>
+  </div>
+</footer>
 
-            // Add focus styling
-            searchInput.addEventListener('focus', function() {
-                this.style.borderColor = '#3b82f6';
-                this.style.boxShadow = '0 0 0 3px rgba(59, 130, 246, 0.1)';
-            });
+<script>
+// Reveal on scroll
+(function(){
+  var els = document.querySelectorAll('.reveal');
+  if(!els.length) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('is-visible'); io.unobserve(e.target); }});
+  },{threshold:0.1});
+  els.forEach(function(el){ io.observe(el); });
+})();
 
-            searchInput.addEventListener('blur', function() {
-                this.style.borderColor = '#e5e7eb';
-                this.style.boxShadow = 'none';
-            });
-
-            // Search functionality
-            searchInput.addEventListener('input', function(e) {
-                const searchTerm = e.target.value.toLowerCase().trim();
-                let visibleCount = 0;
-
-                blogCards.forEach(card => {
-                    const title = card.querySelector('.blog-card__title')?.textContent.toLowerCase() || '';
-                    const excerpt = card.querySelector('.blog-card__excerpt')?.textContent.toLowerCase() || '';
-                    const category = card.querySelector('.blog-card__category')?.textContent.toLowerCase() || '';
-
-                    const matches = title.includes(searchTerm) ||
-                                  excerpt.includes(searchTerm) ||
-                                  category.includes(searchTerm);
-
-                    if (searchTerm === '' || matches) {
-                        card.style.display = '';
-                        visibleCount++;
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-
-                // Update search results text
-                if (searchTerm === '') {
-                    searchResults.textContent = '';
-                } else if (visibleCount === 0) {
-                    searchResults.textContent = 'No articles found. Try a different search term.';
-                    searchResults.style.color = '#ef4444';
-                } else if (visibleCount === 1) {
-                    searchResults.textContent = '1 article found';
-                    searchResults.style.color = '#6b7280';
-                } else {
-                    searchResults.textContent = visibleCount + ' articles found';
-                    searchResults.style.color = '#6b7280';
-                }
-            });
-
-            // Clear search on escape key
-            searchInput.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape') {
-                    this.value = '';
-                    this.dispatchEvent(new Event('input'));
-                    this.blur();
-                }
-            });
-        })();
-    </script>
+// Search
+(function(){
+  var input = document.getElementById('blogSearch');
+  var count = document.getElementById('searchResults');
+  var cards = document.querySelectorAll('.blog-card');
+  if(!input) return;
+  input.addEventListener('input', function(){
+    var q = this.value.toLowerCase().trim();
+    var visible = 0;
+    cards.forEach(function(card){
+      var text = (card.querySelector('.blog-card__title')||{}).textContent||'';
+      text += ' '+((card.querySelector('.blog-card__excerpt')||{}).textContent||'');
+      text += ' '+((card.querySelector('.blog-card__category')||{}).textContent||'');
+      var show = !q || text.toLowerCase().includes(q);
+      card.style.display = show ? '' : 'none';
+      if(show) visible++;
+    });
+    count.textContent = q ? (visible ? visible+' article'+(visible===1?'':'s')+' found' : 'No articles found — try another term.') : '';
+  });
+  input.addEventListener('keydown', function(e){
+    if(e.key==='Escape'){ this.value=''; this.dispatchEvent(new Event('input')); this.blur(); }
+  });
+})();
+</script>
 </body>
 </html>
