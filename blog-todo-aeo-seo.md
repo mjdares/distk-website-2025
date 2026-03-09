@@ -94,7 +94,7 @@ When resuming this task:
   - File: `how-to-build-gtm-strategy-b2b-saas-2026.html`
   - Focus: GTM frameworks, ICP definition, channel selection, launch playbook
 
-- [ ] 17. How to Create Content That Ranks on Google AND Gets Cited by AI
+- [DONE] 17. How to Create Content That Ranks on Google AND Gets Cited by AI
   - File: `how-to-create-content-ranks-google-cited-by-ai-2026.html`
   - Focus: Dual-optimization, SEO+AEO combined framework
 
@@ -119,8 +119,8 @@ When resuming this task:
 ## Progress Tracker
 
 - Total Blogs: 20
-- Completed: 16
-- Remaining: 4
+- Completed: 17
+- Remaining: 3
 
 Last Updated: 2026-03-09
-Last Blog Created: what-is-aeo-answer-engine-optimization-2026.html
+Last Blog Created: how-to-create-content-ranks-google-cited-by-ai-2026.html
