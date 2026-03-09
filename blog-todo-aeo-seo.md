@@ -18,7 +18,7 @@ When resuming this task:
   - File: `what-is-aeo-answer-engine-optimization-2026.html`
   - Focus: AEO definition, how AI engines cite content, implementation steps
 
-- [ ] 2. SEO vs AEO vs GEO: Which Search Strategy Does Your Business Need in 2026?
+- [DONE] 2. SEO vs AEO vs GEO: Which Search Strategy Does Your Business Need in 2026?
   - File: `seo-vs-aeo-vs-geo-search-strategy-2026.html`
   - Focus: Comparison, when to use each, combined strategy
 
@@ -119,8 +119,8 @@ When resuming this task:
 ## Progress Tracker
 
 - Total Blogs: 20
-- Completed: 1
-- Remaining: 19
+- Completed: 2
+- Remaining: 18
 
 Last Updated: 2026-03-09
 Last Blog Created: what-is-aeo-answer-engine-optimization-2026.html
