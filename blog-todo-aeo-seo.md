@@ -58,7 +58,7 @@ When resuming this task:
 
 ## D2C / Ecommerce
 
-- [ ] 10. How to Reduce Customer Acquisition Cost for D2C Brands: 7 Proven Tactics
+- [DONE] 10. How to Reduce Customer Acquisition Cost for D2C Brands: 7 Proven Tactics
   - File: `how-to-reduce-cac-d2c-brands-2026.html`
   - Focus: CAC optimization, retention, creative testing, channel diversification
 
@@ -119,8 +119,8 @@ When resuming this task:
 ## Progress Tracker
 
 - Total Blogs: 20
-- Completed: 9
-- Remaining: 11
+- Completed: 10
+- Remaining: 10
 
 Last Updated: 2026-03-09
 Last Blog Created: what-is-aeo-answer-engine-optimization-2026.html
