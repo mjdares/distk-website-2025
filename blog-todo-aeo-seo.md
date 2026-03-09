@@ -46,7 +46,7 @@ When resuming this task:
   - File: `ai-powered-ad-creatives-generate-test-2026.html`
   - Focus: AI creative generation, A/B testing, Meta/Google AI tools
 
-- [ ] 8. How to Build a Marketing Automation Stack for D2C Brands Under 10 Lakh Budget
+- [DONE] 8. How to Build a Marketing Automation Stack for D2C Brands Under 10 Lakh Budget
   - File: `marketing-automation-stack-d2c-under-10-lakh-2026.html`
   - Focus: Budget-friendly tools, Indian D2C context, stack architecture
 
@@ -119,8 +119,8 @@ When resuming this task:
 ## Progress Tracker
 
 - Total Blogs: 20
-- Completed: 7
-- Remaining: 13
+- Completed: 8
+- Remaining: 12
 
 Last Updated: 2026-03-09
 Last Blog Created: what-is-aeo-answer-engine-optimization-2026.html
