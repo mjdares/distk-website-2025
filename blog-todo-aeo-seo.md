@@ -62,7 +62,7 @@ When resuming this task:
   - File: `how-to-reduce-cac-d2c-brands-2026.html`
   - Focus: CAC optimization, retention, creative testing, channel diversification
 
-- [ ] 11. First-Party Data Strategy for Ecommerce: How to Build Your Own Data in a Cookieless World
+- [DONE] 11. First-Party Data Strategy for Ecommerce: How to Build Your Own Data in a Cookieless World
   - File: `first-party-data-strategy-ecommerce-cookieless-2026.html`
   - Focus: Data collection, CDP, privacy compliance, personalization
 
@@ -119,8 +119,8 @@ When resuming this task:
 ## Progress Tracker
 
 - Total Blogs: 20
-- Completed: 10
-- Remaining: 10
+- Completed: 11
+- Remaining: 9
 
 Last Updated: 2026-03-09
 Last Blog Created: what-is-aeo-answer-engine-optimization-2026.html
