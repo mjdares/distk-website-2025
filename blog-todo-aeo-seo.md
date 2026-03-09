@@ -22,7 +22,7 @@ When resuming this task:
   - File: `seo-vs-aeo-vs-geo-search-strategy-2026.html`
   - Focus: Comparison, when to use each, combined strategy
 
-- [ ] 3. How to Get Your Brand Cited by ChatGPT, Perplexity, and Gemini in 2026
+- [DONE] 3. How to Get Your Brand Cited by ChatGPT, Perplexity, and Gemini in 2026
   - File: `how-to-get-brand-cited-chatgpt-perplexity-gemini-2026.html`
   - Focus: GEO tactics, entity building, citation optimization
 
@@ -119,8 +119,8 @@ When resuming this task:
 ## Progress Tracker
 
 - Total Blogs: 20
-- Completed: 2
-- Remaining: 18
+- Completed: 3
+- Remaining: 17
 
 Last Updated: 2026-03-09
 Last Blog Created: what-is-aeo-answer-engine-optimization-2026.html
