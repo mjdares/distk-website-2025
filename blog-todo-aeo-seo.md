@@ -98,7 +98,7 @@ When resuming this task:
   - File: `how-to-create-content-ranks-google-cited-by-ai-2026.html`
   - Focus: Dual-optimization, SEO+AEO combined framework
 
-- [ ] 18. How to Build a Blog Strategy That Drives Leads, Not Just Traffic
+- [DONE] 18. How to Build a Blog Strategy That Drives Leads, Not Just Traffic
   - File: `blog-strategy-drives-leads-not-traffic-2026.html`
   - Focus: Bottom-of-funnel content, lead capture, conversion-focused blogging
 
@@ -119,8 +119,8 @@ When resuming this task:
 ## Progress Tracker
 
 - Total Blogs: 20
-- Completed: 17
-- Remaining: 3
+- Completed: 18
+- Remaining: 2
 
-Last Updated: 2026-03-09
-Last Blog Created: how-to-create-content-ranks-google-cited-by-ai-2026.html
+Last Updated: 2026-03-10
+Last Blog Created: blog-strategy-drives-leads-not-traffic-2026.html
