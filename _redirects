@@ -14,9 +14,6 @@
 /marketing-agency-udaipur      /marketing-agency-udaipur.html      301!
 /marketing-agency-europe       /marketing-agency-europe.html       301!
 
-# Blog directory (force trailing slash so relative links work)
-/blog    /blog/    301!
-
 # Core pages
 /about      /about.html      301!
 /privacy    /privacy.html    301!
