@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Brand Kickstart — Professional Online Presence in 7 Days | Distk</title>
-  <meta name="description" content="Launch your business with a professional online presence in just 7 days. Brand Kickstart by Distk — landing page, brand identity, SEO, analytics, and social media setup. ₹75,000 / $999." />
+  <meta name="description" content="Launch your business with a professional online presence in just 7 days. Brand Kickstart by Distk — landing page, brand identity, SEO, analytics, and social media setup. ₹80,000 / $999." />
   <meta name="keywords" content="brand kickstart, business launch package, professional website India, landing page design, brand identity package, startup branding, business online presence 2026" />
   <meta name="author" content="Distk Technologies" />
   <meta name="robots" content="index, follow" />
@@ -13,7 +13,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://distk.in/brand-kickstart.html" />
   <meta property="og:title" content="Brand Kickstart — Professional Online Presence in 7 Days | Distk" />
-  <meta property="og:description" content="Stop waiting to get ready. Launch your business with a professional online presence in just 7 days. ₹75,000 / $999." />
+  <meta property="og:description" content="Stop waiting to get ready. Launch your business with a professional online presence in just 7 days. ₹80,000 / $999." />
   <meta property="og:image" content="https://distk.in/assets/images/og-image.jpg" />
   <meta property="og:site_name" content="Distk" />
 
@@ -27,7 +27,7 @@
     "offers": [
       {
         "@type": "Offer",
-        "price": "75000",
+        "price": "80000",
         "priceCurrency": "INR",
         "availability": "https://schema.org/InStock",
         "url": "https://distk.in/brand-kickstart.html"
@@ -53,7 +53,7 @@
         "name": "What is Brand Kickstart?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Brand Kickstart is a complete business launch package by Distk that gives you a professional online presence in 7 days — including a custom landing page, brand identity, SEO setup, Google Analytics, social media integration, and contact forms. Priced at ₹75,000 (India) or $999 (International)."
+          "text": "Brand Kickstart is a complete business launch package by Distk that gives you a professional online presence in 7 days — including a custom landing page, brand identity, SEO setup, Google Analytics, social media integration, and contact forms. Priced at ₹80,000 (India) or $999 (International)."
         }
       },
       {
@@ -77,7 +77,7 @@
         "name": "What is the payment structure for Brand Kickstart?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "50% advance payment to start (₹37,500 / $499), balance due on completion and approval. 50% refund available if project cancelled within 24 hours of advance payment. No refund after work begins."
+          "text": "50% advance payment to start (₹40,000 / $499), balance due on completion and approval. 50% refund available if project cancelled within 24 hours of advance payment. No refund after work begins."
         }
       }
     ]
@@ -241,6 +241,31 @@
     .cta__price-row { font-family: var(--mono); font-size: 1.2rem; font-weight: 700; margin-bottom: 2rem; }
     .cta__actions { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
 
+    /* FORM */
+    .form-section { padding: 5rem 0; background: var(--accent-soft); border-top: 1px solid rgba(230,51,18,0.12); }
+    .form__wrapper { max-width: 720px; margin: 0 auto; }
+    .form__wrapper h2 { font-family: var(--sans); font-weight: 700; font-size: clamp(1.6rem, 3.5vw, 2.4rem); letter-spacing: -0.025em; line-height: 1.2; margin-bottom: 0.5rem; }
+    .form__wrapper > p { font-size: 1rem; color: var(--mid); line-height: 1.7; margin-bottom: 2rem; }
+    .form__price-row { font-family: var(--mono); font-size: 1.2rem; font-weight: 700; margin-bottom: 2.5rem; }
+    .form__card { background: var(--paper); border: 1.5px solid var(--light); border-radius: 8px; padding: 2.5rem; }
+    .form-row { margin-bottom: 1.25rem; }
+    .form-row label { display: block; font-family: var(--sans); font-size: 0.85rem; font-weight: 600; color: var(--ink); margin-bottom: 0.35rem; }
+    .form-row input, .form-row select, .form-row textarea { width: 100%; font-family: var(--sans); font-size: 0.9rem; padding: 0.65rem 0.85rem; border: 1.5px solid var(--light); border-radius: 4px; background: var(--paper); color: var(--ink); transition: border-color 0.2s; }
+    .form-row input:focus, .form-row select:focus, .form-row textarea:focus { outline: none; border-color: var(--accent); }
+    .form-row textarea { resize: vertical; min-height: 100px; }
+    .form-row select { appearance: none; -webkit-appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%236b6b6b' stroke-width='1.5'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 0.85rem center; padding-right: 2.5rem; }
+    .form__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+    .form__grid .form-row { margin-bottom: 0; }
+    .form__divider { border: none; border-top: 1px solid var(--light); margin: 1.75rem 0; }
+    .form__section-label { font-family: var(--mono); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.25rem; display: block; }
+    .form__submit { width: 100%; margin-top: 1.5rem; }
+    .form__note { text-align: center; margin-top: 1rem; font-size: 0.78rem; color: var(--mid); }
+
+    @media (max-width: 600px) {
+      .form__grid { grid-template-columns: 1fr; }
+      .form__card { padding: 1.5rem; }
+    }
+
     /* FOOTER */
     .foot { padding: 2.5rem 0; border-top: 1px solid var(--light); text-align: center; font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--mid); }
     .foot a { color: var(--mid); text-decoration: none; }
@@ -295,7 +320,7 @@
       <h1>Launch Your Business With <em>Confidence</em> in 7 Days</h1>
       <p class="hero__sub">Stop waiting to get "ready." Businesses are built on momentum, not perfection. Get your professional online presence and start approaching customers — you can evolve as you grow.</p>
       <div class="hero__price">
-        <span class="hero__price-main">&#8377;75,000</span>
+        <span class="hero__price-main">&#8377;80,000</span>
         <span class="hero__price-alt">/ $999</span>
       </div>
       <div class="hero__actions">
@@ -400,7 +425,7 @@
       </div>
       <div class="process__step reveal">
         <h3>Confirmation &amp; Payment</h3>
-        <p>Receive a detailed proposal. Pay 50% advance (&#8377;37,500 / $499) to kick off the project. Balance on completion.</p>
+        <p>Receive a detailed proposal. Pay 50% advance (&#8377;40,000 / $499) to kick off the project. Balance on completion.</p>
       </div>
       <div class="process__step reveal">
         <h3>Design &amp; Development</h3>
@@ -428,10 +453,10 @@
         <h3>Professional Online Presence</h3>
         <p class="pricing__desc">Everything you need to launch with confidence in 7 days. Perfect for new businesses, solopreneurs, and startups.</p>
         <div class="pricing__amount">
-          <span class="pricing__inr">&#8377;75,000</span>
+          <span class="pricing__inr">&#8377;80,000</span>
           <span class="pricing__usd">/ $999</span>
         </div>
-        <p class="pricing__payment-note">50% advance &middot; Balance on completion &middot; 5&ndash;7 business days</p>
+        <p class="pricing__payment-note">50% advance (&#8377;40,000 / $499) &middot; Balance on completion &middot; 5&ndash;7 business days</p>
         <ul class="pricing__list">
           <li>Custom landing page design</li>
           <li>Mobile responsive across all devices</li>
@@ -498,7 +523,7 @@
       </div>
       <div class="faq__item reveal">
         <h3>What is the payment structure?</h3>
-        <p>50% advance (&#8377;37,500 / $499) to start. Balance (&#8377;37,500 / $500) due on completion and your approval. International clients pay in USD.</p>
+        <p>50% advance (&#8377;40,000 / $499) to start. Balance (&#8377;40,000 / $500) due on completion and your approval. International clients pay in USD.</p>
       </div>
       <div class="faq__item reveal">
         <h3>What is the refund policy?</h3>
@@ -524,19 +549,155 @@
   </div>
 </section>
 
-<!-- CTA / Get Started -->
-<section id="get-started" class="cta-section">
+<!-- Get Started Form -->
+<section id="get-started" class="form-section">
   <div class="container">
-    <div class="cta__inner reveal">
-      <div class="section-tag" style="justify-content:center;">Ready to launch?</div>
-      <h2>Start Approaching Customers With Confidence</h2>
-      <p>Your business deserves a professional presence. Stop waiting for perfection — start with something solid and evolve as you grow.</p>
-      <div class="cta__price-row">&#8377;75,000 <span style="color:var(--mid);font-weight:400;">/ $999</span></div>
-      <div class="cta__actions">
-        <a href="https://distk.in/#contact" class="btn btn--fill btn--large">Schedule Strategy Call &rarr;</a>
-        <a href="mailto:connect@distk.in" class="btn btn--outline btn--large">connect@distk.in</a>
+    <div class="form__wrapper reveal">
+      <div class="section-tag">Ready to launch?</div>
+      <h2>Start Your Brand Kickstart Journey</h2>
+      <p>Fill in the form below and we'll contact you within 24 hours to schedule your strategy call. Your information is completely secure and confidential.</p>
+      <div class="form__price-row">&#8377;80,000 <span style="color:var(--mid);font-weight:400;">/ $999</span></div>
+
+      <div class="form__card">
+        <form
+          name="brand-kickstart"
+          method="POST"
+          action="/success.html"
+          data-netlify="true"
+          netlify-honeypot="bot-field-bk"
+          aria-label="Brand Kickstart enquiry form"
+        >
+          <input type="hidden" name="form-name" value="brand-kickstart" />
+          <p class="sr-only" aria-hidden="true">
+            <label for="bk-bot-field">Leave this field empty</label>
+            <input type="text" id="bk-bot-field" name="bot-field-bk" tabindex="-1" autocomplete="off" />
+          </p>
+
+          <!-- Package Selection -->
+          <span class="form__section-label">Package</span>
+          <div class="form-row">
+            <label for="bk-package">Select Package</label>
+            <select id="bk-package" name="package" required>
+              <option value="Brand Kickstart (₹80,000 / $999)">Brand Kickstart — ₹80,000 / $999</option>
+              <option value="Custom Development (Custom Quote)">Custom Development — Custom Quote</option>
+            </select>
+          </div>
+
+          <hr class="form__divider" />
+
+          <!-- Personal Information -->
+          <span class="form__section-label">Your Information</span>
+          <div class="form__grid">
+            <div class="form-row">
+              <label for="bk-name">Full Name *</label>
+              <input type="text" id="bk-name" name="name" required placeholder="Your full name" />
+            </div>
+            <div class="form-row">
+              <label for="bk-email">Email *</label>
+              <input type="email" id="bk-email" name="email" required placeholder="you@company.com" />
+            </div>
+            <div class="form-row">
+              <label for="bk-phone">Phone / WhatsApp *</label>
+              <input type="tel" id="bk-phone" name="phone" required placeholder="+91 99999 99999" />
+            </div>
+            <div class="form-row">
+              <label for="bk-country">Country</label>
+              <select id="bk-country" name="country">
+                <option value="India">India</option>
+                <option value="USA">USA</option>
+                <option value="UK">UK</option>
+                <option value="UAE">UAE / Dubai</option>
+                <option value="Singapore">Singapore</option>
+                <option value="Australia">Australia</option>
+                <option value="Canada">Canada</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          </div>
+
+          <hr class="form__divider" />
+
+          <!-- Business Details -->
+          <span class="form__section-label">Business Details</span>
+          <div class="form__grid">
+            <div class="form-row">
+              <label for="bk-business">Business Name *</label>
+              <input type="text" id="bk-business" name="business_name" required placeholder="Your business name" />
+            </div>
+            <div class="form-row">
+              <label for="bk-industry">Industry</label>
+              <select id="bk-industry" name="industry">
+                <option value="">Select industry</option>
+                <option value="E-commerce / D2C">E-commerce / D2C</option>
+                <option value="SaaS / Technology">SaaS / Technology</option>
+                <option value="Professional Services">Professional Services</option>
+                <option value="Healthcare / Wellness">Healthcare / Wellness</option>
+                <option value="Education / EdTech">Education / EdTech</option>
+                <option value="Real Estate">Real Estate</option>
+                <option value="F&B / Hospitality">F&amp;B / Hospitality</option>
+                <option value="Manufacturing">Manufacturing</option>
+                <option value="Finance / FinTech">Finance / FinTech</option>
+                <option value="Fashion / Lifestyle">Fashion / Lifestyle</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="form__grid" style="margin-top:1.25rem;">
+            <div class="form-row">
+              <label for="bk-stage">Business Stage</label>
+              <select id="bk-stage" name="business_stage">
+                <option value="Idea / Pre-launch">Idea / Pre-launch</option>
+                <option value="Just started (0-6 months)">Just started (0–6 months)</option>
+                <option value="Growing (6-24 months)">Growing (6–24 months)</option>
+                <option value="Established (2+ years)">Established (2+ years)</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <label for="bk-website">Existing Website (if any)</label>
+              <input type="url" id="bk-website" name="existing_website" placeholder="https://yourbusiness.com" />
+            </div>
+          </div>
+          <div class="form-row" style="margin-top:1.25rem;">
+            <label for="bk-description">Tell us about your business *</label>
+            <textarea id="bk-description" name="business_description" required placeholder="What does your business do? Who are your target customers? What problem do you solve?"></textarea>
+          </div>
+
+          <hr class="form__divider" />
+
+          <!-- Project Requirements -->
+          <span class="form__section-label">Project Requirements</span>
+          <div class="form__grid">
+            <div class="form-row">
+              <label for="bk-domain">Preferred Domain Name Ideas</label>
+              <input type="text" id="bk-domain" name="domain_ideas" placeholder="e.g. mybrand.in, mybrand.com" />
+            </div>
+            <div class="form-row">
+              <label for="bk-colors">Brand Colours / Preferences</label>
+              <input type="text" id="bk-colors" name="brand_colors" placeholder="e.g. Blue and white, or no preference" />
+            </div>
+          </div>
+          <div class="form-row" style="margin-top:1.25rem;">
+            <label for="bk-social">Social Media Accounts (if any)</label>
+            <input type="text" id="bk-social" name="social_media" placeholder="Instagram, LinkedIn, YouTube URLs" />
+          </div>
+          <div class="form-row">
+            <label for="bk-timeline">Preferred Timeline</label>
+            <select id="bk-timeline" name="timeline">
+              <option value="ASAP (within 7 days)">ASAP — within 7 days</option>
+              <option value="Within 2 weeks">Within 2 weeks</option>
+              <option value="Within a month">Within a month</option>
+              <option value="Flexible / exploring">Flexible / exploring</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="bk-notes">Anything else we should know?</label>
+            <textarea id="bk-notes" name="additional_notes" placeholder="Any references, competitors, special requirements, or questions..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--fill btn--large form__submit">Schedule Strategy Call &amp; Get Started &rarr;</button>
+        </form>
+        <p class="form__note">We'll contact you within 24 hours to schedule your strategy call.</p>
       </div>
-      <p style="margin-top:1.5rem; font-size:0.82rem; color:var(--mid);">We'll contact you within 24 hours to schedule your strategy call. Your information is completely secure and confidential.</p>
     </div>
   </div>
 </section>
