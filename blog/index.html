@@ -150,6 +150,19 @@
     .stats__num{font-family:var(--mono);font-size:clamp(1.5rem,2.8vw,2.1rem);font-weight:700;color:var(--ink);line-height:1.2}
     .stats__label{font-size:0.75rem;color:var(--mid);margin-top:0.25rem;letter-spacing:0.02em}
 
+    /* FILTERS */
+    .filters{padding:1.5rem 0;border-bottom:1px solid var(--light);background:var(--paper);position:sticky;top:56px;z-index:90;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+    .filters__inner{display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+    .filters__group{display:flex;align-items:center;gap:0.4rem}
+    .filters__label{font-family:var(--mono);font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);white-space:nowrap;margin-right:0.2rem}
+    .filters__select{font-family:var(--sans);font-size:0.82rem;padding:0.45rem 2rem 0.45rem 0.7rem;border:1.5px solid var(--light);border-radius:4px;background:var(--paper);color:var(--ink);cursor:pointer;appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 5 5-5' fill='none' stroke='%236b6b6b' stroke-width='1.5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 0.6rem center;transition:border-color 0.2s}
+    .filters__select:focus{outline:none;border-color:var(--accent)}
+    .filters__reset{font-family:var(--mono);font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);background:none;border:none;cursor:pointer;padding:0.45rem 0.6rem;transition:opacity 0.2s;white-space:nowrap;display:none}
+    .filters__reset:hover{opacity:0.7}
+    .filters__reset.is-active{display:inline-block}
+    .filters__count{font-family:var(--mono);font-size:0.62rem;letter-spacing:0.06em;color:var(--mid);margin-left:auto;white-space:nowrap}
+    @media(max-width:600px){.filters__inner{gap:0.6rem}.filters__count{display:none;margin-left:0;width:100%}}
+
     /* BLOG GRID */
     .blog-section{padding:4rem 0 5rem}
     .section-tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:2.5rem}
@@ -241,6 +254,37 @@
   </div>
 </section>
 
+
+<!-- Filters -->
+<section class="filters" id="filterBar">
+  <div class="container">
+    <div class="filters__inner">
+      <div class="filters__group">
+        <span class="filters__label">Sort</span>
+        <select class="filters__select" id="filterSort">
+          <option value="newest">Newest First</option>
+          <option value="oldest">Oldest First</option>
+          <option value="a-z">A → Z</option>
+          <option value="z-a">Z → A</option>
+        </select>
+      </div>
+      <div class="filters__group">
+        <span class="filters__label">Month</span>
+        <select class="filters__select" id="filterMonth">
+          <option value="">All Months</option>
+        </select>
+      </div>
+      <div class="filters__group">
+        <span class="filters__label">Category</span>
+        <select class="filters__select" id="filterCategory">
+          <option value="">All Categories</option>
+        </select>
+      </div>
+      <button class="filters__reset" id="filterReset">Clear Filters</button>
+      <span class="filters__count" id="filterCount"></span>
+    </div>
+  </div>
+</section>
 
 <!-- Blog Grid -->
 <section class="blog-section">
@@ -3483,28 +3527,155 @@
   els.forEach(function(el){ io.observe(el); });
 })();
 
-// Search
+// Filters, Search & Sort
 (function(){
+  var grid = document.getElementById('blogGrid');
   var input = document.getElementById('blogSearch');
-  var count = document.getElementById('searchResults');
-  var cards = document.querySelectorAll('.blog-card');
-  if(!input) return;
-  input.addEventListener('input', function(){
-    var q = this.value.toLowerCase().trim();
+  var searchCount = document.getElementById('searchResults');
+  var sortSelect = document.getElementById('filterSort');
+  var monthSelect = document.getElementById('filterMonth');
+  var catSelect = document.getElementById('filterCategory');
+  var resetBtn = document.getElementById('filterReset');
+  var filterCount = document.getElementById('filterCount');
+  var cards = Array.from(grid.querySelectorAll('.blog-card'));
+  var total = cards.length;
+
+  // Month order for sorting
+  var monthOrder = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+
+  // Extract data from each card
+  cards.forEach(function(card, i){
+    var metaSpans = card.querySelectorAll('.blog-card__meta span');
+    var monthText = metaSpans[0] ? metaSpans[0].textContent.trim() : '';
+    var cat = card.querySelector('.blog-card__category');
+    card._data = {
+      index: i,
+      title: (card.querySelector('.blog-card__title') || {}).textContent || '',
+      excerpt: (card.querySelector('.blog-card__excerpt') || {}).textContent || '',
+      category: cat ? cat.textContent.trim() : '',
+      month: monthText,
+      text: ''
+    };
+    card._data.text = (card._data.title + ' ' + card._data.excerpt + ' ' + card._data.category).toLowerCase();
+
+    // Parse month for sorting
+    var parts = monthText.split(' ');
+    var mIdx = monthOrder.indexOf(parts[0]);
+    var yr = parseInt(parts[1]) || 2026;
+    card._data.monthSort = yr * 100 + (mIdx >= 0 ? mIdx : 0);
+  });
+
+  // Populate month dropdown
+  var months = {};
+  cards.forEach(function(c){ if(c._data.month) months[c._data.month] = c._data.monthSort; });
+  var monthKeys = Object.keys(months).sort(function(a,b){ return months[b] - months[a]; });
+  monthKeys.forEach(function(m){
+    var opt = document.createElement('option');
+    opt.value = m;
+    opt.textContent = m;
+    monthSelect.appendChild(opt);
+  });
+
+  // Populate category dropdown (grouped)
+  var catGroups = {
+    'AI & Automation': /^ai|automation|ai\s|agentic|ml/i,
+    'SEO / AEO / GEO': /seo|aeo|geo|search strategy|schema/i,
+    'Performance Marketing': /performance|ppc|paid|ads|meta ads|google ads|programmatic/i,
+    'Content & Social': /content|social|video|podcast|ugc|creator|youtube|reels/i,
+    'D2C & E-commerce': /d2c|ecommerce|e-commerce|commerce|retail|shopify|whatsapp/i,
+    'B2B & SaaS': /b2b|saas|gtm|lead gen|abm|linkedin|sales|crm/i,
+    'MarTech & Tools': /martech|tools|design|website|builder|email|analytics|data|reporting|erp/i,
+    'Branding & Strategy': /brand|strategy|growth|startup|hiring|agency|budget|retention|reputation/i,
+    'Industry Specific': /healthcare|fintech|edtech|proptech|agritech|insurance|legal|travel|gaming|fashion|luxury|sports|restaurant|automotive|logistics|cleantech|manufacturing|industrial|real estate|crypto|hr\s?tech|cpg/i
+  };
+  var catMap = {};
+  cards.forEach(function(c){
+    var raw = c._data.category;
+    if(!raw) return;
+    var matched = false;
+    for(var group in catGroups){
+      if(catGroups[group].test(raw)){
+        if(!catMap[group]) catMap[group] = 0;
+        catMap[group]++;
+        c._data.catGroup = group;
+        matched = true;
+        break;
+      }
+    }
+    if(!matched){
+      var g = 'Other';
+      if(!catMap[g]) catMap[g] = 0;
+      catMap[g]++;
+      c._data.catGroup = g;
+    }
+  });
+  var catKeys = Object.keys(catMap).sort();
+  catKeys.forEach(function(g){
+    var opt = document.createElement('option');
+    opt.value = g;
+    opt.textContent = g + ' (' + catMap[g] + ')';
+    catSelect.appendChild(opt);
+  });
+
+  function applyFilters(){
+    var q = input.value.toLowerCase().trim();
+    var month = monthSelect.value;
+    var cat = catSelect.value;
+    var sort = sortSelect.value;
     var visible = 0;
+
+    // Filter
     cards.forEach(function(card){
-      var text = (card.querySelector('.blog-card__title')||{}).textContent||'';
-      text += ' '+((card.querySelector('.blog-card__excerpt')||{}).textContent||'');
-      text += ' '+((card.querySelector('.blog-card__category')||{}).textContent||'');
-      var show = !q || text.toLowerCase().includes(q);
-      card.style.display = show ? '' : 'none';
+      var d = card._data;
+      var show = true;
+      if(q && !d.text.includes(q)) show = false;
+      if(month && d.month !== month) show = false;
+      if(cat && d.catGroup !== cat) show = false;
+      card._show = show;
       if(show) visible++;
     });
-    count.textContent = q ? (visible ? visible+' article'+(visible===1?'':'s')+' found' : 'No articles found — try another term.') : '';
-  });
+
+    // Sort
+    var sorted = cards.filter(function(c){ return c._show; });
+    if(sort === 'newest'){
+      sorted.sort(function(a,b){ return b._data.monthSort - a._data.monthSort || a._data.index - b._data.index; });
+    } else if(sort === 'oldest'){
+      sorted.sort(function(a,b){ return a._data.monthSort - b._data.monthSort || b._data.index - a._data.index; });
+    } else if(sort === 'a-z'){
+      sorted.sort(function(a,b){ return a._data.title.localeCompare(b._data.title); });
+    } else if(sort === 'z-a'){
+      sorted.sort(function(a,b){ return b._data.title.localeCompare(a._data.title); });
+    }
+
+    // Re-append in order
+    cards.forEach(function(c){ c.style.display = 'none'; });
+    sorted.forEach(function(c){ c.style.display = ''; grid.appendChild(c); });
+
+    // Update counts
+    var hasFilter = q || month || cat || sort !== 'newest';
+    resetBtn.classList.toggle('is-active', !!(q || month || cat));
+    filterCount.textContent = visible + ' of ' + total + ' articles';
+    searchCount.textContent = q ? (visible ? visible + ' article' + (visible === 1 ? '' : 's') + ' found' : 'No articles found — try another term.') : '';
+  }
+
+  // Event listeners
+  input.addEventListener('input', applyFilters);
   input.addEventListener('keydown', function(e){
-    if(e.key==='Escape'){ this.value=''; this.dispatchEvent(new Event('input')); this.blur(); }
+    if(e.key === 'Escape'){ this.value = ''; applyFilters(); this.blur(); }
   });
+  sortSelect.addEventListener('change', applyFilters);
+  monthSelect.addEventListener('change', applyFilters);
+  catSelect.addEventListener('change', applyFilters);
+  resetBtn.addEventListener('click', function(){
+    input.value = '';
+    sortSelect.value = 'newest';
+    monthSelect.value = '';
+    catSelect.value = '';
+    applyFilters();
+  });
+
+  // Initial count
+  filterCount.textContent = total + ' of ' + total + ' articles';
 })();
 </script>
 </body>
