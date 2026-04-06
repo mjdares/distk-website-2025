@@ -131,23 +131,6 @@ body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-heigh
 .t-card--open a{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);text-decoration:none;transition:opacity 0.2s}
 .t-card--open a:hover{opacity:0.75}
 
-/* ---- EXTENDED TEAM ---- */
-.extended{padding:5rem 0;background:#f5f5f5}
-.extended__note{font-size:0.88rem;color:var(--mid);line-height:1.65;max-width:56ch;margin-bottom:3rem}
-.extended__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--light)}
-.e-card{background:var(--paper);padding:2.2rem;transition:background 0.3s}
-.e-card:hover{background:var(--accent-soft)}
-.e-card__name{font-family:var(--sans);font-weight:600;font-size:1.05rem;margin-bottom:0.2rem}
-.e-card__role{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:1rem}
-.e-card__bio{font-size:0.88rem;color:var(--mid);line-height:1.65;margin-bottom:1rem}
-.e-card__skills{display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:1.2rem}
-.e-card__skills span{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.06em;text-transform:uppercase;padding:0.3rem 0.6rem;background:var(--accent-soft);color:var(--accent);border-radius:2px}
-.e-card--open{border:1.5px dashed var(--light);background:var(--paper);padding:2.2rem;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;min-height:220px;transition:border-color 0.2s}
-.e-card--open:hover{border-color:var(--accent)}
-.e-card--open p{font-size:0.9rem;color:var(--mid);line-height:1.6;margin-bottom:1rem}
-.e-card--open a{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);text-decoration:none;transition:opacity 0.2s}
-.e-card--open a:hover{opacity:0.75}
-
 /* ---- QUOTE ---- */
 .quote{padding:5rem 0;border-top:1px solid var(--light);border-bottom:1px solid var(--light);text-align:center}
 .quote blockquote{font-family:var(--sans);font-size:clamp(1.1rem,2.5vw,1.4rem);font-style:italic;max-width:640px;margin:0 auto;line-height:1.7;color:var(--mid)}
@@ -183,7 +166,7 @@ body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-heigh
   .stats__grid{grid-template-columns:repeat(2,1fr);gap:1.5rem}
   .philosophy__grid{grid-template-columns:1fr}
   .team__grid{grid-template-columns:1fr}
-  .extended__grid{grid-template-columns:1fr}
+
   .cta__layout{grid-template-columns:1fr;gap:2.5rem}
 }
 </style>
@@ -280,39 +263,14 @@ body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-heigh
           <a href="https://www.instagram.com/curiouswithmayank/" target="_blank" rel="noopener noreferrer">Instagram</a>
         </div>
       </div>
+      <div class="t-card">
+        <div class="t-card__name">Avinash</div>
+        <span class="t-card__role">Senior Web Developer</span>
+        <p class="t-card__bio">13+ years in end-to-end website development. Takes projects from scratch to deployment - building, optimizing, and securing web applications. Deep focus on performance, Core Web Vitals, security hardening, and malware removal. Works across WordPress, WooCommerce, Laravel, Shopify, and ColdFusion.</p>
+      </div>
       <div class="t-card--open">
         <p>We're always looking for curious people who like building things. Small today, growing steadily. We hire for curiosity and craft.</p>
         <a href="mailto:connect@distk.in">Say hello &rarr;</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Extended Team -->
-<section class="extended">
-  <div class="container">
-    <div class="section-tag">People We Build With</div>
-    <h2 class="section-title">Our extended team</h2>
-    <div class="extended__grid reveal">
-      <div class="e-card">
-        <div class="e-card__name">Avinash</div>
-        <span class="e-card__role">Senior Web Developer</span>
-        <p class="e-card__bio">13+ years of hands-on experience in end-to-end website development. Avinash takes projects from scratch to deployment - building, optimizing, and securing web applications for businesses of all sizes. Deep focus on performance, security hardening, and making things work reliably at scale.</p>
-        <div class="e-card__skills">
-          <span>WordPress</span>
-          <span>WooCommerce</span>
-          <span>Laravel</span>
-          <span>PHP</span>
-          <span>Shopify</span>
-          <span>ColdFusion</span>
-          <span>Speed Optimization</span>
-          <span>Malware Removal</span>
-          <span>Security Hardening</span>
-        </div>
-      </div>
-      <div class="e-card--open">
-        <p>We're always expanding this network. If you're an independent specialist who does great work and wants to collaborate on interesting projects, we'd like to hear from you.</p>
-        <a href="mailto:connect@distk.in">Get in touch &rarr;</a>
       </div>
     </div>
   </div>
