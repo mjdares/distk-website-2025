@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Startup Essentials - Trusted Partners for Founders | Distk</title>
-  <meta name="description" content="Distk's curated network of trusted partners for startups - company registration, compliance, legal, finance, HR, and more. Helping founders navigate the overwhelming early stages." />
-  <meta name="keywords" content="startup essentials, company registration India, startup compliance, CA for startups, HR agency startups, legal for startups, founder resources 2026" />
+  <meta name="description" content="Distk's curated network of trusted partners for startups - compliance, finance, HR, and more. Helping founders navigate the overwhelming early stages." />
+  <meta name="keywords" content="startup essentials, startup compliance India, CA for startups, HR agency startups, outbound recruitment, founder resources 2026, AffilX, Saral AI" />
   <meta name="author" content="Distk Technologies" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://distk.in/startup-essentials.html" />
@@ -13,7 +13,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://distk.in/startup-essentials.html" />
   <meta property="og:title" content="Startup Essentials - Trusted Partners for Founders | Distk" />
-  <meta property="og:description" content="Curated network of trusted partners for company registration, compliance, legal, finance, and HR. Built for first-time founders and early-stage startups." />
+  <meta property="og:description" content="Curated network of trusted partners for compliance, finance, and HR. Built for first-time founders and early-stage startups." />
   <meta property="og:image" content="https://distk.in/assets/images/og-image.jpg" />
   <meta property="og:site_name" content="Distk" />
 
@@ -98,6 +98,7 @@
     .hero h1 { font-family: var(--sans); font-size: clamp(2.2rem, 5vw, 3.6rem); font-weight: 700; line-height: 1.1; color: var(--ink); margin-bottom: 1.25rem; }
     .hero h1 em { font-style: normal; color: var(--accent); }
     .hero__sub { font-size: 1.15rem; color: var(--mid); line-height: 1.7; margin-bottom: 2rem; max-width: 580px; }
+    .hero__actions { display: flex; gap: 0.75rem; flex-wrap: wrap; }
 
     /* WHY SECTION */
     .why { padding: 4rem 0; background: var(--ink); color: var(--paper); }
@@ -106,21 +107,25 @@
     .why__card h3 { font-family: var(--sans); font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; }
     .why__card p { font-size: 0.9rem; color: rgba(255,255,255,0.8); line-height: 1.65; }
 
-    /* PARTNER CATEGORIES */
+    /* PARTNER SECTIONS */
     .partners { padding: 5rem 0; }
     .partners + .partners { padding-top: 0; }
     .partners__header { margin-bottom: 2.5rem; }
-    .partners__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-    .partner-card { border: 1.5px solid var(--light); border-radius: 6px; padding: 2rem 1.5rem; transition: border-color 0.2s; position: relative; }
-    .partner-card:hover { border-color: var(--accent); }
-    .partner-card__icon { font-family: var(--mono); font-size: 1.5rem; font-weight: 700; color: var(--accent); margin-bottom: 1rem; line-height: 1; }
-    .partner-card h3 { font-family: var(--sans); font-size: 1.05rem; font-weight: 600; margin-bottom: 0.4rem; }
-    .partner-card__type { font-family: var(--mono); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; display: block; }
-    .partner-card p { font-size: 0.88rem; color: var(--mid); line-height: 1.6; margin-bottom: 1rem; }
-    .partner-card__services { list-style: none; margin-bottom: 1.25rem; }
-    .partner-card__services li { position: relative; padding-left: 1.2rem; font-size: 0.82rem; color: #2a2a2a; line-height: 1.5; margin-bottom: 0.4rem; }
-    .partner-card__services li::before { content: ''; position: absolute; left: 0; top: 0.45rem; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
-    .partner-card__placeholder { display: flex; align-items: center; justify-content: center; padding: 0.5rem 1rem; background: var(--accent-soft); border-radius: 4px; font-family: var(--mono); font-size: 0.72rem; font-weight: 700; color: var(--accent); letter-spacing: 0.06em; text-transform: uppercase; }
+    .partner-feature { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+    .partner-feature__info { }
+    .partner-feature__icon { font-family: var(--mono); font-size: 1.8rem; font-weight: 700; color: var(--accent); margin-bottom: 1rem; line-height: 1; }
+    .partner-feature__type { font-family: var(--mono); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; display: block; }
+    .partner-feature__info h3 { font-family: var(--sans); font-size: 1.4rem; font-weight: 700; margin-bottom: 0.6rem; }
+    .partner-feature__info > p { font-size: 0.95rem; color: var(--mid); line-height: 1.7; margin-bottom: 1.5rem; }
+    .partner-feature__url { font-family: var(--mono); font-size: 0.75rem; color: var(--mid); margin-bottom: 1.5rem; display: block; }
+    .partner-feature__services { list-style: none; margin-bottom: 2rem; }
+    .partner-feature__services li { position: relative; padding-left: 1.4rem; font-size: 0.9rem; color: #2a2a2a; line-height: 1.5; margin-bottom: 0.6rem; }
+    .partner-feature__services li::before { content: ''; position: absolute; left: 0; top: 0.5rem; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+    .partner-feature__cta { margin-top: 0.5rem; }
+    .partner-feature__sidebar { border: 1.5px solid var(--light); border-radius: 8px; padding: 2rem; background: #f9f9f9; }
+    .partner-feature__sidebar h4 { font-family: var(--mono); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
+    .partner-feature__sidebar p { font-size: 0.85rem; color: var(--mid); line-height: 1.6; }
+    .partner-feature__highlight { font-size: 0.88rem; color: var(--ink); line-height: 1.65; font-style: italic; border-left: 2px solid var(--accent); padding-left: 1.25rem; margin-top: 1.25rem; }
 
     /* HOW IT WORKS */
     .how { padding: 5rem 0; background: #f5f5f5; }
@@ -130,12 +135,24 @@
     .how__step h3 { font-family: var(--sans); font-size: 0.95rem; font-weight: 600; margin-bottom: 0.5rem; }
     .how__step p { font-size: 0.85rem; color: var(--mid); line-height: 1.6; }
 
-    /* CTA */
-    .cta-section { padding: 5rem 0; background: var(--accent-soft); border-top: 1px solid rgba(230,51,18,0.12); }
-    .cta__inner { max-width: 680px; margin: 0 auto; text-align: center; }
-    .cta__inner h2 { font-family: var(--sans); font-weight: 700; font-size: clamp(1.6rem, 3.5vw, 2.4rem); letter-spacing: -0.025em; line-height: 1.2; margin-bottom: 1rem; }
-    .cta__inner p { font-size: 1rem; color: var(--mid); line-height: 1.7; margin-bottom: 2rem; }
-    .cta__actions { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
+    /* FORM */
+    .form-section { padding: 5rem 0; background: var(--accent-soft); border-top: 1px solid rgba(230,51,18,0.12); }
+    .form__wrapper { max-width: 720px; margin: 0 auto; }
+    .form__wrapper h2 { font-family: var(--sans); font-weight: 700; font-size: clamp(1.6rem, 3.5vw, 2.4rem); letter-spacing: -0.025em; line-height: 1.2; margin-bottom: 0.5rem; }
+    .form__wrapper > p { font-size: 1rem; color: var(--mid); line-height: 1.7; margin-bottom: 2.5rem; }
+    .form__card { background: var(--paper); border: 1.5px solid var(--light); border-radius: 8px; padding: 2.5rem; }
+    .form-row { margin-bottom: 1.25rem; }
+    .form-row label { display: block; font-family: var(--sans); font-size: 0.85rem; font-weight: 600; color: var(--ink); margin-bottom: 0.35rem; }
+    .form-row input, .form-row select, .form-row textarea { width: 100%; font-family: var(--sans); font-size: 0.9rem; padding: 0.65rem 0.85rem; border: 1.5px solid var(--light); border-radius: 4px; background: var(--paper); color: var(--ink); transition: border-color 0.2s; }
+    .form-row input:focus, .form-row select:focus, .form-row textarea:focus { outline: none; border-color: var(--accent); }
+    .form-row textarea { resize: vertical; min-height: 100px; }
+    .form-row select { appearance: none; -webkit-appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%236b6b6b' stroke-width='1.5'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 0.85rem center; padding-right: 2.5rem; }
+    .form__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+    .form__grid .form-row { margin-bottom: 0; }
+    .form__divider { border: none; border-top: 1px solid var(--light); margin: 1.75rem 0; }
+    .form__section-label { font-family: var(--mono); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.25rem; display: block; }
+    .form__submit { width: 100%; margin-top: 1.5rem; }
+    .form__note { text-align: center; margin-top: 1rem; font-size: 0.78rem; color: var(--mid); }
 
     /* DISCLAIMER */
     .disclaimer { padding: 3rem 0; background: var(--ink); color: rgba(255,255,255,0.7); }
@@ -153,8 +170,13 @@
     @media (max-width: 900px) {
       .nav__links { display: none; }
       .why__grid { grid-template-columns: 1fr; }
-      .partners__grid { grid-template-columns: 1fr; }
+      .partner-feature { grid-template-columns: 1fr; }
       .how__grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      .form__grid { grid-template-columns: 1fr; }
+      .form__card { padding: 1.5rem; }
     }
   </style>
 </head>
@@ -179,7 +201,7 @@
       <li><a href="100-brands.html" class="nav__link--accent">100 Brands</a></li>
       <li><a href="brand-kickstart.html" class="nav__link--accent">Brand Kickstart</a></li>
     </ul>
-    <a href="mailto:connect@distk.in" class="nav__cta">Get in Touch</a>
+    <a href="#get-connected" class="nav__cta">Get Connected</a>
   </div>
 </nav>
 
@@ -189,7 +211,11 @@
     <div class="hero__content reveal">
       <div class="hero__tag">Startup Essentials</div>
       <h1>Building a company is hard.<br>Finding the <em>right people</em> to help shouldn't be.</h1>
-      <p class="hero__sub">We work with startups every day. We know that company registration, compliance, finance, legal, and hiring can feel overwhelming when you're just getting started. So we built a curated list of trusted partners who can take that weight off your shoulders.</p>
+      <p class="hero__sub">We work with startups every day. We know that compliance, finance, legal, and hiring can feel overwhelming when you're just getting started. So we built a curated list of trusted partners who can take that weight off your shoulders.</p>
+      <div class="hero__actions">
+        <a href="#get-connected" class="btn btn--fill">Get Connected to a Partner</a>
+        <a href="#partners" class="btn btn--outline">See Our Partners</a>
+      </div>
     </div>
   </div>
 </section>
@@ -210,219 +236,78 @@
       </div>
       <div class="why__card">
         <h3>Hiring Without HR</h3>
-        <p>Your first five hires will shape your company. But most founders have never written an offer letter, structured a compensation plan, or set up payroll. The right HR partner changes everything.</p>
+        <p>Your first five hires will shape your company. But most founders still rely on job boards, generic recruiters, or random LinkedIn posts and then wonder why the bar is low. The right hiring partner changes everything.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Company Registration & Compliance -->
-<section class="partners" id="registration">
-  <div class="container">
-    <div class="partners__header reveal">
-      <div class="section-tag">Company Registration & Compliance</div>
-      <div class="section-title">Get your foundation right from day one</div>
-      <p class="section-desc">Private limited, LLP, OPC, or sole proprietorship. These partners handle entity formation, GST registration, MSME certification, trademark filing, and ongoing compliance so you can focus on building.</p>
-    </div>
-    <div class="partners__grid reveal">
-      <div class="partner-card">
-        <div class="partner-card__icon">//</div>
-        <span class="partner-card__type">Registration & Compliance</span>
-        <h3>Partner Name</h3>
-        <p>Brief description of the firm, their specialization, and why we recommend them for startups.</p>
-        <ul class="partner-card__services">
-          <li>Pvt Ltd / LLP / OPC Registration</li>
-          <li>GST & MSME Registration</li>
-          <li>Annual ROC Compliance</li>
-          <li>Trademark Filing</li>
-        </ul>
-        <div class="partner-card__placeholder">Coming Soon</div>
-      </div>
-      <div class="partner-card">
-        <div class="partner-card__icon">//</div>
-        <span class="partner-card__type">Registration & Compliance</span>
-        <h3>Partner Name</h3>
-        <p>Brief description of the firm, their specialization, and why we recommend them for startups.</p>
-        <ul class="partner-card__services">
-          <li>Pvt Ltd / LLP / OPC Registration</li>
-          <li>GST & MSME Registration</li>
-          <li>Annual ROC Compliance</li>
-          <li>Trademark Filing</li>
-        </ul>
-        <div class="partner-card__placeholder">Coming Soon</div>
-      </div>
-      <div class="partner-card">
-        <div class="partner-card__icon">//</div>
-        <span class="partner-card__type">Registration & Compliance</span>
-        <h3>Partner Name</h3>
-        <p>Brief description of the firm, their specialization, and why we recommend them for startups.</p>
-        <ul class="partner-card__services">
-          <li>Pvt Ltd / LLP / OPC Registration</li>
-          <li>GST & MSME Registration</li>
-          <li>Annual ROC Compliance</li>
-          <li>Trademark Filing</li>
-        </ul>
-        <div class="partner-card__placeholder">Coming Soon</div>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- Partners -->
+<div id="partners">
 
-<!-- Finance & Accounting -->
+<!-- AffilX - Finance & Compliance -->
 <section class="partners" id="finance">
   <div class="container">
     <div class="partners__header reveal">
-      <div class="section-tag">Finance & Accounting</div>
-      <div class="section-title">Your books, taxes, and finances handled by people who understand startups</div>
-      <p class="section-desc">From bookkeeping and ITR filing to fundraising-ready financials and investor reporting. These CAs and financial advisors specialize in working with early-stage companies.</p>
+      <div class="section-tag">Finance, Compliance & Advisory</div>
+      <div class="section-title">Your books, taxes, and compliance handled by people who understand startups</div>
     </div>
-    <div class="partners__grid reveal">
-      <div class="partner-card">
-        <div class="partner-card__icon">//</div>
-        <span class="partner-card__type">CA / Tax Advisory</span>
-        <h3>Partner Name</h3>
-        <p>Brief description of the firm, their specialization in startup accounting and tax planning.</p>
-        <ul class="partner-card__services">
+    <div class="partner-feature reveal">
+      <div class="partner-feature__info">
+        <div class="partner-feature__icon">//</div>
+        <span class="partner-feature__type">Finance, Compliance & Business Advisory</span>
+        <h3>AffilX India Consultancy LLP</h3>
+        <p>Helping startups and growing businesses build stronger finance, compliance, and reporting systems. AffilX works with early-stage companies to set up robust financial foundations so founders can focus on building product and acquiring customers instead of chasing deadlines.</p>
+        <ul class="partner-feature__services">
+          <li>GST, Income Tax & ROC Compliance</li>
           <li>Bookkeeping & Accounting</li>
-          <li>GST Returns & ITR Filing</li>
-          <li>TDS Compliance</li>
+          <li>TDS, Payroll & MIS Reporting</li>
+          <li>Virtual CFO & Business Advisory</li>
           <li>Fundraise-ready Financial Statements</li>
         </ul>
-        <div class="partner-card__placeholder">Coming Soon</div>
+        <a href="#get-connected" class="btn btn--fill">Get Connected to AffilX</a>
       </div>
-      <div class="partner-card">
-        <div class="partner-card__icon">//</div>
-        <span class="partner-card__type">CA / Tax Advisory</span>
-        <h3>Partner Name</h3>
-        <p>Brief description of the firm, their specialization in startup accounting and tax planning.</p>
-        <ul class="partner-card__services">
-          <li>Bookkeeping & Accounting</li>
-          <li>GST Returns & ITR Filing</li>
-          <li>TDS Compliance</li>
-          <li>Fundraise-ready Financial Statements</li>
-        </ul>
-        <div class="partner-card__placeholder">Coming Soon</div>
-      </div>
-      <div class="partner-card">
-        <div class="partner-card__icon">//</div>
-        <span class="partner-card__type">Financial Advisory</span>
-        <h3>Partner Name</h3>
-        <p>Brief description of the firm, their approach to startup financial planning and cash flow management.</p>
-        <ul class="partner-card__services">
-          <li>Cash Flow Planning</li>
-          <li>Startup Valuation</li>
-          <li>Investor Reporting</li>
-          <li>ESOP Structuring</li>
-        </ul>
-        <div class="partner-card__placeholder">Coming Soon</div>
+      <div class="partner-feature__sidebar">
+        <h4>Best For</h4>
+        <p>First-time founders, bootstrapped startups, and growing businesses that need a reliable partner for end-to-end finance and compliance without building an in-house team.</p>
+        <div class="partner-feature__highlight">If you're spending more time on GST filings than on your product, you need AffilX handling your back office.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Legal -->
-<section class="partners" id="legal">
-  <div class="container">
-    <div class="partners__header reveal">
-      <div class="section-tag">Legal & Contracts</div>
-      <div class="section-title">Protect your company before problems show up</div>
-      <p class="section-desc">Co-founder agreements, NDAs, client contracts, employment terms, DPIIT registration, and startup-specific IP protection. Legal partners who won't bill you like a Fortune 500.</p>
-    </div>
-    <div class="partners__grid reveal">
-      <div class="partner-card">
-        <div class="partner-card__icon">//</div>
-        <span class="partner-card__type">Startup Legal</span>
-        <h3>Partner Name</h3>
-        <p>Brief description of the firm, their experience with startup legal matters and founder-friendly approach.</p>
-        <ul class="partner-card__services">
-          <li>Co-founder & Shareholder Agreements</li>
-          <li>NDAs & Client Contracts</li>
-          <li>DPIIT Startup Recognition</li>
-          <li>IP & Trademark Protection</li>
-        </ul>
-        <div class="partner-card__placeholder">Coming Soon</div>
-      </div>
-      <div class="partner-card">
-        <div class="partner-card__icon">//</div>
-        <span class="partner-card__type">Litigation & Disputes</span>
-        <h3>Partner Name</h3>
-        <p>Brief description of the firm, their specialization in dispute resolution and litigation for businesses.</p>
-        <ul class="partner-card__services">
-          <li>Commercial Disputes</li>
-          <li>Contract Enforcement</li>
-          <li>Arbitration & Mediation</li>
-          <li>Consumer & IP Disputes</li>
-        </ul>
-        <div class="partner-card__placeholder">Coming Soon</div>
-      </div>
-      <div class="partner-card">
-        <div class="partner-card__icon">//</div>
-        <span class="partner-card__type">Corporate Law</span>
-        <h3>Partner Name</h3>
-        <p>Brief description of the firm, their experience with corporate structuring and regulatory compliance.</p>
-        <ul class="partner-card__services">
-          <li>Corporate Restructuring</li>
-          <li>Regulatory Compliance</li>
-          <li>Due Diligence</li>
-          <li>Fundraise Legal Support</li>
-        </ul>
-        <div class="partner-card__placeholder">Coming Soon</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- HR & Talent -->
+<!-- Saral AI - HR & Talent -->
 <section class="partners" id="hr">
   <div class="container">
     <div class="partners__header reveal">
       <div class="section-tag">HR & Talent</div>
-      <div class="section-title">Hire right, pay right, stay compliant from hire one</div>
-      <p class="section-desc">Recruitment, payroll setup, PF/ESI compliance, offer letters, HR policies, and employee onboarding. These HR partners help startups build teams without building an HR department first.</p>
+      <div class="section-title">Hire people who can actually ship, not just polish resumes</div>
+      <p class="section-desc">Early hires make or break your company. Most founders still rely on job boards, generic recruiters, or random LinkedIn posts and then wonder why the bar is low. Saral helps you run outbound hiring like you run outbound sales - targeted, repeatable, and focused on top 10% talent.</p>
     </div>
-    <div class="partners__grid reveal">
-      <div class="partner-card">
-        <div class="partner-card__icon">//</div>
-        <span class="partner-card__type">HR Agency</span>
-        <h3>Partner Name</h3>
-        <p>Brief description of the agency, their experience placing talent in startups and early-stage companies.</p>
-        <ul class="partner-card__services">
-          <li>Talent Acquisition & Recruitment</li>
-          <li>Payroll Setup & Management</li>
-          <li>PF / ESI / Labour Compliance</li>
-          <li>Employee Onboarding</li>
+    <div class="partner-feature reveal">
+      <div class="partner-feature__info">
+        <div class="partner-feature__icon">//</div>
+        <span class="partner-feature__type">Outbound Talent Engine</span>
+        <h3>Saral AI</h3>
+        <p>Saral is an AI-native outbound recruitment engine that finds, scores, and helps you reach top passive talent across LinkedIn, GitHub, and X - without you becoming a full-time recruiter. It is built for founders and lean TA teams who care more about who they hire than how many CVs they collect.</p>
+        <ul class="partner-feature__services">
+          <li>Talent mapping across 50M+ profiles (LinkedIn, GitHub, X)</li>
+          <li>Role-specific scoring, ranking, and shortlists in your inbox</li>
+          <li>Outbound outreach workflows so you can run hiring like outbound sales</li>
+          <li>Designed for early-stage teams hiring their first 5 to 50 key people</li>
         </ul>
-        <div class="partner-card__placeholder">Coming Soon</div>
+        <a href="#get-connected" class="btn btn--fill">Get Connected to Saral</a>
       </div>
-      <div class="partner-card">
-        <div class="partner-card__icon">//</div>
-        <span class="partner-card__type">HR Consulting</span>
-        <h3>Partner Name</h3>
-        <p>Brief description of the consultancy, their approach to building HR frameworks for growing teams.</p>
-        <ul class="partner-card__services">
-          <li>HR Policy & Handbook Creation</li>
-          <li>Compensation & Benefits Design</li>
-          <li>Performance Management Setup</li>
-          <li>Culture & Org Design</li>
-        </ul>
-        <div class="partner-card__placeholder">Coming Soon</div>
-      </div>
-      <div class="partner-card">
-        <div class="partner-card__icon">//</div>
-        <span class="partner-card__type">Staffing & Contract Hiring</span>
-        <h3>Partner Name</h3>
-        <p>Brief description of the staffing firm, their flexibility for startups that need to scale quickly.</p>
-        <ul class="partner-card__services">
-          <li>Contract-to-Hire Staffing</li>
-          <li>Freelancer Management</li>
-          <li>Background Verification</li>
-          <li>Temporary Staffing Solutions</li>
-        </ul>
-        <div class="partner-card__placeholder">Coming Soon</div>
+      <div class="partner-feature__sidebar">
+        <h4>Best For</h4>
+        <p>Founders who want to close high-signal engineers, product folks, and GTM talent without wasting weeks on noisy inbound. If you're tired of sifting through 200 irrelevant applications for one good hire, Saral flips the model.</p>
+        <div class="partner-feature__highlight">Stop posting and praying. Start reaching out to the people you actually want on your team.</div>
       </div>
     </div>
   </div>
 </section>
+
+</div>
 
 <!-- How It Works -->
 <section class="how">
@@ -431,30 +316,102 @@
     <div class="section-title">We connect you. They take it from there.</div>
     <div class="how__grid reveal">
       <div class="how__step">
-        <h3>Tell Us What You Need</h3>
-        <p>Drop us a message at connect@distk.in with what you're looking for. Company registration? CA? HR partner? Legal help? Just tell us.</p>
+        <h3>Fill the Form Below</h3>
+        <p>Tell us who you are, what your startup does, and what kind of help you need. Takes 2 minutes.</p>
       </div>
       <div class="how__step">
         <h3>We Make the Introduction</h3>
-        <p>We connect you directly with the right partner from our network. No middlemen, no commissions on your bill. A warm intro from people who know your context.</p>
+        <p>We review your request and connect you with the right partner from our network. A warm intro from people who know your context.</p>
       </div>
       <div class="how__step">
         <h3>You Work Directly With Them</h3>
-        <p>You deal with the partner directly. Negotiate your own terms, build your own relationship. We're just here to point you in the right direction.</p>
+        <p>You deal with the partner directly. Negotiate your own terms, build your own relationship. We're here to point you in the right direction.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
-<section class="cta-section">
+<!-- Lead Form -->
+<section class="form-section" id="get-connected">
   <div class="container">
-    <div class="cta__inner reveal">
-      <h2>Need a recommendation?</h2>
-      <p>If you're a founder or early-stage startup navigating compliance, registration, finance, or hiring for the first time, write to us. We'll point you to the right people.</p>
-      <div class="cta__actions">
-        <a href="mailto:connect@distk.in?subject=Startup%20Essentials%20-%20Need%20a%20Recommendation" class="btn btn--fill">Email Us</a>
-        <a href="/" class="btn btn--outline">Back to Distk.in</a>
+    <div class="form__wrapper reveal">
+      <h2>Get Connected to the Right Partner</h2>
+      <p>Tell us what you need. We'll introduce you to the right people from our network.</p>
+
+      <div class="form__card">
+        <form
+          name="startup-essentials"
+          method="POST"
+          action="/success.html"
+          data-netlify="true"
+          netlify-honeypot="bot-field-se"
+        >
+          <input type="hidden" name="form-name" value="startup-essentials" />
+          <p style="display:none"><input name="bot-field-se" /></p>
+
+          <span class="form__section-label">About You</span>
+
+          <div class="form__grid">
+            <div class="form-row">
+              <label for="se-name">Full Name *</label>
+              <input type="text" id="se-name" name="name" required placeholder="Your name" />
+            </div>
+            <div class="form-row">
+              <label for="se-email">Email *</label>
+              <input type="email" id="se-email" name="email" required placeholder="you@company.com" />
+            </div>
+          </div>
+
+          <div class="form__grid">
+            <div class="form-row">
+              <label for="se-phone">Phone</label>
+              <input type="tel" id="se-phone" name="phone" placeholder="+91 98765 43210" />
+            </div>
+            <div class="form-row">
+              <label for="se-company">Company / Startup Name *</label>
+              <input type="text" id="se-company" name="company" required placeholder="Your company name" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <label for="se-website">Website (if any)</label>
+            <input type="url" id="se-website" name="website" placeholder="https://yourcompany.com" />
+          </div>
+
+          <hr class="form__divider" />
+          <span class="form__section-label">What Do You Need?</span>
+
+          <div class="form-row">
+            <label for="se-service">I'm Looking For *</label>
+            <select id="se-service" name="service" required>
+              <option value="" disabled selected>Select a category</option>
+              <option value="Finance & Compliance (AffilX)">Finance & Compliance (GST, Tax, Bookkeeping, Virtual CFO)</option>
+              <option value="HR & Talent (Saral AI)">HR & Talent (Outbound Recruitment, Hiring)</option>
+              <option value="Both">Both - Finance/Compliance + HR/Talent</option>
+              <option value="Other">Something else (describe below)</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label for="se-stage">Company Stage *</label>
+            <select id="se-stage" name="stage" required>
+              <option value="" disabled selected>Select your stage</option>
+              <option value="Idea / Pre-revenue">Idea / Pre-revenue</option>
+              <option value="Early Revenue (< 50L/yr)">Early Revenue (under 50L/yr)</option>
+              <option value="Growing (50L - 5Cr/yr)">Growing (50L - 5Cr/yr)</option>
+              <option value="Scaling (5Cr+/yr)">Scaling (5Cr+/yr)</option>
+              <option value="Funded Startup">Funded Startup</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label for="se-details">Tell Us More</label>
+            <textarea id="se-details" name="details" placeholder="Briefly describe your situation. What's the most urgent thing you need help with? Any deadlines?"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--fill form__submit">Submit Request</button>
+          <p class="form__note">We typically respond within 24 hours with a warm introduction to the right partner.</p>
+        </form>
       </div>
     </div>
   </div>
