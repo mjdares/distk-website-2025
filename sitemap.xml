@@ -1727,6 +1727,14 @@
         <priority>0.8</priority>
     </url>
 
+    <!-- Brand Kickstart Global (ads landing page) -->
+    <url>
+        <loc>https://distk.in/brand-kickstart-global.html</loc>
+        <lastmod>2026-04-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
     <!-- Terms and Conditions -->
     <url>
         <loc>https://distk.in/terms.html</loc>
