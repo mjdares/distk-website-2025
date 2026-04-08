@@ -132,6 +132,16 @@
     .partner-feature__sidebar p { font-size: 0.85rem; color: var(--mid); line-height: 1.6; }
     .partner-feature__highlight { font-size: 0.88rem; color: var(--ink); line-height: 1.65; font-style: italic; border-left: 2px solid var(--accent); padding-left: 1.25rem; margin-top: 1.25rem; }
 
+    /* COMING SOON CARDS */
+    .coming-soon { padding: 5rem 0; background: #f5f5f5; }
+    .coming-soon__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2rem; }
+    .cs-card { border: 1.5px dashed var(--light); border-radius: 6px; padding: 2rem 1.5rem; background: var(--paper); transition: border-color 0.2s; }
+    .cs-card:hover { border-color: var(--accent); }
+    .cs-card__icon { font-family: var(--mono); font-size: 1.5rem; font-weight: 700; color: var(--accent); margin-bottom: 1rem; line-height: 1; }
+    .cs-card h3 { font-family: var(--sans); font-size: 1.05rem; font-weight: 600; margin-bottom: 0.4rem; }
+    .cs-card p { font-size: 0.88rem; color: var(--mid); line-height: 1.6; margin-bottom: 1.25rem; }
+    .cs-card__badge { display: inline-flex; align-items: center; padding: 0.4rem 0.9rem; background: var(--accent-soft); border-radius: 4px; font-family: var(--mono); font-size: 0.68rem; font-weight: 700; color: var(--accent); letter-spacing: 0.06em; text-transform: uppercase; }
+
     /* HOW IT WORKS */
     .how { padding: 5rem 0; background: #f5f5f5; }
     .how__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2rem; counter-reset: step; }
@@ -179,6 +189,7 @@
       .nav__links li a { display: block; padding: 0.6rem 0.65rem; font-size: 0.95rem; }
       .why__grid { grid-template-columns: 1fr; }
       .partner-feature { grid-template-columns: 1fr; }
+      .coming-soon__grid { grid-template-columns: 1fr; }
       .how__grid { grid-template-columns: 1fr; }
     }
 
@@ -319,6 +330,34 @@
 </section>
 
 </div>
+
+<!-- Coming Soon Partners -->
+<section class="coming-soon">
+  <div class="container">
+    <div class="section-tag">Coming Soon</div>
+    <div class="section-title">More partners joining the network</div>
+    <div class="coming-soon__grid reveal">
+      <div class="cs-card">
+        <div class="cs-card__icon">//</div>
+        <h3>Onground Events</h3>
+        <p>Launch events, founder meetups, demo days, and brand activations. For startups that need to get in front of real people, not just pixels.</p>
+        <span class="cs-card__badge">Coming Soon</span>
+      </div>
+      <div class="cs-card">
+        <div class="cs-card__icon">//</div>
+        <h3>Product Photoshoot</h3>
+        <p>Professional product photography for e-commerce, social media, and marketing. Because your product deserves better than an iPhone photo on a bedsheet.</p>
+        <span class="cs-card__badge">Coming Soon</span>
+      </div>
+      <div class="cs-card">
+        <div class="cs-card__icon">//</div>
+        <h3>Corporate Legal</h3>
+        <p>Co-founder agreements, NDAs, client contracts, DPIIT registration, and startup-specific IP protection. Legal partners who understand early-stage companies.</p>
+        <span class="cs-card__badge">Coming Soon</span>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- How It Works -->
 <section class="how">
