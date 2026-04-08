@@ -139,6 +139,11 @@
     .nav__links li a.nav__link--accent:hover { color: var(--accent); background: var(--accent-soft); }
     .nav__cta { display: inline-flex; align-items: center; padding: 0.5rem 1.1rem; background: var(--ink); color: var(--paper); font-family: var(--sans); font-size: 0.85rem; font-weight: 600; border-radius: 4px; white-space: nowrap; transition: background 0.2s; flex-shrink: 0; }
     .nav__cta:hover { background: var(--accent); }
+    .nav__hamburger { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; flex-shrink: 0; }
+    .nav__hamburger span { display: block; width: 20px; height: 2px; background: var(--ink); margin: 4px 0; transition: transform 0.3s, opacity 0.3s; }
+    .nav__hamburger.is-active span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .nav__hamburger.is-active span:nth-child(2) { opacity: 0; }
+    .nav__hamburger.is-active span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
 
     /* BUTTONS */
     .btn { display: inline-flex; align-items: center; justify-content: center; padding: 0.7rem 1.5rem; font-family: var(--sans); font-size: 0.9rem; font-weight: 600; border-radius: 4px; border: 1.5px solid transparent; cursor: pointer; transition: background 0.2s, color 0.2s, border-color 0.2s; text-decoration: none; line-height: 1.2; }
@@ -273,7 +278,10 @@
 
     /* RESPONSIVE */
     @media (max-width: 900px) {
-      .nav__links { display: none; }
+      .nav__hamburger { display: block; }
+      .nav__links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: rgba(250,250,250,0.98); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--light); padding: 1rem var(--gutter) 1.5rem; flex-direction: column; gap: 0.25rem; }
+      .nav__links.is-open { display: flex; }
+      .nav__links li a { display: block; padding: 0.6rem 0.65rem; font-size: 0.95rem; }
       .pain__grid { grid-template-columns: 1fr; }
       .includes__grid { grid-template-columns: 1fr; }
       .process__grid { grid-template-columns: 1fr 1fr; }
@@ -309,6 +317,9 @@
       <li><a href="brand-kickstart.html" class="nav__link--accent">Brand Kickstart</a></li>
     </ul>
     <a href="#get-started" class="nav__cta">Get Started</a>
+    <button class="nav__hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
 
@@ -731,6 +742,20 @@ document.getElementById('current-year').textContent = new Date().getFullYear();
     entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('is-visible'); io.unobserve(e.target); }});
   },{threshold:0.08});
   els.forEach(function(el){ io.observe(el); });
+})();
+
+(function(){
+  var btn = document.querySelector('.nav__hamburger');
+  var menu = document.querySelector('.nav__links');
+  if(!btn || !menu) return;
+  btn.addEventListener('click', function(){
+    var open = menu.classList.toggle('is-open');
+    btn.classList.toggle('is-active');
+    btn.setAttribute('aria-expanded', open);
+  });
+  menu.addEventListener('click', function(e){
+    if(e.target.tagName === 'A'){ menu.classList.remove('is-open'); btn.classList.remove('is-active'); btn.setAttribute('aria-expanded','false'); }
+  });
 })();
 </script>
 
