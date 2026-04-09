@@ -1735,6 +1735,22 @@
         <priority>0.7</priority>
     </url>
 
+    <!-- Blog: Google Gemma 4 Guide -->
+    <url>
+        <loc>https://distk.in/blog/what-is-google-gemma-4-open-source-ai-2026.html</loc>
+        <lastmod>2026-04-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Blog: Gemma 4 on Ollama Guide -->
+    <url>
+        <loc>https://distk.in/blog/how-to-run-gemma-4-ollama-local-ai-2026.html</loc>
+        <lastmod>2026-04-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
     <!-- Terms and Conditions -->
     <url>
         <loc>https://distk.in/terms.html</loc>

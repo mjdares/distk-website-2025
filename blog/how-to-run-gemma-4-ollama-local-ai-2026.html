@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Run Google Gemma 4 on Ollama in 2026: Complete Local AI Setup Guide | Distk</title>
+<meta name="description" content="How to run Google Gemma 4 on Ollama in 2026. Step-by-step guide to install Ollama, download Gemma 4 models (E2B, E4B, 27B, 31B), use the API, enable thinking mode, and build local AI apps.">
+<meta name="keywords" content="Gemma 4 Ollama 2026, how to run Gemma 4 locally, Ollama Gemma 4 guide, Gemma 4 local AI, ollama run gemma4, Gemma 4 API tutorial, Gemma 4 thinking mode, local LLM 2026, Gemma 4 Python, Gemma 4 JavaScript">
+<meta name="author" content="Distk"><meta name="robots" content="index, follow">
+<link rel="canonical" href="https://distk.in/blog/how-to-run-gemma-4-ollama-local-ai-2026.html">
+<meta property="og:type" content="article"><meta property="og:url" content="https://distk.in/blog/how-to-run-gemma-4-ollama-local-ai-2026.html">
+<meta property="og:title" content="How to Run Google Gemma 4 on Ollama in 2026: Complete Local AI Setup Guide">
+<meta property="og:description" content="Step-by-step guide to running Gemma 4 locally with Ollama. Install, configure, use the API, enable thinking mode, and build local AI applications in 2026.">
+<meta property="og:image" content="https://distk.in/assets/images/og-image.jpg"><meta property="og:site_name" content="Distk">
+<meta property="article:published_time" content="2026-04-08T00:00:00+05:30">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to Run Google Gemma 4 on Ollama in 2026: Complete Local AI Setup Guide","description":"How to run Google Gemma 4 on Ollama in 2026. Step-by-step guide to install Ollama, download Gemma 4 models, use the API, enable thinking mode, and build local AI apps.","author":{"@type":"Organization","name":"Distk","url":"https://distk.in"},"publisher":{"@type":"Organization","name":"Distk","logo":{"@type":"ImageObject","url":"https://distk.in/assets/images/Logo.png"}},"datePublished":"2026-04-08","mainEntityOfPage":{"@type":"WebPage","@id":"https://distk.in/blog/how-to-run-gemma-4-ollama-local-ai-2026.html"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I install Ollama and run Gemma 4 locally in 2026?","acceptedAnswer":{"@type":"Answer","text":"Install Ollama by running 'curl -fsSL https://ollama.com/install.sh | sh' on macOS or Linux, or download the installer from ollama.com for Windows. Once installed, open your terminal and run 'ollama run gemma4' to download and start chatting with the default Gemma 4 model. For specific variants, use 'ollama run gemma4:e2b' (smallest), 'ollama run gemma4:e4b' (edge), 'ollama run gemma4:27b' (MoE), or 'ollama run gemma4:31b' (most powerful). The first run downloads the model weights, which takes a few minutes depending on your connection."}},{"@type":"Question","name":"What hardware do I need to run Gemma 4 on Ollama in 2026?","acceptedAnswer":{"@type":"Answer","text":"Gemma 4 E2B needs about 2GB RAM and runs on any computer including Raspberry Pi. E4B needs 4GB RAM and works on any modern laptop. The 27B MoE model needs 16GB RAM and benefits from a GPU with 12GB+ VRAM. The 31B Dense model needs 24GB+ RAM and a powerful GPU (RTX 4090, A100) for good performance. Ollama automatically uses your GPU if CUDA (NVIDIA) or ROCm (AMD) drivers are installed. On Apple Silicon Macs, Ollama uses the Metal GPU automatically."}},{"@type":"Question","name":"How do I use the Ollama API with Gemma 4 in 2026?","acceptedAnswer":{"@type":"Answer","text":"Once Gemma 4 is running on Ollama, the API is available at http://localhost:11434. Use the /api/generate endpoint for single completions and /api/chat for multi-turn conversations. You can call the API from any programming language using HTTP requests. Ollama also provides official Python and JavaScript libraries for cleaner integration. The API is OpenAI-compatible, so most tools that work with OpenAI's API (LangChain, LlamaIndex, etc.) work with Ollama by changing the base URL."}},{"@type":"Question","name":"What is Gemma 4 thinking mode and how do I enable it on Ollama in 2026?","acceptedAnswer":{"@type":"Answer","text":"Gemma 4 thinking mode makes the model show its reasoning process before giving a final answer. To enable it on Ollama in 2026, include the <|think|> token at the start of your prompt or use a system prompt that instructs the model to think step by step. Thinking mode improves accuracy on math, logic, and complex reasoning tasks but increases response time and token usage. It is best used for tasks where accuracy matters more than speed."}},{"@type":"Question","name":"Can I use Gemma 4 on Ollama with Python and JavaScript in 2026?","acceptedAnswer":{"@type":"Answer","text":"Yes. Ollama provides official libraries for both Python (pip install ollama) and JavaScript (npm install ollama). In Python, import ollama and call ollama.generate() or ollama.chat() with model='gemma4'. In JavaScript, import Ollama from 'ollama' and use ollama.generate() or ollama.chat(). Both libraries support streaming responses, conversation history, and all Gemma 4 variants available on Ollama in 2026."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://distk.in"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://distk.in/blog/"},{"@type":"ListItem","position":3,"name":"How to Run Gemma 4 on Ollama 2026"}]}</script>
+<link rel="icon" type="image/png" href="../assets/images/favicon.png"><link rel="apple-touch-icon" href="../assets/images/Logo.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BWDTQ1JPL2"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-BWDTQ1JPL2');</script>
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1077520544213003');fbq('track','PageView');</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1077520544213003&ev=PageView&noscript=1"></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#0a0a0a;--paper:#fafafa;--mid:#6b6b6b;--light:#e8e8e8;--accent:#e63312;--accent-soft:rgba(230,51,18,0.08);--mono:'Space Mono',monospace;--sans:'Outfit',sans-serif;--container:1120px;--prose:720px;--gutter:clamp(1.2rem,4vw,3rem)}
+html{font-size:16px;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.container{max-width:var(--container);margin:0 auto;padding:0 var(--gutter)}
+.prose{max-width:var(--prose);margin:0 auto;padding:0 var(--gutter)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--light)}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;max-width:var(--container);margin:0 auto;padding:0.9rem var(--gutter)}
+.nav__logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;color:var(--ink)}
+.nav__logo img{height:32px;width:auto}
+.nav__logo span{font-family:var(--mono);font-weight:700;font-size:1.05rem;letter-spacing:-0.02em}
+.nav__logo small{display:block;font-size:0.55rem;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);line-height:1}
+.nav__back{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid);text-decoration:none;display:flex;align-items:center;gap:0.4rem;transition:color 0.2s}
+.nav__back:hover{color:var(--accent)}
+.nav__cta{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.6rem 1.4rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.nav__cta:hover{background:var(--accent)}
+.hero{padding:7.5rem 0 3.5rem;position:relative;overflow:hidden;border-bottom:1px solid var(--light)}
+.hero::before{content:'OLLAMA';position:absolute;right:-1%;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:clamp(6rem,22vw,20rem);font-weight:700;color:rgba(0,0,0,0.03);line-height:1;pointer-events:none;user-select:none;letter-spacing:-0.05em}
+.hero__tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1.5rem}
+.hero__tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.hero h1{font-family:var(--sans);font-weight:700;font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;letter-spacing:-0.03em;max-width:20ch;margin-bottom:1.5rem}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero__sub{font-size:1.1rem;color:var(--mid);max-width:56ch;line-height:1.7;margin-bottom:2rem}
+.hero__meta{display:flex;flex-wrap:wrap;gap:1.5rem;font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid)}
+.tldr{background:var(--accent-soft);border-left:3px solid var(--accent);padding:1.8rem 2rem;margin:3rem 0;position:relative}
+.tldr::before{content:'TL;DR';position:absolute;top:-0.6rem;left:2rem;font-family:var(--mono);font-size:0.62rem;font-weight:700;letter-spacing:0.12em;background:var(--accent);color:#fff;padding:0.2rem 0.6rem}
+.tldr p{font-size:0.95rem;color:var(--ink);line-height:1.7}
+.article{padding:4rem 0 5rem}
+.article h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.35rem,2.8vw,1.8rem);letter-spacing:-0.02em;line-height:1.2;margin:3rem 0 1rem;padding-top:1rem;border-top:1px solid var(--light)}
+.article h2:first-child{border-top:none;margin-top:0}
+.article h3{font-family:var(--mono);font-weight:700;font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin:2rem 0 0.6rem}
+.article p{font-size:1rem;color:#2a2a2a;line-height:1.8;margin-bottom:1.25rem}
+.article ul,.article ol{padding-left:1.4rem;margin-bottom:1.25rem}
+.article li{font-size:1rem;color:#2a2a2a;line-height:1.75;margin-bottom:0.4rem}
+.article strong{font-weight:600;color:var(--ink)}
+.article blockquote{border-left:3px solid var(--accent);padding:0.75rem 1.5rem;margin:2rem 0;background:var(--accent-soft)}
+.article blockquote p{color:var(--ink);font-size:1rem;margin:0}
+.data-table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:0.88rem}
+.data-table th{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:0.7rem 1rem;text-align:left}
+.data-table td{padding:0.75rem 1rem;border-bottom:1px solid var(--light);vertical-align:top}
+.data-table tr:last-child td{border-bottom:none}
+.data-table tr:nth-child(even) td{background:#f5f5f5}
+.callout{border:1.5px solid var(--light);padding:1.5rem 1.8rem;margin:2rem 0}
+.callout__label{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem}
+.callout p{font-size:0.92rem;color:var(--mid);line-height:1.7;margin:0}
+pre{background:var(--ink);color:#e8e8e8;padding:1.2rem 1.5rem;margin:1.5rem 0;overflow-x:auto;font-family:var(--mono);font-size:0.82rem;line-height:1.7;border-left:3px solid var(--accent)}
+code{font-family:var(--mono);font-size:0.88em;background:#f0f0f0;padding:0.15rem 0.4rem;border-radius:2px}
+pre code{background:none;padding:0;font-size:1em}
+.faq{padding:4rem 0;background:var(--ink);color:var(--paper)}
+.faq .section-tag{color:var(--accent)}
+.faq .section-tag::before{background:var(--accent)}
+.faq__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2.5rem;margin-top:2.5rem}
+.faq__item{border-left:2px solid var(--accent);padding-left:1.5rem}
+.faq__item h3{font-family:var(--sans);font-weight:600;font-size:0.95rem;margin-bottom:0.5rem;color:var(--paper)}
+.faq__item p{font-size:0.85rem;color:rgba(255,255,255,0.88);line-height:1.65}
+.section-tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1rem}
+.section-tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.section-title{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.15;color:var(--paper)}
+.cta{padding:5rem 0;background:var(--accent-soft);border-top:1px solid rgba(230,51,18,0.12)}
+.cta__inner{max-width:680px;margin:0 auto;padding:0 var(--gutter);text-align:center}
+.cta h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.2;margin-bottom:1rem}
+.cta p{font-size:1rem;color:var(--mid);line-height:1.7;margin-bottom:2rem}
+.cta__btn{display:inline-flex;align-items:center;gap:0.6rem;font-family:var(--mono);font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;padding:1rem 2.2rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.cta__btn:hover{background:var(--accent)}
+.foot{padding:2.5rem 0;border-top:1px solid var(--light);text-align:center;font-family:var(--mono);font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid)}
+.foot a{color:var(--mid);text-decoration:none}.foot a:hover{color:var(--accent)}
+@media(max-width:768px){.faq__grid{grid-template-columns:1fr}.nav__back span{display:none}.data-table{font-size:0.78rem}.data-table th,.data-table td{padding:0.5rem 0.6rem}pre{font-size:0.75rem;padding:1rem}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="https://distk.in" class="nav__logo">
+      <img src="../assets/images/Logo.png" alt="Distk">
+      <div><span>Distk</span><small>Global Growth Partner</small></div>
+    </a>
+    <a href="/blog/" class="nav__back">← <span>All articles</span></a>
+    <a href="https://distk.in/#contact" class="nav__cta">Work with us</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="prose">
+    <div class="hero__tag">AI / How-To Guide</div>
+    <h1>How to Run <em>Gemma 4 on Ollama</em> in 2026</h1>
+    <p class="hero__sub">Run Google's most powerful open-source AI on your own machine. No API keys, no cloud bills, no data leaving your laptop. This is the complete Ollama + Gemma 4 setup guide for developers, founders, and AI practitioners in 2026.</p>
+    <div class="hero__meta">
+      <span>Distk Editorial</span>
+      <span>Apr 2026</span>
+      <span>14 min read</span>
+    </div>
+  </div>
+</section>
+
+<div class="prose">
+  <div class="tldr">
+    <p>Install Ollama in one command. Run <code>ollama run gemma4</code> and you are chatting with Google DeepMind's frontier open-source model locally. Four variants available: E2B (phones, 2GB RAM), E4B (laptops, 4GB RAM), 27B MoE (servers, 16GB RAM), 31B Dense (max accuracy, 24GB RAM). Ollama handles downloading, quantization, and GPU acceleration automatically. The local API at localhost:11434 is OpenAI-compatible, so LangChain, LlamaIndex, and any OpenAI SDK-based tool works by changing one URL. Thinking mode via <code>&lt;|think|&gt;</code> token for complex reasoning. Zero cost, full privacy, works offline in 2026.</p>
+  </div>
+</div>
+
+<main class="article">
+  <div class="prose">
+
+    <h2>Why Run Gemma 4 Locally with Ollama in 2026?</h2>
+    <p>Running Gemma 4 on Ollama in 2026 gives you three things that no cloud API can match: complete data privacy (nothing leaves your machine), zero ongoing cost (no per-token billing), and offline availability (works without internet after the initial download). For developers building AI features, startups watching their burn rate, and enterprises with data sovereignty requirements, local AI with Ollama is not a compromise in 2026. It is a strategic advantage.</p>
+    <p>Ollama is the easiest way to run open-source AI models locally in 2026. It abstracts away the complexity of model downloading, weight quantization, GPU memory management, and inference optimization into a single command-line tool. If you have ever used Docker, Ollama feels the same but for AI models. One command to pull, one command to run.</p>
+    <p>Gemma 4 on Ollama in 2026 is particularly compelling because the model quality has reached the point where local AI handles 80% of tasks that previously required GPT-4 or Claude API calls. Coding assistance, document analysis, content writing, data extraction, translation across 140 languages, and multimodal understanding of images and audio. All running on your hardware, all completely free.</p>
+
+    <h2>How to Install Ollama on Your Machine in 2026</h2>
+    <p>Ollama installation in 2026 takes under 60 seconds on any major operating system. The installer handles all dependencies, GPU driver detection, and PATH configuration automatically.</p>
+
+    <h3>Install Ollama on macOS in 2026</h3>
+    <pre><code># Option 1: Using the install script
+curl -fsSL https://ollama.com/install.sh | sh
+
+# Option 2: Download from ollama.com
+# Visit ollama.com and click Download for macOS
+# Drag Ollama to Applications, launch it
+
+# Verify installation
+ollama --version</code></pre>
+    <p>On Apple Silicon Macs (M1, M2, M3, M4) in 2026, Ollama automatically uses the Metal GPU for hardware-accelerated inference. No additional configuration needed. This is one of the best platforms for running Gemma 4 locally because Apple Silicon's unified memory architecture lets the GPU access all available RAM.</p>
+
+    <h3>Install Ollama on Linux in 2026</h3>
+    <pre><code># Install Ollama
+curl -fsSL https://ollama.com/install.sh | sh
+
+# Verify installation
+ollama --version
+
+# Start the Ollama service (if not auto-started)
+ollama serve</code></pre>
+    <p>On Linux with NVIDIA GPUs in 2026, ensure CUDA drivers are installed first. Ollama detects CUDA automatically and uses GPU acceleration. For AMD GPUs, install ROCm drivers. Without GPU drivers, Ollama falls back to CPU inference, which is slower but still functional for the E2B and E4B models.</p>
+
+    <h3>Install Ollama on Windows in 2026</h3>
+    <pre><code># Download the Windows installer from ollama.com
+# Run OllamaSetup.exe
+# Ollama starts automatically as a system service
+
+# Open Command Prompt or PowerShell
+ollama --version</code></pre>
+    <p>Windows users in 2026 need NVIDIA GPU drivers with CUDA support for the best performance. Ollama on Windows supports both NVIDIA and AMD GPUs. WSL2 users can also install the Linux version inside their WSL distribution for a more Unix-native experience.</p>
+
+    <h2>How to Download and Run Gemma 4 on Ollama in 2026</h2>
+    <p>Once Ollama is installed, downloading and running Gemma 4 is a single command in 2026. Ollama pulls the model weights from the Ollama library, configures quantization for your hardware, and starts an interactive chat session.</p>
+
+    <h3>Run Gemma 4 Default Model</h3>
+    <pre><code># Download and run Gemma 4 (default variant)
+ollama run gemma4</code></pre>
+    <p>The first run downloads the model weights in 2026, which can take 2 to 15 minutes depending on the variant and your internet speed. Subsequent runs start instantly because the weights are cached locally. Once the download completes, you see a prompt where you can type messages and get responses from Gemma 4 directly in your terminal.</p>
+
+    <h3>Choose Your Gemma 4 Variant on Ollama in 2026</h3>
+    <pre><code># Gemma 4 E2B - Smallest, fastest (2.3B params)
+# Best for: phones, Raspberry Pi, quick tasks
+ollama run gemma4:e2b
+
+# Gemma 4 E4B - Edge model (4.5B params)
+# Best for: laptops, daily driver, coding assistant
+ollama run gemma4:e4b
+
+# Gemma 4 27B - MoE model (26B params)
+# Best for: servers, complex analysis, long context
+ollama run gemma4:27b
+
+# Gemma 4 31B - Dense model (31B params)
+# Best for: maximum accuracy, enterprise tasks
+ollama run gemma4:31b</code></pre>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Variant</th>
+          <th>Download Size</th>
+          <th>RAM Needed</th>
+          <th>Speed (tokens/sec on M3 Pro)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>gemma4:e2b</strong></td>
+          <td>~1.5 GB</td>
+          <td>2 GB</td>
+          <td>~80 tokens/sec</td>
+        </tr>
+        <tr>
+          <td><strong>gemma4:e4b</strong></td>
+          <td>~3 GB</td>
+          <td>4 GB</td>
+          <td>~45 tokens/sec</td>
+        </tr>
+        <tr>
+          <td><strong>gemma4:27b</strong></td>
+          <td>~16 GB</td>
+          <td>16 GB</td>
+          <td>~15 tokens/sec</td>
+        </tr>
+        <tr>
+          <td><strong>gemma4:31b</strong></td>
+          <td>~20 GB</td>
+          <td>24 GB</td>
+          <td>~10 tokens/sec</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout">
+      <div class="callout__label">Which Variant to Start With in 2026</div>
+      <p>If you are new to local AI, start with <code>ollama run gemma4:e4b</code>. It runs on any laptop with 8GB+ RAM, responds fast enough for real-time conversation, and handles coding, writing, analysis, and image understanding well. Upgrade to 27B or 31B only when you hit quality ceilings on your specific tasks.</p>
+    </div>
+
+    <h2>How to Use the Ollama API with Gemma 4 in 2026</h2>
+    <p>The Ollama CLI is great for chatting, but the real power comes from the API in 2026. Once Gemma 4 is running, Ollama exposes a REST API at <code>http://localhost:11434</code> that you can call from any programming language, any framework, and any tool that supports HTTP requests.</p>
+
+    <h3>Generate Endpoint: Single Completions</h3>
+    <pre><code># Basic text generation
+curl http://localhost:11434/api/generate -d '{
+  "model": "gemma4",
+  "prompt": "Write a Python function to validate email addresses",
+  "stream": false
+}'</code></pre>
+    <p>The <code>/api/generate</code> endpoint in 2026 accepts a model name and prompt, then returns the generated text. Set <code>"stream": true</code> (default) for token-by-token streaming or <code>"stream": false</code> for a single complete response. For production applications in 2026, streaming provides a better user experience because the first tokens appear immediately.</p>
+
+    <h3>Chat Endpoint: Multi-Turn Conversations</h3>
+    <pre><code># Multi-turn conversation
+curl http://localhost:11434/api/chat -d '{
+  "model": "gemma4",
+  "messages": [
+    {"role": "system", "content": "You are a senior Python developer."},
+    {"role": "user", "content": "How do I handle rate limiting in a REST API?"},
+    {"role": "assistant", "content": "Use a token bucket algorithm..."},
+    {"role": "user", "content": "Show me the implementation."}
+  ],
+  "stream": false
+}'</code></pre>
+    <p>The <code>/api/chat</code> endpoint in 2026 maintains conversation context through a messages array. Include the full conversation history with each request. Ollama does not store conversation state between requests, so your application manages the message history. This is standard for local AI deployments and gives you full control over context management.</p>
+
+    <h3>Use Gemma 4 with Python in 2026</h3>
+    <pre><code># Install the Ollama Python library
+# pip install ollama
+
+import ollama
+
+# Simple generation
+response = ollama.generate(
+    model='gemma4',
+    prompt='Explain microservices architecture in 3 paragraphs'
+)
+print(response['response'])
+
+# Chat with conversation history
+messages = [
+    {'role': 'system', 'content': 'You are a helpful coding assistant.'},
+    {'role': 'user', 'content': 'Write a FastAPI endpoint for user registration'}
+]
+
+response = ollama.chat(model='gemma4', messages=messages)
+print(response['message']['content'])
+
+# Streaming response
+for chunk in ollama.chat(model='gemma4', messages=messages, stream=True):
+    print(chunk['message']['content'], end='', flush=True)</code></pre>
+
+    <h3>Use Gemma 4 with JavaScript in 2026</h3>
+    <pre><code>// Install: npm install ollama
+import Ollama from 'ollama';
+
+const ollama = new Ollama();
+
+// Simple generation
+const response = await ollama.generate({
+  model: 'gemma4',
+  prompt: 'Write a React component for a search bar'
+});
+console.log(response.response);
+
+// Chat with history
+const chatResponse = await ollama.chat({
+  model: 'gemma4',
+  messages: [
+    { role: 'system', content: 'You are a frontend developer.' },
+    { role: 'user', content: 'How do I implement infinite scroll?' }
+  ]
+});
+console.log(chatResponse.message.content);
+
+// Streaming
+for await (const chunk of await ollama.chat({
+  model: 'gemma4',
+  messages: [{ role: 'user', content: 'Explain closures' }],
+  stream: true
+})) {
+  process.stdout.write(chunk.message.content);
+}</code></pre>
+
+    <h2>How to Enable Gemma 4 Thinking Mode on Ollama in 2026</h2>
+    <p>Gemma 4's thinking mode makes the model reason step-by-step before producing its final answer in 2026. This dramatically improves accuracy on math, logic, debugging, and complex analysis tasks at the cost of longer response times and more tokens. Think of it as the difference between a quick answer and a carefully considered one.</p>
+
+    <h3>Activate Thinking Mode</h3>
+    <pre><code># In the Ollama CLI, prefix your prompt:
+>>> /set parameter num_predict 4096
+>>> Think step by step: What is the probability of rolling
+    at least one six in four dice rolls?
+
+# Via API with think token
+curl http://localhost:11434/api/generate -d '{
+  "model": "gemma4",
+  "prompt": "&lt;|think|&gt;\nSolve: If a train leaves at 9am traveling 60mph and another leaves at 10am traveling 90mph, when does the second catch the first?",
+  "stream": false
+}'</code></pre>
+    <p>When thinking mode is active in 2026, Gemma 4 outputs its reasoning chain before the final answer. The thinking portion is wrapped in special tokens that you can parse out in your application if you only want to display the final answer. For debugging and verification, showing the full chain helps you understand how the model reached its conclusion.</p>
+
+    <div class="callout">
+      <div class="callout__label">When to Use Thinking Mode in 2026</div>
+      <p>Use thinking mode for: math problems, code debugging, multi-step logic, financial calculations, and any task where you need to verify the reasoning. Skip thinking mode for: simple Q&A, content generation, translation, summarization, and quick lookups. Thinking mode uses 2 to 5 times more tokens per response, which means 2 to 5 times longer wait times on local hardware.</p>
+    </div>
+
+    <h2>How to Optimize Gemma 4 Performance on Ollama in 2026</h2>
+    <p>Getting the best output quality and speed from Gemma 4 on Ollama in 2026 requires tuning a few key parameters. Google's recommended settings differ from Ollama's defaults, and using the right parameters makes a noticeable difference in output quality.</p>
+
+    <h3>Recommended Sampling Parameters for 2026</h3>
+    <pre><code># Set optimal parameters in Ollama CLI
+>>> /set parameter temperature 1.0
+>>> /set parameter top_p 0.95
+>>> /set parameter top_k 64
+
+# Or via API
+curl http://localhost:11434/api/generate -d '{
+  "model": "gemma4",
+  "prompt": "Your prompt here",
+  "options": {
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "top_k": 64,
+    "num_predict": 2048
+  }
+}'</code></pre>
+    <p>Google recommends <code>temperature=1.0</code>, <code>top_p=0.95</code>, and <code>top_k=64</code> for Gemma 4 in 2026. Most inference engines default to lower temperature (0.7 or 0.8), which makes Gemma 4 outputs feel repetitive and generic. If your local Gemma 4 responses feel flat compared to what you see in benchmarks, this is almost certainly the reason.</p>
+
+    <h3>GPU Memory Management in 2026</h3>
+    <pre><code># Check how much GPU memory Ollama is using
+ollama ps
+
+# Set GPU layers (partial offloading)
+# In Modelfile or via API:
+# "options": {"num_gpu": 35}
+
+# Force CPU-only inference (when GPU memory is limited)
+# "options": {"num_gpu": 0}</code></pre>
+    <p>If your GPU does not have enough VRAM for the full model in 2026, Ollama automatically splits the model between GPU and CPU (partial offloading). You can control how many layers go to the GPU with the <code>num_gpu</code> parameter. More GPU layers means faster inference but more VRAM usage. For the 27B model on a 12GB GPU in 2026, partial offloading gives you 60 to 70% of full GPU speed.</p>
+
+    <h3>Context Window Configuration in 2026</h3>
+    <pre><code># Increase context window for long documents
+curl http://localhost:11434/api/generate -d '{
+  "model": "gemma4:27b",
+  "prompt": "Analyze this document...",
+  "options": {
+    "num_ctx": 131072
+  }
+}'</code></pre>
+    <p>Ollama defaults to a smaller context window for speed in 2026. If you need the full 128K (E2B/E4B) or 256K (27B/31B) context, set <code>num_ctx</code> explicitly. Larger context windows use more RAM proportionally, so a 256K context on the 31B model may need 48GB+ RAM. For most tasks, 8K to 32K context is sufficient.</p>
+
+    <h2>How to Use Gemma 4 on Ollama with LangChain in 2026</h2>
+    <p>LangChain is the most popular framework for building AI applications in 2026, and it works with Ollama out of the box. Since Ollama exposes an OpenAI-compatible API, any LangChain code that works with OpenAI works with Gemma 4 by changing the base URL.</p>
+
+    <pre><code># pip install langchain langchain-community
+
+from langchain_community.llms import Ollama
+
+# Initialize Gemma 4 via Ollama
+llm = Ollama(model="gemma4", base_url="http://localhost:11434")
+
+# Simple invocation
+response = llm.invoke("What are the top 5 Python web frameworks in 2026?")
+print(response)
+
+# Chain with prompt template
+from langchain.prompts import PromptTemplate
+
+prompt = PromptTemplate(
+    template="You are an SEO expert. Write a meta description for: {topic}",
+    input_variables=["topic"]
+)
+
+chain = prompt | llm
+result = chain.invoke({"topic": "best running shoes for flat feet 2026"})
+print(result)</code></pre>
+
+    <h3>RAG Pipeline with Gemma 4 on Ollama in 2026</h3>
+    <pre><code># pip install langchain chromadb sentence-transformers
+
+from langchain_community.llms import Ollama
+from langchain_community.embeddings import OllamaEmbeddings
+from langchain_community.vectorstores import Chroma
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain.chains import RetrievalQA
+
+# Use Gemma 4 for both embeddings and generation
+llm = Ollama(model="gemma4")
+embeddings = OllamaEmbeddings(model="gemma4")
+
+# Load and split your documents
+text_splitter = RecursiveCharacterTextSplitter(
+    chunk_size=1000,
+    chunk_overlap=200
+)
+# docs = text_splitter.split_documents(your_documents)
+
+# Create vector store
+# vectorstore = Chroma.from_documents(docs, embeddings)
+
+# Build RAG chain
+# qa = RetrievalQA.from_chain_type(
+#     llm=llm,
+#     retriever=vectorstore.as_retriever(),
+#     chain_type="stuff"
+# )
+# answer = qa.invoke("Your question about your documents")</code></pre>
+    <p>A fully local RAG pipeline with Gemma 4 on Ollama in 2026 means your documents never leave your machine. No API calls, no data exposure, no usage costs. For law firms, healthcare organizations, financial services, and any business handling sensitive documents in 2026, this is the most compliant way to add AI-powered document search and analysis.</p>
+
+    <h2>How to Create Custom Gemma 4 Models with Ollama Modelfiles in 2026</h2>
+    <p>Ollama Modelfiles let you create custom configurations of Gemma 4 in 2026 with specific system prompts, parameters, and behaviors. Think of a Modelfile as a Dockerfile but for AI models. You define the base model, set parameters, add a system prompt, and build a new named model.</p>
+
+    <pre><code># Create a file called "Modelfile"
+FROM gemma4:e4b
+
+# Set Google's recommended parameters
+PARAMETER temperature 1.0
+PARAMETER top_p 0.95
+PARAMETER top_k 64
+PARAMETER num_predict 4096
+
+# Set a custom system prompt
+SYSTEM """You are a senior software architect specializing in
+Python, FastAPI, and cloud-native applications. You write clean,
+well-documented code with comprehensive error handling. When asked
+about architecture decisions, you consider scalability, cost, and
+team expertise. You are helping a startup team in 2026."""</code></pre>
+
+    <pre><code># Build the custom model
+ollama create my-coding-assistant -f Modelfile
+
+# Run it
+ollama run my-coding-assistant</code></pre>
+    <p>Custom Modelfiles in 2026 let you create specialized AI assistants for different tasks without fine-tuning. A coding assistant, a content writer, a data analyst, a customer support bot. Each uses the same Gemma 4 weights but with different system prompts and parameters optimized for their specific role.</p>
+
+    <h2>What Are Common Issues Running Gemma 4 on Ollama in 2026?</h2>
+    <p>Even though Ollama makes local AI straightforward in 2026, there are common issues that developers encounter when running Gemma 4. Here are the most frequent problems and their solutions.</p>
+
+    <h3>Slow Response Times in 2026</h3>
+    <p>If Gemma 4 responds slowly on Ollama in 2026, the most likely cause is CPU-only inference. Check that your GPU is being used with <code>ollama ps</code>. If you see 0 GPU layers, install or update your CUDA (NVIDIA) or ROCm (AMD) drivers. On Apple Silicon, Metal should be automatic. Another common cause is running a model too large for your RAM, which forces the OS to use swap memory. Switch to a smaller variant (E4B instead of 27B) if you are memory-constrained.</p>
+
+    <h3>Out of Memory Errors in 2026</h3>
+    <p>If Ollama crashes or hangs when loading Gemma 4 in 2026, your system does not have enough RAM for that model variant. The 27B model needs 16GB free and the 31B needs 24GB free. Close other applications to free memory, or switch to E4B (4GB) or E2B (2GB). You can also reduce the context window with <code>"num_ctx": 4096</code> to lower memory usage at the cost of shorter conversations.</p>
+
+    <h3>Repetitive or Low-Quality Output in 2026</h3>
+    <p>If Gemma 4 outputs feel repetitive, generic, or loop on the same phrases in 2026, you are almost certainly using default sampling parameters instead of Google's recommended settings. Set <code>temperature=1.0</code>, <code>top_p=0.95</code>, <code>top_k=64</code>. This is the single most common quality issue people report with Gemma 4 on Ollama, and the fix is always the same: raise the temperature to 1.0.</p>
+
+    <h3>Model Not Found Error in 2026</h3>
+    <p>If you get "model not found" when running <code>ollama run gemma4</code> in 2026, the model has not been downloaded yet. The first <code>ollama run</code> command downloads the model automatically. If the download was interrupted, run <code>ollama pull gemma4</code> to re-download. Check your internet connection and disk space. The 31B model needs about 20GB of free disk space.</p>
+
+    <blockquote>
+      <p>The best way to learn Gemma 4 on Ollama in 2026 is to run <code>ollama run gemma4:e4b</code> and start asking it questions about your actual work. Theory gets you started. Practice gets you productive.</p>
+    </blockquote>
+
+  </div>
+</main>
+
+<section class="faq">
+  <div class="container">
+    <div class="section-tag">Common Questions</div>
+    <h2 class="section-title">Gemma 4 on Ollama — FAQs for 2026</h2>
+    <div class="faq__grid">
+      <div class="faq__item">
+        <h3>How do I install Ollama?</h3>
+        <p>Run <code>curl -fsSL https://ollama.com/install.sh | sh</code> on macOS/Linux. On Windows, download the installer from ollama.com. Takes under 60 seconds. Then run <code>ollama run gemma4</code> to start.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Which Gemma 4 variant should I run?</h3>
+        <p>Start with gemma4:e4b. It runs on any 8GB+ laptop, responds fast, and handles coding, writing, and image analysis well in 2026. Upgrade to 27B or 31B if you need higher accuracy on complex tasks.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Is the Ollama API OpenAI-compatible?</h3>
+        <p>Yes. Ollama exposes an OpenAI-compatible API at localhost:11434. LangChain, LlamaIndex, and any OpenAI SDK tool works by changing the base URL. No code changes needed beyond the URL.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Can I run Gemma 4 offline?</h3>
+        <p>Yes. Once the model weights are downloaded (first run), Gemma 4 on Ollama runs completely offline in 2026. No internet, no API calls, no data leaves your machine. Works on airplane mode.</p>
+      </div>
+      <div class="faq__item">
+        <h3>What is thinking mode?</h3>
+        <p>Thinking mode makes Gemma 4 show its reasoning chain before answering. Improves accuracy on math, logic, and debugging. Uses 2 to 5 times more tokens. Enable with the &lt;|think|&gt; token in your prompt.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Why are my Gemma 4 outputs repetitive?</h3>
+        <p>You are using default sampling parameters. Set temperature=1.0, top_p=0.95, top_k=64 (Google's recommended settings). This fixes 90% of quality complaints with Gemma 4 on Ollama in 2026.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="cta__inner">
+    <h2>Building AI-powered products with open-source models in 2026?</h2>
+    <p>At Distk, we help teams select, deploy, and optimize open-source AI models for production. From Gemma 4 fine-tuning to RAG pipelines to full AI product strategy, we build systems that run on your infrastructure at your budget.</p>
+    <a href="https://distk.in/#contact" class="cta__btn">Get a local AI deployment plan →</a>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="container">
+    © 2026 Distk · <a href="https://distk.in">distk.in</a> · <a href="mailto:connect@distk.in">connect@distk.in</a>
+  </div>
+</footer>
+</body>
+</html>
