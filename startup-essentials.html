@@ -114,23 +114,17 @@
 
     /* PARTNER SECTIONS */
     .partners { padding: 5rem 0; }
-    .partners + .partners { padding-top: 0; }
     .partners__header { margin-bottom: 2.5rem; }
-    .partner-feature { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
-    .partner-feature__info { }
-    .partner-feature__icon { font-family: var(--mono); font-size: 1.8rem; font-weight: 700; color: var(--accent); margin-bottom: 1rem; line-height: 1; }
-    .partner-feature__type { font-family: var(--mono); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; display: block; }
-    .partner-feature__info h3 { font-family: var(--sans); font-size: 1.4rem; font-weight: 700; margin-bottom: 0.6rem; }
-    .partner-feature__info > p { font-size: 0.95rem; color: var(--mid); line-height: 1.7; margin-bottom: 1.5rem; }
-    .partner-feature__url { font-family: var(--mono); font-size: 0.75rem; color: var(--mid); margin-bottom: 1.5rem; display: block; }
-    .partner-feature__services { list-style: none; margin-bottom: 2rem; }
-    .partner-feature__services li { position: relative; padding-left: 1.4rem; font-size: 0.9rem; color: #2a2a2a; line-height: 1.5; margin-bottom: 0.6rem; }
-    .partner-feature__services li::before { content: ''; position: absolute; left: 0; top: 0.5rem; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
-    .partner-feature__cta { margin-top: 0.5rem; }
-    .partner-feature__sidebar { border: 1.5px solid var(--light); border-radius: 8px; padding: 2rem; background: #f9f9f9; }
-    .partner-feature__sidebar h4 { font-family: var(--mono); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
-    .partner-feature__sidebar p { font-size: 0.85rem; color: var(--mid); line-height: 1.6; }
-    .partner-feature__highlight { font-size: 0.88rem; color: var(--ink); line-height: 1.65; font-style: italic; border-left: 2px solid var(--accent); padding-left: 1.25rem; margin-top: 1.25rem; }
+    .partners__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .p-card { border: 1.5px solid var(--light); border-radius: 6px; padding: 2rem 1.5rem; transition: border-color 0.2s; }
+    .p-card:hover { border-color: var(--accent); }
+    .p-card__icon { font-family: var(--mono); font-size: 1.5rem; font-weight: 700; color: var(--accent); margin-bottom: 1rem; line-height: 1; }
+    .p-card__type { font-family: var(--mono); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; display: block; }
+    .p-card h3 { font-family: var(--sans); font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .p-card > p { font-size: 0.88rem; color: var(--mid); line-height: 1.6; margin-bottom: 1.25rem; }
+    .p-card__services { list-style: none; margin-bottom: 1.5rem; }
+    .p-card__services li { position: relative; padding-left: 1.2rem; font-size: 0.82rem; color: #2a2a2a; line-height: 1.5; margin-bottom: 0.4rem; }
+    .p-card__services li::before { content: ''; position: absolute; left: 0; top: 0.45rem; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
 
     /* COMING SOON CARDS */
     .coming-soon { padding: 5rem 0; background: #f5f5f5; }
@@ -188,7 +182,7 @@
       .nav__links.is-open { display: flex; }
       .nav__links li a { display: block; padding: 0.6rem 0.65rem; font-size: 0.95rem; }
       .why__grid { grid-template-columns: 1fr; }
-      .partner-feature { grid-template-columns: 1fr; }
+      .partners__grid { grid-template-columns: 1fr; }
       .coming-soon__grid { grid-template-columns: 1fr; }
       .how__grid { grid-template-columns: 1fr; }
     }
@@ -265,71 +259,56 @@
 </section>
 
 <!-- Partners -->
-<div id="partners">
-
-<!-- AffilX - Finance & Compliance -->
-<section class="partners" id="finance">
+<section class="partners" id="partners">
   <div class="container">
     <div class="partners__header reveal">
-      <div class="section-tag">Finance, Compliance & Advisory</div>
-      <div class="section-title">Your books, taxes, and compliance handled by people who understand startups</div>
+      <div class="section-tag">Our Partners</div>
+      <div class="section-title">Trusted by us. Vetted for startups.</div>
     </div>
-    <div class="partner-feature reveal">
-      <div class="partner-feature__info">
-        <div class="partner-feature__icon">//</div>
-        <span class="partner-feature__type">Finance, Compliance & Business Advisory</span>
+    <div class="partners__grid reveal">
+      <div class="p-card">
+        <div class="p-card__icon">//</div>
+        <span class="p-card__type">Finance, Compliance & Advisory</span>
         <h3>AffilX India Consultancy LLP</h3>
-        <p>Helping startups and growing businesses build stronger finance, compliance, and reporting systems. AffilX works with early-stage companies to set up robust financial foundations so founders can focus on building product and acquiring customers instead of chasing deadlines.</p>
-        <ul class="partner-feature__services">
+        <p>Helping startups build stronger finance, compliance, and reporting systems so founders can focus on product and customers instead of chasing deadlines.</p>
+        <ul class="p-card__services">
           <li>GST, Income Tax & ROC Compliance</li>
           <li>Bookkeeping & Accounting</li>
           <li>TDS, Payroll & MIS Reporting</li>
           <li>Virtual CFO & Business Advisory</li>
           <li>Fundraise-ready Financial Statements</li>
         </ul>
-        <a href="#get-connected" class="btn btn--fill">Get Connected to AffilX</a>
+        <a href="#get-connected" class="btn btn--fill">Get Connected</a>
       </div>
-      <div class="partner-feature__sidebar">
-        <h4>Best For</h4>
-        <p>First-time founders, bootstrapped startups, and growing businesses that need a reliable partner for end-to-end finance and compliance without building an in-house team.</p>
-        <div class="partner-feature__highlight">If you're spending more time on GST filings than on your product, you need AffilX handling your back office.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SaralHire.ai - HR & Talent -->
-<section class="partners" id="hr">
-  <div class="container">
-    <div class="partners__header reveal">
-      <div class="section-tag">HR & Talent</div>
-      <div class="section-title">Hire people who can actually ship, not just polish resumes</div>
-      <p class="section-desc">Early hires make or break your company. Most founders still rely on job boards, generic recruiters, or random LinkedIn posts and then wonder why the bar is low. Saral helps you run outbound hiring like you run outbound sales - targeted, repeatable, and focused on top 10% talent.</p>
-    </div>
-    <div class="partner-feature reveal">
-      <div class="partner-feature__info">
-        <div class="partner-feature__icon">//</div>
-        <span class="partner-feature__type">Outbound Talent Engine</span>
+      <div class="p-card">
+        <div class="p-card__icon">//</div>
+        <span class="p-card__type">Outbound Talent Engine</span>
         <h3>SaralHire.ai</h3>
-        <p>Saral is an AI-native outbound recruitment engine that finds, scores, and helps you reach top passive talent across LinkedIn, GitHub, and X - without you becoming a full-time recruiter. It is built for founders and lean TA teams who care more about who they hire than how many CVs they collect.</p>
-        <ul class="partner-feature__services">
-          <li>Talent mapping across 50M+ profiles (LinkedIn, GitHub, X)</li>
-          <li>Role-specific scoring, ranking, and shortlists in your inbox</li>
-          <li>Outbound outreach workflows so you can run hiring like outbound sales</li>
-          <li>Designed for early-stage teams hiring their first 5 to 50 key people</li>
+        <p>AI-native outbound recruitment engine that finds, scores, and helps you reach top passive talent across LinkedIn, GitHub, and X. Built for founders and lean TA teams.</p>
+        <ul class="p-card__services">
+          <li>Talent mapping across 50M+ profiles</li>
+          <li>Role-specific scoring & shortlists</li>
+          <li>Outbound outreach workflows</li>
+          <li>Built for teams hiring first 5 to 50 people</li>
         </ul>
-        <a href="#get-connected" class="btn btn--fill">Get Connected to Saral</a>
+        <a href="#get-connected" class="btn btn--fill">Get Connected</a>
       </div>
-      <div class="partner-feature__sidebar">
-        <h4>Best For</h4>
-        <p>Founders who want to close high-signal engineers, product folks, and GTM talent without wasting weeks on noisy inbound. If you're tired of sifting through 200 irrelevant applications for one good hire, Saral flips the model.</p>
-        <div class="partner-feature__highlight">Stop posting and praying. Start reaching out to the people you actually want on your team.</div>
+      <div class="p-card">
+        <div class="p-card__icon">//</div>
+        <span class="p-card__type">Product Photoshoot & Creative</span>
+        <h3>Afterlight Studio</h3>
+        <p>An award-winning styling-led creative studio. They specialize in making your products stand out with professional photography for e-commerce, social media, and brand campaigns.</p>
+        <ul class="p-card__services">
+          <li>Product Photography & Styling</li>
+          <li>E-commerce Ready Shoots</li>
+          <li>Social Media Content</li>
+          <li>Brand Campaign Creatives</li>
+        </ul>
+        <a href="#get-connected" class="btn btn--fill">Get Connected</a>
       </div>
     </div>
   </div>
 </section>
-
-</div>
 
 <!-- Coming Soon Partners -->
 <section class="coming-soon">
@@ -341,12 +320,6 @@
         <div class="cs-card__icon">//</div>
         <h3>Onground Events</h3>
         <p>Launch events, founder meetups, demo days, and brand activations. For startups that need to get in front of real people, not just pixels.</p>
-        <span class="cs-card__badge">Coming Soon</span>
-      </div>
-      <div class="cs-card">
-        <div class="cs-card__icon">//</div>
-        <h3>Product Photoshoot</h3>
-        <p>Professional product photography for e-commerce, social media, and marketing. Because your product deserves better than an iPhone photo on a bedsheet.</p>
         <span class="cs-card__badge">Coming Soon</span>
       </div>
       <div class="cs-card">
@@ -468,7 +441,7 @@
               <option value="Finance & Compliance (AffilX)">Finance & Compliance (GST, Tax, Bookkeeping, Virtual CFO)</option>
               <option value="HR & Talent (SaralHire.ai)">HR & Talent (Outbound Recruitment, Hiring)</option>
               <option value="Onground Events">Onground Events</option>
-              <option value="Product Photoshoot">Product Photoshoot</option>
+              <option value="Product Photoshoot & Creative (Afterlight Studio)">Product Photoshoot & Creative (Afterlight Studio)</option>
               <option value="Corporate Legal">Corporate Legal</option>
               <option value="Branding & Design">Branding & Design</option>
               <option value="Video Production">Video Production</option>
