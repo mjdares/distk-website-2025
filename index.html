@@ -554,6 +554,41 @@
       max-width: 520px;
     }
 
+    /* HERO SUB ANIMATION */
+    .hero__sub .rotate-word {
+      display: inline-block;
+      position: relative;
+      color: var(--accent);
+      font-weight: 600;
+      transition: width 0.4s ease;
+    }
+    .hero__sub .rotate-word span {
+      display: inline-block;
+      opacity: 0;
+      position: absolute;
+      left: 0;
+      top: 0;
+      white-space: nowrap;
+    }
+    /* invisible placeholder to hold width */
+    .hero__sub .rotate-word .rotate-sizer {
+      visibility: hidden;
+      position: static;
+      opacity: 1;
+    }
+    .hero__sub .highlight {
+      background: linear-gradient(120deg, var(--accent-soft) 0%, var(--accent-soft) 100%);
+      background-repeat: no-repeat;
+      background-size: 0% 100%;
+      background-position: 0 0;
+      padding: 0.05em 0.2em;
+      border-radius: 2px;
+      animation: highlightSweep 1.2s ease 1.5s forwards;
+    }
+    @keyframes highlightSweep {
+      to { background-size: 100% 100%; }
+    }
+
     .hero__actions {
       display: flex;
       gap: 0.75rem;
@@ -1722,7 +1757,7 @@
     <div>
       <div class="hero__tag">Distribution is the Key</div>
       <h1>We help you <em>sell better</em> and market more effectively.</h1>
-      <p class="hero__sub">We work with SMEs, startups, and scaling businesses across India and the world to improve sales and marketing results using proven strategies and modern AI tools.</p>
+      <p class="hero__sub">We work with <span class="rotate-word"><span class="rotate-sizer">scaling businesses</span><span>SMEs</span><span>startups</span><span>scaling businesses</span></span> across India and the world to improve sales and marketing results using <span class="highlight">proven strategies and modern AI tools.</span></p>
       <div class="hero__actions">
         <a href="#contact" class="btn btn--fill">Schedule a callback</a>
         <a href="#services" class="btn btn--outline">Explore services</a>
@@ -2225,6 +2260,26 @@
 <script>
 // Set year
 document.getElementById('current-year').textContent = new Date().getFullYear();
+
+// Word rotation with dynamic width
+(function(){
+  var wrapper = document.querySelector('.rotate-word');
+  if(!wrapper) return;
+  var sizer = wrapper.querySelector('.rotate-sizer');
+  var words = wrapper.querySelectorAll('span:not(.rotate-sizer)');
+  if(!words.length) return;
+  var current = 0;
+  function show(i){
+    words.forEach(function(w){ w.style.opacity='0'; w.style.transform='translateY(8px)'; w.style.transition='opacity 0.4s,transform 0.4s'; });
+    sizer.textContent = words[i].textContent;
+    words[i].style.opacity='1'; words[i].style.transform='translateY(0)';
+  }
+  show(0);
+  setInterval(function(){
+    current = (current+1) % words.length;
+    show(current);
+  }, 3000);
+})();
 
 // Reveal on scroll
 (function(){
