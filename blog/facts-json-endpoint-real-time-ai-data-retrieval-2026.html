@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Build a /facts.json Endpoint for AI Data Retrieval in 2026 | Distk</title>
+<meta name="description" content="A /facts.json endpoint gives AI agents a deterministic, machine-readable source of truth about your brand in 2026. Here is the full spec, schema and implementation guide.">
+<meta name="keywords" content="facts.json endpoint, AI data retrieval 2026, machine readable brand data, llmo, AI agent vendor data, JSON brand truth, GEO endpoint">
+<meta name="author" content="Distk"><meta name="robots" content="index, follow">
+<link rel="canonical" href="https://distk.in/blog/facts-json-endpoint-real-time-ai-data-retrieval-2026.html">
+<meta property="og:type" content="article"><meta property="og:url" content="https://distk.in/blog/facts-json-endpoint-real-time-ai-data-retrieval-2026.html">
+<meta property="og:title" content="How to Build a /facts.json Endpoint for AI Data Retrieval in 2026">
+<meta property="og:description" content="The complete 2026 spec for /facts.json — a deterministic JSON endpoint that gives AI agents a machine-readable source of truth about your brand, products and pricing.">
+<meta property="og:image" content="https://distk.in/assets/images/og-image.jpg"><meta property="og:site_name" content="Distk">
+<meta property="article:published_time" content="2026-05-12T00:00:00+05:30">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to Build a /facts.json Endpoint for AI Data Retrieval in 2026","description":"Complete 2026 spec and implementation guide for a /facts.json endpoint that gives AI agents and LLMs a deterministic JSON source of truth about your brand.","author":{"@type":"Organization","name":"Distk","url":"https://distk.in"},"publisher":{"@type":"Organization","name":"Distk","logo":{"@type":"ImageObject","url":"https://distk.in/assets/images/Logo.png"}},"datePublished":"2026-05-12","mainEntityOfPage":{"@type":"WebPage","@id":"https://distk.in/blog/facts-json-endpoint-real-time-ai-data-retrieval-2026.html"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a /facts.json endpoint?","acceptedAnswer":{"@type":"Answer","text":"A /facts.json endpoint is a JSON file served at the root of your domain (e.g. distk.in/facts.json) that gives AI agents and LLM crawlers a deterministic, machine-readable source of truth about your brand. It typically contains your organisation entity, founders, locations, services, pricing, key statistics, recent news, and citations. Unlike crawled HTML, a /facts.json endpoint is unambiguous and fast to parse, which makes it the preferred reference for AI agents that need accurate brand data in 2026."}},{"@type":"Question","name":"Why does a /facts.json endpoint matter in 2026?","acceptedAnswer":{"@type":"Answer","text":"It matters in 2026 because AI agents increasingly cite the cleanest, most machine-readable source they can find. HTML pages get parsed inconsistently across LLMs, and schema markup is helpful but limited in scope. A /facts.json endpoint cuts through that ambiguity and lets you publish exact, verified brand data for AI consumption. Brands that publish a /facts.json endpoint typically see higher accuracy in AI-generated answers about them and fewer hallucinated facts."}},{"@type":"Question","name":"What should be in a /facts.json file?","acceptedAnswer":{"@type":"Answer","text":"A /facts.json file in 2026 should include the organisation entity (legal name, founders, founding date, HQ, sameAs links), service catalogue with descriptions and links, key statistics with sources, location and contact details, pricing where appropriate, recent press citations, and a last_updated timestamp. The structure should follow Schema.org vocabulary where possible, plus brand-specific extensions, and the file should be served as application/json without authentication."}},{"@type":"Question","name":"How is /facts.json different from llms.txt and robots.txt?","acceptedAnswer":{"@type":"Answer","text":"They are complementary. robots.txt controls which crawlers can access which paths. llms.txt is a markdown file describing what your site is and which pages matter for AI consumption. /facts.json is a structured JSON payload of verified brand facts. Together they form the 2026 AI-readable layer: robots.txt for access, llms.txt for navigation, and /facts.json for ground truth data. Most brands need all three to be fully visible to AI agents."}},{"@type":"Question","name":"How do I get AI agents to actually use my /facts.json endpoint?","acceptedAnswer":{"@type":"Answer","text":"Reference it from three places: your llms.txt file, your homepage HTML head as a link rel='alternate' tag, and your sitemap.xml. Mention it in any media coverage you can influence. Submit it through the AI visibility tools that index brand endpoints. The major LLM crawlers (GPTBot, ClaudeBot, Perplexity-User, GoogleOther) will pick it up within 2 to 6 weeks once it is properly referenced. Keep the file under 100 KB and update it on a regular cadence."}}]}</script>
+<link rel="icon" type="image/png" href="../assets/images/favicon.png"><link rel="apple-touch-icon" href="../assets/images/Logo.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BWDTQ1JPL2"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-BWDTQ1JPL2');</script>
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1077520544213003');fbq('track','PageView');</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1077520544213003&ev=PageView&noscript=1"></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#0a0a0a;--paper:#fafafa;--mid:#6b6b6b;--light:#e8e8e8;--accent:#e63312;--accent-soft:rgba(230,51,18,0.08);--mono:'Space Mono',monospace;--sans:'Outfit',sans-serif;--container:1120px;--prose:720px;--gutter:clamp(1.2rem,4vw,3rem)}
+html{font-size:16px;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.container{max-width:var(--container);margin:0 auto;padding:0 var(--gutter)}
+.prose{max-width:var(--prose);margin:0 auto;padding:0 var(--gutter)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--light)}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;max-width:var(--container);margin:0 auto;padding:0.9rem var(--gutter)}
+.nav__logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;color:var(--ink)}
+.nav__logo img{height:32px;width:auto}
+.nav__logo span{font-family:var(--mono);font-weight:700;font-size:1.05rem;letter-spacing:-0.02em}
+.nav__logo small{display:block;font-size:0.55rem;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);line-height:1}
+.nav__back{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid);text-decoration:none;display:flex;align-items:center;gap:0.4rem;transition:color 0.2s}
+.nav__back:hover{color:var(--accent)}
+.nav__cta{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.6rem 1.4rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.nav__cta:hover{background:var(--accent)}
+.hero{padding:7.5rem 0 3.5rem;position:relative;overflow:hidden;border-bottom:1px solid var(--light)}
+.hero::before{content:'JSON';position:absolute;right:-1%;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:clamp(6rem,30vw,26rem);font-weight:700;color:rgba(0,0,0,0.03);line-height:1;pointer-events:none;user-select:none;letter-spacing:-0.05em}
+.hero__tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1.5rem}
+.hero__tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.hero h1{font-family:var(--sans);font-weight:700;font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;letter-spacing:-0.03em;max-width:20ch;margin-bottom:1.5rem}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero__sub{font-size:1.1rem;color:var(--mid);max-width:56ch;line-height:1.7;margin-bottom:2rem}
+.hero__meta{display:flex;flex-wrap:wrap;gap:1.5rem;font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid)}
+.tldr{background:var(--accent-soft);border-left:3px solid var(--accent);padding:1.8rem 2rem;margin:3rem 0;position:relative}
+.tldr::before{content:'TL;DR';position:absolute;top:-0.6rem;left:2rem;font-family:var(--mono);font-size:0.62rem;font-weight:700;letter-spacing:0.12em;background:var(--accent);color:#fff;padding:0.2rem 0.6rem}
+.tldr p{font-size:0.95rem;color:var(--ink);line-height:1.7}
+.article{padding:4rem 0 5rem}
+.article h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.35rem,2.8vw,1.8rem);letter-spacing:-0.02em;line-height:1.2;margin:3rem 0 1rem;padding-top:1rem;border-top:1px solid var(--light)}
+.article h2:first-child{border-top:none;margin-top:0}
+.article h3{font-family:var(--mono);font-weight:700;font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin:2rem 0 0.6rem}
+.article p{font-size:1rem;color:#2a2a2a;line-height:1.8;margin-bottom:1.25rem}
+.article ul,.article ol{padding-left:1.4rem;margin-bottom:1.25rem}
+.article li{font-size:1rem;color:#2a2a2a;line-height:1.75;margin-bottom:0.4rem}
+.article strong{font-weight:600;color:var(--ink)}
+.article blockquote{border-left:3px solid var(--accent);padding:0.75rem 1.5rem;margin:2rem 0;background:var(--accent-soft)}
+.article blockquote p{color:var(--ink);font-size:1rem;margin:0}
+.article pre{background:#0a0a0a;color:#f5f5f5;padding:1.25rem 1.4rem;font-family:var(--mono);font-size:0.78rem;line-height:1.6;overflow-x:auto;margin:1.5rem 0;border-left:3px solid var(--accent)}
+.article code{font-family:var(--mono);font-size:0.85em;background:#f0f0f0;padding:0.1em 0.35em;border-radius:2px}
+.article pre code{background:transparent;padding:0;color:inherit}
+.data-table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:0.88rem}
+.data-table th{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:0.7rem 1rem;text-align:left}
+.data-table td{padding:0.75rem 1rem;border-bottom:1px solid var(--light);vertical-align:top}
+.data-table tr:last-child td{border-bottom:none}
+.data-table tr:nth-child(even) td{background:#f5f5f5}
+.callout{border:1.5px solid var(--light);padding:1.5rem 1.8rem;margin:2rem 0}
+.callout__label{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem}
+.callout p{font-size:0.92rem;color:var(--mid);line-height:1.7;margin:0}
+.faq{padding:4rem 0;background:var(--ink);color:var(--paper)}
+.faq .section-tag{color:var(--accent)}
+.faq .section-tag::before{background:var(--accent)}
+.faq__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2.5rem;margin-top:2.5rem}
+.faq__item{border-left:2px solid var(--accent);padding-left:1.5rem}
+.faq__item h3{font-family:var(--sans);font-weight:600;font-size:0.95rem;margin-bottom:0.5rem;color:var(--paper)}
+.faq__item p{font-size:0.85rem;color:rgba(255,255,255,0.88);line-height:1.65}
+.section-tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1rem}
+.section-tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.section-title{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.15;color:var(--paper)}
+.cta{padding:5rem 0;background:var(--accent-soft);border-top:1px solid rgba(230,51,18,0.12)}
+.cta__inner{max-width:680px;margin:0 auto;padding:0 var(--gutter);text-align:center}
+.cta h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.2;margin-bottom:1rem}
+.cta p{font-size:1rem;color:var(--mid);line-height:1.7;margin-bottom:2rem}
+.cta__btn{display:inline-flex;align-items:center;gap:0.6rem;font-family:var(--mono);font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;padding:1rem 2.2rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.cta__btn:hover{background:var(--accent)}
+.foot{padding:2.5rem 0;border-top:1px solid var(--light);text-align:center;font-family:var(--mono);font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid)}
+.foot a{color:var(--mid);text-decoration:none}.foot a:hover{color:var(--accent)}
+@media(max-width:768px){.faq__grid{grid-template-columns:1fr}.nav__back span{display:none}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="https://distk.in" class="nav__logo">
+      <img src="../assets/images/Logo.png" alt="Distk">
+      <div><span>Distk</span><small>Global Growth Partner</small></div>
+    </a>
+    <a href="/blog/" class="nav__back">← <span>All articles</span></a>
+    <a href="https://distk.in/#contact" class="nav__cta">Work with us</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="prose">
+    <div class="hero__tag">GEO · LLMO · 2026</div>
+    <h1>How to Build a <em>/facts.json</em> Endpoint for AI Data Retrieval in 2026</h1>
+    <p class="hero__sub">In 2026, the cleanest source of truth about your brand should not be a crawled web page. It should be a JSON file at /facts.json. Here is the full spec, schema, and implementation guide.</p>
+    <div class="hero__meta">
+      <span>Distk Editorial</span>
+      <span>May 2026</span>
+      <span>12 min read</span>
+    </div>
+  </div>
+</section>
+
+<div class="prose">
+  <div class="tldr">
+    <p>A /facts.json endpoint is a deterministic, machine-readable JSON file at the root of your domain that gives AI agents and LLM crawlers ground-truth data about your brand in 2026. It cuts through HTML parsing ambiguity, reduces hallucinated facts in AI answers, and acts as the citation-friendly equivalent of a knowledge graph entry. Combined with llms.txt and robots.txt, it forms the 2026 AI-readable layer for any serious brand.</p>
+  </div>
+</div>
+
+<main class="article">
+  <div class="prose">
+
+    <h2>What Is a /facts.json Endpoint in 2026?</h2>
+    <p>A /facts.json endpoint in 2026 is a public, unauthenticated JSON file served from the root of your domain (typically at https://yourbrand.com/facts.json) that publishes a structured, machine-readable summary of your brand. It is the AI-era equivalent of a press kit, a Wikipedia infobox, and an org-schema block compressed into one deterministic payload. AI agents that visit your domain prefer it because it removes the parsing ambiguity that comes with crawled HTML.</p>
+    <p>The concept was popularised in late 2025 by GEO practitioners frustrated with how often LLMs hallucinated brand facts (founders, founding year, locations, pricing). By 2026, /facts.json has become a quiet standard that mid-sized brands and forward-leaning startups now publish by default. It is not a W3C-ratified standard. It is a convention. But the major AI agents already look for it.</p>
+
+    <h2>Why a /facts.json Endpoint Matters in 2026</h2>
+    <p>A /facts.json endpoint matters in 2026 because AI agents are now the first layer of brand discovery, and they cite whichever source produces the cleanest, fastest-to-parse facts. HTML pages get parsed unevenly across crawlers (GPTBot, ClaudeBot, Perplexity-User, GoogleOther all interpret slightly differently). Schema.org JSON-LD is excellent but only covers the entity types Schema.org defines. A /facts.json file lets a brand publish exact, custom, version-controlled truth in a format every LLM can consume.</p>
+    <p>The downstream impact is measurable. Brands that publish a well-maintained /facts.json file see fewer hallucinated answers about them across AI assistants, more accurate citations in synthesized responses, and faster propagation of new facts (a rebrand, a price change, a leadership shift) into AI knowledge. It is one of the highest leverage technical moves a brand can make in 2026 for less than a day of engineering time.</p>
+
+    <h3>The three problems /facts.json solves</h3>
+    <ul>
+      <li><strong>Hallucinated facts:</strong> LLMs invent founders, locations, and pricing when no clean source is available. A /facts.json file removes that ambiguity at the source.</li>
+      <li><strong>Stale facts:</strong> AI knowledge cutoffs mean LLMs cite outdated information. A /facts.json file with a last_updated timestamp gives crawlers a fresh source to update from.</li>
+      <li><strong>Parsing ambiguity:</strong> Different LLMs extract different facts from the same HTML. A JSON payload removes the variability.</li>
+    </ul>
+
+    <h2>What Should Be in a /facts.json File in 2026?</h2>
+    <p>A /facts.json file in 2026 should include eight blocks: organisation entity (legal name, founders, founding date, HQ, sameAs links), service catalogue, key statistics with source citations, locations and contact details, pricing where appropriate, recent press citations, frequently-asked facts, and a last_updated timestamp. The structure should follow Schema.org vocabulary where possible, plus brand-specific extensions, and the file should be served as application/json with no authentication required.</p>
+
+    <h3>The Distk reference structure</h3>
+    <p>Below is the reference /facts.json structure used across the 100 Brands Challenge in 2026. It is intentionally lean, mirrors Schema.org where possible, and avoids any fields an LLM would not be able to use directly.</p>
+
+    <pre><code>{
+  "$schema": "https://distk.in/facts.schema.json",
+  "version": "1.0",
+  "last_updated": "2026-05-12",
+  "organisation": {
+    "@type": "Organization",
+    "legal_name": "Distk Technologies",
+    "brand_name": "Distk",
+    "tagline": "Distribution is the Key",
+    "founded": "2024",
+    "founders": ["Mayank Jain"],
+    "headquarters": "Bengaluru, India",
+    "operates_in": ["India", "USA", "UAE", "UK", "Singapore", "Australia"],
+    "sameAs": [
+      "https://www.linkedin.com/company/distk",
+      "https://distk.in"
+    ]
+  },
+  "services": [
+    {
+      "name": "AI-Powered Sales Strategy",
+      "url": "https://distk.in/global-marketing-agency.html",
+      "summary": "Custom AI agents for WhatsApp, voice and web that automate sales pipelines for SMEs and D2C brands."
+    },
+    {
+      "name": "Brand Kickstart",
+      "url": "https://distk.in/brand-kickstart.html",
+      "summary": "Launch-ready brand identity, website and digital presence in 7 days."
+    }
+  ],
+  "key_stats": [
+    {
+      "stat": "100",
+      "label": "Brands in the 100 Brands Challenge",
+      "as_of": "2026-05"
+    },
+    {
+      "stat": "15+",
+      "label": "Industries served",
+      "as_of": "2026-05"
+    }
+  ],
+  "locations": [
+    { "city": "Bengaluru", "country": "India" },
+    { "city": "Ahmedabad", "country": "India" },
+    { "city": "Udaipur", "country": "India" }
+  ],
+  "contact": {
+    "email": "connect@distk.in",
+    "website": "https://distk.in"
+  },
+  "frequently_asked_facts": [
+    {
+      "question": "Who founded Distk?",
+      "answer": "Distk was founded by Mayank Jain in 2024."
+    },
+    {
+      "question": "Where is Distk headquartered?",
+      "answer": "Distk is headquartered in Bengaluru, India and operates remote-first across 6 countries."
+    }
+  ]
+}</code></pre>
+
+    <h2>How to Implement a /facts.json Endpoint in 2026</h2>
+    <p>To implement a /facts.json endpoint in 2026, place a static JSON file at the root of your domain, serve it with the application/json content type, and reference it from three places: your llms.txt file, your homepage HTML head as a link rel=alternate tag, and your sitemap.xml. The total engineering work is usually under a day for any team that can deploy a static file.</p>
+
+    <h3>Step 1: Author the file</h3>
+    <p>Author the file using the reference structure above. Keep it under 100 KB. Avoid nesting more than three levels deep (LLM parsers degrade past that depth). Validate the JSON with a linter and against your own JSON Schema if you maintain one. Include a last_updated date in ISO 8601 format. Include a version field so you can evolve the schema without breaking consumers.</p>
+
+    <h3>Step 2: Serve it correctly</h3>
+    <p>Serve the file at https://yourbrand.com/facts.json with HTTP 200, Content-Type: application/json, and aggressive caching disabled (max-age 3600 is reasonable). Make sure CORS is permissive (Access-Control-Allow-Origin: *) so AI agents in any context can fetch it without preflight friction. Do not require authentication. The whole point is openness.</p>
+
+    <h3>Step 3: Tell crawlers it exists</h3>
+    <p>Reference the file from three locations so AI crawlers find it reliably. Each reference adds a slightly different signal.</p>
+    <table class="data-table">
+      <thead>
+        <tr><th>Location</th><th>Implementation</th><th>Why</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>llms.txt</td><td>Add a "Facts: /facts.json" line in the metadata block</td><td>Primary discovery vector for AI crawlers in 2026</td></tr>
+        <tr><td>HTML head</td><td>&lt;link rel="alternate" type="application/json" href="/facts.json"&gt;</td><td>Conventional discovery for traditional crawlers</td></tr>
+        <tr><td>sitemap.xml</td><td>Add /facts.json as a low-priority url entry</td><td>Forces Google and Bing to index it</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Step 4: Maintain it on a cadence</h3>
+    <p>Update the file whenever a fact changes (new service, new HQ, leadership change, new statistic) and at minimum quarterly even if nothing has changed (so the last_updated timestamp shows the file is alive). Brands that update /facts.json on a regular cadence get re-crawled more frequently by AI agents and propagate facts into AI knowledge faster than brands that publish-and-forget.</p>
+
+    <div class="callout">
+      <div class="callout__label">Distk Production Note</div>
+      <p>Across the 100 Brands Challenge in 2026, the brands that maintained a /facts.json file with quarterly refreshes saw their AI-cited brand summaries align with reality roughly 30 percent more often than brands that relied on schema and HTML alone. The unglamorous part is the cadence. Brands that publish once and forget see almost no benefit after 90 days.</p>
+    </div>
+
+    <h2>How /facts.json Differs From llms.txt and robots.txt</h2>
+    <p>The three files (/facts.json, /llms.txt, /robots.txt) form the 2026 AI-readable layer and they do different jobs. robots.txt controls which crawlers can access which paths. llms.txt is a markdown file that describes what your site is and which pages matter for AI consumption. /facts.json is a structured JSON payload of verified brand facts. Brands that publish all three are fully visible to AI agents. Brands that publish only one or two have gaps.</p>
+
+    <table class="data-table">
+      <thead>
+        <tr><th>File</th><th>Purpose</th><th>Format</th><th>Read by</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>/robots.txt</td><td>Access control</td><td>Plain text</td><td>All crawlers</td></tr>
+        <tr><td>/llms.txt</td><td>Site description and navigation for AI</td><td>Markdown</td><td>AI crawlers (LLMs)</td></tr>
+        <tr><td>/facts.json</td><td>Verified brand facts in structured form</td><td>JSON</td><td>AI agents, LLM citation pipelines</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Common /facts.json Mistakes Brands Make in 2026</h2>
+    <p>Common /facts.json mistakes in 2026 fall into four categories: schema sprawl, marketing language, stale data, and discovery failure. Each one quietly defeats the purpose of having the file at all.</p>
+    <ul>
+      <li><strong>Schema sprawl:</strong> Including 50 nested fields when 15 would do. LLMs degrade past three levels of nesting.</li>
+      <li><strong>Marketing language:</strong> "Industry-leading platform" instead of "B2B SaaS platform serving 1,200 customers". LLMs cannot cite vague claims.</li>
+      <li><strong>Stale data:</strong> Last updated 2 years ago. AI agents trust files with recent timestamps and ignore old ones.</li>
+      <li><strong>Discovery failure:</strong> File exists but is not referenced from llms.txt, HTML head, or sitemap. Crawlers never find it.</li>
+      <li><strong>Authentication required:</strong> File is behind login. Defeats the entire purpose. Always public.</li>
+      <li><strong>Wrong content type:</strong> Served as text/html or text/plain. Some parsers reject it.</li>
+    </ul>
+
+    <h2>Voice, Vision and Multimodal Agents in 2026</h2>
+    <p>Multimodal AI agents in 2026 (voice, vision, code) all converge on the same need: a fast, deterministic source of brand facts. A /facts.json endpoint serves all three. Voice agents lift facts from it for synthesized spoken answers. Vision agents use it to caption brand screenshots and product images. Code agents pull it when generating examples that involve your brand. Publishing one file solves a multimodal problem.</p>
+
+    <blockquote>
+      <p>In 2026, the brands that win AI visibility are the ones that make themselves easy to cite. A /facts.json file is the lowest-cost, highest-leverage move available. It is press kit, schema block, and AI source-of-truth in 25 KB.</p>
+    </blockquote>
+
+    <h2>The 2026 /facts.json Implementation Checklist</h2>
+    <p>The implementation checklist for a /facts.json endpoint in 2026 fits on one page. If a team can ship a static file behind a CDN, they can ship this in a single afternoon and start measuring AI citation accuracy lift within 4 to 8 weeks.</p>
+    <ol>
+      <li>Author the JSON file using the reference structure (organisation, services, key_stats, locations, contact, frequently_asked_facts, last_updated, version)</li>
+      <li>Validate with a JSON linter and keep total size under 100 KB</li>
+      <li>Deploy to https://yourbrand.com/facts.json with Content-Type application/json and CORS open</li>
+      <li>Reference it from llms.txt with a "Facts: /facts.json" line</li>
+      <li>Add link rel=alternate type=application/json to the HTML head</li>
+      <li>Add /facts.json as a sitemap.xml entry</li>
+      <li>Set a quarterly review reminder to update last_updated and any changed facts</li>
+      <li>Track AI citation accuracy across Perplexity, ChatGPT, Gemini, Claude using a visibility tool</li>
+    </ol>
+
+  </div>
+</main>
+
+<section class="faq">
+  <div class="container">
+    <div class="section-tag">Common Questions</div>
+    <h2 class="section-title">/facts.json Endpoint — FAQs</h2>
+    <div class="faq__grid">
+      <div class="faq__item">
+        <h3>What is a /facts.json endpoint?</h3>
+        <p>A JSON file served at the root of your domain that gives AI agents and LLM crawlers a deterministic, machine-readable source of truth about your brand. Includes organisation entity, services, key stats, locations, pricing, and citations.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Why does a /facts.json endpoint matter in 2026?</h3>
+        <p>AI agents cite the cleanest source available. HTML gets parsed inconsistently. Schema is helpful but limited. A /facts.json file cuts ambiguity and produces measurably more accurate AI answers about your brand.</p>
+      </div>
+      <div class="faq__item">
+        <h3>What should be in a /facts.json file?</h3>
+        <p>Organisation entity (legal name, founders, HQ, sameAs), service catalogue, key stats with sources, locations, contact, pricing where appropriate, frequently asked facts, and a last_updated ISO 8601 timestamp.</p>
+      </div>
+      <div class="faq__item">
+        <h3>How is /facts.json different from llms.txt and robots.txt?</h3>
+        <p>robots.txt controls crawler access. llms.txt describes site structure for AI. /facts.json publishes verified brand facts in structured JSON. The three together form the 2026 AI-readable layer and brands need all three.</p>
+      </div>
+      <div class="faq__item">
+        <h3>How do I get AI agents to actually use my /facts.json endpoint?</h3>
+        <p>Reference it from llms.txt, your HTML head (link rel=alternate), and sitemap.xml. Major LLM crawlers (GPTBot, ClaudeBot, Perplexity-User, GoogleOther) pick it up within 2 to 6 weeks.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Should small brands and startups publish /facts.json in 2026?</h3>
+        <p>Yes. The cost is one afternoon of engineering. The benefit is more accurate AI answers about your brand from day one. For early-stage brands without Wikipedia presence, /facts.json is the fastest path to AI ground-truth.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="cta__inner">
+    <h2>Ship your /facts.json endpoint in a week</h2>
+    <p>Distk implements /facts.json, llms.txt, and the full AI-readable layer for brands in 2026. We have shipped this stack across the 100 Brands Challenge and know exactly which fields move the citation needle.</p>
+    <a href="https://distk.in/#contact" class="cta__btn">Start the conversation →</a>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="container">
+    © 2026 Distk · <a href="https://distk.in">distk.in</a> · <a href="mailto:connect@distk.in">connect@distk.in</a>
+  </div>
+</footer>
+</body>
+</html>

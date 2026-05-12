@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LLMs.txt vs Robots.txt in 2026: Managing AI Crawlers | Distk</title>
+<meta name="description" content="LLMs.txt and robots.txt do different jobs in 2026. One controls crawler access, the other guides AI agents to your most important content. Here is how to use both.">
+<meta name="keywords" content="llms.txt 2026, robots.txt AI crawlers, GPTBot, ClaudeBot, Perplexity-User, AI crawler control, GEO, LLMO, AI visibility">
+<meta name="author" content="Distk"><meta name="robots" content="index, follow">
+<link rel="canonical" href="https://distk.in/blog/llms-txt-vs-robots-txt-managing-ai-crawlers-2026.html">
+<meta property="og:type" content="article"><meta property="og:url" content="https://distk.in/blog/llms-txt-vs-robots-txt-managing-ai-crawlers-2026.html">
+<meta property="og:title" content="LLMs.txt vs Robots.txt in 2026: Managing AI Crawlers">
+<meta property="og:description" content="A practical 2026 guide to llms.txt and robots.txt — what each file does, when to use it, and how to manage your brand's relationship with GPTBot, ClaudeBot and Perplexity-User.">
+<meta property="og:image" content="https://distk.in/assets/images/og-image.jpg"><meta property="og:site_name" content="Distk">
+<meta property="article:published_time" content="2026-05-12T00:00:00+05:30">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"LLMs.txt vs Robots.txt in 2026: Managing AI Crawlers","description":"A practical 2026 guide to llms.txt vs robots.txt for AI crawler control and AI visibility, including the major bots, sample files, and a six-week rollout plan.","author":{"@type":"Organization","name":"Distk","url":"https://distk.in"},"publisher":{"@type":"Organization","name":"Distk","logo":{"@type":"ImageObject","url":"https://distk.in/assets/images/Logo.png"}},"datePublished":"2026-05-12","mainEntityOfPage":{"@type":"WebPage","@id":"https://distk.in/blog/llms-txt-vs-robots-txt-managing-ai-crawlers-2026.html"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is llms.txt?","acceptedAnswer":{"@type":"Answer","text":"llms.txt is a markdown file served at the root of your domain (yourbrand.com/llms.txt) that describes what your site is and points AI crawlers to the content most worth ingesting. It was proposed in 2024 as a kind of curated AI sitemap, and by 2026 it is widely supported by GPTBot, ClaudeBot, Perplexity-User, and other major LLM crawlers. The file does not control access. It guides discovery and signal."}},{"@type":"Question","name":"What is robots.txt and is it still relevant in 2026?","acceptedAnswer":{"@type":"Answer","text":"robots.txt is the original 1994 file used to tell crawlers which paths they can and cannot access. In 2026 it remains the only widely-respected access control mechanism on the open web, including for AI crawlers. Each major LLM crawler has its own User-agent (GPTBot, ClaudeBot, Perplexity-User, GoogleOther, Anthropic-AI, etc.) and you can allow or disallow each one independently. robots.txt is more relevant than ever in 2026."}},{"@type":"Question","name":"How is llms.txt different from robots.txt?","acceptedAnswer":{"@type":"Answer","text":"They do different jobs. robots.txt is access control: it tells crawlers which URLs they can hit. llms.txt is content guidance: it tells AI agents which content matters most and how to interpret your site. robots.txt is binary (allow or disallow). llms.txt is descriptive (here is what we are, here is what to read first). Brands that publish only one of these in 2026 have a gap in their AI visibility stack."}},{"@type":"Question","name":"Should I block AI crawlers in robots.txt in 2026?","acceptedAnswer":{"@type":"Answer","text":"Generally no. Blocking GPTBot, ClaudeBot or Perplexity-User in 2026 means your brand is invisible in ChatGPT, Claude, and Perplexity answers. For most B2B and consumer brands, this is a significant loss of pre-funnel discoverability. The exception is content you genuinely cannot have ingested into LLM training (proprietary research, paid content, regulated material). Do not block crawlers reflexively. The cost is real and silent."}},{"@type":"Question","name":"How do I write a good llms.txt file in 2026?","acceptedAnswer":{"@type":"Answer","text":"A good llms.txt file in 2026 has four sections. First, an H1 with the brand name and a one-line description. Second, a blockquote summary of what your brand does in 50 to 80 words. Third, a list of canonical pages that AI crawlers should prioritize (linked in markdown). Fourth, optional sections for products, services, news, and reference files like /facts.json. Keep the file under 50 KB. Update it whenever a major page or service changes."}}]}</script>
+<link rel="icon" type="image/png" href="../assets/images/favicon.png"><link rel="apple-touch-icon" href="../assets/images/Logo.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BWDTQ1JPL2"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-BWDTQ1JPL2');</script>
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1077520544213003');fbq('track','PageView');</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1077520544213003&ev=PageView&noscript=1"></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#0a0a0a;--paper:#fafafa;--mid:#6b6b6b;--light:#e8e8e8;--accent:#e63312;--accent-soft:rgba(230,51,18,0.08);--mono:'Space Mono',monospace;--sans:'Outfit',sans-serif;--container:1120px;--prose:720px;--gutter:clamp(1.2rem,4vw,3rem)}
+html{font-size:16px;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.container{max-width:var(--container);margin:0 auto;padding:0 var(--gutter)}
+.prose{max-width:var(--prose);margin:0 auto;padding:0 var(--gutter)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--light)}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;max-width:var(--container);margin:0 auto;padding:0.9rem var(--gutter)}
+.nav__logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;color:var(--ink)}
+.nav__logo img{height:32px;width:auto}
+.nav__logo span{font-family:var(--mono);font-weight:700;font-size:1.05rem;letter-spacing:-0.02em}
+.nav__logo small{display:block;font-size:0.55rem;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);line-height:1}
+.nav__back{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid);text-decoration:none;display:flex;align-items:center;gap:0.4rem;transition:color 0.2s}
+.nav__back:hover{color:var(--accent)}
+.nav__cta{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.6rem 1.4rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.nav__cta:hover{background:var(--accent)}
+.hero{padding:7.5rem 0 3.5rem;position:relative;overflow:hidden;border-bottom:1px solid var(--light)}
+.hero::before{content:'TXT';position:absolute;right:-1%;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:clamp(6rem,30vw,26rem);font-weight:700;color:rgba(0,0,0,0.03);line-height:1;pointer-events:none;user-select:none;letter-spacing:-0.05em}
+.hero__tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1.5rem}
+.hero__tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.hero h1{font-family:var(--sans);font-weight:700;font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;letter-spacing:-0.03em;max-width:22ch;margin-bottom:1.5rem}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero__sub{font-size:1.1rem;color:var(--mid);max-width:56ch;line-height:1.7;margin-bottom:2rem}
+.hero__meta{display:flex;flex-wrap:wrap;gap:1.5rem;font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid)}
+.tldr{background:var(--accent-soft);border-left:3px solid var(--accent);padding:1.8rem 2rem;margin:3rem 0;position:relative}
+.tldr::before{content:'TL;DR';position:absolute;top:-0.6rem;left:2rem;font-family:var(--mono);font-size:0.62rem;font-weight:700;letter-spacing:0.12em;background:var(--accent);color:#fff;padding:0.2rem 0.6rem}
+.tldr p{font-size:0.95rem;color:var(--ink);line-height:1.7}
+.article{padding:4rem 0 5rem}
+.article h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.35rem,2.8vw,1.8rem);letter-spacing:-0.02em;line-height:1.2;margin:3rem 0 1rem;padding-top:1rem;border-top:1px solid var(--light)}
+.article h2:first-child{border-top:none;margin-top:0}
+.article h3{font-family:var(--mono);font-weight:700;font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin:2rem 0 0.6rem}
+.article p{font-size:1rem;color:#2a2a2a;line-height:1.8;margin-bottom:1.25rem}
+.article ul,.article ol{padding-left:1.4rem;margin-bottom:1.25rem}
+.article li{font-size:1rem;color:#2a2a2a;line-height:1.75;margin-bottom:0.4rem}
+.article strong{font-weight:600;color:var(--ink)}
+.article blockquote{border-left:3px solid var(--accent);padding:0.75rem 1.5rem;margin:2rem 0;background:var(--accent-soft)}
+.article blockquote p{color:var(--ink);font-size:1rem;margin:0}
+.article pre{background:#0a0a0a;color:#f5f5f5;padding:1.25rem 1.4rem;font-family:var(--mono);font-size:0.78rem;line-height:1.6;overflow-x:auto;margin:1.5rem 0;border-left:3px solid var(--accent)}
+.article code{font-family:var(--mono);font-size:0.85em;background:#f0f0f0;padding:0.1em 0.35em;border-radius:2px}
+.article pre code{background:transparent;padding:0;color:inherit}
+.data-table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:0.88rem}
+.data-table th{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:0.7rem 1rem;text-align:left}
+.data-table td{padding:0.75rem 1rem;border-bottom:1px solid var(--light);vertical-align:top}
+.data-table tr:last-child td{border-bottom:none}
+.data-table tr:nth-child(even) td{background:#f5f5f5}
+.callout{border:1.5px solid var(--light);padding:1.5rem 1.8rem;margin:2rem 0}
+.callout__label{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem}
+.callout p{font-size:0.92rem;color:var(--mid);line-height:1.7;margin:0}
+.faq{padding:4rem 0;background:var(--ink);color:var(--paper)}
+.faq .section-tag{color:var(--accent)}
+.faq .section-tag::before{background:var(--accent)}
+.faq__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2.5rem;margin-top:2.5rem}
+.faq__item{border-left:2px solid var(--accent);padding-left:1.5rem}
+.faq__item h3{font-family:var(--sans);font-weight:600;font-size:0.95rem;margin-bottom:0.5rem;color:var(--paper)}
+.faq__item p{font-size:0.85rem;color:rgba(255,255,255,0.88);line-height:1.65}
+.section-tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1rem}
+.section-tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.section-title{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.15;color:var(--paper)}
+.cta{padding:5rem 0;background:var(--accent-soft);border-top:1px solid rgba(230,51,18,0.12)}
+.cta__inner{max-width:680px;margin:0 auto;padding:0 var(--gutter);text-align:center}
+.cta h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.2;margin-bottom:1rem}
+.cta p{font-size:1rem;color:var(--mid);line-height:1.7;margin-bottom:2rem}
+.cta__btn{display:inline-flex;align-items:center;gap:0.6rem;font-family:var(--mono);font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;padding:1rem 2.2rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.cta__btn:hover{background:var(--accent)}
+.foot{padding:2.5rem 0;border-top:1px solid var(--light);text-align:center;font-family:var(--mono);font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid)}
+.foot a{color:var(--mid);text-decoration:none}.foot a:hover{color:var(--accent)}
+@media(max-width:768px){.faq__grid{grid-template-columns:1fr}.nav__back span{display:none}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="https://distk.in" class="nav__logo">
+      <img src="../assets/images/Logo.png" alt="Distk">
+      <div><span>Distk</span><small>Global Growth Partner</small></div>
+    </a>
+    <a href="/blog/" class="nav__back">← <span>All articles</span></a>
+    <a href="https://distk.in/#contact" class="nav__cta">Work with us</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="prose">
+    <div class="hero__tag">AI Crawler Control · 2026</div>
+    <h1><em>LLMs.txt</em> vs <em>Robots.txt</em> in 2026: Managing AI Crawlers</h1>
+    <p class="hero__sub">In 2026, robots.txt controls who can crawl your site and llms.txt tells AI agents what to read first. They do different jobs. Brands that publish only one of them have a gap in their AI visibility stack.</p>
+    <div class="hero__meta">
+      <span>Distk Editorial</span>
+      <span>May 2026</span>
+      <span>11 min read</span>
+    </div>
+  </div>
+</section>
+
+<div class="prose">
+  <div class="tldr">
+    <p>In 2026, robots.txt and llms.txt are complementary. robots.txt controls AI crawler access using User-agent rules for GPTBot, ClaudeBot, Perplexity-User, GoogleOther and others. llms.txt is a markdown file that tells AI agents what your site is and which content matters most. Together they form the AI access and discovery layer. Most brands need both, plus a /facts.json endpoint, to be fully visible and well-cited in AI assistants.</p>
+  </div>
+</div>
+
+<main class="article">
+  <div class="prose">
+
+    <h2>What Is robots.txt and Why Is It Suddenly More Important in 2026?</h2>
+    <p>robots.txt is the original 1994 file that lives at the root of every web domain and tells crawlers which paths they can access. In 2026 it has quietly become the single most important AI-visibility configuration file on the open web. Every major LLM crawler (GPTBot, ClaudeBot, Perplexity-User, GoogleOther, Anthropic-AI, Bytespider, CCBot) respects it, and each can be allowed or denied independently using its own User-agent block.</p>
+    <p>Most brands set up robots.txt years ago for SEO, never touched it again, and now have a file that quietly tells one or more AI crawlers to go away. That is silent invisibility. In 2026, the cost of an over-restrictive robots.txt is no longer "your blog is missing from one search engine". It is "your brand is missing from ChatGPT, Claude, Perplexity, and Gemini answers". For most B2B and consumer brands, that is a serious loss of pre-funnel discoverability.</p>
+
+    <h3>The major AI crawlers in 2026</h3>
+    <table class="data-table">
+      <thead>
+        <tr><th>User-agent</th><th>Operator</th><th>Used For</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>GPTBot</td><td>OpenAI</td><td>Training and ChatGPT real-time browsing</td></tr>
+        <tr><td>OAI-SearchBot</td><td>OpenAI</td><td>ChatGPT search results</td></tr>
+        <tr><td>ClaudeBot</td><td>Anthropic</td><td>Training and Claude real-time browsing</td></tr>
+        <tr><td>Anthropic-AI</td><td>Anthropic</td><td>Training data acquisition</td></tr>
+        <tr><td>Perplexity-User</td><td>Perplexity</td><td>Real-time answer synthesis</td></tr>
+        <tr><td>PerplexityBot</td><td>Perplexity</td><td>Index crawl for citations</td></tr>
+        <tr><td>GoogleOther</td><td>Google</td><td>Gemini and AI Overview ingest</td></tr>
+        <tr><td>Bytespider</td><td>ByteDance</td><td>Doubao and ByteDance LLM training</td></tr>
+        <tr><td>CCBot</td><td>Common Crawl</td><td>Open dataset used by many LLMs</td></tr>
+      </tbody>
+    </table>
+
+    <h2>What Is llms.txt and Why Was It Proposed?</h2>
+    <p>llms.txt is a markdown file served at the root of your domain (yourbrand.com/llms.txt) that describes what your site is and points AI crawlers to the content most worth ingesting. It was proposed by Jeremy Howard in late 2024 as a curated AI sitemap, and by 2026 it is widely supported across the major LLM crawlers. The file does not control access. It guides discovery, signals priority, and tells AI agents how to interpret your site.</p>
+    <p>The fundamental difference from robots.txt is that llms.txt is descriptive rather than prescriptive. robots.txt says "go away from /admin". llms.txt says "we are a B2B SaaS company, here are the 12 pages that best summarize what we do, here is our pricing page, here is our case study library". For an AI agent trying to construct an answer about your brand, that descriptive map is far more useful than a list of URL patterns.</p>
+
+    <h2>How Are llms.txt and robots.txt Different in 2026?</h2>
+    <p>In 2026, llms.txt and robots.txt do different jobs and brands need both. robots.txt is access control with binary semantics (allow or disallow). llms.txt is content guidance with descriptive semantics (here is what we are, here is what to read first). Treating them as substitutes is the most common configuration mistake in the AI visibility stack.</p>
+
+    <table class="data-table">
+      <thead>
+        <tr><th>Dimension</th><th>robots.txt</th><th>llms.txt</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Purpose</td><td>Access control</td><td>Content guidance</td></tr>
+        <tr><td>Format</td><td>Plain text directives</td><td>Markdown</td></tr>
+        <tr><td>Semantics</td><td>Binary (allow / disallow)</td><td>Descriptive (priority, summary, links)</td></tr>
+        <tr><td>Standardised</td><td>Yes (RFC 9309 since 2022)</td><td>No (community convention from 2024)</td></tr>
+        <tr><td>Used by</td><td>All crawlers including AI</td><td>AI crawlers and agentic browsers</td></tr>
+        <tr><td>Updated</td><td>Rarely</td><td>Whenever a major page or service changes</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Should Brands Block AI Crawlers in robots.txt in 2026?</h2>
+    <p>Generally no. Blocking GPTBot, ClaudeBot or Perplexity-User in 2026 means your brand is invisible in ChatGPT, Claude, and Perplexity answers. For most B2B and consumer brands, this is a significant loss of pre-funnel discoverability. The exception is content you genuinely cannot have ingested into LLM training (proprietary research, paid content, regulated material, customer PII). Do not block AI crawlers reflexively, the cost is real and silent.</p>
+
+    <h3>When blocking is the right call</h3>
+    <ul>
+      <li><strong>Paid research content:</strong> If your business model depends on people paying to access content, blocking training crawlers is reasonable</li>
+      <li><strong>Regulated material:</strong> Healthcare, legal, financial advice that would be irresponsible if synthesized out of context</li>
+      <li><strong>Proprietary IP:</strong> Patent-pending or trade-secret material accidentally on a public URL</li>
+      <li><strong>Customer PII or operational data:</strong> Should never have been crawled by anyone</li>
+    </ul>
+
+    <h3>When blocking is the wrong call</h3>
+    <ul>
+      <li><strong>Marketing pages:</strong> Blocking these makes your brand invisible in AI answers about your category</li>
+      <li><strong>Blog content:</strong> Blocking your blog removes your strongest signal of expertise</li>
+      <li><strong>Documentation:</strong> Blocking docs is the single biggest cause of "AI keeps recommending the wrong product"</li>
+      <li><strong>Reflexive blocking "for safety":</strong> Without a specific business reason, this is invisibility for no return</li>
+    </ul>
+
+    <div class="callout">
+      <div class="callout__label">Distk Production Note</div>
+      <p>In the 100 Brands Challenge in 2026, Distk has audited several brand-side robots.txt files where someone blocked GPTBot and ClaudeBot during the 2024 panic and never reverted. Two of those brands had been wondering for 18 months why ChatGPT never mentioned them in industry roundups. Unblocking AI crawlers and publishing a llms.txt file restored citations within 6 to 8 weeks.</p>
+    </div>
+
+    <h2>How to Write a Strong llms.txt File in 2026</h2>
+    <p>A strong llms.txt file in 2026 has four required sections and a few optional ones. Required: an H1 with the brand name and a one-line description, a blockquote summary in 50 to 80 words, a list of canonical pages, and a reference to /facts.json if you publish one. Optional: product sections, services, news, careers. Keep the total file under 50 KB. Update it whenever a major page or service changes.</p>
+
+    <h3>The Distk reference llms.txt structure</h3>
+    <pre><code># Distk
+
+> Distk is a global, AI-powered marketing agency
+> headquartered in Bengaluru, India. We help SMEs,
+> D2C brands and SaaS companies grow through AEO,
+> GEO, custom AI sales agents and Brand Kickstart
+> services. Distribution is the Key.
+
+## Core pages
+
+- [About Distk](https://distk.in/about.html): Team, philosophy, founders
+- [Global Marketing Agency](https://distk.in/global-marketing-agency.html): Our flagship service
+- [Brand Kickstart](https://distk.in/brand-kickstart.html): Launch a brand in 7 days
+- [100 Brands Challenge](https://distk.in/100-brands.html): Public proof-of-work
+
+## Services
+
+- [Marketing Agency USA](https://distk.in/marketing-agency-usa.html)
+- [Marketing Agency UK](https://distk.in/marketing-agency-uk.html)
+- [Marketing Agency Dubai](https://distk.in/marketing-agency-dubai.html)
+- [Marketing Agency India](https://distk.in/marketing-agency-india.html)
+
+## Reference
+
+- Facts: /facts.json
+- Sitemap: /sitemap.xml
+- Contact: connect@distk.in
+
+## Optional
+
+- [Blog index](https://distk.in/blog/): 270+ AEO-optimised posts
+</code></pre>
+
+    <h2>How to Write a Strong AI-Aware robots.txt in 2026</h2>
+    <p>A strong AI-aware robots.txt in 2026 explicitly addresses the major AI crawlers, allows them by default for marketing and content sections, and only blocks them on paths that are genuinely sensitive. The file should be reviewed at least once a year. AI crawler User-agents change as new entrants appear, and a stale robots.txt is the single biggest cause of unintentional AI invisibility.</p>
+
+    <h3>The Distk reference robots.txt structure</h3>
+    <pre><code># robots.txt for distk.in
+# Last reviewed: 2026-05-12
+
+# Default for all crawlers (including search and AI)
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /tmp/
+
+# Explicit AI crawler block (allowed by default)
+User-agent: GPTBot
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+
+User-agent: Anthropic-AI
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# Sitemaps
+Sitemap: https://distk.in/sitemap.xml
+</code></pre>
+
+    <h2>The Full 2026 AI Crawler Stack: robots.txt + llms.txt + facts.json</h2>
+    <p>The full 2026 AI crawler stack has three files and they form a layered system. robots.txt at the access layer (who can read what). llms.txt at the description layer (what is this site and what matters most). /facts.json at the data layer (verified ground-truth facts in structured form). Brands that publish all three are fully visible to AI agents and tend to dominate AI citations in their category.</p>
+
+    <table class="data-table">
+      <thead>
+        <tr><th>File</th><th>Layer</th><th>What it does</th><th>Who reads it</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>/robots.txt</td><td>Access</td><td>Allow or deny crawler access by path</td><td>All crawlers, search and AI</td></tr>
+        <tr><td>/llms.txt</td><td>Description</td><td>Describe site, point to important pages</td><td>AI crawlers, agentic browsers</td></tr>
+        <tr><td>/facts.json</td><td>Data</td><td>Publish verified brand facts in JSON</td><td>AI agents, citation pipelines</td></tr>
+      </tbody>
+    </table>
+
+    <blockquote>
+      <p>In 2026, the brands that win pre-funnel AI visibility are not the ones with the loudest marketing. They are the ones whose robots.txt, llms.txt, and /facts.json are all aligned, current, and easy for crawlers to read. It is unglamorous work that pays off for years.</p>
+    </blockquote>
+
+    <h2>Common Mistakes Brands Make With AI Crawler Files in 2026</h2>
+    <ul>
+      <li><strong>Reflexively blocking GPTBot or ClaudeBot:</strong> Done in 2024 panic, never reverted, results in years of AI invisibility</li>
+      <li><strong>Publishing llms.txt without robots.txt:</strong> AI crawlers read both. A missing robots.txt creates ambiguity that some crawlers respect by leaving</li>
+      <li><strong>Listing 200 pages in llms.txt:</strong> The point is curation, not exhaustion. 10 to 30 canonical pages is enough</li>
+      <li><strong>Marketing voice in llms.txt:</strong> "World-class AI-powered platform" is unhelpful. Plain English, exact facts</li>
+      <li><strong>Never updating either file:</strong> AI crawlers note timestamps. Stale files signal a stale brand</li>
+      <li><strong>Forgetting GoogleOther:</strong> This is what feeds Gemini and AI Overviews. Treat it like Googlebot</li>
+    </ul>
+
+    <h2>A Six-Week AI Crawler Implementation Plan for 2026</h2>
+    <p>A six-week plan to set up the full AI crawler stack splits into three two-week sprints: audit, author, deploy. Most marketing teams in 2026 can complete it without engineering bandwidth as long as they can deploy two static text files to the domain root.</p>
+    <table class="data-table">
+      <thead>
+        <tr><th>Sprint</th><th>Focus</th><th>Deliverables</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Weeks 1–2</td><td>Audit</td><td>Review current robots.txt, log AI crawler hits, identify which pages are actually being cited</td></tr>
+        <tr><td>Weeks 3–4</td><td>Author</td><td>Write new AI-aware robots.txt and llms.txt, draft /facts.json</td></tr>
+        <tr><td>Weeks 5–6</td><td>Deploy</td><td>Ship all three files, monitor AI citation lift across major assistants</td></tr>
+      </tbody>
+    </table>
+
+  </div>
+</main>
+
+<section class="faq">
+  <div class="container">
+    <div class="section-tag">Common Questions</div>
+    <h2 class="section-title">LLMs.txt and Robots.txt — FAQs</h2>
+    <div class="faq__grid">
+      <div class="faq__item">
+        <h3>What is llms.txt?</h3>
+        <p>A markdown file at the root of your domain that describes what your site is and points AI crawlers to the content most worth ingesting. Proposed in 2024, widely supported in 2026 by GPTBot, ClaudeBot, Perplexity-User and others.</p>
+      </div>
+      <div class="faq__item">
+        <h3>What is robots.txt and is it still relevant in 2026?</h3>
+        <p>The 1994 file that controls crawler access by path. In 2026 it remains the only widely-respected access control mechanism on the open web. Each major AI crawler has its own User-agent and can be allowed or denied independently.</p>
+      </div>
+      <div class="faq__item">
+        <h3>How is llms.txt different from robots.txt?</h3>
+        <p>robots.txt is access control (binary, allow or disallow). llms.txt is content guidance (descriptive, here is what we are, here is what to read first). They do different jobs and brands need both in 2026.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Should I block AI crawlers in robots.txt in 2026?</h3>
+        <p>Generally no. Blocking GPTBot, ClaudeBot or Perplexity-User makes your brand invisible in ChatGPT, Claude and Perplexity answers. Only block when you have a specific business reason like paid content, regulated material, or PII.</p>
+      </div>
+      <div class="faq__item">
+        <h3>How do I write a good llms.txt file in 2026?</h3>
+        <p>Four sections: H1 with brand name and one-line description, blockquote summary in 50 to 80 words, list of canonical pages, and reference to /facts.json. Keep under 50 KB. Update whenever a major page or service changes.</p>
+      </div>
+      <div class="faq__item">
+        <h3>What is the full AI crawler stack in 2026?</h3>
+        <p>Three files: robots.txt for access, llms.txt for description, /facts.json for verified data. Brands that publish all three dominate AI citations in their category. Brands that publish only one have measurable visibility gaps.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="cta__inner">
+    <h2>Ship your full AI crawler stack in 6 weeks</h2>
+    <p>Distk audits, authors and deploys robots.txt, llms.txt, and /facts.json for brands in 2026. We have shipped this stack across the 100 Brands Challenge and know exactly which configuration moves AI citation share.</p>
+    <a href="https://distk.in/#contact" class="cta__btn">Start the conversation →</a>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="container">
+    © 2026 Distk · <a href="https://distk.in">distk.in</a> · <a href="mailto:connect@distk.in">connect@distk.in</a>
+  </div>
+</footer>
+</body>
+</html>

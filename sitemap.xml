@@ -1783,6 +1783,68 @@
         <priority>0.8</priority>
     </url>
 
+    <!-- Pillar 1 AEO/GEO Blog Batch (May 2026) -->
+    <url>
+        <loc>https://distk.in/blog/voice-search-2-conversational-seo-smart-assistants-2026.html</loc>
+        <lastmod>2026-05-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://distk.in/blog/facts-json-endpoint-real-time-ai-data-retrieval-2026.html</loc>
+        <lastmod>2026-05-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://distk.in/blog/llms-txt-vs-robots-txt-managing-ai-crawlers-2026.html</loc>
+        <lastmod>2026-05-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://distk.in/blog/aeo-playbook-top-recommendation-chatgpt-2026.html</loc>
+        <lastmod>2026-05-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://distk.in/blog/sxo-framework-search-experience-optimization-2026.html</loc>
+        <lastmod>2026-05-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://distk.in/blog/beyond-seo-why-brands-need-geo-strategy-2026.html</loc>
+        <lastmod>2026-05-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://distk.in/blog/pre-funnel-layer-ai-agents-evaluate-vendors-2026.html</loc>
+        <lastmod>2026-05-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://distk.in/blog/latent-space-audit-ai-brand-sentiment-2026.html</loc>
+        <lastmod>2026-05-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://distk.in/blog/structuring-for-synthesis-content-ai-agents-parse-2026.html</loc>
+        <lastmod>2026-05-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://distk.in/blog/citation-worthiness-clarity-ai-visibility-2026.html</loc>
+        <lastmod>2026-05-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
     <!-- Terms and Conditions -->
     <url>
         <loc>https://distk.in/terms.html</loc>
