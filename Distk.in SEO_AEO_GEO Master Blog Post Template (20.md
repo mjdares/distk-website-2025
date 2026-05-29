@@ -143,7 +143,86 @@ H1 - [Primary Keyword] 2026
 
 ***
 
+## **7. Google's Official 2026 AI Search Guidance (Reference Layer)**
+
+Source: developers.google.com/search/docs/fundamentals/ai-optimization-guide
+
+This section is Google's *official* stance on optimizing for AI Overviews / AI Mode. Use it as a sanity layer over Sections 1–6. Our AEO/GEO tactics remain, but every blog should also satisfy Google's foundational rules below.
+
+### 7.1 How Google AI Features Discover Content
+
+- **Retrieval-Augmented Generation (RAG / Grounding)**: AI Overviews use core Search ranking to retrieve indexed pages, then generate cited answers. If a page can't rank, it can't be cited.
+- **Query Fan-Out**: Google issues multiple concurrent sub-queries per user prompt. Cover the *topic cluster* (related sub-questions), not just the headline keyword.
+
+### 7.2 Eligibility Checklist (must pass before AEO/GEO matters)
+
+- Page is indexed by Google
+- Page is eligible for standard Google Search with a snippet
+- Content is publicly accessible and crawlable
+- Complies with Search Essentials and spam policies
+- No noindex, robots, or canonical conflicts
+
+### 7.3 Content Principles Google Explicitly Rewards
+
+- **Unique point of view**: first-hand experience, original research, expert takes
+- **Non-commodity content**: beyond "7 Tips for X" listicles that any LLM could generate
+- **People-first writing**: helpful, reliable, written for visitors, not algorithms
+- **Clear structure**: paragraphs, sections, headings, supporting images/video
+
+### 7.4 What Google Explicitly Says You DO NOT Need
+
+- LLMS.txt or any AI-specific text file
+- Custom AI markup, Markdown, or chunking schemas
+- Rewriting content in a special "AI style"
+- Obsessing over long-tail keyword permutations
+- Separate page per query variation (this trips the **scaled content abuse** policy)
+- Buying/seeding fake mentions across blogs, forums, or videos
+
+### 7.5 Structured Data
+
+- Not required for AI features
+- Still recommended for rich-result eligibility (Article, FAQ, Product, Review, LocalBusiness, etc.)
+- Continue using FAQ schema as Section 5 templates do. It earns rich results, not AI placement.
+
+### 7.6 Technical Foundations Google Cares About
+
+- Core Web Vitals (LCP, INP, CLS) in good standing
+- Mobile responsiveness across devices
+- Low latency, main content distinguishable from chrome
+- JavaScript-rendered pages follow JS SEO best practices
+- Crawl budget hygiene for large or frequently-updated sites
+- Site verified in Google Search Console for diagnostics
+- Duplicate content consolidated via canonical tags
+
+### 7.7 Local \& E-commerce Visibility
+
+- Google Business Profile feeds local AI answers
+- Google Merchant Center feeds product results in AI surfaces
+- Business Agent for conversational shopping (emerging)
+
+### 7.8 Agentic Experiences (Emerging, Optional)
+
+- AI agents may render pages visually, inspect DOM, read accessibility trees
+- Universal Commerce Protocol (UCP) is an emerging standard for agent transactions
+- Keep accessibility, semantic HTML, and clean DOM in mind for future-proofing
+
+### 7.9 Reconciliation With Distk's AEO/GEO Tactics
+
+- Google calls "AEO" and "GEO" *marketing terms*. We keep them as our naming because the tactical playbook (direct answers, FAQ schema, entity-rich content, structured headings) still aligns with how RAG retrieves and cites pages.
+- Where Sections 1–6 emphasize "2026" repetition, "What/Why/How" headings, and FAQ blocks, these remain valuable because they map to query fan-out and snippet eligibility, not because Google asks for them.
+- The one tactic to apply with care: **"one blog per long-tail keyword."** Only do this when each blog has a *distinct angle, audience, or first-hand insight*. If two keywords would produce near-identical content, consolidate.
+
+### 7.10 Quick Self-Audit Before Publishing
+
+- Does this page offer something an LLM couldn't produce from public knowledge?
+- Would I cite this page if I were Google's AI?
+- Is it indexable, snippet-eligible, and under 2.5s LCP on mobile?
+- Does it answer the *fan-out* sub-questions, not just the headline query?
+- Is there a clear author, source, or first-hand signal?
+
+***
+
 **Copy-paste this ENTIRE master prompt into any LLM with Input Details filled.** Generates 2026-optimized, AEO/GEO-first content using your complete keyword universe. Educational-to-commercial full funnel.
 
-*Distk.in Global Master Template v4.0 FINAL | Jan 2026*
+*Distk.in Global Master Template v4.1 | May 2026 (adds Google AI Optimization Guide reference layer)*
 
