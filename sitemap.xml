@@ -2194,6 +2194,14 @@
         <priority>0.8</priority>
     </url>
 
+    <!-- ROI Calculator -->
+    <url>
+        <loc>https://distk.in/roi-calculator.html</loc>
+        <lastmod>2026-06-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
     <!-- Shipping Policy -->
     <url>
         <loc>https://distk.in/shipping.html</loc>
