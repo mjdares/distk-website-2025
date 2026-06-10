@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hermes Agent by Nous Research in 2026: Complete Setup and Usage Guide | Distk</title>
+<meta name="description" content="A 2026 step-by-step guide to Hermes Agent by Nous Research: install, choose a model, connect Telegram or Discord, sandbox backends, skills, scheduling and config.">
+<meta name="keywords" content="Hermes Agent, Nous Research, Hermes Agent setup 2026, autonomous AI agent, hermes config, hermes gateway, self-hosted AI agent, open source agent">
+<meta name="author" content="Distk"><meta name="robots" content="index, follow">
+<link rel="canonical" href="https://distk.in/blog/hermes-agent-nous-research-setup-guide-2026.html">
+<meta property="og:type" content="article"><meta property="og:url" content="https://distk.in/blog/hermes-agent-nous-research-setup-guide-2026.html">
+<meta property="og:title" content="Hermes Agent by Nous Research in 2026: Complete Setup and Usage Guide">
+<meta property="og:description" content="Install, configure and run Hermes Agent in 2026: model selection, messaging gateways, sandbox backends, skills, scheduling and the full config reference for marketers and builders.">
+<meta property="og:image" content="https://distk.in/assets/images/og-image.jpg"><meta property="og:site_name" content="Distk">
+<meta property="article:published_time" content="2026-06-10T00:00:00+05:30">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Hermes Agent by Nous Research in 2026: Complete Setup and Usage Guide","description":"A 2026 step-by-step setup and usage guide for Hermes Agent by Nous Research, covering installation, model selection, gateways, sandboxing, skills and scheduling.","author":{"@type":"Organization","name":"Distk","url":"https://distk.in"},"publisher":{"@type":"Organization","name":"Distk","logo":{"@type":"ImageObject","url":"https://distk.in/assets/images/Logo.png"}},"datePublished":"2026-06-10","mainEntityOfPage":{"@type":"WebPage","@id":"https://distk.in/blog/hermes-agent-nous-research-setup-guide-2026.html"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Hermes Agent by Nous Research in 2026?","acceptedAnswer":{"@type":"Answer","text":"Hermes Agent is an open-source autonomous agent platform from Nous Research, released under the MIT License. Unlike IDE-bound coding assistants, it runs independently on your own server, works across Telegram, Discord, Slack, WhatsApp, Signal, Email and CLI, and grows over time through persistent memory and auto-generated skills."}},{"@type":"Question","name":"How do I install Hermes Agent in 2026?","acceptedAnswer":{"@type":"Answer","text":"On macOS, Linux, WSL2 or Termux, run the installer with curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash, then source your shell profile. On Windows use the PowerShell command iex (irm https://hermes-agent.nousresearch.com/install.ps1) or the desktop installer. The installer handles Python, Node.js, ripgrep and ffmpeg automatically."}},{"@type":"Question","name":"Which models work with Hermes Agent?","acceptedAnswer":{"@type":"Answer","text":"Hermes Agent works with almost any provider in 2026, including Nous Portal, OpenRouter, NovitaAI, NVIDIA NIM, z.ai/GLM, Kimi/Moonshot, MiniMax, Hugging Face, OpenAI and custom endpoints. The model must support at least 64,000 tokens of context, since smaller windows cannot sustain multi-step tool-calling workflows."}},{"@type":"Question","name":"How do I connect Hermes Agent to Telegram or Discord?","acceptedAnswer":{"@type":"Answer","text":"Run hermes gateway setup and follow the prompts. The gateway connects Telegram, Discord, Slack, WhatsApp, Signal, Email, Home Assistant and Teams. Check connection status any time with hermes gateway status, and re-run hermes gateway setup if a platform stops responding."}},{"@type":"Question","name":"Is Hermes Agent safe to run on a server?","acceptedAnswer":{"@type":"Answer","text":"Hermes Agent offers five sandbox backends in 2026: local, Docker, SSH, Modal and Singularity, plus Daytona, with container hardening and namespace isolation. For untrusted or automated workloads, set the terminal backend to docker or a cloud sandbox so commands run in an isolated container rather than directly on the host."}}]}</script>
+<link rel="icon" type="image/png" href="../assets/images/favicon.png"><link rel="apple-touch-icon" href="../assets/images/Logo.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BWDTQ1JPL2"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-BWDTQ1JPL2');</script>
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1077520544213003');fbq('track','PageView');</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1077520544213003&ev=PageView&noscript=1"></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#0a0a0a;--paper:#fafafa;--mid:#6b6b6b;--light:#e8e8e8;--accent:#e63312;--accent-soft:rgba(230,51,18,0.08);--mono:'Space Mono',monospace;--sans:'Outfit',sans-serif;--container:1120px;--prose:720px;--gutter:clamp(1.2rem,4vw,3rem)}
+html{font-size:16px;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.container{max-width:var(--container);margin:0 auto;padding:0 var(--gutter)}
+.prose{max-width:var(--prose);margin:0 auto;padding:0 var(--gutter)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--light)}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;max-width:var(--container);margin:0 auto;padding:0.9rem var(--gutter)}
+.nav__logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;color:var(--ink)}
+.nav__logo img{height:32px;width:auto}
+.nav__logo span{font-family:var(--mono);font-weight:700;font-size:1.05rem;letter-spacing:-0.02em}
+.nav__logo small{display:block;font-size:0.55rem;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);line-height:1}
+.nav__back{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid);text-decoration:none;display:flex;align-items:center;gap:0.4rem;transition:color 0.2s}
+.nav__back:hover{color:var(--accent)}
+.nav__cta{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.6rem 1.4rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.nav__cta:hover{background:var(--accent)}
+.hero{padding:7.5rem 0 3.5rem;position:relative;overflow:hidden;border-bottom:1px solid var(--light)}
+.hero::before{content:'HERMES';position:absolute;right:-1%;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:clamp(4rem,18vw,16rem);font-weight:700;color:rgba(0,0,0,0.03);line-height:1;pointer-events:none;user-select:none;letter-spacing:-0.05em}
+.hero__tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1.5rem}
+.hero__tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.hero h1{font-family:var(--sans);font-weight:700;font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;letter-spacing:-0.03em;max-width:22ch;margin-bottom:1.5rem}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero__sub{font-size:1.1rem;color:var(--mid);max-width:56ch;line-height:1.7;margin-bottom:2rem}
+.hero__meta{display:flex;flex-wrap:wrap;gap:1.5rem;font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid)}
+.tldr{background:var(--accent-soft);border-left:3px solid var(--accent);padding:1.8rem 2rem;margin:3rem 0;position:relative}
+.tldr::before{content:'TL;DR';position:absolute;top:-0.6rem;left:2rem;font-family:var(--mono);font-size:0.62rem;font-weight:700;letter-spacing:0.12em;background:var(--accent);color:#fff;padding:0.2rem 0.6rem}
+.tldr p{font-size:0.95rem;color:var(--ink);line-height:1.7}
+.article{padding:4rem 0 5rem}
+.article h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.35rem,2.8vw,1.8rem);letter-spacing:-0.02em;line-height:1.2;margin:3rem 0 1rem;padding-top:1rem;border-top:1px solid var(--light)}
+.article h2:first-child{border-top:none;margin-top:0}
+.article h3{font-family:var(--mono);font-weight:700;font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin:2rem 0 0.6rem}
+.article p{font-size:1rem;color:#2a2a2a;line-height:1.8;margin-bottom:1.25rem}
+.article ul,.article ol{padding-left:1.4rem;margin-bottom:1.25rem}
+.article li{font-size:1rem;color:#2a2a2a;line-height:1.75;margin-bottom:0.4rem}
+.article strong{font-weight:600;color:var(--ink)}
+.article blockquote{border-left:3px solid var(--accent);padding:0.75rem 1.5rem;margin:2rem 0;background:var(--accent-soft)}
+.article blockquote p{color:var(--ink);font-size:1rem;margin:0}
+.article code{font-family:var(--mono);font-size:0.82rem;background:#f0f0f0;padding:0.15rem 0.4rem;border-radius:3px;color:#c0290f}
+.article pre{background:var(--ink);color:#f5f5f5;font-family:var(--mono);font-size:0.82rem;line-height:1.6;padding:1.2rem 1.4rem;margin:1.5rem 0;overflow-x:auto;border-radius:4px}
+.article pre code{background:none;color:#f5f5f5;padding:0}
+.data-table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:0.88rem}
+.data-table th{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:0.7rem 1rem;text-align:left}
+.data-table td{padding:0.75rem 1rem;border-bottom:1px solid var(--light);vertical-align:top}
+.data-table tr:last-child td{border-bottom:none}
+.data-table tr:nth-child(even) td{background:#f5f5f5}
+.callout{border:1.5px solid var(--light);padding:1.5rem 1.8rem;margin:2rem 0}
+.callout__label{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem}
+.callout p{font-size:0.92rem;color:var(--mid);line-height:1.7;margin:0}
+.faq{padding:4rem 0;background:var(--ink);color:var(--paper)}
+.faq .section-tag{color:var(--accent)}
+.faq .section-tag::before{background:var(--accent)}
+.faq__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2.5rem;margin-top:2.5rem}
+.faq__item{border-left:2px solid var(--accent);padding-left:1.5rem}
+.faq__item h3{font-family:var(--sans);font-weight:600;font-size:0.95rem;margin-bottom:0.5rem;color:var(--paper)}
+.faq__item p{font-size:0.85rem;color:rgba(255,255,255,0.88);line-height:1.65}
+.section-tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1rem}
+.section-tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.section-title{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.15;color:var(--paper)}
+.cta{padding:5rem 0;background:var(--accent-soft);border-top:1px solid rgba(230,51,18,0.12)}
+.cta__inner{max-width:680px;margin:0 auto;padding:0 var(--gutter);text-align:center}
+.cta h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.2;margin-bottom:1rem}
+.cta p{font-size:1rem;color:var(--mid);line-height:1.7;margin-bottom:2rem}
+.cta__btn{display:inline-flex;align-items:center;gap:0.6rem;font-family:var(--mono);font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;padding:1rem 2.2rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.cta__btn:hover{background:var(--accent)}
+.foot{padding:2.5rem 0;border-top:1px solid var(--light);text-align:center;font-family:var(--mono);font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid)}
+.foot a{color:var(--mid);text-decoration:none}.foot a:hover{color:var(--accent)}
+@media(max-width:768px){.faq__grid{grid-template-columns:1fr}.nav__back span{display:none}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="https://distk.in" class="nav__logo">
+      <img src="../assets/images/Logo.png" alt="Distk">
+      <div><span>Distk</span><small>Global Growth Partner</small></div>
+    </a>
+    <a href="/blog/" class="nav__back">← <span>All articles</span></a>
+    <a href="https://distk.in/#contact" class="nav__cta">Work with us</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="prose">
+    <div class="hero__tag">AI Agents · 2026</div>
+    <h1>Hermes Agent by <em>Nous Research</em> in 2026: Complete Setup and Usage Guide</h1>
+    <p class="hero__sub">Hermes Agent is an open-source autonomous agent that runs on your own server, learns over time, and works across Telegram, Discord, Slack and the CLI. Here is how to install it, point it at a model, and put it to work.</p>
+    <div class="hero__meta">
+      <span>Distk Editorial</span>
+      <span>June 2026</span>
+      <span>14 min read</span>
+    </div>
+  </div>
+</section>
+
+<div class="prose">
+  <div class="tldr">
+    <p>Hermes Agent by Nous Research is an open-source (MIT) autonomous agent you self-host in 2026. Install it with one curl command, run <code>hermes setup</code> to pick a model and tools, and chat from the CLI or connect a messaging platform with <code>hermes gateway setup</code>. It supports almost any LLM provider (the model just needs 64,000+ tokens of context), five sandbox backends for safe execution, persistent memory, auto-generated skills, and natural-language cron scheduling. This guide walks through install, configuration, gateways, sandboxing and the moves that matter for marketing and ops teams.</p>
+  </div>
+</div>
+
+<main class="article">
+  <div class="prose">
+
+    <h2>What Is Hermes Agent by Nous Research in 2026?</h2>
+    <p>Hermes Agent is an open-source autonomous agent platform from Nous Research, released under the MIT License. Unlike IDE-bound coding assistants or thin chatbot wrappers, it runs independently on your own server and operates across Telegram, Discord, Slack, WhatsApp, Signal, Email and the command line. Nous Research describes it as "the agent that grows with you," because it keeps persistent memory, writes its own skills from experience, and builds a model of how you work across sessions.</p>
+    <p>That self-hosted, model-agnostic design is what makes Hermes Agent interesting for marketing and operations teams in 2026. You own the server, you choose the model, and you decide how much access the agent has. It is less a product you log into and more an autonomous teammate you configure and supervise.</p>
+
+    <h2>Why Run a Self-Hosted Agent in 2026?</h2>
+    <p>Running a self-hosted agent like Hermes in 2026 gives you three things hosted assistants cannot: control over your data, freedom to switch models, and the ability to grant real system access safely through sandboxing. For agencies and D2C teams handling client data, that combination matters. You decide where conversations are stored, which provider sees them, and what the agent is allowed to touch.</p>
+    <ul>
+      <li><strong>Data ownership:</strong> memory, sessions and logs live in your own <code>~/.hermes/</code> directory, not a vendor cloud</li>
+      <li><strong>Model freedom:</strong> point it at Nous Portal, OpenRouter, OpenAI, NVIDIA NIM or your own endpoint and switch any time</li>
+      <li><strong>Real capability:</strong> web search, browser automation, vision, image generation and text-to-speech, all under your control</li>
+      <li><strong>Always-on automation:</strong> natural-language cron scheduling for reports, backups and daily briefings</li>
+    </ul>
+
+    <h2>What Do You Need Before Installing Hermes Agent?</h2>
+    <p>Before installing Hermes Agent in 2026 you need a machine running macOS, Linux, WSL2 on Windows, or Termux on Android, plus an API key from at least one model provider. The installer handles the rest, pulling in Python, Node.js, ripgrep and ffmpeg automatically. The one hard requirement on the model side is a context window of at least 64,000 tokens, since smaller windows cannot sustain the multi-step tool-calling the agent relies on.</p>
+
+    <h2>How Do You Install Hermes Agent in 2026?</h2>
+    <p>Installing Hermes Agent in 2026 takes a single command on most systems. The installer clones the repo, creates a virtual environment, installs all dependencies, and registers a global <code>hermes</code> command. Pick the line that matches your platform, then reload your shell.</p>
+
+    <h3>macOS, Linux, WSL2 or Termux</h3>
+    <pre><code>curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash
+source ~/.bashrc   # or ~/.zshrc</code></pre>
+
+    <h3>Windows (PowerShell)</h3>
+    <pre><code>iex (irm https://hermes-agent.nousresearch.com/install.ps1)</code></pre>
+    <p>On macOS and Windows you can also use the desktop installer at hermes-agent.nousresearch.com/desktop. To install from source instead, clone <code>github.com/NousResearch/hermes-agent</code> and run <code>./setup-hermes.sh</code>.</p>
+
+    <h2>How Do You Set Up a Model and Provider?</h2>
+    <p>Setting up a model in Hermes Agent in 2026 is done through the interactive wizard. Run <code>hermes setup</code> for the full guided flow, or <code>hermes model</code> to jump straight to provider and model selection. Secrets such as API keys are stored in <code>~/.hermes/.env</code>, while everything else lives in <code>~/.hermes/config.yaml</code>.</p>
+    <pre><code>hermes setup                 # full guided wizard
+hermes model                 # choose provider + model
+hermes setup --portal        # quick path for Nous Portal subscribers
+hermes config set model anthropic/claude-opus-4.6
+hermes config set OPENROUTER_API_KEY sk-or-...</code></pre>
+    <p>Hermes Agent in 2026 supports a wide range of providers, so you are not locked to one vendor. The choices below are all first-class options.</p>
+
+    <table class="data-table">
+      <thead>
+        <tr><th>Provider</th><th>Notes (2026)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Nous Portal</td><td>Native option, fastest setup with <code>--portal</code></td></tr>
+        <tr><td>OpenRouter</td><td>Access to 200+ models behind one key</td></tr>
+        <tr><td>OpenAI</td><td>Direct GPT-class models</td></tr>
+        <tr><td>NVIDIA NIM, z.ai/GLM, Kimi, MiniMax</td><td>Alternative frontier and open-weight options</td></tr>
+        <tr><td>Hugging Face / custom endpoint</td><td>Bring your own hosted model</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout">
+      <div class="callout__label">Requirement</div>
+      <p>Whatever provider you choose in 2026, the model must support at least 64,000 tokens of context. Hermes Agent uses that window as working memory for multi-step tool calling, so a smaller context window will cause the agent to lose track mid-task. If replies come back empty, run <code>hermes model</code> to confirm both the model choice and the authentication.</p>
+    </div>
+
+    <h2>How Do You Start Chatting With Hermes Agent?</h2>
+    <p>Once a model is configured, you start Hermes Agent in 2026 by typing <code>hermes</code> for the classic CLI or <code>hermes --tui</code> for the modern terminal interface, which Nous Research recommends. Inside a session, type <code>/</code> to see all slash commands, and use <code>hermes --continue</code> (or <code>-c</code>) to resume your last conversation.</p>
+    <pre><code>hermes                # classic CLI
+hermes --tui          # modern terminal UI (recommended)
+hermes --continue     # resume the previous session</code></pre>
+    <p>Useful in-session slash commands include <code>/help</code> (all commands), <code>/tools</code> (list available tools), <code>/model</code> (switch models on the fly), and <code>/save</code> (save the conversation). For multi-line input use Alt+Enter, Ctrl+J or Shift+Enter, and to interrupt a running agent, type a new message and press Enter or hit Ctrl+C.</p>
+
+    <h2>How Do You Connect Telegram, Discord or Slack?</h2>
+    <p>Connecting a messaging platform to Hermes Agent in 2026 is handled by the gateway. Run <code>hermes gateway setup</code> and follow the prompts to link Telegram, Discord, Slack, WhatsApp, Signal, Email, Home Assistant or Microsoft Teams. This is what turns Hermes from a terminal tool into an always-on agent your team can message like a colleague.</p>
+    <pre><code>hermes gateway setup     # connect a messaging platform
+hermes gateway status    # check connection health</code></pre>
+    <p>If a platform stops responding, re-running <code>hermes gateway setup</code> is the standard fix. In group chats, each sender gets their own isolated session by default, so the agent keeps separate context per person rather than blending everyone into one thread.</p>
+
+    <h2>How Do You Run Hermes Agent Safely With Sandboxing?</h2>
+    <p>Hermes Agent runs commands through a configurable execution backend, and choosing the right one is the most important safety decision in 2026. By default it can run on your local machine, but for any automated or untrusted workload you should switch to an isolated backend so the agent operates inside a container rather than directly on the host.</p>
+
+    <table class="data-table">
+      <thead>
+        <tr><th>Backend</th><th>Where commands run</th><th>Best for</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>local</td><td>Your machine directly</td><td>Development, personal use</td></tr>
+        <tr><td>docker</td><td>Persistent Docker container</td><td>Safe sandboxing, automation</td></tr>
+        <tr><td>ssh</td><td>Remote server via SSH</td><td>Remote or more powerful hardware</td></tr>
+        <tr><td>modal</td><td>Modal cloud sandbox</td><td>Ephemeral cloud compute</td></tr>
+        <tr><td>daytona</td><td>Daytona workspace</td><td>Managed cloud environments</td></tr>
+        <tr><td>singularity</td><td>Singularity/Apptainer container</td><td>HPC clusters</td></tr>
+      </tbody>
+    </table>
+
+    <p>Switching to Docker isolation is a one-line change, after which the agent runs every command inside a hardened, persistent container:</p>
+    <pre><code>hermes config set terminal.backend docker</code></pre>
+
+    <h2>How Does Hermes Agent Learn and Use Skills?</h2>
+    <p>Hermes Agent grows over time in 2026 through two mechanisms: persistent memory and auto-generated skills. It stores memory files and a user profile under <code>~/.hermes/</code>, searches its own past conversations, and writes reusable skills from tasks it has completed. You can also browse and install community skills.</p>
+    <pre><code>hermes skills browse                       # see available skills
+hermes skills search kubernetes            # search by keyword
+hermes skills install openai/skills/k8s    # install a specific skill</code></pre>
+    <p>Installed skills are invoked with a slash command, for example <code>/k8s deploy the staging manifest</code>. Memory behavior is configurable in <code>config.yaml</code> under the <code>memory</code> block, where you can toggle memory on or off and set character limits for both stored memory and the user profile.</p>
+
+    <h2>How Do You Schedule Automated Tasks?</h2>
+    <p>Hermes Agent supports natural-language cron scheduling in 2026, which is one of its strongest features for marketing and operations. You can ask it to run recurring jobs such as a Monday morning performance briefing, a nightly backup, or a weekly competitor scan, and it stores those jobs in <code>~/.hermes/cron/</code>. This is what makes Hermes useful as an unattended teammate rather than a tool you have to sit in front of.</p>
+
+    <div class="callout">
+      <div class="callout__label">Distk Field Note</div>
+      <p>For a global D2C client in 2026, the highest-value Hermes setup we have seen is not chat at all, it is scheduling. A nightly job pulls the day's ad and analytics numbers, summarizes them against targets, and posts a short briefing to a Slack channel before the team logs in. Pair that with the Docker backend so the data-pulling scripts run in an isolated container, and you have a reliable, auditable automation that costs only model tokens to operate.</p>
+    </div>
+
+    <h2>Where Does Hermes Agent Store Configuration?</h2>
+    <p>Hermes Agent keeps all its state in the <code>~/.hermes/</code> directory in 2026, which makes it easy to back up, inspect or move to another server. Configuration follows a clear precedence: CLI arguments override <code>config.yaml</code>, which overrides <code>.env</code>, which overrides built-in defaults. The rule of thumb is simple: secrets go in <code>.env</code>, everything else goes in <code>config.yaml</code>.</p>
+
+    <table class="data-table">
+      <thead>
+        <tr><th>Path</th><th>Holds</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>config.yaml</code></td><td>Model, terminal, TTS, compression settings</td></tr>
+        <tr><td><code>.env</code></td><td>API keys and secrets</td></tr>
+        <tr><td><code>SOUL.md</code></td><td>Primary agent identity</td></tr>
+        <tr><td><code>memories/</code></td><td>Persistent memory files</td></tr>
+        <tr><td><code>skills/</code></td><td>Agent-created skills</td></tr>
+        <tr><td><code>cron/</code></td><td>Scheduled jobs</td></tr>
+        <tr><td><code>sessions/</code> and <code>logs/</code></td><td>Gateway sessions and logs</td></tr>
+      </tbody>
+    </table>
+
+    <p>Core configuration commands let you view, edit and validate settings without hand-editing files:</p>
+    <pre><code>hermes config              # view current configuration
+hermes config edit         # open config.yaml in your editor
+hermes config set KEY VAL  # set a single value
+hermes config migrate      # add any missing options interactively</code></pre>
+
+    <h2>How Do You Troubleshoot Hermes Agent?</h2>
+    <p>Troubleshooting Hermes Agent in 2026 follows a short recovery sequence that resolves most issues. Start with <code>hermes doctor</code> to diagnose, then work down the list until the agent responds again.</p>
+    <ol>
+      <li><code>hermes doctor</code> diagnoses common problems</li>
+      <li><code>hermes model</code> reselects the provider and confirms auth (fixes empty replies)</li>
+      <li><code>hermes setup</code> re-runs the full wizard</li>
+      <li><code>hermes gateway status</code> then <code>hermes gateway setup</code> fixes messaging issues</li>
+      <li><code>hermes --continue</code> resumes a saved session if context was lost</li>
+    </ol>
+
+    <h2>Common Mistakes to Avoid With Hermes Agent in 2026</h2>
+    <ul>
+      <li><strong>Running automation on the local backend:</strong> use Docker or a cloud sandbox for any unattended or untrusted workload</li>
+      <li><strong>Choosing a small-context model:</strong> anything under 64,000 tokens will break multi-step tasks</li>
+      <li><strong>Putting secrets in config.yaml:</strong> API keys belong in <code>.env</code>, never in the shared config file</li>
+      <li><strong>Skipping the gateway status check:</strong> when a bot goes quiet, <code>hermes gateway status</code> tells you whether it is the platform or the model</li>
+      <li><strong>No human review on scheduled output:</strong> treat unattended briefings and reports as drafts until you have audited a few cycles</li>
+    </ul>
+
+    <h2>What Hermes Agent Means for Marketing and Ops Teams</h2>
+    <p>For marketing and operations teams in 2026, Hermes Agent turns repetitive, cross-platform work into something an agent can own. A self-hosted, model-agnostic agent that schedules its own jobs, learns your workflows, and runs safely in a sandbox is closer to a junior team member than a chatbot. The teams that win with it are the ones who treat setup seriously: the right model, the right backend, and clear supervision of what the agent is allowed to do.</p>
+
+  </div>
+</main>
+
+<section class="faq">
+  <div class="container">
+    <div class="section-tag">Common Questions</div>
+    <h2 class="section-title">Hermes Agent Setup: FAQs</h2>
+    <div class="faq__grid">
+      <div class="faq__item">
+        <h3>What is Hermes Agent by Nous Research?</h3>
+        <p>An open-source (MIT) autonomous agent platform that runs on your own server. Unlike IDE-bound assistants, it works across Telegram, Discord, Slack, WhatsApp, Signal, Email and CLI, and grows over time through persistent memory and auto-generated skills.</p>
+      </div>
+      <div class="faq__item">
+        <h3>How do I install Hermes Agent in 2026?</h3>
+        <p>On macOS, Linux, WSL2 or Termux run curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash then source your shell profile. On Windows use the PowerShell command or desktop installer. The installer sets up Python, Node.js, ripgrep and ffmpeg automatically.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Which models work with Hermes Agent?</h3>
+        <p>Almost any provider: Nous Portal, OpenRouter, NovitaAI, NVIDIA NIM, z.ai/GLM, Kimi, MiniMax, Hugging Face, OpenAI or a custom endpoint. The model must support at least 64,000 tokens of context for multi-step tool-calling to work.</p>
+      </div>
+      <div class="faq__item">
+        <h3>How do I connect Telegram or Discord?</h3>
+        <p>Run hermes gateway setup and follow the prompts. It connects Telegram, Discord, Slack, WhatsApp, Signal, Email, Home Assistant and Teams. Check status with hermes gateway status and re-run setup if a platform stops responding.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Is Hermes Agent safe to run on a server?</h3>
+        <p>Yes, with the right backend. It offers local, Docker, SSH, Modal, Daytona and Singularity execution with container hardening. For automated or untrusted work, set terminal.backend to docker so commands run in an isolated container.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Can Hermes Agent run scheduled tasks?</h3>
+        <p>Yes. It supports natural-language cron scheduling for recurring reports, backups and briefings, stored in ~/.hermes/cron/. This lets it act as an unattended teammate that posts a morning summary or runs a nightly job without supervision.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="cta__inner">
+    <h2>Put an autonomous agent to work for your brand</h2>
+    <p>Distk helps brands design, deploy and supervise AI agents like Hermes for real marketing and ops workflows in 2026, from scheduled briefings to research automation, with the right model and the right guardrails.</p>
+    <a href="https://distk.in/#contact" class="cta__btn">Start the conversation →</a>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="container">
+    Source: <a href="https://hermes-agent.nousresearch.com/">hermes-agent.nousresearch.com</a> · © 2026 Distk · <a href="https://distk.in">distk.in</a> · <a href="mailto:connect@distk.in">connect@distk.in</a>
+  </div>
+</footer>
+</body>
+</html>
