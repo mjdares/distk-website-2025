@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Build an AI Second Brain With Claude and Obsidian in 2026 (Full Guide) | Distk</title>
+<meta name="description" content="A full 2026 guide to building an AI second brain with Claude and Obsidian using the Karpathy LLM Wiki pattern. Step-by-step setup, MCP connection, skills and autopilot.">
+<meta name="keywords" content="AI second brain, Claude Obsidian, LLM Wiki pattern, Karpathy second brain, Claude Code MCP, Obsidian Local REST API, CLAUDE.md, AI knowledge base 2026">
+<meta name="author" content="Distk"><meta name="robots" content="index, follow">
+<link rel="canonical" href="https://distk.in/blog/build-ai-second-brain-claude-obsidian-2026.html">
+<meta property="og:type" content="article"><meta property="og:url" content="https://distk.in/blog/build-ai-second-brain-claude-obsidian-2026.html">
+<meta property="og:title" content="How to Build an AI Second Brain With Claude and Obsidian in 2026 (Full Guide)">
+<meta property="og:description" content="Build an AI second brain with Claude and Obsidian in 2026. A step-by-step guide to the LLM Wiki pattern: vault setup, MCP connection, CLAUDE.md, skills and daily autopilot.">
+<meta property="og:image" content="https://distk.in/assets/images/og-image.jpg"><meta property="og:site_name" content="Distk">
+<meta property="article:published_time" content="2026-06-12T00:00:00+05:30">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to Build an AI Second Brain With Claude and Obsidian in 2026 (Full Guide)","description":"A complete 2026 walkthrough for building an AI second brain with Claude and Obsidian using the LLM Wiki pattern, including MCP setup, CLAUDE.md, skills and scheduled autopilot.","author":{"@type":"Organization","name":"Distk","url":"https://distk.in"},"publisher":{"@type":"Organization","name":"Distk","logo":{"@type":"ImageObject","url":"https://distk.in/assets/images/Logo.png"}},"datePublished":"2026-06-12","mainEntityOfPage":{"@type":"WebPage","@id":"https://distk.in/blog/build-ai-second-brain-claude-obsidian-2026.html"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is an AI second brain in 2026?","acceptedAnswer":{"@type":"Answer","text":"An AI second brain in 2026 is a single store of everything you know, kept as plain text notes, with an AI model like Claude sitting on top to read it, file new information, link ideas and answer questions across all of it. Built on Obsidian and Claude, it follows the LLM Wiki pattern and gets sharper the more you feed it."}},{"@type":"Question","name":"Do I need a paid Claude plan to build a second brain?","acceptedAnswer":{"@type":"Answer","text":"Yes. Building a Claude and Obsidian second brain in 2026 needs a paid Claude plan, since the free tier cannot use Claude Code, the version that reads and writes files on your computer. The referenced setup uses Claude Pro at 20 dollars per month, and Obsidian itself is free."}},{"@type":"Question","name":"How does Claude connect to an Obsidian vault?","acceptedAnswer":{"@type":"Answer","text":"Claude connects to an Obsidian vault in 2026 through MCP. You enable the Local REST API community plugin in Obsidian, copy its API key, then register an MCP server in Claude Code with that key, pointing at host 127.0.0.1 and port 27124. Obsidian must stay open for the connection to work."}},{"@type":"Question","name":"What is the LLM Wiki pattern?","acceptedAnswer":{"@type":"Answer","text":"The LLM Wiki pattern, popularized by Andrej Karpathy in April 2026, is the idea of keeping your knowledge as linked plain-text notes that an AI reads, organizes and grows over time. Because it is just text files, it is not locked to any one model and stays usable as you switch AI tools."}},{"@type":"Question","name":"Is it safe to give Claude access to my notes and calendar?","acceptedAnswer":{"@type":"Answer","text":"It is reasonably safe in 2026 if you control access with permissions, not prompts. Grant read-only and scoped access wherever possible, since telling an agent not to delete something is a suggestion, not a safeguard. If a tool technically can delete files or send emails, assume it eventually might."}}]}</script>
+<link rel="icon" type="image/png" href="../assets/images/favicon.png"><link rel="apple-touch-icon" href="../assets/images/Logo.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BWDTQ1JPL2"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-BWDTQ1JPL2');</script>
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1077520544213003');fbq('track','PageView');</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1077520544213003&ev=PageView&noscript=1"></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#0a0a0a;--paper:#fafafa;--mid:#6b6b6b;--light:#e8e8e8;--accent:#e63312;--accent-soft:rgba(230,51,18,0.08);--mono:'Space Mono',monospace;--sans:'Outfit',sans-serif;--container:1120px;--prose:720px;--gutter:clamp(1.2rem,4vw,3rem)}
+html{font-size:16px;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.container{max-width:var(--container);margin:0 auto;padding:0 var(--gutter)}
+.prose{max-width:var(--prose);margin:0 auto;padding:0 var(--gutter)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--light)}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;max-width:var(--container);margin:0 auto;padding:0.9rem var(--gutter)}
+.nav__logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;color:var(--ink)}
+.nav__logo img{height:32px;width:auto}
+.nav__logo span{font-family:var(--mono);font-weight:700;font-size:1.05rem;letter-spacing:-0.02em}
+.nav__logo small{display:block;font-size:0.55rem;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);line-height:1}
+.nav__back{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid);text-decoration:none;display:flex;align-items:center;gap:0.4rem;transition:color 0.2s}
+.nav__back:hover{color:var(--accent)}
+.nav__cta{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.6rem 1.4rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.nav__cta:hover{background:var(--accent)}
+.hero{padding:7.5rem 0 3.5rem;position:relative;overflow:hidden;border-bottom:1px solid var(--light)}
+.hero::before{content:'BRAIN';position:absolute;right:-1%;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:clamp(5rem,24vw,22rem);font-weight:700;color:rgba(0,0,0,0.03);line-height:1;pointer-events:none;user-select:none;letter-spacing:-0.05em}
+.hero__tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1.5rem}
+.hero__tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.hero h1{font-family:var(--sans);font-weight:700;font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;letter-spacing:-0.03em;max-width:24ch;margin-bottom:1.5rem}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero__sub{font-size:1.1rem;color:var(--mid);max-width:56ch;line-height:1.7;margin-bottom:2rem}
+.hero__meta{display:flex;flex-wrap:wrap;gap:1.5rem;font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid)}
+.tldr{background:var(--accent-soft);border-left:3px solid var(--accent);padding:1.8rem 2rem;margin:3rem 0;position:relative}
+.tldr::before{content:'TL;DR';position:absolute;top:-0.6rem;left:2rem;font-family:var(--mono);font-size:0.62rem;font-weight:700;letter-spacing:0.12em;background:var(--accent);color:#fff;padding:0.2rem 0.6rem}
+.tldr p{font-size:0.95rem;color:var(--ink);line-height:1.7}
+.article{padding:4rem 0 5rem}
+.article h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.35rem,2.8vw,1.8rem);letter-spacing:-0.02em;line-height:1.2;margin:3rem 0 1rem;padding-top:1rem;border-top:1px solid var(--light)}
+.article h2:first-child{border-top:none;margin-top:0}
+.article h3{font-family:var(--mono);font-weight:700;font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin:2rem 0 0.6rem}
+.article p{font-size:1rem;color:#2a2a2a;line-height:1.8;margin-bottom:1.25rem}
+.article ul,.article ol{padding-left:1.4rem;margin-bottom:1.25rem}
+.article li{font-size:1rem;color:#2a2a2a;line-height:1.75;margin-bottom:0.4rem}
+.article strong{font-weight:600;color:var(--ink)}
+.article blockquote{border-left:3px solid var(--accent);padding:0.75rem 1.5rem;margin:2rem 0;background:var(--accent-soft)}
+.article blockquote p{color:var(--ink);font-size:1rem;margin:0}
+.article code{font-family:var(--mono);font-size:0.82rem;background:#f0f0f0;padding:0.15rem 0.4rem;border-radius:3px;color:#c0290f}
+.article pre{background:var(--ink);color:#f5f5f5;font-family:var(--mono);font-size:0.82rem;line-height:1.6;padding:1.2rem 1.4rem;margin:1.5rem 0;overflow-x:auto;border-radius:4px}
+.article pre code{background:none;color:#f5f5f5;padding:0}
+.data-table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:0.88rem}
+.data-table th{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:0.7rem 1rem;text-align:left}
+.data-table td{padding:0.75rem 1rem;border-bottom:1px solid var(--light);vertical-align:top}
+.data-table tr:last-child td{border-bottom:none}
+.data-table tr:nth-child(even) td{background:#f5f5f5}
+.callout{border:1.5px solid var(--light);padding:1.5rem 1.8rem;margin:2rem 0}
+.callout__label{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem}
+.callout p{font-size:0.92rem;color:var(--mid);line-height:1.7;margin:0}
+.faq{padding:4rem 0;background:var(--ink);color:var(--paper)}
+.faq .section-tag{color:var(--accent)}
+.faq .section-tag::before{background:var(--accent)}
+.faq__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2.5rem;margin-top:2.5rem}
+.faq__item{border-left:2px solid var(--accent);padding-left:1.5rem}
+.faq__item h3{font-family:var(--sans);font-weight:600;font-size:0.95rem;margin-bottom:0.5rem;color:var(--paper)}
+.faq__item p{font-size:0.85rem;color:rgba(255,255,255,0.88);line-height:1.65}
+.section-tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1rem}
+.section-tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.section-title{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.15;color:var(--paper)}
+.cta{padding:5rem 0;background:var(--accent-soft);border-top:1px solid rgba(230,51,18,0.12)}
+.cta__inner{max-width:680px;margin:0 auto;padding:0 var(--gutter);text-align:center}
+.cta h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.2;margin-bottom:1rem}
+.cta p{font-size:1rem;color:var(--mid);line-height:1.7;margin-bottom:2rem}
+.cta__btn{display:inline-flex;align-items:center;gap:0.6rem;font-family:var(--mono);font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;padding:1rem 2.2rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.cta__btn:hover{background:var(--accent)}
+.foot{padding:2.5rem 0;border-top:1px solid var(--light);text-align:center;font-family:var(--mono);font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid)}
+.foot a{color:var(--mid);text-decoration:none}.foot a:hover{color:var(--accent)}
+@media(max-width:768px){.faq__grid{grid-template-columns:1fr}.nav__back span{display:none}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="https://distk.in" class="nav__logo">
+      <img src="../assets/images/Logo.png" alt="Distk">
+      <div><span>Distk</span><small>Global Growth Partner</small></div>
+    </a>
+    <a href="/blog/" class="nav__back">← <span>All articles</span></a>
+    <a href="https://distk.in/#contact" class="nav__cta">Work with us</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="prose">
+    <div class="hero__tag">AI Productivity · 2026</div>
+    <h1>How to Build an AI <em>Second Brain</em> With Claude and Obsidian in 2026 (Full Guide)</h1>
+    <p class="hero__sub">Your best ideas are scattered across notes apps, browser tabs and old chats you will never find again. A second brain fixes that. One place that holds everything, with Claude reading it, linking it and growing it for you.</p>
+    <div class="hero__meta">
+      <span>Distk Editorial</span>
+      <span>June 2026</span>
+      <span>15 min read</span>
+    </div>
+  </div>
+</section>
+
+<div class="prose">
+  <div class="tldr">
+    <p>An AI second brain in 2026 is one plain-text knowledge store, built in Obsidian, with Claude sitting on top to read it, file new notes, link ideas and answer across everything you have ever written. This guide follows the LLM Wiki pattern popularized by Andrej Karpathy in April 2026. You install Claude Desktop and Obsidian, connect them through MCP using the Local REST API plugin, load yourself into a CLAUDE.md profile, structure projects, build reusable skills, wire in live data like calendar and email, then put it on autopilot with a daily scheduled task. The setup takes an evening and gets sharper every day you use it.</p>
+  </div>
+</div>
+
+<main class="article">
+  <div class="prose">
+
+    <h2>What Is an AI Second Brain in 2026?</h2>
+    <p>An AI second brain in 2026 is a single place that holds everything you know, stored as plain text notes, with an AI model like Claude sitting on top of it to read, connect and grow that knowledge for you. Instead of rebuilding context from memory every time you sit down to work, the system already remembers. You can ask it anything you have ever written down and it answers from the whole store, not from a single chat you closed and lost.</p>
+    <p>This is the idea behind the LLM Wiki pattern that Andrej Karpathy popularized in April 2026. Unlike a chat history that rots the moment you close the tab, a second brain gets sharper every single day you feed it, because new information is filed and linked into a structure that compounds rather than scrolling away.</p>
+
+    <h2>Why Build a Second Brain Instead of Relying on Chat History?</h2>
+    <p>You build a second brain in 2026 instead of relying on chat history because chat history is disposable and your knowledge is not. Every time you start a fresh chat, the model forgets you, and you become the one holding all the context, most of which you lose. A second brain flips that: the system holds the context, picks up exactly where it left off, and stops making you re-explain yourself every session.</p>
+    <p>The deeper reason is ownership. Because the whole thing is just text files on your own computer, it is not locked to any one AI. Point a different model at it next year and it still works, because you own the brain, not the tool. That portability is what makes the effort worth it in 2026 rather than a setup you regret when models change.</p>
+
+    <h2>What Are You Actually Building?</h2>
+    <p>You are building two tools doing two jobs in 2026: Obsidian as the storage and Claude as the brain on top. Obsidian keeps everything as plain text files on your machine, where notes link to each other and over time form a graph, a visible map of how your ideas connect. Claude reads the entire vault, files new information where it belongs, links it to what already exists, and answers questions across all of it.</p>
+
+    <table class="data-table">
+      <thead>
+        <tr><th>Tool</th><th>Job</th><th>Why it matters in 2026</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Obsidian</td><td>Storage (plain-text vault)</td><td>Free, local, files are yours forever, not in a vendor cloud</td></tr>
+        <tr><td>Claude</td><td>The brain on top</td><td>Reads, files, links and answers across the whole vault</td></tr>
+        <tr><td>Plain text</td><td>The format</td><td>Not locked to one model, portable to any future AI</td></tr>
+      </tbody>
+    </table>
+
+    <h2>What Do You Need Before You Start?</h2>
+    <p>Before building a Claude and Obsidian second brain in 2026 you need a paid Claude plan and a computer running Windows or Mac. The paid plan is non-negotiable, because the free tier cannot use Claude Code, the version that actually reads and writes files on your machine. The referenced setup uses Claude Pro at 20 dollars per month, and Obsidian itself is completely free.</p>
+
+    <h2>Step 1: How Do You Install Claude Desktop?</h2>
+    <p>You install Claude Desktop in 2026 by downloading it from claude.com/download, running the installer, opening the app and signing in with a paid account. At the top of the app you will see tabs for Chat, Cowork and Code. Click the Code tab, which is Claude Code, the version that can read and write files on your computer. If it asks you to upgrade, your plan needs to be paid first.</p>
+
+    <h2>Step 2: How Do You Set Up the Obsidian Vault?</h2>
+    <p>You set up the Obsidian vault in 2026 by downloading Obsidian from obsidian.md, installing it, and on the welcome screen clicking Create new vault. Give it a name like "brain," pick a folder to store it, and click Create. That folder is now your second brain, and everything Claude writes will land there as text files.</p>
+    <p>Make one note so you have seen the core mechanic. Click the new-note icon, type a sentence, then type two square brackets around a word, like <code>[[goals]]</code>. That bracketed word becomes a link. Notes pointing at notes is the whole idea, and Claude will do this linking for you automatically later.</p>
+
+    <h2>Step 3: How Do You Open the Connection Inside Obsidian?</h2>
+    <p>You open the connection in 2026 by enabling a community plugin that gives Claude a door into your vault. In Obsidian, click the Settings gear at the bottom left, click Community plugins, then Turn on community plugins. Click Browse, search for Local REST API, then Install and Enable it.</p>
+    <p>Now open the Local REST API settings from your installed plugins list. You will see an API Key, a long string of letters and numbers. Copy it and keep it for the next step. Leave Obsidian open, because the connection only works while the app is running.</p>
+
+    <h2>Step 4: How Do You Connect Claude to the Vault?</h2>
+    <p>You connect Claude to the vault in 2026 by registering an MCP server in Claude Code that points at the Local REST API. MCP is the standard way Claude talks to other apps. In the Claude Code tab, paste the command below, but first replace PASTE-YOUR-KEY-HERE with the key you copied.</p>
+    <pre><code>claude mcp add-json obsidian-vault '{ "type": "stdio", "command": "uvx", "args": ["mcp-obsidian"], "env": { "OBSIDIAN_API_KEY": "PASTE-YOUR-KEY-HERE", "OBSIDIAN_HOST": "127.0.0.1", "OBSIDIAN_PORT": "27124" } }'</code></pre>
+    <p>Obsidian shows the key with the word "Bearer" in front of it. Do not include that word. Paste only the string of letters and numbers after it. Once the command runs, test it by typing: "list every file in my Obsidian vault." If Claude reads your notes back to you, the connection works. If it cannot, make sure Obsidian is still open and the plugin is enabled.</p>
+
+    <h2>Step 5: How Do You Load Yourself Into the Brain?</h2>
+    <p>You load yourself into the brain in 2026 by having Claude interview you rather than typing your profile by hand. Right now Claude can read your vault but knows nothing about you, and an empty brain is useless. In the Claude panel inside Obsidian, paste this prompt.</p>
+    <pre><code>You are setting up my second brain. Interview me ONE question at a
+time to build my profile. Ask about: who I am and what I do, my goals
+for this year, how I want you to talk to me, my strengths and
+weaknesses, and my current projects. Wait for each answer before the
+next question. When finished, write everything into a file called
+CLAUDE.md at the vault root, structured with headers, so you load it
+automatically every session.</code></pre>
+    <p>Answer like you are briefing a new co-founder. The more real your answers, the more the brain knows you. When it finishes, open CLAUDE.md in your vault and your whole context is saved. You never re-explain yourself again.</p>
+
+    <h2>Step 6: How Do You Structure a Project?</h2>
+    <p>You structure a project in 2026 by giving each area of work its own folder so Claude focuses on a single job instead of your whole life at once. Your CLAUDE.md is the strategy layer; projects are where work happens. Have Claude build the structure by pasting this prompt.</p>
+    <pre><code>Create a project folder in my vault called youtube-channel. Inside it,
+create four folders: Inputs, Process, Outputs, Feedback. Then write a
+CLAUDE.md inside that project folder describing what this project is,
+its one goal, and your specific role in helping me hit it. Interview
+me if you need details.</code></pre>
+    <p>Swap youtube-channel for whatever you are building. You now have a clean pipeline: ideas land in Inputs, Claude works in Process, finished work goes to Outputs, and results and metrics go to Feedback. Repeat this for every area, whether content, finances or clients.</p>
+
+    <h2>Step 7: How Do You Work Inside a Single Project?</h2>
+    <p>You work inside a single project in 2026 by opening just that project as its own vault, so Claude sees only that job. This is the move that keeps the system sharp. In Obsidian, click the vault name at the bottom left, then choose Manage vaults, then Open folder as a vault, pick your project folder, and click Trust.</p>
+    <p>Claude now reads only that project's CLAUDE.md. It knows exactly what it is helping with and ignores everything else. The big vault is for planning; a single project is for shipping.</p>
+
+    <h2>Step 8: How Do You Build a Reusable Skill?</h2>
+    <p>You build a reusable skill in 2026 by saving a workflow Claude can run on command, so you never repeat yourself. Anything you do more than once becomes a skill. Inside a project, paste this prompt and give a real example.</p>
+    <pre><code>I want to turn this into a reusable skill. Here is how I do [the task],
+with an example: [paste your example or steps]. Save this as a markdown
+skill file inside this project's skills folder, with a clear name and a
+description of when to trigger it.</code></pre>
+    <p>Next time, you just say "run the [name] skill" and it executes your way, instantly. Build one per repeated task: writing client emails, prepping a video, or categorizing bank statements.</p>
+
+    <h2>Step 9: How Do You Wire In Live Data?</h2>
+    <p>You wire in live data in 2026 by connecting tools that change in real time, like your calendar and email, because static notes are only half the brain. To add Google Calendar, run this in the Claude Code terminal, follow the Google sign-in it opens, and grant read access.</p>
+    <pre><code>claude mcp add google-workspace uvx workspace-mcp --tools calendar</code></pre>
+    <p>Now you can say: "Read my calendar for today, log what I committed to in each meeting into my tasks project, and flag anything without a clear next step." Add Gmail, Slack or Notion the same way. Always grant read-only where you can, because the brain should read your data, not delete it.</p>
+
+    <h2>Step 10: How Do You Put It on Autopilot?</h2>
+    <p>You put the second brain on autopilot in 2026 by scheduling your skills so the system maintains itself. In Claude Desktop, open the Schedule tab in the sidebar, click New task, and set a daily run. Or just tell Claude in any session: "set up a daily task at 7am that organizes my vault and summarizes what changed."</p>
+    <pre><code>Frequency:  Daily, 7:00am
+Folder:     your vault
+Prompt:     Check my vault. File anything new sitting in Inputs
+            folders into the right place and link it. Flag notes
+            that have gone stale. Write me a 3-line summary of what
+            changed overnight.</code></pre>
+    <p>You wake up to a brain that filed itself overnight. This is where the compounding becomes visible, because the system is now doing maintenance work while you sleep instead of waiting for you to tidy it manually.</p>
+
+    <h2>What Is the One Security Rule You Never Break?</h2>
+    <p>The one security rule in 2026 is keys, not prompts. Telling an agent "do not delete this" is a suggestion, not a safety setting. If a tool technically can delete a file or send an email, assume that one day it will. Control access at the permission level with read-only and scoped keys, never with words in a prompt.</p>
+
+    <blockquote>
+      <p>Grant the brain the narrowest access that still lets it do the job. Read-only calendar, scoped email, a vault it can write to but not wipe. Permissions are the real guardrail in 2026; instructions are not.</p>
+    </blockquote>
+
+    <h2>Can You Skip the Setup With a Ready-Made Repo?</h2>
+    <p>Yes, you can skip the manual setup in 2026 by cloning an open-source repo the community has already packaged. Each one is just text files and scripts, so you can clone it and reshape it into your own private version. Three are worth searching for on GitHub.</p>
+    <ul>
+      <li><strong>claude-obsidian by AgriciDaniel:</strong> a self-organizing second brain built on the Karpathy wiki pattern. It scaffolds the vault, sets up the connection, and ships presets for roles like executive, builder, creator and researcher</li>
+      <li><strong>obsidian-second-brain by eugeniughelbur:</strong> comes with 43 ready commands like /obsidian-save, /obsidian-daily and /obsidian-find, and works across Claude, Codex and Gemini so you are not locked to one tool</li>
+      <li><strong>second-brain-starter by coleam00:</strong> interviews you, generates a plan for a proactive assistant, then builds it from plain text files, Python and an Obsidian vault</li>
+    </ul>
+
+    <h2>What Does a Second Brain Mean for Marketers and Founders in 2026?</h2>
+    <p>For marketers and founders in 2026, an AI second brain turns scattered knowledge into a compounding asset. Brand guidelines, campaign learnings, client context, content ideas and performance data stop living in separate tools and start living in one vault that Claude reads end to end. The payoff is that every new task starts with full context instead of a cold prompt, which is the difference between an assistant that guesses and one that already knows your business.</p>
+
+    <div class="callout">
+      <div class="callout__label">Distk Field Note</div>
+      <p>For a founder-led India D2C brand in 2026, the highest-value vault is the one that holds every past campaign, every customer objection, and every channel result in one place. When Claude can read all of it, drafting the next launch plan takes minutes because it already knows what worked in the Gulf last quarter and what flopped on Instagram. The second brain is not a productivity toy here, it is the institutional memory a small team usually loses every time someone leaves.</p>
+    </div>
+
+    <h2>Common Mistakes to Avoid in 2026</h2>
+    <ul>
+      <li><strong>Using the free Claude tier:</strong> Claude Code needs a paid plan, so the file read and write features simply will not work otherwise</li>
+      <li><strong>Closing Obsidian:</strong> the Local REST API connection only works while Obsidian is open, so a closed app breaks the link</li>
+      <li><strong>Including the word "Bearer" in the key:</strong> paste only the string after it, or the MCP connection fails</li>
+      <li><strong>Working from the giant vault:</strong> open a single project as its own vault so Claude focuses instead of drowning in everything</li>
+      <li><strong>Relying on prompts for safety:</strong> use scoped, read-only keys, because "do not delete" is a wish, not a permission</li>
+      <li><strong>Never feeding it:</strong> a second brain only compounds if you keep adding to it, so build the daily autopilot habit early</li>
+    </ul>
+
+  </div>
+</main>
+
+<section class="faq">
+  <div class="container">
+    <div class="section-tag">Common Questions</div>
+    <h2 class="section-title">AI Second Brain With Claude and Obsidian: FAQs</h2>
+    <div class="faq__grid">
+      <div class="faq__item">
+        <h3>What is an AI second brain in 2026?</h3>
+        <p>A single store of everything you know, kept as plain text notes, with Claude on top to read it, file new information, link ideas and answer across all of it. Built on Obsidian and Claude, it follows the LLM Wiki pattern and sharpens the more you feed it.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Do I need a paid Claude plan?</h3>
+        <p>Yes. The free tier cannot use Claude Code, the version that reads and writes files on your computer. The referenced setup uses Claude Pro at $20 per month, and Obsidian itself is free.</p>
+      </div>
+      <div class="faq__item">
+        <h3>How does Claude connect to an Obsidian vault?</h3>
+        <p>Through MCP. You enable the Local REST API plugin in Obsidian, copy its API key, then register an MCP server in Claude Code with that key pointing at host 127.0.0.1 and port 27124. Obsidian must stay open for the link to work.</p>
+      </div>
+      <div class="faq__item">
+        <h3>What is the LLM Wiki pattern?</h3>
+        <p>Popularized by Andrej Karpathy in April 2026, it is the idea of keeping knowledge as linked plain-text notes that an AI reads, organizes and grows. Because it is just text files, it is not locked to any one model as you switch tools.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Is it safe to give Claude access to my notes and calendar?</h3>
+        <p>Reasonably safe if you control access with permissions, not prompts. Grant read-only and scoped access where possible, since "do not delete this" is a suggestion. If a tool technically can delete or send, assume it eventually might.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Can I use a ready-made repo instead?</h3>
+        <p>Yes. Open-source projects like claude-obsidian, obsidian-second-brain and second-brain-starter scaffold the whole setup for you. They are just text files and scripts, so you can clone one and reshape it into your own private version.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="cta__inner">
+    <h2>Turn scattered knowledge into a growth asset</h2>
+    <p>Distk helps founders and brands build AI systems that actually run in 2026, from second brains to agentic content and AEO. We design the workflow so your context compounds instead of leaking away.</p>
+    <a href="https://distk.in/#contact" class="cta__btn">Start the conversation →</a>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="container">
+    © 2026 Distk · <a href="https://distk.in">distk.in</a> · <a href="mailto:connect@distk.in">connect@distk.in</a>
+  </div>
+</footer>
+</body>
+</html>
