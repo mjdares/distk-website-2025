@@ -933,14 +933,32 @@
     .testimonials-section .section-tag::before { background: var(--accent); }
     .testimonials-section .section-title { color: var(--paper); }
 
-    .testimonials__grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
+    .testimonials__marquee {
       margin-top: 2rem;
+      overflow: hidden;
+      -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+      mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+    }
+
+    .testimonials__track {
+      display: flex;
+      width: max-content;
+      animation: testimonials-scroll 75s linear infinite;
+    }
+
+    .testimonials__marquee:hover .testimonials__track {
+      animation-play-state: paused;
+    }
+
+    @keyframes testimonials-scroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
     }
 
     .t-quote {
+      flex: 0 0 340px;
+      width: 340px;
+      margin-right: 2rem;
       border-left: 2px solid var(--accent);
       padding-left: 1.5rem;
     }
@@ -951,6 +969,15 @@
       line-height: 1.7;
       font-style: italic;
       margin-bottom: 1rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 7;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .testimonials__track { animation: none; }
+      .testimonials__marquee { overflow-x: auto; }
     }
 
     .t-quote__author {
@@ -1678,8 +1705,10 @@
         grid-template-columns: 1fr;
       }
 
-      .testimonials__grid {
-        grid-template-columns: 1fr;
+      .t-quote {
+        flex: 0 0 280px;
+        width: 280px;
+        margin-right: 1.5rem;
       }
     }
 
@@ -2000,7 +2029,8 @@
   <div class="container">
     <div class="section-tag">What Founders Say</div>
     <h2 class="section-title">Words from people we work with</h2>
-    <div class="testimonials__grid reveal">
+    <div class="testimonials__marquee reveal">
+      <div class="testimonials__track">
       <div class="t-quote">
         <p>"Incredible experience with Distk.in, Mayank and team! They built our website in record time. Their speed, responsiveness, and attention to detail are unmatched. Highly recommend them if you want top-tier professional work delivered fast."</p>
         <span class="t-quote__author">Hardik Rana</span>
@@ -2035,6 +2065,43 @@
         <p>"Distk helped us with our complete digital transformation - content creation, digital marketing, lead generation, increasing footfall, automation, and improving internal processes. They made sure we were ready both process-wise and tech-wise before implementing solutions. Highly recommend."</p>
         <span class="t-quote__author">Giftson J.</span>
         <span class="t-quote__company"> / Marketing &amp; Creative Manager, Paradise Stile Studio</span>
+      </div>
+      <!-- Duplicate set for seamless infinite scroll -->
+      <div class="t-quote" aria-hidden="true">
+        <p>"Incredible experience with Distk.in, Mayank and team! They built our website in record time. Their speed, responsiveness, and attention to detail are unmatched. Highly recommend them if you want top-tier professional work delivered fast."</p>
+        <span class="t-quote__author">Hardik Rana</span>
+        <span class="t-quote__company"> / Founder, Siya's Kitchen</span>
+      </div>
+      <div class="t-quote" aria-hidden="true">
+        <p>"We worked with DistK during our early marketing and content setup, and the experience has been genuinely impactful for Saral AI. What stood out was their deep understanding of Google's latest updates, evolving internet policies, and compliance considerations across global markets. They don't follow generic playbooks &mdash; they adapt strategies and content to what's working today. That approach helped us build our initial inbound momentum and a strong foundation for organic growth. Beyond the work itself, collaborating with Mayank Bhai has been an absolute pleasure: sharp, proactive, and deeply invested in outcomes. If you're an early-stage startup looking to build sustainable inbound growth, I'd definitely recommend giving DistK a try."</p>
+        <span class="t-quote__author">Renish Narula</span>
+        <span class="t-quote__company"> / Founder, Saral Hire AI</span>
+      </div>
+      <div class="t-quote" aria-hidden="true">
+        <p>"Mayank and the team understood our requirements well and helped us launch our website smoothly. They are also supporting us with marketing, SEO, and overall brand building. Happy with how things are shaping up and the clarity in their approach."</p>
+        <span class="t-quote__author">Surabhi Gowda</span>
+        <span class="t-quote__company"> / Founder, Spacolite Designs</span>
+      </div>
+      <div class="t-quote" aria-hidden="true">
+        <p>"Mayank and his team are handling our branding, website, and marketing campaigns. Great experience so far and looking forward to growing together. Highly recommend."</p>
+        <span class="t-quote__author">Akash Jain</span>
+        <span class="t-quote__company"> / Founder, Akash Solar Lights</span>
+      </div>
+      <div class="t-quote" aria-hidden="true">
+        <p>"Distk handled our website development professionally. They delivered what was promised without unnecessary delays. Based on this experience, we're moving forward with them for our complete marketing setup."</p>
+        <span class="t-quote__author">Karthik Shetty</span>
+        <span class="t-quote__company"> / Founder, Anthara Designs</span>
+      </div>
+      <div class="t-quote" aria-hidden="true">
+        <p>"Distk helped us establish our digital presence from scratch. They built our website, set up marketing automation, and created a proper lead generation system. I love their end to end approach."</p>
+        <span class="t-quote__author">Nishant Khokhawat</span>
+        <span class="t-quote__company"> / Founder, Khokhawat Solar Energy</span>
+      </div>
+      <div class="t-quote" aria-hidden="true">
+        <p>"Distk helped us with our complete digital transformation - content creation, digital marketing, lead generation, increasing footfall, automation, and improving internal processes. They made sure we were ready both process-wise and tech-wise before implementing solutions. Highly recommend."</p>
+        <span class="t-quote__author">Giftson J.</span>
+        <span class="t-quote__company"> / Marketing &amp; Creative Manager, Paradise Stile Studio</span>
+      </div>
       </div>
     </div>
   </div>
