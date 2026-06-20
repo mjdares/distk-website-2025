@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Is GLM-5.2 in 2026? Z.ai's 1M-Context Open Model Explained | Distk</title>
+<meta name="description" content="GLM-5.2 is z.ai's open-weights flagship launched June 2026 with a 1M-token context window. A plain-English guide to what it is, what is new, and what it means for teams.">
+<meta name="keywords" content="GLM-5.2, z.ai GLM-5.2, GLM 5.2 explained, open weights model 2026, 1M context model, IndexShare, agentic coding model, Zhipu GLM">
+<meta name="author" content="Distk"><meta name="robots" content="index, follow">
+<link rel="canonical" href="https://distk.in/blog/glm-5-2-zai-open-model-explained-2026.html">
+<meta property="og:type" content="article"><meta property="og:url" content="https://distk.in/blog/glm-5-2-zai-open-model-explained-2026.html">
+<meta property="og:title" content="What Is GLM-5.2 in 2026? Z.ai's 1M-Context Open Model Explained">
+<meta property="og:description" content="A 2026 guide to GLM-5.2, z.ai's open-weights flagship with a 1M-token context window, IndexShare efficiency, dual thinking modes and a coding-first design.">
+<meta property="og:image" content="https://distk.in/assets/images/og-image.jpg"><meta property="og:site_name" content="Distk">
+<meta property="article:published_time" content="2026-06-14T00:00:00+05:30">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"What Is GLM-5.2 in 2026? Z.ai's 1M-Context Open Model Explained","description":"A 2026 overview of GLM-5.2, z.ai's open-weights flagship model, covering its 1M-token context window, IndexShare efficiency, dual thinking modes and coding-first positioning.","author":{"@type":"Organization","name":"Distk","url":"https://distk.in"},"publisher":{"@type":"Organization","name":"Distk","logo":{"@type":"ImageObject","url":"https://distk.in/assets/images/Logo.png"}},"datePublished":"2026-06-14","mainEntityOfPage":{"@type":"WebPage","@id":"https://distk.in/blog/glm-5-2-zai-open-model-explained-2026.html"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is GLM-5.2 in 2026?","acceptedAnswer":{"@type":"Answer","text":"GLM-5.2 is z.ai's open-weights flagship large language model, launched on June 13, 2026, as the third major iteration in the GLM-5 line. It is built for agentic coding and long-horizon software engineering, ships under an MIT license, and offers a usable 1-million-token context window with output up to roughly 131,000 tokens."}},{"@type":"Question","name":"How big is GLM-5.2 and what is its architecture?","acceptedAnswer":{"@type":"Answer","text":"GLM-5.2 has 753 billion parameters in a Mixture-of-Experts architecture with sparse attention layers. Its IndexShare technique reuses the same indexer across every four sparse attention layers, cutting per-token compute by about 2.9 times at a 1-million-token context length, which is what makes the long context usable in practice."}},{"@type":"Question","name":"Is GLM-5.2 open source?","acceptedAnswer":{"@type":"Answer","text":"Yes. GLM-5.2 is released under the MIT license with open weights and no regional restrictions, which z.ai positions as Pure Open. You can download the weights from Hugging Face and run them yourself, or use them through z.ai's API and chat product."}},{"@type":"Question","name":"What are GLM-5.2's benchmark scores?","acceptedAnswer":{"@type":"Answer","text":"Z.ai did not publish official benchmark scores at launch in June 2026. Vendor-reported and early third-party figures that have circulated include SWE-bench Pro 62.1, GPQA-Diamond 91.2, HLE with tools 54.7 and AIME 2026 99.2, but these lack broad independent verification, so treat them as indicative rather than confirmed."}},{"@type":"Question","name":"What is GLM-5.2 best used for?","acceptedAnswer":{"@type":"Answer","text":"GLM-5.2 is best used for agentic coding and long-horizon software engineering in 2026, including multi-file edits, tool use and function calling, and tasks that need the full 1-million-token context. Its dual thinking-effort modes let teams trade speed for deeper reasoning depending on the task."}}]}</script>
+<link rel="icon" type="image/png" href="../assets/images/favicon.png"><link rel="apple-touch-icon" href="../assets/images/Logo.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BWDTQ1JPL2"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-BWDTQ1JPL2');</script>
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1077520544213003');fbq('track','PageView');</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1077520544213003&ev=PageView&noscript=1"></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#0a0a0a;--paper:#fafafa;--mid:#6b6b6b;--light:#e8e8e8;--accent:#e63312;--accent-soft:rgba(230,51,18,0.08);--mono:'Space Mono',monospace;--sans:'Outfit',sans-serif;--container:1120px;--prose:720px;--gutter:clamp(1.2rem,4vw,3rem)}
+html{font-size:16px;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.container{max-width:var(--container);margin:0 auto;padding:0 var(--gutter)}
+.prose{max-width:var(--prose);margin:0 auto;padding:0 var(--gutter)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--light)}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;max-width:var(--container);margin:0 auto;padding:0.9rem var(--gutter)}
+.nav__logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;color:var(--ink)}
+.nav__logo img{height:32px;width:auto}
+.nav__logo span{font-family:var(--mono);font-weight:700;font-size:1.05rem;letter-spacing:-0.02em}
+.nav__logo small{display:block;font-size:0.55rem;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);line-height:1}
+.nav__back{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid);text-decoration:none;display:flex;align-items:center;gap:0.4rem;transition:color 0.2s}
+.nav__back:hover{color:var(--accent)}
+.nav__cta{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.6rem 1.4rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.nav__cta:hover{background:var(--accent)}
+.hero{padding:7.5rem 0 3.5rem;position:relative;overflow:hidden;border-bottom:1px solid var(--light)}
+.hero::before{content:'GLM 5.2';position:absolute;right:-1%;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:clamp(4rem,18vw,16rem);font-weight:700;color:rgba(0,0,0,0.03);line-height:1;pointer-events:none;user-select:none;letter-spacing:-0.05em}
+.hero__tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1.5rem}
+.hero__tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.hero h1{font-family:var(--sans);font-weight:700;font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;letter-spacing:-0.03em;max-width:22ch;margin-bottom:1.5rem}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero__sub{font-size:1.1rem;color:var(--mid);max-width:56ch;line-height:1.7;margin-bottom:2rem}
+.hero__meta{display:flex;flex-wrap:wrap;gap:1.5rem;font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid)}
+.tldr{background:var(--accent-soft);border-left:3px solid var(--accent);padding:1.8rem 2rem;margin:3rem 0;position:relative}
+.tldr::before{content:'TL;DR';position:absolute;top:-0.6rem;left:2rem;font-family:var(--mono);font-size:0.62rem;font-weight:700;letter-spacing:0.12em;background:var(--accent);color:#fff;padding:0.2rem 0.6rem}
+.tldr p{font-size:0.95rem;color:var(--ink);line-height:1.7}
+.article{padding:4rem 0 5rem}
+.article h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.35rem,2.8vw,1.8rem);letter-spacing:-0.02em;line-height:1.2;margin:3rem 0 1rem;padding-top:1rem;border-top:1px solid var(--light)}
+.article h2:first-child{border-top:none;margin-top:0}
+.article h3{font-family:var(--mono);font-weight:700;font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin:2rem 0 0.6rem}
+.article p{font-size:1rem;color:#2a2a2a;line-height:1.8;margin-bottom:1.25rem}
+.article ul,.article ol{padding-left:1.4rem;margin-bottom:1.25rem}
+.article li{font-size:1rem;color:#2a2a2a;line-height:1.75;margin-bottom:0.4rem}
+.article strong{font-weight:600;color:var(--ink)}
+.article blockquote{border-left:3px solid var(--accent);padding:0.75rem 1.5rem;margin:2rem 0;background:var(--accent-soft)}
+.article blockquote p{color:var(--ink);font-size:1rem;margin:0}
+.article code{font-family:var(--mono);font-size:0.82rem;background:#f0f0f0;padding:0.15rem 0.4rem;border-radius:3px;color:#c0290f}
+.article pre{background:var(--ink);color:#f5f5f5;font-family:var(--mono);font-size:0.82rem;line-height:1.6;padding:1.2rem 1.4rem;margin:1.5rem 0;overflow-x:auto;border-radius:4px}
+.article pre code{background:none;color:#f5f5f5;padding:0}
+.data-table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:0.88rem}
+.data-table th{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:0.7rem 1rem;text-align:left}
+.data-table td{padding:0.75rem 1rem;border-bottom:1px solid var(--light);vertical-align:top}
+.data-table tr:last-child td{border-bottom:none}
+.data-table tr:nth-child(even) td{background:#f5f5f5}
+.callout{border:1.5px solid var(--light);padding:1.5rem 1.8rem;margin:2rem 0}
+.callout__label{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem}
+.callout p{font-size:0.92rem;color:var(--mid);line-height:1.7;margin:0}
+.faq{padding:4rem 0;background:var(--ink);color:var(--paper)}
+.faq .section-tag{color:var(--accent)}
+.faq .section-tag::before{background:var(--accent)}
+.faq__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2.5rem;margin-top:2.5rem}
+.faq__item{border-left:2px solid var(--accent);padding-left:1.5rem}
+.faq__item h3{font-family:var(--sans);font-weight:600;font-size:0.95rem;margin-bottom:0.5rem;color:var(--paper)}
+.faq__item p{font-size:0.85rem;color:rgba(255,255,255,0.88);line-height:1.65}
+.section-tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1rem}
+.section-tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.section-title{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.15;color:var(--paper)}
+.cta{padding:5rem 0;background:var(--accent-soft);border-top:1px solid rgba(230,51,18,0.12)}
+.cta__inner{max-width:680px;margin:0 auto;padding:0 var(--gutter);text-align:center}
+.cta h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.2;margin-bottom:1rem}
+.cta p{font-size:1rem;color:var(--mid);line-height:1.7;margin-bottom:2rem}
+.cta__btn{display:inline-flex;align-items:center;gap:0.6rem;font-family:var(--mono);font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;padding:1rem 2.2rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.cta__btn:hover{background:var(--accent)}
+.foot{padding:2.5rem 0;border-top:1px solid var(--light);text-align:center;font-family:var(--mono);font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid)}
+.foot a{color:var(--mid);text-decoration:none}.foot a:hover{color:var(--accent)}
+@media(max-width:768px){.faq__grid{grid-template-columns:1fr}.nav__back span{display:none}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="https://distk.in" class="nav__logo">
+      <img src="../assets/images/Logo.png" alt="Distk">
+      <div><span>Distk</span><small>Global Growth Partner</small></div>
+    </a>
+    <a href="/blog/" class="nav__back">← <span>All articles</span></a>
+    <a href="https://distk.in/#contact" class="nav__cta">Work with us</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="prose">
+    <div class="hero__tag">AI Models · 2026</div>
+    <h1>What Is <em>GLM-5.2</em> in 2026? Z.ai's 1M-Context Open Model Explained</h1>
+    <p class="hero__sub">Z.ai shipped an open-weights flagship with a usable million-token context window and a coding-first design. Here is what GLM-5.2 actually is, what is new, and why it matters.</p>
+    <div class="hero__meta">
+      <span>Distk Editorial</span>
+      <span>June 2026</span>
+      <span>11 min read</span>
+    </div>
+  </div>
+</section>
+
+<div class="prose">
+  <div class="tldr">
+    <p>GLM-5.2 is z.ai's open-weights flagship model, launched June 13, 2026, built for agentic coding and long-horizon software engineering. It is a 753-billion-parameter Mixture-of-Experts model with a usable 1-million-token context window, output up to about 131,000 tokens, and an MIT license. A technique called IndexShare cuts per-token compute by roughly 2.9 times at full context, which is what makes the long window practical. Z.ai did not publish official benchmarks at launch, so circulating scores should be read as indicative. For teams, the headline is a frontier-grade open model at a fraction of closed-model API cost.</p>
+  </div>
+</div>
+
+<main class="article">
+  <div class="prose">
+
+    <h2>What Is GLM-5.2 in 2026?</h2>
+    <p>GLM-5.2 is z.ai's open-weights flagship large language model, launched on June 13, 2026, as the third major iteration in the GLM-5 line. It is built specifically for agentic coding and long-horizon software engineering, ships under an MIT license with no regional restrictions, and offers a usable 1-million-token context window with output up to roughly 131,000 tokens per response. It supports English and Chinese.</p>
+    <p>The reason GLM-5.2 drew so much attention in 2026 is the combination of three things that rarely arrive together: frontier-grade capability, fully open weights, and aggressive pricing. Where most models in this capability class are closed and metered, GLM-5.2 can be downloaded, self-hosted, or used through a low-cost API, which changes the build-versus-buy math for a lot of teams.</p>
+
+    <h2>What Is New in GLM-5.2?</h2>
+    <p>What is new in GLM-5.2 in 2026 is a usable million-token context window, a dual thinking-effort system, and an efficiency technique called IndexShare. Earlier long-context models often advertised large windows that were slow or expensive to actually use; GLM-5.2's design is aimed at making the full window practical rather than theoretical.</p>
+    <ul>
+      <li><strong>Usable 1M-token context:</strong> the full window is designed to be used in real workloads, not just quoted on a spec sheet</li>
+      <li><strong>Dual thinking-effort modes:</strong> High and Max reasoning levels let you trade speed for depth depending on the task</li>
+      <li><strong>IndexShare efficiency:</strong> reuses the same indexer across every four sparse attention layers, cutting per-token compute by about 2.9 times at 1M context</li>
+      <li><strong>Better speculative decoding:</strong> acceptance length improved by up to 20 percent, which helps throughput</li>
+    </ul>
+
+    <h2>How Big Is GLM-5.2 and How Is It Built?</h2>
+    <p>GLM-5.2 is a 753-billion-parameter model built on a Mixture-of-Experts architecture with sparse attention layers in 2026. Mixture-of-Experts means only a fraction of those parameters activate for any given token, so the model has the knowledge of a very large network while running closer to the cost of a much smaller one. The sparse attention layers, combined with IndexShare, are what keep the million-token context affordable to run.</p>
+
+    <table class="data-table">
+      <thead>
+        <tr><th>Spec</th><th>GLM-5.2 (2026)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Parameters</td><td>753B (Mixture-of-Experts)</td></tr>
+        <tr><td>Context window</td><td>1,000,000 tokens (usable)</td></tr>
+        <tr><td>Max output</td><td>~131,000 tokens</td></tr>
+        <tr><td>License</td><td>MIT (open weights, no regional limits)</td></tr>
+        <tr><td>Languages</td><td>English, Chinese</td></tr>
+        <tr><td>Focus</td><td>Agentic coding, long-horizon engineering</td></tr>
+      </tbody>
+    </table>
+
+    <h2>How Good Is GLM-5.2? A Note on Benchmarks</h2>
+    <p>GLM-5.2's true standing on benchmarks in 2026 should be read with care, because z.ai did not publish official benchmark scores at launch. The launch announcement focused on availability, the 1-million-token context window, and the open-source roadmap rather than leaderboard numbers. Figures that have since circulated are vendor-reported or early third-party results without broad independent verification.</p>
+
+    <table class="data-table">
+      <thead>
+        <tr><th>Benchmark (reported)</th><th>Score</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>SWE-bench Pro</td><td>62.1</td></tr>
+        <tr><td>GPQA-Diamond</td><td>91.2</td></tr>
+        <tr><td>HLE (with tools)</td><td>54.7</td></tr>
+        <tr><td>AIME 2026</td><td>99.2</td></tr>
+      </tbody>
+    </table>
+    <p>Independent coverage in 2026 reported that GLM-5.2 matched or beat leading closed models on several long-horizon coding benchmarks at roughly one-sixth the cost. Treat all of this as indicative until broad third-party testing settles, but the direction is clear: this is a serious model, not a budget alternative.</p>
+
+    <div class="callout">
+      <div class="callout__label">Why the benchmark caveat matters</div>
+      <p>In 2026, the brands that win trust in AI content are the ones that separate confirmed facts from marketing claims. GLM-5.2's specs (parameters, context, license) are documented, but its benchmark scores were not officially published at launch. Stating that distinction plainly is exactly the kind of accuracy that earns citations in AI answer engines, and it is how we treat every claim at Distk.</p>
+    </div>
+
+    <h2>Why Does an Open Model at This Level Matter in 2026?</h2>
+    <p>An open model at GLM-5.2's level matters in 2026 because it breaks the assumption that frontier capability has to be closed and expensive. When the weights are MIT-licensed and the API costs a fraction of closed competitors, teams gain three options at once: use the hosted API, self-host for data control, or fine-tune for a niche. That optionality is the real product, not just the model.</p>
+
+    <h2>What Can You Build With GLM-5.2?</h2>
+    <p>You can build agentic coding tools, long-document analysis systems, and research assistants with GLM-5.2 in 2026, since it is tuned for tool use, function calling, multi-file editing, and tasks that need the full context window. Its day-one compatibility with popular coding agents through an OpenAI-compatible API means it drops into existing stacks with minimal change.</p>
+    <ul>
+      <li><strong>Agentic coding:</strong> multi-file edits and long-horizon tasks inside coding agents</li>
+      <li><strong>Whole-codebase reasoning:</strong> load large repositories into the 1M-token window for analysis</li>
+      <li><strong>Document-heavy workflows:</strong> contracts, research corpora, and knowledge bases that exceed normal context limits</li>
+      <li><strong>Cost-sensitive automation:</strong> high-volume tasks where closed-model token costs would be prohibitive</li>
+    </ul>
+
+    <div class="callout">
+      <div class="callout__label">Distk Field Note</div>
+      <p>For a cost-conscious India SaaS team in 2026, GLM-5.2 changes what is affordable to automate. Workflows that were too token-heavy to run on premium closed models, like summarizing an entire support history or reasoning across a full codebase, become viable at roughly one-sixth the API cost. The open license also means a startup worried about data residency can self-host instead of sending everything to a third-party cloud. That combination is why open frontier models are a genuine strategic option this year, not just a hobbyist curiosity.</p>
+    </div>
+
+    <h2>How Does GLM-5.2 Fit a Marketing or Product Team?</h2>
+    <p>For a marketing or product team in 2026, GLM-5.2 is most useful as the affordable engine behind high-volume, context-heavy automation. Think bulk content analysis, large-scale personalization, or internal tools that read entire knowledge bases. The decision is rarely GLM-5.2 versus one closed model in isolation; it is choosing the right model per task, and an open low-cost option with a huge context window expands what you can justify building.</p>
+
+    <blockquote>
+      <p>The story of GLM-5.2 in 2026 is not that open finally caught up. It is that capability, openness and low cost arrived in the same model, which gives teams real choice over how they build instead of one default they have to accept.</p>
+    </blockquote>
+
+  </div>
+</main>
+
+<section class="faq">
+  <div class="container">
+    <div class="section-tag">Common Questions</div>
+    <h2 class="section-title">GLM-5.2 Explained: FAQs</h2>
+    <div class="faq__grid">
+      <div class="faq__item">
+        <h3>What is GLM-5.2 in 2026?</h3>
+        <p>Z.ai's open-weights flagship, launched June 13, 2026, built for agentic coding and long-horizon engineering. It ships under an MIT license with a usable 1-million-token context window and output up to about 131,000 tokens.</p>
+      </div>
+      <div class="faq__item">
+        <h3>How big is it and how is it built?</h3>
+        <p>753 billion parameters in a Mixture-of-Experts architecture with sparse attention. IndexShare reuses one indexer across every four sparse attention layers, cutting per-token compute about 2.9 times at 1M context, which makes the long window usable.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Is GLM-5.2 open source?</h3>
+        <p>Yes. It is released under the MIT license with open weights and no regional restrictions, which z.ai calls Pure Open. You can download it from Hugging Face, self-host it, or use it via z.ai's API and chat product.</p>
+      </div>
+      <div class="faq__item">
+        <h3>What are its benchmark scores?</h3>
+        <p>Z.ai did not publish official benchmarks at launch. Circulating vendor and early third-party figures include SWE-bench Pro 62.1, GPQA-Diamond 91.2, HLE with tools 54.7 and AIME 2026 99.2, but these lack broad independent verification.</p>
+      </div>
+      <div class="faq__item">
+        <h3>What is GLM-5.2 best used for?</h3>
+        <p>Agentic coding and long-horizon software engineering: multi-file edits, tool use, function calling, and tasks that need the full 1M-token context. Dual thinking-effort modes let teams trade speed for deeper reasoning.</p>
+      </div>
+      <div class="faq__item">
+        <h3>How much does GLM-5.2 cost?</h3>
+        <p>Direct API access has been priced around $1.40 per million input tokens and $4.40 per million output tokens, with subscription Coding Plans for heavier use. Always check z.ai for current pricing, since it changes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="cta__inner">
+    <h2>Pick the right model for the job</h2>
+    <p>Distk helps brands choose and deploy the right AI models for real marketing and product workloads in 2026, open or closed, hosted or self-run. We match the model to the outcome, not the hype.</p>
+    <a href="https://distk.in/#contact" class="cta__btn">Start the conversation →</a>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="container">
+    Source: <a href="https://z.ai/blog/glm-5.2">z.ai/blog/glm-5.2</a> · © 2026 Distk · <a href="https://distk.in">distk.in</a> · <a href="mailto:connect@distk.in">connect@distk.in</a>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GLM-5.2 API Guide in 2026: How to Integrate Z.ai's Model (with Code) | Distk</title>
+<meta name="description" content="A 2026 developer guide to the GLM-5.2 API: endpoint, authentication, Python and cURL examples, thinking modes, reasoning effort, streaming and OpenAI-compatible setup.">
+<meta name="keywords" content="GLM-5.2 API, z.ai API, glm-5.2 model, GLM-5.2 Python, OpenAI compatible GLM, GLM-5.2 thinking mode, reasoning_effort, z.ai api integration 2026">
+<meta name="author" content="Distk"><meta name="robots" content="index, follow">
+<link rel="canonical" href="https://distk.in/blog/glm-5-2-api-integration-guide-2026.html">
+<meta property="og:type" content="article"><meta property="og:url" content="https://distk.in/blog/glm-5-2-api-integration-guide-2026.html">
+<meta property="og:title" content="GLM-5.2 API Guide in 2026: How to Integrate Z.ai's Model (with Code)">
+<meta property="og:description" content="Integrate the GLM-5.2 API in 2026: endpoint, Bearer auth, official Python SDK, OpenAI-compatible client, thinking and reasoning-effort parameters, and streaming.">
+<meta property="og:image" content="https://distk.in/assets/images/og-image.jpg"><meta property="og:site_name" content="Distk">
+<meta property="article:published_time" content="2026-06-14T00:00:00+05:30">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"GLM-5.2 API Guide in 2026: How to Integrate Z.ai's Model (with Code)","description":"A 2026 developer guide to integrating the GLM-5.2 API, covering endpoint, authentication, Python and cURL examples, thinking modes, reasoning effort and streaming.","author":{"@type":"Organization","name":"Distk","url":"https://distk.in"},"publisher":{"@type":"Organization","name":"Distk","logo":{"@type":"ImageObject","url":"https://distk.in/assets/images/Logo.png"}},"datePublished":"2026-06-14","mainEntityOfPage":{"@type":"WebPage","@id":"https://distk.in/blog/glm-5-2-api-integration-guide-2026.html"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the GLM-5.2 API endpoint in 2026?","acceptedAnswer":{"@type":"Answer","text":"The GLM-5.2 chat completions endpoint is https://api.z.ai/api/paas/v4/chat/completions in 2026. You call it with the model name glm-5.2, authenticate with a Bearer token in the Authorization header, and send an OpenAI-style messages array in the request body."}},{"@type":"Question","name":"Is the GLM-5.2 API OpenAI-compatible?","acceptedAnswer":{"@type":"Answer","text":"Yes. The GLM-5.2 API is OpenAI-compatible in 2026. You can use the OpenAI Python client by setting the base_url to https://api.z.ai/api/paas/v4/ and your z.ai API key, then call chat.completions.create with model glm-5.2, which lets it drop into existing OpenAI-based code with minimal change."}},{"@type":"Question","name":"What is the thinking parameter in the GLM-5.2 API?","acceptedAnswer":{"@type":"Answer","text":"The thinking parameter toggles GLM-5.2's reasoning mode in 2026. Setting thinking to type enabled turns on internal reasoning, and reasoning_effort (for example max) controls how much reasoning the model does. When enabled, streamed responses include both reasoning_content and content fields."}},{"@type":"Question","name":"How much does the GLM-5.2 API cost?","acceptedAnswer":{"@type":"Answer","text":"Direct GLM-5.2 API access has been priced around 1.40 dollars per million input tokens and 4.40 dollars per million output tokens in 2026, which independent coverage described as roughly one-sixth the cost of comparable closed models. Always confirm current pricing on z.ai, since it can change."}},{"@type":"Question","name":"What is the maximum output length of GLM-5.2?","acceptedAnswer":{"@type":"Answer","text":"GLM-5.2 supports a 1-million-token context window and a maximum output of around 128,000 to 131,000 tokens per response in 2026. You control output length per request with the max_tokens parameter, which the examples set to 4096 but can go much higher."}}]}</script>
+<link rel="icon" type="image/png" href="../assets/images/favicon.png"><link rel="apple-touch-icon" href="../assets/images/Logo.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BWDTQ1JPL2"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-BWDTQ1JPL2');</script>
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1077520544213003');fbq('track','PageView');</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1077520544213003&ev=PageView&noscript=1"></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#0a0a0a;--paper:#fafafa;--mid:#6b6b6b;--light:#e8e8e8;--accent:#e63312;--accent-soft:rgba(230,51,18,0.08);--mono:'Space Mono',monospace;--sans:'Outfit',sans-serif;--container:1120px;--prose:720px;--gutter:clamp(1.2rem,4vw,3rem)}
+html{font-size:16px;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.container{max-width:var(--container);margin:0 auto;padding:0 var(--gutter)}
+.prose{max-width:var(--prose);margin:0 auto;padding:0 var(--gutter)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--light)}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;max-width:var(--container);margin:0 auto;padding:0.9rem var(--gutter)}
+.nav__logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;color:var(--ink)}
+.nav__logo img{height:32px;width:auto}
+.nav__logo span{font-family:var(--mono);font-weight:700;font-size:1.05rem;letter-spacing:-0.02em}
+.nav__logo small{display:block;font-size:0.55rem;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);line-height:1}
+.nav__back{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid);text-decoration:none;display:flex;align-items:center;gap:0.4rem;transition:color 0.2s}
+.nav__back:hover{color:var(--accent)}
+.nav__cta{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.6rem 1.4rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.nav__cta:hover{background:var(--accent)}
+.hero{padding:7.5rem 0 3.5rem;position:relative;overflow:hidden;border-bottom:1px solid var(--light)}
+.hero::before{content:'API';position:absolute;right:-1%;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:clamp(6rem,30vw,26rem);font-weight:700;color:rgba(0,0,0,0.03);line-height:1;pointer-events:none;user-select:none;letter-spacing:-0.05em}
+.hero__tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1.5rem}
+.hero__tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.hero h1{font-family:var(--sans);font-weight:700;font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;letter-spacing:-0.03em;max-width:24ch;margin-bottom:1.5rem}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero__sub{font-size:1.1rem;color:var(--mid);max-width:56ch;line-height:1.7;margin-bottom:2rem}
+.hero__meta{display:flex;flex-wrap:wrap;gap:1.5rem;font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid)}
+.tldr{background:var(--accent-soft);border-left:3px solid var(--accent);padding:1.8rem 2rem;margin:3rem 0;position:relative}
+.tldr::before{content:'TL;DR';position:absolute;top:-0.6rem;left:2rem;font-family:var(--mono);font-size:0.62rem;font-weight:700;letter-spacing:0.12em;background:var(--accent);color:#fff;padding:0.2rem 0.6rem}
+.tldr p{font-size:0.95rem;color:var(--ink);line-height:1.7}
+.article{padding:4rem 0 5rem}
+.article h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.35rem,2.8vw,1.8rem);letter-spacing:-0.02em;line-height:1.2;margin:3rem 0 1rem;padding-top:1rem;border-top:1px solid var(--light)}
+.article h2:first-child{border-top:none;margin-top:0}
+.article h3{font-family:var(--mono);font-weight:700;font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin:2rem 0 0.6rem}
+.article p{font-size:1rem;color:#2a2a2a;line-height:1.8;margin-bottom:1.25rem}
+.article ul,.article ol{padding-left:1.4rem;margin-bottom:1.25rem}
+.article li{font-size:1rem;color:#2a2a2a;line-height:1.75;margin-bottom:0.4rem}
+.article strong{font-weight:600;color:var(--ink)}
+.article blockquote{border-left:3px solid var(--accent);padding:0.75rem 1.5rem;margin:2rem 0;background:var(--accent-soft)}
+.article blockquote p{color:var(--ink);font-size:1rem;margin:0}
+.article code{font-family:var(--mono);font-size:0.82rem;background:#f0f0f0;padding:0.15rem 0.4rem;border-radius:3px;color:#c0290f}
+.article pre{background:var(--ink);color:#f5f5f5;font-family:var(--mono);font-size:0.82rem;line-height:1.6;padding:1.2rem 1.4rem;margin:1.5rem 0;overflow-x:auto;border-radius:4px}
+.article pre code{background:none;color:#f5f5f5;padding:0}
+.data-table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:0.88rem}
+.data-table th{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:0.7rem 1rem;text-align:left}
+.data-table td{padding:0.75rem 1rem;border-bottom:1px solid var(--light);vertical-align:top}
+.data-table tr:last-child td{border-bottom:none}
+.data-table tr:nth-child(even) td{background:#f5f5f5}
+.callout{border:1.5px solid var(--light);padding:1.5rem 1.8rem;margin:2rem 0}
+.callout__label{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem}
+.callout p{font-size:0.92rem;color:var(--mid);line-height:1.7;margin:0}
+.faq{padding:4rem 0;background:var(--ink);color:var(--paper)}
+.faq .section-tag{color:var(--accent)}
+.faq .section-tag::before{background:var(--accent)}
+.faq__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2.5rem;margin-top:2.5rem}
+.faq__item{border-left:2px solid var(--accent);padding-left:1.5rem}
+.faq__item h3{font-family:var(--sans);font-weight:600;font-size:0.95rem;margin-bottom:0.5rem;color:var(--paper)}
+.faq__item p{font-size:0.85rem;color:rgba(255,255,255,0.88);line-height:1.65}
+.section-tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1rem}
+.section-tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.section-title{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.15;color:var(--paper)}
+.cta{padding:5rem 0;background:var(--accent-soft);border-top:1px solid rgba(230,51,18,0.12)}
+.cta__inner{max-width:680px;margin:0 auto;padding:0 var(--gutter);text-align:center}
+.cta h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.2;margin-bottom:1rem}
+.cta p{font-size:1rem;color:var(--mid);line-height:1.7;margin-bottom:2rem}
+.cta__btn{display:inline-flex;align-items:center;gap:0.6rem;font-family:var(--mono);font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;padding:1rem 2.2rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.cta__btn:hover{background:var(--accent)}
+.foot{padding:2.5rem 0;border-top:1px solid var(--light);text-align:center;font-family:var(--mono);font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid)}
+.foot a{color:var(--mid);text-decoration:none}.foot a:hover{color:var(--accent)}
+@media(max-width:768px){.faq__grid{grid-template-columns:1fr}.nav__back span{display:none}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="https://distk.in" class="nav__logo">
+      <img src="../assets/images/Logo.png" alt="Distk">
+      <div><span>Distk</span><small>Global Growth Partner</small></div>
+    </a>
+    <a href="/blog/" class="nav__back">← <span>All articles</span></a>
+    <a href="https://distk.in/#contact" class="nav__cta">Work with us</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="prose">
+    <div class="hero__tag">AI Development · 2026</div>
+    <h1>GLM-5.2 <em>API Guide</em> in 2026: How to Integrate Z.ai's Model (with Code)</h1>
+    <p class="hero__sub">Endpoint, auth, the official SDK, the OpenAI-compatible path, and the thinking and reasoning-effort parameters that make GLM-5.2 different. A practical integration guide.</p>
+    <div class="hero__meta">
+      <span>Distk Editorial</span>
+      <span>June 2026</span>
+      <span>12 min read</span>
+    </div>
+  </div>
+</section>
+
+<div class="prose">
+  <div class="tldr">
+    <p>The GLM-5.2 API in 2026 is an OpenAI-style chat completions endpoint at <code>https://api.z.ai/api/paas/v4/chat/completions</code>, called with the model name <code>glm-5.2</code> and a Bearer token. You can use the official <code>ZaiClient</code> Python SDK or point the standard OpenAI client at z.ai's base URL. The parameters that matter most are <code>thinking</code> (toggles reasoning) and <code>reasoning_effort</code> (how hard it reasons), alongside the usual <code>temperature</code>, <code>max_tokens</code> and <code>stream</code>. Streamed responses return both <code>reasoning_content</code> and <code>content</code>. API pricing has run around $1.40 per million input tokens and $4.40 per million output.</p>
+  </div>
+</div>
+
+<main class="article">
+  <div class="prose">
+
+    <h2>What Is the GLM-5.2 API in 2026?</h2>
+    <p>The GLM-5.2 API in 2026 is z.ai's hosted chat completions service, exposed at <code>https://api.z.ai/api/paas/v4/chat/completions</code> and called with the model name <code>glm-5.2</code>. It follows the familiar OpenAI-style request shape, with a messages array of roles and content, which means most teams can integrate it without learning a new mental model. You authenticate with a Bearer token in the Authorization header.</p>
+    <p>The practical appeal is that GLM-5.2's API behaves like the chat APIs developers already know, while adding explicit controls for reasoning depth. That combination, a familiar interface plus low token cost and a huge context window, is why it became a popular drop-in option in 2026.</p>
+
+    <h2>How Do You Authenticate?</h2>
+    <p>You authenticate to the GLM-5.2 API in 2026 by sending your z.ai API key as a Bearer token in the Authorization header of every request. Get the key from your z.ai account, keep it server-side, and never expose it in client code or commit it to a repository.</p>
+    <pre><code>-H "Authorization: Bearer your-api-key"</code></pre>
+
+    <h2>How Do You Call GLM-5.2 With cURL?</h2>
+    <p>You call GLM-5.2 with cURL in 2026 by posting a JSON body to the chat completions endpoint, specifying the model, messages, and any reasoning controls. The example below enables thinking and sets reasoning effort to max, which tells the model to reason hard before answering.</p>
+    <pre><code>curl -X POST "https://api.z.ai/api/paas/v4/chat/completions" \
+-H "Content-Type: application/json" \
+-H "Authorization: Bearer your-api-key" \
+-d '{
+  "model": "glm-5.2",
+  "messages": [
+    {"role": "system", "content": "You are a senior full-stack software engineer..."},
+    {"role": "user", "content": "Design and build a personal blog website..."}
+  ],
+  "thinking": {"type": "enabled"},
+  "reasoning_effort": "max",
+  "max_tokens": 4096,
+  "temperature": 1.0
+}'</code></pre>
+
+    <h2>How Do You Use the Official Python SDK?</h2>
+    <p>You use the official Python SDK in 2026 by importing <code>ZaiClient</code>, creating a client with your API key, and calling <code>chat.completions.create</code>. The shape mirrors the cURL call, so the same parameters apply. This is the cleanest path if you are starting fresh rather than migrating existing OpenAI code.</p>
+    <pre><code>from zai import ZaiClient
+
+client = ZaiClient(api_key="your-api-key")
+
+response = client.chat.completions.create(
+    model="glm-5.2",
+    messages=[
+        {"role": "system", "content": "You are a senior full-stack software engineer..."},
+        {"role": "user", "content": "Design and build a personal blog website..."}
+    ],
+    thinking={"type": "enabled"},
+    reasoning_effort="max",
+    max_tokens=4096,
+    temperature=1.0
+)</code></pre>
+
+    <h2>How Do You Use GLM-5.2 With the OpenAI Client?</h2>
+    <p>You use GLM-5.2 with the OpenAI client in 2026 by pointing the OpenAI Python library at z.ai's base URL and supplying your z.ai key. Because the API is OpenAI-compatible, this lets GLM-5.2 drop into existing OpenAI-based code with almost no change, which is the fastest migration path for teams already on that SDK.</p>
+    <pre><code>from openai import OpenAI
+
+client = OpenAI(
+    api_key="your-Z.AI-api-key",
+    base_url="https://api.z.ai/api/paas/v4/"
+)
+
+completion = client.chat.completions.create(
+    model="glm-5.2",
+    messages=[{"role": "user", "content": "Hello"}]
+)</code></pre>
+
+    <h2>What Do the Thinking and Reasoning-Effort Parameters Do?</h2>
+    <p>The thinking and reasoning-effort parameters control how much GLM-5.2 reasons before responding in 2026. Setting <code>thinking</code> to <code>{"type": "enabled"}</code> turns on internal reasoning, and <code>reasoning_effort</code> dials how deep that reasoning goes. Use higher effort for complex, long-horizon coding and analysis, and lower or disabled for fast, simple responses where latency matters more than depth.</p>
+
+    <table class="data-table">
+      <thead>
+        <tr><th>Parameter</th><th>What it controls</th><th>Example</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>thinking</code></td><td>Toggle reasoning on or off</td><td>{"type": "enabled"}</td></tr>
+        <tr><td><code>reasoning_effort</code></td><td>Depth of reasoning</td><td>"max"</td></tr>
+        <tr><td><code>temperature</code></td><td>Output randomness</td><td>0.6 to 1.0</td></tr>
+        <tr><td><code>max_tokens</code></td><td>Max output length (up to ~128K)</td><td>4096</td></tr>
+        <tr><td><code>stream</code></td><td>Stream tokens as they generate</td><td>true</td></tr>
+      </tbody>
+    </table>
+
+    <h2>How Does Streaming Work?</h2>
+    <p>Streaming works in the GLM-5.2 API in 2026 by setting <code>"stream": true</code>, after which the response arrives as incremental chunks. When thinking is enabled, those chunks carry two fields: <code>reasoning_content</code> for the model's reasoning trace and <code>content</code> for the final answer. This lets you show progress or display reasoning separately from the answer in your UI.</p>
+
+    <div class="callout">
+      <div class="callout__label">Practical tip</div>
+      <p>In 2026, the cleanest pattern is to render <code>content</code> to the user and keep <code>reasoning_content</code> behind a toggle or in logs. Reasoning traces are useful for debugging and trust, but most end users only want the answer. Separating the two fields at the UI layer keeps the experience clean without throwing away the reasoning you paid to generate.</p>
+    </div>
+
+    <h2>How Much Does the GLM-5.2 API Cost?</h2>
+    <p>Direct GLM-5.2 API access has been priced around $1.40 per million input tokens and $4.40 per million output tokens in 2026, which independent coverage described as roughly one-sixth the cost of comparable closed models. For heavier or sustained use, z.ai also offers subscription Coding Plans. Pricing changes, so confirm current numbers on z.ai before you budget.</p>
+
+    <div class="callout">
+      <div class="callout__label">Distk Field Note</div>
+      <p>For an India dev-tools startup in 2026, the OpenAI-compatible endpoint is the quiet superpower here. A team already built on the OpenAI SDK can switch a single base URL and model name, A/B test GLM-5.2 against their current model on real traffic, and compare quality and cost in an afternoon. That low switching cost is what turns an interesting open model into a serious procurement decision, because trying it does not mean rewriting the stack.</p>
+    </div>
+
+    <h2>Common GLM-5.2 API Mistakes to Avoid in 2026</h2>
+    <ul>
+      <li><strong>Forgetting the trailing slash:</strong> the OpenAI-compatible base URL ends in <code>/v4/</code>, so a malformed URL will fail</li>
+      <li><strong>Leaving thinking on for trivial calls:</strong> reasoning adds latency and output tokens, so disable it for simple requests</li>
+      <li><strong>Ignoring reasoning_content:</strong> when streaming with thinking enabled, handle both fields or your output will look broken</li>
+      <li><strong>Exposing the key client-side:</strong> always proxy API calls through your server, never ship the Bearer token to a browser</li>
+      <li><strong>Over-setting max_tokens:</strong> the cap can reach ~128K, but request only what you need to control cost and latency</li>
+    </ul>
+
+    <blockquote>
+      <p>The GLM-5.2 API in 2026 rewards teams who treat reasoning as a dial, not a switch. Spend the extra tokens on the hard, high-value calls and keep the routine ones fast and cheap. The model gives you that control; using it well is the engineering.</p>
+    </blockquote>
+
+  </div>
+</main>
+
+<section class="faq">
+  <div class="container">
+    <div class="section-tag">Common Questions</div>
+    <h2 class="section-title">GLM-5.2 API Integration: FAQs</h2>
+    <div class="faq__grid">
+      <div class="faq__item">
+        <h3>What is the GLM-5.2 API endpoint?</h3>
+        <p>https://api.z.ai/api/paas/v4/chat/completions, called with the model name glm-5.2. Authenticate with a Bearer token in the Authorization header and send an OpenAI-style messages array in the request body.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Is the API OpenAI-compatible?</h3>
+        <p>Yes. Set the OpenAI client base_url to https://api.z.ai/api/paas/v4/ and use your z.ai key, then call chat.completions.create with model glm-5.2. It drops into existing OpenAI-based code with minimal change.</p>
+      </div>
+      <div class="faq__item">
+        <h3>What does the thinking parameter do?</h3>
+        <p>It toggles GLM-5.2's reasoning. Set thinking to type enabled to turn on reasoning, and reasoning_effort (for example max) to control depth. When enabled, streamed responses include both reasoning_content and content fields.</p>
+      </div>
+      <div class="faq__item">
+        <h3>How much does the API cost?</h3>
+        <p>Around $1.40 per million input tokens and $4.40 per million output tokens in 2026, described in coverage as roughly one-sixth the cost of comparable closed models. Always confirm current pricing on z.ai.</p>
+      </div>
+      <div class="faq__item">
+        <h3>What is the maximum output length?</h3>
+        <p>GLM-5.2 has a 1M-token context window and a maximum output around 128K to 131K tokens per response. You control output length per request with max_tokens, set to 4096 in the examples but able to go much higher.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Does it support streaming and tools?</h3>
+        <p>Yes. Set stream to true for incremental chunks, which include reasoning_content and content when thinking is enabled. GLM-5.2 is also tuned for tool use and function calling, which powers agent loops and multi-file coding.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="cta__inner">
+    <h2>Ship AI features faster</h2>
+    <p>Distk helps brands integrate models like GLM-5.2 into real products and marketing systems in 2026, from API wiring to the workflow around it. We turn a model into a feature your customers feel.</p>
+    <a href="https://distk.in/#contact" class="cta__btn">Start the conversation →</a>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="container">
+    Source: <a href="https://docs.z.ai/guides/llm/glm-5.2">docs.z.ai/guides/llm/glm-5.2</a> · © 2026 Distk · <a href="https://distk.in">distk.in</a> · <a href="mailto:connect@distk.in">connect@distk.in</a>
+  </div>
+</footer>
+</body>
+</html>
