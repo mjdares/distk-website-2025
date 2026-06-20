@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Build a Real-Time Translation App with Gemini Live API, LiveKit and Cloud Run in 2026 | Distk</title>
+<meta name="description" content="A 2026 build guide for a real-time voice translation app using the Gemini Live API, LiveKit WebRTC and Google Cloud Run. Architecture, setup, code and deployment steps.">
+<meta name="keywords" content="Gemini Live API, real-time translation app, LiveKit, Google Cloud Run, WebRTC translation, Gemini Live tutorial 2026, multilingual streaming, voice translation">
+<meta name="author" content="Distk"><meta name="robots" content="index, follow">
+<link rel="canonical" href="https://distk.in/blog/gemini-live-api-realtime-translation-app-2026.html">
+<meta property="og:type" content="article"><meta property="og:url" content="https://distk.in/blog/gemini-live-api-realtime-translation-app-2026.html">
+<meta property="og:title" content="Build a Real-Time Translation App with Gemini Live API, LiveKit and Cloud Run in 2026">
+<meta property="og:description" content="A practical 2026 build guide for a real-time voice translation app on the Gemini Live API, LiveKit and Google Cloud Run, with architecture, code and deployment steps.">
+<meta property="og:image" content="https://distk.in/assets/images/og-image.jpg"><meta property="og:site_name" content="Distk">
+<meta property="article:published_time" content="2026-06-11T00:00:00+05:30">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Build a Real-Time Translation App with Gemini Live API, LiveKit and Cloud Run in 2026","description":"A 2026 build guide for a real-time voice translation web app using the Gemini Live API, LiveKit WebRTC and Google Cloud Run, covering architecture, setup, code and deployment.","author":{"@type":"Organization","name":"Distk","url":"https://distk.in"},"publisher":{"@type":"Organization","name":"Distk","logo":{"@type":"ImageObject","url":"https://distk.in/assets/images/Logo.png"}},"datePublished":"2026-06-11","mainEntityOfPage":{"@type":"WebPage","@id":"https://distk.in/blog/gemini-live-api-realtime-translation-app-2026.html"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does a Gemini Live API translation app do in 2026?","acceptedAnswer":{"@type":"Answer","text":"A Gemini Live API translation app in 2026 lets a speaker broadcast in one language while listeners around the world hear real-time translated audio in their chosen language, with natural vocal delivery. It uses LiveKit WebRTC for ultra-low-latency audio and the Gemini Live API as the translation engine, deployed on Google Cloud Run."}},{"@type":"Question","name":"What is the architecture of a real-time translation app?","acceptedAnswer":{"@type":"Answer","text":"The architecture centers on one LiveKit Room. The host publishes audio, and when a listener picks a language the backend spawns a dedicated Translation Bridge worker that joins as a bot, subscribes to the host audio, forwards PCM frames to the Gemini Live API over WebSocket, and publishes the translated track back to the room for playback."}},{"@type":"Question","name":"Why use 100ms audio chunks with LiveKit?","acceptedAnswer":{"@type":"Answer","text":"Using 100ms audio chunks instead of the default 20ms reduces transmission frequency from 50 Hz to 10 Hz, which sharply cuts network and CPU serialization overhead. The trade-off is a minor latency increase of about 80ms, which is usually acceptable for live translation and improves stability under load."}},{"@type":"Question","name":"How do you deploy the translation app to Google Cloud Run?","acceptedAnswer":{"@type":"Answer","text":"You store the Gemini and LiveKit keys in Google Secret Manager, grant the compute service account access, then run gcloud run deploy with the source flag. Key flags include min-instances 0 for zero idle cost, max-instances 1 because the session manager is a singleton, timeout 3600, and no-cpu-throttling for smooth audio."}},{"@type":"Question","name":"How many languages and listeners can it handle?","acceptedAnswer":{"@type":"Answer","text":"In 2026 the reference architecture supports roughly 15 to 20 simultaneous languages and around 200 to 300 attendees on LiveKit Cloud, with a single Cloud Run instance handling all translator bots for one room. Scaling beyond that requires sharding rooms across multiple services because the session manager is a singleton."}}]}</script>
+<link rel="icon" type="image/png" href="../assets/images/favicon.png"><link rel="apple-touch-icon" href="../assets/images/Logo.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BWDTQ1JPL2"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-BWDTQ1JPL2');</script>
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1077520544213003');fbq('track','PageView');</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1077520544213003&ev=PageView&noscript=1"></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#0a0a0a;--paper:#fafafa;--mid:#6b6b6b;--light:#e8e8e8;--accent:#e63312;--accent-soft:rgba(230,51,18,0.08);--mono:'Space Mono',monospace;--sans:'Outfit',sans-serif;--container:1120px;--prose:720px;--gutter:clamp(1.2rem,4vw,3rem)}
+html{font-size:16px;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.container{max-width:var(--container);margin:0 auto;padding:0 var(--gutter)}
+.prose{max-width:var(--prose);margin:0 auto;padding:0 var(--gutter)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--light)}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;max-width:var(--container);margin:0 auto;padding:0.9rem var(--gutter)}
+.nav__logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;color:var(--ink)}
+.nav__logo img{height:32px;width:auto}
+.nav__logo span{font-family:var(--mono);font-weight:700;font-size:1.05rem;letter-spacing:-0.02em}
+.nav__logo small{display:block;font-size:0.55rem;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);line-height:1}
+.nav__back{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid);text-decoration:none;display:flex;align-items:center;gap:0.4rem;transition:color 0.2s}
+.nav__back:hover{color:var(--accent)}
+.nav__cta{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.6rem 1.4rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.nav__cta:hover{background:var(--accent)}
+.hero{padding:7.5rem 0 3.5rem;position:relative;overflow:hidden;border-bottom:1px solid var(--light)}
+.hero::before{content:'LIVE';position:absolute;right:-1%;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:clamp(6rem,30vw,26rem);font-weight:700;color:rgba(0,0,0,0.03);line-height:1;pointer-events:none;user-select:none;letter-spacing:-0.05em}
+.hero__tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1.5rem}
+.hero__tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.hero h1{font-family:var(--sans);font-weight:700;font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;letter-spacing:-0.03em;max-width:24ch;margin-bottom:1.5rem}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero__sub{font-size:1.1rem;color:var(--mid);max-width:56ch;line-height:1.7;margin-bottom:2rem}
+.hero__meta{display:flex;flex-wrap:wrap;gap:1.5rem;font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid)}
+.tldr{background:var(--accent-soft);border-left:3px solid var(--accent);padding:1.8rem 2rem;margin:3rem 0;position:relative}
+.tldr::before{content:'TL;DR';position:absolute;top:-0.6rem;left:2rem;font-family:var(--mono);font-size:0.62rem;font-weight:700;letter-spacing:0.12em;background:var(--accent);color:#fff;padding:0.2rem 0.6rem}
+.tldr p{font-size:0.95rem;color:var(--ink);line-height:1.7}
+.article{padding:4rem 0 5rem}
+.article h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.35rem,2.8vw,1.8rem);letter-spacing:-0.02em;line-height:1.2;margin:3rem 0 1rem;padding-top:1rem;border-top:1px solid var(--light)}
+.article h2:first-child{border-top:none;margin-top:0}
+.article h3{font-family:var(--mono);font-weight:700;font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin:2rem 0 0.6rem}
+.article p{font-size:1rem;color:#2a2a2a;line-height:1.8;margin-bottom:1.25rem}
+.article ul,.article ol{padding-left:1.4rem;margin-bottom:1.25rem}
+.article li{font-size:1rem;color:#2a2a2a;line-height:1.75;margin-bottom:0.4rem}
+.article strong{font-weight:600;color:var(--ink)}
+.article blockquote{border-left:3px solid var(--accent);padding:0.75rem 1.5rem;margin:2rem 0;background:var(--accent-soft)}
+.article blockquote p{color:var(--ink);font-size:1rem;margin:0}
+.article code{font-family:var(--mono);font-size:0.82rem;background:#f0f0f0;padding:0.15rem 0.4rem;border-radius:3px;color:#c0290f}
+.article pre{background:var(--ink);color:#f5f5f5;font-family:var(--mono);font-size:0.82rem;line-height:1.6;padding:1.2rem 1.4rem;margin:1.5rem 0;overflow-x:auto;border-radius:4px}
+.article pre code{background:none;color:#f5f5f5;padding:0}
+.data-table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:0.88rem}
+.data-table th{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:0.7rem 1rem;text-align:left}
+.data-table td{padding:0.75rem 1rem;border-bottom:1px solid var(--light);vertical-align:top}
+.data-table tr:last-child td{border-bottom:none}
+.data-table tr:nth-child(even) td{background:#f5f5f5}
+.callout{border:1.5px solid var(--light);padding:1.5rem 1.8rem;margin:2rem 0}
+.callout__label{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem}
+.callout p{font-size:0.92rem;color:var(--mid);line-height:1.7;margin:0}
+.faq{padding:4rem 0;background:var(--ink);color:var(--paper)}
+.faq .section-tag{color:var(--accent)}
+.faq .section-tag::before{background:var(--accent)}
+.faq__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2.5rem;margin-top:2.5rem}
+.faq__item{border-left:2px solid var(--accent);padding-left:1.5rem}
+.faq__item h3{font-family:var(--sans);font-weight:600;font-size:0.95rem;margin-bottom:0.5rem;color:var(--paper)}
+.faq__item p{font-size:0.85rem;color:rgba(255,255,255,0.88);line-height:1.65}
+.section-tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1rem}
+.section-tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.section-title{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.15;color:var(--paper)}
+.cta{padding:5rem 0;background:var(--accent-soft);border-top:1px solid rgba(230,51,18,0.12)}
+.cta__inner{max-width:680px;margin:0 auto;padding:0 var(--gutter);text-align:center}
+.cta h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.2;margin-bottom:1rem}
+.cta p{font-size:1rem;color:var(--mid);line-height:1.7;margin-bottom:2rem}
+.cta__btn{display:inline-flex;align-items:center;gap:0.6rem;font-family:var(--mono);font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;padding:1rem 2.2rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.cta__btn:hover{background:var(--accent)}
+.foot{padding:2.5rem 0;border-top:1px solid var(--light);text-align:center;font-family:var(--mono);font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid)}
+.foot a{color:var(--mid);text-decoration:none}.foot a:hover{color:var(--accent)}
+@media(max-width:768px){.faq__grid{grid-template-columns:1fr}.nav__back span{display:none}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="https://distk.in" class="nav__logo">
+      <img src="../assets/images/Logo.png" alt="Distk">
+      <div><span>Distk</span><small>Global Growth Partner</small></div>
+    </a>
+    <a href="/blog/" class="nav__back">← <span>All articles</span></a>
+    <a href="https://distk.in/#contact" class="nav__cta">Work with us</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="prose">
+    <div class="hero__tag">AI Development · 2026</div>
+    <h1>Build a Real-Time <em>Translation App</em> with Gemini Live API, LiveKit and Cloud Run in 2026</h1>
+    <p class="hero__sub">One speaker, many languages, all in real time. Here is how to build a live voice translation app on the Gemini Live API and LiveKit, and ship it on Google Cloud Run.</p>
+    <div class="hero__meta">
+      <span>Distk Editorial</span>
+      <span>June 2026</span>
+      <span>13 min read</span>
+    </div>
+  </div>
+</section>
+
+<div class="prose">
+  <div class="tldr">
+    <p>This 2026 build guide walks through a real-time voice translation app where one host speaks and listeners worldwide hear translated audio in their own language. LiveKit handles ultra-low-latency WebRTC audio, the Gemini Live API does the live translation with natural voice, and Google Cloud Run hosts it serverlessly. You will set up the LiveKit Room, spawn a Translation Bridge bot per language, tune audio to 100ms chunks for stability, containerize with Docker, and deploy with one gcloud command. For brands, this is the blueprint behind multilingual webinars, launches and global livestreams.</p>
+  </div>
+</div>
+
+<main class="article">
+  <div class="prose">
+
+    <h2>What Are You Building in 2026?</h2>
+    <p>You are building a production-ready web app in 2026 where a speaker broadcasts in one language and listeners anywhere choose a language and hear real-time translated audio with natural vocal delivery. The system uses WebRTC for ultra-low-latency delivery, so the translation feels live rather than like a delayed dub. It is the kind of capability that, until recently, required expensive human interpreters and dedicated hardware.</p>
+    <p>The stack is deliberately lean: Next.js for the frontend, LiveKit Cloud for WebRTC audio transport, the Gemini Live API as the translation engine, and Google Cloud Run for serverless deployment, with Google Secret Manager holding the keys. This guide follows the official Google AI reference build and adds the marketing context that makes it worth your time in 2026.</p>
+
+    <h2>How Does the Architecture Work?</h2>
+    <p>The architecture in 2026 centers on a single LiveKit Room. The host publishes their voice into the room. When a listener joins and selects a language, the backend spins up a dedicated Translation Bridge worker for that language, which joins the room as a bot, subscribes to the host audio, streams it to Gemini, and publishes the translated audio back for the listener to hear.</p>
+
+    <h3>The end-to-end flow</h3>
+    <ol>
+      <li>The host streams vocal audio into the LiveKit Room</li>
+      <li>A listener joins and selects a target language</li>
+      <li>The backend spawns a Translation Bridge worker thread for that language</li>
+      <li>The worker joins LiveKit as a bot and subscribes to the host audio track</li>
+      <li>Raw PCM audio frames forward over WebSocket to the Gemini Live API</li>
+      <li>Gemini returns translated audio, and the bot publishes it back to the room for playback</li>
+    </ol>
+
+    <h2>What Do You Need Before You Start?</h2>
+    <p>Before building the translation app in 2026 you need four things in place. None of them require a paid tier to begin, since LiveKit and Google Cloud both offer free starting points.</p>
+    <ul>
+      <li><strong>Node.js 18+</strong> on your machine</li>
+      <li><strong>A LiveKit Cloud account</strong> (free tier is enough to start)</li>
+      <li><strong>A Google Cloud project</strong> with the <code>gcloud</code> CLI installed and authenticated</li>
+      <li><strong>A Gemini API key</strong> with Live API access</li>
+    </ul>
+
+    <h2>How Do You Run It Locally?</h2>
+    <p>You run the translation app locally in 2026 by installing dependencies, optionally starting a local LiveKit server, setting environment variables, and launching the dev server. This local loop lets you test the full speaker-to-listener path in two browser tabs before you touch the cloud.</p>
+
+    <h3>Install and optional local LiveKit</h3>
+    <pre><code>npm install
+
+# optional: run a local LiveKit dev server
+docker run --rm -p 7880:7880 -p 7881:7881 -p 7882:7882/udp \
+  -e LIVEKIT_KEYS="devkey: secret" \
+  livekit/livekit:latest \
+  --dev</code></pre>
+
+    <h3>Configure environment variables</h3>
+    <p>Create a <code>.env.local</code> file with your LiveKit and Gemini credentials:</p>
+    <pre><code>LIVEKIT_API_KEY=devkey
+LIVEKIT_API_SECRET=secret
+NEXT_PUBLIC_LIVEKIT_URL=ws://localhost:7880
+LIVEKIT_URL=ws://localhost:7880
+GEMINI_API_KEY=your-gemini-api-key-here</code></pre>
+
+    <h3>Launch and test</h3>
+    <pre><code>npm run dev</code></pre>
+    <p>Open <code>http://localhost:3000</code>, use one tab as the Broadcast (host) page and another as the Watch (attendee) page, and confirm that speaking in one tab produces translated audio in the other.</p>
+
+    <h2>Why Tune Audio to 100ms Chunks?</h2>
+    <p>You tune the audio stream to 100ms chunks in 2026 because the default 20ms WebRTC interval transmits 50 times per second, which creates heavy network and CPU serialization overhead when you are running several translation bots at once. Moving to 100ms frames drops that to 10 times per second, dramatically reducing overhead, at the cost of only about 80ms of extra latency that listeners rarely notice.</p>
+    <pre><code>const audioStream = new AudioStream(track, {
+  sampleRate: this.inputSampleRate,
+  numChannels: this.channels,
+  frameSizeMs: 100, // 100ms frames cut transmission frequency to 10 Hz
+});</code></pre>
+
+    <div class="callout">
+      <div class="callout__label">Why this matters</div>
+      <p>The 100ms chunk decision is the single most important stability tuning in this build for 2026. Each listener language spins up its own bot, and at 50 Hz the per-frame overhead multiplies fast. Trading 80ms of latency for a fivefold drop in transmission frequency is what keeps a multi-language room smooth on a single instance.</p>
+    </div>
+
+    <h2>How Do You Containerize It With Docker?</h2>
+    <p>You containerize the app in 2026 with a multi-stage Dockerfile, and the one detail you cannot skip is installing CA certificates in the production image. Minimal base images like <code>node:slim</code> ship without SSL certificates, which makes the native LiveKit SDK fail its secure connection silently, a bug that is painful to diagnose if you miss it.</p>
+    <pre><code># --- Build stage ---
+FROM node:22-slim AS builder
+WORKDIR /app
+COPY package.json package-lock.json ./
+RUN npm ci
+COPY . .
+RUN npm run build
+
+# --- Production stage ---
+FROM node:22-slim AS runner
+RUN apt-get update && apt-get install -y ca-certificates && rm -rf /var/lib/apt/lists/*
+WORKDIR /app
+ENV NODE_ENV=production
+ENV PORT=8080
+COPY --from=builder /app/.next/standalone ./
+COPY --from=builder /app/.next/static ./.next/static
+COPY --from=builder /app/public ./public
+EXPOSE 8080
+CMD ["node", "server.js"]</code></pre>
+
+    <h2>How Do You Deploy to Google Cloud Run?</h2>
+    <p>You deploy to Google Cloud Run in 2026 in three moves: store secrets in Secret Manager, grant the compute service account access to them, then deploy from source. Cloud Run is a good fit here because it scales to zero when idle and runs your container without server management.</p>
+
+    <h3>1. Store secrets in Secret Manager</h3>
+    <pre><code>source <(grep -v '^#' .env.local | sed 's/^/export /')
+
+echo -n "$GEMINI_API_KEY" | gcloud secrets create gemini-api-key --data-file=-
+echo -n "$LIVEKIT_API_KEY" | gcloud secrets create livekit-api-key --data-file=-
+echo -n "$LIVEKIT_API_SECRET" | gcloud secrets create livekit-api-secret --data-file=-</code></pre>
+
+    <h3>2. Grant access to the compute service account</h3>
+    <pre><code>PROJECT_NUMBER=$(gcloud projects describe $(gcloud config get-value project) --format="value(projectNumber)")
+
+gcloud secrets add-iam-policy-binding gemini-api-key \
+  --member="serviceAccount:${PROJECT_NUMBER}-compute@developer.gserviceaccount.com" \
+  --role="roles/secretmanager.secretAccessor"</code></pre>
+    <p>Repeat the binding for <code>livekit-api-key</code> and <code>livekit-api-secret</code> so the running service can read all three secrets.</p>
+
+    <h3>3. Deploy the service</h3>
+    <pre><code>gcloud run deploy live-translate \
+  --source . \
+  --region us-central1 \
+  --allow-unauthenticated \
+  --min-instances 0 \
+  --max-instances 1 \
+  --timeout 3600 \
+  --no-cpu-throttling \
+  --set-secrets "GEMINI_API_KEY=gemini-api-key:latest,LIVEKIT_API_KEY=livekit-api-key:latest,LIVEKIT_API_SECRET=livekit-api-secret:latest" \
+  --set-env-vars "LIVEKIT_URL=wss://your-project.livekit.cloud"</code></pre>
+
+    <p>Each deploy flag is doing real work in 2026. The table below explains the ones that matter most.</p>
+    <table class="data-table">
+      <thead>
+        <tr><th>Flag</th><th>Why it is set</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>--min-instances 0</code></td><td>Scales to zero so idle cost is effectively nothing</td></tr>
+        <tr><td><code>--max-instances 1</code></td><td>The session manager is a singleton, so one instance per room</td></tr>
+        <tr><td><code>--timeout 3600</code></td><td>Allows sessions up to one hour long</td></tr>
+        <tr><td><code>--no-cpu-throttling</code></td><td>Keeps CPU allocated between requests for lag-free audio</td></tr>
+      </tbody>
+    </table>
+    <p>Future updates are a one-liner, since secrets, env vars and scaling settings persist: <code>gcloud run deploy live-translate --source . --region us-central1</code>.</p>
+
+    <h2>How Far Does This Scale?</h2>
+    <p>The reference architecture in 2026 scales to roughly 15 to 20 simultaneous languages and around 200 to 300 attendees on LiveKit Cloud, with a single Cloud Run instance handling every translator bot for one room. The singleton session manager is what caps it at one instance per room, so going bigger means sharding rooms across multiple services rather than scaling a single instance.</p>
+
+    <table class="data-table">
+      <thead>
+        <tr><th>Dimension</th><th>Reference limit (2026)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Simultaneous languages</td><td>~15 to 20</td></tr>
+        <tr><td>Attendees (LiveKit Cloud)</td><td>~200 to 300</td></tr>
+        <tr><td>Attendees (dev server)</td><td>~50</td></tr>
+        <tr><td>Cloud Run instances per room</td><td>1 (singleton)</td></tr>
+      </tbody>
+    </table>
+
+    <h2>What Does Real-Time Translation Unlock for Brands in 2026?</h2>
+    <p>For brands in 2026, real-time translation collapses the language barrier that used to limit the reach of every live event. A product launch, an investor update, a creator livestream or a training webinar can now be heard natively by a global audience without hiring interpreters or running separate regional broadcasts. The marketing implication is simple: one event, many markets, no translation tax.</p>
+
+    <div class="callout">
+      <div class="callout__label">Distk Field Note</div>
+      <p>For an India D2C brand selling into the Gulf and Southeast Asia in 2026, a single founder-led launch livestream translated live into Arabic, Hindi and Bahasa is worth more than three separate regional events. It is cheaper, it keeps the founder's actual voice and energy through Gemini's natural delivery, and it turns one moment into simultaneous reach across markets. The build above is the practical path to that outcome.</p>
+    </div>
+
+    <h2>Common Mistakes to Avoid in 2026</h2>
+    <ul>
+      <li><strong>Forgetting CA certificates:</strong> a slim base image without them makes the LiveKit SSL connection fail silently</li>
+      <li><strong>Leaving audio at 20ms frames:</strong> overhead multiplies per language bot and destabilizes multi-language rooms</li>
+      <li><strong>Setting max-instances above 1:</strong> the singleton session manager breaks if Cloud Run runs multiple instances per room</li>
+      <li><strong>Enabling CPU throttling:</strong> audio processing needs CPU between requests, so throttling introduces lag</li>
+      <li><strong>Hardcoding keys:</strong> always use Secret Manager, never bake credentials into the image or repo</li>
+    </ul>
+
+    <blockquote>
+      <p>The technical win in 2026 is real-time translated voice on a serverless budget. The marketing win is that a single live moment now reaches every language your customers speak, in the speaker's own voice.</p>
+    </blockquote>
+
+  </div>
+</main>
+
+<section class="faq">
+  <div class="container">
+    <div class="section-tag">Common Questions</div>
+    <h2 class="section-title">Gemini Live Translation App: FAQs</h2>
+    <div class="faq__grid">
+      <div class="faq__item">
+        <h3>What does this app do in 2026?</h3>
+        <p>It lets a speaker broadcast in one language while listeners worldwide hear real-time translated audio in their chosen language with natural voice. LiveKit handles WebRTC audio, the Gemini Live API does the translation, and Google Cloud Run hosts it.</p>
+      </div>
+      <div class="faq__item">
+        <h3>What is the core architecture?</h3>
+        <p>One LiveKit Room. The host publishes audio, and when a listener picks a language the backend spawns a Translation Bridge bot that subscribes to the host audio, streams PCM frames to Gemini over WebSocket, and publishes translated audio back.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Why use 100ms audio chunks?</h3>
+        <p>Moving from 20ms to 100ms frames cuts transmission frequency from 50 Hz to 10 Hz, sharply reducing network and CPU overhead. The trade-off is about 80ms of extra latency, which is usually fine for live translation and improves stability.</p>
+      </div>
+      <div class="faq__item">
+        <h3>How do you deploy it to Cloud Run?</h3>
+        <p>Store keys in Secret Manager, grant the compute service account access, then run gcloud run deploy with --source. Key flags: --min-instances 0, --max-instances 1, --timeout 3600 and --no-cpu-throttling.</p>
+      </div>
+      <div class="faq__item">
+        <h3>How many languages and listeners does it handle?</h3>
+        <p>Around 15 to 20 simultaneous languages and 200 to 300 attendees on LiveKit Cloud, with one Cloud Run instance per room. Scaling beyond that means sharding rooms across services, since the session manager is a singleton.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Why does CA certificate installation matter?</h3>
+        <p>Minimal base images like node:slim ship without SSL certificates, which makes the native LiveKit SDK fail its secure connection silently. Installing ca-certificates in the production stage prevents this hard-to-diagnose failure.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="cta__inner">
+    <h2>Turn live moments into global reach</h2>
+    <p>Distk helps brands use AI like the Gemini Live API to reach every market in 2026, from multilingual launches to global webinars. We connect the build to the growth outcome.</p>
+    <a href="https://distk.in/#contact" class="cta__btn">Start the conversation →</a>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="container">
+    Source: <a href="https://dev.to/googleai/build-a-realtime-translation-app-with-gemini-live-api-livekit-google-cloud-run-5474">dev.to/googleai real-time translation tutorial</a> · © 2026 Distk · <a href="https://distk.in">distk.in</a> · <a href="mailto:connect@distk.in">connect@distk.in</a>
+  </div>
+</footer>
+</body>
+</html>
