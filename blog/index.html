@@ -290,9 +290,16 @@
 <section class="blog-section">
   <div class="container">
     <div class="section-tag">All articles</div>
-    <div class="blog-grid" id="blogGrid">
+    
+<!-- FILTER UI START -->
+<div class="blog-filter" id="blogFilter" style="max-width:1120px;margin:0 auto 1.5rem;padding:0 clamp(1.2rem,4vw,3rem)">
+  <input id="blogSearch" type="search" placeholder="Search articles..." style="width:100%;padding:0.8rem 1rem;font-family:'Outfit',sans-serif;font-size:0.95rem;border:1px solid #e8e8e8;border-radius:6px;margin-bottom:1rem;background:#fff">
+  <div id="blogChips" style="display:flex;flex-wrap:wrap;gap:0.5rem"></div>
+</div>
+<!-- FILTER UI END -->
+<div class="blog-grid" id="blogGrid">
                         <!-- Blog Card #308 - chat.z.ai GLM-5.2 Chatbot and Agent -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-models">
                             <span class="blog-card__category">AI Tools</span>
                             <h2 class="blog-card__title"><a href="chat-zai-glm-5-2-chatbot-agent-guide-2026.html">chat.z.ai in 2026: A Guide to Z.ai's GLM-5.2 Chatbot and Agent</a></h2>
                             <p class="blog-card__excerpt">A guide to chat.z.ai, z.ai's free chatbot and agent powered by GLM-5.2. What it does, agent mode, building websites and code, and how it compares to the API.</p>
@@ -300,7 +307,7 @@
                         </article>
 
                         <!-- Blog Card #307 - GLM Coding Plan Pricing -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-models">
                             <span class="blog-card__category">AI Tools</span>
                             <h2 class="blog-card__title"><a href="glm-coding-plan-pricing-guide-2026.html">GLM Coding Plan Pricing in 2026: Lite, Pro and Max Explained</a></h2>
                             <p class="blog-card__excerpt">A clear breakdown of z.ai's GLM Coding Plan for GLM-5.2: Lite, Pro and Max tiers, monthly vs annual discounts, usage limits, and when the API is the smarter buy.</p>
@@ -308,7 +315,7 @@
                         </article>
 
                         <!-- Blog Card #306 - GLM-5.2 API Integration Guide -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-models">
                             <span class="blog-card__category">AI Development</span>
                             <h2 class="blog-card__title"><a href="glm-5-2-api-integration-guide-2026.html">GLM-5.2 API Guide in 2026: How to Integrate Z.ai's Model (with Code)</a></h2>
                             <p class="blog-card__excerpt">A developer guide to the GLM-5.2 API: endpoint, authentication, Python and cURL examples, thinking and reasoning-effort parameters, streaming and OpenAI-compatible setup.</p>
@@ -316,7 +323,7 @@
                         </article>
 
                         <!-- Blog Card #305 - GLM-5.2 Open Weights Self-Host Guide -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-models">
                             <span class="blog-card__category">AI Development</span>
                             <h2 class="blog-card__title"><a href="glm-5-2-open-weights-self-host-guide-2026.html">GLM-5.2 Open Weights in 2026: How to Download and Self-Host the Model</a></h2>
                             <p class="blog-card__excerpt">A guide to GLM-5.2 open weights on Hugging Face: MIT license, 753B MoE specs, inference frameworks like vLLM and SGLang, quantization for Ollama, and self-hosting.</p>
@@ -324,7 +331,7 @@
                         </article>
 
                         <!-- Blog Card #304 - GLM-5.2 Explained -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-models">
                             <span class="blog-card__category">AI Models</span>
                             <h2 class="blog-card__title"><a href="glm-5-2-zai-open-model-explained-2026.html">What Is GLM-5.2 in 2026? Z.ai's 1M-Context Open Model Explained</a></h2>
                             <p class="blog-card__excerpt">GLM-5.2 is z.ai's open-weights flagship launched June 2026 with a 1M-token context window. What it is, what is new, the benchmark caveats, and what it means for teams.</p>
@@ -332,7 +339,7 @@
                         </article>
 
                         <!-- Blog Card #303 - AI Second Brain with Claude and Obsidian -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-models">
                             <span class="blog-card__category">AI Productivity</span>
                             <h2 class="blog-card__title"><a href="build-ai-second-brain-claude-obsidian-2026.html">How to Build an AI Second Brain With Claude and Obsidian in 2026 (Full Guide)</a></h2>
                             <p class="blog-card__excerpt">A full step-by-step guide to building an AI second brain with Claude and Obsidian using the LLM Wiki pattern: vault setup, MCP connection, CLAUDE.md, skills and daily autopilot.</p>
@@ -340,7 +347,7 @@
                         </article>
 
                         <!-- Blog Card #302 - Gemini Live API Real-Time Translation App -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-models">
                             <span class="blog-card__category">AI Development</span>
                             <h2 class="blog-card__title"><a href="gemini-live-api-realtime-translation-app-2026.html">Build a Real-Time Translation App with Gemini Live API, LiveKit and Cloud Run in 2026</a></h2>
                             <p class="blog-card__excerpt">A practical build guide for a real-time voice translation app on the Gemini Live API, LiveKit WebRTC and Google Cloud Run. Architecture, setup, code and deployment.</p>
@@ -348,7 +355,7 @@
                         </article>
 
                         <!-- Blog Card #301 - Hermes Agent Quickstart -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-agents">
                             <span class="blog-card__category">AI Agents</span>
                             <h2 class="blog-card__title"><a href="hermes-agent-quickstart-first-task-2026.html">Hermes Agent Quickstart in 2026: From Zero to Your First Autonomous Task</a></h2>
                             <p class="blog-card__excerpt">A fast beginner quickstart for Hermes Agent by Nous Research: install, pick a model, run your first task and connect Telegram in about ten minutes.</p>
@@ -356,7 +363,7 @@
                         </article>
 
                         <!-- Blog Card #300 - Hermes Agent Setup Guide -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-agents">
                             <span class="blog-card__category">AI Agents</span>
                             <h2 class="blog-card__title"><a href="hermes-agent-nous-research-setup-guide-2026.html">Hermes Agent by Nous Research in 2026: Complete Setup and Usage Guide</a></h2>
                             <p class="blog-card__excerpt">Install, configure and run Hermes Agent, the open-source self-hosted agent from Nous Research. Model selection, gateways, sandboxing, skills and scheduling in 2026.</p>
@@ -364,7 +371,7 @@
                         </article>
 
                         <!-- Blog Card #299 - Claude Fable 5 & Mythos 5 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-models">
                             <span class="blog-card__category">AI Models</span>
                             <h2 class="blog-card__title"><a href="claude-fable-5-mythos-5-marketing-guide-2026.html">Claude Fable 5 and Mythos 5 in 2026: What the New Anthropic Models Mean for Marketing</a></h2>
                             <p class="blog-card__excerpt">Anthropic's new Mythos-class models launched June 2026. A marketing guide to Fable 5 and Mythos 5: capabilities, pricing, safety design and how brands and agencies use them.</p>
@@ -372,7 +379,7 @@
                         </article>
 
                         <!-- Blog Card #298 - Android XR Eyewear -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-video-creative">
                             <span class="blog-card__category">Hardware</span>
                             <h2 class="blog-card__title"><a href="android-xr-eyewear-2026.html">Android XR Intelligent Eyewear in 2026: Audio and Display Glasses Marketing Guide</a></h2>
                             <p class="blog-card__excerpt">Android XR adds audio and display glasses through Gentle Monster, Warby Parker and Samsung partnerships in 2026. What intelligent eyewear means for brand strategy.</p>
@@ -380,7 +387,7 @@
                         </article>
 
                         <!-- Blog Card #297 - Pomelli & Stitch -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-video-creative">
                             <span class="blog-card__category">Brand & Design</span>
                             <h2 class="blog-card__title"><a href="pomelli-stitch-brand-design-2026.html">Pomelli & Stitch in 2026: AI Brand Building and Real-Time Design Guide</a></h2>
                             <p class="blog-card__excerpt">Pomelli builds brand content and websites while Stitch enables real-time text and voice design collaboration. How AI brand building works in 2026 for marketing teams.</p>
@@ -388,7 +395,7 @@
                         </article>
 
                         <!-- Blog Card #296 - Docs Live + Talk to Keep -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="general">
                             <span class="blog-card__category">Workspace</span>
                             <h2 class="blog-card__title"><a href="google-docs-live-talk-to-keep-2026.html">Docs Live & Talk to Keep in 2026: The Voice-First Workspace Productivity Guide</a></h2>
                             <p class="blog-card__excerpt">Docs Live writes and edits documents with your voice and Talk to Keep turns speech into organized notes. How voice-first Workspace works in 2026 for marketing teams.</p>
@@ -396,7 +403,7 @@
                         </article>
 
                         <!-- Blog Card #295 - Ask YouTube -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-video-creative">
                             <span class="blog-card__category">SEO/AEO</span>
                             <h2 class="blog-card__title"><a href="ask-youtube-conversational-search-2026.html">Ask YouTube in 2026: Conversational Video Search and What It Means for Creators</a></h2>
                             <p class="blog-card__excerpt">Ask YouTube turns YouTube into a conversational search experience that compiles long-form and Shorts answers. How it works in 2026 and how creators should adapt.</p>
@@ -404,7 +411,7 @@
                         </article>
 
                         <!-- Blog Card #294 - Generative UI + Mini Apps in Search -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="seo-aeo-geo">
                             <span class="blog-card__category">SEO/AEO</span>
                             <h2 class="blog-card__title"><a href="generative-ui-mini-apps-search-2026.html">Generative UI & Mini Apps in Google Search in 2026: The Custom-Layout Search Guide</a></h2>
                             <p class="blog-card__excerpt">Google Search now builds custom layouts and mini apps for your query. How Generative UI works in 2026 and what custom Search experiences mean for brand visibility.</p>
@@ -412,7 +419,7 @@
                         </article>
 
                         <!-- Blog Card #293 - SynthID & C2PA Content Credentials -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-models">
                             <span class="blog-card__category">AI Marketing</span>
                             <h2 class="blog-card__title"><a href="synthid-c2pa-content-authentication-2026.html">SynthID & C2PA Content Credentials in 2026: The AI Content Authentication Guide</a></h2>
                             <p class="blog-card__excerpt">SynthID watermarks AI content and C2PA credentials verify originals, with checks rolling into Search and Chrome. What content authentication means for brand trust in 2026.</p>
@@ -420,7 +427,7 @@
                         </article>
 
                         <!-- Blog Card #292 - AI Inbox & Gmail Live -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="whatsapp-messaging">
                             <span class="blog-card__category">Email Marketing</span>
                             <h2 class="blog-card__title"><a href="ai-inbox-gmail-live-2026.html">AI Inbox & Gmail Live in 2026: What AI in Gmail Means for Email Marketing</a></h2>
                             <p class="blog-card__excerpt">Gmail's AI Inbox surfaces what matters, drafts replies and triages tasks, while Gmail Live lets you talk to your inbox. What an AI-curated inbox changes for email marketing in 2026.</p>
@@ -428,7 +435,7 @@
                         </article>
 
                         <!-- Blog Card #291 - Google Pics (Nano Banana) -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-video-creative">
                             <span class="blog-card__category">Creative AI</span>
                             <h2 class="blog-card__title"><a href="google-pics-nano-banana-image-tool-2026.html">Google Pics in 2026: The Nano Banana Image Tool and How Marketers Use It</a></h2>
                             <p class="blog-card__excerpt">Google Pics creates and edits images on the Nano Banana model, with object segmentation and in-image text translation. How marketing teams use it for visual content in 2026.</p>
@@ -436,7 +443,7 @@
                         </article>
 
                         <!-- Blog Card #290 - Google Search Agents -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-agents">
                             <span class="blog-card__category">SEO/AEO</span>
                             <h2 class="blog-card__title"><a href="google-search-agents-2026.html">Google Search Agents in 2026: How AI Agents Monitor the Web for You</a></h2>
                             <p class="blog-card__excerpt">Search Agents let you create AI agents that watch the web 24/7 and synthesize updates. How they work in 2026 and what persistent agentic search means for brand visibility.</p>
@@ -444,7 +451,7 @@
                         </article>
 
                         <!-- Blog Card #289 - Gemini 3.5 Flash & Pro Models -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-models">
                             <span class="blog-card__category">AI Marketing</span>
                             <h2 class="blog-card__title"><a href="gemini-3-5-flash-pro-models-marketing-2026.html">Gemini 3.5 Flash & 3.5 Pro in 2026: What the New Models Mean for Marketers</a></h2>
                             <p class="blog-card__excerpt">Gemini 3.5 Flash combines frontier intelligence with action and leads coding and agentic benchmarks. What the 2026 models change and how marketing teams should use them.</p>
@@ -452,7 +459,7 @@
                         </article>
 
                         <!-- Blog Card #288 - Google Flow AI Creative Studio -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-video-creative">
                             <span class="blog-card__category">Creative AI</span>
                             <h2 class="blog-card__title"><a href="google-flow-ai-creative-studio-2026.html">Google Flow in 2026: The AI Creative Studio for Video and Ad Production</a></h2>
                             <p class="blog-card__excerpt">Google Flow brings generative video, an agent, custom tools and music into one studio across 140+ countries. How marketers run an end-to-end ad production pipeline in 2026.</p>
@@ -460,7 +467,7 @@
                         </article>
 
                         <!-- Blog Card #287 - Gemini Spark Personal AI Agent -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-models">
                             <span class="blog-card__category">AI Marketing</span>
                             <h2 class="blog-card__title"><a href="gemini-spark-personal-ai-agent-2026.html">Gemini Spark in 2026: Your 24/7 Personal AI Agent (And What It Changes for Marketing)</a></h2>
                             <p class="blog-card__excerpt">Gemini Spark acts on your behalf 24/7 on Gemini 3.5 and Google Antigravity. How it and Daily Brief work, and why an agent-mediated digital life reshapes marketing in 2026.</p>
@@ -468,7 +475,7 @@
                         </article>
 
                         <!-- Blog Card #286 - Universal Cart & UCP -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-agents">
                             <span class="blog-card__category">Ecommerce</span>
                             <h2 class="blog-card__title"><a href="universal-cart-commerce-protocol-ucp-2026.html">Universal Cart & the Universal Commerce Protocol (UCP) in 2026: The Agentic Commerce Guide</a></h2>
                             <p class="blog-card__excerpt">Google's Universal Cart and UCP let shoppers and AI agents buy across Search, Gemini, YouTube and Gmail. What agentic commerce means for D2C and ecommerce brands in 2026.</p>
@@ -476,7 +483,7 @@
                         </article>
 
                         <!-- Blog Card #285 - Gemini Omni AI Video Generation -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-models">
                             <span class="blog-card__category">AI Marketing</span>
                             <h2 class="blog-card__title"><a href="gemini-omni-ai-video-generation-marketing-2026.html">Gemini Omni in 2026: The AI Video Generation Model and How Marketers Use It</a></h2>
                             <p class="blog-card__excerpt">Gemini Omni creates video from any input and understands real physics. How the 2026 model and Omni Flash work, and how marketing teams turn them into ad creative at scale.</p>
@@ -484,7 +491,7 @@
                         </article>
 
                         <!-- Blog Card #284 - Google AI Mode & Reimagined Search -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="seo-aeo-geo">
                             <span class="blog-card__category">SEO/AEO</span>
                             <h2 class="blog-card__title"><a href="google-ai-mode-reimagined-search-2026.html">Google AI Mode & the Reimagined Search Box in 2026: What It Means for Your Visibility</a></h2>
                             <p class="blog-card__excerpt">AI Mode now runs on Gemini 3.5 Flash and the Search box had its biggest upgrade in 25 years. What the 2026 changes mean for your brand visibility and how to stay cited.</p>
@@ -492,7 +499,7 @@
                         </article>
 
                         <!-- Blog Card #283 - Simulated Selling AI Role-Play -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="sales-crm">
                             <span class="blog-card__category">AI Sales Ops</span>
                             <h2 class="blog-card__title"><a href="simulated-selling-ai-role-play-train-sales-team-2026.html">Simulated Selling in 2026: Using AI Role-Play to Train Your Global Sales Team</a></h2>
                             <p class="blog-card__excerpt">AI role-play replaces classroom training in 2026. How short, scored, mandatory practice lifts close rates 10 to 22 percent and compresses new-hire ramp by 30 to 60 percent.</p>
@@ -500,7 +507,7 @@
                         </article>
 
                         <!-- Blog Card #282 - Multilingual AI Agents -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-agents">
                             <span class="blog-card__category">AI Sales Ops</span>
                             <h2 class="blog-card__title"><a href="multilingual-ai-agents-scaling-brand-15-markets-2026.html">Multilingual AI Agents in 2026: Scaling Your Brand Across 15+ Markets Overnight</a></h2>
                             <p class="blog-card__excerpt">Global expansion at 5 to 12 percent of the traditional cost. Which languages work, what goes wrong, and the 120-day rollout from pilot to 15 markets in 2026.</p>
@@ -508,7 +515,7 @@
                         </article>
 
                         <!-- Blog Card #281 - Personalization Without AI Slop -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="sales-crm">
                             <span class="blog-card__category">AI Sales Ops</span>
                             <h2 class="blog-card__title"><a href="scale-personalization-without-ai-slop-human-assisted-2026.html">How to Scale Personalization Without AI Slop in 2026: The Human-Assisted Model</a></h2>
                             <p class="blog-card__excerpt">Pure-AI output is collapsing reply rates in 2026. The human-assisted model costs 4 to 8x more per send and produces 4 to 10x higher response. The five tests that reveal slop.</p>
@@ -516,7 +523,7 @@
                         </article>
 
                         <!-- Blog Card #280 - AI-Driven Objection Handling -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="sales-crm">
                             <span class="blog-card__category">AI Sales Ops</span>
                             <h2 class="blog-card__title"><a href="ai-driven-objection-handling-real-time-coaching-2026.html">AI-Driven Objection Handling in 2026: Real-Time Coaching for High-Stakes Negotiations</a></h2>
                             <p class="blog-card__excerpt">Live AI assist surfaces cues to sales reps within 4 seconds of an objection in 2026. Close-rate lift of 12 to 28 percent, the three deployment rules, and the stack that works.</p>
@@ -524,7 +531,7 @@
                         </article>
 
                         <!-- Blog Card #279 - Zapier Central / SME Sales Automation -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="sales-crm">
                             <span class="blog-card__category">AI Sales Ops</span>
                             <h2 class="blog-card__title"><a href="automating-sales-funnel-zapier-central-global-smes-2026.html">Automating the Sales Funnel with Zapier Central in 2026: A Guide for Global SMEs</a></h2>
                             <p class="blog-card__excerpt">A 12-person company can now run enterprise-grade revenue ops in 2026. The seven tasks to automate first, the $250 to $1,500 stack, and the 60-day rollout playbook.</p>
@@ -532,7 +539,7 @@
                         </article>
 
                         <!-- Blog Card #278 - Intent-Aware AI Sales Agents -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-agents">
                             <span class="blog-card__category">AI Sales Ops</span>
                             <h2 class="blog-card__title"><a href="end-of-scripted-chatbots-intent-aware-ai-sales-agents-2026.html">The End of Scripted Chatbots in 2026: Building Intent-Aware AI Sales Agents</a></h2>
                             <p class="blog-card__excerpt">Users learned to expect real conversation. Scripted bots are dying in 2026. The four-layer architecture of intent-aware agents and the 90-day migration that converts at 3 to 8x.</p>
@@ -540,7 +547,7 @@
                         </article>
 
                         <!-- Blog Card #277 - Predictive Revenue Intelligence -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="sales-crm">
                             <span class="blog-card__category">AI Sales Ops</span>
                             <h2 class="blog-card__title"><a href="predictive-revenue-intelligence-anticipatory-sales-2026.html">Predictive Revenue Intelligence in 2026: From Lagging to Anticipatory Sales</a></h2>
                             <p class="blog-card__excerpt">AI forecasts hit 5 to 12 percent variance in 2026, beating rep roll-ups by 2 to 3x. The three signal categories, the shadow-mode quarter, and the failure modes to avoid.</p>
@@ -548,7 +555,7 @@
                         </article>
 
                         <!-- Blog Card #276 - CRM Hygiene in the AI Era -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="sales-crm">
                             <span class="blog-card__category">AI Sales Ops</span>
                             <h2 class="blog-card__title"><a href="crm-hygiene-ai-era-automating-grunt-work-2026.html">CRM Hygiene in the AI Era: Automating the Grunt Work That Kills Deals in 2026</a></h2>
                             <p class="blog-card__excerpt">AI sales tools break on dirty data in 2026. Six benchmarks for a clean CRM, the tasks AI handles, the 90-day hygiene programme, and the cultural change that determines success.</p>
@@ -556,7 +563,7 @@
                         </article>
 
                         <!-- Blog Card #275 - WhatsApp for Sales -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="whatsapp-messaging">
                             <span class="blog-card__category">AI Sales Ops</span>
                             <h2 class="blog-card__title"><a href="whatsapp-sales-98-open-rates-revenue-growth-2026.html">WhatsApp for Sales in 2026: Converting 98% Open Rates into 40% Revenue Growth</a></h2>
                             <p class="blog-card__excerpt">95 to 98 percent open rates, 25 to 45 percent reply rates, 30 to 45 percent of revenue for top D2C brands. The three motions that convert and the stack that delivers them in 2026.</p>
@@ -564,7 +571,7 @@
                         </article>
 
                         <!-- Blog Card #274 - Autonomous SDR -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="sales-crm">
                             <span class="blog-card__category">AI Sales Ops</span>
                             <h2 class="blog-card__title"><a href="autonomous-sdr-outbound-machine-2026.html">The Autonomous SDR in 2026: Building an Outbound Machine That Never Sleeps</a></h2>
                             <p class="blog-card__excerpt">Coordinated AI agents replace 4 to 8 SDR seats with one operator in 2026. The six-layer stack, the three sludge controls, and the 90-day pilot for always-on outbound.</p>
@@ -572,7 +579,7 @@
                         </article>
 
                         <!-- Blog Card #273 - Citation-Worthiness -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="seo-aeo-geo">
                             <span class="blog-card__category">AEO / GEO</span>
                             <h2 class="blog-card__title"><a href="citation-worthiness-clarity-ai-visibility-2026.html">Citation-Worthiness in 2026: The Causal Link Between Clarity and AI Visibility</a></h2>
                             <p class="blog-card__excerpt">In 2026, AI cites the clearest source, not the loudest. The three causal factors of citation-worthiness, the 30-point audit, and a 12-week clarity engineering plan.</p>
@@ -580,7 +587,7 @@
                         </article>
 
                         <!-- Blog Card #272 - Structuring for Synthesis -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-agents">
                             <span class="blog-card__category">AEO / GEO</span>
                             <h2 class="blog-card__title"><a href="structuring-for-synthesis-content-ai-agents-parse-2026.html">Structuring for Synthesis in 2026: How to Write Content AI Agents Can Easily Parse</a></h2>
                             <p class="blog-card__excerpt">Answer-first chunks, FAQ schema, entity anchoring, and the structural patterns that earn 4x AI citation lift in 2026 without sacrificing human readability.</p>
@@ -588,7 +595,7 @@
                         </article>
 
                         <!-- Blog Card #271 - Latent Space Audit -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="content-social">
                             <span class="blog-card__category">AI Brand Sentiment</span>
                             <h2 class="blog-card__title"><a href="latent-space-audit-ai-brand-sentiment-2026.html">Is Your Brand in the Latent Space? How to Audit AI Sentiment in 2026</a></h2>
                             <p class="blog-card__excerpt">A 20-prompt latent space audit framework that scores AI brand perception across recall, accuracy, completeness, sentiment and recommendation, plus a 90-day repair plan.</p>
@@ -596,7 +603,7 @@
                         </article>
 
                         <!-- Blog Card #270 - Pre-Funnel Layer -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-agents">
                             <span class="blog-card__category">B2B / Pre-Funnel</span>
                             <h2 class="blog-card__title"><a href="pre-funnel-layer-ai-agents-evaluate-vendors-2026.html">The Pre-Funnel Layer in 2026: How AI Agents Evaluate Vendors Before Humans See Them</a></h2>
                             <p class="blog-card__excerpt">In 2026, AI agents shortlist vendors before any human sees them. The full playbook for content, entity, citation and fit-signal pages that earn AI shortlist inclusion.</p>
@@ -604,7 +611,7 @@
                         </article>
 
                         <!-- Blog Card #269 - Beyond SEO GEO Strategy -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="seo-aeo-geo">
                             <span class="blog-card__category">GEO Strategy</span>
                             <h2 class="blog-card__title"><a href="beyond-seo-why-brands-need-geo-strategy-2026.html">Beyond SEO in 2026: Why Your Brand Needs a GEO Strategy</a></h2>
                             <p class="blog-card__excerpt">Generative Engine Optimization makes your brand visible inside synthesized AI answers. Three pillars (content, entity, citation) and a 90-day GEO implementation plan.</p>
@@ -612,7 +619,7 @@
                         </article>
 
                         <!-- Blog Card #268 - SXO Framework -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="seo-aeo-geo">
                             <span class="blog-card__category">SXO / SEO</span>
                             <h2 class="blog-card__title"><a href="sxo-framework-search-experience-optimization-2026.html">The SXO Framework in 2026: Integrating SEO with Search Experience Optimization</a></h2>
                             <p class="blog-card__excerpt">SXO unifies SEO with post-click experience and conversion. The six core KPIs, the role of Core Web Vitals, and a 60-day implementation plan that lifts lead rate 2 to 4x.</p>
@@ -620,7 +627,7 @@
                         </article>
 
                         <!-- Blog Card #267 - AEO Playbook ChatGPT -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-models">
                             <span class="blog-card__category">AEO Playbook</span>
                             <h2 class="blog-card__title"><a href="aeo-playbook-top-recommendation-chatgpt-2026.html">The AEO Playbook for 2026: How to Become the Top Recommendation in ChatGPT</a></h2>
                             <p class="blog-card__excerpt">The full Answer Engine Optimization playbook across content, entity and citation. How ChatGPT decides which brand to cite, plus a 90-day implementation roadmap.</p>
@@ -628,7 +635,7 @@
                         </article>
 
                         <!-- Blog Card #266 - LLMs.txt vs Robots.txt -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="seo-aeo-geo">
                             <span class="blog-card__category">AI Crawler Control</span>
                             <h2 class="blog-card__title"><a href="llms-txt-vs-robots-txt-managing-ai-crawlers-2026.html">LLMs.txt vs Robots.txt in 2026: Managing AI Crawlers</a></h2>
                             <p class="blog-card__excerpt">robots.txt controls AI crawler access. llms.txt guides AI agents to your most important content. The full 2026 stack with sample files and a 6-week rollout plan.</p>
@@ -636,7 +643,7 @@
                         </article>
 
                         <!-- Blog Card #265 - facts.json Endpoint -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="seo-aeo-geo">
                             <span class="blog-card__category">GEO / LLMO</span>
                             <h2 class="blog-card__title"><a href="facts-json-endpoint-real-time-ai-data-retrieval-2026.html">How to Build a /facts.json Endpoint for AI Data Retrieval in 2026</a></h2>
                             <p class="blog-card__excerpt">A deterministic JSON file at the root of your domain that gives AI agents a machine-readable source of truth. Spec, schema, implementation and a one-page checklist.</p>
@@ -644,7 +651,7 @@
                         </article>
 
                         <!-- Blog Card #264 - Voice Search 2.0 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="seo-aeo-geo">
                             <span class="blog-card__category">Voice Search · AEO</span>
                             <h2 class="blog-card__title"><a href="voice-search-2-conversational-seo-smart-assistants-2026.html">Voice Search 2.0 in 2026: Conversational SEO for Smart Assistants</a></h2>
                             <p class="blog-card__excerpt">Smart assistants in 2026 do not read out the top 10 results. They synthesize one spoken answer using an LLM. The full Voice Search 2.0 playbook: chunks, schema, vernacular content.</p>
@@ -652,7 +659,7 @@
                         </article>
 
                         <!-- Blog Card #147 - Pactifi AI CLM -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="general">
                             <span class="blog-card__category">Legal Ops / CLM</span>
                             <h2 class="blog-card__title">
                                 <a href="ai-contract-management-software-india-2026.html">AI Contract Management Software India 2026: The Complete Guide for Legal and Finance Teams</a>
@@ -666,7 +673,7 @@
                         </article>
 
                         <!-- Blog Card #148 - VerifyLive Fixed Asset Verification -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="general">
                             <span class="blog-card__category">Audit-Tech</span>
                             <h2 class="blog-card__title">
                                 <a href="fixed-asset-verification-software-india-2026.html">Fixed Asset Verification Software India 2026: CARO 2020 Compliance Guide for CFOs and Auditors</a>
@@ -680,7 +687,7 @@
                         </article>
 
                         <!-- Blog Card #149 - FinLens Finance Automation -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="analytics-martech">
                             <span class="blog-card__category">Finance / FP&A</span>
                             <h2 class="blog-card__title">
                                 <a href="finance-automation-software-india-2026.html">Finance Automation Software India 2026: The CFO's Guide to Bank Reconciliation and FP&A</a>
@@ -694,7 +701,7 @@
                         </article>
 
                         <!-- Blog Card #150 - CSRlens Section 135 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="analytics-martech">
                             <span class="blog-card__category">ESG-Tech / Section 135</span>
                             <h2 class="blog-card__title">
                                 <a href="csr-management-software-india-2026.html">CSR Management Software India 2026: Section 135 Compliance and Impact Reporting Guide</a>
@@ -708,7 +715,7 @@
                         </article>
 
                         <!-- Blog Card #145 - FEATURED: Google Gemma 4 -->
-                        <article class="blog-card" style="border: 3px solid #e63312;">
+                        <article class="blog-card" data-cluster="ai-models">
                             <span class="blog-card__category" style="background: #e63312;">AI / Open Source</span>
                             <h2 class="blog-card__title">
                                 <a href="what-is-google-gemma-4-open-source-ai-2026.html">What Is Google Gemma 4 in 2026? Complete Guide to Open-Source AI Models</a>
@@ -722,7 +729,7 @@
                         </article>
 
                         <!-- Blog Card #146 - Gemma 4 on Ollama -->
-                        <article class="blog-card" style="border: 3px solid #e63312;">
+                        <article class="blog-card" data-cluster="ai-models">
                             <span class="blog-card__category" style="background: #e63312;">AI / How-To</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-run-gemma-4-ollama-local-ai-2026.html">How to Run Google Gemma 4 on Ollama in 2026: Complete Local AI Setup Guide</a>
@@ -736,7 +743,7 @@
                         </article>
 
                         <!-- Blog Card - Perplexity Computer -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-agents">
                             <span class="blog-card__category">AI Tools</span>
                             <h2 class="blog-card__title">
                                 <a href="perplexity-computer-ai-super-agent-2026.html">Perplexity Computer 2026: The AI Super Agent That Runs Entire Workflows End-to-End</a>
@@ -749,196 +756,196 @@
                         </article>
 
                         <!-- 15 New Marketing Agency Blog Cards (Feb 2026) -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="agency-ops">
                             <span class="blog-card__category">Agency Pricing</span>
                             <h2 class="blog-card__title"><a href="marketing-agency-cost-small-business-2026.html">Marketing Agency Cost for Small Business 2026: What to Budget & Expect</a></h2>
                             <p class="blog-card__excerpt">Full breakdown of marketing agency pricing for small businesses in 2026 — retainers, project fees, hourly rates, and what drives agency costs so you can plan effectively.</p>
                             <div class="blog-card__meta"><span>February 2026</span><span>10 min read</span><span>Agency Pricing</span></div>
                         </article>
 
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="agency-ops">
                             <span class="blog-card__category">Agency Strategy</span>
                             <h2 class="blog-card__title"><a href="digital-marketing-agency-vs-in-house-team-2026.html">Digital Marketing Agency vs In-House Team 2026: Benefits, Costs & When to Choose Each</a></h2>
                             <p class="blog-card__excerpt">A data-driven comparison of digital marketing agency vs in-house team in 2026 — cost, speed, AI access, brand immersion, and when the hybrid model outperforms both.</p>
                             <div class="blog-card__meta"><span>February 2026</span><span>11 min read</span><span>Agency Strategy</span></div>
                         </article>
 
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="agency-ops">
                             <span class="blog-card__category">Lead Generation</span>
                             <h2 class="blog-card__title"><a href="best-marketing-agency-for-lead-generation-2026.html">Best Marketing Agency for Lead Generation 2026: How to Find One That Delivers</a></h2>
                             <p class="blog-card__excerpt">How to evaluate and choose the best lead generation marketing agency for your niche, industry, or location in 2026 — beyond the sales pitch.</p>
                             <div class="blog-card__meta"><span>February 2026</span><span>9 min read</span><span>Lead Generation</span></div>
                         </article>
 
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="content-social">
                             <span class="blog-card__category">Analytics</span>
                             <h2 class="blog-card__title"><a href="how-to-measure-roi-social-media-marketing-2026.html">How to Measure ROI of Social Media Marketing 2026: A Practical Framework</a></h2>
                             <p class="blog-card__excerpt">Practical frameworks and attribution models to measure social media marketing ROI in 2026 — connect activity to revenue, not just engagement.</p>
                             <div class="blog-card__meta"><span>February 2026</span><span>9 min read</span><span>Social Media ROI</span></div>
                         </article>
 
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="agency-ops">
                             <span class="blog-card__category">Hiring Guide</span>
                             <h2 class="blog-card__title"><a href="questions-to-ask-before-hiring-marketing-agency-2026.html">Questions to Ask Before Hiring a Marketing Agency 2026: The Essential Checklist</a></h2>
                             <p class="blog-card__excerpt">20 essential questions to evaluate strategy, reporting, transparency, and fit before signing with a marketing agency in 2026 — with red flags to watch for.</p>
                             <div class="blog-card__meta"><span>February 2026</span><span>10 min read</span><span>Agency Evaluation</span></div>
                         </article>
 
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="paid-ads">
                             <span class="blog-card__category">Brand vs Performance</span>
                             <h2 class="blog-card__title"><a href="branding-agency-vs-digital-marketing-agency-2026.html">Branding Agency vs Digital Marketing Agency 2026: Which Do You Actually Need?</a></h2>
                             <p class="blog-card__excerpt">Clear breakdown of the difference between branding and digital marketing agencies in 2026 — and how to decide which you need at your current growth stage.</p>
                             <div class="blog-card__meta"><span>February 2026</span><span>9 min read</span><span>Agency Strategy</span></div>
                         </article>
 
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="seo-aeo-geo">
                             <span class="blog-card__category">SEO Timeline</span>
                             <h2 class="blog-card__title"><a href="how-long-seo-results-timeline-2026.html">How Long Does SEO Take to Show Results in 2026? Realistic Timelines</a></h2>
                             <p class="blog-card__excerpt">Realistic SEO timelines for 2026 — what to expect at 30, 60, 90, and 180 days, and how AEO/GEO changes the visibility curve for growing businesses.</p>
                             <div class="blog-card__meta"><span>February 2026</span><span>9 min read</span><span>SEO Strategy</span></div>
                         </article>
 
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="general">
                             <span class="blog-card__category">Growth Marketing</span>
                             <h2 class="blog-card__title"><a href="marketing-strategy-startup-growth-scaling-2026.html">Marketing Strategy for Startup in Growth Phase 2026: Scale Without Burning Runway</a></h2>
                             <p class="blog-card__excerpt">Channel prioritisation, budget frameworks, and the two-track marketing strategy for startups moving from early traction to scaling in 2026.</p>
                             <div class="blog-card__meta"><span>February 2026</span><span>10 min read</span><span>Startup Marketing</span></div>
                         </article>
 
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="general">
                             <span class="blog-card__category">Budget Marketing</span>
                             <h2 class="blog-card__title"><a href="affordable-marketing-services-small-business-2026.html">Affordable Marketing Services for Small Business 2026: Big Results on Small Budgets</a></h2>
                             <p class="blog-card__excerpt">The highest-ROI affordable marketing services for small businesses in 2026 — which channels, which budget ranges, and what actually moves the needle with limited resources.</p>
                             <div class="blog-card__meta"><span>February 2026</span><span>9 min read</span><span>Small Business</span></div>
                         </article>
 
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="b2b-saas-gtm">
                             <span class="blog-card__category">B2B Marketing</span>
                             <h2 class="blog-card__title"><a href="full-service-marketing-agencies-b2b-2026.html">Full-Service Marketing Agencies for B2B Companies 2026: What to Look For</a></h2>
                             <p class="blog-card__excerpt">What B2B companies should look for in a full-service marketing agency in 2026 — services, evaluation criteria, and how B2B marketing fundamentally differs from B2C.</p>
                             <div class="blog-card__meta"><span>February 2026</span><span>10 min read</span><span>B2B Strategy</span></div>
                         </article>
 
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="agency-ops">
                             <span class="blog-card__category">Agency Selection</span>
                             <h2 class="blog-card__title"><a href="marketing-partner-niche-industry-2026.html">How to Find a Marketing Partner Who Understands Your Niche Industry 2026</a></h2>
                             <p class="blog-card__excerpt">Frameworks to find and evaluate a marketing agency that genuinely understands your niche industry in 2026 — and why niche expertise significantly changes campaign outcomes.</p>
                             <div class="blog-card__meta"><span>February 2026</span><span>9 min read</span><span>Niche Marketing</span></div>
                         </article>
 
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="agency-ops">
                             <span class="blog-card__category">Retainer Guide</span>
                             <h2 class="blog-card__title"><a href="what-is-included-monthly-marketing-retainer-2026.html">What Is Included in a Monthly Marketing Retainer 2026: Complete Breakdown</a></h2>
                             <p class="blog-card__excerpt">Complete breakdown of what is included in marketing retainers by price tier in 2026 — deliverables, reporting, strategy, and how to evaluate whether you are getting value.</p>
                             <div class="blog-card__meta"><span>February 2026</span><span>9 min read</span><span>Agency Pricing</span></div>
                         </article>
 
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="d2c-ecommerce">
                             <span class="blog-card__category">Ecommerce Strategy</span>
                             <h2 class="blog-card__title"><a href="marketing-campaign-case-studies-ecommerce-2026.html">Marketing Campaign Case Studies for Ecommerce Brands 2026: What Works</a></h2>
                             <p class="blog-card__excerpt">Frameworks and learnings from high-performing ecommerce marketing campaigns in 2026 — what separates top performers from average campaigns across channels.</p>
                             <div class="blog-card__meta"><span>February 2026</span><span>10 min read</span><span>Ecommerce Marketing</span></div>
                         </article>
 
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="seo-aeo-geo">
                             <span class="blog-card__category">Agency Management</span>
                             <h2 class="blog-card__title"><a href="how-to-switch-marketing-agencies-seo-2026.html">How to Switch Marketing Agencies Without Losing SEO Progress 2026</a></h2>
                             <p class="blog-card__excerpt">Step-by-step framework to transition between marketing agencies in 2026 without losing organic rankings, content assets, or paid campaign momentum.</p>
                             <div class="blog-card__meta"><span>February 2026</span><span>9 min read</span><span>Agency Transition</span></div>
                         </article>
 
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-models">
                             <span class="blog-card__category">Agency Pricing</span>
                             <h2 class="blog-card__title"><a href="marketing-agency-pricing-models-2026.html">Marketing Agency Pricing Models 2026 Explained: Retainer, Project, Performance</a></h2>
                             <p class="blog-card__excerpt">Clear breakdown of all marketing agency pricing models in 2026 — retainer, project-based, hourly, performance-based, and hybrid — and which is best for your situation.</p>
                             <div class="blog-card__meta"><span>February 2026</span><span>9 min read</span><span>Agency Pricing</span></div>
                         </article>
 
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="agency-ops">
                             <span class="blog-card__category">Agency Onboarding</span>
                             <h2 class="blog-card__title"><a href="first-90-days-working-marketing-agency-2026.html">What to Expect in the First 90 Days Working With a Marketing Agency in 2026</a></h2>
                             <p class="blog-card__excerpt">Week-by-week breakdown of what to expect in the first 90 days of a marketing agency engagement — onboarding, strategy, execution, and early results.</p>
                             <div class="blog-card__meta"><span>February 2026</span><span>10 min read</span><span>Agency Onboarding</span></div>
                         </article>
 
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="agency-ops">
                             <span class="blog-card__category">Agency Vetting</span>
                             <h2 class="blog-card__title"><a href="how-to-vet-marketing-agency-transparency-2026.html">How to Vet a Marketing Agency for Transparency and Results in 2026</a></h2>
                             <p class="blog-card__excerpt">A practical due-diligence framework for separating transparent, results-driven marketing partners from polished sales machines in 2026.</p>
                             <div class="blog-card__meta"><span>February 2026</span><span>10 min read</span><span>Agency Vetting</span></div>
                         </article>
 
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="agency-ops">
                             <span class="blog-card__category">Lead Nurturing</span>
                             <h2 class="blog-card__title"><a href="lead-nurturing-automation-marketing-agency-2026.html">Lead Nurturing and Automation: What Your Marketing Agency Should Be Doing in 2026</a></h2>
                             <p class="blog-card__excerpt">What effective lead nurturing and automation looks like in 2026 — tools, sequences, pipeline stages, and how to evaluate whether your agency is actually building your pipeline.</p>
                             <div class="blog-card__meta"><span>February 2026</span><span>9 min read</span><span>Lead Nurturing</span></div>
                         </article>
 
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="seo-aeo-geo">
                             <span class="blog-card__category">Local SEO</span>
                             <h2 class="blog-card__title"><a href="local-seo-services-small-business-2026.html">Local SEO Services for Small Business Owners in 2026</a></h2>
                             <p class="blog-card__excerpt">What local SEO services include in 2026, how much they cost, how long results take, and how to choose the right agency for local search visibility.</p>
                             <div class="blog-card__meta"><span>February 2026</span><span>9 min read</span><span>Local SEO</span></div>
                         </article>
 
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="paid-ads">
                             <span class="blog-card__category">Ecommerce Performance</span>
                             <h2 class="blog-card__title"><a href="performance-based-marketing-agency-scaling-2026.html">Performance-Based Marketing Agency for Scaling Ecommerce in 2026</a></h2>
                             <p class="blog-card__excerpt">What performance-based marketing looks like for ecommerce businesses in 2026 — channels, pricing models, ROAS benchmarks, and how to scale without burning budget.</p>
                             <div class="blog-card__meta"><span>February 2026</span><span>10 min read</span><span>Ecommerce Performance</span></div>
                         </article>
 
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="b2b-saas-gtm">
                             <span class="blog-card__category">B2B Content Marketing</span>
                             <h2 class="blog-card__title"><a href="content-marketing-agency-thought-leadership-2026.html">Content Marketing Agency for Thought Leadership and B2B Authority in 2026</a></h2>
                             <p class="blog-card__excerpt">How a content marketing agency builds B2B thought leadership and industry authority in 2026 — content types, distribution, SEO, and how it generates real pipeline.</p>
                             <div class="blog-card__meta"><span>February 2026</span><span>10 min read</span><span>B2B Content</span></div>
                         </article>
 
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="paid-ads">
                             <span class="blog-card__category">Paid Search</span>
                             <h2 class="blog-card__title"><a href="paid-search-management-small-business-2026.html">Paid Search Management for Small Business Budgets in 2026</a></h2>
                             <p class="blog-card__excerpt">How small businesses should approach Google Ads management in 2026 — budget allocation, ROAS expectations, campaign types, and how to choose the right PPC agency.</p>
                             <div class="blog-card__meta"><span>February 2026</span><span>9 min read</span><span>Paid Search</span></div>
                         </article>
 
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="agency-ops">
                             <span class="blog-card__category">Marketing Leadership</span>
                             <h2 class="blog-card__title"><a href="what-is-fractional-cmo-do-i-need-one-2026.html">What Is a Fractional CMO — and Do You Need One in 2026?</a></h2>
                             <p class="blog-card__excerpt">Senior marketing strategy without a full-time executive salary — when a fractional CMO makes sense, what they cost, and how they differ from an agency.</p>
                             <div class="blog-card__meta"><span>February 2026</span><span>9 min read</span><span>Marketing Leadership</span></div>
                         </article>
 
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="paid-ads">
                             <span class="blog-card__category">Agency Management</span>
                             <h2 class="blog-card__title"><a href="how-to-audit-marketing-agency-performance-2026.html">How to Audit Your Marketing Agency's Performance in 2026</a></h2>
                             <p class="blog-card__excerpt">A channel-by-channel framework for auditing your marketing agency in 2026 — what to check, which metrics matter, and what to do when the results disappoint.</p>
                             <div class="blog-card__meta"><span>February 2026</span><span>10 min read</span><span>Agency Management</span></div>
                         </article>
 
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="d2c-ecommerce">
                             <span class="blog-card__category">Ecommerce Automation</span>
                             <h2 class="blog-card__title"><a href="marketing-automation-ecommerce-brands-2026.html">Marketing Automation for Ecommerce Brands in 2026</a></h2>
                             <p class="blog-card__excerpt">The essential automated flows — abandoned cart, welcome series, post-purchase, win-back, VIP loyalty — that recover revenue and increase repeat purchase rates for ecommerce brands.</p>
                             <div class="blog-card__meta"><span>February 2026</span><span>9 min read</span><span>Ecommerce Automation</span></div>
                         </article>
 
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="content-social">
                             <span class="blog-card__category">Startup Branding</span>
                             <h2 class="blog-card__title"><a href="branding-visual-identity-services-startups-2026.html">Branding and Visual Identity Services for Startups in 2026</a></h2>
                             <p class="blog-card__excerpt">What branding and visual identity services include for startups in 2026 — what you get, what it costs, when to invest, and how to choose the right branding agency.</p>
                             <div class="blog-card__meta"><span>February 2026</span><span>9 min read</span><span>Startup Branding</span></div>
                         </article>
 
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="agency-ops">
                             <span class="blog-card__category">Inbound Marketing</span>
                             <h2 class="blog-card__title"><a href="inbound-marketing-agency-high-ticket-services-2026.html">Inbound Marketing Agency for High-Ticket Service Businesses in 2026</a></h2>
                             <p class="blog-card__excerpt">How inbound marketing generates qualified leads for high-ticket service businesses in 2026 — strategy, channels, timelines, and how to choose the right agency.</p>
                             <div class="blog-card__meta"><span>February 2026</span><span>9 min read</span><span>Inbound Marketing</span></div>
                         </article>
 
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="agency-ops">
                             <span class="blog-card__category">Agency Procurement</span>
                             <h2 class="blog-card__title"><a href="how-to-write-marketing-agency-rfp-2026.html">How to Write a Marketing Agency RFP in 2026</a></h2>
                             <p class="blog-card__excerpt">A section-by-section guide to writing a marketing agency RFP — what to include, how to evaluate responses, common mistakes to avoid, and what good agencies look for.</p>
@@ -946,7 +953,7 @@
                         </article>
 
                         <!-- Blog Card - FEATURED: Turiyam AI -->
-                        <article class="blog-card" style="border: 3px solid #6C3CE1;">
+                        <article class="blog-card" data-cluster="general">
                             <span class="blog-card__category" style="background: #6C3CE1;">AI Infrastructure</span>
                             <h2 class="blog-card__title">
                                 <a href="turiyam-ai-genai-inference-platform-india-2026.html">Turiyam AI 2026: India's Open GenAI Inference Platform Built on RISC-V and CUDA-Free Middleware</a>
@@ -960,7 +967,7 @@
                         </article>
 
                         <!-- Blog Card - FEATURED: Sarvam Indus AI -->
-                        <article class="blog-card" style="border: 3px solid #FF6600;">
+                        <article class="blog-card" data-cluster="ai-models">
                             <span class="blog-card__category" style="background: #FF6600;">AI &amp; Industry</span>
                             <h2 class="blog-card__title">
                                 <a href="sarvam-indus-ai-india-sovereign-chat-app-2026.html">Sarvam Indus AI 2026: India's First Sovereign Chat App vs ChatGPT, Gemini &amp; Claude — Complete Guide</a>
@@ -974,7 +981,7 @@
                         </article>
 
                         <!-- Blog Card - FEATURED: India AI Impact Summit -->
-                        <article class="blog-card" style="border: 3px solid #e63312;">
+                        <article class="blog-card" data-cluster="general">
                             <span class="blog-card__category" style="background: #e63312;">AI & Industry</span>
                             <h2 class="blog-card__title">
                                 <a href="india-ai-impact-summit-2026.html">India AI Impact Summit 2026: What It Means for Marketing, Business, and the Future of AI in India</a>
@@ -988,7 +995,7 @@
                         </article>
 
                         <!-- Blog Card - Wati AI WhatsApp Marketing -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="whatsapp-messaging">
                             <span class="blog-card__category">WhatsApp Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-wati-whatsapp-marketing-2026.html">How to Use Wati AI for WhatsApp Business API Marketing 2026: Complete Chatbot, Automation & Growth Guide</a>
@@ -1001,7 +1008,7 @@
                         </article>
 
                         <!-- Blog Card - Haptik WhatsApp Marketing -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="whatsapp-messaging">
                             <span class="blog-card__category">WhatsApp Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-haptik-whatsapp-marketing-2026.html">How to Use Haptik for WhatsApp Business API Marketing 2026: Complete Chatbot, Commerce & Automation Guide</a>
@@ -1014,7 +1021,7 @@
                         </article>
 
                         <!-- Blog Card 1 - HIGH INTENT -->
-                        <article class="blog-card" style="border: 3px solid #667eea;">
+                        <article class="blog-card" data-cluster="agency-ops">
                             <span class="blog-card__category" style="background: #667eea;">Digital Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="best-digital-marketing-agency-bengaluru-2026.html">Best Digital Marketing Agency in Bengaluru 2026: Top 10 Compared + Free Checklist</a>
@@ -1028,7 +1035,7 @@
                         </article>
 
                         <!-- Blog Card 2 - HIGH INTENT -->
-                        <article class="blog-card" style="border: 3px solid #f5576c;">
+                        <article class="blog-card" data-cluster="agency-ops">
                             <span class="blog-card__category" style="background: #f5576c;">Digital Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="digital-marketing-agency-cost-india-2026.html">Digital Marketing Agency Cost in India 2026: Complete Pricing Guide + ROI Calculator</a>
@@ -1042,7 +1049,7 @@
                         </article>
 
                         <!-- Blog Card - HIGH INTENT AUDIT -->
-                        <article class="blog-card" style="border: 3px solid #2BD2FF;">
+                        <article class="blog-card" data-cluster="paid-ads">
                             <span class="blog-card__category" style="background: #2BD2FF;">Performance Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="why-google-ads-not-converting-india-2026.html">Why Your Google Ads Are Not Converting in India 2026: Complete Audit Checklist</a>
@@ -1056,7 +1063,7 @@
                         </article>
 
                         <!-- Blog Card - NEURODIVERGENT & MENTAL HEALTH CLINIC MARKETING -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="agency-ops">
                             <span class="blog-card__category">Mental Health Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="neurodivergent-mental-health-clinic-marketing-agency-2026.html">Neurodivergent &amp; Mental Health Clinic Marketing Agency 2026: Autism, ADHD &amp; Therapy Practice Growth</a>
@@ -1069,7 +1076,7 @@
                         </article>
 
                         <!-- Blog Card - SARVAM AI MAIN GUIDE -->
-                        <article class="blog-card" style="border: 3px solid #FF6B35;">
+                        <article class="blog-card" data-cluster="general">
                             <span class="blog-card__category" style="background: #FF6B35;">AI Platforms</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-sarvam-ai-2026.html">How to Use Sarvam AI in 2026: Complete Guide to India's Sovereign AI Platform for 22 Indian Languages</a>
@@ -1083,7 +1090,7 @@
                         </article>
 
                         <!-- Blog Card - SARVAM AI DEVELOPER GUIDE -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-dev">
                             <span class="blog-card__category">Developer Guide</span>
                             <h2 class="blog-card__title">
                                 <a href="sarvam-ai-api-guide-developers-2026.html">Sarvam AI API Guide for Developers 2026: Speech, Translation & Indian Language Integration</a>
@@ -1096,7 +1103,7 @@
                         </article>
 
                         <!-- Blog Card - SARVAM AI BUSINESS GUIDE -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="general">
                             <span class="blog-card__category">Enterprise AI</span>
                             <h2 class="blog-card__title">
                                 <a href="sarvam-ai-for-business-india-2026.html">Sarvam AI for Business in India 2026: Enterprise Use Cases, ROI & Implementation Guide</a>
@@ -1109,7 +1116,7 @@
                         </article>
 
                         <!-- Blog Card - ENTERPRISE -->
-                        <article class="blog-card" style="border: 3px solid #4285F4;">
+                        <article class="blog-card" data-cluster="ai-video-creative">
                             <span class="blog-card__category" style="background: #4285F4;">Enterprise Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-display-video-360-dv360-2026.html">How to Use Display & Video 360 (DV360) in 2026: Complete Programmatic Advertising Guide</a>
@@ -1123,7 +1130,7 @@
                         </article>
 
                         <!-- Blog Card 3 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="general">
                             <span class="blog-card__category">Enterprise Software</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-zoho-erp-india-2026.html">How to Use Zoho ERP in India 2026: Complete Guide to Zoho Books Plus & Business Management</a>
@@ -1136,7 +1143,7 @@
                         </article>
 
                         <!-- Blog Card 2 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="general">
                             <span class="blog-card__category">Enterprise AI</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-glean-enterprise-search-2026.html">How to Use Glean in 2026: Complete Guide to Enterprise AI Search & Knowledge Platform</a>
@@ -1149,7 +1156,7 @@
                         </article>
 
                         <!-- Blog Card 2 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-agents">
                             <span class="blog-card__category">AI Development</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-composio-dev-2026.html">How to Use Composio in 2026: Complete Guide to AI Agent Integration Platform</a>
@@ -1162,7 +1169,7 @@
                         </article>
 
                         <!-- Blog Card 3 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="agency-ops">
                             <span class="blog-card__category">Digital Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="tiles-stone-marketing-agency-india-2026.html">Tiles & Stone Marketing Agency India 2026: Complete Digital Marketing Guide</a>
@@ -1175,7 +1182,7 @@
                         </article>
 
                         <!-- Blog Card 4 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="agency-ops">
                             <span class="blog-card__category">Digital Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="interior-design-architecture-marketing-agency-india-2026.html">Interior Design & Architecture Marketing Agency India 2026: Complete Guide</a>
@@ -1188,7 +1195,7 @@
                         </article>
 
                         <!-- Blog Card 5 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="b2b-saas-gtm">
                             <span class="blog-card__category">Industrial Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="solder-wire-zinc-alloys-marketing-agency-india-2026.html">Solder Wire & Zinc Alloys Marketing Agency India 2026: B2B Marketing Guide</a>
@@ -1201,7 +1208,7 @@
                         </article>
 
                         <!-- Blog Card 6 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="agency-ops">
                             <span class="blog-card__category">Digital Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="lights-chandeliers-marketing-agency-india-2026.html">Lights & Chandeliers Marketing Agency India 2026: Complete Marketing Guide</a>
@@ -1214,7 +1221,7 @@
                         </article>
 
                         <!-- Blog Card 7 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="analytics-martech">
                             <span class="blog-card__category">Industrial Automation</span>
                             <h2 class="blog-card__title">
                                 <a href="complete-guide-scada-systems-2026-platform-comparison-selection-implementation.html">Complete Guide to SCADA Systems in 2026: Platform Comparison, Selection & Implementation</a>
@@ -1227,7 +1234,7 @@
                         </article>
 
                         <!-- Blog Card 2 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="industry">
                             <span class="blog-card__category">Industrial Technology</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-anexee-unified-industrial-platform-2026.html">How to Use Anexee 2026: Complete Guide to Unified Industrial Platform for SCADA, HMI & IIoT</a>
@@ -1240,7 +1247,7 @@
                         </article>
 
                         <!-- Blog Card 2 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-models">
                             <span class="blog-card__category">Open Source AI</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-openclaw-ai-assistant-2026.html">How to Use OpenClaw 2026: Complete Guide to Open-Source AI Assistant & Self-Hosting</a>
@@ -1253,7 +1260,7 @@
                         </article>
 
                         <!-- Blog Card 2 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-agents">
                             <span class="blog-card__category">AI Social Networks</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-moltbook-ai-social-network-2026.html">How to Use Moltbook 2026: Complete Guide to AI Social Network & Agent Creation</a>
@@ -1266,7 +1273,7 @@
                         </article>
 
                         <!-- Blog Card 2 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="analytics-martech">
                             <span class="blog-card__category">AI Business Tools</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-parallel-ai-2026.html">How to Use Parallel AI 2026: Complete All-in-One AI Automation Platform Guide</a>
@@ -1279,7 +1286,7 @@
                         </article>
 
                         <!-- Blog Card 2 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="general">
                             <span class="blog-card__category">AI Research</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-thinking-machines-lab-2026.html">How to Use Thinking Machines Lab 2026: Complete Guide to Custom AI Model Training</a>
@@ -1292,7 +1299,7 @@
                         </article>
 
                         <!-- Blog Card 2 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-agents">
                             <span class="blog-card__category">AI Development</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-google-antigravity-ide-2026.html">How to Use Google AntiGravity IDE 2026: Complete Guide to Agent-First Development</a>
@@ -1305,7 +1312,7 @@
                         </article>
 
                         <!-- Blog Card 3 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-dev">
                             <span class="blog-card__category">AI & Development</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-open-webui-2026.html">How to Use Open WebUI 2026: Complete Guide to Self-Hosted AI Chat Interface</a>
@@ -1318,7 +1325,7 @@
                         </article>
 
                         <!-- Blog Card 3 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="general">
                             <span class="blog-card__category">AI & Development</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-lm-studio-2026.html">How to Use LM Studio for Local AI Models 2026: Complete Beginner's Guide</a>
@@ -1331,7 +1338,7 @@
                         </article>
 
                         <!-- Blog Card 4 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="general">
                             <span class="blog-card__category">AI & Development</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-ollama-local-llms-2026.html">How to Use Ollama for Local LLMs 2026: Complete Guide to Running AI Models Offline</a>
@@ -1344,7 +1351,7 @@
                         </article>
 
                         <!-- Blog Card 5 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-models">
                             <span class="blog-card__category">AI & Development</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-moonshot-kimi-k2-5-ai-2026.html">How to Use Moonshot AI Kimi K2.5 2026: Complete Guide to Open-Source Multimodal AI</a>
@@ -1357,7 +1364,7 @@
                         </article>
 
                         <!-- Blog Card 6 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="sales-crm">
                             <span class="blog-card__category">Enterprise Software</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-sap-business-management-2026.html">How to Use SAP for Business Management 2026: Complete ERP & CRM Guide</a>
@@ -1370,7 +1377,7 @@
                         </article>
 
                         <!-- Blog Card 7 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-video-creative">
                             <span class="blog-card__category">Professional Design</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-adobe-creative-suite-2026.html">How to Use Adobe Creative Suite 2026: Complete Guide to Photoshop, Illustrator & Premiere</a>
@@ -1383,7 +1390,7 @@
                         </article>
 
                         <!-- Blog Card 8 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-video-creative">
                             <span class="blog-card__category">Professional Video</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-davinci-resolve-2026.html">How to Use DaVinci Resolve 2026: Professional Video Editing & Color Grading Guide</a>
@@ -1396,7 +1403,7 @@
                         </article>
 
                         <!-- Blog Card 9 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="general">
                             <span class="blog-card__category">Community Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-reddit-marketing-2026.html">How to Use Reddit for Marketing 2026: Community Engagement & Advertising Guide</a>
@@ -1409,7 +1416,7 @@
                         </article>
 
                         <!-- Blog Card 10 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="content-social">
                             <span class="blog-card__category">Social Media</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-instagram-edits-app-2026.html">How to Use Instagram Edits App 2026: Complete Reels Editing Guide</a>
@@ -1422,7 +1429,7 @@
                         </article>
 
                         <!-- Blog Card 3 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-video-creative">
                             <span class="blog-card__category">Video & Content</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-capcut-video-editing-2026.html">How to Use CapCut for Video Editing 2026: Complete Mobile Video Guide</a>
@@ -1435,7 +1442,7 @@
                         </article>
 
                         <!-- Blog Card 3 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-video-creative">
                             <span class="blog-card__category">Design & Creative</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-canva-brand-graphics-2026.html">How to Use Canva for Brand Collateral & Graphics 2026: Complete Design Guide</a>
@@ -1448,7 +1455,7 @@
                         </article>
 
                         <!-- Blog Card 3 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="agency-ops">
                             <span class="blog-card__category">Growth Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="digital-marketing-agency-india-2026.html">Digital Marketing Agency India 2026: Complete Guide to Choosing the Right Growth Partner</a>
@@ -1461,7 +1468,7 @@
                         </article>
 
                         <!-- Blog Card 2 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="agency-ops">
                             <span class="blog-card__category">AI & Automation</span>
                             <h2 class="blog-card__title">
                                 <a href="ai-marketing-agency-2026.html">AI Marketing Agency 2026: How AI is Transforming Digital Marketing in India</a>
@@ -1474,7 +1481,7 @@
                         </article>
 
                         <!-- Blog Card 3 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="seo-aeo-geo">
                             <span class="blog-card__category">GEO/AEO/SEO</span>
                             <h2 class="blog-card__title">
                                 <a href="geo-aeo-seo-agency-2026.html">GEO, AEO & SEO Agency 2026: Complete Guide to AI Search Optimization</a>
@@ -1487,7 +1494,7 @@
                         </article>
 
                         <!-- Blog Card 4 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="paid-ads">
                             <span class="blog-card__category">Performance Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="meta-ads-agency-2026.html">Meta Ads Agency India 2026: Facebook & Instagram Advertising Guide</a>
@@ -1500,7 +1507,7 @@
                         </article>
 
                         <!-- Blog Card 5 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="paid-ads">
                             <span class="blog-card__category">Performance Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="google-ads-agency-2026.html">Google Ads Agency India 2026: Search, PMax & YouTube Guide</a>
@@ -1513,7 +1520,7 @@
                         </article>
 
                         <!-- Blog Card 6 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="b2b-saas-gtm">
                             <span class="blog-card__category">B2B Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="linkedin-ads-agency-2026.html">LinkedIn Ads Agency India 2026: B2B Advertising & Lead Generation</a>
@@ -1526,7 +1533,7 @@
                         </article>
 
                         <!-- Blog Card 7 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="agency-ops">
                             <span class="blog-card__category">Automation</span>
                             <h2 class="blog-card__title">
                                 <a href="marketing-automation-agency-2026.html">Marketing Automation Agency India 2026: CRM, Workflows & Lead Nurturing</a>
@@ -1539,7 +1546,7 @@
                         </article>
 
                         <!-- Blog Card 8 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="b2b-saas-gtm">
                             <span class="blog-card__category">Lead Generation</span>
                             <h2 class="blog-card__title">
                                 <a href="b2b-lead-generation-agency-2026.html">B2B Lead Generation Agency India 2026: Strategies, Channels & Costs</a>
@@ -1552,7 +1559,7 @@
                         </article>
 
                         <!-- Blog Card 9 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="d2c-ecommerce">
                             <span class="blog-card__category">E-commerce</span>
                             <h2 class="blog-card__title">
                                 <a href="d2c-marketing-agency-2026.html">D2C Marketing Agency India 2026: E-commerce Growth & Brand Building</a>
@@ -1565,7 +1572,7 @@
                         </article>
 
                         <!-- Blog Card 10 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="agency-ops">
                             <span class="blog-card__category">Content Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="content-marketing-agency-2026.html">Content Marketing Agency India 2026: Strategy, AI Content & Thought Leadership</a>
@@ -1578,7 +1585,7 @@
                         </article>
 
                         <!-- Blog Card 11 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="b2b-saas-gtm">
                             <span class="blog-card__category">GTM Strategy</span>
                             <h2 class="blog-card__title">
                                 <a href="go-to-market-strategy-agency-2026.html">Go-to-Market Strategy Agency India 2026: GTM Planning, Launch & Scale</a>
@@ -1591,7 +1598,7 @@
                         </article>
 
                         <!-- Blog Card 12 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="b2b-saas-gtm">
                             <span class="blog-card__category">SaaS Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="saas-marketing-agency-2026.html">SaaS Marketing Agency India 2026: PLG, Demand Gen & Growth Strategies</a>
@@ -1604,7 +1611,7 @@
                         </article>
 
                         <!-- Blog Card 13 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="agency-ops">
                             <span class="blog-card__category">CRO</span>
                             <h2 class="blog-card__title">
                                 <a href="conversion-rate-optimization-agency-2026.html">Conversion Rate Optimization Agency India 2026: CRO, A/B Testing & UX</a>
@@ -1617,7 +1624,7 @@
                         </article>
 
                         <!-- Blog Card 14 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="agency-ops">
                             <span class="blog-card__category">Social Media</span>
                             <h2 class="blog-card__title">
                                 <a href="social-media-marketing-agency-2026.html">Social Media Marketing Agency India 2026: Strategy, Content & Growth</a>
@@ -1630,7 +1637,7 @@
                         </article>
 
                         <!-- Blog Card 15 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="paid-ads">
                             <span class="blog-card__category">PPC</span>
                             <h2 class="blog-card__title">
                                 <a href="ppc-agency-india-2026.html">PPC Agency India 2026: Pay-Per-Click Advertising, SEM & Paid Search</a>
@@ -1643,7 +1650,7 @@
                         </article>
 
                         <!-- Blog Card 16 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="agency-ops">
                             <span class="blog-card__category">Analytics</span>
                             <h2 class="blog-card__title">
                                 <a href="marketing-analytics-agency-2026.html">Marketing Analytics Agency India 2026: Data, Attribution & Measurement</a>
@@ -1656,7 +1663,7 @@
                         </article>
 
                         <!-- Blog Card 17 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="agency-ops">
                             <span class="blog-card__category">Influencer Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="influencer-marketing-agency-2026.html">Influencer Marketing Agency India 2026: Creator Partnerships & ROI</a>
@@ -1669,7 +1676,7 @@
                         </article>
 
                         <!-- Blog Card 18 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="whatsapp-messaging">
                             <span class="blog-card__category">WhatsApp Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="whatsapp-marketing-agency-2026.html">WhatsApp Marketing Agency India 2026: Business API, Automation & Commerce</a>
@@ -1682,7 +1689,7 @@
                         </article>
 
                         <!-- Blog Card 19 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="agency-ops">
                             <span class="blog-card__category">Email Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="email-marketing-agency-2026.html">Email Marketing Agency India 2026: Automation, Campaigns & Deliverability</a>
@@ -1695,7 +1702,7 @@
                         </article>
 
                         <!-- Blog Card 20 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="agency-ops">
                             <span class="blog-card__category">Branding</span>
                             <h2 class="blog-card__title">
                                 <a href="branding-agency-india-2026.html">Branding Agency India 2026: Brand Strategy, Identity & Positioning</a>
@@ -1708,7 +1715,7 @@
                         </article>
 
                         <!-- Blog Card 21 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-video-creative">
                             <span class="blog-card__category">Video Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="video-marketing-agency-2026.html">Video Marketing Agency India 2026: Production, YouTube & Short-Form Video</a>
@@ -1721,7 +1728,7 @@
                         </article>
 
                         <!-- Blog Card 22 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="paid-ads">
                             <span class="blog-card__category">Programmatic</span>
                             <h2 class="blog-card__title">
                                 <a href="programmatic-advertising-agency-2026.html">Programmatic Advertising Agency India 2026: Display, Native & CTV</a>
@@ -1734,7 +1741,7 @@
                         </article>
 
                         <!-- Blog Card 23 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="b2b-saas-gtm">
                             <span class="blog-card__category">ABM</span>
                             <h2 class="blog-card__title">
                                 <a href="account-based-marketing-agency-2026.html">Account-Based Marketing Agency India 2026: ABM Strategy & Execution</a>
@@ -1747,7 +1754,7 @@
                         </article>
 
                         <!-- Blog Card 24 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="agency-ops">
                             <span class="blog-card__category">Startup Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="startup-marketing-agency-2026.html">Startup Marketing Agency India 2026: Growth Strategy for Early-Stage Startups</a>
@@ -1760,7 +1767,7 @@
                         </article>
 
                         <!-- Blog Card 25 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="agency-ops">
                             <span class="blog-card__category">Growth Hacking</span>
                             <h2 class="blog-card__title">
                                 <a href="growth-hacking-agency-2026.html">Growth Hacking Agency India 2026: Rapid Experimentation & Viral Growth</a>
@@ -1773,7 +1780,7 @@
                         </article>
 
                         <!-- Blog Card 26 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="d2c-ecommerce">
                             <span class="blog-card__category">E-commerce</span>
                             <h2 class="blog-card__title">
                                 <a href="ecommerce-marketing-agency-2026.html">E-commerce Marketing Agency India 2026: Online Store Growth & Revenue</a>
@@ -1786,7 +1793,7 @@
                         </article>
 
                         <!-- Blog Card 27 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="agency-ops">
                             <span class="blog-card__category">Web Design</span>
                             <h2 class="blog-card__title">
                                 <a href="web-design-agency-2026.html">Web Design Agency India 2026: UX, Conversion-Focused & Modern Websites</a>
@@ -1799,7 +1806,7 @@
                         </article>
 
                         <!-- Blog Card 28 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="agency-ops">
                             <span class="blog-card__category">Public Relations</span>
                             <h2 class="blog-card__title">
                                 <a href="pr-agency-india-2026.html">PR Agency India 2026: Media Relations, Earned Media & Reputation</a>
@@ -1812,7 +1819,7 @@
                         </article>
 
                         <!-- Blog Card 29 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="seo-aeo-geo">
                             <span class="blog-card__category">Local SEO</span>
                             <h2 class="blog-card__title">
                                 <a href="local-seo-agency-2026.html">Local SEO Agency India 2026: Google Business Profile & Local Rankings</a>
@@ -1825,7 +1832,7 @@
                         </article>
 
                         <!-- Blog Card 30 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="paid-ads">
                             <span class="blog-card__category">Affiliate Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="affiliate-marketing-agency-2026.html">Affiliate Marketing Agency India 2026: Partner Programs & Performance</a>
@@ -1838,7 +1845,7 @@
                         </article>
 
                         <!-- Blog Card 31 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="agency-ops">
                             <span class="blog-card__category">Mobile Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="mobile-marketing-agency-2026.html">Mobile Marketing Agency India 2026: App Marketing, ASO & Mobile Ads</a>
@@ -1851,7 +1858,7 @@
                         </article>
 
                         <!-- Blog Card 32 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="agency-ops">
                             <span class="blog-card__category">Reputation Management</span>
                             <h2 class="blog-card__title">
                                 <a href="reputation-management-agency-2026.html">Reputation Management Agency India 2026: ORM, Reviews & Brand Protection</a>
@@ -1864,7 +1871,7 @@
                         </article>
 
                         <!-- Blog Card 33 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="agency-ops">
                             <span class="blog-card__category">Podcast Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="podcast-marketing-agency-2026.html">Podcast Marketing Agency India 2026: Production, Promotion & Monetization</a>
@@ -1877,7 +1884,7 @@
                         </article>
 
                         <!-- Blog Card 34 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="agency-ops">
                             <span class="blog-card__category">Event Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="event-marketing-agency-2026.html">Event Marketing Agency India 2026: Virtual, Hybrid & Live Events</a>
@@ -1890,7 +1897,7 @@
                         </article>
 
                         <!-- Blog Card 35 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="seo-aeo-geo">
                             <span class="blog-card__category">Technical SEO</span>
                             <h2 class="blog-card__title">
                                 <a href="technical-seo-agency-2026.html">Technical SEO Agency India 2026: Site Speed, Crawlability & Core Web Vitals</a>
@@ -1903,7 +1910,7 @@
                         </article>
 
                         <!-- Blog Card 36 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="seo-aeo-geo">
                             <span class="blog-card__category">International SEO</span>
                             <h2 class="blog-card__title">
                                 <a href="international-seo-agency-2026.html">International SEO Agency India 2026: Global Expansion & Multi-Language SEO</a>
@@ -1916,7 +1923,7 @@
                         </article>
 
                         <!-- Blog Card 37 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="agency-ops">
                             <span class="blog-card__category">Healthcare Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="healthcare-marketing-agency-2026.html">Healthcare Marketing Agency India 2026: Hospital, Clinic & Pharma Marketing</a>
@@ -1929,7 +1936,7 @@
                         </article>
 
                         <!-- Blog Card 38 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="agency-ops">
                             <span class="blog-card__category">Real Estate Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="real-estate-marketing-agency-2026.html">Real Estate Marketing Agency India 2026: Property Marketing & Lead Generation</a>
@@ -1942,7 +1949,7 @@
                         </article>
 
                         <!-- Blog Card 39 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="agency-ops">
                             <span class="blog-card__category">Restaurant Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="restaurant-marketing-agency-2026.html">Restaurant Marketing Agency India 2026: F&B Digital Marketing & Online Orders</a>
@@ -1955,7 +1962,7 @@
                         </article>
 
                         <!-- Blog Card 40 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="agency-ops">
                             <span class="blog-card__category">Education Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="education-marketing-agency-2026.html">Education Marketing Agency India 2026: EdTech, Schools & University Marketing</a>
@@ -1968,7 +1975,7 @@
                         </article>
 
                         <!-- Blog Card 41 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="agency-ops">
                             <span class="blog-card__category">Travel Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="travel-marketing-agency-2026.html">Travel Marketing Agency India 2026: Tourism, Hotels & OTA Marketing</a>
@@ -1981,7 +1988,7 @@
                         </article>
 
                         <!-- Blog Card 42 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="agency-ops">
                             <span class="blog-card__category">FinTech Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="fintech-marketing-agency-2026.html">FinTech Marketing Agency India 2026: Digital Banking, Payments & Lending</a>
@@ -1994,7 +2001,7 @@
                         </article>
 
                         <!-- Blog Card 43 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-video-creative">
                             <span class="blog-card__category">Retail Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="retail-marketing-agency-2026.html">Retail Marketing Agency India 2026: Omnichannel, In-Store & Digital Retail</a>
@@ -2007,7 +2014,7 @@
                         </article>
 
                         <!-- Blog Card 44 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="b2b-saas-gtm">
                             <span class="blog-card__category">Manufacturing Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="manufacturing-marketing-agency-2026.html">Manufacturing Marketing Agency India 2026: Industrial B2B & Factory Marketing</a>
@@ -2020,7 +2027,7 @@
                         </article>
 
                         <!-- Blog Card 45 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="agency-ops">
                             <span class="blog-card__category">Legal Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="legal-marketing-agency-2026.html">Legal Marketing Agency India 2026: Law Firm Marketing & Attorney Lead Generation</a>
@@ -2033,7 +2040,7 @@
                         </article>
 
                         <!-- Blog Card 46 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="seo-aeo-geo">
                             <span class="blog-card__category">SEO</span>
                             <h2 class="blog-card__title">
                                 <a href="seo-agency-india-2026.html">SEO Agency India 2026: Search Engine Optimization Services & Rankings</a>
@@ -2046,7 +2053,7 @@
                         </article>
 
                         <!-- Blog Card 47 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="agency-ops">
                             <span class="blog-card__category">Digital PR</span>
                             <h2 class="blog-card__title">
                                 <a href="digital-pr-agency-2026.html">Digital PR Agency India 2026: Link Building, Media Coverage & Brand Mentions</a>
@@ -2059,7 +2066,7 @@
                         </article>
 
                         <!-- Blog Card 48 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-video-creative">
                             <span class="blog-card__category">Performance Creative</span>
                             <h2 class="blog-card__title">
                                 <a href="performance-creative-agency-2026.html">Performance Creative Agency India 2026: Ad Creatives, UGC & Video Production</a>
@@ -2072,7 +2079,7 @@
                         </article>
 
                         <!-- Blog Card 49 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="agency-ops">
                             <span class="blog-card__category">Brand Strategy</span>
                             <h2 class="blog-card__title">
                                 <a href="brand-strategy-agency-2026.html">Brand Strategy Agency India 2026: Positioning, Identity & Brand Building</a>
@@ -2085,7 +2092,7 @@
                         </article>
 
                         <!-- Blog Card 50 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="agency-ops">
                             <span class="blog-card__category">Customer Retention</span>
                             <h2 class="blog-card__title">
                                 <a href="customer-retention-agency-2026.html">Customer Retention Agency India 2026: Loyalty, CRM & Lifecycle Marketing</a>
@@ -2098,7 +2105,7 @@
                         </article>
 
                         <!-- Blog Card 51 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="agency-ops">
                             <span class="blog-card__category">Sports Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="sports-marketing-agency-2026.html">Sports Marketing Agency India 2026: Athlete Branding, Sponsorship & Fan Engagement</a>
@@ -2111,7 +2118,7 @@
                         </article>
 
                         <!-- Blog Card 52 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="d2c-ecommerce">
                             <span class="blog-card__category">Fashion Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="fashion-marketing-agency-2026.html">Fashion Marketing Agency India 2026: Apparel, Luxury & D2C Fashion Brands</a>
@@ -2124,7 +2131,7 @@
                         </article>
 
                         <!-- Blog Card 53 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="agency-ops">
                             <span class="blog-card__category">Automotive Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="automotive-marketing-agency-2026.html">Automotive Marketing Agency India 2026: Car Dealership & OEM Digital Marketing</a>
@@ -2137,7 +2144,7 @@
                         </article>
 
                         <!-- Blog Card 54 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="agency-ops">
                             <span class="blog-card__category">Gaming Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="gaming-marketing-agency-2026.html">Gaming Marketing Agency India 2026: Esports, Mobile Games & Gaming Brands</a>
@@ -2150,7 +2157,7 @@
                         </article>
 
                         <!-- Blog Card 55 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="agency-ops">
                             <span class="blog-card__category">Luxury Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="luxury-marketing-agency-2026.html">Luxury Marketing Agency India 2026: Premium Brands, HNI Targeting & Aspirational Marketing</a>
@@ -2163,7 +2170,7 @@
                         </article>
 
                         <!-- Blog Card 56 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="b2b-saas-gtm">
                             <span class="blog-card__category">B2B SaaS Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="b2b-saas-marketing-agency-2026.html">B2B SaaS Marketing Agency India 2026: Product-Led Growth, Demand Gen & Revenue</a>
@@ -2176,7 +2183,7 @@
                         </article>
 
                         <!-- Blog Card 57 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="d2c-ecommerce">
                             <span class="blog-card__category">CPG Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="cpg-marketing-agency-2026.html">CPG Marketing Agency India 2026: FMCG, Consumer Goods & Retail Marketing</a>
@@ -2189,7 +2196,7 @@
                         </article>
 
                         <!-- Blog Card 58 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="agency-ops">
                             <span class="blog-card__category">Insurance Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="insurance-marketing-agency-2026.html">Insurance Marketing Agency India 2026: Life, Health & General Insurance Marketing</a>
@@ -2202,7 +2209,7 @@
                         </article>
 
                         <!-- Blog Card 59 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="agency-ops">
                             <span class="blog-card__category">Crypto & Web3</span>
                             <h2 class="blog-card__title">
                                 <a href="crypto-web3-marketing-agency-2026.html">Crypto & Web3 Marketing Agency India 2026: Blockchain, NFT & DeFi Marketing</a>
@@ -2215,7 +2222,7 @@
                         </article>
 
                         <!-- Blog Card 60 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="agency-ops">
                             <span class="blog-card__category">HR Tech Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="hrtech-marketing-agency-2026.html">HR Tech Marketing Agency India 2026: HRMS, Recruitment & Employee Tech Marketing</a>
@@ -2228,7 +2235,7 @@
                         </article>
 
                         <!-- Blog Card 61 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="agency-ops">
                             <span class="blog-card__category">EdTech Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="edtech-marketing-agency-2026.html">EdTech Marketing Agency India 2026: Online Courses, E-Learning & Student Acquisition</a>
@@ -2241,7 +2248,7 @@
                         </article>
 
                         <!-- Blog Card 62 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="agency-ops">
                             <span class="blog-card__category">Proptech Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="proptech-marketing-agency-2026.html">Proptech Marketing Agency India 2026: Real Estate Tech, Property Platforms & CRM</a>
@@ -2254,7 +2261,7 @@
                         </article>
 
                         <!-- Blog Card 63 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="agency-ops">
                             <span class="blog-card__category">MarTech Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="martech-marketing-agency-2026.html">MarTech Marketing Agency India 2026: Marketing Technology, Automation & Stack Integration</a>
@@ -2267,7 +2274,7 @@
                         </article>
 
                         <!-- Blog Card 64 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="agency-ops">
                             <span class="blog-card__category">Logistics Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="logistics-marketing-agency-2026.html">Logistics Marketing Agency India 2026: Supply Chain, Freight & Last-Mile Delivery</a>
@@ -2280,7 +2287,7 @@
                         </article>
 
                         <!-- Blog Card 65 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="b2b-saas-gtm">
                             <span class="blog-card__category">Agritech Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="agritech-marketing-agency-2026.html">Agritech Marketing Agency India 2026: Farm Tech, Agriculture SaaS & Rural Digital</a>
@@ -2293,7 +2300,7 @@
                         </article>
 
                         <!-- Blog Card 66 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="agency-ops">
                             <span class="blog-card__category">Cleantech Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="cleantech-marketing-agency-2026.html">Cleantech Marketing Agency India 2026: Renewable Energy, EV & Sustainability Marketing</a>
@@ -2306,7 +2313,7 @@
                         </article>
 
                         <!-- Blog Card 67 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="sales-crm">
                             <span class="blog-card__category">Lead Generation</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-get-more-leads-2026.html">How to Get More Leads for My Business in 2026: Complete Guide</a>
@@ -2319,7 +2326,7 @@
                         </article>
 
                         <!-- Blog Card 68 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="d2c-ecommerce">
                             <span class="blog-card__category">E-commerce</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-increase-online-sales-2026.html">How to Increase Online Sales in 2026: Complete E-commerce Growth Guide</a>
@@ -2332,7 +2339,7 @@
                         </article>
 
                         <!-- Blog Card 69 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="paid-ads">
                             <span class="blog-card__category">Performance Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-improve-roas-meta-ads-2026.html">How to Improve ROAS on Meta Ads in 2026: Complete Optimization Guide</a>
@@ -2345,7 +2352,7 @@
                         </article>
 
                         <!-- Blog Card 70 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="general">
                             <span class="blog-card__category">Growth Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-fix-broken-marketing-funnel-2026.html">How to Fix a Broken Marketing Funnel in 2026: Complete Diagnosis Guide</a>
@@ -2358,7 +2365,7 @@
                         </article>
 
                         <!-- Blog Card 71 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="analytics-martech">
                             <span class="blog-card__category">AI & Automation</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-ai-in-marketing-2026.html">How to Use AI in My Marketing in 2026: Complete Practical Guide</a>
@@ -2371,7 +2378,7 @@
                         </article>
 
                         <!-- Blog Card 72 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="whatsapp-messaging">
                             <span class="blog-card__category">AI & Automation</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-build-ai-chatbot-website-2026.html">How to Build an AI Chatbot for My Website in 2026: Complete Guide</a>
@@ -2384,7 +2391,7 @@
                         </article>
 
                         <!-- Blog Card 73 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="sales-crm">
                             <span class="blog-card__category">Automation</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-automate-sales-follow-ups-2026.html">How to Automate Sales Follow-Ups in 2026: Complete CRM & Workflow Guide</a>
@@ -2397,7 +2404,7 @@
                         </article>
 
                         <!-- Blog Card 74 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="content-social">
                             <span class="blog-card__category">Content Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-create-content-consistently-ai-2026.html">How to Create Content Consistently with AI in 2026: Complete Workflow Guide</a>
@@ -2410,7 +2417,7 @@
                         </article>
 
                         <!-- Blog Card 75 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="agency-ops">
                             <span class="blog-card__category">Growth Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-choose-marketing-agency-2026.html">How to Choose a Marketing Agency in 2026: Complete Evaluation Guide</a>
@@ -2423,7 +2430,7 @@
                         </article>
 
                         <!-- Blog Card 76 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="b2b-saas-gtm">
                             <span class="blog-card__category">GTM Strategy</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-launch-in-new-market-2026.html">How to Launch in a New Market in 2026: Complete GTM Expansion Guide</a>
@@ -2436,7 +2443,7 @@
                         </article>
 
                         <!-- Blog Card 77 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-video-creative">
                             <span class="blog-card__category">Performance Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="youtube-ads-agency-india-2026.html">YouTube Ads Agency India 2026: Video Advertising & Campaign Management Guide</a>
@@ -2449,7 +2456,7 @@
                         </article>
 
                         <!-- Blog Card 79 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="paid-ads">
                             <span class="blog-card__category">Performance Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="remarketing-agency-india-2026.html">Remarketing Agency India 2026: Retargeting, Display Ads & Conversion Recovery</a>
@@ -2462,7 +2469,7 @@
                         </article>
 
                         <!-- Blog Card 80 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-models">
                             <span class="blog-card__category">AI & Automation</span>
                             <h2 class="blog-card__title">
                                 <a href="custom-llm-fine-tuning-agency-2026.html">Custom LLM Fine-Tuning Agency India 2026: AI Model Training & Deployment</a>
@@ -2475,7 +2482,7 @@
                         </article>
 
                         <!-- Blog Card 81 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="agency-ops">
                             <span class="blog-card__category">Operations</span>
                             <h2 class="blog-card__title">
                                 <a href="marketing-operations-agency-india-2026.html">Marketing Operations Agency India 2026: MOps, MarTech Stack & Process Optimization</a>
@@ -2488,7 +2495,7 @@
                         </article>
 
                         <!-- Blog Card 82 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="analytics-martech">
                             <span class="blog-card__category">MarTech</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-hubspot-marketing-2026.html">How to Use HubSpot for Marketing 2026: Complete Setup & Strategy Guide</a>
@@ -2501,7 +2508,7 @@
                         </article>
 
                         <!-- Blog Card 83 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="sales-crm">
                             <span class="blog-card__category">MarTech</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-salesforce-marketing-2026.html">How to Use Salesforce for Marketing 2026: CRM & Marketing Cloud Guide</a>
@@ -2514,7 +2521,7 @@
                         </article>
 
                         <!-- Blog Card 84 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="sales-crm">
                             <span class="blog-card__category">MarTech</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-bitrix24-marketing-2026.html">How to Use Bitrix24 for Marketing 2026: CRM, Automation & Collaboration Guide</a>
@@ -2527,7 +2534,7 @@
                         </article>
 
                         <!-- Blog Card 85 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="sales-crm">
                             <span class="blog-card__category">MarTech</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-activecampaign-2026.html">How to Use ActiveCampaign 2026: Email Marketing, Automation & CRM Guide</a>
@@ -2540,7 +2547,7 @@
                         </article>
 
                         <!-- Blog Card 86 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="analytics-martech">
                             <span class="blog-card__category">Automation</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-zapier-marketing-automation-2026.html">How to Use Zapier for Marketing Automation 2026: Complete Integration Guide</a>
@@ -2553,7 +2560,7 @@
                         </article>
 
                         <!-- Blog Card 87 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="analytics-martech">
                             <span class="blog-card__category">Automation</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-make-marketing-automation-2026.html">How to Use Make.com for Marketing Automation 2026: Visual Workflow Guide</a>
@@ -2566,7 +2573,7 @@
                         </article>
 
                         <!-- Blog Card 88 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-models">
                             <span class="blog-card__category">Automation</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-n8n-marketing-automation-2026.html">How to Use n8n for Marketing Automation 2026: Open-Source Workflow Guide</a>
@@ -2579,7 +2586,7 @@
                         </article>
 
                         <!-- Blog Card 89 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="general">
                             <span class="blog-card__category">Email Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-brevo-email-marketing-2026.html">How to Use Brevo for Email Marketing 2026: Complete Guide (Formerly Sendinblue)</a>
@@ -2592,7 +2599,7 @@
                         </article>
 
                         <!-- Blog Card 90 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="d2c-ecommerce">
                             <span class="blog-card__category">E-commerce</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-klaviyo-ecommerce-2026.html">How to Use Klaviyo for E-commerce Marketing 2026: Complete Guide</a>
@@ -2605,7 +2612,7 @@
                         </article>
 
                         <!-- Blog Card 91 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="seo-aeo-geo">
                             <span class="blog-card__category">SEO Tools</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-ahrefs-seo-2026.html">How to Use Ahrefs for SEO 2026: Complete Keyword Research & Backlink Guide</a>
@@ -2618,7 +2625,7 @@
                         </article>
 
                         <!-- Blog Card 92 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="seo-aeo-geo">
                             <span class="blog-card__category">SEO Tools</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-semrush-seo-2026.html">How to Use Semrush for SEO 2026: Complete Digital Marketing Guide</a>
@@ -2631,7 +2638,7 @@
                         </article>
 
                         <!-- Blog Card 93 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="analytics-martech">
                             <span class="blog-card__category">Analytics</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-google-analytics-4-2026.html">How to Use Google Analytics 4 (GA4) 2026: Complete Setup & Reporting Guide</a>
@@ -2644,7 +2651,7 @@
                         </article>
 
                         <!-- Blog Card 94 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="general">
                             <span class="blog-card__category">Email Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-mailchimp-email-marketing-2026.html">How to Use Mailchimp for Email Marketing 2026: Complete Campaign Guide</a>
@@ -2657,7 +2664,7 @@
                         </article>
 
                         <!-- Blog Card 95 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="general">
                             <span class="blog-card__category">Marketing Ops</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-airtable-marketing-2026.html">How to Use Airtable for Marketing 2026: Complete Campaign Management Guide</a>
@@ -2670,7 +2677,7 @@
                         </article>
 
                         <!-- Blog Card 96 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="general">
                             <span class="blog-card__category">Marketing Ops</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-notion-marketing-2026.html">How to Use Notion for Marketing Teams 2026: Complete Workspace Guide</a>
@@ -2683,7 +2690,7 @@
                         </article>
 
                         <!-- Blog Card 97 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="seo-aeo-geo">
                             <span class="blog-card__category">SEO Tools</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-google-search-console-2026.html">How to Use Google Search Console 2026: Complete SEO Monitoring Guide</a>
@@ -2696,7 +2703,7 @@
                         </article>
 
                         <!-- Blog Card 98 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="b2b-saas-gtm">
                             <span class="blog-card__category">GTM Tools</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-clay-gtm-2026.html">How to Use Clay for GTM 2026: Complete Data Enrichment & Outbound Guide</a>
@@ -2709,7 +2716,7 @@
                         </article>
 
                         <!-- Blog Card 99 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-video-creative">
                             <span class="blog-card__category">AI Video</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-veo-3-ad-generation-2026.html">How to Use Veo 3.1 for Ad Generation 2026: Complete AI Video Marketing Guide</a>
@@ -2722,7 +2729,7 @@
                         </article>
 
                         <!-- Blog Card 100 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-models">
                             <span class="blog-card__category">AI Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-chatgpt-marketing-2026.html">How to Use ChatGPT for Marketing 2026: Complete AI Marketing Guide</a>
@@ -2735,7 +2742,7 @@
                         </article>
 
                         <!-- Blog Card 101 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="paid-ads">
                             <span class="blog-card__category">Performance Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-meta-ads-manager-2026.html">How to Use Meta Ads Manager 2026: Complete Facebook & Instagram Ads Guide</a>
@@ -2748,7 +2755,7 @@
                         </article>
 
                         <!-- Blog Card 102 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-video-creative">
                             <span class="blog-card__category">AI Creative</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-midjourney-ad-creatives-2026.html">How to Use Midjourney for Ad Creatives 2026: Complete AI Design Guide</a>
@@ -2761,7 +2768,7 @@
                         </article>
 
                         <!-- Blog Card 103 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="b2b-saas-gtm">
                             <span class="blog-card__category">B2B Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-linkedin-campaign-manager-2026.html">How to Use LinkedIn Campaign Manager 2026: Complete B2B Ads Guide</a>
@@ -2774,7 +2781,7 @@
                         </article>
 
                         <!-- Blog Card 104 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="analytics-martech">
                             <span class="blog-card__category">Marketing Analytics</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-looker-studio-marketing-2026.html">How to Use Looker Studio for Marketing Dashboards 2026: Complete Guide</a>
@@ -2787,7 +2794,7 @@
                         </article>
 
                         <!-- Blog Card 105 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="general">
                             <span class="blog-card__category">Conversion Optimization</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-hotjar-conversion-optimization-2026.html">How to Use Hotjar for Conversion Optimization 2026: Complete CRO Guide</a>
@@ -2800,7 +2807,7 @@
                         </article>
 
                         <!-- Blog Card 106 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-models">
                             <span class="blog-card__category">AI Agents</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-claude-code-marketing-2026.html">How to Use Claude Code for Marketing 2026: Complete AI Agent Guide</a>
@@ -2813,7 +2820,7 @@
                         </article>
 
                         <!-- Blog Card 107 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-models">
                             <span class="blog-card__category">AI Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-gemini-marketing-2026.html">How to Use Gemini for Marketing 2026: Complete Google AI Guide</a>
@@ -2826,7 +2833,7 @@
                         </article>
 
                         <!-- Blog Card 108 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-agents">
                             <span class="blog-card__category">AI Agents</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-manus-ai-marketing-2026.html">How to Use Manus AI for Marketing 2026: Complete Autonomous Agent Guide</a>
@@ -2839,7 +2846,7 @@
                         </article>
 
                         <!-- Blog Card 109 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="general">
                             <span class="blog-card__category">AI Research</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-perplexity-marketing-research-2026.html">How to Use Perplexity for Marketing Research 2026: Complete AI Search Guide</a>
@@ -2852,7 +2859,7 @@
                         </article>
 
                         <!-- Blog Card 110 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-video-creative">
                             <span class="blog-card__category">AI Video</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-sora-video-ads-2026.html">How to Use Sora for Video Ad Creation 2026: Complete AI Video Guide</a>
@@ -2865,7 +2872,7 @@
                         </article>
 
                         <!-- Blog Card 111 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-video-creative">
                             <span class="blog-card__category">AI Video</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-runway-ml-marketing-2026.html">How to Use Runway ML for Marketing Videos 2026: Complete AI Video Editing Guide</a>
@@ -2878,7 +2885,7 @@
                         </article>
 
                         <!-- Blog Card 112 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-video-creative">
                             <span class="blog-card__category">AI Audio</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-eleven-labs-marketing-2026.html">How to Use Eleven Labs for Audio Marketing 2026: Complete AI Voice Guide</a>
@@ -2891,7 +2898,7 @@
                         </article>
 
                         <!-- Blog Card 113 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="analytics-martech">
                             <span class="blog-card__category">AI Automation</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-cursor-ai-marketing-2026.html">How to Use Cursor AI for Marketing Automation 2026: Complete AI Coding Guide</a>
@@ -2904,7 +2911,7 @@
                         </article>
 
                         <!-- Blog Card 114 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="b2b-saas-gtm">
                             <span class="blog-card__category">B2B Sales</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-apollo-lead-generation-2026.html">How to Use Apollo.io for Lead Generation 2026: Complete B2B Prospecting Guide</a>
@@ -2917,7 +2924,7 @@
                         </article>
 
                         <!-- Blog Card 115 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="general">
                             <span class="blog-card__category">AI Development</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-devin-ai-marketing-2026.html">How to Use Devin AI for Marketing Development 2026: Complete AI Software Engineer Guide</a>
@@ -2930,7 +2937,7 @@
                         </article>
 
                         <!-- Blog Card 116 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-agents">
                             <span class="blog-card__category">AI Automation</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-openai-operator-marketing-2026.html">How to Use OpenAI Operator for Marketing Tasks 2026: Complete AI Browser Agent Guide</a>
@@ -2943,7 +2950,7 @@
                         </article>
 
                         <!-- Blog Card 117 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="general">
                             <span class="blog-card__category">Design Tools</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-canva-ai-marketing-2026.html">How to Use Canva AI for Marketing Design 2026: Complete Magic Studio Guide</a>
@@ -2956,7 +2963,7 @@
                         </article>
 
                         <!-- Blog Card 118 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="general">
                             <span class="blog-card__category">Design Tools</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-figma-marketing-2026.html">How to Use Figma for Marketing Teams 2026: Complete Design Collaboration Guide</a>
@@ -2969,7 +2976,7 @@
                         </article>
 
                         <!-- Blog Card 119 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="general">
                             <span class="blog-card__category">Website Builders</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-webflow-marketing-2026.html">How to Use Webflow for Marketing Websites 2026: Complete No-Code Website Guide</a>
@@ -2982,7 +2989,7 @@
                         </article>
 
                         <!-- Blog Card 120 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="general">
                             <span class="blog-card__category">Website Builders</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-framer-landing-pages-2026.html">How to Use Framer for Landing Pages 2026: Complete AI Website Builder Guide</a>
@@ -2995,7 +3002,7 @@
                         </article>
 
                         <!-- Blog Card 121 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-video-creative">
                             <span class="blog-card__category">Sales Tools</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-loom-sales-marketing-2026.html">How to Use Loom for Sales & Marketing 2026: Complete Video Messaging Guide</a>
@@ -3008,7 +3015,7 @@
                         </article>
 
                         <!-- Blog Card 122 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="analytics-martech">
                             <span class="blog-card__category">Analytics</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-mixpanel-marketing-2026.html">How to Use Mixpanel for Marketing Analytics 2026: Complete Product Analytics Guide</a>
@@ -3021,7 +3028,7 @@
                         </article>
 
                         <!-- Blog Card 123 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="analytics-martech">
                             <span class="blog-card__category">Analytics</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-amplitude-marketing-2026.html">How to Use Amplitude for Product Marketing 2026: Complete Analytics & Experimentation Guide</a>
@@ -3034,7 +3041,7 @@
                         </article>
 
                         <!-- Blog Card 124 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="general">
                             <span class="blog-card__category">Data Infrastructure</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-segment-marketing-2026.html">How to Use Segment for Marketing Data 2026: Complete CDP & Data Integration Guide</a>
@@ -3047,7 +3054,7 @@
                         </article>
 
                         <!-- Blog Card 125 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="analytics-martech">
                             <span class="blog-card__category">Reporting</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-supermetrics-reporting-2026.html">How to Use Supermetrics for Marketing Reporting 2026: Complete Data Connectors & Dashboard Guide</a>
@@ -3060,7 +3067,7 @@
                         </article>
 
                         <!-- Blog Card 126 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="sales-crm">
                             <span class="blog-card__category">Cold Email</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-instantly-cold-email-2026.html">How to Use Instantly for Cold Email 2026: Complete Email Warmup & Outreach Guide</a>
@@ -3073,7 +3080,7 @@
                         </article>
 
                         <!-- Blog Card 127 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="sales-crm">
                             <span class="blog-card__category">Sales Outreach</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-lemlist-outreach-2026.html">How to Use Lemlist for Email Outreach 2026: Complete Multichannel Personalization Guide</a>
@@ -3086,7 +3093,7 @@
                         </article>
 
                         <!-- Blog Card 128 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="sales-crm">
                             <span class="blog-card__category">Cold Outreach</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-smartlead-outreach-2026.html">How to Use Smartlead for Cold Outreach 2026: Complete Unlimited Mailboxes & AI Warmup Guide</a>
@@ -3099,7 +3106,7 @@
                         </article>
 
                         <!-- Blog Card 129 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="general">
                             <span class="blog-card__category">AI App Builder</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-lovable-marketing-apps-2026.html">How to Use Lovable for Marketing Apps 2026: Complete AI App Builder & Dashboard Guide</a>
@@ -3112,7 +3119,7 @@
                         </article>
 
                         <!-- Blog Card 130 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="general">
                             <span class="blog-card__category">AI Website Builder</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-bolt-new-marketing-2026.html">How to Use Bolt.new for Marketing Websites 2026: Complete AI Website & App Builder Guide</a>
@@ -3125,7 +3132,7 @@
                         </article>
 
                         <!-- Blog Card 131 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="general">
                             <span class="blog-card__category">AI UI Generation</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-v0-vercel-marketing-2026.html">How to Use v0 by Vercel for Marketing UI 2026: Complete AI Component & Landing Page Guide</a>
@@ -3138,7 +3145,7 @@
                         </article>
 
                         <!-- Blog Card 132 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-agents">
                             <span class="blog-card__category">AI Coding Agent</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-replit-agent-marketing-2026.html">How to Use Replit Agent for Marketing Tools 2026: Complete AI Coding & Deployment Guide</a>
@@ -3151,7 +3158,7 @@
                         </article>
 
                         <!-- Blog Card 133 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="analytics-martech">
                             <span class="blog-card__category">ERP Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-odoo-marketing-2026.html">How to Use Odoo for Marketing 2026: Complete ERP Marketing & Automation Guide</a>
@@ -3164,7 +3171,7 @@
                         </article>
 
                         <!-- Blog Card 134 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="sales-crm">
                             <span class="blog-card__category">Sales CRM</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-pipedrive-marketing-2026.html">How to Use Pipedrive for Sales Marketing 2026: Complete Pipeline & Lead Management Guide</a>
@@ -3177,7 +3184,7 @@
                         </article>
 
                         <!-- Blog Card 135 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="sales-crm">
                             <span class="blog-card__category">CRM</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-zoho-crm-marketing-2026.html">How to Use Zoho CRM for Marketing 2026: Complete Lead Management & Automation Guide</a>
@@ -3190,7 +3197,7 @@
                         </article>
 
                         <!-- Blog Card 136 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-video-creative">
                             <span class="blog-card__category">AI Creative</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-fal-ai-marketing-2026.html">How to Use Fal.AI for Marketing 2026: Complete AI Image & Video Generation Guide</a>
@@ -3203,7 +3210,7 @@
                         </article>
 
                         <!-- Blog Card 137 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-video-creative">
                             <span class="blog-card__category">AI Video</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-higgsfield-ai-marketing-2026.html">How to Use Higgsfield.ai for Marketing 2026: Complete AI Video & Avatar Generation Guide</a>
@@ -3216,7 +3223,7 @@
                         </article>
 
                         <!-- Blog Card 138 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="general">
                             <span class="blog-card__category">AI/ML Platform</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-hugging-face-marketing-2026.html">How to Use Hugging Face for Marketing 2026: Complete AI Models & NLP Guide</a>
@@ -3229,7 +3236,7 @@
                         </article>
 
                         <!-- Blog Card 139 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-dev">
                             <span class="blog-card__category">AI/ML Fine-Tuning</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-unsloth-ai-fine-tune-marketing-2026.html">How to Use Unsloth AI to Fine-Tune Marketing Models Fast 2026: Complete LLM Training Guide</a>
@@ -3242,7 +3249,7 @@
                         </article>
 
                         <!-- Blog Card 140 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="whatsapp-messaging">
                             <span class="blog-card__category">WhatsApp Automation</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-clevertap-whatsapp-lead-automation-2026.html">How to Use CleverTap for WhatsApp Lead Automation 2026: Complete Guide</a>
@@ -3255,7 +3262,7 @@
                         </article>
 
                         <!-- Blog Card 141 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="whatsapp-messaging">
                             <span class="blog-card__category">SMS Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-twilio-sms-marketing-2026.html">How to Use Twilio for SMS Marketing Campaigns 2026: Complete Guide</a>
@@ -3268,7 +3275,7 @@
                         </article>
 
                         <!-- Blog Card 142 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="general">
                             <span class="blog-card__category">AI App Builder</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-emergent-ai-marketing-2026.html">How to Use Emergent AI for Marketing 2026: Complete Vibe Coding & App Builder Guide</a>
@@ -3281,7 +3288,7 @@
                         </article>
 
                         <!-- Blog Card 143 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-dev">
                             <span class="blog-card__category">WhatsApp Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-whatsapp-business-api-2026.html">How to Use WhatsApp Business API for Marketing 2026: Complete Setup & Campaign Guide</a>
@@ -3294,7 +3301,7 @@
                         </article>
 
                         <!-- Blog Card 144 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="d2c-ecommerce">
                             <span class="blog-card__category">D2C Growth</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-scale-d2c-brand-online-2026.html">How to Scale a D2C Brand Online 2026: Complete Growth Playbook</a>
@@ -3307,7 +3314,7 @@
                         </article>
 
                         <!-- Blog Card 145 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="seo-aeo-geo">
                             <span class="blog-card__category">SEO / AEO / GEO</span>
                             <h2 class="blog-card__title">
                                 <a href="what-is-aeo-answer-engine-optimization-2026.html">What Is AEO? Answer Engine Optimization Explained for 2026</a>
@@ -3320,7 +3327,7 @@
                         </article>
 
                         <!-- Blog Card 146 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="seo-aeo-geo">
                             <span class="blog-card__category">Search Strategy</span>
                             <h2 class="blog-card__title">
                                 <a href="seo-vs-aeo-vs-geo-search-strategy-2026.html">SEO vs AEO vs GEO: Which Search Strategy Does Your Business Need in 2026?</a>
@@ -3333,7 +3340,7 @@
                         </article>
 
                         <!-- Blog Card 147 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-models">
                             <span class="blog-card__category">GEO Strategy</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-get-brand-cited-chatgpt-perplexity-gemini-2026.html">How to Get Your Brand Cited by ChatGPT, Perplexity, and Gemini in 2026</a>
@@ -3346,7 +3353,7 @@
                         </article>
 
                         <!-- Blog Card 148 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="content-social">
                             <span class="blog-card__category">AI Search</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-optimize-content-google-ai-overviews-2026.html">How to Optimize Content for Google AI Overviews in 2026</a>
@@ -3359,7 +3366,7 @@
                         </article>
 
                         <!-- Blog Card 149 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="seo-aeo-geo">
                             <span class="blog-card__category">Search Strategy</span>
                             <h2 class="blog-card__title">
                                 <a href="what-is-zero-click-marketing-2026.html">What Is Zero-Click Marketing? How to Win When Users Never Visit Your Website 2026</a>
@@ -3372,7 +3379,7 @@
                         </article>
 
                         <!-- Blog Card 150 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-agents">
                             <span class="blog-card__category">AI Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="what-are-ai-marketing-agents-agentic-workflows-2026.html">What Are AI Marketing Agents? How to Use Agentic Workflows for Campaigns 2026</a>
@@ -3385,7 +3392,7 @@
                         </article>
 
                         <!-- Blog Card 151 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-video-creative">
                             <span class="blog-card__category">AI Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="ai-powered-ad-creatives-generate-test-2026.html">AI-Powered Ad Creatives: How to Generate and Test Meta/Google Ads with AI in 2026</a>
@@ -3398,7 +3405,7 @@
                         </article>
 
                         <!-- Blog Card 152 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="d2c-ecommerce">
                             <span class="blog-card__category">D2C Growth</span>
                             <h2 class="blog-card__title">
                                 <a href="marketing-automation-stack-d2c-under-10-lakh-2026.html">Marketing Automation Stack for D2C Brands Under ₹10 Lakh Budget 2026</a>
@@ -3411,7 +3418,7 @@
                         </article>
 
                         <!-- Blog Card 153 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="content-social">
                             <span class="blog-card__category">Content Strategy</span>
                             <h2 class="blog-card__title">
                                 <a href="original-research-vs-ai-generated-content-2026.html">Original Research vs AI-Generated Content: Why Data-Driven Content Wins in 2026</a>
@@ -3424,7 +3431,7 @@
                         </article>
 
                         <!-- Blog Card 154 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="d2c-ecommerce">
                             <span class="blog-card__category">D2C Growth</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-reduce-cac-d2c-brands-2026.html">How to Reduce Customer Acquisition Cost for D2C Brands: 7 Proven Tactics 2026</a>
@@ -3437,7 +3444,7 @@
                         </article>
 
                         <!-- Blog Card 155 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="d2c-ecommerce">
                             <span class="blog-card__category">Data Strategy</span>
                             <h2 class="blog-card__title">
                                 <a href="first-party-data-strategy-ecommerce-cookieless-2026.html">First-Party Data Strategy for Ecommerce: Build Your Own Data in a Cookieless World 2026</a>
@@ -3450,7 +3457,7 @@
                         </article>
 
                         <!-- Blog Card 156 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-video-creative">
                             <span class="blog-card__category">D2C Strategy</span>
                             <h2 class="blog-card__title">
                                 <a href="what-is-everywhere-commerce-omnichannel-d2c-2026.html">What Is Everywhere Commerce? The Omnichannel Strategy D2C Brands Need in 2026</a>
@@ -3463,7 +3470,7 @@
                         </article>
 
                         <!-- Blog Card 157 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="paid-ads">
                             <span class="blog-card__category">SaaS Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="performance-marketing-funnel-saas-india-2026.html">How to Set Up a Performance Marketing Funnel for SaaS Products in India 2026</a>
@@ -3476,7 +3483,7 @@
                         </article>
 
                         <!-- Blog Card 158 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="b2b-saas-gtm">
                             <span class="blog-card__category">SaaS Growth</span>
                             <h2 class="blog-card__title">
                                 <a href="what-is-product-led-growth-indian-saas-2026.html">What Is Product-Led Growth? Does It Work for Indian SaaS Companies in 2026?</a>
@@ -3489,7 +3496,7 @@
                         </article>
 
                         <!-- Blog Card 159 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="paid-ads">
                             <span class="blog-card__category">Performance Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-audit-google-ads-account-2026.html">How to Audit Your Google Ads Account: Step-by-Step Guide 2026</a>
@@ -3502,7 +3509,7 @@
                         </article>
 
                         <!-- Blog Card 160 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="b2b-saas-gtm">
                             <span class="blog-card__category">B2B SaaS</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-build-gtm-strategy-b2b-saas-2026.html">How to Build a Go-to-Market Strategy for B2B SaaS in 2026</a>
@@ -3515,7 +3522,7 @@
                         </article>
 
                         <!-- Blog Card 161 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="b2b-saas-gtm">
                             <span class="blog-card__category">GTM & Content Strategy</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-create-content-ranks-google-cited-by-ai-2026.html">How to Create Content That Ranks on Google AND Gets Cited by AI</a>
@@ -3528,7 +3535,7 @@
                         </article>
 
                         <!-- Blog Card 162 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="sales-crm">
                             <span class="blog-card__category">Content Strategy</span>
                             <h2 class="blog-card__title">
                                 <a href="blog-strategy-drives-leads-not-traffic-2026.html">How to Build a Blog Strategy That Drives Leads, Not Just Traffic</a>
@@ -3541,7 +3548,7 @@
                         </article>
 
                         <!-- Blog Card 163 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="seo-aeo-geo">
                             <span class="blog-card__category">Technical SEO / AEO</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-schema-markup-structured-data-ai-search-2026.html">How to Use Schema Markup and Structured Data for AI Search Visibility</a>
@@ -3554,7 +3561,7 @@
                         </article>
 
                         <!-- Blog Card 164 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="seo-aeo-geo">
                             <span class="blog-card__category">GEO / India Strategy</span>
                             <h2 class="blog-card__title">
                                 <a href="how-indian-brands-compete-ai-search-geo-guide-2026.html">How Indian Brands Can Compete in AI Search: A Practical GEO Guide for India</a>
@@ -3567,7 +3574,7 @@
                         </article>
 
                         <!-- Blog Card 165 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="paid-ads">
                             <span class="blog-card__category">Paid Ads / B2B SaaS</span>
                             <h2 class="blog-card__title">
                                 <a href="google-ads-b2b-saas-india-2026.html">Google Ads for B2B SaaS in India: The 2026 Playbook That Actually Converts</a>
@@ -3580,7 +3587,7 @@
                         </article>
 
                         <!-- Blog Card 166 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="b2b-saas-gtm">
                             <span class="blog-card__category">Design / CRO</span>
                             <h2 class="blog-card__title">
                                 <a href="saas-landing-page-design-conversion-2026.html">Why Your SaaS Landing Page Isn't Converting — And What Elite B2B Design Looks Like in 2026</a>
@@ -3593,7 +3600,7 @@
                         </article>
 
                         <!-- Blog Card 167 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="seo-aeo-geo">
                             <span class="blog-card__category">SEO / AEO / GEO</span>
                             <h2 class="blog-card__title">
                                 <a href="seo-dead-aeo-geo-replacing-search-b2b-india-2026.html">SEO Is Dead? How AEO and GEO Are Replacing Traditional Search for B2B Startups in India</a>
@@ -3606,7 +3613,7 @@
                         </article>
 
                         <!-- Blog Card 168 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="b2b-saas-gtm">
                             <span class="blog-card__category">LinkedIn / B2B Social</span>
                             <h2 class="blog-card__title">
                                 <a href="linkedin-lead-generation-b2b-saas-india-2026.html">LinkedIn Lead Generation for B2B SaaS: How Indian Startups Are Getting Enterprise Clients Without Cold Calling</a>
@@ -3619,7 +3626,7 @@
                         </article>
 
                         <!-- Blog Card 169 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="sales-crm">
                             <span class="blog-card__category">CRM &amp; Automation</span>
                             <h2 class="blog-card__title">
                                 <a href="hubspot-vs-salesforce-indian-startups-2026.html">HubSpot vs Salesforce for Indian Startups in 2026: Which CRM Actually Fits Your Budget?</a>
@@ -3632,7 +3639,7 @@
                         </article>
 
                         <!-- Blog Card 170 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="b2b-saas-gtm">
                             <span class="blog-card__category">Strategy / GTM</span>
                             <h2 class="blog-card__title">
                                 <a href="why-indian-saas-need-gtm-partner-not-agency-2026.html">Why Indian SaaS Startups Need a GTM Partner, Not a Marketing Agency</a>
@@ -3645,7 +3652,7 @@
                         </article>
 
                         <!-- Blog Card 171 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-agents">
                             <span class="blog-card__category">AI / Automation</span>
                             <h2 class="blog-card__title">
                                 <a href="agentic-ai-marketing-autonomous-workflows-2026.html">Agentic AI in Marketing 2026: How Autonomous AI Workflows Are Replacing Marketing Teams</a>
@@ -3658,7 +3665,7 @@
                         </article>
 
                         <!-- Blog Card 172 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="seo-aeo-geo">
                             <span class="blog-card__category">SEO / AEO / GEO</span>
                             <h2 class="blog-card__title">
                                 <a href="zero-click-search-strategy-brand-visibility-2026.html">Zero-Click Search Strategy 2026: How to Win Brand Visibility When 60% of Searches Get No Clicks</a>
@@ -3671,7 +3678,7 @@
                         </article>
 
                         <!-- Blog Card 173 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-models">
                             <span class="blog-card__category">GEO / AI Search</span>
                             <h2 class="blog-card__title">
                                 <a href="brand-citation-playbook-chatgpt-perplexity-gemini-2026.html">How to Show Up in ChatGPT, Perplexity, and Gemini: The Brand Citation Playbook for 2026</a>
@@ -3684,7 +3691,7 @@
                         </article>
 
                         <!-- Blog Card 174 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="whatsapp-messaging">
                             <span class="blog-card__category">WhatsApp / D2C</span>
                             <h2 class="blog-card__title">
                                 <a href="whatsapp-commerce-d2c-india-revenue-playbook-2026.html">WhatsApp Commerce for D2C Brands in India 2026: The Complete Revenue Playbook</a>
@@ -3697,7 +3704,7 @@
                         </article>
 
                         <!-- Blog Card 175 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-video-creative">
                             <span class="blog-card__category">Performance Creative / AI</span>
                             <h2 class="blog-card__title">
                                 <a href="ai-ad-creative-testing-scale-100-creatives-2026.html">AI Ad Creative Testing at Scale: How to Generate, Test, and Optimize 100+ Creatives in 2026</a>
@@ -3710,7 +3717,7 @@
                         </article>
 
                         <!-- Blog Card 176 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="b2b-saas-gtm">
                             <span class="blog-card__category">SaaS / Growth</span>
                             <h2 class="blog-card__title">
                                 <a href="micro-saas-marketing-india-10l-mrr-2026.html">Micro-SaaS Marketing in India 2026: How Solo Founders Are Getting to ₹10L MRR Without a Marketing Team</a>
@@ -3723,7 +3730,7 @@
                         </article>
 
                         <!-- Blog Card 177 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="analytics-martech">
                             <span class="blog-card__category">Data / Analytics</span>
                             <h2 class="blog-card__title">
                                 <a href="first-party-data-strategy-cookieless-india-2026.html">How to Build a First-Party Data Strategy in 2026: The Cookieless Playbook for Indian Brands</a>
@@ -3736,7 +3743,7 @@
                         </article>
 
                         <!-- Blog Card 178 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="d2c-ecommerce">
                             <span class="blog-card__category">AI / D2C</span>
                             <h2 class="blog-card__title">
                                 <a href="ai-personalization-d2c-3x-conversion-india-2026.html">AI-Powered Personalization at Scale 2026: How Indian D2C Brands Are Getting 3x Conversion with Dynamic Content</a>
@@ -3749,7 +3756,7 @@
                         </article>
 
                         <!-- Blog Card 179 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-video-creative">
                             <span class="blog-card__category">Social Media / Video</span>
                             <h2 class="blog-card__title">
                                 <a href="youtube-shorts-vs-instagram-reels-b2b-india-2026.html">YouTube Shorts vs Instagram Reels for B2B Marketing in India 2026: Which Platform Actually Drives Leads?</a>
@@ -3762,7 +3769,7 @@
                         </article>
 
                         <!-- Blog Card 180 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-agents">
                             <span class="blog-card__category">AI / Commerce</span>
                             <h2 class="blog-card__title">
                                 <a href="prepare-brand-ai-shopping-agents-agentic-commerce-2026.html">How to Prepare Your Brand for AI Shopping Agents in 2026: The Agentic Commerce Guide</a>
@@ -3775,7 +3782,7 @@
                         </article>
 
                         <!-- Blog Card 181 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-models">
                             <span class="blog-card__category">AI / Advertising</span>
                             <h2 class="blog-card__title">
                                 <a href="chatgpt-ads-advertising-inside-ai-india-2026.html">ChatGPT Ads Are Here: What Advertising Inside AI Means for Indian Brands in 2026</a>
@@ -3788,7 +3795,7 @@
                         </article>
 
                         <!-- Blog Card 182 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="d2c-ecommerce">
                             <span class="blog-card__category">D2C / Creator Economy</span>
                             <h2 class="blog-card__title">
                                 <a href="creator-led-d2c-india-influencer-brands-2026.html">Creator-Led D2C in India 2026: How Influencer-Founded Brands Are Rewriting the Playbook</a>
@@ -3801,7 +3808,7 @@
                         </article>
 
                         <!-- Blog Card 183 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="paid-ads">
                             <span class="blog-card__category">Paid Media / Performance</span>
                             <h2 class="blog-card__title">
                                 <a href="reduce-cac-meta-cpm-rising-survival-guide-2026.html">How to Reduce CAC When Meta CPMs Keep Rising: The 2026 Survival Guide for Indian Marketers</a>
@@ -3814,7 +3821,7 @@
                         </article>
 
                         <!-- Blog Card 184 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="seo-aeo-geo">
                             <span class="blog-card__category">SEO / Content Strategy</span>
                             <h2 class="blog-card__title">
                                 <a href="topic-authority-content-clusters-seo-strategy-2026.html">Topic Authority and Content Clusters: The Only SEO Strategy That Still Works in 2026</a>
@@ -3827,7 +3834,7 @@
                         </article>
 
                         <!-- Blog Card 185 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="content-social">
                             <span class="blog-card__category">Social Media / Brand</span>
                             <h2 class="blog-card__title">
                                 <a href="ugc-marketing-indian-brands-user-generated-content-2026.html">UGC Marketing for Indian Brands 2026: How to Turn Customers into Your Best Content Creators</a>
@@ -3840,7 +3847,7 @@
                         </article>
 
                         <!-- Blog Card 186 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="seo-aeo-geo">
                             <span class="blog-card__category">SEO / AI Search</span>
                             <h2 class="blog-card__title">
                                 <a href="ai-overviews-stats-marketing-leaders-india-2026.html">AI Overviews Are Eating Your Traffic: 50 Stats Every Marketing Leader in India Must Know in 2026</a>
@@ -3853,7 +3860,7 @@
                         </article>
 
                         <!-- Blog Card 187 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="b2b-saas-gtm">
                             <span class="blog-card__category">Strategy / Demand Gen</span>
                             <h2 class="blog-card__title">
                                 <a href="demand-generation-engine-b2b-saas-india-2026.html">How to Build a Demand Generation Engine for B2B SaaS in India 2026 (Beyond Lead Gen)</a>
@@ -3866,7 +3873,7 @@
                         </article>
 
                         <!-- Blog Card 188 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="analytics-martech">
                             <span class="blog-card__category">MarTech / Tools</span>
                             <h2 class="blog-card__title">
                                 <a href="marketing-stack-indian-startups-budget-tools-2026.html">The ₹10 Lakh/Month Marketing Stack: Best Tools for Indian Startups Who Can't Afford Enterprise Software in 2026</a>
@@ -3879,7 +3886,7 @@
                         </article>
 
                         <!-- Blog Card 189 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-video-creative">
                             <span class="blog-card__category">Video / B2B Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="short-form-video-b2b-india-reels-shorts-2026.html">Short-Form Video Marketing for B2B in India 2026: Why Reels, Shorts, and TikTok Are No Longer Just for B2C</a>
@@ -3892,7 +3899,7 @@
                         </article>
 
                         <!-- Blog Card 190 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="seo-aeo-geo">
                             <span class="blog-card__category">Analytics / Strategy</span>
                             <h2 class="blog-card__title">
                                 <a href="measure-marketing-roi-ai-search-traffic-disappearing-2026.html">How to Measure Marketing ROI When 25% of Search Traffic Is Disappearing to AI in 2026</a>
@@ -3905,7 +3912,7 @@
                         </article>
 
                         <!-- Blog Card 191 -->
-                        <article class="blog-card">
+                        <article class="blog-card" data-cluster="ai-video-creative">
                             <span class="blog-card__category">AI Tools / Marketing</span>
                             <h2 class="blog-card__title">
                                 <a href="how-to-use-google-pomelli-ai-marketing-2026.html">How to Use Google Pomelli for AI Marketing in 2026: Complete Guide</a>
@@ -4121,5 +4128,50 @@
   filterCount.textContent = total + ' of ' + total + ' articles';
 })();
 </script>
+<!-- FILTER JS START -->
+<script>
+(function(){
+  var LABELS = {"ai-models":"AI Models","ai-agents":"AI Agents","ai-video-creative":"AI Video & Creative","ai-dev":"AI Development","seo-aeo-geo":"SEO / AEO / GEO","whatsapp-messaging":"WhatsApp & Messaging","paid-ads":"Paid Media","d2c-ecommerce":"D2C & Ecommerce","b2b-saas-gtm":"B2B / SaaS / GTM","agency-ops":"Agency & Ops","sales-crm":"Sales & CRM","content-social":"Content & Social","analytics-martech":"Analytics & MarTech","industry":"Industry","general":"General"};
+  var grid = document.getElementById('blogGrid');
+  if(!grid) return;
+  var cards = Array.prototype.slice.call(grid.querySelectorAll('.blog-card'));
+  var chipsBox = document.getElementById('blogChips');
+  var search = document.getElementById('blogSearch');
+  var counts = {};
+  cards.forEach(function(c){var k=c.getAttribute('data-cluster')||'general';counts[k]=(counts[k]||0)+1;});
+  var active = 'all';
+  function mkChip(id,label,n){
+    var b=document.createElement('button');
+    b.textContent=label+(n?' ('+n+')':'');
+    b.setAttribute('data-id',id);
+    b.style.cssText="font-family:'Space Mono',monospace;font-size:0.65rem;letter-spacing:0.06em;text-transform:uppercase;padding:0.45rem 0.9rem;border:1px solid #e8e8e8;background:#fff;color:#6b6b6b;cursor:pointer;border-radius:999px";
+    b.onclick=function(){active=id;render();paint();};
+    return b;
+  }
+  function paint(){
+    Array.prototype.forEach.call(chipsBox.children,function(ch){
+      var on=ch.getAttribute('data-id')===active;
+      ch.style.background=on?'#e63312':'#fff';
+      ch.style.color=on?'#fff':'#6b6b6b';
+      ch.style.borderColor=on?'#e63312':'#e8e8e8';
+    });
+  }
+  chipsBox.appendChild(mkChip('all','All',cards.length));
+  Object.keys(counts).sort(function(a,b){return counts[b]-counts[a];}).forEach(function(k){
+    chipsBox.appendChild(mkChip(k,LABELS[k]||k,counts[k]));
+  });
+  function render(){
+    var q=(search.value||'').toLowerCase().trim();
+    cards.forEach(function(c){
+      var okCat=active==='all'||c.getAttribute('data-cluster')===active;
+      var okQ=!q||c.textContent.toLowerCase().indexOf(q)>-1;
+      c.style.display=(okCat&&okQ)?'':'none';
+    });
+  }
+  search.addEventListener('input',render);
+  paint();
+})();
+</script>
+<!-- FILTER JS END -->
 </body>
 </html>
