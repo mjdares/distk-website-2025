@@ -282,6 +282,33 @@ img{max-width:100%;display:block}
 .p-quote strong{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--accent);display:block}
 .p-quote span{font-size:0.78rem;color:var(--mid)}
 
+/* ---- PLANS ---- */
+.plans{background:#f1f0ee}
+.plans__grid{display:grid;grid-template-columns:1fr 1.15fr 1fr;gap:1.5rem;margin-top:2.8rem;align-items:stretch}
+.plan{background:var(--paper);border:1.5px solid var(--ink);padding:1.9rem 1.7rem;display:flex;flex-direction:column;position:relative}
+.plan--hot{background:var(--ink);color:var(--paper);border-color:var(--ink);box-shadow:14px 14px 0 var(--accent-soft)}
+.plan__badge{position:absolute;top:-0.85rem;left:1.7rem;font-family:var(--mono);font-size:0.6rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;background:var(--accent);color:#fff;padding:0.35rem 0.8rem}
+.plan__kicker{font-family:var(--mono);font-size:0.64rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--mid);margin-bottom:0.7rem}
+.plan--hot .plan__kicker{color:var(--accent-hot)}
+.plan h3{font-size:1.3rem;font-weight:800;letter-spacing:-0.02em;margin-bottom:0.9rem;line-height:1.15}
+.plan__price{font-family:var(--mono);font-weight:700;font-size:1.9rem;line-height:1;margin-bottom:0.3rem}
+.plan__price small{font-size:0.85rem;font-weight:400;color:var(--mid)}
+.plan--hot .plan__price small{color:rgba(255,255,255,0.55)}
+.plan__pricenote{font-size:0.74rem;color:var(--mid);margin-bottom:1.2rem}
+.plan--hot .plan__pricenote{color:rgba(255,255,255,0.55)}
+.plan__desc{font-size:0.88rem;color:var(--mid);line-height:1.6;margin-bottom:1.2rem}
+.plan--hot .plan__desc{color:rgba(255,255,255,0.7)}
+.plan ul{list-style:none;margin-bottom:1.6rem;flex:1}
+.plan li{font-size:0.86rem;padding-left:1.3rem;position:relative;margin-bottom:0.55rem;line-height:1.5}
+.plan li::before{content:'\2713';position:absolute;left:0;color:var(--green);font-family:var(--mono);font-weight:700;font-size:0.8rem}
+.plan--hot li{color:rgba(255,255,255,0.85)}
+.plan__cta{display:block;text-align:center;font-family:var(--mono);font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:0.95rem;text-decoration:none;transition:all .25s;border:1.5px solid var(--ink);color:var(--ink)}
+.plan__cta:hover{background:var(--ink);color:var(--paper)}
+.plan--hot .plan__cta{background:var(--accent);border-color:var(--accent);color:#fff}
+.plan--hot .plan__cta:hover{background:var(--accent-hot);border-color:var(--accent-hot);transform:translateY(-2px)}
+.plan__slots{margin-top:0.8rem;text-align:center;font-family:var(--mono);font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent-hot);display:flex;align-items:center;justify-content:center;gap:0.4rem}
+.plan__slots::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--accent-hot);animation:blink 1.4s steps(1) infinite}
+
 /* ---- FAQ ---- */
 .faq{background:var(--ink);color:var(--paper)}
 .faq .section-title{color:var(--paper)}
@@ -348,6 +375,8 @@ img{max-width:100%;display:block}
   .step:nth-child(3),.step:nth-child(4){border-bottom:none}
   .formsec__grid{grid-template-columns:1fr;gap:2.5rem}
   .proof__quotes{grid-template-columns:1fr}
+  .plans__grid{grid-template-columns:1fr;gap:1.8rem}
+  .plan--hot{order:-1}
 }
 @media (max-width:640px){
   .hero{padding-top:6.2rem}
@@ -621,6 +650,65 @@ img{max-width:100%;display:block}
   </div>
 </section>
 
+<!-- PLANS -->
+<section class="section plans" id="plans">
+  <div class="container">
+    <div class="section-tag reveal">Choose Your Path</div>
+    <h2 class="section-title reveal">Three ways to become the brand AI recommends.</h2>
+    <p class="section-sub reveal">Do it yourself with our exact playbook, get visible in 30 days with a fixed-price sprint, or hand us the keys. Every path starts working immediately.</p>
+    <div class="plans__grid">
+
+      <div class="plan reveal">
+        <div class="plan__kicker">Do It Yourself</div>
+        <h3>The Ranking Blueprint</h3>
+        <div class="plan__price">$59 <small><s>$149</s></small></div>
+        <div class="plan__pricenote">One-time. Instant download.</div>
+        <p class="plan__desc">The exact content framework we use to rank on Google and get cited by ChatGPT, Perplexity and Gemini. For founders who want the playbook, not the agency.</p>
+        <ul>
+          <li>7 copy-paste section templates</li>
+          <li>Master LLM prompt for citation-ready drafts</li>
+          <li>25-point AEO/GEO quality checklist</li>
+          <li>Works for any industry or market</li>
+        </ul>
+        <a href="digital-product/sales-page.html" class="plan__cta" id="plan-blueprint">Get the Blueprint &rarr;</a>
+      </div>
+
+      <div class="plan plan--hot reveal">
+        <div class="plan__badge">New &bull; Fastest Path to Cited</div>
+        <div class="plan__kicker">Done For You in 30 Days</div>
+        <h3>AI Visibility Sprint</h3>
+        <div class="plan__price">&#8377;49,999 <small>+ GST (~$599 global)</small></div>
+        <div class="plan__pricenote">Fixed scope. Fixed price. No retainer, no lock-in.</div>
+        <p class="plan__desc">One focused month to take your brand from invisible to citable. We audit, fix, write and publish. You watch the citations start.</p>
+        <ul>
+          <li>Week 1: full AI visibility audit + technical &amp; schema fixes shipped</li>
+          <li>10 citation-ready articles written &amp; published for you</li>
+          <li>FAQ schema, entity &amp; directory setup across trusted sources</li>
+          <li>Day 30: before/after citation report + 90-day roadmap</li>
+        </ul>
+        <a href="#audit" class="plan__cta">Claim a Sprint Slot &rarr;</a>
+        <div class="plan__slots">5 slots per month. That's it.</div>
+      </div>
+
+      <div class="plan reveal">
+        <div class="plan__kicker">Full Service Partner</div>
+        <h3>Visibility Partner</h3>
+        <div class="plan__price">Custom</div>
+        <div class="plan__pricenote">Monthly engagement. Scoped to your market.</div>
+        <p class="plan__desc">The complete system, running continuously: strategy, content engine, authority building and reporting. For brands serious about owning their category in AI search.</p>
+        <ul>
+          <li>Everything in the Sprint, ongoing</li>
+          <li>Monthly citation-ready publishing engine</li>
+          <li>Authority placements on trusted sources</li>
+          <li>Weekly tracking, plain-language reports</li>
+        </ul>
+        <a href="#audit" class="plan__cta">Start With the Free Audit &rarr;</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- FAQ -->
 <section class="section faq">
   <div class="container">
@@ -706,6 +794,7 @@ img{max-width:100%;display:block}
         <label for="va-goal">What matters most right now?</label>
         <select id="va-goal" name="goal">
           <option value="">Choose one (optional)</option>
+          <option>I want the 30-Day AI Visibility Sprint</option>
           <option>Getting cited in AI answers (ChatGPT, Perplexity, Gemini)</option>
           <option>Winning Google answer boxes &amp; AI Overviews</option>
           <option>Ranking higher in organic search</option>
@@ -856,6 +945,8 @@ img{max-width:100%;display:block}
   document.querySelectorAll('a[href="#audit"]').forEach(function(a){
     a.addEventListener('click', function(){ track('visibility_cta_click'); });
   });
+  var bp = document.getElementById('plan-blueprint');
+  if(bp) bp.addEventListener('click', function(){ track('visibility_blueprint_click'); });
   document.getElementById('visibility-form').addEventListener('submit', function(){
     track('visibility_audit_submit');
   });
