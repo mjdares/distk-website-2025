@@ -674,7 +674,7 @@ img{max-width:100%;display:block}
       class="vform reveal"
       name="visibility-audit"
       method="POST"
-      action="/success.html"
+      action="/visibility-success.html"
       data-netlify="true"
       netlify
       netlify-honeypot="bot-field"
@@ -858,7 +858,6 @@ img{max-width:100%;display:block}
   });
   document.getElementById('visibility-form').addEventListener('submit', function(){
     track('visibility_audit_submit');
-    if(window.fbq) fbq('track', 'Lead');
   });
 })();
 </script>
