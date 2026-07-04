@@ -24,6 +24,14 @@
         <priority>0.9</priority>
     </url>
 
+    <!-- Distk Visibility Landing Page -->
+    <url>
+        <loc>https://distk.in/distk-visibility.html</loc>
+        <lastmod>2026-07-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
     <!-- Blog Index -->
     <url>
         <loc>https://distk.in/blog/</loc>
