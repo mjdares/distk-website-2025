@@ -91,13 +91,25 @@ body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-heigh
 
 /* ---- NAV ---- */
 .nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--light)}
-.nav__inner{display:flex;align-items:center;justify-content:space-between;max-width:var(--container);margin:0 auto;padding:0.9rem var(--gutter)}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;max-width:var(--container);margin:0 auto;padding:0.9rem var(--gutter)}
 .nav__logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;color:var(--ink)}
-.nav__logo img{height:32px;width:auto}
-.nav__logo span{font-family:var(--mono);font-weight:700;font-size:1.05rem;letter-spacing:-0.02em}
-.nav__logo small{display:block;font-size:0.55rem;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);line-height:1}
-.nav__cta{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.6rem 1.4rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.nav__logo img{width:36px;height:36px;object-fit:contain}
+.nav__logo-text{display:flex;flex-direction:column;line-height:1.1}
+.nav__logo-mark{font-family:var(--mono);font-weight:700;font-size:1rem;color:var(--ink);letter-spacing:-0.02em}
+.nav__logo-tagline{font-family:var(--sans);font-size:0.62rem;color:var(--mid);font-weight:400;letter-spacing:0.02em}
+.nav__links{display:flex;align-items:center;gap:0.1rem;list-style:none;margin:0;padding:0}
+.nav__links li a{font-family:var(--sans);font-size:0.85rem;font-weight:500;color:var(--mid);padding:0.4rem 0.65rem;border-radius:4px;transition:color 0.2s,background 0.2s;white-space:nowrap;text-decoration:none}
+.nav__links li a:hover{color:var(--ink);background:var(--accent-soft)}
+.nav__links li a.nav__link--accent{color:var(--accent);font-weight:600}
+.nav__links li a.nav__link--accent:hover{color:var(--accent);background:var(--accent-soft)}
+.nav__hamburger{display:none;background:none;border:none;cursor:pointer;padding:0.5rem;flex-shrink:0}
+.nav__hamburger span{display:block;width:20px;height:2px;background:var(--ink);margin:4px 0;transition:transform 0.3s,opacity 0.3s}
+.nav__hamburger.is-active span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.nav__hamburger.is-active span:nth-child(2){opacity:0}
+.nav__hamburger.is-active span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.nav__cta{display:inline-flex;align-items:center;padding:0.5rem 1.1rem;background:var(--ink);color:var(--paper);font-family:var(--sans);font-size:0.85rem;font-weight:600;border-radius:4px;white-space:nowrap;transition:background 0.2s;flex-shrink:0;text-decoration:none}
 .nav__cta:hover{background:var(--accent)}
+@media (max-width:900px){.nav__hamburger{display:block}.nav__links{display:none;position:absolute;top:100%;left:0;right:0;background:rgba(250,250,250,0.98);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--light);padding:1rem var(--gutter) 1.5rem;flex-direction:column;gap:0.25rem;align-items:stretch}.nav__links.is-open{display:flex}.nav__links li a{display:block;padding:0.6rem 0.65rem}}
 
 /* ---- HERO ---- */
 .hero{padding:8rem 0 4.5rem;position:relative;overflow:hidden}
@@ -183,12 +195,34 @@ body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-heigh
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
 
 /* ---- FOOTER ---- */
-.foot{border-top:1px solid var(--light);padding:2.5rem 0}
-.foot__inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
-.foot__brand{font-family:var(--mono);font-size:0.78rem;color:var(--mid)}
-.foot__links{display:flex;gap:1.5rem;flex-wrap:wrap}
-.foot__links a{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid);text-decoration:none;transition:color 0.2s}
-.foot__links a:hover{color:var(--accent)}
+.foot{border-top:1px solid var(--light);padding:clamp(2.5rem,5vw,4rem) 0 0;background:var(--paper)}
+.foot__top{display:flex;gap:3rem;align-items:flex-start;margin-bottom:2.5rem}
+.foot__logo{display:flex;align-items:center;gap:0.6rem;flex-shrink:0;text-decoration:none}
+.foot__logo img{width:32px;height:32px;object-fit:contain}
+.foot__logo-text{display:flex;flex-direction:column;line-height:1.15}
+.foot__logo-mark{font-family:var(--mono);font-weight:700;font-size:0.95rem;color:var(--ink);letter-spacing:-0.02em}
+.foot__logo-tagline{font-size:0.6rem;color:var(--mid);font-family:var(--sans);font-weight:400}
+.foot__cols{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;flex:1}
+.foot__cols h4{font-family:var(--mono);font-size:0.68rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--mid);margin-bottom:0.9rem}
+.foot__cols ul{list-style:none;display:flex;flex-direction:column;gap:0.45rem;margin:0;padding:0}
+.foot__cols ul li a,.foot__cols a{font-family:var(--mono);font-size:0.75rem;color:var(--mid);text-decoration:none;transition:color 0.2s;display:block;line-height:1.4}
+.foot__cols ul li a:hover,.foot__cols a:hover{color:var(--accent)}
+.foot__social{display:flex;gap:0.75rem;margin-top:0.85rem}
+.foot__social a{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border:1px solid var(--light);border-radius:6px;color:var(--mid);transition:color 0.2s,border-color 0.2s}
+.foot__social a:hover{color:var(--accent);border-color:var(--accent)}
+.foot__newsletter-form{display:flex;gap:0;border:1.5px solid var(--light);border-radius:4px;overflow:hidden;transition:border-color 0.2s}
+.foot__newsletter-form:focus-within{border-color:var(--accent)}
+.foot__newsletter-form input[type="email"]{font-family:var(--mono);font-size:0.75rem;color:var(--ink);background:var(--paper);border:none;outline:none;padding:0.6rem 0.75rem;flex:1;min-width:0}
+.foot__newsletter-form input[type="email"]::placeholder{color:#bbb}
+.foot__newsletter-form button[type="submit"]{background:var(--ink);color:var(--paper);border:none;padding:0.6rem 0.85rem;font-family:var(--mono);font-size:0.82rem;font-weight:700;cursor:pointer;transition:background 0.2s;flex-shrink:0}
+.foot__newsletter-form button[type="submit"]:hover{background:var(--accent)}
+.foot__locations{font-family:var(--mono);font-size:0.68rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);text-align:center;padding:1rem 0;border-top:1px solid var(--light)}
+.foot__bottom{display:flex;align-items:center;justify-content:space-between;gap:1rem;border-top:1px solid var(--light);padding:1.25rem 0;flex-wrap:wrap}
+.foot__bottom span{font-family:var(--mono);font-size:0.72rem;color:var(--mid)}
+.foot__bottom a{font-family:var(--mono);font-size:0.72rem;color:var(--accent);text-decoration:none;transition:opacity 0.2s}
+.foot__bottom a:hover{opacity:0.75}
+@media (max-width:900px){.foot__top{flex-direction:column;gap:2rem}.foot__cols{grid-template-columns:repeat(2,1fr);width:100%}}
+@media (max-width:600px){.foot__cols{grid-template-columns:1fr}}
 
 /* ---- REVEAL ---- */
 .reveal{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease}
@@ -213,10 +247,25 @@ body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-heigh
 <nav class="nav">
   <div class="nav__inner">
     <a href="index.html" class="nav__logo">
-      <img src="assets/images/Logo.png" alt="Distk" width="32" height="32">
-      <span>distk<small>Distribution is the Key</small></span>
+      <img src="assets/images/Logo.png" alt="Distk owl logo" width="36" height="36" />
+      <span class="nav__logo-text">
+        <span class="nav__logo-mark">distk</span>
+        <span class="nav__logo-tagline">Distribution is the Key</span>
+      </span>
     </a>
+    <ul class="nav__links">
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="blog/">Blog</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="brand-kickstart.html">Brand Kickstart</a></li>
+      <li><a href="startup-essentials.html">Startup Essentials</a></li>
+      <li><a href="roi-calculator.html">Marketing ROI Calculator</a></li>
+      <li><a href="100-brands.html" class="nav__link--accent">100 Brands</a></li>
+    </ul>
     <a href="#contact" class="nav__cta">Get a proposal</a>
+    <button class="nav__hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
 
@@ -401,13 +450,76 @@ body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-heigh
 <!-- Footer -->
 <footer class="foot">
   <div class="container">
-    <div class="foot__inner">
-      <div class="foot__brand">&copy; 2026 Distk. Scaling UAE businesses from India</div>
-      <div class="foot__links">
-        <a href="mailto:connect@distk.in">Email</a>
-        <a href="https://www.linkedin.com/company/distk-technologies" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="privacy.html">Privacy</a>
+    <div class="foot__top">
+      <a href="index.html" class="foot__logo">
+        <img src="assets/images/Logo.png" alt="Distk owl logo" width="32" height="32" />
+        <span class="foot__logo-text">
+          <span class="foot__logo-mark">distk</span>
+          <span class="foot__logo-tagline">Distribution is the Key</span>
+        </span>
+      </a>
+      <div class="foot__cols">
+        <div>
+          <h4>Visit</h4>
+          <ul>
+            <li><a href="marketing-agency-usa.html">USA</a></li>
+            <li><a href="marketing-agency-uk.html">UK</a></li>
+            <li><a href="marketing-agency-europe.html">Europe</a></li>
+            <li><a href="marketing-agency-dubai.html">Dubai</a></li>
+            <li><a href="marketing-agency-singapore.html">Singapore</a></li>
+            <li><a href="marketing-agency-australia.html">Australia</a></li>
+            <li><a href="marketing-agency-canada.html">Canada</a></li>
+            <li><a href="marketing-agency-india.html">India</a></li>
+            <li><a href="marketing-agency-bengaluru.html">Bengaluru</a></li>
+            <li><a href="marketing-agency-ahmedabad.html">Ahmedabad</a></li>
+            <li><a href="marketing-agency-udaipur.html">Udaipur</a></li>
+            <li><a href="global-marketing-agency.html">Global</a></li>
+            <li><a href="remote-marketing-agency.html">Remote</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="mailto:connect@distk.in">connect@distk.in</a></li>
+            <li><a href="https://www.linkedin.com/company/distk-technologies" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="https://www.instagram.com/distk.in/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms &amp; Conditions</a></li>
+            <li><a href="shipping.html">Shipping Policy</a></li>
+            <li><a href="refund.html">Cancellation &amp; Refunds</a></li>
+            <li class="foot__social">
+              <a href="https://www.linkedin.com/company/distk-technologies" target="_blank" rel="noopener noreferrer" aria-label="Distk on LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>
+              <a href="https://www.instagram.com/distk.in/" target="_blank" rel="noopener noreferrer" aria-label="Distk on Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07zM12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63a5.88 5.88 0 0 0-2.13 1.38A5.88 5.88 0 0 0 .63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.8.72 1.47 1.38 2.13a5.88 5.88 0 0 0 2.13 1.38c.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.88 5.88 0 0 0 2.13-1.38 5.88 5.88 0 0 0 1.38-2.13c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.88 5.88 0 0 0-1.38-2.13A5.88 5.88 0 0 0 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm7.85-10.4a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"/></svg></a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4>Subscribe</h4>
+          <form
+            class="foot__newsletter-form"
+            name="newsletter"
+            method="POST"
+            action="/success.html"
+            data-netlify="true"
+            netlify
+            netlify-honeypot="bot-field-footer"
+          >
+            <input type="hidden" name="form-name" value="newsletter" />
+            <p class="sr-only" aria-hidden="true">
+              <label for="footer-bot-field">Leave this field empty</label>
+              <input type="text" id="footer-bot-field" name="bot-field-footer" tabindex="-1" autocomplete="off" />
+            </p>
+            <label class="sr-only" for="footer-email">Email address</label>
+            <input type="email" id="footer-email" name="email" placeholder="you@company.com" required />
+            <button type="submit" aria-label="Submit email"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h11m-4.5-4.5L13 8l-4.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          </form>
+        </div>
       </div>
+    </div>
+    <div class="foot__locations">Headquartered in Bengaluru &middot; Working with clients worldwide &middot; Remote-first</div>
+    <div class="foot__bottom">
+      <span>&copy; <span id="current-year">2026</span> Distk. All rights reserved.</span>
+      <a href="https://g.page/r/CanUwgo2LbkDEBI/review" target="_blank" rel="noopener">Read reviews <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h11m-4.5-4.5L13 8l-4.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </div>
   </div>
 </footer>
@@ -417,6 +529,13 @@ document.addEventListener('DOMContentLoaded',function(){
   var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('is-visible');io.unobserve(e.target)}})},{threshold:0.15});
   document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
 });
+</script>
+<script>
+(function(){
+  var hb=document.querySelector('.nav__hamburger'),nl=document.querySelector('.nav__links');
+  if(hb&&nl){hb.addEventListener('click',function(){var open=nl.classList.toggle('is-open');hb.classList.toggle('is-active',open);hb.setAttribute('aria-expanded',open?'true':'false');});}
+  var y=document.getElementById('current-year');if(y){y.textContent=new Date().getFullYear();}
+})();
 </script>
 </body>
 </html>
