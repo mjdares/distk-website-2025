@@ -33,7 +33,7 @@
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:site_name" content="Distk" />
-  <meta property="og:locale" content="en_IN" />
+  <meta property="og:locale" content="en_US" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
@@ -60,10 +60,7 @@
           "addressRegion": "Karnataka",
           "addressCountry": "IN"
       },
-      "areaServed": {
-          "@type": "Country",
-          "name": "India"
-      },
+      "areaServed": "Worldwide",
       "sameAs": [
           "https://www.linkedin.com/company/distk-technologies"
       ],
@@ -89,10 +86,7 @@
           "@type": "ProfessionalService",
           "name": "Distk"
       },
-      "areaServed": {
-          "@type": "Country",
-          "name": "India"
-      },
+      "areaServed": "Worldwide",
       "hasOfferCatalog": {
           "@type": "OfferCatalog",
           "name": "Distk Services",
@@ -689,6 +683,63 @@
     }
 
     /* =============================================
+       MARKETS STRIP
+    ============================================= */
+    .markets {
+      border-top: 1px solid var(--light);
+      padding: 1.1rem 0;
+      background: var(--paper);
+    }
+
+    .markets__inner {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .markets__label {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--mid);
+      white-space: nowrap;
+    }
+
+    .markets__list {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .markets__list li {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      padding: 0.35rem 0.75rem;
+      border: 1px solid var(--light);
+      border-radius: 3px;
+      color: var(--ink);
+    }
+
+    .markets__note {
+      margin-left: auto;
+      font-size: 0.82rem;
+      color: var(--mid);
+    }
+
+    .icon-arrow {
+      display: inline-block;
+      vertical-align: -0.12em;
+    }
+
+    /* =============================================
        STATS BAR
     ============================================= */
     .stats {
@@ -898,10 +949,30 @@
     .c-card {
       background: var(--paper);
       padding: 1.25rem 1.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.25rem;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      column-gap: 0.9rem;
+      row-gap: 0.15rem;
+      align-items: center;
       transition: background 0.2s;
+    }
+
+    .c-card::before {
+      content: attr(data-initials);
+      grid-row: 1 / 3;
+      width: 40px;
+      height: 40px;
+      border: 1px solid var(--light);
+      border-radius: 6px;
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--ink);
+      background: var(--paper);
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .c-card:hover {
@@ -970,6 +1041,8 @@
       margin-right: 2rem;
       border-left: 2px solid var(--accent);
       padding-left: 1.5rem;
+      display: flex;
+      flex-direction: column;
     }
 
     .t-quote p {
@@ -982,6 +1055,36 @@
       -webkit-line-clamp: 7;
       -webkit-box-orient: vertical;
       overflow: hidden;
+      flex: 1;
+    }
+
+    .t-quote__meta {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .t-quote__avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: var(--paper);
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .t-quote__info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -1474,6 +1577,41 @@
       background: var(--paper);
     }
 
+    .foot__social {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 0.85rem;
+    }
+
+    .foot__social a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border: 1px solid var(--light);
+      border-radius: 6px;
+      color: var(--mid);
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .foot__social a:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .foot__locations {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--mid);
+      text-align: center;
+      padding: 1rem 0;
+      border-top: 1px solid var(--light);
+    }
+
     .foot__top {
       display: flex;
       gap: 3rem;
@@ -1759,7 +1897,7 @@
 <div class="ann">
   <span class="ann__dot"></span>
   <span>The 100 Brands Challenge: Building 100 brands in 2026. Watch it happen.</span>
-  <a href="100-brands.html">See Progress &rarr;</a>
+  <a href="100-brands.html">See Progress <svg class="icon-arrow" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h11m-4.5-4.5L13 8l-4.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
 </div>
 
 <!-- Nav (sticky) -->
@@ -1776,10 +1914,10 @@
       <li><a href="#services">Services</a></li>
       <li><a href="blog/">Blog</a></li>
       <li><a href="about.html">About</a></li>
+      <li><a href="brand-kickstart.html">Brand Kickstart</a></li>
+      <li><a href="startup-essentials.html">Startup Essentials</a></li>
+      <li><a href="roi-calculator.html">Marketing ROI Calculator</a></li>
       <li><a href="100-brands.html" class="nav__link--accent">100 Brands</a></li>
-      <li><a href="brand-kickstart.html" class="nav__link--accent">Brand Kickstart</a></li>
-      <li><a href="startup-essentials.html" class="nav__link--accent">Startup Essentials</a></li>
-      <li><a href="roi-calculator.html" class="nav__link--accent">Marketing ROI Calculator</a></li>
     </ul>
     <a href="#contact" class="nav__cta">Get a proposal</a>
     <button class="nav__hamburger" aria-label="Toggle menu" aria-expanded="false">
@@ -1794,9 +1932,9 @@
     <div>
       <div class="hero__tag">Distribution is the Key</div>
       <h1>We help you <em>sell better</em> and market more effectively.</h1>
-      <p class="hero__sub">We work with <span class="rotate-word"><span class="rotate-sizer">scaling businesses</span><span>SMEs</span><span>startups</span><span>scaling businesses</span></span> across India and the world to improve sales and marketing results using <span class="highlight">proven strategies and modern AI tools.</span></p>
+      <p class="hero__sub">We work with <span class="rotate-word"><span class="rotate-sizer">scaling businesses</span><span>SMEs</span><span>startups</span><span>scaling businesses</span></span> across North America, Europe, the Middle East and Asia to improve sales and marketing results using <span class="highlight">proven strategies and modern AI tools.</span></p>
       <div class="hero__actions">
-        <a href="#contact" class="btn btn--fill">Schedule a callback</a>
+        <a href="#contact" class="btn btn--fill">Get a proposal</a>
         <a href="#services" class="btn btn--outline">Explore services</a>
       </div>
     </div>
@@ -1813,6 +1951,22 @@
         <p class="hero__panel-note">Our mission: help businesses worldwide grow faster by combining sales expertise with smart AI tools &mdash; real, measurable revenue growth.</p>
       </div>
     </aside>
+  </div>
+</section>
+
+<!-- Markets strip -->
+<section class="markets">
+  <div class="container markets__inner">
+    <span class="markets__label">Working across</span>
+    <ul class="markets__list">
+      <li>USA</li>
+      <li>UK</li>
+      <li>UAE</li>
+      <li>Singapore</li>
+      <li>Australia</li>
+      <li>India</li>
+    </ul>
+    <span class="markets__note">4 continents &middot; 15+ industries &middot; one team</span>
   </div>
 </section>
 
@@ -1864,7 +2018,7 @@
       <div class="s-card">
         <div class="s-card__num">04</div>
         <h3>GEO, AEO &amp; SEO Services</h3>
-        <p>Get found in ChatGPT, Perplexity, Google's featured answers, and organic search. GEO, AEO, and SEO &mdash; all three engines, one strategy. <a href="geo-services.html">Learn more &rarr;</a></p>
+        <p>Get found in ChatGPT, Perplexity, Google's featured answers, and organic search. GEO, AEO, and SEO &mdash; all three engines, one strategy. <a href="geo-services.html">Learn more <svg class="icon-arrow" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h11m-4.5-4.5L13 8l-4.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></p>
       </div>
     </div>
   </div>
@@ -1932,112 +2086,112 @@
     <div class="section-tag">Select clients</div>
     <h2 class="section-title">Trusted by industry leaders</h2>
     <div class="clients__grid reveal">
-      <div class="c-card">
+      <div class="c-card" data-initials="FI">
         <span class="c-card__name">Furdo Interiors</span>
         <span class="c-card__sector">Interior Design</span>
       </div>
-      <div class="c-card">
+      <div class="c-card" data-initials="VH">
         <span class="c-card__name">Vherbal</span>
         <span class="c-card__sector">Health &amp; Wellness</span>
       </div>
-      <div class="c-card">
+      <div class="c-card" data-initials="KK">
         <span class="c-card__name">Kiwi Kids</span>
         <span class="c-card__sector">Education</span>
       </div>
-      <div class="c-card">
+      <div class="c-card" data-initials="SK">
         <span class="c-card__name">Spicerack Kitchens</span>
         <span class="c-card__sector">Interior Design</span>
       </div>
-      <div class="c-card">
+      <div class="c-card" data-initials="NB">
         <span class="c-card__name">NeuroBloom</span>
         <span class="c-card__sector">Healthcare Tech</span>
       </div>
-      <div class="c-card">
+      <div class="c-card" data-initials="CA">
         <span class="c-card__name">Chill Act</span>
         <span class="c-card__sector">Kids Special Needs Education</span>
       </div>
-      <div class="c-card">
+      <div class="c-card" data-initials="PS">
         <span class="c-card__name">PaySpaze</span>
         <span class="c-card__sector">Fintech</span>
       </div>
-      <div class="c-card">
+      <div class="c-card" data-initials="TD">
         <span class="c-card__name">Techon Dater Systems</span>
         <span class="c-card__sector">Industrial Tech</span>
       </div>
-      <div class="c-card">
+      <div class="c-card" data-initials="AD">
         <span class="c-card__name">Anthara Designs</span>
         <span class="c-card__sector">Interior Design</span>
       </div>
-      <div class="c-card">
+      <div class="c-card" data-initials="HS">
         <span class="c-card__name">House of Singhal</span>
         <span class="c-card__sector">Interior Design</span>
       </div>
-      <div class="c-card">
+      <div class="c-card" data-initials="SB">
         <span class="c-card__name">SuperBolter</span>
         <span class="c-card__sector">Interior Tech</span>
       </div>
-      <div class="c-card">
+      <div class="c-card" data-initials="PS">
         <span class="c-card__name">Paradise Stile Studio</span>
         <span class="c-card__sector">Interior Solutions</span>
       </div>
-      <div class="c-card">
+      <div class="c-card" data-initials="UT">
         <span class="c-card__name">Urban Tusker</span>
         <span class="c-card__sector">Interior Design</span>
       </div>
-      <div class="c-card">
+      <div class="c-card" data-initials="GU">
         <span class="c-card__name">Gunmala.com</span>
         <span class="c-card__sector">E-commerce</span>
       </div>
-      <div class="c-card">
+      <div class="c-card" data-initials="MT">
         <span class="c-card__name">Mayagreen Tech</span>
         <span class="c-card__sector">CleanTech</span>
       </div>
-      <div class="c-card">
+      <div class="c-card" data-initials="MK">
         <span class="c-card__name">Maa Krupa Heritage Works</span>
         <span class="c-card__sector">Heritage &amp; Crafts</span>
       </div>
-      <div class="c-card">
+      <div class="c-card" data-initials="AS">
         <span class="c-card__name">Akash Solar Lights</span>
         <span class="c-card__sector">Renewable Energy</span>
       </div>
-      <div class="c-card">
+      <div class="c-card" data-initials="KS">
         <span class="c-card__name">Khokhawat Solar Energy</span>
         <span class="c-card__sector">Renewable Energy</span>
       </div>
-      <div class="c-card">
+      <div class="c-card" data-initials="KR">
         <span class="c-card__name">Knee Resolve</span>
         <span class="c-card__sector">Healthcare AI</span>
       </div>
-      <div class="c-card">
+      <div class="c-card" data-initials="AI">
         <span class="c-card__name">Anexee Info</span>
         <span class="c-card__sector">Industrial Tech</span>
       </div>
-      <div class="c-card">
+      <div class="c-card" data-initials="SW">
         <span class="c-card__name">Studio Wight</span>
         <span class="c-card__sector">Interior Design</span>
       </div>
-      <div class="c-card">
+      <div class="c-card" data-initials="AX">
         <span class="c-card__name">AffilX India Consultancy</span>
         <span class="c-card__sector">Finance &amp; Compliance</span>
       </div>
-      <div class="c-card">
+      <div class="c-card" data-initials="SA">
         <span class="c-card__name">Saral AI</span>
         <span class="c-card__sector">HR &amp; Recruitment Tech</span>
       </div>
-      <div class="c-card">
+      <div class="c-card" data-initials="SS">
         <span class="c-card__name">Siya's Kitchen</span>
         <span class="c-card__sector">Food &amp; Beverage</span>
       </div>
-      <div class="c-card">
+      <div class="c-card" data-initials="FI">
         <span class="c-card__name">FileITRNow.in</span>
         <span class="c-card__sector">Fintech</span>
       </div>
-      <div class="c-card">
+      <div class="c-card" data-initials="KD">
         <span class="c-card__name">Kalpa Design Studio</span>
         <span class="c-card__sector">Interior Design</span>
       </div>
     </div>
-    <p class="clients__note">And many more across 15+ industries</p>
+    <p class="clients__note">And many more across 15+ industries and multiple markets</p>
   </div>
 </section>
 
@@ -2050,74 +2204,144 @@
       <div class="testimonials__track">
       <div class="t-quote">
         <p>"Incredible experience with Distk.in, Mayank and team! They built our website in record time. Their speed, responsiveness, and attention to detail are unmatched. Highly recommend them if you want top-tier professional work delivered fast."</p>
-        <span class="t-quote__author">Hardik Rana</span>
-        <span class="t-quote__company"> / Founder, Siya's Kitchen</span>
+        <div class="t-quote__meta">
+          <span class="t-quote__avatar" aria-hidden="true">HR</span>
+          <span class="t-quote__info">
+            <span class="t-quote__author">Hardik Rana</span>
+            <span class="t-quote__company">Founder, Siya's Kitchen</span>
+          </span>
+        </div>
       </div>
       <div class="t-quote">
         <p>"We worked with DistK during our early marketing and content setup, and the experience has been genuinely impactful for Saral AI. What stood out was their deep understanding of Google's latest updates, evolving internet policies, and compliance considerations across global markets. They don't follow generic playbooks &mdash; they adapt strategies and content to what's working today. That approach helped us build our initial inbound momentum and a strong foundation for organic growth. Beyond the work itself, collaborating with Mayank Bhai has been an absolute pleasure: sharp, proactive, and deeply invested in outcomes. If you're an early-stage startup looking to build sustainable inbound growth, I'd definitely recommend giving DistK a try."</p>
-        <span class="t-quote__author">Renish Narula</span>
-        <span class="t-quote__company"> / Founder, Saral Hire AI</span>
+        <div class="t-quote__meta">
+          <span class="t-quote__avatar" aria-hidden="true">RN</span>
+          <span class="t-quote__info">
+            <span class="t-quote__author">Renish Narula</span>
+            <span class="t-quote__company">Founder, Saral Hire AI</span>
+          </span>
+        </div>
       </div>
       <div class="t-quote">
         <p>"Mayank and the team understood our requirements well and helped us launch our website smoothly. They are also supporting us with marketing, SEO, and overall brand building. Happy with how things are shaping up and the clarity in their approach."</p>
-        <span class="t-quote__author">Surabhi Gowda</span>
-        <span class="t-quote__company"> / Founder, Spacolite Designs</span>
+        <div class="t-quote__meta">
+          <span class="t-quote__avatar" aria-hidden="true">SG</span>
+          <span class="t-quote__info">
+            <span class="t-quote__author">Surabhi Gowda</span>
+            <span class="t-quote__company">Founder, Spacolite Designs</span>
+          </span>
+        </div>
       </div>
       <div class="t-quote">
         <p>"Mayank and his team are handling our branding, website, and marketing campaigns. Great experience so far and looking forward to growing together. Highly recommend."</p>
-        <span class="t-quote__author">Akash Jain</span>
-        <span class="t-quote__company"> / Founder, Akash Solar Lights</span>
+        <div class="t-quote__meta">
+          <span class="t-quote__avatar" aria-hidden="true">AJ</span>
+          <span class="t-quote__info">
+            <span class="t-quote__author">Akash Jain</span>
+            <span class="t-quote__company">Founder, Akash Solar Lights</span>
+          </span>
+        </div>
       </div>
       <div class="t-quote">
         <p>"Distk handled our website development professionally. They delivered what was promised without unnecessary delays. Based on this experience, we're moving forward with them for our complete marketing setup."</p>
-        <span class="t-quote__author">Karthik Shetty</span>
-        <span class="t-quote__company"> / Founder, Anthara Designs</span>
+        <div class="t-quote__meta">
+          <span class="t-quote__avatar" aria-hidden="true">KS</span>
+          <span class="t-quote__info">
+            <span class="t-quote__author">Karthik Shetty</span>
+            <span class="t-quote__company">Founder, Anthara Designs</span>
+          </span>
+        </div>
       </div>
       <div class="t-quote">
         <p>"Distk helped us establish our digital presence from scratch. They built our website, set up marketing automation, and created a proper lead generation system. I love their end to end approach."</p>
-        <span class="t-quote__author">Nishant Khokhawat</span>
-        <span class="t-quote__company"> / Founder, Khokhawat Solar Energy</span>
+        <div class="t-quote__meta">
+          <span class="t-quote__avatar" aria-hidden="true">NK</span>
+          <span class="t-quote__info">
+            <span class="t-quote__author">Nishant Khokhawat</span>
+            <span class="t-quote__company">Founder, Khokhawat Solar Energy</span>
+          </span>
+        </div>
       </div>
       <div class="t-quote">
         <p>"Distk helped us with our complete digital transformation - content creation, digital marketing, lead generation, increasing footfall, automation, and improving internal processes. They made sure we were ready both process-wise and tech-wise before implementing solutions. Highly recommend."</p>
-        <span class="t-quote__author">Giftson J.</span>
-        <span class="t-quote__company"> / Marketing &amp; Creative Manager, Paradise Stile Studio</span>
+        <div class="t-quote__meta">
+          <span class="t-quote__avatar" aria-hidden="true">GJ</span>
+          <span class="t-quote__info">
+            <span class="t-quote__author">Giftson J.</span>
+            <span class="t-quote__company">Marketing &amp; Creative Manager, Paradise Stile Studio</span>
+          </span>
+        </div>
       </div>
       <!-- Duplicate set for seamless infinite scroll -->
       <div class="t-quote" aria-hidden="true">
         <p>"Incredible experience with Distk.in, Mayank and team! They built our website in record time. Their speed, responsiveness, and attention to detail are unmatched. Highly recommend them if you want top-tier professional work delivered fast."</p>
-        <span class="t-quote__author">Hardik Rana</span>
-        <span class="t-quote__company"> / Founder, Siya's Kitchen</span>
+        <div class="t-quote__meta">
+          <span class="t-quote__avatar" aria-hidden="true">HR</span>
+          <span class="t-quote__info">
+            <span class="t-quote__author">Hardik Rana</span>
+            <span class="t-quote__company">Founder, Siya's Kitchen</span>
+          </span>
+        </div>
       </div>
       <div class="t-quote" aria-hidden="true">
         <p>"We worked with DistK during our early marketing and content setup, and the experience has been genuinely impactful for Saral AI. What stood out was their deep understanding of Google's latest updates, evolving internet policies, and compliance considerations across global markets. They don't follow generic playbooks &mdash; they adapt strategies and content to what's working today. That approach helped us build our initial inbound momentum and a strong foundation for organic growth. Beyond the work itself, collaborating with Mayank Bhai has been an absolute pleasure: sharp, proactive, and deeply invested in outcomes. If you're an early-stage startup looking to build sustainable inbound growth, I'd definitely recommend giving DistK a try."</p>
-        <span class="t-quote__author">Renish Narula</span>
-        <span class="t-quote__company"> / Founder, Saral Hire AI</span>
+        <div class="t-quote__meta">
+          <span class="t-quote__avatar" aria-hidden="true">RN</span>
+          <span class="t-quote__info">
+            <span class="t-quote__author">Renish Narula</span>
+            <span class="t-quote__company">Founder, Saral Hire AI</span>
+          </span>
+        </div>
       </div>
       <div class="t-quote" aria-hidden="true">
         <p>"Mayank and the team understood our requirements well and helped us launch our website smoothly. They are also supporting us with marketing, SEO, and overall brand building. Happy with how things are shaping up and the clarity in their approach."</p>
-        <span class="t-quote__author">Surabhi Gowda</span>
-        <span class="t-quote__company"> / Founder, Spacolite Designs</span>
+        <div class="t-quote__meta">
+          <span class="t-quote__avatar" aria-hidden="true">SG</span>
+          <span class="t-quote__info">
+            <span class="t-quote__author">Surabhi Gowda</span>
+            <span class="t-quote__company">Founder, Spacolite Designs</span>
+          </span>
+        </div>
       </div>
       <div class="t-quote" aria-hidden="true">
         <p>"Mayank and his team are handling our branding, website, and marketing campaigns. Great experience so far and looking forward to growing together. Highly recommend."</p>
-        <span class="t-quote__author">Akash Jain</span>
-        <span class="t-quote__company"> / Founder, Akash Solar Lights</span>
+        <div class="t-quote__meta">
+          <span class="t-quote__avatar" aria-hidden="true">AJ</span>
+          <span class="t-quote__info">
+            <span class="t-quote__author">Akash Jain</span>
+            <span class="t-quote__company">Founder, Akash Solar Lights</span>
+          </span>
+        </div>
       </div>
       <div class="t-quote" aria-hidden="true">
         <p>"Distk handled our website development professionally. They delivered what was promised without unnecessary delays. Based on this experience, we're moving forward with them for our complete marketing setup."</p>
-        <span class="t-quote__author">Karthik Shetty</span>
-        <span class="t-quote__company"> / Founder, Anthara Designs</span>
+        <div class="t-quote__meta">
+          <span class="t-quote__avatar" aria-hidden="true">KS</span>
+          <span class="t-quote__info">
+            <span class="t-quote__author">Karthik Shetty</span>
+            <span class="t-quote__company">Founder, Anthara Designs</span>
+          </span>
+        </div>
       </div>
       <div class="t-quote" aria-hidden="true">
         <p>"Distk helped us establish our digital presence from scratch. They built our website, set up marketing automation, and created a proper lead generation system. I love their end to end approach."</p>
-        <span class="t-quote__author">Nishant Khokhawat</span>
-        <span class="t-quote__company"> / Founder, Khokhawat Solar Energy</span>
+        <div class="t-quote__meta">
+          <span class="t-quote__avatar" aria-hidden="true">NK</span>
+          <span class="t-quote__info">
+            <span class="t-quote__author">Nishant Khokhawat</span>
+            <span class="t-quote__company">Founder, Khokhawat Solar Energy</span>
+          </span>
+        </div>
       </div>
       <div class="t-quote" aria-hidden="true">
         <p>"Distk helped us with our complete digital transformation - content creation, digital marketing, lead generation, increasing footfall, automation, and improving internal processes. They made sure we were ready both process-wise and tech-wise before implementing solutions. Highly recommend."</p>
-        <span class="t-quote__author">Giftson J.</span>
-        <span class="t-quote__company"> / Marketing &amp; Creative Manager, Paradise Stile Studio</span>
+        <div class="t-quote__meta">
+          <span class="t-quote__avatar" aria-hidden="true">GJ</span>
+          <span class="t-quote__info">
+            <span class="t-quote__author">Giftson J.</span>
+            <span class="t-quote__company">Marketing &amp; Creative Manager, Paradise Stile Studio</span>
+          </span>
+        </div>
       </div>
       </div>
     </div>
@@ -2137,7 +2361,7 @@
           <div><strong>84</strong><span>Coming Soon</span></div>
           <div><strong>2026</strong><span>Target Year</span></div>
         </div>
-        <a href="https://www.instagram.com/distk.in/" target="_blank" rel="noopener noreferrer" class="btn btn--fill">Follow on Instagram &rarr;</a>
+        <a href="https://www.instagram.com/distk.in/" target="_blank" rel="noopener noreferrer" class="btn btn--fill">Follow on Instagram <svg class="icon-arrow" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h11m-4.5-4.5L13 8l-4.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         <p class="brands-social">Follow <strong>@distk.in</strong> for daily updates</p>
       </div>
     </div>
@@ -2185,7 +2409,7 @@
           <h3>How to Use Google Pomelli for AI Marketing</h3>
           <p>Google's new AI marketing tool is here. A complete guide to using Pomelli in your workflow.</p>
         </a>
-        <a href="blog/" class="insight-card__link">Read all 144+ articles &rarr;</a>
+        <a href="blog/" class="insight-card__link">Read all 144+ articles <svg class="icon-arrow" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h11m-4.5-4.5L13 8l-4.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
     </div>
   </div>
@@ -2257,7 +2481,7 @@
         </div>
         <div class="form-row">
           <label for="phone">Phone number</label>
-          <input type="tel" id="phone" name="phone" placeholder="+91 99999 99999" />
+          <input type="tel" id="phone" name="phone" placeholder="Include country code, e.g. +1, +44, +91" />
         </div>
         <div class="form-row">
           <label for="company">Company</label>
@@ -2277,7 +2501,7 @@
           <textarea id="message" name="message" rows="4" required placeholder="Share your goals and current challenges"></textarea>
         </div>
         <button type="submit" class="btn">Send message</button>
-        <p class="form-note">We will get back within 48 hours. By submitting, you agree to receive communications from Distk.</p>
+        <p class="form-note">We reply within 48 hours, wherever you are &mdash; our team works across IST, GMT and EST. By submitting, you agree to receive communications from Distk.</p>
       </form>
     </div>
   </div>
@@ -2298,17 +2522,17 @@
         <div>
           <h4>Visit</h4>
           <ul>
-            <li><a href="marketing-agency-bengaluru.html">Bengaluru</a></li>
-            <li><a href="marketing-agency-ahmedabad.html">Ahmedabad</a></li>
-            <li><a href="marketing-agency-udaipur.html">Udaipur</a></li>
-            <li><a href="marketing-agency-india.html">India</a></li>
             <li><a href="marketing-agency-usa.html">USA</a></li>
             <li><a href="marketing-agency-uk.html">UK</a></li>
+            <li><a href="marketing-agency-europe.html">Europe</a></li>
             <li><a href="marketing-agency-dubai.html">Dubai</a></li>
             <li><a href="marketing-agency-singapore.html">Singapore</a></li>
             <li><a href="marketing-agency-australia.html">Australia</a></li>
             <li><a href="marketing-agency-canada.html">Canada</a></li>
-            <li><a href="marketing-agency-europe.html">Europe</a></li>
+            <li><a href="marketing-agency-india.html">India</a></li>
+            <li><a href="marketing-agency-bengaluru.html">Bengaluru</a></li>
+            <li><a href="marketing-agency-ahmedabad.html">Ahmedabad</a></li>
+            <li><a href="marketing-agency-udaipur.html">Udaipur</a></li>
             <li><a href="global-marketing-agency.html">Global</a></li>
             <li><a href="remote-marketing-agency.html">Remote</a></li>
           </ul>
@@ -2318,10 +2542,15 @@
           <ul>
             <li><a href="mailto:connect@distk.in">connect@distk.in</a></li>
             <li><a href="https://www.linkedin.com/company/distk-technologies" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="https://www.instagram.com/distk.in/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
             <li><a href="privacy.html">Privacy Policy</a></li>
             <li><a href="terms.html">Terms &amp; Conditions</a></li>
             <li><a href="shipping.html">Shipping Policy</a></li>
             <li><a href="refund.html">Cancellation &amp; Refunds</a></li>
+            <li class="foot__social">
+              <a href="https://www.linkedin.com/company/distk-technologies" target="_blank" rel="noopener noreferrer" aria-label="Distk on LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>
+              <a href="https://www.instagram.com/distk.in/" target="_blank" rel="noopener noreferrer" aria-label="Distk on Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07zM12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63a5.88 5.88 0 0 0-2.13 1.38A5.88 5.88 0 0 0 .63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.8.72 1.47 1.38 2.13a5.88 5.88 0 0 0 2.13 1.38c.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.88 5.88 0 0 0 2.13-1.38 5.88 5.88 0 0 0 1.38-2.13c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.88 5.88 0 0 0-1.38-2.13A5.88 5.88 0 0 0 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm7.85-10.4a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"/></svg></a>
+            </li>
           </ul>
         </div>
         <div>
@@ -2342,14 +2571,15 @@
             </p>
             <label class="sr-only" for="footer-email">Email address</label>
             <input type="email" id="footer-email" name="email" placeholder="you@company.com" required />
-            <button type="submit" aria-label="Submit email">&rarr;</button>
+            <button type="submit" aria-label="Submit email"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h11m-4.5-4.5L13 8l-4.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           </form>
         </div>
       </div>
     </div>
+    <div class="foot__locations">Headquartered in Bengaluru &middot; Working with clients worldwide &middot; Remote-first</div>
     <div class="foot__bottom">
       <span>&copy; <span id="current-year"></span> Distk. All rights reserved.</span>
-      <a href="https://g.page/r/CanUwgo2LbkDEBI/review" target="_blank" rel="noopener">Read reviews &rarr;</a>
+      <a href="https://g.page/r/CanUwgo2LbkDEBI/review" target="_blank" rel="noopener">Read reviews <svg class="icon-arrow" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h11m-4.5-4.5L13 8l-4.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </div>
   </div>
 </footer>
@@ -2414,16 +2644,16 @@ document.getElementById('current-year').textContent = new Date().getFullYear();
 .va-pop.is-on{transform:translate(0,-50%)}
 .va-pop__close{position:absolute;top:0.45rem;right:0.55rem;background:none;border:none;color:rgba(255,255,255,0.45);font-size:1.2rem;line-height:1;cursor:pointer;padding:0.4rem;transition:color .2s}
 .va-pop__close:hover{color:#fafafa}
-.va-pop__tag{font-family:'Space Mono',monospace;font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:#ff4d2e;display:flex;align-items:center;gap:0.45rem;margin-bottom:0.55rem}
-.va-pop__tag::before{content:'';width:7px;height:7px;border-radius:50%;background:#1fbf75;animation:va-blink 1.6s steps(1) infinite}
+.va-pop__tag{font-family:'Space Mono',monospace;font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:#e63312;display:flex;align-items:center;gap:0.45rem;margin-bottom:0.55rem}
+.va-pop__tag::before{content:'';width:7px;height:7px;border-radius:50%;background:#22c55e;animation:va-blink 1.6s steps(1) infinite}
 @keyframes va-blink{50%{opacity:0.25}}
 .va-pop h4{font-family:'Outfit',sans-serif;font-size:1rem;font-weight:700;line-height:1.3;letter-spacing:-0.01em;margin-bottom:0.35rem;padding-right:0.8rem}
 .va-pop p{font-size:0.8rem;color:rgba(255,255,255,0.65);line-height:1.55;margin-bottom:0.9rem}
 .va-pop__cta{display:block;text-align:center;font-family:'Space Mono',monospace;font-size:0.66rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;background:#e63312;color:#fff;text-decoration:none;padding:0.8rem;transition:background .25s}
-.va-pop__cta:hover{background:#ff4d2e}
+.va-pop__cta:hover{background:#c42a0e}
 .va-tab{position:fixed;right:0;top:50%;z-index:98;transform:translate(105%,-50%);background:#e63312;color:#fff;border:none;cursor:pointer;font-family:'Space Mono',monospace;font-size:0.6rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;writing-mode:vertical-rl;padding:1rem 0.55rem;box-shadow:-8px 8px 24px rgba(0,0,0,0.25);transition:transform .45s cubic-bezier(.2,.9,.3,1),background .25s}
 .va-tab.is-on{transform:translate(0,-50%)}
-.va-tab:hover{background:#ff4d2e}
+.va-tab:hover{background:#c42a0e}
 @media (prefers-reduced-motion:reduce){.va-pop,.va-tab{transition:none}}
 </style>
 <div class="va-pop" id="va-pop" role="dialog" aria-label="Free AI visibility audit offer" hidden>
@@ -2431,7 +2661,7 @@ document.getElementById('current-year').textContent = new Date().getFullYear();
   <div class="va-pop__tag">Free &bull; 48-Hour Turnaround</div>
   <h4>What does AI say when buyers ask about your brand?</h4>
   <p>Get a free audit of your visibility across ChatGPT, Claude, Gemini, Perplexity &amp; Google.</p>
-  <a href="distk-visibility.html" class="va-pop__cta" id="va-pop-cta">Get My Free AI Visibility Audit &rarr;</a>
+  <a href="distk-visibility.html" class="va-pop__cta" id="va-pop-cta">Get My Free AI Visibility Audit <svg class="icon-arrow" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h11m-4.5-4.5L13 8l-4.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
 </div>
 <button class="va-tab" id="va-tab" hidden aria-label="Open free AI visibility audit offer">Free AI Audit</button>
 <script>
@@ -2474,11 +2704,11 @@ document.getElementById('current-year').textContent = new Date().getFullYear();
     requestAnimationFrame(function(){ requestAnimationFrame(function(){ tab.classList.add('is-on'); }); });
     autoShown = true;
   } else {
-    t = setTimeout(autoShow, 6000);
+    t = setTimeout(autoShow, 30000);
     var onScroll = function(){
       var doc = document.documentElement;
       var pct = window.scrollY / (doc.scrollHeight - window.innerHeight);
-      if(pct > 0.15){ autoShow(); window.removeEventListener('scroll', onScroll); }
+      if(pct > 0.6){ autoShow(); window.removeEventListener('scroll', onScroll); }
     };
     window.addEventListener('scroll', onScroll, {passive:true});
   }
