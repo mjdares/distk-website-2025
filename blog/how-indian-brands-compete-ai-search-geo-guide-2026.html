@@ -386,10 +386,11 @@
   var teaser = document.getElementById('owl-teaser');
   var tag = document.getElementById('owl-tag');
   var owl = document.getElementById('owl-btn');
+  var force = /[?&]owl=1/.test(location.search);
   var snoozed = false;
   try {
     var ts = localStorage.getItem(KEY);
-    snoozed = ts && (Date.now() - Number(ts)) < SNOOZE_MS;
+    snoozed = !force && ts && (Date.now() - Number(ts)) < SNOOZE_MS;
   } catch(e){}
 
   function hideTeaser(){
@@ -429,8 +430,8 @@
     if (window.gtag) gtag('event','owl_teaser_shown');
   }
   if (!snoozed) {
-    teaserT = setTimeout(showTeaser, 4000);
-    t = setTimeout(autoShow, 30000);
+    teaserT = setTimeout(showTeaser, force ? 800 : 4000);
+    t = setTimeout(autoShow, force ? 12000 : 30000);
     var onScroll = function(){
       var doc = document.documentElement;
       var pct = window.scrollY / (doc.scrollHeight - window.innerHeight);
