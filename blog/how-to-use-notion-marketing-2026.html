@@ -919,16 +919,17 @@
     if (window.gtag) gtag('event','owl_cta_shown');
   }
   function showTeaser(){
-    if (teaserShown || autoShown || bubble.classList.contains('is-on')) return;
+    if (teaserShown || !bubble.hidden) return;
     teaserShown = true;
     clearTimeout(teaserT);
     teaser.hidden = false;
     requestAnimationFrame(function(){ requestAnimationFrame(function(){ teaser.classList.add('is-on'); }); });
     if (window.gtag) gtag('event','owl_teaser_shown');
   }
+  /* teaser always greets, immediately; only the main popup respects the snooze */
+  teaserT = setTimeout(showTeaser, 600);
   if (!snoozed) {
-    teaserT = setTimeout(showTeaser, force ? 800 : 4000);
-    t = setTimeout(autoShow, force ? 12000 : 30000);
+    t = setTimeout(autoShow, force ? 8000 : 30000);
     var onScroll = function(){
       var doc = document.documentElement;
       var pct = window.scrollY / (doc.scrollHeight - window.innerHeight);
