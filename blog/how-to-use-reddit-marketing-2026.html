@@ -586,6 +586,7 @@
   }
 
   var autoShown = snoozed;
+  var teaserShown = false;
   var t, teaserT;
   function autoShow(){
     if (autoShown) return;
@@ -594,18 +595,31 @@
     setOpen(true);
     if (window.gtag) gtag('event','owl_cta_shown');
   }
+  function showTeaser(){
+    if (teaserShown || autoShown || bubble.classList.contains('is-on')) return;
+    teaserShown = true;
+    clearTimeout(teaserT);
+    teaser.hidden = false;
+    requestAnimationFrame(function(){ requestAnimationFrame(function(){ teaser.classList.add('is-on'); }); });
+    if (window.gtag) gtag('event','owl_teaser_shown');
+  }
   if (!snoozed) {
-    teaserT = setTimeout(function(){
-      if (autoShown || bubble.classList.contains('is-on')) return;
-      teaser.hidden = false;
-      requestAnimationFrame(function(){ requestAnimationFrame(function(){ teaser.classList.add('is-on'); }); });
-      if (window.gtag) gtag('event','owl_teaser_shown');
-    }, 6000);
+    teaserT = setTimeout(showTeaser, 4000);
     t = setTimeout(autoShow, 30000);
     var onScroll = function(){
       var doc = document.documentElement;
       var pct = window.scrollY / (doc.scrollHeight - window.innerHeight);
-      if (pct > 0.25){ autoShow(); window.removeEventListener('scroll', onScroll); }
+      if (pct > 0.25){
+        /* teaser gets its moment first; the main bubble follows 8s later */
+        if (!teaserShown && !autoShown){
+          showTeaser();
+          clearTimeout(t);
+          t = setTimeout(autoShow, 8000);
+        } else {
+          autoShow();
+        }
+        window.removeEventListener('scroll', onScroll);
+      }
     };
     window.addEventListener('scroll', onScroll, {passive:true});
   }
