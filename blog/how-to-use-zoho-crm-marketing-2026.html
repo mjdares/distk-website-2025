@@ -577,8 +577,8 @@ Tables:
 @keyframes owl-bob{0%,100%{translate:0 0}50%{translate:0 -4px}}
 .owl-cta__owl .owl-lids{transform-origin:32px 27px;transform:scaleY(0);animation:owl-blink 6s steps(1) infinite}
 @keyframes owl-blink{0%,91%{transform:scaleY(0)}92%,96%{transform:scaleY(1)}97%,100%{transform:scaleY(0)}}
-.owl-bubble{pointer-events:auto;position:relative;max-width:260px;background:var(--paper,#fafafa);border:1.5px solid var(--ink,#0a0a0a);border-radius:8px 8px 2px 8px;padding:0.9rem 1rem 1rem;box-shadow:0 10px 30px rgba(0,0,0,0.14);opacity:0;transform:translateY(12px) scale(0.96);transform-origin:bottom right;transition:opacity .4s,transform .4s cubic-bezier(.2,.9,.3,1);visibility:hidden;margin-bottom:10px}
-.owl-bubble.is-on{opacity:1;transform:translateY(0) scale(1);visibility:visible}
+.owl-bubble{pointer-events:auto;position:relative;max-width:260px;background:var(--paper,#fafafa);border:1.5px solid var(--ink,#0a0a0a);border-radius:8px 8px 2px 8px;padding:0.9rem 1rem 1rem;box-shadow:0 10px 30px rgba(0,0,0,0.14);opacity:0;transform:translateY(12px) scale(0.96);transform-origin:bottom right;transition:opacity .4s,transform .4s cubic-bezier(.2,.9,.3,1);margin-bottom:28px}
+.owl-bubble.is-on{opacity:1;transform:translateY(0) scale(1)}
 .owl-bubble::after{content:'';position:absolute;right:-1.5px;bottom:-7px;width:12px;height:12px;background:var(--paper,#fafafa);border-right:1.5px solid var(--ink,#0a0a0a);border-bottom:1.5px solid var(--ink,#0a0a0a);transform:skewX(-38deg)}
 .owl-bubble__tag{font-family:'Space Mono',monospace;font-size:0.58rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#e63312;margin-bottom:0.4rem}
 .owl-bubble__text{font-family:'Outfit',sans-serif;font-size:0.86rem;line-height:1.5;color:var(--ink,#0a0a0a);margin:0 0 0.75rem;padding-right:0.9rem}
@@ -586,7 +586,7 @@ Tables:
 .owl-bubble__btn:hover{background:#e63312}
 .owl-bubble__close{position:absolute;top:0.3rem;right:0.4rem;background:none;border:none;color:var(--mid,#6b6b6b);font-size:1rem;line-height:1;cursor:pointer;padding:0.25rem;transition:color .2s}
 .owl-bubble__close:hover{color:var(--ink,#0a0a0a)}
-.owl-teaser{pointer-events:auto;position:relative;max-width:200px;background:var(--paper,#fafafa);border:1.5px solid var(--ink,#0a0a0a);border-radius:8px 8px 2px 8px;padding:0.6rem 0.8rem;box-shadow:0 8px 22px rgba(0,0,0,0.12);font-family:'Outfit',sans-serif;font-size:0.8rem;line-height:1.45;color:var(--ink,#0a0a0a);cursor:pointer;margin-bottom:10px;opacity:0;transform:translateY(10px);transition:opacity .4s,transform .4s cubic-bezier(.2,.9,.3,1)}
+.owl-teaser{pointer-events:auto;position:relative;max-width:200px;background:var(--paper,#fafafa);border:1.5px solid var(--ink,#0a0a0a);border-radius:8px 8px 2px 8px;padding:0.6rem 0.8rem;box-shadow:0 8px 22px rgba(0,0,0,0.12);font-family:'Outfit',sans-serif;font-size:0.8rem;line-height:1.45;color:var(--ink,#0a0a0a);cursor:pointer;margin-bottom:34px;opacity:0;transform:translateY(10px);transition:opacity .4s,transform .4s cubic-bezier(.2,.9,.3,1)}
 .owl-teaser.is-on{opacity:1;transform:translateY(0)}
 .owl-teaser::after{content:'';position:absolute;right:-1.5px;bottom:-7px;width:12px;height:12px;background:var(--paper,#fafafa);border-right:1.5px solid var(--ink,#0a0a0a);border-bottom:1.5px solid var(--ink,#0a0a0a);transform:skewX(-38deg)}
 .owl-cta__owl.is-angry{animation:owl-shake .55s ease-in-out}
@@ -636,7 +636,7 @@ Tables:
       <path d="M39 59 l-2.5 3 M39 59 l0 3.4 M39 59 l2.5 3" stroke="#e63312" stroke-width="2" stroke-linecap="round"/>
     </svg>
   </button>
-  <div class="owl-bubble" id="owl-bubble" role="dialog" aria-label="Free marketing consultation offer">
+  <div class="owl-bubble" id="owl-bubble" role="dialog" aria-label="Free marketing consultation offer" hidden>
     <button class="owl-bubble__close" id="owl-close" aria-label="Dismiss">&times;</button>
     <div class="owl-bubble__tag" id="owl-tag">Free &bull; 30 Min</div>
     <p class="owl-bubble__text">Want a free 30-minute marketing consultation for your business?</p>
@@ -662,9 +662,17 @@ Tables:
     teaser.classList.remove('is-on');
     teaser.hidden = true;
   }
+  var hideT;
   function setOpen(open){
-    if (open) hideTeaser();
-    bubble.classList.toggle('is-on', open);
+    clearTimeout(hideT);
+    if (open){
+      hideTeaser();
+      bubble.hidden = false;
+      requestAnimationFrame(function(){ requestAnimationFrame(function(){ bubble.classList.add('is-on'); }); });
+    } else {
+      bubble.classList.remove('is-on');
+      hideT = setTimeout(function(){ bubble.hidden = true; }, 420);
+    }
     owl.setAttribute('aria-expanded', open ? 'true' : 'false');
   }
 
