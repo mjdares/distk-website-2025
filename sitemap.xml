@@ -2285,4 +2285,40 @@
         <changefreq>yearly</changefreq>
         <priority>0.4</priority>
     </url>
+
+    <!-- GPT-5.6 Blog Series (July 2026) -->
+    <url>
+        <loc>https://distk.in/blog/what-is-gpt-5-6-2026.html</loc>
+        <lastmod>2026-07-14</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <url>
+        <loc>https://distk.in/blog/gpt-5-6-for-developers-coding-2026.html</loc>
+        <lastmod>2026-07-14</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <url>
+        <loc>https://distk.in/blog/gpt-5-6-for-business-teams-2026.html</loc>
+        <lastmod>2026-07-14</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <url>
+        <loc>https://distk.in/blog/gpt-5-6-vs-claude-gemini-benchmarks-2026.html</loc>
+        <lastmod>2026-07-14</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <url>
+        <loc>https://distk.in/blog/gpt-5-6-safety-trusted-access-2026.html</loc>
+        <lastmod>2026-07-14</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
 </urlset>
