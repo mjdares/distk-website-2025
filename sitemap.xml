@@ -2321,4 +2321,19 @@
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
+
+    <!-- Industry Marketing Guides (July 2026) -->
+    <url>
+        <loc>https://distk.in/blog/pet-ecommerce-marketing-growth-guide-2026.html</loc>
+        <lastmod>2026-07-30</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <url>
+        <loc>https://distk.in/blog/pediatric-hospital-marketing-patient-growth-guide-2026.html</loc>
+        <lastmod>2026-07-30</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
 </urlset>
