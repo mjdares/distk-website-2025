@@ -308,7 +308,7 @@
 <!-- FILTER UI END -->
 <div class="blog-grid" id="blogGrid">
                         <!-- Blog Card #315 - Pediatric Hospital Marketing Guide -->
-                        <article class="blog-card" data-cluster="seo-aeo-geo">
+                        <article class="blog-card" data-cluster="general">
                             <span class="blog-card__category">Healthcare Marketing</span>
                             <h2 class="blog-card__title"><a href="pediatric-hospital-marketing-patient-growth-guide-2026.html">Pediatric Hospital Marketing in 2026: How Paediatricians Win Parent Search</a></h2>
                             <p class="blog-card__excerpt">Parents search symptoms before providers. How pediatric and neonatal practices in India earn that early visibility, why the doctor profile page decides conversion, and where NMC compliance draws the line.</p>
@@ -316,7 +316,7 @@
                         </article>
 
                         <!-- Blog Card #314 - Pet E-Commerce Marketing Guide -->
-                        <article class="blog-card" data-cluster="seo-aeo-geo">
+                        <article class="blog-card" data-cluster="d2c-ecommerce">
                             <span class="blog-card__category">E-Commerce Marketing</span>
                             <h2 class="blog-card__title"><a href="pet-ecommerce-marketing-growth-guide-2026.html">Pet E-Commerce Marketing in 2026: How Indian Pet Brands Rank and Sell</a></h2>
                             <p class="blog-card__excerpt">Where the search demand actually sits in India's pet category, which keyword lanes are winnable against the category leaders, and why product pages without extractable facts lose AI-assisted shoppers.</p>
@@ -348,7 +348,7 @@
                         </article>
 
                         <!-- Blog Card #310 - GPT-5.6 for Developers & Coding -->
-                        <article class="blog-card" data-cluster="ai-agents">
+                        <article class="blog-card" data-cluster="ai-models">
                             <span class="blog-card__category">AI Development</span>
                             <h2 class="blog-card__title"><a href="gpt-5-6-for-developers-coding-2026.html">GPT-5.6 for Developers 2026: Coding Agents & Tool Calling Guide</a></h2>
                             <p class="blog-card__excerpt">Coding Agent Index 80, Programmatic Tool Calling, max and ultra modes. What GPT-5.6 changes for coding agents, API economics and dev teams.</p>
@@ -4193,51 +4193,6 @@
   filterCount.textContent = total + ' of ' + total + ' articles';
 })();
 </script>
-<!-- FILTER JS START -->
-<script>
-(function(){
-  var LABELS = {"ai-models":"AI Models","ai-agents":"AI Agents","ai-video-creative":"AI Video & Creative","ai-dev":"AI Development","seo-aeo-geo":"SEO / AEO / GEO","whatsapp-messaging":"WhatsApp & Messaging","paid-ads":"Paid Media","d2c-ecommerce":"D2C & Ecommerce","b2b-saas-gtm":"B2B / SaaS / GTM","agency-ops":"Agency & Ops","sales-crm":"Sales & CRM","content-social":"Content & Social","analytics-martech":"Analytics & MarTech","industry":"Industry","general":"General"};
-  var grid = document.getElementById('blogGrid');
-  if(!grid) return;
-  var cards = Array.prototype.slice.call(grid.querySelectorAll('.blog-card'));
-  var chipsBox = document.getElementById('blogChips');
-  var search = document.getElementById('blogSearch');
-  var counts = {};
-  cards.forEach(function(c){var k=c.getAttribute('data-cluster')||'general';counts[k]=(counts[k]||0)+1;});
-  var active = 'all';
-  function mkChip(id,label,n){
-    var b=document.createElement('button');
-    b.textContent=label+(n?' ('+n+')':'');
-    b.setAttribute('data-id',id);
-    b.style.cssText="font-family:'Space Mono',monospace;font-size:0.65rem;letter-spacing:0.06em;text-transform:uppercase;padding:0.45rem 0.9rem;border:1px solid #e8e8e8;background:#fff;color:#6b6b6b;cursor:pointer;border-radius:999px";
-    b.onclick=function(){active=id;render();paint();};
-    return b;
-  }
-  function paint(){
-    Array.prototype.forEach.call(chipsBox.children,function(ch){
-      var on=ch.getAttribute('data-id')===active;
-      ch.style.background=on?'#e63312':'#fff';
-      ch.style.color=on?'#fff':'#6b6b6b';
-      ch.style.borderColor=on?'#e63312':'#e8e8e8';
-    });
-  }
-  chipsBox.appendChild(mkChip('all','All',cards.length));
-  Object.keys(counts).sort(function(a,b){return counts[b]-counts[a];}).forEach(function(k){
-    chipsBox.appendChild(mkChip(k,LABELS[k]||k,counts[k]));
-  });
-  function render(){
-    var q=(search.value||'').toLowerCase().trim();
-    cards.forEach(function(c){
-      var okCat=active==='all'||c.getAttribute('data-cluster')===active;
-      var okQ=!q||c.textContent.toLowerCase().indexOf(q)>-1;
-      c.style.display=(okCat&&okQ)?'':'none';
-    });
-  }
-  search.addEventListener('input',render);
-  paint();
-})();
-</script>
-<!-- FILTER JS END -->
 <!-- Owl consultation mascot -->
 <style>
 .owl-cta{position:fixed;right:1.1rem;bottom:1.1rem;z-index:97;display:flex;flex-direction:row-reverse;align-items:flex-end;gap:0.6rem;pointer-events:none}
@@ -4423,5 +4378,50 @@
 })();
 </script>
 
+<!-- FILTER JS START -->
+<script>
+(function(){
+  var LABELS = {"ai-models":"AI Models","ai-agents":"AI Agents","ai-video-creative":"AI Video & Creative","ai-dev":"AI Development","seo-aeo-geo":"SEO / AEO / GEO","whatsapp-messaging":"WhatsApp & Messaging","paid-ads":"Paid Media","d2c-ecommerce":"D2C & Ecommerce","b2b-saas-gtm":"B2B / SaaS / GTM","agency-ops":"Agency & Ops","sales-crm":"Sales & CRM","content-social":"Content & Social","analytics-martech":"Analytics & MarTech","industry":"Industry","general":"General"};
+  var grid = document.getElementById('blogGrid');
+  if(!grid) return;
+  var cards = Array.prototype.slice.call(grid.querySelectorAll('.blog-card'));
+  var chipsBox = document.getElementById('blogChips');
+  var search = document.getElementById('blogSearch');
+  var counts = {};
+  cards.forEach(function(c){var k=c.getAttribute('data-cluster')||'general';counts[k]=(counts[k]||0)+1;});
+  var active = 'all';
+  function mkChip(id,label,n){
+    var b=document.createElement('button');
+    b.textContent=label+(n?' ('+n+')':'');
+    b.setAttribute('data-id',id);
+    b.style.cssText="font-family:'Space Mono',monospace;font-size:0.65rem;letter-spacing:0.06em;text-transform:uppercase;padding:0.45rem 0.9rem;border:1px solid #e8e8e8;background:#fff;color:#6b6b6b;cursor:pointer;border-radius:999px";
+    b.onclick=function(){active=id;render();paint();};
+    return b;
+  }
+  function paint(){
+    Array.prototype.forEach.call(chipsBox.children,function(ch){
+      var on=ch.getAttribute('data-id')===active;
+      ch.style.background=on?'#e63312':'#fff';
+      ch.style.color=on?'#fff':'#6b6b6b';
+      ch.style.borderColor=on?'#e63312':'#e8e8e8';
+    });
+  }
+  chipsBox.appendChild(mkChip('all','All',cards.length));
+  Object.keys(counts).sort(function(a,b){return counts[b]-counts[a];}).forEach(function(k){
+    chipsBox.appendChild(mkChip(k,LABELS[k]||k,counts[k]));
+  });
+  function render(){
+    var q=(search.value||'').toLowerCase().trim();
+    cards.forEach(function(c){
+      var okCat=active==='all'||c.getAttribute('data-cluster')===active;
+      var okQ=!q||c.textContent.toLowerCase().indexOf(q)>-1;
+      c.style.display=(okCat&&okQ)?'':'none';
+    });
+  }
+  search.addEventListener('input',render);
+  paint();
+})();
+</script>
+<!-- FILTER JS END -->
 </body>
 </html>
