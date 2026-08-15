@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xdifcafwxl");
+  </script>
+
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Qwen3.8 in 2026: The Open Weights Shipped, But Not the Model You Tested | Distk</title>
+<meta name="description" content="Alibaba released both Qwen3.8 open-weight models in August 2026, the 27B under a real Apache 2.0 licence and the 2.4 trillion parameter flagship under a custom licence. The downloadable flagship is text-only and the hosted one is not. What open weights actually means across the 2026 releases, and why the 27B matters more than the flagship.">
+<meta name="keywords" content="Qwen3.8 2026, Qwen3.8-Max open weights 2026, Qwen3.8-27B Apache 2.0, Qwen3.8 licence 2026, Qwen3.8 pricing 2026, Qwen3.8 benchmarks 2026, open weight AI models 2026, self-hosting AI models India 2026">
+<meta name="author" content="Distk"><meta name="robots" content="index, follow">
+<link rel="canonical" href="https://distk.in/blog/qwen-3-8-max-marketing-guide-2026.html">
+<meta property="og:type" content="article"><meta property="og:url" content="https://distk.in/blog/qwen-3-8-max-marketing-guide-2026.html">
+<meta property="og:title" content="Qwen3.8 in 2026: The Open Weights Shipped, But Not the Model You Tested">
+<meta property="og:description" content="Both Qwen3.8 open-weight models arrived in August 2026, under two different licences. The downloadable flagship is a reduced version of the hosted product. A buyer's read on what open weights means now.">
+<meta property="og:image" content="https://distk.in/assets/images/og-image.jpg"><meta property="og:site_name" content="Distk">
+<meta property="article:published_time" content="2026-08-14T00:00:00+05:30">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Qwen3.8 in 2026: The Open Weights Shipped, But Not the Model You Tested","description":"A marketing and business analysis of the Qwen3.8 release in 2026: both open-weight variants published on Hugging Face under two different licences, the gap between the downloadable flagship and the hosted Qwen3.8-Max, vendor-reported benchmarks against Claude Opus 4.8, Claude Fable 5 and GPT-5.6 Sol, independent measurement from Artificial Analysis, and why the Apache 2.0 licensed 27B is the more useful model for most teams.","author":{"@type":"Organization","name":"Distk","url":"https://distk.in"},"publisher":{"@type":"Organization","name":"Distk","logo":{"@type":"ImageObject","url":"https://distk.in/assets/images/Logo.png"}},"datePublished":"2026-08-14","mainEntityOfPage":{"@type":"WebPage","@id":"https://distk.in/blog/qwen-3-8-max-marketing-guide-2026.html"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Did the Qwen3.8 open weights actually ship in 2026?","acceptedAnswer":{"@type":"Answer","text":"Yes, both of them. Qwen3.8-27B was published on Hugging Face with a repository created on 5 August 2026, and the 2.4 trillion parameter flagship followed in a repository named Qwen3.8-2.4T-A95B, created on 8 August 2026 and last modified on 12 August 2026. Official FP8 checkpoints exist for both, and both are mirrored on ModelScope. This is the only one of the three staged open-weight releases we have covered in 2026 where the weights arrived in full."}},{"@type":"Question","name":"What licences are the Qwen3.8 weights released under in 2026?","acceptedAnswer":{"@type":"Answer","text":"Two different ones, which is the detail most coverage misses. Qwen3.8-27B is tagged apache-2.0 and its repository carries the standard Apache License Version 2.0 text. The flagship is tagged license:other with a licence named qwen3.8-max, a bespoke document that grants broad permission but attaches two conditions: prominent display of the model name for products above 100 million monthly active users or 20 million US dollars monthly revenue, and a separate licence for model-as-a-service or AI work assistant businesses whose group revenue passes 50 million US dollars over any consecutive twelve months."}},{"@type":"Question","name":"Is the downloadable Qwen3.8-Max the same model as the hosted one in 2026?","acceptedAnswer":{"@type":"Answer","text":"No, and the model card says so directly. The card states that Qwen3.8-2.4T-A95B is a text-only model that requires thinking mode for all interactions, that multimodal inputs are not supported, and that thinking cannot be disabled. It then describes the hosted Qwen3.8-Max as the official version based on those weights with more features, such as vision input, non-thinking support, a one million token context length by default and official built-in tools. If you evaluated the API and then self-host, you are deploying a narrower model."}},{"@type":"Question","name":"How does Qwen3.8-Max score on independent evaluation in 2026?","acceptedAnswer":{"@type":"Answer","text":"Artificial Analysis places Qwen3.8-Max at 58 on its Intelligence Index version 4.1.1, ranked tenth of 188 models tracked, against a median of 34 for the field. The same measurement records output speed at 47.1 tokens per second, ranked 126th of 188 and well below the 77.2 median, with time to first token at 2.59 seconds. It also flags the model as very verbose, generating around 150 million output tokens across the index against a median of 71 million."}},{"@type":"Question","name":"Why does the Qwen3.8-27B matter more than the flagship for most teams in 2026?","acceptedAnswer":{"@type":"Answer","text":"Because it is the variant a normal business can actually deploy and legally build on. It is a 27 billion parameter dense model under a plain Apache 2.0 licence with no revenue thresholds, it accepts text, images and video, it carries a 262,144 token native context, and an official FP8 checkpoint is published alongside it. A 2.4 trillion parameter mixture-of-experts flagship is a data centre commitment. A 27B dense model with a published FP8 checkpoint is a single-server decision."}},{"@type":"Question","name":"What does Qwen3.8-Max cost through the API in 2026?","acceptedAnswer":{"@type":"Answer","text":"Artificial Analysis records Alibaba Cloud as the only benchmarked provider, charging 2.00 US dollars per million input tokens and 6.00 US dollars per million output tokens, with a one million token context window. Secondary coverage additionally reports a cached input rate of 0.25 US dollars per million tokens and notes that regional endpoints are priced differently, so confirm the rate for your own region before you model a budget on it."}}]}</script>
+<link rel="icon" type="image/png" href="../assets/images/favicon.png"><link rel="apple-touch-icon" href="../assets/images/Logo.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BWDTQ1JPL2"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-BWDTQ1JPL2');</script>
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1077520544213003');fbq('track','PageView');</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1077520544213003&ev=PageView&noscript=1"></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#0a0a0a;--paper:#fafafa;--mid:#6b6b6b;--light:#e8e8e8;--accent:#e63312;--accent-soft:rgba(230,51,18,0.08);--mono:'Space Mono',monospace;--sans:'Outfit',sans-serif;--container:1120px;--prose:720px;--gutter:clamp(1.2rem,4vw,3rem)}
+html{font-size:16px;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.container{max-width:var(--container);margin:0 auto;padding:0 var(--gutter)}
+.prose{max-width:var(--prose);margin:0 auto;padding:0 var(--gutter)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--light)}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;max-width:var(--container);margin:0 auto;padding:0.9rem var(--gutter)}
+.nav__logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;color:var(--ink)}
+.nav__logo img{height:32px;width:auto}
+.nav__logo span{font-family:var(--mono);font-weight:700;font-size:1.05rem;letter-spacing:-0.02em}
+.nav__logo small{display:block;font-size:0.55rem;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);line-height:1}
+.nav__back{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid);text-decoration:none;display:flex;align-items:center;gap:0.4rem;transition:color 0.2s}
+.nav__back:hover{color:var(--accent)}
+.nav__cta{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.6rem 1.4rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.nav__cta:hover{background:var(--accent)}
+.hero{padding:7.5rem 0 3.5rem;position:relative;overflow:hidden;border-bottom:1px solid var(--light)}
+.hero::before{content:'3.8';position:absolute;right:-1%;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:clamp(6rem,30vw,26rem);font-weight:700;color:rgba(0,0,0,0.03);line-height:1;pointer-events:none;user-select:none;letter-spacing:-0.05em}
+.hero__tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1.5rem}
+.hero__tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.hero h1{font-family:var(--sans);font-weight:700;font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;letter-spacing:-0.03em;max-width:20ch;margin-bottom:1.5rem}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero__sub{font-size:1.1rem;color:var(--mid);max-width:56ch;line-height:1.7;margin-bottom:2rem}
+.hero__meta{display:flex;flex-wrap:wrap;gap:1.5rem;font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid)}
+.tldr{background:var(--accent-soft);border-left:3px solid var(--accent);padding:1.8rem 2rem;margin:3rem 0;position:relative}
+.tldr::before{content:'TL;DR';position:absolute;top:-0.6rem;left:2rem;font-family:var(--mono);font-size:0.62rem;font-weight:700;letter-spacing:0.12em;background:var(--accent);color:#fff;padding:0.2rem 0.6rem}
+.tldr p{font-size:0.95rem;color:var(--ink);line-height:1.7}
+.article{padding:4rem 0 5rem}
+.article h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.35rem,2.8vw,1.8rem);letter-spacing:-0.02em;line-height:1.2;margin:3rem 0 1rem;padding-top:1rem;border-top:1px solid var(--light)}
+.article h2:first-child{border-top:none;margin-top:0}
+.article h3{font-family:var(--mono);font-weight:700;font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin:2rem 0 0.6rem}
+.article p{font-size:1rem;color:#2a2a2a;line-height:1.8;margin-bottom:1.25rem}
+.article ul,.article ol{padding-left:1.4rem;margin-bottom:1.25rem}
+.article li{font-size:1rem;color:#2a2a2a;line-height:1.75;margin-bottom:0.4rem}
+.article strong{font-weight:600;color:var(--ink)}
+.article a{color:var(--accent);text-decoration:underline;text-underline-offset:2px}
+.article blockquote{border-left:3px solid var(--accent);padding:0.75rem 1.5rem;margin:2rem 0;background:var(--accent-soft)}
+.article blockquote p{color:var(--ink);font-size:1rem;margin:0}
+.table-wrap{overflow-x:auto;margin:2rem 0}
+.data-table{width:100%;border-collapse:collapse;font-size:0.88rem;min-width:520px}
+.data-table th{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:0.7rem 1rem;text-align:left}
+.data-table td{padding:0.75rem 1rem;border-bottom:1px solid var(--light);vertical-align:top}
+.data-table tr:last-child td{border-bottom:none}
+.data-table tr:nth-child(even) td{background:#f5f5f5}
+.callout{border:1.5px solid var(--light);padding:1.5rem 1.8rem;margin:2rem 0}
+.callout__label{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem}
+.callout p{font-size:0.92rem;color:var(--mid);line-height:1.7;margin:0}
+.faq{padding:4rem 0;background:var(--ink);color:var(--paper)}
+.faq .section-tag{color:var(--accent)}
+.faq .section-tag::before{background:var(--accent)}
+.faq__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2.5rem;margin-top:2.5rem}
+.faq__item{border-left:2px solid var(--accent);padding-left:1.5rem}
+.faq__item h3{font-family:var(--sans);font-weight:600;font-size:0.95rem;margin-bottom:0.5rem;color:var(--paper)}
+.faq__item p{font-size:0.85rem;color:rgba(255,255,255,0.88);line-height:1.65}
+.section-tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1rem}
+.section-tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.section-title{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.15;color:var(--paper)}
+.cta{padding:5rem 0;background:var(--accent-soft);border-top:1px solid rgba(230,51,18,0.12)}
+.cta__inner{max-width:680px;margin:0 auto;padding:0 var(--gutter);text-align:center}
+.cta h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.2;margin-bottom:1rem}
+.cta p{font-size:1rem;color:var(--mid);line-height:1.7;margin-bottom:2rem}
+.cta__btn{display:inline-flex;align-items:center;gap:0.6rem;font-family:var(--mono);font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;padding:1rem 2.2rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.cta__btn:hover{background:var(--accent)}
+.foot{padding:2.5rem 0;border-top:1px solid var(--light);text-align:center;font-family:var(--mono);font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid)}
+.foot a{color:var(--mid);text-decoration:none}.foot a:hover{color:var(--accent)}
+@media(max-width:768px){.faq__grid{grid-template-columns:1fr}.nav__back span{display:none}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="https://distk.in" class="nav__logo">
+      <img src="../assets/images/Logo.png" alt="Distk">
+      <div><span>Distk</span><small>Global Growth Partner</small></div>
+    </a>
+    <a href="/blog/" class="nav__back">← <span>All articles</span></a>
+    <a href="https://distk.in/#contact" class="nav__cta">Work with us</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="prose">
+    <div class="hero__tag">AI Models</div>
+    <h1>Qwen3.8 in 2026: The Open Weights Shipped, <em>But Not the Model You Tested</em></h1>
+    <p class="hero__sub">Alibaba published both Qwen3.8 open-weight models in August 2026, under two entirely different licences. The downloadable flagship is text-only and cannot stop reasoning. The hosted one takes images and can. Same name, different product, and the difference is written on the model card.</p>
+    <div class="hero__meta">
+      <span>Distk Editorial</span>
+      <span>14 August 2026</span>
+      <span>11 min read</span>
+    </div>
+  </div>
+</section>
+
+<div class="prose">
+  <div class="tldr">
+    <p>The Qwen3.8 weights arrived, which in 2026 is no longer something to assume. Both variants are live on Hugging Face and ModelScope: <strong>Qwen3.8-27B under a genuine Apache 2.0 licence</strong>, and the 2.4 trillion parameter flagship as <strong>Qwen3.8-2.4T-A95B under a bespoke Qwen3.8-Max License</strong> with revenue thresholds attached. The catch sits in the model card. The downloadable flagship is text-only, cannot disable thinking, and carries a 262,144 token native context, while the hosted Qwen3.8-Max adds vision input, a non-thinking mode, a one million token default context and built-in tools. This is the third staged open-weight release we have tracked in 2026, and across the three the phrase now means at least three different things. If you are planning to self-host, the licence file and the model card matter more than the launch headline.</p>
+  </div>
+</div>
+
+<main class="article">
+<div class="prose">
+
+<h2>What Is Qwen3.8 in 2026?</h2>
+<p>Qwen3.8 is Alibaba's 2026 flagship model generation, released in two open-weight variants: a 2.4 trillion parameter sparse mixture-of-experts model published as Qwen3.8-2.4T-A95B, and a 27 billion parameter dense vision-language model published as Qwen3.8-27B. Secondary coverage dates the hosted launch to 3 August 2026. The weights followed on Hugging Face across the following ten days.</p>
+<p>Both model cards describe Qwen3.8 as built on the architectural foundation of Qwen3.5, with gains concentrated in coding, professional work, research and long-horizon agentic tasks, and both use a hybrid layout combining Gated DeltaNet and Gated Attention blocks. The specification table below comes directly from the two Hugging Face model cards rather than from launch coverage.</p>
+<div class="table-wrap">
+<table class="data-table">
+<thead><tr><th>Attribute</th><th>Qwen3.8-2.4T-A95B</th><th>Qwen3.8-27B</th></tr></thead>
+<tbody>
+<tr><td>Architecture</td><td>Sparse mixture-of-experts, 512 experts, 10 routed plus 1 shared per token</td><td>Dense causal language model with vision encoder</td></tr>
+<tr><td>Parameters</td><td>2.4 trillion total, 95 billion active per token</td><td>27 billion</td></tr>
+<tr><td>Layers</td><td>92</td><td>64</td></tr>
+<tr><td>Hidden dimension</td><td>8,192</td><td>5,120</td></tr>
+<tr><td>Native context</td><td>262,144 tokens</td><td>262,144 tokens</td></tr>
+<tr><td>Extended context</td><td>up to 1,010,000 tokens</td><td>up to 1,000,000 tokens</td></tr>
+<tr><td>Input modalities</td><td>text only</td><td>text, images, video</td></tr>
+<tr><td>Thinking mode</td><td>always on, cannot be disabled</td><td>on by default, can be disabled</td></tr>
+<tr><td>Suggested max output</td><td>262,144 reasoning, 131,072 final response</td><td>262,144 reasoning, 131,072 final response</td></tr>
+<tr><td>Licence</td><td>Qwen3.8-Max License, tagged license:other</td><td>Apache 2.0</td></tr>
+</tbody>
+</table>
+</div>
+<p>One number in wide circulation deserves correcting. The flagship is frequently described as a one million token context model. The card is more precise: 262,144 tokens natively, extensible up to 1,010,000. Extension is a configuration you enable, not a default you inherit.</p>
+
+<h2>Did the Qwen3.8 Open Weights Actually Ship in 2026?</h2>
+<p>Yes, and both variants did. Qwen3.8-27B has a Hugging Face repository created on 5 August 2026 and last modified on 14 August 2026. The flagship repository, Qwen3.8-2.4T-A95B, was created on 8 August 2026 and last modified on 12 August 2026. Official FP8 checkpoints are published for both, and both models are mirrored on ModelScope.</p>
+<p>Adoption is already visibly lopsided. At the time of writing the 27B repository records roughly 91,900 downloads against roughly 6,400 for the flagship, with the FP8 variants adding more on top. That ratio is the market answering a question the launch material did not ask.</p>
+<div class="callout">
+<div class="callout__label">Why this is worth stating plainly</div>
+<p>Three open-weight releases in 2026, three different outcomes. Confirming that weights exist, in a named repository, under a licence you can open and read, has become a necessary step rather than a formality. It takes about two minutes and it has repeatedly changed the answer.</p>
+</div>
+
+<h2>Why Are the Open Weights Not the Same Model as the Hosted Qwen3.8-Max in 2026?</h2>
+<p>Because Alibaba published a reduced version of the hosted product, and said so on the card. The flagship model card carries an explicit notice: Qwen3.8-2.4T-A95B is a text-only model that requires thinking mode for all interactions, multimodal inputs are not supported, and thinking cannot be disabled. Every response begins with a reasoning block whether you want one or not.</p>
+<p>The same card then describes the hosted service in its own words, positioning Qwen3.8-Max as the official version based on Qwen3.8-2.4T-A95B with more features, such as vision input and non-thinking support, a one million token context length by default, and official built-in tools. The 27B card carries an equivalent note about a forthcoming hosted version with a one million token default context and built-in tools.</p>
+<div class="table-wrap">
+<table class="data-table">
+<thead><tr><th>Capability</th><th>Downloadable Qwen3.8-2.4T-A95B</th><th>Hosted Qwen3.8-Max</th></tr></thead>
+<tbody>
+<tr><td>Vision input</td><td>not supported</td><td>supported</td></tr>
+<tr><td>Non-thinking mode</td><td>not available, thinking is mandatory</td><td>supported</td></tr>
+<tr><td>Default context</td><td>262,144 tokens, extensible</td><td>one million tokens by default</td></tr>
+<tr><td>Built-in tools</td><td>none, you supply the harness</td><td>official built-in tools</td></tr>
+</tbody>
+</table>
+</div>
+<p>For a marketing or growth team this has a concrete failure mode. A team evaluates Qwen3.8-Max through the API, likes the image understanding and the fast non-thinking replies, then decides to self-host for cost or data residency reasons. What they download does neither of those things. Mandatory thinking in particular changes the economics, because every response carries reasoning tokens you cannot switch off.</p>
+
+<h2>What Does Open Weight Actually Mean Across the 2026 Releases?</h2>
+<p>It now means at least three incompatible things, and the differences only appear when you open the licence file. Across the three staged open-weight releases we have covered this season, one shipped under a permissive standard licence, one shipped under a bespoke document with commercial thresholds, and one did not ship at all. The headline word was identical in all three cases.</p>
+<div class="table-wrap">
+<table class="data-table">
+<thead><tr><th>Release</th><th>Did weights ship in 2026?</th><th>Licence</th><th>What a self-hosting team gets</th></tr></thead>
+<tbody>
+<tr><td>Qwen3.8-27B</td><td>Yes, repository created 5 August 2026</td><td>Apache 2.0, standard text in the repository</td><td>Full commercial freedom, no revenue thresholds, no attribution duty</td></tr>
+<tr><td>Qwen3.8-2.4T-A95B</td><td>Yes, repository created 8 August 2026</td><td>Qwen3.8-Max License, tagged license:other</td><td>Broad permission with two commercial conditions, and a narrower model than the hosted one</td></tr>
+<tr><td><a href="kimi-k3-moonshot-marketing-guide-2026.html">Kimi K3</a></td><td>Yes, on schedule by 27 July 2026</td><td>Kimi K3 License, tagged license:other</td><td>Self-hosting permitted, with reported revenue and user thresholds attached</td></tr>
+<tr><td><a href="glm-5-3-zai-open-weights-delay-2026.html">GLM-5.3</a></td><td>No, still absent from the Z.ai organisation</td><td>Not published</td><td>Nothing downloadable, API access only</td></tr>
+</tbody>
+</table>
+</div>
+<p>The Qwen3.8-Max License is the interesting middle case, and unlike the Kimi terms we could only report second hand, this one we read. It grants permission to use, copy, modify, distribute, sublicense, sell, deploy, host and fine-tune, subject to two conditions. First, any commercial product or service above 100 million monthly active users or 20 million US dollars monthly revenue must prominently display the model name in its interface. Second, a licensee running a model-as-a-service or AI work assistant business, whose aggregate revenue with affiliates exceeds 50 million US dollars over any consecutive twelve months, must obtain a separate licence before commercial use, with a carve-out for purely internal use that is never exposed to third parties.</p>
+<p>Note how the thresholds differ across vendors. The reported Kimi K3 model-as-a-service trigger sits at 20 million US dollars of group revenue, while the Qwen figure we read is 50 million. Those are not interchangeable, and neither is a substitute for your own counsel reading the actual file. The practical rule for 2026 is short: open weights describes availability, not freedom, and only Apache 2.0 or MIT tells you the second thing without a lawyer.</p>
+
+<h2>What Do the Qwen3.8 Benchmarks Show, and Against Whom in 2026?</h2>
+<p>The flagship model card publishes a comparison table against four named models: Claude Opus 4.8, Claude Fable 5, GPT-5.6 Sol at max effort, and the previous generation Qwen3.7-Max. Every figure is vendor-run and vendor-selected, so treat it as a claim rather than a finding. Qwen3.8-Max leads on some rows and trails on others, and the pattern is more informative than any single score.</p>
+<div class="table-wrap">
+<table class="data-table">
+<thead><tr><th>Benchmark</th><th>Opus 4.8</th><th>Fable 5</th><th>GPT-5.6 Sol</th><th>Qwen3.8-Max</th></tr></thead>
+<tbody>
+<tr><td>Terminal Bench 2.1</td><td>84.6</td><td>84.6</td><td>88.8</td><td>86.6</td></tr>
+<tr><td>SWE-bench Pro</td><td>69.2</td><td>80.0</td><td>64.6</td><td>67.7</td></tr>
+<tr><td>PaperBench</td><td>80.3</td><td>88.8</td><td>90.5</td><td>93.0</td></tr>
+<tr><td>GPQA Diamond</td><td>92.0</td><td>92.6</td><td>94.1</td><td>92.6</td></tr>
+<tr><td>Humanity's Last Exam</td><td>45.7</td><td>53.3</td><td>47.2</td><td>43.6</td></tr>
+<tr><td>IFBench</td><td>62.2</td><td>63.5</td><td>72.7</td><td>82.8</td></tr>
+<tr><td>HealthBench</td><td>52.4</td><td>not reported</td><td>55.3</td><td>60.2</td></tr>
+<tr><td>CoWorkBench</td><td>72.3</td><td>75.9</td><td>71.5</td><td>74.8</td></tr>
+</tbody>
+</table>
+</div>
+<p>Read across the rows and the shape emerges. Qwen3.8-Max is reported leading on PaperBench at 93.0, on instruction following at 82.8 and on HealthBench at 60.2. It is behind on SWE-bench Pro, where Fable 5 posts 80.0, and behind every listed rival on Humanity's Last Exam at 43.6. Terminal Bench 2.1 at 86.6 sits above both Claude entries at 84.6 and below GPT-5.6 Sol at 88.8. That is a strong model with visible soft spots, not a clean sweep.</p>
+<p>One methodological detail is unusually honest and worth crediting. For Terminal Bench 2.1, Qwen ran its own score with the Claude Code harness while taking the Claude Opus 4.8 and Claude Fable 5 baselines from Artificial Analysis and the GPT-5.6 Sol figure from OpenAI's own publication. Different harnesses feeding one column is a real caveat, and the card states it rather than hiding it. Several other rows carry in-house benchmarks with Qwen in the name, which are not independently meaningful.</p>
+
+<h3>What independent evaluation says</h3>
+<p>Independent measurement exists and it moderates the picture. Artificial Analysis places Qwen3.8-Max at 58 on its Intelligence Index version 4.1.1, ranked tenth of 188 models tracked, against a field median of 34. That is a genuinely strong placement, and it is below the leading scores rather than at the top. For context, the same index placed <a href="kimi-k3-moonshot-marketing-guide-2026.html">Kimi K3 at 60</a>.</p>
+<p>The speed data is where the vendor table goes quiet. Artificial Analysis measures output at 47.1 tokens per second, ranked 126th of 188 and well under the 77.2 median, with time to first token at 2.59 seconds. It also flags the model as very verbose, generating around 150 million output tokens across the index against a median of 71 million. Mandatory thinking on the open weights makes that verbosity a structural property, not a setting. Our <a href="gpt-5-6-vs-claude-gemini-benchmarks-2026.html">cross-vendor benchmark comparison for 2026</a> covers how to weigh these harness differences.</p>
+
+<h2>Why Does the 27B Variant Matter More Than the Flagship for Most Teams in 2026?</h2>
+<p>Because it is the only one of the two that a normal business can deploy and legally build on without a negotiation. Qwen3.8-27B is 27 billion parameters, dense rather than sparse, licensed under plain Apache 2.0 with no revenue thresholds and no attribution duty, and it accepts text, images and video, which the downloadable flagship does not. An official FP8 checkpoint is published alongside it.</p>
+<p>The hardware arithmetic follows from those two facts. At roughly one byte per parameter in FP8, 27 billion parameters is on the order of 27 GB of weights, before the key-value cache, the vision encoder and any context extension. That is a single high-memory accelerator, not a cluster. A 2.4 trillion parameter mixture-of-experts model is a data centre commitment regardless of how few parameters activate per token, because all of them still have to be resident.</p>
+<p>For an Indian SMB or a lean growth team the consequences are direct. Data stays inside your own boundary, which matters for client work under confidentiality terms. Per-token cost becomes a predictable infrastructure line. And no revenue threshold appears later to force a renegotiation just as the business starts working.</p>
+<div class="table-wrap">
+<table class="data-table">
+<thead><tr><th>Benchmark, vendor-reported</th><th>Qwen3.8-27B</th><th>Qwen3.6-27B</th><th>Opus 4.6 Max</th></tr></thead>
+<tbody>
+<tr><td>OSWorld-Verified, computer use</td><td>84.3</td><td>63.9</td><td>72.7</td></tr>
+<tr><td>SWE-bench Pro</td><td>61.7</td><td>53.5</td><td>53.4</td></tr>
+<tr><td>LiveCodeBench v6</td><td>90.3</td><td>83.9</td><td>88.8</td></tr>
+<tr><td>GPQA Diamond</td><td>89.2</td><td>87.8</td><td>91.3</td></tr>
+<tr><td>Terminal Bench 2.1</td><td>73.0</td><td>63.4</td><td>78.2</td></tr>
+<tr><td>OmniDocBench 1.5, documents</td><td>91.1</td><td>89.4</td><td>86.6</td></tr>
+</tbody>
+</table>
+</div>
+<p>Those figures are the vendor's own and the comparison set is the vendor's choice, so verify on your workload before believing them. Even discounted, a 27 billion parameter model posting numbers in that neighbourhood, under Apache 2.0, is the more consequential half of this release. The download counts suggest the market has already worked that out.</p>
+
+<h2>How Does Qwen3.8 Pricing Compare in 2026?</h2>
+<p>Qwen3.8-Max is priced at 2.00 US dollars per million input tokens and 6.00 US dollars per million output tokens, with Artificial Analysis recording Alibaba Cloud as the only benchmarked provider and a one million token context window. Secondary coverage reports a cached input rate of 0.25 US dollars per million tokens and notes regional endpoints are priced differently, so confirm your own region.</p>
+<div class="table-wrap">
+<table class="data-table">
+<thead><tr><th>Model</th><th>Input per 1M tokens</th><th>Output per 1M tokens</th><th>Note</th></tr></thead>
+<tbody>
+<tr><td>Qwen3.8-Max</td><td>2.00 USD</td><td>6.00 USD</td><td>Cached input reported at 0.25 USD in secondary coverage</td></tr>
+<tr><td>Kimi K3</td><td>0.30 USD cache hit, 3.00 USD cache miss</td><td>15.00 USD</td><td>A ten times gap decided by prompt architecture</td></tr>
+<tr><td><a href="deepseek-v4-pro-pricing-change-guide-2026.html">DeepSeek V4 Pro 0813</a></td><td>0.044 USD cache hit, 1.32 USD cache miss at peak</td><td>3.96 USD at peak</td><td>Time-of-day pricing, peak rates shown</td></tr>
+<tr><td>GLM-5.3</td><td>No published per-token rate</td><td>No published per-token rate</td><td>Subscription access only at time of writing</td></tr>
+</tbody>
+</table>
+</div>
+<p>The comparison rewards a careful eye. Qwen3.8-Max looks expensive against DeepSeek on input and considerably cheaper than Kimi K3 on output, where 6.00 against 15.00 is the gap that shows up on an invoice for generation-heavy work. Against that, the measured verbosity means more output tokens per task, which eats into the advantage. Cost per completed task, not cost per token, is the only figure that settles this. The table also does not weigh a hosted rate against a self-hosted cost, because the crossover depends entirely on your utilisation.</p>
+
+<h2>How Should a Marketing Team Decide Between Hosted and Self-Hosted in 2026?</h2>
+<p>By deciding which constraint is actually binding before looking at any benchmark. Most teams reach for self-hosting because of cost, data residency or vendor independence, and only one of those three usually turns out to be the real driver. Naming it first tells you which model you are choosing between, and in the Qwen3.8 case it tells you whether the 27B or the flagship is even a candidate.</p>
+<div class="table-wrap">
+<table class="data-table">
+<thead><tr><th>If your binding constraint is</th><th>The 2026 move</th><th>Why</th></tr></thead>
+<tbody>
+<tr><td>Client data must not leave your boundary</td><td>Qwen3.8-27B, self-hosted</td><td>Apache 2.0 with no thresholds, and it handles images and video</td></tr>
+<tr><td>Per-token cost at high volume</td><td>Model cost per completed task on both options first</td><td>Verbosity and mandatory thinking can reverse a favourable rate card</td></tr>
+<tr><td>You need vision plus fast non-thinking replies</td><td>The hosted API, not the open weights</td><td>The downloadable flagship supports neither</td></tr>
+<tr><td>Insurance against a pricing or availability change</td><td>Download the 27B weights now, keep using the API</td><td>Availability is the asset, deployment is optional</td></tr>
+<tr><td>You operate a model-as-a-service or coding assistant product</td><td>Legal review before any deployment</td><td>The flagship licence has a 50 million US dollar separate-licence trigger</td></tr>
+<tr><td>You just want the best score on a chart</td><td>Reconsider the question</td><td>Vendor tables select their own comparison set</td></tr>
+</tbody>
+</table>
+</div>
+<p>One caution specific to this release. If your evaluation ran against the hosted endpoint, your evaluation does not describe the weights. Re-test on the actual downloadable checkpoint before committing infrastructure, particularly if your workflow depends on image input or on short latency-sensitive replies. Our guide to <a href="gemini-3-7-flash-marketing-guide-2026.html">Gemini 3.7 Flash in 2026</a> covers the same discipline applied to a hosted-only model.</p>
+
+<h2>What Are the Common Mistakes in 2026?</h2>
+<p>The errors around this release cluster around three assumptions: that the two Qwen3.8 models are interchangeable, that one licence covers both, and that a benchmark table is a measurement. All three are cheap to avoid and expensive to discover late.</p>
+<ul>
+<li><strong>Assuming the downloadable flagship matches the hosted Qwen3.8-Max.</strong> It is text-only with mandatory thinking. The card states this plainly.</li>
+<li><strong>Assuming one licence covers the family.</strong> The 27B is Apache 2.0. The flagship is a bespoke document with two commercial conditions.</li>
+<li><strong>Quoting a one million token context as the default.</strong> Native context is 262,144 tokens on both open-weight variants, extensible from there.</li>
+<li><strong>Treating vendor benchmarks as measurements.</strong> The flagship table is vendor-run against a vendor-chosen set of four models, with mixed harnesses in one column.</li>
+<li><strong>Ignoring the speed and verbosity data.</strong> Independent measurement puts output at 47.1 tokens per second, ranked 126th of 188, with very high output token counts.</li>
+<li><strong>Defaulting to the flagship because it is the flagship.</strong> For most teams in 2026 the Apache 2.0 licensed 27B is the deployable model and the better decision.</li>
+<li><strong>Reading a licence summary instead of a licence.</strong> Thresholds differ by vendor, by clause and by business type, and only the file is authoritative.</li>
+</ul>
+
+<h2>Key Takeaways for 2026</h2>
+<p>The short version for anyone weighing Qwen3.8 against an incumbent or against the other open-weight releases of this season.</p>
+<ul>
+<li>Both Qwen3.8 open-weight variants shipped in August 2026, the 27B repository created on 5 August and the 2.4 trillion parameter flagship on 8 August, with FP8 checkpoints and ModelScope mirrors for both.</li>
+<li>They carry different licences. Qwen3.8-27B is Apache 2.0. The flagship is the Qwen3.8-Max License, tagged license:other, with an attribution duty above 100 million monthly active users or 20 million US dollars monthly revenue, and a separate-licence requirement for model-as-a-service or AI work assistant businesses above 50 million US dollars aggregate revenue over any consecutive twelve months.</li>
+<li>The downloadable flagship is not the hosted product. It is text-only, thinking cannot be disabled, and native context is 262,144 tokens rather than one million.</li>
+<li>Vendor benchmarks compare against Claude Opus 4.8, Claude Fable 5, GPT-5.6 Sol and Qwen3.7-Max. Qwen3.8-Max is reported leading on PaperBench at 93.0 and IFBench at 82.8, and trailing on SWE-bench Pro and Humanity's Last Exam.</li>
+<li>Artificial Analysis independently places it at 58 on Intelligence Index v4.1.1, tenth of 188, with output speed at 47.1 tokens per second, ranked 126th, and unusually high verbosity.</li>
+<li>API pricing is 2.00 US dollars per million input tokens and 6.00 per million output, cheaper on output than Kimi K3 and far more expensive on input than DeepSeek V4 Pro 0813.</li>
+<li>Across the three staged open-weight releases of 2026, one shipped under Apache 2.0, two shipped under bespoke conditional licences, and one never shipped at all.</li>
+</ul>
+<p>The transferable habit has nothing to do with Alibaba. In 2026, open weights is a marketing phrase covering at least three different products, and the only reliable way to know which one you are being offered is to open the repository, read the licence file and read the model card notice before you plan anything around it. That check takes minutes. Skipping it has cost teams a quarter.</p>
+
+</div>
+</main>
+
+<section class="faq">
+  <div class="prose">
+    <div class="section-tag">Common Questions</div>
+    <h2 class="section-title">Qwen3.8 in 2026: FAQs</h2>
+    <div class="faq__grid">
+      <div class="faq__item">
+        <h3>Did the Qwen3.8 open weights actually ship in 2026?</h3>
+        <p>Yes, both of them. Qwen3.8-27B was published on Hugging Face with a repository created on 5 August 2026, and the 2.4 trillion parameter flagship followed in a repository named Qwen3.8-2.4T-A95B, created on 8 August 2026 and last modified on 12 August 2026. Official FP8 checkpoints exist for both, and both are mirrored on ModelScope. This is the only one of the three staged open-weight releases we have covered in 2026 where the weights arrived in full.</p>
+      </div>
+      <div class="faq__item">
+        <h3>What licences are the Qwen3.8 weights released under in 2026?</h3>
+        <p>Two different ones, which is the detail most coverage misses. Qwen3.8-27B is tagged apache-2.0 and its repository carries the standard Apache License Version 2.0 text. The flagship is tagged license:other with a licence named qwen3.8-max, a bespoke document that grants broad permission but attaches two conditions: prominent display of the model name for products above 100 million monthly active users or 20 million US dollars monthly revenue, and a separate licence for model-as-a-service or AI work assistant businesses whose group revenue passes 50 million US dollars over any consecutive twelve months.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Is the downloadable Qwen3.8-Max the same model as the hosted one in 2026?</h3>
+        <p>No, and the model card says so directly. The card states that Qwen3.8-2.4T-A95B is a text-only model that requires thinking mode for all interactions, that multimodal inputs are not supported, and that thinking cannot be disabled. It then describes the hosted Qwen3.8-Max as the official version based on those weights with more features, such as vision input, non-thinking support, a one million token context length by default and official built-in tools. If you evaluated the API and then self-host, you are deploying a narrower model.</p>
+      </div>
+      <div class="faq__item">
+        <h3>How does Qwen3.8-Max score on independent evaluation in 2026?</h3>
+        <p>Artificial Analysis places Qwen3.8-Max at 58 on its Intelligence Index version 4.1.1, ranked tenth of 188 models tracked, against a median of 34 for the field. The same measurement records output speed at 47.1 tokens per second, ranked 126th of 188 and well below the 77.2 median, with time to first token at 2.59 seconds. It also flags the model as very verbose, generating around 150 million output tokens across the index against a median of 71 million.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Why does the Qwen3.8-27B matter more than the flagship for most teams in 2026?</h3>
+        <p>Because it is the variant a normal business can actually deploy and legally build on. It is a 27 billion parameter dense model under a plain Apache 2.0 licence with no revenue thresholds, it accepts text, images and video, it carries a 262,144 token native context, and an official FP8 checkpoint is published alongside it. A 2.4 trillion parameter mixture-of-experts flagship is a data centre commitment. A 27B dense model with a published FP8 checkpoint is a single-server decision.</p>
+      </div>
+      <div class="faq__item">
+        <h3>What does Qwen3.8-Max cost through the API in 2026?</h3>
+        <p>Artificial Analysis records Alibaba Cloud as the only benchmarked provider, charging 2.00 US dollars per million input tokens and 6.00 US dollars per million output tokens, with a one million token context window. Secondary coverage additionally reports a cached input rate of 0.25 US dollars per million tokens and notes that regional endpoints are priced differently, so confirm the rate for your own region before you model a budget on it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED START -->
+<section class="related" style="padding:3.5rem 0;border-top:1px solid #e8e8e8;background:#fafafa">
+  <div style="max-width:720px;margin:0 auto;padding:0 clamp(1.2rem,4vw,3rem)">
+    <div style="font-family:'Space Mono',monospace;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:#e63312;margin-bottom:1.3rem">Related reading</div>
+    <ul style="list-style:none;margin:0;padding:0;display:grid;gap:0.9rem">
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="turiyam-ai-genai-inference-platform-india-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">Turiyam AI 2026: India's Open GenAI Inference Platform Built on RISC-V and CUDA-Free Middleware</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="how-to-use-thinking-machines-lab-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">How to Use Thinking Machines Lab 2026: Complete Guide to Custom AI Model Training</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="kimi-k3-moonshot-marketing-guide-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">Kimi K3 in 2026: The Vendor That Published Its Own Weak Spots</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="iepf-share-recovery-firm-marketing-guide-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">IEPF and Share Recovery Marketing in 2026: How Legitimate Firms Win Trust</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="pediatric-hospital-marketing-patient-growth-guide-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">Pediatric Hospital Marketing in 2026: How Paediatricians Win Parent Search</a></li>
+    </ul>
+  </div>
+</section>
+<!-- RELATED END -->
+<section class="cta">
+  <div class="cta__inner">
+    <h2>Choosing a model on evidence rather than launch-day charts?</h2>
+    <p>Distk helps growth, marketing and founding teams across India and international markets build model selection on their own workloads and their own numbers. If you need a second pair of eyes on hosted versus self-hosted, or on what a licence actually permits, we can work through it with you.</p>
+    <a href="https://distk.in/#contact" class="cta__btn">Talk to Distk →</a>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="container">
+    © 2026 Distk · <a href="https://distk.in">distk.in</a> · <a href="mailto:connect@distk.in">connect@distk.in</a>
+  </div>
+</footer>
+</body>
+</html>
