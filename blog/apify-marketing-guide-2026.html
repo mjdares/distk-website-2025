@@ -153,7 +153,7 @@ body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-heigh
 </tbody>
 </table>
 </div>
-<p>The billing model column is the one to read twice, because it is the hinge of the whole cost question in 2026. On a pay-per-event Actor, Apify states you are not charged for platform usage at all, only a fixed price for specific events such as a place scraped or a result returned. On a pay-per-usage Actor, the Actor itself is free and you pay Apify's platform meter: compute, transfer, storage and proxy.</p>
+<p>The billing model column is the one to read twice, because it is the hinge of the whole cost question in 2026. On a pay-per-event Actor you usually pay only a fixed price for specific events, such as a place scraped or a result returned. Read that as the common case rather than a guarantee, because Apify's monetisation documentation lets the Actor's developer choose whether to pass platform usage costs on to users, so check the individual Actor page before budgeting. On a pay-per-usage Actor, the Actor itself is free and you pay Apify's platform meter: compute, transfer, storage and proxy.</p>
 
 <h2>How Does Apify Pricing Actually Work in 2026?</h2>
 <p>Your monthly plan fee buys an equivalent amount of platform credits, and everything you consume beyond those credits is billed on top. That is the sentence the pricing page implies but never quite says. A $29 Starter plan includes $29 of credits, so the honest way to read the tiers is as a prepayment with a rate card attached, not as an all-you-can-eat subscription.</p>
@@ -260,7 +260,7 @@ body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-heigh
 <li>The most-used Actors are Google Maps, Instagram and TikTok scrapers, so the platform's centre of gravity in 2026 is lead generation and social listening.</li>
 <li>The bill has five layers: plan fee, included credits, compute units, proxy bandwidth, and per-Actor event or rental fees.</li>
 <li>Apify publishes a clear compute unit definition. Memory allocated multiplied by time, with 1024MB for one hour equal to 1 CU.</li>
-<li>Pay-per-event Actors charge a fixed fee with no platform usage on top. Pay-per-usage Actors are free but meter compute, transfer, storage and proxy.</li>
+<li>Pay-per-event Actors usually charge a fixed fee only, though developers may pass platform usage through, so check the Actor page. Pay-per-usage Actors are free but meter compute, transfer, storage and proxy.</li>
 <li>Pricing checked in August 2026 runs from Free at $0 with $5 of credits to Business at $999 with $999 of credits. Confirm current figures before you budget.</li>
 <li>Apify is SOC 2 Type II audited and publishes GDPR documentation and per-Actor compliance notes. Use that tooling, and still take advice on your own use case.</li>
 </ul>
