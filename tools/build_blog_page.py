@@ -8,7 +8,7 @@ TRACK = re.search(r'<link rel="icon".*?</noscript>\n', src, re.S).group(0)
 FONTS = re.search(r'<link rel="preconnect".*?rel="stylesheet">\n', src, re.S).group(0)
 NAV = re.search(r'<nav class="nav">.*?</nav>\n', src, re.S).group(0)
 FOOT = re.search(r'<footer class="foot">.*?</html>\n', src, re.S).group(0)
-MONTHS = {'09':'Sep'}
+MONTHS = {'01':'Jan','02':'Feb','03':'Mar','04':'Apr','05':'May','06':'Jun','07':'Jul','08':'Aug','09':'Sep','10':'Oct','11':'Nov','12':'Dec'}
 
 def page(m):
     date = m.get('date', '2026-09-13')
