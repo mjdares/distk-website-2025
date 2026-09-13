@@ -2436,4 +2436,48 @@
         <priority>1.0</priority>
     </url>
 
+    <!-- Added September 2026 -->
+    <url>
+        <loc>https://distk.in/blog/ai-model-pricing-comparison-september-2026.html</loc>
+        <lastmod>2026-09-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://distk.in/blog/deepseek-v4-1-flash-benchmarks-vs-gpt-claude-2026.html</loc>
+        <lastmod>2026-09-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://distk.in/blog/deepseek-v4-1-flash-for-marketing-teams-2026.html</loc>
+        <lastmod>2026-09-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://distk.in/blog/deepseek-v4-1-flash-open-weights-self-host-guide-2026.html</loc>
+        <lastmod>2026-09-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://distk.in/blog/deepseek-v4-1-flash-pricing-guide-2026.html</loc>
+        <lastmod>2026-09-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://distk.in/blog/deepseek-v4-pro-to-v4-1-flash-migration-guide-2026.html</loc>
+        <lastmod>2026-09-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://distk.in/blog/what-is-deepseek-v4-1-flash-2026.html</loc>
+        <lastmod>2026-09-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
 </urlset>

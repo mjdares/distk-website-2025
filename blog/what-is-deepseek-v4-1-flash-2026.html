@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xdifcafwxl");
+  </script>
+
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Is DeepSeek V4.1 Flash in 2026? Architecture, Pricing, Retirements Explained | Distk</title>
+<meta name="description" content="DeepSeek V4.1 Flash explained for business teams in 2026: the 552B Causal Encoder-Decoder model with 8B/16B active parameters, native vision, 1M context, the KV cache compression behind its near-free cache hits, the V4-Flash retirement, the V4 Pro phase-out and its reversal.">
+<meta name="keywords" content="DeepSeek V4.1 Flash 2026, what is DeepSeek V4.1 Flash, deepseek-flash model, DeepSeek V4.1 Flash architecture, DeepSeek Causal Encoder-Decoder, DeepSeek V4 Pro retirement, AI marketing agency 2026">
+<meta name="author" content="Distk"><meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://distk.in/blog/what-is-deepseek-v4-1-flash-2026.html">
+<meta property="og:type" content="article"><meta property="og:url" content="https://distk.in/blog/what-is-deepseek-v4-1-flash-2026.html">
+<meta property="og:title" content="What Is DeepSeek V4.1 Flash in 2026? The New Architecture Explained for Business Teams">
+<meta property="og:description" content="A 552B model that activates 8B parameters to read and 16B to write, with a KV cache a quarter the size of its predecessor. What that means in plain language, and what got retired.">
+<meta property="og:image" content="https://distk.in/assets/images/og-image.jpg"><meta property="og:site_name" content="Distk">
+<meta property="article:published_time" content="2026-09-13T00:00:00+05:30">
+<meta property="article:modified_time" content="2026-09-13T00:00:00+05:30">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="What Is DeepSeek V4.1 Flash in 2026? The New Architecture Explained for Business Teams"><meta name="twitter:description" content="A 552B model that activates 8B parameters to read and 16B to write, with a KV cache a quarter the size of its predecessor. What that means in plain language, and what got retired.">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "What Is DeepSeek V4.1 Flash in 2026? The New Architecture Explained for Business Teams", "description": "DeepSeek V4.1 Flash explained for business and marketing teams: the Causal Encoder-Decoder architecture in plain language, what changed from V4 Flash and V4 Pro, availability, model names, retirements and the planning implications for 2026.", "author": {"@type": "Organization", "name": "Distk", "url": "https://distk.in"}, "publisher": {"@type": "Organization", "name": "Distk", "logo": {"@type": "ImageObject", "url": "https://distk.in/assets/images/Logo.png"}}, "datePublished": "2026-09-13", "dateModified": "2026-09-13", "inLanguage": "en", "about": [{"@type": "Thing", "name": "DeepSeek-V4.1-Flash"}, {"@type": "Thing", "name": "DeepSeek"}, {"@type": "Thing", "name": "DeepSeek-V4-Pro"}, {"@type": "Thing", "name": "Mixture of Experts"}, {"@type": "Thing", "name": "KV cache"}], "mentions": [{"@type": "Thing", "name": "DeepSeek-V4.1-Flash"}, {"@type": "Thing", "name": "DeepSeek"}, {"@type": "Thing", "name": "DeepSeek-V4-Pro"}, {"@type": "Thing", "name": "Mixture of Experts"}, {"@type": "Thing", "name": "KV cache"}], "mainEntityOfPage": {"@type": "WebPage", "@id": "https://distk.in/blog/what-is-deepseek-v4-1-flash-2026.html"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is DeepSeek V4.1 Flash in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "DeepSeek V4.1 Flash is a 552B-parameter multimodal Mixture-of-Experts model released by DeepSeek on 10 September 2026. It uses a Causal Encoder-Decoder architecture that activates 8B parameters for input and 16B for output, supports native image understanding, a 1M-token context window and up to 384K output tokens. It is served through the DeepSeek API as deepseek-flash and released as open weights on Hugging Face under the MIT licence."}}, {"@type": "Question", "name": "Is DeepSeek V4.1 Flash better than DeepSeek V4 Pro?", "acceptedAnswer": {"@type": "Answer", "text": "On DeepSeek's own instruct benchmarks at maximum reasoning effort, V4.1 Flash scores above V4 Pro on most agentic rows, including Terminal-Bench 2.1 at 90.6 versus 87.9, DeepSWE v1.1 at 74.2 versus 62.7 and AutomationBench at 54.8 versus 43.2. DeepSeek states that tests by multiple parties put V4.1 Flash ahead of V4 Pro on performance, cost, speed and total runtime. These are vendor-reported results."}}, {"@type": "Question", "name": "Is DeepSeek V4 Pro being retired in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "DeepSeek's announcement of 10 September 2026 said V4 Pro was being phased out and that all deepseek-v4-pro requests would route to V4.1 Flash from 04:00 UTC on 14 September until V4.1 Pro launches. DeepSeek's API pricing page, updated 11 September 2026, states that in response to user demand it will continue providing V4 Pro API services after 14 September with billing unchanged, and will give further notice of any change."}}, {"@type": "Question", "name": "What model name is used for DeepSeek V4.1 Flash?", "acceptedAnswer": {"@type": "Answer", "text": "The model name is deepseek-flash. The legacy names deepseek-v4-flash and deepseek-v4-flash-vision-exp are still accepted, but those models are retired and requests are served by DeepSeek V4.1 Flash at Flash pricing."}}, {"@type": "Question", "name": "Why is DeepSeek V4.1 Flash so cheap in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "DeepSeek V4.1 Flash reduces its KV cache footprint to about 890 bytes per token, roughly a quarter of DeepSeek V4 Flash, through its Causal Encoder-Decoder architecture, Compressed Sparse Attention 2 and FP4 cache storage. DeepSeek states the cache needs a quarter of the GPU high-bandwidth memory and an eighth of the SSD storage of the previous generation, allowing it to serve more users per unit of hardware and to price cache-hit input at 0.003 US dollars per million tokens off-peak."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://distk.in/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://distk.in/blog/"}, {"@type": "ListItem", "position": 3, "name": "What Is DeepSeek V4.1 Flash in 2026? The New Architecture Explained for Business Teams", "item": "https://distk.in/blog/what-is-deepseek-v4-1-flash-2026.html"}]}</script>
+<link rel="icon" type="image/png" href="../assets/images/favicon.png"><link rel="apple-touch-icon" href="../assets/images/Logo.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BWDTQ1JPL2"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-BWDTQ1JPL2');</script>
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1077520544213003');fbq('track','PageView');</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1077520544213003&ev=PageView&noscript=1"></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#0a0a0a;--paper:#fafafa;--mid:#6b6b6b;--light:#e8e8e8;--accent:#e63312;--accent-soft:rgba(230,51,18,0.08);--mono:'Space Mono',monospace;--sans:'Outfit',sans-serif;--container:1120px;--prose:720px;--gutter:clamp(1.2rem,4vw,3rem)}
+html{font-size:16px;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.container{max-width:var(--container);margin:0 auto;padding:0 var(--gutter)}
+.prose{max-width:var(--prose);margin:0 auto;padding:0 var(--gutter)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--light)}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;max-width:var(--container);margin:0 auto;padding:0.9rem var(--gutter)}
+.nav__logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;color:var(--ink)}
+.nav__logo img{height:32px;width:auto}
+.nav__logo span{font-family:var(--mono);font-weight:700;font-size:1.05rem;letter-spacing:-0.02em}
+.nav__logo small{display:block;font-size:0.55rem;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);line-height:1}
+.nav__back{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid);text-decoration:none;display:flex;align-items:center;gap:0.4rem;transition:color 0.2s}
+.nav__back:hover{color:var(--accent)}
+.nav__cta{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.6rem 1.4rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.nav__cta:hover{background:var(--accent)}
+.hero{padding:7.5rem 0 3.5rem;position:relative;overflow:hidden;border-bottom:1px solid var(--light)}
+.hero::before{content:'V4.1';position:absolute;right:-1%;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:clamp(6rem,26vw,22rem);font-weight:700;color:rgba(0,0,0,0.03);line-height:1;pointer-events:none;user-select:none;letter-spacing:-0.05em}
+.hero__tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1.5rem}
+.hero__tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.hero h1{font-family:var(--sans);font-weight:700;font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;letter-spacing:-0.03em;max-width:20ch;margin-bottom:1.5rem}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero__sub{font-size:1.1rem;color:var(--mid);max-width:56ch;line-height:1.7;margin-bottom:2rem}
+.hero__meta{display:flex;flex-wrap:wrap;gap:1.5rem;font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid)}
+.tldr{background:var(--accent-soft);border-left:3px solid var(--accent);padding:1.8rem 2rem;margin:3rem 0;position:relative}
+.tldr::before{content:'TL;DR';position:absolute;top:-0.6rem;left:2rem;font-family:var(--mono);font-size:0.62rem;font-weight:700;letter-spacing:0.12em;background:var(--accent);color:#fff;padding:0.2rem 0.6rem}
+.tldr p{font-size:0.95rem;color:var(--ink);line-height:1.7}
+.article{padding:4rem 0 5rem}
+.article h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.35rem,2.8vw,1.8rem);letter-spacing:-0.02em;line-height:1.2;margin:3rem 0 1rem;padding-top:1rem;border-top:1px solid var(--light)}
+.article h2:first-child{border-top:none;margin-top:0}
+.article h3{font-family:var(--mono);font-weight:700;font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin:2rem 0 0.6rem}
+.article p{font-size:1rem;color:#2a2a2a;line-height:1.8;margin-bottom:1.25rem}
+.article ul,.article ol{padding-left:1.4rem;margin-bottom:1.25rem}
+.article li{font-size:1rem;color:#2a2a2a;line-height:1.75;margin-bottom:0.4rem}
+.article strong{font-weight:600;color:var(--ink)}
+.article a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(230,51,18,0.3)}
+.article a:hover{border-bottom-color:var(--accent)}
+.article blockquote{border-left:3px solid var(--accent);padding:0.75rem 1.5rem;margin:2rem 0;background:var(--accent-soft)}
+.article blockquote p{color:var(--ink);font-size:1rem;margin:0}
+.table-wrap{overflow-x:auto;margin:2rem 0}
+.data-table{width:100%;border-collapse:collapse;margin:0;font-size:0.88rem}
+.data-table th{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:0.7rem 1rem;text-align:left;white-space:nowrap}
+.data-table td{padding:0.75rem 1rem;border-bottom:1px solid var(--light);vertical-align:top}
+.data-table tr:last-child td{border-bottom:none}
+.data-table tr:nth-child(even) td{background:#f5f5f5}
+.callout{border:1.5px solid var(--light);padding:1.5rem 1.8rem;margin:2rem 0}
+.callout__label{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem}
+.callout p{font-size:0.92rem;color:var(--mid);line-height:1.7;margin:0}
+.faq{padding:4rem 0;background:var(--ink);color:var(--paper)}
+.faq .section-tag{color:var(--accent)}
+.faq .section-tag::before{background:var(--accent)}
+.faq__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2.5rem;margin-top:2.5rem}
+.faq__item{border-left:2px solid var(--accent);padding-left:1.5rem}
+.faq__item h3{font-family:var(--sans);font-weight:600;font-size:0.95rem;margin-bottom:0.5rem;color:var(--paper)}
+.faq__item p{font-size:0.85rem;color:rgba(255,255,255,0.88);line-height:1.65}
+.section-tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1rem}
+.section-tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.section-title{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.15;color:var(--paper)}
+.cta{padding:5rem 0;background:var(--accent-soft);border-top:1px solid rgba(230,51,18,0.12)}
+.cta__inner{max-width:680px;margin:0 auto;padding:0 var(--gutter);text-align:center}
+.cta h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.2;margin-bottom:1rem}
+.cta p{font-size:1rem;color:var(--mid);line-height:1.7;margin-bottom:2rem}
+.cta__btn{display:inline-flex;align-items:center;gap:0.6rem;font-family:var(--mono);font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;padding:1rem 2.2rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.cta__btn:hover{background:var(--accent)}
+.foot{padding:2.5rem 0;border-top:1px solid var(--light);text-align:center;font-family:var(--mono);font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid)}
+.foot a{color:var(--mid);text-decoration:none}.foot a:hover{color:var(--accent)}
+@media(max-width:768px){.faq__grid{grid-template-columns:1fr}.nav__back span{display:none}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="https://distk.in" class="nav__logo">
+      <img src="../assets/images/Logo.png" alt="Distk">
+      <div><span>Distk</span><small>Global Growth Partner</small></div>
+    </a>
+    <a href="/blog/" class="nav__back">← <span>All articles</span></a>
+    <a href="https://distk.in/#contact" class="nav__cta">Work with us</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="prose">
+    <div class="hero__tag">AI Model Guide</div>
+    <h1>What Is <em>DeepSeek V4.1 Flash</em> in 2026? The New Architecture Explained for Business Teams</h1>
+    <p class="hero__sub">DeepSeek's September 2026 release is the smallest model in a new architecture family, and it is being positioned to replace both the previous Flash and the previous Pro. This is the plain-language read: what shipped, why the cache numbers matter more than the parameter count, and what got retired.</p>
+    <div class="hero__meta">
+      <span>Distk Editorial</span>
+      <span>Sep 2026</span>
+      <span>12 min read</span>
+    </div>
+  </div>
+</section>
+
+<div class="prose">
+  <div class="tldr">
+    <p>DeepSeek V4.1 Flash is a 552B-parameter Mixture-of-Experts model released on 10 September 2026 with native image understanding, a 1M-token context window and up to 384K output tokens. Its new Causal Encoder-Decoder design activates only 8B parameters to read input and 16B to generate output, and its KV cache footprint is roughly a quarter of DeepSeek V4 Flash. That compression is why DeepSeek can bill cache-hit input at 0.003 US dollars per million tokens off-peak. The model is available as deepseek-flash through OpenAI-format and Anthropic-format endpoints, the weights are on Hugging Face under the MIT licence, and V4 Flash and V4 Flash Vision Exp are retired. DeepSeek announced V4 Pro would be routed to V4.1 Flash from 14 September, then said a day later that V4 Pro service continues with billing unchanged. For business teams in 2026, this is a model that is cheap because of engineering, not because of a promotion.</p>
+  </div>
+</div>
+
+<main class="article">
+  <div class="prose">
+
+    <h2>What Is DeepSeek V4.1 Flash in 2026?</h2>
+    <p>DeepSeek V4.1 Flash is a multimodal Mixture-of-Experts language model released by DeepSeek on 10 September 2026, described by the company as the smallest model in its new architecture family and as smarter, faster and more efficient than what came before. It has 552B backbone parameters, processes images and text natively, supports contexts up to one million tokens, and generates up to 384K output tokens. It is served through the DeepSeek API under the model name deepseek-flash and released as open weights on Hugging Face under the MIT licence.</p>
+    <p>The word Flash is doing less work here than it does in Google's lineup. In Google's naming, Flash is the workhorse tier below Pro. In DeepSeek's September 2026 lineup, V4.1 Flash is the only model of its generation, and DeepSeek's own statement is that tests by multiple parties put it ahead of DeepSeek V4 Pro on performance, cost, speed and total runtime. A V4.1 Pro is referenced as forthcoming. Until it arrives, V4.1 Flash is both the small model and the best model DeepSeek sells.</p>
+
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Attribute</th><th>What DeepSeek published in 2026</th><th>Why a business team should care</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Released</strong></td><td>10 September 2026; new pricing effective 04:00 UTC the same day</td><td>The same month Claude Fable 5.1 and GPT-6 Astra landed at 10 and 50 US dollars per million tokens.</td></tr>
+        <tr><td><strong>Size</strong></td><td>552B MoE backbone; 8B active parameters for input, 16B for output</td><td>Cost tracks active parameters, not total. This is why it is cheap to run.</td></tr>
+        <tr><td><strong>Modality</strong></td><td>Text and images in, text out; vision trained in from the start of pre-training</td><td>Receipts, screenshots, creatives and PDFs without a separate vision model.</td></tr>
+        <tr><td><strong>Context</strong></td><td>1M input tokens; 384K maximum output</td><td>Whole archives in one call; very long deliverables in one response.</td></tr>
+        <tr><td><strong>Reasoning</strong></td><td>Thinking mode on by default; reasoning effort is an integer from 1 to 100</td><td>A finer cost and quality dial than most vendors' three or four levels.</td></tr>
+        <tr><td><strong>API</strong></td><td>OpenAI-format and Anthropic-format endpoints; Responses API; JSON output; tool calls; concurrency limit 2,500</td><td>Drop-in for most existing integrations. Five times the concurrency of V4 Pro.</td></tr>
+        <tr><td><strong>Licence</strong></td><td>MIT, weights on Hugging Face</td><td>Self-hosting is legally simple; practically it is a data-centre project.</td></tr>
+        <tr><td><strong>Retirements</strong></td><td>V4 Flash and V4 Flash Vision Exp retired; legacy names route to V4.1 Flash</td><td>Existing callers keep working, at Flash prices.</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h2>How Does the DeepSeek V4.1 Flash Architecture Work in Plain Language?</h2>
+    <p>DeepSeek V4.1 Flash uses what the company calls a Causal Encoder-Decoder architecture: a 40-layer Transformer split into a 20-layer encoder that reads the input and a 20-layer decoder that writes the output. The memory the decoder needs about the input, the KV cache, is projected once from the encoder's final state rather than rebuilt by every decoder layer. The practical result is that reading a token activates 8B parameters and writing a token activates 16B, out of 552B in total.</p>
+    <p>For a non-specialist, the useful mental model is a reader and a writer sharing one set of notes. Older designs made every layer of the writer keep its own copy of the notes on the whole document. This design has the reader produce one compact set, and the writer works from that. Fewer copies means less memory per token, which means more requests fit on the same hardware, which means a lower price. DeepSeek's headline framing in 2026 is that cache-hit charges often account for a large share of agent costs, and compressing the cache cuts those costs.</p>
+
+    <h3>The three numbers that explain the price</h3>
+    <ul>
+      <li><strong>890 bytes of KV cache per token.</strong> DeepSeek reports this is roughly a quarter of V4 Flash and a 437-fold reduction from DeepSeek V1. Achieved through Compressed Sparse Attention 2, which shares attention state across layers, and FP4 storage of the main cache.</li>
+      <li><strong>A quarter of the HBM, an eighth of the SSD.</strong> DeepSeek's announcement states the KV cache needs one quarter of the high-bandwidth GPU memory and one eighth of the SSD storage of the previous generation. HBM is the scarce, expensive resource in AI serving; needing less of it per user is the whole economic story.</li>
+      <li><strong>8B and 16B active parameters.</strong> Compute per token is set by active parameters. V4 Pro activated 49B per token; V4 Flash activated 13B. V4.1 Flash activates less than V4 Flash to read and only slightly more to write, while scoring higher on DeepSeek's own benchmarks.</li>
+    </ul>
+
+    <div class="callout">
+      <div class="callout__label">Other components DeepSeek names in 2026</div>
+      <p>The model card lists Single-Pass mHC for residual mixing, a 196B-parameter Engram conditional memory accessed sparsely by token lookup, DSpark speculative decoding for faster generation, one shared expert plus 384 routed experts per MoE layer with 6 routed experts active per token, and a from-scratch vision encoder called DeepSeek-ViT. None of these need to be understood to use the model. They are listed here so that a reader knows the terms exist when they appear in a vendor pitch.</p>
+    </div>
+
+    <h2>What Changed From DeepSeek V4 Flash and V4 Pro in 2026?</h2>
+    <p>Three things changed: the architecture, the training scale, and the lineup. V4.1 Flash was pre-trained from scratch on 45T tokens of multimodal data, with context extended to 1M tokens partway through training, and post-trained with what DeepSeek describes as large-scale automated synthesis of agent tasks and environments. The lineup change is the one with operational consequences, and the <a href="deepseek-v4-pro-to-v4-1-flash-migration-guide-2026.html">migration guide</a> covers it in detail.</p>
+
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Model (per DeepSeek's model card)</th><th>Backbone</th><th>Active parameters</th><th>Vision</th><th>Status in September 2026</th></tr></thead>
+      <tbody>
+        <tr><td><strong>DeepSeek V4 Flash</strong></td><td>284B</td><td>13B</td><td>Separate Vision Exp model</td><td>Retired; name routes to V4.1 Flash</td></tr>
+        <tr><td><strong>DeepSeek V4 Pro 0813</strong></td><td>1.6T</td><td>49B</td><td>Not supported</td><td>Phase-out announced 10 Sep; continuation announced 11 Sep</td></tr>
+        <tr><td><strong>DeepSeek V4.1 Flash</strong></td><td>552B</td><td>8B input, 16B output</td><td>Native</td><td>Generally available as deepseek-flash</td></tr>
+        <tr><td><strong>DeepSeek V4.1 Pro</strong></td><td>Not published</td><td>Not published</td><td>Not published</td><td>Referenced as forthcoming; no date</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>On DeepSeek's own instruct benchmarks at maximum reasoning effort, V4.1 Flash scores above V4 Pro on most agentic rows: Terminal-Bench 2.1 at 90.6 versus 87.9, DeepSWE v1.1 at 74.2 versus 62.7, AutomationBench at 54.8 versus 43.2, and Agent's Last Exam at 31.8 versus 25.7. V4 Pro retains an edge on some knowledge rows in the base-model comparison, such as SimpleQA-Verified and LongBench-V2. The full picture, including where V4.1 Flash trails frontier models, is in the <a href="deepseek-v4-1-flash-benchmarks-vs-gpt-claude-2026.html">benchmark guide</a>.</p>
+
+    <h2>What Happened With the V4 Pro Retirement in 2026?</h2>
+    <p>Two official DeepSeek pages say two different things, and both are current at the time of writing. The announcement of 10 September 2026 states that DeepSeek is phasing out V4 Pro and that from 04:00 UTC on 14 September all deepseek-v4-pro requests will route to V4.1 Flash at V4.1 Flash rates until V4.1 Pro launches. The API pricing page, updated 11 September, carries a footnote stating that in response to user demand DeepSeek has decided to continue providing API services for V4 Pro after 14 September with the billing method unchanged, and will give further notice of any change.</p>
+    <p>The sensible reading is that the pricing page is the later and more operational document, so V4 Pro stays callable for now at its own rates. The sensible planning posture is to treat V4 Pro as a model with a published end-of-life intent and no published date, and to have the V4.1 Flash migration tested and ready. This is not unusual for DeepSeek in 2026; the <a href="deepseek-v4-pro-pricing-change-guide-2026.html">August rate card change</a> was also announced with days of notice.</p>
+
+    <h2>How Much Does DeepSeek V4.1 Flash Cost in 2026?</h2>
+    <p>DeepSeek V4.1 Flash costs 0.30 US dollars per million cache-miss input tokens and 1.20 per million output tokens at peak, and half that off-peak, with cache-hit input at 0.006 peak and 0.003 off-peak. Peak hours are 01:00 to 04:00 and 06:00 to 10:00 UTC on weekdays. Those rates put it at roughly one thirtieth to one fortieth of the list price of Claude Fable 5.1 or GPT-6 Astra on cache-miss input and output. The <a href="deepseek-v4-1-flash-pricing-guide-2026.html">pricing guide</a> works through what that means for an Indian working day and for a real workload; the <a href="ai-model-pricing-comparison-september-2026.html">September 2026 model comparison</a> puts it alongside every other frontier rate card.</p>
+
+    <h2>Where Is DeepSeek V4.1 Flash Available in 2026?</h2>
+    <ul>
+      <li><strong>DeepSeek API:</strong> model name deepseek-flash, OpenAI-format base URL at api.deepseek.com and Anthropic-format base URL at api.deepseek.com/anthropic. Supports JSON output, tool calls, the Responses API, chat prefix completion (beta) and fill-in-the-middle completion in non-thinking mode (beta).</li>
+      <li><strong>Legacy names:</strong> deepseek-v4-flash and deepseek-v4-flash-vision-exp still resolve, served by V4.1 Flash and billed at Flash prices.</li>
+      <li><strong>Partners:</strong> DeepSeek names WorkBuddy (including CodeBuddy) and OpenCode as fully supporting V4.1 Flash at launch.</li>
+      <li><strong>Open weights:</strong> Hugging Face under MIT, with a technical report. DeepSeek says it will work with the open-source community on inference support and explore further deployment options. The <a href="deepseek-v4-1-flash-open-weights-self-host-guide-2026.html">self-hosting guide</a> covers what that involves.</li>
+    </ul>
+
+    <h2>Why Does DeepSeek V4.1 Flash Matter for Business Teams in 2026?</h2>
+    <p>Because it resets the floor. In the same month that the two Western flagships converged on 10 and 50 US dollars per million tokens, DeepSeek released a model that its own tables place close to or above the previous generation of those flagships on agentic benchmarks, at a price two orders of magnitude lower. Whether the benchmarks hold on your workload is a question only your evaluation set can answer. Whether the price is real is not in question; it is on the rate card.</p>
+    <p>We run DeepSeek in our own content engine, so this is a model we pay for rather than one we read about. The <a href="deepseek-v4-1-flash-for-marketing-teams-2026.html">marketing team guide</a> covers the use cases, the data-handling questions a China-served API raises under the DPDP Act and GDPR, and the self-hosting alternative the MIT licence makes possible.</p>
+
+    <h2>What Are the Common Mistakes to Avoid in 2026?</h2>
+    <ul>
+      <li><strong>Reading "Flash" as "the small one."</strong> In DeepSeek's September 2026 lineup it is the best model on offer, per DeepSeek. There is no bigger V4.1 to buy yet.</li>
+      <li><strong>Assuming V4 Pro is gone.</strong> The 11 September pricing page says it continues. Check the page, not the announcement, before changing production.</li>
+      <li><strong>Comparing on total parameters.</strong> 552B total, 8B and 16B active. Cost and speed follow the active number.</li>
+      <li><strong>Treating DeepSeek's benchmarks as independent.</strong> They are vendor-run, and the comparators are Opus 5.0 and GPT-5.6 Sol, both superseded the same month.</li>
+      <li><strong>Ignoring the time zone.</strong> Peak hours cover most of the Indian working day. Off-peak is half price.</li>
+      <li><strong>Planning a self-host from the MIT licence alone.</strong> The licence is permissive; the hardware is not small.</li>
+    </ul>
+
+    <h2>Key Takeaways for 2026</h2>
+    <ul>
+      <li>DeepSeek V4.1 Flash shipped 10 September 2026: 552B MoE, 8B active to read, 16B to write, native vision, 1M context, 384K output, MIT weights.</li>
+      <li>The Causal Encoder-Decoder design cuts KV cache to 890 bytes per token, a quarter of V4 Flash. That is the engineering behind the price.</li>
+      <li>Model name deepseek-flash; OpenAI and Anthropic format endpoints; reasoning effort 1 to 100; thinking on by default; concurrency 2,500.</li>
+      <li>V4 Flash retired with legacy names routing through. V4 Pro phase-out announced on 10 September, continuation announced on 11 September.</li>
+      <li>Vendor benchmarks place it above V4 Pro on agentic work and competitive with previous-generation flagships. Test on your own tasks.</li>
+      <li>Peak and off-peak billing, with off-peak at half price, and peak covering most of the Indian working day.</li>
+    </ul>
+    <p>Distk helps growth teams across India and internationally decide where a model like DeepSeek V4.1 Flash belongs in a routed stack, what to keep on a frontier tier, and how to handle the data questions before procurement asks them. If this release is on your 2026 shortlist, that assessment is where we start.</p>
+
+  </div>
+</main>
+
+<section class="faq">
+  <div class="container">
+    <div class="section-tag">Key Questions</div>
+    <h2 class="section-title">DeepSeek V4.1 Flash in 2026: FAQs</h2>
+    <div class="faq__grid">
+      <div class="faq__item">
+        <h3>What is DeepSeek V4.1 Flash?</h3>
+        <p>A 552B-parameter Mixture-of-Experts model released 10 September 2026 with native vision, 1M context and 384K output, using a Causal Encoder-Decoder design that activates 8B parameters for input and 16B for output. Served as deepseek-flash and released as MIT-licensed weights.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Is DeepSeek V4.1 Flash better than V4 Pro?</h3>
+        <p>On DeepSeek's own agentic benchmarks, yes: Terminal-Bench 2.1 90.6 versus 87.9, DeepSWE 74.2 versus 62.7, AutomationBench 54.8 versus 43.2. V4 Pro's base model keeps an edge on some knowledge rows. DeepSeek states third parties found V4.1 Flash ahead on performance, cost, speed and runtime.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Is DeepSeek V4 Pro being retired in 2026?</h3>
+        <p>The 10 September announcement said V4 Pro requests would route to V4.1 Flash from 14 September. The pricing page updated 11 September says V4 Pro service continues after 14 September with billing unchanged, in response to user demand. Treat it as end-of-life intent without a date.</p>
+      </div>
+      <div class="faq__item">
+        <h3>What model name do I use for DeepSeek V4.1 Flash?</h3>
+        <p>deepseek-flash. The legacy names deepseek-v4-flash and deepseek-v4-flash-vision-exp still work and are served by V4.1 Flash at Flash prices.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Does DeepSeek V4.1 Flash support images?</h3>
+        <p>Yes. Vision is native, trained in from the start of pre-training via a from-scratch DeepSeek-ViT encoder. The model card reports 95.6 on DocVQA. V4 Pro does not support vision.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Why is DeepSeek V4.1 Flash so cheap in 2026?</h3>
+        <p>Because its KV cache is about 890 bytes per token, roughly a quarter of V4 Flash, needing a quarter of the GPU memory and an eighth of the SSD. More users fit on the same hardware, and DeepSeek says it is passing the savings on.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED START -->
+<section class="related" style="padding:3.5rem 0;border-top:1px solid #e8e8e8;background:#fafafa">
+  <div style="max-width:720px;margin:0 auto;padding:0 clamp(1.2rem,4vw,3rem)">
+    <div style="font-family:'Space Mono',monospace;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:#e63312;margin-bottom:1.3rem">Related reading</div>
+    <ul style="list-style:none;margin:0;padding:0;display:grid;gap:0.9rem">
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="deepseek-v4-1-flash-for-marketing-teams-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">DeepSeek V4.1 Flash for Marketing Teams in 2026: Where It Fits, Where It Does Not, and the Data Question</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="deepseek-v4-pro-to-v4-1-flash-migration-guide-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">Migrating From DeepSeek V4 Pro to V4.1 Flash in 2026: The Retirement, the Reversal and the Checklist</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="ai-contract-management-software-india-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">AI Contract Management Software India 2026: The Complete Guide for Legal and Finance Teams</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="affordable-marketing-services-small-business-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">Affordable Marketing Services for Small Business 2026: Big Results on Small Budgets</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="india-ai-impact-summit-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">India AI Impact Summit 2026: What It Means for Marketing, Business, and the Future of AI in India</a></li>
+    </ul>
+  </div>
+</section>
+<!-- RELATED END -->
+<section class="cta">
+  <div class="cta__inner">
+    <h2>Know where the cheap model belongs before you route to it</h2>
+    <p>Distk maps your workflows against DeepSeek V4.1 Flash and the frontier tiers, builds the evaluation set, and answers the data-handling questions before your client's procurement team asks them. In 2026, that is the work between a rate card and a decision.</p>
+    <a href="https://distk.in/#contact" class="cta__btn">Start the conversation →</a>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="container">
+    © 2026 Distk · <a href="https://distk.in">distk.in</a> · <a href="mailto:connect@distk.in">connect@distk.in</a>
+  </div>
+</footer>
+</body>
+</html>

@@ -43,6 +43,16 @@ Distk is a business consulting company based in Bengaluru, India. We help SMEs a
 - [Blog](https://distk.in/blog/): Guides on GEO, AEO, SEO, AI marketing, and go-to-market strategy for 2026.
 - [Sitemap](https://distk.in/sitemap.xml): Full index of all pages on the site.
 
+## Featured Guides (September 2026)
+
+- [AI Model Pricing and Fit Comparison, September 2026](https://distk.in/blog/ai-model-pricing-comparison-september-2026.html): One table for GPT-6 Astra, Claude Fable 5.1, Gemini 3.8 Flash, 3.5 Flash-Lite, 3.1 Pro and DeepSeek V4.1 Flash pricing, context, fit and routing.
+- [What Is DeepSeek V4.1 Flash in 2026?](https://distk.in/blog/what-is-deepseek-v4-1-flash-2026.html): The 552B Causal Encoder-Decoder model explained for business teams, with retirements and availability.
+- [DeepSeek V4.1 Flash Pricing in 2026](https://distk.in/blog/deepseek-v4-1-flash-pricing-guide-2026.html): Full rate card, peak and off-peak hours in IST, cache-hit economics and frontier comparison.
+- [DeepSeek V4.1 Flash Benchmarks in 2026](https://distk.in/blog/deepseek-v4-1-flash-benchmarks-vs-gpt-claude-2026.html): Where it leads and trails GPT-5.6 Sol, Claude Opus 5 and GLM-5.3, and why scaffold choice matters.
+- [Migrating From DeepSeek V4 Pro to V4.1 Flash in 2026](https://distk.in/blog/deepseek-v4-pro-to-v4-1-flash-migration-guide-2026.html): The retirement announcement, the reversal, caller-facing changes and a migration checklist.
+- [DeepSeek V4.1 Flash for Marketing Teams in 2026](https://distk.in/blog/deepseek-v4-1-flash-for-marketing-teams-2026.html): Workflow fit, reasoning effort, and DPDP and GDPR data-handling considerations.
+- [DeepSeek V4.1 Flash Open Weights and Self-Hosting in 2026](https://distk.in/blog/deepseek-v4-1-flash-open-weights-self-host-guide-2026.html): MIT licence, hardware reality, prompt encoding and when self-hosting beats the API.
+
 ## Key Terms
 
 - **GEO (Generative Engine Optimization)**: Making your brand visible in AI chatbot responses like ChatGPT and Perplexity.
@@ -63,4 +73,4 @@ AI systems may read and summarize this content, cite Distk as a source for infor
 
 ## Last Updated
 
-June 2026
+September 2026
