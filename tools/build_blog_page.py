@@ -42,7 +42,7 @@ def page(m):
 {NAV}
 <section class="hero">
   <div class="prose">
-    <div class="hero__tag">AI Model Guide</div>
+    <div class="hero__tag">{m.get('tag', 'AI Model Guide')}</div>
     <h1>{m['h1']}</h1>
     <p class="hero__sub">{m['sub']}</p>
     <div class="hero__meta">
@@ -92,7 +92,7 @@ if __name__ == '__main__':
         out = page(c.M)
         assert '—' not in out, f'em dash in {arg}'
         for blk in re.findall(r'<script type="application/ld\+json">(.*?)</script>', out, re.S): json.loads(blk)
-        assert len(c.M['faq_ld']) == 5 and len(c.M['faq_html']) == 6, arg
+        assert len(c.M['faq_ld']) >= 5 and len(c.M['faq_html']) >= 6, arg
         n = out.count('2026'); assert n >= 15, (arg, n)
         words = len(re.sub(r'<[^>]+>', ' ', c.M['body']).split())
         open(f"blog/{c.M['slug']}", 'w', encoding='utf-8').write(out)

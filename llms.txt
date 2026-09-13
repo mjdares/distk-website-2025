@@ -45,6 +45,7 @@ Distk is a business consulting company based in Bengaluru, India. We help SMEs a
 
 ## Featured Guides (September 2026)
 
+- [Meta Ads Complete Guide 2026](https://distk.in/blog/meta-ads-complete-guide-2026.html): Ads Manager structure, six objectives, Advantage+ and what turns it off, audiences, placements including Threads and WhatsApp, creative and generative AI, bidding, learning phase, Pixel and Conversions API, attribution, policy, launch steps, checklist and glossary, sourced from Meta documentation.
 - [AI Model Pricing and Fit Comparison, September 2026](https://distk.in/blog/ai-model-pricing-comparison-september-2026.html): One table for GPT-6 Astra, Claude Fable 5.1, Gemini 3.8 Flash, 3.5 Flash-Lite, 3.1 Pro and DeepSeek V4.1 Flash pricing, context, fit and routing.
 - [What Is DeepSeek V4.1 Flash in 2026?](https://distk.in/blog/what-is-deepseek-v4-1-flash-2026.html): The 552B Causal Encoder-Decoder model explained for business teams, with retirements and availability.
 - [DeepSeek V4.1 Flash Pricing in 2026](https://distk.in/blog/deepseek-v4-1-flash-pricing-guide-2026.html): Full rate card, peak and off-peak hours in IST, cache-hit economics and frontier comparison.
