@@ -35,7 +35,7 @@
     <!-- Blog Index -->
     <url>
         <loc>https://distk.in/blog/</loc>
-        <lastmod>2026-09-13</lastmod>
+        <lastmod>2026-09-24</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
     </url>
@@ -2439,7 +2439,7 @@
     <!-- Added September 2026 -->
     <url>
         <loc>https://distk.in/blog/ai-model-pricing-comparison-september-2026.html</loc>
-        <lastmod>2026-09-13</lastmod>
+        <lastmod>2026-09-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -2553,6 +2553,20 @@
     <!-- Added September 2026 -->
     <url>
         <loc>https://distk.in/blog/claude-opus-5-5-marketing-guide-2026.html</loc>
+        <lastmod>2026-09-24</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- Added September 2026 -->
+    <url>
+        <loc>https://distk.in/blog/chatgpt-event-triggered-scheduled-tasks-guide-2026.html</loc>
+        <lastmod>2026-09-24</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://distk.in/blog/chatgpt-work-vs-chat-vs-codex-guide-2026.html</loc>
         <lastmod>2026-09-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
