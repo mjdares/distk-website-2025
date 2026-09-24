@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xdifcafwxl");
+  </script>
+
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>System One vs LLM in 2026: Why Not Just Ask GPT for JSON? | Distk</title>
+<meta name="description" content="System One models vs LLMs with JSON mode in 2026: what RLCD changes, what calibration promises, why per-question isolation matters, the input-only cost shape, and when a generative model is still the right choice.">
+<meta name="keywords" content="System One vs LLM, TypeSafe vs LLM 2026, JSON mode vs structured decisions, calibrated probabilities AI, RLCD RLHF RLVR, structured AI decisions 2026, AI development guide 2026">
+<meta name="author" content="Distk"><meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://distk.in/blog/system-one-vs-llm-structured-decisions-2026.html">
+<meta property="og:type" content="article"><meta property="og:url" content="https://distk.in/blog/system-one-vs-llm-structured-decisions-2026.html">
+<meta property="og:title" content="System One vs an LLM in 2026: Why Not Just Ask GPT for JSON?">
+<meta property="og:description" content="JSON mode constrains the shape of generated text. It does not make the numbers inside calibrated. What actually differs.">
+<meta property="og:image" content="https://distk.in/assets/images/og-image.jpg"><meta property="og:site_name" content="Distk">
+<meta property="article:published_time" content="2026-09-24T00:00:00+05:30">
+<meta property="article:modified_time" content="2026-09-24T00:00:00+05:30">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="System One vs an LLM in 2026: Why Not Just Ask GPT for JSON?"><meta name="twitter:description" content="JSON mode constrains the shape of generated text. It does not make the numbers inside calibrated. What actually differs.">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "System One vs an LLM in 2026: Why Not Just Ask GPT for JSON?", "description": "A conceptual comparison of System One models and generative LLMs with structured output in 2026: training objectives, calibration, per-question isolation, cost shape, what System One cannot do, and when each is the right tool.", "author": {"@type": "Organization", "name": "Distk", "url": "https://distk.in"}, "publisher": {"@type": "Organization", "name": "Distk", "logo": {"@type": "ImageObject", "url": "https://distk.in/assets/images/Logo.png"}}, "datePublished": "2026-09-24", "dateModified": "2026-09-24", "inLanguage": "en", "about": [{"@type": "Thing", "name": "System One model"}, {"@type": "Thing", "name": "large language model"}, {"@type": "Thing", "name": "TypeSafe AI"}, {"@type": "Thing", "name": "Jev"}, {"@type": "Thing", "name": "RLCD"}, {"@type": "Thing", "name": "calibrated probabilities"}, {"@type": "Thing", "name": "structured output"}, {"@type": "Thing", "name": "JSON mode"}], "mentions": [{"@type": "Thing", "name": "System One model"}, {"@type": "Thing", "name": "large language model"}, {"@type": "Thing", "name": "TypeSafe AI"}, {"@type": "Thing", "name": "Jev"}, {"@type": "Thing", "name": "RLCD"}, {"@type": "Thing", "name": "calibrated probabilities"}, {"@type": "Thing", "name": "structured output"}, {"@type": "Thing", "name": "JSON mode"}], "mainEntityOfPage": {"@type": "WebPage", "@id": "https://distk.in/blog/system-one-vs-llm-structured-decisions-2026.html"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the difference between a System One model and an LLM in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "A large language model generates text for people to read. A System One model such as TypeSafe's Jev returns typed decisions and calibrated probabilities that software consumes directly, with no text to parse. Both understand natural language input, but only the LLM produces language as output."}}, {"@type": "Question", "name": "Why is JSON mode on an LLM not the same as a System One model?", "acceptedAnswer": {"@type": "Answer", "text": "JSON mode constrains the shape of the text a generative model produces but does not change the training objective behind the values inside that shape. TypeSafe trains Jev with RLCD, reinforcement learning for calibrated decisions, so the decision and its probability distribution are the model's actual output rather than a rendering of generated tokens."}}, {"@type": "Question", "name": "What does calibration actually promise in a System One model?", "acceptedAnswer": {"@type": "Answer", "text": "Calibration means that across many predictions, outcomes assigned a probability of 0.2 should occur about 20 percent of the time and outcomes assigned 0.8 about 80 percent of the time. TypeSafe states explicitly that these rates describe groups of predictions and are not a guarantee about any single answer."}}, {"@type": "Question", "name": "Why does per-question isolation matter when comparing the two approaches?", "acceptedAnswer": {"@type": "Answer", "text": "In one TypeSafe request every question is evaluated in parallel and in isolation against the same state, so one answer never becomes hidden context for another. Questions can be added or removed without changing the other answers, which makes each judgment an independently testable unit instead of part of one large interacting prompt."}}, {"@type": "Question", "name": "When should a team still use a generative LLM instead of a System One model in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "Whenever the deliverable is language, such as drafting replies, summarising documents, or writing code, and when a task genuinely requires multi-step reasoning. TypeSafe states that Jev is not trained to generate text and that tasks requiring extended reasoning should either be decomposed into atomic questions or given to a different class of model."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://distk.in/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://distk.in/blog/"}, {"@type": "ListItem", "position": 3, "name": "System One vs an LLM in 2026: Why Not Just Ask GPT for JSON?", "item": "https://distk.in/blog/system-one-vs-llm-structured-decisions-2026.html"}]}</script>
+<link rel="icon" type="image/png" href="../assets/images/favicon.png"><link rel="apple-touch-icon" href="../assets/images/Logo.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BWDTQ1JPL2"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-BWDTQ1JPL2');</script>
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1077520544213003');fbq('track','PageView');</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1077520544213003&ev=PageView&noscript=1"></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#0a0a0a;--paper:#fafafa;--mid:#6b6b6b;--light:#e8e8e8;--accent:#e63312;--accent-soft:rgba(230,51,18,0.08);--mono:'Space Mono',monospace;--sans:'Outfit',sans-serif;--container:1120px;--prose:720px;--gutter:clamp(1.2rem,4vw,3rem)}
+html{font-size:16px;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.container{max-width:var(--container);margin:0 auto;padding:0 var(--gutter)}
+.prose{max-width:var(--prose);margin:0 auto;padding:0 var(--gutter)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--light)}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;max-width:var(--container);margin:0 auto;padding:0.9rem var(--gutter)}
+.nav__logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;color:var(--ink)}
+.nav__logo img{height:32px;width:auto}
+.nav__logo span{font-family:var(--mono);font-weight:700;font-size:1.05rem;letter-spacing:-0.02em}
+.nav__logo small{display:block;font-size:0.55rem;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);line-height:1}
+.nav__back{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid);text-decoration:none;display:flex;align-items:center;gap:0.4rem;transition:color 0.2s}
+.nav__back:hover{color:var(--accent)}
+.nav__cta{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.6rem 1.4rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.nav__cta:hover{background:var(--accent)}
+.hero{padding:7.5rem 0 3.5rem;position:relative;overflow:hidden;border-bottom:1px solid var(--light)}
+.hero::before{content:'S1';position:absolute;right:-1%;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:clamp(6rem,26vw,22rem);font-weight:700;color:rgba(0,0,0,0.03);line-height:1;pointer-events:none;user-select:none;letter-spacing:-0.05em}
+.hero__tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1.5rem}
+.hero__tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.hero h1{font-family:var(--sans);font-weight:700;font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;letter-spacing:-0.03em;max-width:20ch;margin-bottom:1.5rem}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero__sub{font-size:1.1rem;color:var(--mid);max-width:56ch;line-height:1.7;margin-bottom:2rem}
+.hero__meta{display:flex;flex-wrap:wrap;gap:1.5rem;font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid)}
+.tldr{background:var(--accent-soft);border-left:3px solid var(--accent);padding:1.8rem 2rem;margin:3rem 0;position:relative}
+.tldr::before{content:'TL;DR';position:absolute;top:-0.6rem;left:2rem;font-family:var(--mono);font-size:0.62rem;font-weight:700;letter-spacing:0.12em;background:var(--accent);color:#fff;padding:0.2rem 0.6rem}
+.tldr p{font-size:0.95rem;color:var(--ink);line-height:1.7}
+.article{padding:4rem 0 5rem}
+.article h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.35rem,2.8vw,1.8rem);letter-spacing:-0.02em;line-height:1.2;margin:3rem 0 1rem;padding-top:1rem;border-top:1px solid var(--light)}
+.article h2:first-child{border-top:none;margin-top:0}
+.article h3{font-family:var(--mono);font-weight:700;font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin:2rem 0 0.6rem}
+.article p{font-size:1rem;color:#2a2a2a;line-height:1.8;margin-bottom:1.25rem}
+.article ul,.article ol{padding-left:1.4rem;margin-bottom:1.25rem}
+.article li{font-size:1rem;color:#2a2a2a;line-height:1.75;margin-bottom:0.4rem}
+.article strong{font-weight:600;color:var(--ink)}
+.article a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(230,51,18,0.3)}
+.article a:hover{border-bottom-color:var(--accent)}
+.article blockquote{border-left:3px solid var(--accent);padding:0.75rem 1.5rem;margin:2rem 0;background:var(--accent-soft)}
+.article blockquote p{color:var(--ink);font-size:1rem;margin:0}
+.table-wrap{overflow-x:auto;margin:2rem 0}
+.data-table{width:100%;border-collapse:collapse;margin:0;font-size:0.88rem}
+.data-table th{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:0.7rem 1rem;text-align:left;white-space:nowrap}
+.data-table td{padding:0.75rem 1rem;border-bottom:1px solid var(--light);vertical-align:top}
+.data-table tr:last-child td{border-bottom:none}
+.data-table tr:nth-child(even) td{background:#f5f5f5}
+.callout{border:1.5px solid var(--light);padding:1.5rem 1.8rem;margin:2rem 0}
+.callout__label{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem}
+.callout p{font-size:0.92rem;color:var(--mid);line-height:1.7;margin:0}
+.faq{padding:4rem 0;background:var(--ink);color:var(--paper)}
+.faq .section-tag{color:var(--accent)}
+.faq .section-tag::before{background:var(--accent)}
+.faq__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2.5rem;margin-top:2.5rem}
+.faq__item{border-left:2px solid var(--accent);padding-left:1.5rem}
+.faq__item h3{font-family:var(--sans);font-weight:600;font-size:0.95rem;margin-bottom:0.5rem;color:var(--paper)}
+.faq__item p{font-size:0.85rem;color:rgba(255,255,255,0.88);line-height:1.65}
+.section-tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1rem}
+.section-tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.section-title{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.15;color:var(--paper)}
+.cta{padding:5rem 0;background:var(--accent-soft);border-top:1px solid rgba(230,51,18,0.12)}
+.cta__inner{max-width:680px;margin:0 auto;padding:0 var(--gutter);text-align:center}
+.cta h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.2;margin-bottom:1rem}
+.cta p{font-size:1rem;color:var(--mid);line-height:1.7;margin-bottom:2rem}
+.cta__btn{display:inline-flex;align-items:center;gap:0.6rem;font-family:var(--mono);font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;padding:1rem 2.2rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.cta__btn:hover{background:var(--accent)}
+.foot{padding:2.5rem 0;border-top:1px solid var(--light);text-align:center;font-family:var(--mono);font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid)}
+.foot a{color:var(--mid);text-decoration:none}.foot a:hover{color:var(--accent)}
+@media(max-width:768px){.faq__grid{grid-template-columns:1fr}.nav__back span{display:none}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="https://distk.in" class="nav__logo">
+      <img src="../assets/images/Logo.png" alt="Distk">
+      <div><span>Distk</span><small>Global Growth Partner</small></div>
+    </a>
+    <a href="/blog/" class="nav__back">← <span>All articles</span></a>
+    <a href="https://distk.in/#contact" class="nav__cta">Work with us</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="prose">
+    <div class="hero__tag">AI Development Guide</div>
+    <h1><em>System One vs an LLM</em> in 2026: Why Not Just Ask GPT for JSON?</h1>
+    <p class="hero__sub">If a model can already return JSON, why would you use a model that cannot write at all? The answer is not about output format. It is about what the training optimised for, and what your code can safely do with the numbers that come back.</p>
+    <div class="hero__meta">
+      <span>Distk Editorial</span>
+      <span>Sep 2026</span>
+      <span>11 min read</span>
+    </div>
+  </div>
+</section>
+
+<div class="prose">
+  <div class="tldr">
+    <p>Structured output on a large language model constrains the shape of generated text. A System One model such as TypeSafe's Jev is trained so the probability itself is the product, through an approach TypeSafe calls RLCD, reinforcement learning for calibrated decisions. The stated contract is that the model does not generate text, returns decisions and probabilities, and that higher probability corresponds to a greater chance the answer is correct, measured across groups of predictions rather than guaranteed on any one answer. Three engineering differences follow: questions are evaluated in isolation so judgments do not interact, billing is on input tokens only with output free, and one state serves many questions in a single call, which TypeSafe measured as 12.2 times cheaper and 10.0 times faster than separate calls. Jev cannot write, code, explain, converse or calculate, so in 2026 the productive design uses both models for different jobs.</p>
+  </div>
+</div>
+
+<main class="article">
+  <div class="prose">
+<style>
+.prose pre{background:#f4f4f4;border-left:3px solid var(--accent);padding:1rem 1.1rem;margin:1.5rem 0;overflow-x:auto;font-size:0.85rem;line-height:1.6}
+.prose pre code{font-family:var(--mono);color:#1a1a1a;white-space:pre;background:none;padding:0;font-size:1em}
+.prose code{font-family:var(--mono);font-size:0.86em;background:#f0f0f0;padding:0.12em 0.35em;border-radius:2px}
+.prose .eli5{background:var(--accent-soft);border-left:3px solid var(--accent);padding:1.4rem 1.6rem;margin:0 0 1.6rem}
+.prose .eli5 p{font-size:1.02rem}
+.prose .eli5 p:last-child{margin-bottom:0}
+.prose .srcs{font-size:0.88rem;color:var(--mid)}
+.prose .srcs li{font-size:0.88rem;margin-bottom:0.3rem}
+</style>
+
+    <h2>What Is the Difference Between a System One Model and an LLM in 2026?</h2>
+    <p>A large language model generates text for a person to read. A System One model returns a typed decision for software to consume. Both understand natural language input, but only one of them writes anything. TypeSafe's Jev evaluates a state against typed questions and returns a chosen option, a score on your rubric, or a probability, with no text to parse and no schema to recover.</p>
+    <p>TypeSafe states the mismatch it is solving in the first paragraph of its documentation. When you need a model to make a judgment your code will consume, using a text generation system means coercing it into outputting structured decisions, then parsing the results back into something your code can depend on. JSON mode and structured output features reduce the parsing pain. They do not change what the model is doing underneath, which is still generating tokens that happen to look like a decision.</p>
+
+    <h2>Explain It Like I Am Five: Why Not Just Ask the Chatty One?</h2>
+    <div class="eli5">
+      <p>Imagine you want to know if your soup is too hot.</p>
+      <p>You could ask your very talkative uncle. He will taste it and then tell you a lovely long story about soup he had on a train in 1994, and somewhere in the middle he will say the word "hot". You have to listen to the whole thing and pick out the bit you needed. And if you ask him again tomorrow, he tells a different story, and maybe this time he says "warm".</p>
+      <p>Or you could use a thermometer. You put it in. It shows a number. Every single time, same soup, same number. You do not have to listen to anything or guess what it meant.</p>
+      <p>Your uncle is brilliant. If you want a recipe written, or a poem about soup, he is the only one who can do it. The thermometer cannot write you anything at all.</p>
+      <p>But if all your machine needs to know is "is it too hot, yes or no", the thermometer is better. It is faster, it is cheaper, it never makes up a story, and it can tell you when it is unsure because the reading is wobbling in the middle.</p>
+      <p>That is the whole idea. Use the talker for talking. Use the measurer for measuring.</p>
+    </div>
+
+    <h2>Why Is JSON Mode Not the Same Thing in 2026?</h2>
+    <p>Structured output on an LLM constrains the shape of the text it produces. It does not change the training objective that produced the numbers inside that shape. A System One model is trained so that the probability itself is the product, which is a different contract with your code. TypeSafe's AI primer names three post-training approaches to make this concrete.</p>
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Approach</th><th>What TypeSafe says it produced</th><th>Optimised for</th></tr></thead>
+      <tbody>
+        <tr><td><strong>RLHF</strong></td><td>Turned pretrained models into chatbots by training them to produce responses people prefer</td><td>Responses a person prefers to read</td></tr>
+        <tr><td><strong>RLVR</strong></td><td>Created reasoning models strong at tasks such as mathematics, but slower and more expensive</td><td>Verifiable step-by-step correctness</td></tr>
+        <tr><td><strong>RLCD</strong></td><td>TypeSafe's path: returns decisions and calibrated probabilities instead of generated text</td><td>Probabilities software can act on</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>TypeSafe's stated criticism of RLHF is specific rather than rhetorical. Training a model to say things people prefer can reward sycophancy and confident sounding hallucinations. It also causes what the company calls mode dropping, where the model learns to favour a particular style while reducing the probability of other possible outputs. That is a reasonable objective for a conversational product. It is a poor objective when the number is the deliverable.</p>
+    <p>The RLCD contract is stated as three properties: the model does not generate text, it returns decisions and probabilities, and higher probability should correspond to a greater chance that the answer is correct. That third property is calibration, and it is what lets code treat uncertainty as a value rather than a vibe.</p>
+
+    <h2>What Does Calibration Actually Promise in 2026?</h2>
+    <p>Calibration means that across many predictions from a well-calibrated model, outcomes assigned a probability of 0.2 should occur about 20 percent of the time, outcomes at 0.8 about 80 percent of the time, and outcomes at 1.0 should occur 100 percent of the time. TypeSafe states this as a property of groups of predictions, not a guarantee about any single answer.</p>
+    <p>That caveat is the most important sentence in this comparison, and it cuts both ways. It means a calibrated model can still be wrong on the case in front of you. It also means the probability distribution is a usable engineering input rather than decoration, because over a population of decisions the numbers mean what they say. You can plot confidence against accuracy on your own data and choose a threshold. You cannot do that reliably with a fluent sentence that says "I am fairly confident".</p>
+
+    <h2>How Does Per-Question Isolation Change the Engineering in 2026?</h2>
+    <p>In a single TypeSafe request, every question is evaluated in parallel and in isolation against the same state. One question's answer does not become hidden context for another. TypeSafe states the consequence directly: you can add or remove questions without changing the others' results, and adding questions creates no context rot.</p>
+    <p>Anyone who has maintained a long prompt will recognise what that fixes. In a single generated response, asking a model for six judgments at once means the judgments interact. The order of the fields nudges the answers. Adding a seventh field changes the first six. A refactor becomes a regression risk, and there is no way to unit test one judgment without re-running all of them.</p>
+    <p>With isolated questions, each judgment is a separate, testable unit with its own instructions and criteria, and the composition happens in your code where you can read it. TypeSafe's build guide is explicit that the weights and thresholds belong in code, so when priorities shift you change a coefficient rather than rewriting a prompt.</p>
+    <div class="callout">
+      <div class="callout__label">The practical test in 2026</div>
+      <p>If your current approach means nobody on the team dares reorder the fields in a prompt, you are paying an isolation tax. That is the specific problem per-question evaluation removes, and it is an engineering benefit rather than an accuracy claim.</p>
+    </div>
+
+    <h2>What Does a System One Model Deliberately Not Do?</h2>
+    <p>TypeSafe is unusually clear about its own limits, and the list is short enough to memorise. A System One model does not write replies, does not produce code, and does not generate explanations of its reasoning. Jev is also not a calculator, does not count reliably, and reads dates as text rather than as ordered quantities.</p>
+    <ul>
+      <li><strong>No generated text.</strong> TypeSafe states that Jev is not trained to generate text, and that while you can force it to by chaining choices, it will not work well and will be very slow.</li>
+      <li><strong>No reasoning trace.</strong> There is no chain of thought to read. You get a distribution, not an argument.</li>
+      <li><strong>No conversation.</strong> Each request evaluates one state. There is no thread state the model carries.</li>
+      <li><strong>No tool use or control flow.</strong> The model does not choose its next action. Your code does.</li>
+      <li><strong>No arithmetic.</strong> Keep maths in code. TypeSafe's own guidance is that Jev performs better on semantic questions than mathematical ones.</li>
+    </ul>
+    <p>None of that is a weakness in the abstract. It is the trade that buys the speed, the price and the structure. The mistake is reaching for it when you actually needed a paragraph written.</p>
+
+    <h2>Why Does the Cost Shape Differ From an LLM in 2026?</h2>
+    <p>Two structural facts change the economics, and both are published. Jev is charged on input tokens only and output tokens are free, and every question in a request is evaluated against a state that is sent once. Together those mean the expensive part of a decision workload, re-sending the same document for every judgment, largely disappears.</p>
+    <p>TypeSafe's parallel questions cookbook measured this on a real task: a 13-question regulatory briefing over the GDPR Wikipedia article. One call carrying all 13 questions cost 0.000497 US dollars and took 0.27 seconds. Thirteen separate single-question calls cost 0.006090 US dollars and took 2.71 seconds. That is 12.2 times cheaper and 10.0 times faster, with no change in the answers. The reason is simply that the 13 single calls re-send the article 13 times.</p>
+    <p>We are not putting a cross-vendor price table in this post, because TypeSafe's documentation does not publish one and inventing the comparison would be worse than leaving it out. For current frontier model rates see our <a href="ai-model-pricing-comparison-september-2026.html">AI model pricing and fit comparison</a>, and for the full Jev arithmetic see our <a href="typesafe-ai-pricing-limits-models-2026.html">pricing, limits and models guide</a>.</p>
+
+    <h2>How Do the Two Approaches Compare Feature by Feature in 2026?</h2>
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Dimension</th><th>System One model (Jev, per TypeSafe's docs)</th><th>Generative LLM with structured output</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Output</strong></td><td>Typed decision plus a probability distribution over options you defined</td><td>Generated tokens shaped to a schema</td></tr>
+        <tr><td><strong>Answer space</strong></td><td>Constrained to your options; never returns a value outside them</td><td>Constrained by the schema, produced by generation</td></tr>
+        <tr><td><strong>Uncertainty</strong></td><td>Calibrated confidence on Choice and Score; a 0 to 1 probability on Noul</td><td>Whatever the text says about its own certainty</td></tr>
+        <tr><td><strong>Several judgments at once</strong></td><td>Isolated and parallel; adding one does not change the others</td><td>Interact within one generation</td></tr>
+        <tr><td><strong>Explanations</strong></td><td>None by design</td><td>Available, and often the point</td></tr>
+        <tr><td><strong>Writing, coding, summarising</strong></td><td>Not supported</td><td>The core capability</td></tr>
+        <tr><td><strong>Latency</strong></td><td>Most queries about 100 ms, per TypeSafe</td><td>Depends on output length</td></tr>
+        <tr><td><strong>Billing shape</strong></td><td>Input tokens only; output free</td><td>Typically both, with output priced higher</td></tr>
+        <tr><td><strong>Input modalities</strong></td><td>Text only in 2026</td><td>Frequently multimodal</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h2>When Should You Still Use an LLM in 2026?</h2>
+    <p>Whenever the deliverable is language, or the task genuinely needs multi-step reasoning. TypeSafe's own framing supports this: if the question you want to ask would require extended reasoning or weighs multiple independent factors, that is a System Two task, and the documented advice is either to decompose it into atomic questions or to use a different kind of model.</p>
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Task</th><th>Better fit in 2026</th><th>Why</th></tr></thead>
+      <tbody>
+        <tr><td>Draft a reply to the customer</td><td>Generative LLM</td><td>The output is language. Jev cannot write it.</td></tr>
+        <tr><td>Decide which queue that customer goes to</td><td>System One</td><td>Bounded answer space, needs a threshold, runs on every message.</td></tr>
+        <tr><td>Summarise a 40 page report</td><td>Generative LLM</td><td>Summarisation is generation.</td></tr>
+        <tr><td>Decide whether that report is relevant enough to summarise</td><td>System One</td><td>One judgment, cheap, runs over the whole corpus.</td></tr>
+        <tr><td>Write the code for a feature</td><td>Coding agent on an LLM</td><td>Jev does not produce code.</td></tr>
+        <tr><td>Check whether a generated answer cited its source correctly</td><td>System One</td><td>TypeSafe has a cookbook for exactly this.</td></tr>
+        <tr><td>Multi-step research with tool use</td><td>Reasoning model or agent</td><td>Control flow and indirection are not System One work.</td></tr>
+        <tr><td>Screen every message into and out of that agent</td><td>System One</td><td>One request, several hazard questions, thresholds in code.</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Read down that table and the pattern is obvious: the two are complements far more often than alternatives. The most common productive shape in 2026 is a System One model in front of and around a generative model, deciding what reaches it and checking what comes out. That is what TypeSafe's <a href="typesafe-patterns-fan-out-intent-routing-2026.html">intent routing and guardrail patterns</a> describe.</p>
+
+    <h2>What Are the Three Architectures TypeSafe Describes?</h2>
+    <p>TypeSafe's build guide frames the choice as three system shapes, and naming them is useful even if you never use TypeSafe. Traditional software is a decision tree built from reliable primitives, which developers compose into higher-level abstractions. An LLM agent processes instructions and chooses its next step, which works well when a person is monitoring the process, though every loop introduces another opportunity to go off the rails. AI-powered software keeps control flow, deterministic rules and side effects in code, and inserts the model only where the system needs programmable common sense or has to interpret unstructured data.</p>
+    <p>The company's summary of how to build is five lines: keep control flow and side effects in code; break broad judgments into narrow typed questions with explicit instructions and criteria; give each question only the context it needs; use probabilities and confidence to act, ask for review, or escalate; and ask independent questions together, then compose their answers in code.</p>
+
+    <h2>What Are the Common Mistakes in This Comparison in 2026?</h2>
+    <ul>
+      <li><strong>Treating it as a benchmark question.</strong> TypeSafe publishes no head-to-head accuracy comparison against named LLMs, and anyone who claims one is not citing the documentation.</li>
+      <li><strong>Assuming JSON mode is equivalent.</strong> It constrains the shape of generated text. It does not make the numbers inside calibrated.</li>
+      <li><strong>Expecting an explanation.</strong> There is no reasoning trace to show a stakeholder. If your process needs a written rationale, plan for a second model or a human note.</li>
+      <li><strong>Porting a long prompt wholesale.</strong> A 600 word prompt with six embedded judgments becomes six atomic questions, not one giant instruction.</li>
+      <li><strong>Reading confidence as correctness.</strong> Calibration describes groups of predictions, not the single answer on your screen.</li>
+      <li><strong>Choosing one and retiring the other.</strong> The documented patterns put both in the same system, doing different jobs.</li>
+    </ul>
+
+    <h2>Key Takeaways for 2026</h2>
+    <ul>
+      <li>An LLM generates text for people. A System One model returns typed decisions for software. The difference is the training objective, not just the output format.</li>
+      <li>TypeSafe's RLCD contract is that the model does not generate text, returns decisions and probabilities, and that higher probability corresponds to a greater chance of being correct.</li>
+      <li>Calibration is a property of groups of predictions. It makes thresholds meaningful; it does not make any single answer certain.</li>
+      <li>Per-question isolation means judgments do not interact, so each one is independently testable and a refactor is not a regression risk.</li>
+      <li>Input-only billing plus one state per request is why batching 13 questions measured 12.2 times cheaper and 10.0 times faster than 13 calls in TypeSafe's own cookbook.</li>
+      <li>Jev cannot write, code, explain, converse, or calculate. Those are the trades that buy the speed and the price.</li>
+      <li>In 2026 the productive shape is both: a decision model routing and checking, a generative model writing.</li>
+    </ul>
+    <p>Distk helps teams work out which half of that split each part of their workflow belongs to, and builds the routing so the expensive model only runs when it is genuinely needed. If you are weighing this choice in 2026, start there.</p>
+
+    <h2>Sources</h2>
+    <ul class="srcs">
+      <li><a href="https://docs.typesafe.ai/introduction" rel="noopener" target="_blank">TypeSafe AI docs: Introduction</a></li>
+      <li><a href="https://docs.typesafe.ai/introduction/machine-learning-primer" rel="noopener" target="_blank">AI primer: RLHF, RLVR and RLCD</a></li>
+      <li><a href="https://docs.typesafe.ai/concepts/system-one" rel="noopener" target="_blank">System One</a></li>
+      <li><a href="https://docs.typesafe.ai/concepts/how-to-build-with-system-one" rel="noopener" target="_blank">How to build with TypeSafe</a></li>
+      <li><a href="https://docs.typesafe.ai/primitives" rel="noopener" target="_blank">Primitives (Questions)</a></li>
+      <li><a href="https://docs.typesafe.ai/confidence" rel="noopener" target="_blank">Confidence</a></li>
+      <li><a href="https://docs.typesafe.ai/cookbooks/parallel_questions" rel="noopener" target="_blank">Parallel questions cookbook</a></li>
+      <li><a href="https://docs.typesafe.ai/model-jaggedness/jev-1.13" rel="noopener" target="_blank">Jev 1.13 jaggedness</a></li>
+      <li><a href="https://docs.typesafe.ai/introduction/coding-agents" rel="noopener" target="_blank">Jev with coding agents</a></li>
+    </ul>
+
+  </div>
+</main>
+
+<section class="faq">
+  <div class="container">
+    <div class="section-tag">Key Questions</div>
+    <h2 class="section-title">System One vs LLM in 2026: FAQs</h2>
+    <div class="faq__grid">
+      <div class="faq__item">
+        <h3>Is a System One model better than an LLM?</h3>
+        <p>Neither is better; they do different jobs. A System One model returns typed decisions for software and cannot generate text. An LLM generates language and can be shaped into JSON but is not trained to make its probabilities the product. Most 2026 systems use both.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Why is JSON mode not the same as a System One model?</h3>
+        <p>JSON mode constrains the shape of the text an LLM produces. It does not change the training objective that produced the values inside that shape. A System One model is trained with RLCD so the decision and its probability are the output, not a rendering of generated text.</p>
+      </div>
+      <div class="faq__item">
+        <h3>What does calibration promise?</h3>
+        <p>That across many predictions, outcomes assigned 0.2 occur about 20 percent of the time and outcomes assigned 0.8 about 80 percent of the time. TypeSafe states this describes groups of predictions and is not a guarantee about any single answer.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Why does per-question isolation matter?</h3>
+        <p>Because judgments stop interacting. In one TypeSafe request each question is evaluated independently against the same state, so adding or removing a question does not change the others' answers. Each judgment becomes an independently testable unit.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Is TypeSafe cheaper than an LLM?</h3>
+        <p>TypeSafe publishes no cross-vendor price comparison, so no honest answer names another vendor's numbers here. What it does publish is its own cost shape: input tokens only, output free, and one state serving many questions, measured at 12.2 times cheaper than making those calls separately.</p>
+      </div>
+      <div class="faq__item">
+        <h3>When should I still use a generative model?</h3>
+        <p>Whenever the deliverable is language: replies, summaries, code, copy. Also when the task needs genuine multi-step reasoning, which TypeSafe describes as System Two work and explicitly outside what Jev is built for.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED START -->
+<section class="related" style="padding:3.5rem 0;border-top:1px solid #e8e8e8;background:#fafafa">
+  <div style="max-width:720px;margin:0 auto;padding:0 clamp(1.2rem,4vw,3rem)">
+    <div style="font-family:'Space Mono',monospace;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:#e63312;margin-bottom:1.3rem">Related reading</div>
+    <ul style="list-style:none;margin:0;padding:0;display:grid;gap:0.9rem">
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="ai-model-pricing-comparison-september-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">AI Model Pricing and Fit Comparison, September 2026: GPT-6 Astra, Claude Fable 5.1, Gemini and DeepSeek</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="gpt-6-astra-marketing-guide-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">GPT-6 Astra in 2026: What OpenAI's Computer-Use Model Means for Business Teams</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="gpt-5-6-safety-trusted-access-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">GPT-5.6 Safety & Trusted Access 2026: What Businesses Need to Know</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="gpt-5-6-vs-claude-gemini-benchmarks-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">GPT-5.6 vs Claude Fable 5 vs Gemini 3.1: Benchmarks Decoded</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="gpt-5-6-for-business-teams-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">GPT-5.6 for Business Teams 2026: Decks, Docs & Knowledge Work</a></li>
+    </ul>
+  </div>
+</section>
+<!-- RELATED END -->
+<section class="cta">
+  <div class="cta__inner">
+    <h2>Split the work between the writer and the decider</h2>
+    <p>Distk maps which parts of your workflow need generated language and which need a cheap, fast decision, then builds the routing so the expensive model only runs when it earns its place.</p>
+    <a href="https://distk.in/#contact" class="cta__btn">Start the conversation →</a>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="container">
+    © 2026 Distk · <a href="https://distk.in">distk.in</a> · <a href="mailto:connect@distk.in">connect@distk.in</a>
+  </div>
+</footer>
+</body>
+</html>

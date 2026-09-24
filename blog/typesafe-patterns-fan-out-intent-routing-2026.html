@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xdifcafwxl");
+  </script>
+
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TypeSafe Patterns in 2026: Fan-Out, Intent Routing, Composite Scoring | Distk</title>
+<meta name="description" content="The four documented TypeSafe architecture patterns for 2026: speculative fan-out, confidence-gated routing, composite scoring and intent routing, each with the official code, plus how they stack in one production request.">
+<meta name="keywords" content="TypeSafe patterns 2026, speculative fan-out, intent routing AI, confidence gated routing, composite scoring AI, TypeSafe architecture, AI development guide 2026">
+<meta name="author" content="Distk"><meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://distk.in/blog/typesafe-patterns-fan-out-intent-routing-2026.html">
+<meta property="og:type" content="article"><meta property="og:url" content="https://distk.in/blog/typesafe-patterns-fan-out-intent-routing-2026.html">
+<meta property="og:title" content="TypeSafe Patterns in 2026: Fan-Out, Intent Routing, Confidence Gating and Composite Scoring">
+<meta property="og:description" content="Four patterns, one request. How speculative fan-out, routing, gating and composite scoring stack in real systems.">
+<meta property="og:image" content="https://distk.in/assets/images/og-image.jpg"><meta property="og:site_name" content="Distk">
+<meta property="article:published_time" content="2026-09-24T00:00:00+05:30">
+<meta property="article:modified_time" content="2026-09-24T00:00:00+05:30">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="TypeSafe Patterns in 2026: Fan-Out, Intent Routing, Confidence Gating and Composite Scoring"><meta name="twitter:description" content="Four patterns, one request. How speculative fan-out, routing, gating and composite scoring stack in real systems.">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "TypeSafe Patterns in 2026: Fan-Out, Intent Routing, Confidence Gating and Composite Scoring", "description": "A 2026 guide to the four architectural patterns TypeSafe documents, with the official code for each, the measured economics of batching, and how the patterns combine into a single production workflow.", "author": {"@type": "Organization", "name": "Distk", "url": "https://distk.in"}, "publisher": {"@type": "Organization", "name": "Distk", "logo": {"@type": "ImageObject", "url": "https://distk.in/assets/images/Logo.png"}}, "datePublished": "2026-09-24", "dateModified": "2026-09-24", "inLanguage": "en", "about": [{"@type": "Thing", "name": "TypeSafe AI"}, {"@type": "Thing", "name": "speculative fan-out"}, {"@type": "Thing", "name": "intent routing"}, {"@type": "Thing", "name": "confidence-gated routing"}, {"@type": "Thing", "name": "composite scoring"}, {"@type": "Thing", "name": "Jev"}, {"@type": "Thing", "name": "AI architecture patterns"}], "mentions": [{"@type": "Thing", "name": "TypeSafe AI"}, {"@type": "Thing", "name": "speculative fan-out"}, {"@type": "Thing", "name": "intent routing"}, {"@type": "Thing", "name": "confidence-gated routing"}, {"@type": "Thing", "name": "composite scoring"}, {"@type": "Thing", "name": "Jev"}, {"@type": "Thing", "name": "AI architecture patterns"}], "mainEntityOfPage": {"@type": "WebPage", "@id": "https://distk.in/blog/typesafe-patterns-fan-out-intent-routing-2026.html"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the speculative fan-out pattern in TypeSafe?", "acceptedAnswer": {"@type": "Answer", "text": "Speculative fan-out means sending every question your system might need in a single TypeSafe request, including speculative questions whose answers only matter for some inputs, then using code to decide which answers are relevant. Because questions are evaluated in parallel, adding more usually has little effect on response time and costs only the tokens for the extra questions."}}, {"@type": "Question", "name": "How much cheaper is batching TypeSafe questions into one call?", "acceptedAnswer": {"@type": "Answer", "text": "TypeSafe's parallel questions cookbook ran a 13-question regulatory briefing over the GDPR Wikipedia article and measured one batched call at 0.000497 US dollars taking 0.27 seconds, against 13 separate single-question calls at 0.006090 US dollars taking 2.71 seconds. That is 12.2 times cheaper and 10.0 times faster with no change in the answers, because the separate calls re-send the document 13 times."}}, {"@type": "Question", "name": "What is intent routing in TypeSafe?", "acceptedAnswer": {"@type": "Answer", "text": "Intent routing classifies an incoming request with a fast, cheap model call and then routes it to the optimal handler, which may be deterministic code, a specialist language model, or a human agent. In TypeSafe's documented customer service example, order status lookups reach deterministic code with no model involved, two intents reach different specialist models, and complaints are routed by a complexity score."}}, {"@type": "Question", "name": "What is confidence-gated routing?", "acceptedAnswer": {"@type": "Answer", "text": "Confidence-gated routing uses the confidence value as a second decision axis: the answer tells you what the model decided, and confidence tells you whether to act on it. TypeSafe's voice banking example routes anything below 0.6 confidence to a human, allows a low-stakes balance check at 0.6, and requires above 0.85 confidence before approving a transfer automatically."}}, {"@type": "Question", "name": "What is composite scoring in TypeSafe?", "acceptedAnswer": {"@type": "Answer", "text": "Composite scoring breaks a complex judgment into independent dimensions, scores each with its own Score question in the same request, normalises the results, and combines them using weights defined in your code. TypeSafe's resume screening example scores Python depth, team leadership, system design and generalist breadth, then applies different weights to rank the same candidates for a senior individual contributor role and an engineering manager role."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://distk.in/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://distk.in/blog/"}, {"@type": "ListItem", "position": 3, "name": "TypeSafe Patterns in 2026: Fan-Out, Intent Routing, Confidence Gating and Composite Scoring", "item": "https://distk.in/blog/typesafe-patterns-fan-out-intent-routing-2026.html"}]}</script>
+<link rel="icon" type="image/png" href="../assets/images/favicon.png"><link rel="apple-touch-icon" href="../assets/images/Logo.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BWDTQ1JPL2"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-BWDTQ1JPL2');</script>
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1077520544213003');fbq('track','PageView');</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1077520544213003&ev=PageView&noscript=1"></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#0a0a0a;--paper:#fafafa;--mid:#6b6b6b;--light:#e8e8e8;--accent:#e63312;--accent-soft:rgba(230,51,18,0.08);--mono:'Space Mono',monospace;--sans:'Outfit',sans-serif;--container:1120px;--prose:720px;--gutter:clamp(1.2rem,4vw,3rem)}
+html{font-size:16px;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.container{max-width:var(--container);margin:0 auto;padding:0 var(--gutter)}
+.prose{max-width:var(--prose);margin:0 auto;padding:0 var(--gutter)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--light)}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;max-width:var(--container);margin:0 auto;padding:0.9rem var(--gutter)}
+.nav__logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;color:var(--ink)}
+.nav__logo img{height:32px;width:auto}
+.nav__logo span{font-family:var(--mono);font-weight:700;font-size:1.05rem;letter-spacing:-0.02em}
+.nav__logo small{display:block;font-size:0.55rem;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);line-height:1}
+.nav__back{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid);text-decoration:none;display:flex;align-items:center;gap:0.4rem;transition:color 0.2s}
+.nav__back:hover{color:var(--accent)}
+.nav__cta{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.6rem 1.4rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.nav__cta:hover{background:var(--accent)}
+.hero{padding:7.5rem 0 3.5rem;position:relative;overflow:hidden;border-bottom:1px solid var(--light)}
+.hero::before{content:'FLOW';position:absolute;right:-1%;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:clamp(6rem,26vw,22rem);font-weight:700;color:rgba(0,0,0,0.03);line-height:1;pointer-events:none;user-select:none;letter-spacing:-0.05em}
+.hero__tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1.5rem}
+.hero__tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.hero h1{font-family:var(--sans);font-weight:700;font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;letter-spacing:-0.03em;max-width:20ch;margin-bottom:1.5rem}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero__sub{font-size:1.1rem;color:var(--mid);max-width:56ch;line-height:1.7;margin-bottom:2rem}
+.hero__meta{display:flex;flex-wrap:wrap;gap:1.5rem;font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid)}
+.tldr{background:var(--accent-soft);border-left:3px solid var(--accent);padding:1.8rem 2rem;margin:3rem 0;position:relative}
+.tldr::before{content:'TL;DR';position:absolute;top:-0.6rem;left:2rem;font-family:var(--mono);font-size:0.62rem;font-weight:700;letter-spacing:0.12em;background:var(--accent);color:#fff;padding:0.2rem 0.6rem}
+.tldr p{font-size:0.95rem;color:var(--ink);line-height:1.7}
+.article{padding:4rem 0 5rem}
+.article h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.35rem,2.8vw,1.8rem);letter-spacing:-0.02em;line-height:1.2;margin:3rem 0 1rem;padding-top:1rem;border-top:1px solid var(--light)}
+.article h2:first-child{border-top:none;margin-top:0}
+.article h3{font-family:var(--mono);font-weight:700;font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin:2rem 0 0.6rem}
+.article p{font-size:1rem;color:#2a2a2a;line-height:1.8;margin-bottom:1.25rem}
+.article ul,.article ol{padding-left:1.4rem;margin-bottom:1.25rem}
+.article li{font-size:1rem;color:#2a2a2a;line-height:1.75;margin-bottom:0.4rem}
+.article strong{font-weight:600;color:var(--ink)}
+.article a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(230,51,18,0.3)}
+.article a:hover{border-bottom-color:var(--accent)}
+.article blockquote{border-left:3px solid var(--accent);padding:0.75rem 1.5rem;margin:2rem 0;background:var(--accent-soft)}
+.article blockquote p{color:var(--ink);font-size:1rem;margin:0}
+.table-wrap{overflow-x:auto;margin:2rem 0}
+.data-table{width:100%;border-collapse:collapse;margin:0;font-size:0.88rem}
+.data-table th{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:0.7rem 1rem;text-align:left;white-space:nowrap}
+.data-table td{padding:0.75rem 1rem;border-bottom:1px solid var(--light);vertical-align:top}
+.data-table tr:last-child td{border-bottom:none}
+.data-table tr:nth-child(even) td{background:#f5f5f5}
+.callout{border:1.5px solid var(--light);padding:1.5rem 1.8rem;margin:2rem 0}
+.callout__label{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem}
+.callout p{font-size:0.92rem;color:var(--mid);line-height:1.7;margin:0}
+.faq{padding:4rem 0;background:var(--ink);color:var(--paper)}
+.faq .section-tag{color:var(--accent)}
+.faq .section-tag::before{background:var(--accent)}
+.faq__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2.5rem;margin-top:2.5rem}
+.faq__item{border-left:2px solid var(--accent);padding-left:1.5rem}
+.faq__item h3{font-family:var(--sans);font-weight:600;font-size:0.95rem;margin-bottom:0.5rem;color:var(--paper)}
+.faq__item p{font-size:0.85rem;color:rgba(255,255,255,0.88);line-height:1.65}
+.section-tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1rem}
+.section-tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.section-title{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.15;color:var(--paper)}
+.cta{padding:5rem 0;background:var(--accent-soft);border-top:1px solid rgba(230,51,18,0.12)}
+.cta__inner{max-width:680px;margin:0 auto;padding:0 var(--gutter);text-align:center}
+.cta h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.2;margin-bottom:1rem}
+.cta p{font-size:1rem;color:var(--mid);line-height:1.7;margin-bottom:2rem}
+.cta__btn{display:inline-flex;align-items:center;gap:0.6rem;font-family:var(--mono);font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;padding:1rem 2.2rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.cta__btn:hover{background:var(--accent)}
+.foot{padding:2.5rem 0;border-top:1px solid var(--light);text-align:center;font-family:var(--mono);font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid)}
+.foot a{color:var(--mid);text-decoration:none}.foot a:hover{color:var(--accent)}
+@media(max-width:768px){.faq__grid{grid-template-columns:1fr}.nav__back span{display:none}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="https://distk.in" class="nav__logo">
+      <img src="../assets/images/Logo.png" alt="Distk">
+      <div><span>Distk</span><small>Global Growth Partner</small></div>
+    </a>
+    <a href="/blog/" class="nav__back">← <span>All articles</span></a>
+    <a href="https://distk.in/#contact" class="nav__cta">Work with us</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="prose">
+    <div class="hero__tag">AI Development Guide</div>
+    <h1>TypeSafe <em>Patterns</em> in 2026: Fan-Out, Intent Routing, Confidence Gating and Composite Scoring</h1>
+    <p class="hero__sub">The primitives are easy. The architecture is where the value is. These are the four patterns TypeSafe documents, the code behind each, and the order they belong in when you put them together.</p>
+    <div class="hero__meta">
+      <span>Distk Editorial</span>
+      <span>Sep 2026</span>
+      <span>12 min read</span>
+    </div>
+  </div>
+</section>
+
+<div class="prose">
+  <div class="tldr">
+    <p>TypeSafe documents four architectural patterns for 2026. Speculative fan-out sends every question a workflow might need in one request and lets code decide what is relevant, measured in TypeSafe's own cookbook at 12.2 times cheaper and 10.0 times faster than separate calls. Intent routing puts a fast classifier in front of expensive handlers so some requests reach deterministic code with no model involved. Confidence-gated routing uses confidence as a second axis, with a floor for genuine uncertainty and higher thresholds for irreversible actions than read-only ones. Composite scoring splits a complex judgment into independent dimensions and combines them with weights that live in reviewable code, so one set of answers can produce different rankings for different purposes. In production most systems use three of the four in a single request.</p>
+  </div>
+</div>
+
+<main class="article">
+  <div class="prose">
+<style>
+.prose pre{background:#f4f4f4;border-left:3px solid var(--accent);padding:1rem 1.1rem;margin:1.5rem 0;overflow-x:auto;font-size:0.85rem;line-height:1.6}
+.prose pre code{font-family:var(--mono);color:#1a1a1a;white-space:pre;background:none;padding:0;font-size:1em}
+.prose code{font-family:var(--mono);font-size:0.86em;background:#f0f0f0;padding:0.12em 0.35em;border-radius:2px}
+.prose .eli5{background:var(--accent-soft);border-left:3px solid var(--accent);padding:1.4rem 1.6rem;margin:0 0 1.6rem}
+.prose .eli5 p{font-size:1.02rem}
+.prose .eli5 p:last-child{margin-bottom:0}
+.prose .srcs{font-size:0.88rem;color:var(--mid)}
+.prose .srcs li{font-size:0.88rem;margin-bottom:0.3rem}
+</style>
+
+    <h2>What Are the TypeSafe Patterns in 2026?</h2>
+    <p>TypeSafe documents four architectural patterns for building systems around its primitives: speculative fan-out, confidence-gated routing, composite scoring, and intent routing. Each one is a way of composing typed answers in code, and the company frames the underlying skill plainly: learning to think in terms of discrete, atomic decisions that compose into complex system behaviour is what gets the most out of the model.</p>
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Pattern</th><th>What it does</th><th>Benefits TypeSafe claims</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Speculative fan-out</strong></td><td>Send many questions in a single call, including speculative ones, and let your code decide what is relevant</td><td>Cost, speed</td></tr>
+        <tr><td><strong>Confidence-gated routing</strong></td><td>Use confidence as a second decision axis to build safer systems</td><td>Reliability, safety</td></tr>
+        <tr><td><strong>Composite scoring</strong></td><td>Combine several dimensions of analysis into a single score</td><td>Cost, reliability, speed</td></tr>
+        <tr><td><strong>Intent routing</strong></td><td>Classify a user's intent and route to the appropriate handler</td><td>Cost, speed</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h2>Explain It Like I Am Five: The Airport Desk</h2>
+    <div class="eli5">
+      <p>Picture the person at the front of an airport who sorts everyone out before they go anywhere.</p>
+      <p>You walk up. They ask you several quick things at once: where are you flying, do you have bags, is this a connection, do you need help getting to the gate. It takes about four seconds, because they ask all of it in one go rather than sending you round the corner and back for each question.</p>
+      <p>Some of what they ask will turn out not to matter. They ask about bags even if you have none. That is fine. Asking is quicker than working out whether asking was worth it. That is speculative fan-out.</p>
+      <p>Then they point. Bag drop, security, or the special assistance desk. That is intent routing.</p>
+      <p>If they cannot work out what you need, they do not guess and send you somewhere random. They wave over a supervisor. That is confidence-gated routing.</p>
+      <p>And if the airline needs to decide who gets the last upgrade, they do not ask one big question. They take a few small scores, frequent flyer level, fare type, how full the cabin is, and add them up with their own rules. That is composite scoring.</p>
+      <p>Four patterns. Ask everything at once, point people the right way, call a supervisor when unsure, and add small numbers together with rules you wrote.</p>
+    </div>
+
+    <h2>How Does Speculative Fan-Out Work in 2026?</h2>
+    <p>Put every question your system might need into one request and use code to decide what is relevant afterwards. All questions are evaluated in parallel, so adding more usually has little effect on response time, and each extra question only costs its own tokens.</p>
+    <p>TypeSafe's worked example is support ticket triage. A ticket needs a category, and if it is a bug report it also needs a severity. Rather than asking for the category first and the severity in a follow-up, you ask for both at once and ignore the severity if the ticket turns out not to be a bug. The documented request carries five questions: a Choice for the category, a Score for bug severity, Nouls for reproducible steps and for a refund request, and a Score for frustration.</p>
+
+<pre><code>category    = response.answers["category"]
+bug_severity = response.answers["bug_severity"]
+bug_repro    = response.answers["has_reproducible_steps"]
+refund       = response.answers["refund_requested"]
+frustration  = response.answers["frustration"]
+
+if category.choice == "bug_report":
+    if bug_severity.score &gt; 1.5 and bug_repro.noul &gt; 0.6:
+        escalate_to_engineering(ticket_id, severity="high")
+    else:
+        add_to_bug_backlog(ticket_id)
+
+elif category.choice == "billing":
+    if refund.noul &gt; 0.7:
+        route_to_billing_with_flag(ticket_id, refund_likely=True)
+    else:
+        route_to_billing(ticket_id)
+
+elif category.choice == "feature_request":
+    log_feature_request(ticket_id)
+
+# Frustration is useful regardless of category
+if frustration.score &gt; 1.5:
+    flag_for_priority_response(ticket_id)</code></pre>
+
+    <p>Everything needed for the full decision tree comes from one call. Two of those five questions are speculative: bug severity and reproducible steps only matter for a bug report, and the refund question only matters for billing. When they are irrelevant, the code ignores them. When they are relevant, you have saved a round trip.</p>
+    <p>The economics are measured rather than asserted. TypeSafe's parallel questions cookbook ran a 13-question regulatory briefing over the GDPR Wikipedia article and reported one batched call at 0.000497 US dollars and 0.27 seconds against 13 separate calls at 0.006090 US dollars and 2.71 seconds, making batching 12.2 times cheaper and 10.0 times faster with no change in answers. The reason is simply that the separate calls re-send the article 13 times.</p>
+
+    <h2>How Does Intent Routing Work in 2026?</h2>
+    <p>Classify the incoming request first, then send it to the right handler: deterministic code, a specialist model, or a person. TypeSafe positions this as putting a fast, cheap classifier in front of everything else rather than sending every message through an expensive model just to work out what kind of request it is.</p>
+    <p>The documented example is customer service routing, and it asks two questions: a Choice for intent across order status, product question, return or exchange, and complaint, plus a Score for complexity.</p>
+
+<pre><code>def route_ticket(ticket_id, response):
+    intent = response.answers["intent"]
+    complexity = response.answers["complexity"]
+
+    if intent.confidence &lt; 0.5:
+        # Not enough confidence to classify: route to a human agent
+        return route_to_human_agent(ticket_id)
+
+    if intent.choice == "order_status":
+        handle_order_status(ticket_id)
+
+    elif intent.choice == "product_question":
+        handle_with_llm(ticket_id, PRODUCT_SPECIALIST)
+
+    elif intent.choice == "return_exchange":
+        handle_with_llm(ticket_id, RETURNS_SPECIALIST)
+
+    elif intent.choice == "complaint":
+        low_confidence = complexity.confidence &lt; 0.5
+        if complexity.score &gt; 1 or low_confidence:
+            # Too complex for safe automation, or unsure about complexity
+            route_to_human_agent(ticket_id)
+        else:
+            handle_with_llm(ticket_id, COMPLAINT_RESOLUTION)</code></pre>
+
+    <p>Look at where each branch goes. One intent reaches deterministic code with no model involved at all. Two reach different specialist models loaded with different context. One uses a complexity score to choose between a model and a person. The classification is a single quick call, and the expensive resources only get invoked for the requests that genuinely need them.</p>
+    <p>The detail most people miss is the second confidence check. The code does not only gate on intent confidence; it also escalates when the complexity answer itself is uncertain. TypeSafe's note is that it is always important to consider what a low confidence score means in the context of the system and the stakes of the decision.</p>
+
+    <h2>How Does Confidence-Gated Routing Work in 2026?</h2>
+    <p>Treat confidence as a second axis. The answer tells you what; confidence tells you whether to act on it. TypeSafe's example is a voice banking interface, chosen because the available actions have obviously different consequences, and one Choice question feeds several different thresholds.</p>
+
+<pre><code>action = response.answers["intent"]
+
+if action.confidence &lt; 0.6:
+    route_to_support_agent(account_id)
+
+elif action.choice == "check_balance":
+    # Low stakes. 0.6 confidence is sufficient.
+    show_balance(account_id)
+
+elif action.choice == "approve_transfer":
+    if action.confidence &gt; 0.85:
+        approve_transfer(account_id)
+    else:
+        ask_user_to_confirm("Just to confirm: you would like to approve this transfer?")
+
+else:
+    route_to_support_agent(account_id)</code></pre>
+
+    <p>The 0.6 floor catches anything genuinely uncertain. Checking a balance clears at 0.6 because the worst case is a customer hearing their balance needlessly. Approving a transfer needs above 0.85, and anything in between triggers a confirmation rather than an action or a refusal. The risk tolerance is encoded in your code, where it can be reviewed, rather than in a prompt.</p>
+    <p>Our <a href="typesafe-confidence-calibration-guide-2026.html">confidence and calibration guide</a> covers how to pick those numbers from your own labelled data rather than by feel.</p>
+
+    <h2>How Does Composite Scoring Work in 2026?</h2>
+    <p>Break a complex judgment into independent dimensions, score each one separately, and combine them with weights you control in code. TypeSafe's worked example is resume screening, asking four Score questions in one request: Python depth, team leadership, system design, and generalist breadth, each on a five-level rubric.</p>
+
+<pre><code>py      = response.answers["python_depth"].score / 4
+lead    = response.answers["team_leadership"].score / 4
+arch    = response.answers["system_design"].score / 4
+general = response.answers["generalist"].score / 4
+
+# Senior IC
+ic_score = (0.40 * py) + (0.10 * lead) + (0.40 * arch) + (0.10 * general)
+
+# Engineering Manager
+em_score = (0.15 * py) + (0.40 * lead) + (0.20 * arch) + (0.25 * general)</code></pre>
+
+    <p>Each score is normalised to 0 to 1 by dividing by the top level number, then weighted. One set of model answers produces two different rankings for two different roles, because the weights differ and the weights are yours. TypeSafe's stated benefit is visibility: you can see exactly how the final number is made, and when the top-ranked candidates do not match expectations you adjust the weights rather than rewriting a prompt.</p>
+    <p>The same shape appears in the Score documentation for ticket priority, combining severity, frustration and report quality at 0.6, 0.3 and 0.1 with a comment explaining that a detailed report helps an engineer investigate, so it raises priority slightly. That comment is the point of the pattern: the reasoning is in the code, in words a colleague can argue with.</p>
+    <div class="callout">
+      <div class="callout__label">Why this beats one big question in 2026</div>
+      <p>Ask "rate this candidate out of 10" and you get one number whose internal reasoning you cannot inspect, adjust, or explain to a hiring manager. Ask four dimensions and weight them, and every part of the result is visible, tunable, and separately testable. TypeSafe makes the same argument about startup pitches: ask about market size, technical feasibility and differentiation separately, then combine with your own formula.</p>
+    </div>
+
+    <h2>How Do the Patterns Combine in a Real System?</h2>
+    <p>They stack, and in most production systems you will use three of the four in a single request. The fan-out is how you get the answers cheaply, intent routing is what you do with the categorical ones, composite scoring is what you do with the ordinal ones, and confidence gating sits over all of it deciding when code acts alone.</p>
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Stage</th><th>Pattern</th><th>What happens</th></tr></thead>
+      <tbody>
+        <tr><td>1. One request</td><td>Speculative fan-out</td><td>Every question the workflow might need, including ones that only matter for some inputs</td></tr>
+        <tr><td>2. Safety check</td><td>Confidence-gated routing</td><td>Anything below the floor goes to a person before any branch runs</td></tr>
+        <tr><td>3. Branch</td><td>Intent routing</td><td>Categorical answers select the handler: code, a specialist model, or a human</td></tr>
+        <tr><td>4. Prioritise</td><td>Composite scoring</td><td>Ordinal answers combine with your weights into a rank or a priority</td></tr>
+        <tr><td>5. Act</td><td>Confidence-gated routing again</td><td>Each action clears its own threshold, higher for irreversible operations</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h2>What Is the Design Process TypeSafe Recommends?</h2>
+    <p>Its build guide sets out an ordered workflow, and the order matters as much as the content. The summary line is that you build a normal software workflow and insert System One only where AI is needed.</p>
+    <ol>
+      <li><strong>Use code when you can.</strong> Keep deterministic work in code because it is reliable and cheap, and avoid agent while loops when a software workflow expresses the same behaviour.</li>
+      <li><strong>Decompose the input state.</strong> Include only the context relevant to the current questions, and do not rely on knowledge stored in model weights when current information can come from your own knowledge base.</li>
+      <li><strong>Use structure in the input state.</strong> Nested JSON, with questions pointing at specific values by backticked path when that removes ambiguity.</li>
+      <li><strong>Decompose the questions.</strong> Ask the most explicit, narrow, specific, atomic questions you can, breaking complex judgments into separate questions that each evaluate one property.</li>
+      <li><strong>Use structure in the questions.</strong> Keep them short; add object or array structure when a question needs supporting data or several kinds of guidance.</li>
+      <li><strong>Ask a lot of questions.</strong> Many narrow independent questions about the same state in one request, which is how you maximise intelligence per dollar.</li>
+      <li><strong>Combine outputs in code.</strong> Deterministic rules, weighted sums, or the probabilities as features in a downstream classical machine learning model.</li>
+      <li><strong>Route on uncertainty.</strong> Different actions for confident and unconfident answers, with thresholds tested by plotting confidence against accuracy on your data.</li>
+    </ol>
+
+    <h2>What Are the Common Pattern Mistakes in 2026?</h2>
+    <ul>
+      <li><strong>Making one call per question.</strong> The pattern the other three are built on is batching. Everything else assumes it.</li>
+      <li><strong>Gating everything at one confidence number.</strong> A read-only action and an irreversible one should not share a threshold.</li>
+      <li><strong>Ignoring the second-place probability.</strong> A runner-up with meaningful share is often worth acting on, such as copying a second team.</li>
+      <li><strong>Hiding the weights in a prompt.</strong> The entire benefit of composite scoring is that the weights are readable code.</li>
+      <li><strong>Routing everything to a model.</strong> In the documented routing example one branch touches no model at all, and that is the cheapest branch you have.</li>
+      <li><strong>Only gating the headline answer.</strong> The documented example also checks the confidence of the complexity score before trusting it.</li>
+      <li><strong>Treating the escalation path as a dead end.</strong> If uncertain cases land somewhere nobody looks, the safety design is decorative.</li>
+    </ul>
+
+    <h2>Key Takeaways for 2026</h2>
+    <ul>
+      <li>Four documented patterns: speculative fan-out, confidence-gated routing, composite scoring, and intent routing.</li>
+      <li>Fan-out is the foundation. One request, every question you might need, and code decides what is relevant. Measured at 12.2 times cheaper and 10.0 times faster than separate calls in TypeSafe's own cookbook.</li>
+      <li>Intent routing puts a cheap classifier in front of expensive handlers, including branches that use no model at all.</li>
+      <li>Confidence gating makes the threshold match the stakes, with a floor for genuine uncertainty and a higher bar for irreversible actions.</li>
+      <li>Composite scoring splits a judgment into dimensions and combines them with weights that live in reviewable code.</li>
+      <li>In production you will usually use three of the four in one request.</li>
+      <li>TypeSafe's design order is code first, then a filtered state, then atomic questions, then composition, then uncertainty routing.</li>
+    </ul>
+    <p>Distk designs these flows with teams, including the part that decides which branches need no model at all, which is usually where the cost savings actually come from.</p>
+
+    <h2>Sources</h2>
+    <ul class="srcs">
+      <li><a href="https://docs.typesafe.ai/patterns" rel="noopener" target="_blank">TypeSafe AI docs: Patterns</a></li>
+      <li><a href="https://docs.typesafe.ai/patterns/fan-out" rel="noopener" target="_blank">Speculative fan-out</a></li>
+      <li><a href="https://docs.typesafe.ai/patterns/intent-routing" rel="noopener" target="_blank">Intent routing</a></li>
+      <li><a href="https://docs.typesafe.ai/patterns/confidence-routing" rel="noopener" target="_blank">Confidence-gated routing</a></li>
+      <li><a href="https://docs.typesafe.ai/patterns/composite-scoring" rel="noopener" target="_blank">Composite scoring</a></li>
+      <li><a href="https://docs.typesafe.ai/concepts/how-to-build-with-system-one" rel="noopener" target="_blank">How to build with TypeSafe</a></li>
+      <li><a href="https://docs.typesafe.ai/cookbooks/parallel_questions" rel="noopener" target="_blank">Parallel questions cookbook</a></li>
+      <li><a href="https://docs.typesafe.ai/primitives/score" rel="noopener" target="_blank">Score</a></li>
+    </ul>
+
+  </div>
+</main>
+
+<section class="faq">
+  <div class="container">
+    <div class="section-tag">Key Questions</div>
+    <h2 class="section-title">TypeSafe Patterns in 2026: FAQs</h2>
+    <div class="faq__grid">
+      <div class="faq__item">
+        <h3>What is speculative fan-out?</h3>
+        <p>Sending many questions in a single TypeSafe call, including ones whose answers only matter for some inputs, then letting your code decide what is relevant. Questions run in parallel so adding more has little effect on response time, and irrelevant answers are simply ignored.</p>
+      </div>
+      <div class="faq__item">
+        <h3>How much cheaper is batching questions?</h3>
+        <p>TypeSafe's parallel questions cookbook ran a 13-question briefing over the GDPR Wikipedia article and measured one batched call at 0.000497 US dollars and 0.27 seconds against 13 separate calls at 0.006090 US dollars and 2.71 seconds, making batching 12.2 times cheaper and 10.0 times faster with no change in answers.</p>
+      </div>
+      <div class="faq__item">
+        <h3>What is intent routing?</h3>
+        <p>Classifying an incoming request with a cheap model call, then routing it to the right handler: deterministic code, a specialist model, or a person. In TypeSafe's documented example one branch uses no model at all, which is the cheapest path in the system.</p>
+      </div>
+      <div class="faq__item">
+        <h3>What is confidence-gated routing?</h3>
+        <p>Using the confidence value as a second decision axis. The answer tells you what, and confidence tells you whether to act. TypeSafe's example uses a 0.6 floor for everything, then requires above 0.85 before approving a financial transfer automatically.</p>
+      </div>
+      <div class="faq__item">
+        <h3>What is composite scoring?</h3>
+        <p>Breaking a complex judgment into independent dimensions, scoring each with its own Score question in the same request, then combining them with weights you control in code. One set of answers can produce different rankings by applying different weights.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Can I use several patterns together?</h3>
+        <p>Yes, and most production systems do. A typical stack is one fan-out request, a confidence floor before any branch runs, intent routing on the categorical answers, composite scoring on the ordinal ones, and a per-action confidence threshold before anything irreversible.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED START -->
+<section class="related" style="padding:3.5rem 0;border-top:1px solid #e8e8e8;background:#fafafa">
+  <div style="max-width:720px;margin:0 auto;padding:0 clamp(1.2rem,4vw,3rem)">
+    <div style="font-family:'Space Mono',monospace;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:#e63312;margin-bottom:1.3rem">Related reading</div>
+    <ul style="list-style:none;margin:0;padding:0;display:grid;gap:0.9rem">
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="typesafe-confidence-calibration-guide-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">TypeSafe Confidence and Calibration in 2026: Setting Thresholds That Work</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="what-is-typesafe-ai-jev-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">What Is TypeSafe AI and Jev in 2026? The Complete Guide to System One Models</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="typesafe-ai-quickstart-tutorial-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">TypeSafe AI Quick Start for 2026: Your First Jev Call in cURL, Python and JavaScript</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="typesafe-primitives-choice-score-noul-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">TypeSafe Primitives in 2026: Choice, Score and Noul Explained in Depth</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="typesafe-state-input-design-guide-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">TypeSafe State Design in 2026: Context Limits, Filtering and Context Rot</a></li>
+    </ul>
+  </div>
+</section>
+<!-- RELATED END -->
+<section class="cta">
+  <div class="cta__inner">
+    <h2>The savings come from the branches with no model in them</h2>
+    <p>Distk designs decision flows that route cheaply, escalate honestly, and keep the weights and thresholds in code a colleague can review. If you are architecting one in 2026, that is where we start.</p>
+    <a href="https://distk.in/#contact" class="cta__btn">Start the conversation →</a>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="container">
+    © 2026 Distk · <a href="https://distk.in">distk.in</a> · <a href="mailto:connect@distk.in">connect@distk.in</a>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xdifcafwxl");
+  </script>
+
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>All 18 TypeSafe Cookbooks in 2026: Guardrails, RAG, Extraction, Ranking | Distk</title>
+<meta name="description" content="A guide to every official TypeSafe cookbook in 2026: LLM guardrails, citation checking, RAG passage classification, reranking with published accuracy gains, date and value extraction, hierarchical classification, function calling and self-consistency.">
+<meta name="keywords" content="TypeSafe cookbooks 2026, TypeSafe LLM guardrails, TypeSafe reranking, classifying RAG passages, hierarchical classification AI, TypeSafe function calling, AI development guide 2026">
+<meta name="author" content="Distk"><meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://distk.in/blog/typesafe-cookbooks-guide-llm-guardrails-rag-2026.html">
+<meta property="og:type" content="article"><meta property="og:url" content="https://distk.in/blog/typesafe-cookbooks-guide-llm-guardrails-rag-2026.html">
+<meta property="og:title" content="All 18 TypeSafe Cookbooks in 2026: Guardrails, RAG, Extraction and Ranking">
+<meta property="og:description" content="Guardrails, reranking, extraction, hierarchical classification and more. What each recipe does and who should copy it.">
+<meta property="og:image" content="https://distk.in/assets/images/og-image.jpg"><meta property="og:site_name" content="Distk">
+<meta property="article:published_time" content="2026-09-24T00:00:00+05:30">
+<meta property="article:modified_time" content="2026-09-24T00:00:00+05:30">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="All 18 TypeSafe Cookbooks in 2026: Guardrails, RAG, Extraction and Ranking"><meta name="twitter:description" content="Guardrails, reranking, extraction, hierarchical classification and more. What each recipe does and who should copy it.">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "All 18 TypeSafe Cookbooks in 2026: Guardrails, RAG, Extraction and Ranking", "description": "A tour of TypeSafe's 18 official cookbooks in 2026, grouped by the job they do, with the reported results, the primitives each uses, and guidance on which to copy first.", "author": {"@type": "Organization", "name": "Distk", "url": "https://distk.in"}, "publisher": {"@type": "Organization", "name": "Distk", "logo": {"@type": "ImageObject", "url": "https://distk.in/assets/images/Logo.png"}}, "datePublished": "2026-09-24", "dateModified": "2026-09-24", "inLanguage": "en", "about": [{"@type": "Thing", "name": "TypeSafe AI"}, {"@type": "Thing", "name": "TypeSafe cookbooks"}, {"@type": "Thing", "name": "LLM guardrails"}, {"@type": "Thing", "name": "RAG reranking"}, {"@type": "Thing", "name": "hierarchical classification"}, {"@type": "Thing", "name": "function calling"}, {"@type": "Thing", "name": "data extraction"}, {"@type": "Thing", "name": "Jev"}], "mentions": [{"@type": "Thing", "name": "TypeSafe AI"}, {"@type": "Thing", "name": "TypeSafe cookbooks"}, {"@type": "Thing", "name": "LLM guardrails"}, {"@type": "Thing", "name": "RAG reranking"}, {"@type": "Thing", "name": "hierarchical classification"}, {"@type": "Thing", "name": "function calling"}, {"@type": "Thing", "name": "data extraction"}, {"@type": "Thing", "name": "Jev"}], "mainEntityOfPage": {"@type": "WebPage", "@id": "https://distk.in/blog/typesafe-cookbooks-guide-llm-guardrails-rag-2026.html"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How many official TypeSafe cookbooks are there in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "TypeSafe publishes 18 cookbooks in 2026, grouped into five categories: self-consistency, batching, how-to, extraction, and classification. Each cookbook is an end-to-end worked example with a real dataset, the questions that decide something about it, and the code that turns those decisions into a working system, labelled beginner, intermediate or advanced."}}, {"@type": "Question", "name": "What does the TypeSafe LLM guardrails cookbook do?", "acceptedAnswer": {"@type": "Answer", "text": "It screens every message going into and out of an LLM application with a single TypeSafe request. A Noul question returns the probability that each hazard criterion holds, such as a jailbreak attempt or a request for harm, and a Score question rates severity. Each hazard has an action threshold and a lower review threshold, so a message passes, goes to human review, gets blocked, or routes elsewhere."}}, {"@type": "Question", "name": "What results does the TypeSafe reranking cookbook report?", "acceptedAnswer": {"@type": "Answer", "text": "The reranking cookbook builds 30-passage BM25 keyword shortlists for 40 CLERC legal queries, then uses one TypeSafe question per query-candidate pair to rerank them. It reports top-1 accuracy rising from 5 percent to 18 percent and top-10 accuracy rising from 38 percent to 62 percent compared with the original shortlist ordering."}}, {"@type": "Question", "name": "How do TypeSafe's extraction cookbooks handle values without generating text?", "acceptedAnswer": {"@type": "Answer", "text": "They convert extraction into selection. Candidates come from regular expressions or from enumerated closed sets, and the model chooses the correct one. The date extraction cookbook treats months, days and years as small closed sets with an explicit not stated option, and code assembles and validates the final date, because Jev reads dates as text rather than as ordered quantities."}}, {"@type": "Question", "name": "Can you copy a TypeSafe cookbook's thresholds into your own project?", "acceptedAnswer": {"@type": "Answer", "text": "No. Every threshold in every cookbook was chosen against that cookbook's specific dataset, and the confidence distribution on your own material will differ. The recommended approach is to copy the structure and the question design, then re-derive all thresholds from a labelled sample of your own data."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://distk.in/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://distk.in/blog/"}, {"@type": "ListItem", "position": 3, "name": "All 18 TypeSafe Cookbooks in 2026: Guardrails, RAG, Extraction and Ranking", "item": "https://distk.in/blog/typesafe-cookbooks-guide-llm-guardrails-rag-2026.html"}]}</script>
+<link rel="icon" type="image/png" href="../assets/images/favicon.png"><link rel="apple-touch-icon" href="../assets/images/Logo.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BWDTQ1JPL2"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-BWDTQ1JPL2');</script>
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1077520544213003');fbq('track','PageView');</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1077520544213003&ev=PageView&noscript=1"></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#0a0a0a;--paper:#fafafa;--mid:#6b6b6b;--light:#e8e8e8;--accent:#e63312;--accent-soft:rgba(230,51,18,0.08);--mono:'Space Mono',monospace;--sans:'Outfit',sans-serif;--container:1120px;--prose:720px;--gutter:clamp(1.2rem,4vw,3rem)}
+html{font-size:16px;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.container{max-width:var(--container);margin:0 auto;padding:0 var(--gutter)}
+.prose{max-width:var(--prose);margin:0 auto;padding:0 var(--gutter)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--light)}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;max-width:var(--container);margin:0 auto;padding:0.9rem var(--gutter)}
+.nav__logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;color:var(--ink)}
+.nav__logo img{height:32px;width:auto}
+.nav__logo span{font-family:var(--mono);font-weight:700;font-size:1.05rem;letter-spacing:-0.02em}
+.nav__logo small{display:block;font-size:0.55rem;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);line-height:1}
+.nav__back{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid);text-decoration:none;display:flex;align-items:center;gap:0.4rem;transition:color 0.2s}
+.nav__back:hover{color:var(--accent)}
+.nav__cta{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.6rem 1.4rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.nav__cta:hover{background:var(--accent)}
+.hero{padding:7.5rem 0 3.5rem;position:relative;overflow:hidden;border-bottom:1px solid var(--light)}
+.hero::before{content:'COOK';position:absolute;right:-1%;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:clamp(6rem,26vw,22rem);font-weight:700;color:rgba(0,0,0,0.03);line-height:1;pointer-events:none;user-select:none;letter-spacing:-0.05em}
+.hero__tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1.5rem}
+.hero__tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.hero h1{font-family:var(--sans);font-weight:700;font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;letter-spacing:-0.03em;max-width:20ch;margin-bottom:1.5rem}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero__sub{font-size:1.1rem;color:var(--mid);max-width:56ch;line-height:1.7;margin-bottom:2rem}
+.hero__meta{display:flex;flex-wrap:wrap;gap:1.5rem;font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid)}
+.tldr{background:var(--accent-soft);border-left:3px solid var(--accent);padding:1.8rem 2rem;margin:3rem 0;position:relative}
+.tldr::before{content:'TL;DR';position:absolute;top:-0.6rem;left:2rem;font-family:var(--mono);font-size:0.62rem;font-weight:700;letter-spacing:0.12em;background:var(--accent);color:#fff;padding:0.2rem 0.6rem}
+.tldr p{font-size:0.95rem;color:var(--ink);line-height:1.7}
+.article{padding:4rem 0 5rem}
+.article h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.35rem,2.8vw,1.8rem);letter-spacing:-0.02em;line-height:1.2;margin:3rem 0 1rem;padding-top:1rem;border-top:1px solid var(--light)}
+.article h2:first-child{border-top:none;margin-top:0}
+.article h3{font-family:var(--mono);font-weight:700;font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin:2rem 0 0.6rem}
+.article p{font-size:1rem;color:#2a2a2a;line-height:1.8;margin-bottom:1.25rem}
+.article ul,.article ol{padding-left:1.4rem;margin-bottom:1.25rem}
+.article li{font-size:1rem;color:#2a2a2a;line-height:1.75;margin-bottom:0.4rem}
+.article strong{font-weight:600;color:var(--ink)}
+.article a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(230,51,18,0.3)}
+.article a:hover{border-bottom-color:var(--accent)}
+.article blockquote{border-left:3px solid var(--accent);padding:0.75rem 1.5rem;margin:2rem 0;background:var(--accent-soft)}
+.article blockquote p{color:var(--ink);font-size:1rem;margin:0}
+.table-wrap{overflow-x:auto;margin:2rem 0}
+.data-table{width:100%;border-collapse:collapse;margin:0;font-size:0.88rem}
+.data-table th{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:0.7rem 1rem;text-align:left;white-space:nowrap}
+.data-table td{padding:0.75rem 1rem;border-bottom:1px solid var(--light);vertical-align:top}
+.data-table tr:last-child td{border-bottom:none}
+.data-table tr:nth-child(even) td{background:#f5f5f5}
+.callout{border:1.5px solid var(--light);padding:1.5rem 1.8rem;margin:2rem 0}
+.callout__label{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem}
+.callout p{font-size:0.92rem;color:var(--mid);line-height:1.7;margin:0}
+.faq{padding:4rem 0;background:var(--ink);color:var(--paper)}
+.faq .section-tag{color:var(--accent)}
+.faq .section-tag::before{background:var(--accent)}
+.faq__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2.5rem;margin-top:2.5rem}
+.faq__item{border-left:2px solid var(--accent);padding-left:1.5rem}
+.faq__item h3{font-family:var(--sans);font-weight:600;font-size:0.95rem;margin-bottom:0.5rem;color:var(--paper)}
+.faq__item p{font-size:0.85rem;color:rgba(255,255,255,0.88);line-height:1.65}
+.section-tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1rem}
+.section-tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.section-title{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.15;color:var(--paper)}
+.cta{padding:5rem 0;background:var(--accent-soft);border-top:1px solid rgba(230,51,18,0.12)}
+.cta__inner{max-width:680px;margin:0 auto;padding:0 var(--gutter);text-align:center}
+.cta h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.2;margin-bottom:1rem}
+.cta p{font-size:1rem;color:var(--mid);line-height:1.7;margin-bottom:2rem}
+.cta__btn{display:inline-flex;align-items:center;gap:0.6rem;font-family:var(--mono);font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;padding:1rem 2.2rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.cta__btn:hover{background:var(--accent)}
+.foot{padding:2.5rem 0;border-top:1px solid var(--light);text-align:center;font-family:var(--mono);font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid)}
+.foot a{color:var(--mid);text-decoration:none}.foot a:hover{color:var(--accent)}
+@media(max-width:768px){.faq__grid{grid-template-columns:1fr}.nav__back span{display:none}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="https://distk.in" class="nav__logo">
+      <img src="../assets/images/Logo.png" alt="Distk">
+      <div><span>Distk</span><small>Global Growth Partner</small></div>
+    </a>
+    <a href="/blog/" class="nav__back">← <span>All articles</span></a>
+    <a href="https://distk.in/#contact" class="nav__cta">Work with us</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="prose">
+    <div class="hero__tag">AI Development Guide</div>
+    <h1>All 18 <em>TypeSafe Cookbooks</em> in 2026: Guardrails, RAG, Extraction and Ranking</h1>
+    <p class="hero__sub">The cookbooks are the fastest way into this product, because each one is a finished system on a real dataset rather than a description of a feature. Here is what all 18 do, grouped by the problem they solve.</p>
+    <div class="hero__meta">
+      <span>Distk Editorial</span>
+      <span>Sep 2026</span>
+      <span>13 min read</span>
+    </div>
+  </div>
+</section>
+
+<div class="prose">
+  <div class="tldr">
+    <p>TypeSafe publishes 18 official cookbooks in 2026, grouped into self-consistency, batching, how-to, extraction and classification, and labelled beginner, intermediate or advanced. The highest-value group commercially is verification: the guardrails recipe screens every message into and out of an LLM app with one request, and the citation checking recipe catches hallucinated citations against the source. The reranking recipe reports top-1 accuracy rising from 5 percent to 18 percent and top-10 from 38 percent to 62 percent across 40 CLERC legal queries. Every extraction recipe has the model choose among candidates rather than produce a value, because bounded answer spaces suit a Choice. Only three recipes make a second request, each for a documented reason. Copy the structure, rewrite the questions for your domain, and re-derive every threshold against your own labelled data.</p>
+  </div>
+</div>
+
+<main class="article">
+  <div class="prose">
+<style>
+.prose pre{background:#f4f4f4;border-left:3px solid var(--accent);padding:1rem 1.1rem;margin:1.5rem 0;overflow-x:auto;font-size:0.85rem;line-height:1.6}
+.prose pre code{font-family:var(--mono);color:#1a1a1a;white-space:pre;background:none;padding:0;font-size:1em}
+.prose code{font-family:var(--mono);font-size:0.86em;background:#f0f0f0;padding:0.12em 0.35em;border-radius:2px}
+.prose .eli5{background:var(--accent-soft);border-left:3px solid var(--accent);padding:1.4rem 1.6rem;margin:0 0 1.6rem}
+.prose .eli5 p{font-size:1.02rem}
+.prose .eli5 p:last-child{margin-bottom:0}
+.prose .srcs{font-size:0.88rem;color:var(--mid)}
+.prose .srcs li{font-size:0.88rem;margin-bottom:0.3rem}
+</style>
+
+    <h2>What Are the TypeSafe Cookbooks in 2026?</h2>
+    <p>The cookbooks are end-to-end recipes showing TypeSafe applied to real problems, from a few questions to full pipelines. Each one is a worked example with a real dataset, the questions that decide something about it, and the code that turns those decisions into a working system. There are 18 of them in 2026, grouped into five categories and labelled beginner, intermediate or advanced.</p>
+    <p>TypeSafe's own framing is that you read one when you want to see how the primitives and patterns come together on a concrete problem, or copy one as the starting point for your own. The prerequisite it states is that you already know the primitives and understand how confidence works.</p>
+
+    <h2>Explain It Like I Am Five: Why Recipes Beat Instructions</h2>
+    <div class="eli5">
+      <p>There are two ways to learn to cook.</p>
+      <p>Someone can hand you a list of ingredients and say "flour is for structure, eggs are for binding, sugar is for sweetness". All true. All useless when you are hungry and standing in a kitchen.</p>
+      <p>Or someone can hand you a recipe for a cake. Exact amounts. Exact order. Exact oven temperature. Somebody already burnt the first three cakes so you do not have to.</p>
+      <p>These cookbooks are the second kind. Each one is a whole finished dish. Here is the real data, here are the exact questions, here is the code, here is what came out.</p>
+      <p>And here is the nice thing about recipes. Once you have made a cake, you can make a slightly different cake. You can swap the fruit. The recipe taught you the shape, and the shape works for hundreds of other cakes.</p>
+      <p>So the best way to learn this is not to read every page of the manual. Find the recipe closest to your problem, cook that, and then change one ingredient at a time.</p>
+    </div>
+
+    <h2>Which Cookbooks Cover Guardrails and Verifying Other AI?</h2>
+    <p>This is the group with the clearest commercial logic in 2026, because it puts a cheap decision model around an expensive generative one. TypeSafe describes the category as universal verification: verifying the input prompt, extractions, reasoning traces, tool calls, or inputs of any other AI, detecting jailbreaks, citation errors, hallucinations and other error modes at a fraction of the cost of the model call itself.</p>
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Cookbook</th><th>What it does</th><th>Primitives</th><th>Level</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Guardrails for LLMs</strong></td><td>Screens every message going into and out of an LLM app with one request, thresholding hazard probabilities and severity to pass, review, block, or route</td><td>Several Nouls plus one Score</td><td>Intermediate</td></tr>
+        <tr><td><strong>Double-checking citations</strong></td><td>Catches wrong or hallucinated citations by checking against the source document, with one question deciding whether the quote's context supports the claim</td><td>Choice</td><td>Beginner</td></tr>
+        <tr><td><strong>Classifying RAG passages</strong></td><td>Scores each retrieved passage with one request, then decides in code which ones reach the answering model</td><td>Score</td><td>Intermediate</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The guardrails recipe is worth reading closely even if you never use it verbatim, because its structure is reusable. One Noul per hazard, such as whether a message attempts a jailbreak, requests harm, gives a diagnosis or dosage, or raises self-harm, plus one Score for severity. Each hazard has an action threshold and a lower review threshold, so a message either triggers its configured action, goes to a human, or passes. The severity score has its own threshold and can turn a review into a block. TypeSafe notes you edit it in two places: the dictionary of hazard questions and the two named routing policies.</p>
+    <p>That two-places design is the lesson. Everything a reviewer needs to argue about lives in two constants, not scattered across a codebase.</p>
+
+    <h2>Which Cookbooks Cover Search, Retrieval and Reranking?</h2>
+    <p>Three, and they are the strongest evidence in the documentation that this is not just a classification tool. The reranking cookbook in particular publishes before and after numbers on a public dataset.</p>
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Cookbook</th><th>What it does</th><th>Reported result</th><th>Level</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Re-ranking</strong></td><td>Builds 30-passage keyword shortlists for 40 CLERC legal queries, then uses one question per query-candidate pair</td><td>Top-1 accuracy from 5 percent to 18 percent; top-10 from 38 percent to 62 percent</td><td>Beginner</td></tr>
+        <tr><td><strong>Line-by-line search</strong></td><td>Semantic search over GitHub's Terms of Service, scoring 218 line IDs against a plain-language query in one request</td><td>Also uses a Noul to check whether the document contains an answer at all</td><td>Beginner</td></tr>
+        <tr><td><strong>Knowledge graph entity alignment</strong></td><td>Decides which of 450 candidate pairs from two beer catalogues describe the same product</td><td>One Score plus three companion Nouls that surface which fields disagree</td><td>Beginner</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Two design details generalise beyond these recipes. The line-by-line search recipe asks a separate Noul about whether the document contains an answer at all, which is the difference between a search system that returns the least-bad line and one that can say there is nothing here. And the entity alignment recipe pairs a Score with Nouls that explain which fields disagree, so a human reviewing a near-match sees why rather than just a number.</p>
+
+    <h2>Which Cookbooks Cover Extraction?</h2>
+    <p>Three, and all of them share a principle that is easy to miss: do not ask the model to produce the value, ask it to choose the value. TypeSafe states this directly in its jaggedness notes, recommending that when the answer space is bounded you turn extraction into a Choice over options rather than asking for the value itself, and that for data extraction it is better to find candidates with a regular expression or a generative model and let Jev pick the correct one.</p>
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Cookbook</th><th>What it does</th><th>Level</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Date extraction</strong></td><td>Extracts absolute and relative dates by asking for the parts named in a document, then resolving and validating them in code with confidence-based review</td><td>Beginner</td></tr>
+        <tr><td><strong>Pre-parsed value extraction</strong></td><td>Uses regular expressions to find candidate emails, phone numbers and amounts, then has TypeSafe select the requested span so code can normalise a verbatim value</td><td>Beginner</td></tr>
+        <tr><td><strong>SDE cascade</strong></td><td>A two-stage structured data extraction cascade, mini then verify then reasoning, to get most of the quality of a big reasoning model at a fraction of the cost</td><td>Intermediate</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The date recipe is the clearest illustration of the principle. Every part of a date is a small closed set: twelve months, thirty-one possible days, a bounded range of years. That turns extraction into a Choice over enumerated options rather than free-form parsing, and it gives you somewhere to put an explicit "not stated" option so a missing part is reported rather than guessed. Code then assembles the parts into a real date and owns everything after that, including ordering, duration and weekday, because Jev reads dates as text rather than as ordered quantities.</p>
+    <p>The pre-parsed recipe inverts the usual division of labour in a way worth stealing: the regular expression does the finding, which it is perfect at, and the model does the choosing, which it is good at and the regex cannot do. Normalisation then happens in code on a verbatim span, so nothing is invented anywhere in the chain.</p>
+
+    <h2>Which Cookbooks Cover Classification?</h2>
+    <p>Three, covering a flat taxonomy with confidence, a deep hierarchy, and a machine learning feature loop.</p>
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Cookbook</th><th>What it does</th><th>Level</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Classification using confidence</strong></td><td>Classifies SEC annual reports into 75 industry groups with one Choice each, then reads the answer's own confidence to decide whether to report that group or the broader division above it</td><td>Beginner</td></tr>
+        <tr><td><strong>Hierarchical classification</strong></td><td>Classifies documents through deep patent, retail product, biomedical and source-code hierarchies using parallel beam search over Choice probabilities</td><td>Intermediate</td></tr>
+        <tr><td><strong>Autoresearch feature discovery</strong></td><td>Runs a loop that proposes questions, converts free text into numeric features, and uses model errors to improve a supervised CatBoost regressor</td><td>Advanced</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The confidence-based classification recipe deserves particular attention because the idea is elegant and transfers everywhere. When the model is confident, report the specific industry group. When it is not, report the broader division above it. Instead of a wrong specific answer or no answer at all, you return a correct less-specific answer. Any taxonomy with levels can do this, and it turns uncertainty into useful precision rather than a failure.</p>
+    <p>The hierarchical recipe is the one for large taxonomies. Rather than committing to a single greedy path down the tree, it runs a beam search over Choice probabilities, keeping the best K candidate paths at each level. TypeSafe's Choice documentation recommends this approach whenever you are classifying through a deep hierarchy or a large taxonomy.</p>
+    <p>The autoresearch recipe is the most ambitious and the only one labelled advanced. It uses Jev's probabilities as features for a classical machine learning model, proposing questions, turning text into numbers, and using the downstream model's errors to improve the feature set. That is also the documented answer to "can I customise Jev", since there is no fine-tuning: you train something else on its outputs.</p>
+
+    <h2>Which Cookbooks Cover Tool Use, Formatting and Self-Consistency?</h2>
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Cookbook</th><th>What it does</th><th>Level</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Function calling</strong></td><td>Turns natural-language trading requests into calls to ordinary typed functions by mapping function names and closed-set arguments to confidence-aware questions</td><td>Intermediate</td></tr>
+        <tr><td><strong>Skill suggestion</strong></td><td>Picks at most one skill for an agent turn out of the 182 in Nous Research's Hermes catalogue, using two requests to rank and re-check the top candidates</td><td>Intermediate</td></tr>
+        <tr><td><strong>Structure recovery</strong></td><td>Reconstructs Markdown from plain text that lost its formatting, in two requests: one stitches hard-wrapped lines back together, one classifies every block as heading, list, code or callout</td><td>Beginner</td></tr>
+        <tr><td><strong>Parallel questions</strong></td><td>Runs a 13-question regulatory briefing over the GDPR Wikipedia article to measure the cost and speed of batching</td><td>Beginner</td></tr>
+        <tr><td><strong>Self-consistency: nouls</strong></td><td>Routes uncertain probabilities to human review while keeping the underlying noul values visible</td><td>Beginner</td></tr>
+        <tr><td><strong>Self-consistency: choices</strong></td><td>Adds an uncertain outcome to moderation decisions and compares label agreement with the share of automatic actions</td><td>Beginner</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The function calling recipe is the interesting one conceptually, because it treats tool selection as classification rather than generation. Function names become Choice options, closed-set arguments become their own questions, and confidence gates whether the call fires. That removes the failure mode where a generative model invents a function that does not exist or an argument the schema does not accept.</p>
+    <p>The skill suggestion recipe is one of only three in the whole documentation set that legitimately makes two requests. It ranks 182 skills in the first request, then fetches the full text of the top three and judges them again against that better evidence. It also uses a Choice and Nouls together on the same shortlist, the Choice to pick a skill and the Nouls to decide whether to suggest one at all, which is exactly the distinction TypeSafe draws between a relative and an absolute question.</p>
+    <p>The parallel questions recipe is the cheapest 10 minutes in the documentation. One batched call at 0.000497 US dollars and 0.27 seconds against 13 separate calls at 0.006090 US dollars and 2.71 seconds: 12.2 times cheaper and 10.0 times faster with no change in answers.</p>
+
+    <h2>Which Cookbook Should You Start With in 2026?</h2>
+    <p>Match the recipe to the problem you already have rather than to the one that sounds most impressive. The mapping below is by job rather than by category.</p>
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>If your problem is...</th><th>Start with</th><th>Why</th></tr></thead>
+      <tbody>
+        <tr><td>An LLM product that sometimes says something it should not</td><td>Guardrails for LLMs</td><td>One request screens input and output; thresholds live in two constants</td></tr>
+        <tr><td>RAG answers citing the wrong passage</td><td>Double-checking citations, then classifying RAG passages</td><td>One verifies the output, the other improves the input</td></tr>
+        <tr><td>Search that returns nearly-right results</td><td>Re-ranking</td><td>Published before and after numbers on a public dataset</td></tr>
+        <tr><td>A large category tree nobody can classify into reliably</td><td>Classification using confidence, then hierarchical classification</td><td>Start flat with a fallback to the parent, then go deep with beam search</td></tr>
+        <tr><td>Fragile regex or parsing code for dates and fields</td><td>Date extraction and pre-parsed value extraction</td><td>Regex finds candidates, the model chooses, code normalises</td></tr>
+        <tr><td>An agent choosing the wrong tool</td><td>Function calling, then skill suggestion</td><td>Tool choice as classification with a confidence gate</td></tr>
+        <tr><td>Moderation with too much or too little automation</td><td>Self-consistency: choices</td><td>Compares label agreement against the share of automatic actions</td></tr>
+        <tr><td>A cost or latency problem you cannot explain</td><td>Parallel questions</td><td>It is almost always the number of calls, not the model</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h2>What Are the Common Mistakes When Copying a Cookbook in 2026?</h2>
+    <ul>
+      <li><strong>Copying the questions verbatim.</strong> The instructions and criteria encode the cookbook's domain, not yours. The structure transfers; the wording does not.</li>
+      <li><strong>Keeping the thresholds.</strong> Every threshold in every recipe was chosen against that dataset. Re-derive yours from your own labelled sample.</li>
+      <li><strong>Skipping the prerequisites.</strong> TypeSafe states the cookbooks assume you know the primitives and understand confidence. They read very differently if you do not.</li>
+      <li><strong>Reading the reported numbers as your expected results.</strong> Top-1 accuracy rising from 5 to 18 percent is a result on CLERC legal queries with a specific shortlist, not a promise about your corpus.</li>
+      <li><strong>Adopting the two-request recipes as a default.</strong> Only three recipes make a second call, each for a documented reason. One request is the norm.</li>
+      <li><strong>Asking the model to generate the extracted value.</strong> The extraction recipes all have the model choose among candidates instead. That is deliberate.</li>
+      <li><strong>Starting with the advanced one.</strong> The autoresearch feature discovery loop is genuinely advanced and assumes a supervised model with ground truth already in place.</li>
+    </ul>
+
+    <h2>Key Takeaways for 2026</h2>
+    <ul>
+      <li>18 official cookbooks in five groups: self-consistency, batching, how-to, extraction and classification, labelled beginner through advanced.</li>
+      <li>The guardrails recipe is the strongest commercial pattern: a cheap decision model screening an expensive generative one, with thresholds in two constants.</li>
+      <li>Re-ranking reports top-1 accuracy rising from 5 percent to 18 percent and top-10 from 38 percent to 62 percent on 40 CLERC legal queries.</li>
+      <li>Every extraction recipe has the model choose among candidates rather than produce the value, because bounded answer spaces suit a Choice.</li>
+      <li>Classification using confidence returns the broader parent category when the specific one is uncertain, which turns uncertainty into precision.</li>
+      <li>Only three recipes make a second request, and each has a documented reason for it.</li>
+      <li>Copy the structure, re-derive the thresholds, and rewrite the questions for your own domain.</li>
+    </ul>
+    <p>Distk adapts these recipes to commercial workflows, which mostly means rewriting the questions for the client's domain and re-deriving every threshold against their own labelled data rather than inheriting the cookbook's.</p>
+
+    <h2>Sources</h2>
+    <ul class="srcs">
+      <li><a href="https://docs.typesafe.ai/cookbooks" rel="noopener" target="_blank">TypeSafe AI docs: Cookbooks index</a></li>
+      <li><a href="https://docs.typesafe.ai/cookbooks/llm_guardrails" rel="noopener" target="_blank">Guardrails for LLMs</a></li>
+      <li><a href="https://docs.typesafe.ai/cookbooks/rerank_typesafe" rel="noopener" target="_blank">Re-ranking</a></li>
+      <li><a href="https://docs.typesafe.ai/cookbooks/classifying_rag_passages" rel="noopener" target="_blank">Classifying RAG passages</a></li>
+      <li><a href="https://docs.typesafe.ai/cookbooks/parallel_questions" rel="noopener" target="_blank">Parallel questions</a></li>
+      <li><a href="https://docs.typesafe.ai/cookbooks/date_extraction_cookbook" rel="noopener" target="_blank">Date extraction</a></li>
+      <li><a href="https://docs.typesafe.ai/cookbooks/hierarchical_classification" rel="noopener" target="_blank">Hierarchical classification</a></li>
+      <li><a href="https://docs.typesafe.ai/cookbooks/classification_using_confidence" rel="noopener" target="_blank">Classification using confidence</a></li>
+      <li><a href="https://docs.typesafe.ai/cookbooks/skill_suggestion" rel="noopener" target="_blank">Skill suggestion</a></li>
+      <li><a href="https://docs.typesafe.ai/concepts/use-case-map" rel="noopener" target="_blank">Example use cases</a></li>
+    </ul>
+
+  </div>
+</main>
+
+<section class="faq">
+  <div class="container">
+    <div class="section-tag">Key Questions</div>
+    <h2 class="section-title">TypeSafe Cookbooks in 2026: FAQs</h2>
+    <div class="faq__grid">
+      <div class="faq__item">
+        <h3>How many TypeSafe cookbooks are there?</h3>
+        <p>Eighteen in 2026, grouped into five categories: self-consistency, batching, how-to, extraction and classification. Each is labelled beginner, intermediate or advanced, and each is a complete worked example with a real dataset and code.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Which cookbook should I read first?</h3>
+        <p>Match it to a problem you already have. For an LLM product that occasionally misbehaves, start with Guardrails for LLMs. For search that returns nearly-right results, start with Re-ranking. For an unexplained cost problem, read Parallel questions.</p>
+      </div>
+      <div class="faq__item">
+        <h3>What does the LLM guardrails cookbook do?</h3>
+        <p>Screens every message going into and out of an LLM app with one request, using a Noul per hazard plus a Score for severity. Each hazard has an action threshold and a lower review threshold, so messages pass, go to review, get blocked, or route to support.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Does TypeSafe publish accuracy results for reranking?</h3>
+        <p>Yes. The reranking cookbook builds 30-passage keyword shortlists for 40 CLERC legal queries, then asks one question per query-candidate pair, and reports top-1 accuracy rising from 5 percent to 18 percent and top-10 accuracy from 38 percent to 62 percent.</p>
+      </div>
+      <div class="faq__item">
+        <h3>How do the extraction cookbooks avoid asking the model to generate text?</h3>
+        <p>They turn extraction into selection. Regular expressions or enumerated options produce candidates, and the model chooses the correct one. The date recipe treats months, days and years as small closed sets with an explicit not stated option, then assembles the date in code.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Can I copy a cookbook's thresholds?</h3>
+        <p>No. Every threshold in every recipe was chosen against that recipe's dataset. Copy the structure and re-derive thresholds from your own labelled sample, because the confidence distribution on your material will differ.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED START -->
+<section class="related" style="padding:3.5rem 0;border-top:1px solid #e8e8e8;background:#fafafa">
+  <div style="max-width:720px;margin:0 auto;padding:0 clamp(1.2rem,4vw,3rem)">
+    <div style="font-family:'Space Mono',monospace;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:#e63312;margin-bottom:1.3rem">Related reading</div>
+    <ul style="list-style:none;margin:0;padding:0;display:grid;gap:0.9rem">
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="typesafe-ai-pricing-limits-models-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">TypeSafe AI Pricing and Limits in 2026: What Jev Costs and How to Operate It</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="system-one-vs-llm-structured-decisions-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">System One vs an LLM in 2026: Why Not Just Ask GPT for JSON?</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="ai-model-pricing-comparison-september-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">AI Model Pricing and Fit Comparison, September 2026: GPT-6 Astra, Claude Fable 5.1, Gemini and DeepSeek</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="deepseek-v4-1-flash-open-weights-self-host-guide-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">DeepSeek V4.1 Flash Open Weights in 2026: What Self-Hosting Actually Involves</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="deepseek-v4-1-flash-benchmarks-vs-gpt-claude-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">DeepSeek V4.1 Flash Benchmarks in 2026: Where It Leads, Where It Trails, and What the Table Leaves Out</a></li>
+    </ul>
+  </div>
+</section>
+<!-- RELATED END -->
+<section class="cta">
+  <div class="cta__inner">
+    <h2>Recipes are a starting point, not a deployment</h2>
+    <p>Distk adapts these patterns to commercial workflows: rewriting the questions for your domain, re-deriving every threshold against your own labelled data, and deciding where a human stays in the loop.</p>
+    <a href="https://distk.in/#contact" class="cta__btn">Start the conversation →</a>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="container">
+    © 2026 Distk · <a href="https://distk.in">distk.in</a> · <a href="mailto:connect@distk.in">connect@distk.in</a>
+  </div>
+</footer>
+</body>
+</html>

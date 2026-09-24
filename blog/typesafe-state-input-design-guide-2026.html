@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xdifcafwxl");
+  </script>
+
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TypeSafe State Design in 2026: Context Limits, Filtering, Context Rot | Distk</title>
+<meta name="description" content="How to design the state you send TypeSafe in 2026: string, object and array shapes, the 64k and 32k context budgets, why irrelevant content costs accuracy, filtering with a cheap Noul, and pre-processing non-text inputs.">
+<meta name="keywords" content="TypeSafe state 2026, Jev context window, TypeSafe context limits, context rot AI, TypeSafe state design, classifying RAG passages, AI development guide 2026">
+<meta name="author" content="Distk"><meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://distk.in/blog/typesafe-state-input-design-guide-2026.html">
+<meta property="og:type" content="article"><meta property="og:url" content="https://distk.in/blog/typesafe-state-input-design-guide-2026.html">
+<meta property="og:title" content="TypeSafe State Design in 2026: Context Limits, Filtering and the Context Rot Problem">
+<meta property="og:description" content="Your document budget is 32k, not 64k. And a fuller state is a worse state. How to pack it properly.">
+<meta property="og:image" content="https://distk.in/assets/images/og-image.jpg"><meta property="og:site_name" content="Distk">
+<meta property="article:published_time" content="2026-09-24T00:00:00+05:30">
+<meta property="article:modified_time" content="2026-09-24T00:00:00+05:30">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="TypeSafe State Design in 2026: Context Limits, Filtering and the Context Rot Problem"><meta name="twitter:description" content="Your document budget is 32k, not 64k. And a fuller state is a worse state. How to pack it properly.">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "TypeSafe State Design in 2026: Context Limits, Filtering and the Context Rot Problem", "description": "A 2026 guide to designing the state field in TypeSafe requests: supported shapes, the 64k and 32k token budgets, why unrelated content lowers accuracy, filtering strategies, handling non-text input, and adversarial content.", "author": {"@type": "Organization", "name": "Distk", "url": "https://distk.in"}, "publisher": {"@type": "Organization", "name": "Distk", "logo": {"@type": "ImageObject", "url": "https://distk.in/assets/images/Logo.png"}}, "datePublished": "2026-09-24", "dateModified": "2026-09-24", "inLanguage": "en", "about": [{"@type": "Thing", "name": "TypeSafe AI"}, {"@type": "Thing", "name": "state"}, {"@type": "Thing", "name": "context window"}, {"@type": "Thing", "name": "context rot"}, {"@type": "Thing", "name": "Jev"}, {"@type": "Thing", "name": "retrieval filtering"}, {"@type": "Thing", "name": "RAG"}], "mentions": [{"@type": "Thing", "name": "TypeSafe AI"}, {"@type": "Thing", "name": "state"}, {"@type": "Thing", "name": "context window"}, {"@type": "Thing", "name": "context rot"}, {"@type": "Thing", "name": "Jev"}, {"@type": "Thing", "name": "retrieval filtering"}, {"@type": "Thing", "name": "RAG"}], "mainEntityOfPage": {"@type": "WebPage", "@id": "https://distk.in/blog/typesafe-state-input-design-guide-2026.html"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the state field in TypeSafe in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "State is the content you ask a System One model to evaluate, such as a support message, a passage of text, or the current state of your application. It is sent in the state field of a request alongside the questions, and each request evaluates one state against one or more questions that all see the same state and are evaluated independently."}}, {"@type": "Question", "name": "What is Jev's context window in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "Jev 1.13 has a 64k token budget per request covering the state plus all questions combined, and a separate 32k token budget covering the state plus the single longest question. Because of the second limit, the practical ceiling on document size is closer to 32k tokens minus the length of your longest question."}}, {"@type": "Question", "name": "Does sending a larger state make TypeSafe answers worse?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. TypeSafe documents that accuracy falls as the state grows with content unrelated to the decision, because unrelated detail acts as a distractor and a large state makes it harder to identify which part of the input produced a wrong answer. The documented recommendation is to retrieve and filter in code first and send only the fields the question needs."}}, {"@type": "Question", "name": "Can TypeSafe process images, audio or PDF files?", "acceptedAnswer": {"@type": "Answer", "text": "No. Jev accepts text only, in the form of a string, a JSON object, or an array of text values, and does not accept image, audio or video input. TypeSafe's guidance is to pre-process non-text inputs such as scans, recordings and images into text or structured fields before sending them as state."}}, {"@type": "Question", "name": "How do you point a TypeSafe question at one part of a structured state?", "acceptedAnswer": {"@type": "Answer", "text": "Reference the value in the question's instructions using a dot-and-index path to its key, wrapped in backtick characters, such as support.tickets[0].message. Explicit paths make clear which part of a structured state should inform each judgment and reduce the indirection that Jev handles less reliably."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://distk.in/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://distk.in/blog/"}, {"@type": "ListItem", "position": 3, "name": "TypeSafe State Design in 2026: Context Limits, Filtering and the Context Rot Problem", "item": "https://distk.in/blog/typesafe-state-input-design-guide-2026.html"}]}</script>
+<link rel="icon" type="image/png" href="../assets/images/favicon.png"><link rel="apple-touch-icon" href="../assets/images/Logo.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BWDTQ1JPL2"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-BWDTQ1JPL2');</script>
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1077520544213003');fbq('track','PageView');</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1077520544213003&ev=PageView&noscript=1"></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#0a0a0a;--paper:#fafafa;--mid:#6b6b6b;--light:#e8e8e8;--accent:#e63312;--accent-soft:rgba(230,51,18,0.08);--mono:'Space Mono',monospace;--sans:'Outfit',sans-serif;--container:1120px;--prose:720px;--gutter:clamp(1.2rem,4vw,3rem)}
+html{font-size:16px;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.container{max-width:var(--container);margin:0 auto;padding:0 var(--gutter)}
+.prose{max-width:var(--prose);margin:0 auto;padding:0 var(--gutter)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--light)}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;max-width:var(--container);margin:0 auto;padding:0.9rem var(--gutter)}
+.nav__logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;color:var(--ink)}
+.nav__logo img{height:32px;width:auto}
+.nav__logo span{font-family:var(--mono);font-weight:700;font-size:1.05rem;letter-spacing:-0.02em}
+.nav__logo small{display:block;font-size:0.55rem;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);line-height:1}
+.nav__back{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid);text-decoration:none;display:flex;align-items:center;gap:0.4rem;transition:color 0.2s}
+.nav__back:hover{color:var(--accent)}
+.nav__cta{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.6rem 1.4rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.nav__cta:hover{background:var(--accent)}
+.hero{padding:7.5rem 0 3.5rem;position:relative;overflow:hidden;border-bottom:1px solid var(--light)}
+.hero::before{content:'STATE';position:absolute;right:-1%;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:clamp(6rem,26vw,22rem);font-weight:700;color:rgba(0,0,0,0.03);line-height:1;pointer-events:none;user-select:none;letter-spacing:-0.05em}
+.hero__tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1.5rem}
+.hero__tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.hero h1{font-family:var(--sans);font-weight:700;font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;letter-spacing:-0.03em;max-width:20ch;margin-bottom:1.5rem}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero__sub{font-size:1.1rem;color:var(--mid);max-width:56ch;line-height:1.7;margin-bottom:2rem}
+.hero__meta{display:flex;flex-wrap:wrap;gap:1.5rem;font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid)}
+.tldr{background:var(--accent-soft);border-left:3px solid var(--accent);padding:1.8rem 2rem;margin:3rem 0;position:relative}
+.tldr::before{content:'TL;DR';position:absolute;top:-0.6rem;left:2rem;font-family:var(--mono);font-size:0.62rem;font-weight:700;letter-spacing:0.12em;background:var(--accent);color:#fff;padding:0.2rem 0.6rem}
+.tldr p{font-size:0.95rem;color:var(--ink);line-height:1.7}
+.article{padding:4rem 0 5rem}
+.article h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.35rem,2.8vw,1.8rem);letter-spacing:-0.02em;line-height:1.2;margin:3rem 0 1rem;padding-top:1rem;border-top:1px solid var(--light)}
+.article h2:first-child{border-top:none;margin-top:0}
+.article h3{font-family:var(--mono);font-weight:700;font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin:2rem 0 0.6rem}
+.article p{font-size:1rem;color:#2a2a2a;line-height:1.8;margin-bottom:1.25rem}
+.article ul,.article ol{padding-left:1.4rem;margin-bottom:1.25rem}
+.article li{font-size:1rem;color:#2a2a2a;line-height:1.75;margin-bottom:0.4rem}
+.article strong{font-weight:600;color:var(--ink)}
+.article a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(230,51,18,0.3)}
+.article a:hover{border-bottom-color:var(--accent)}
+.article blockquote{border-left:3px solid var(--accent);padding:0.75rem 1.5rem;margin:2rem 0;background:var(--accent-soft)}
+.article blockquote p{color:var(--ink);font-size:1rem;margin:0}
+.table-wrap{overflow-x:auto;margin:2rem 0}
+.data-table{width:100%;border-collapse:collapse;margin:0;font-size:0.88rem}
+.data-table th{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:0.7rem 1rem;text-align:left;white-space:nowrap}
+.data-table td{padding:0.75rem 1rem;border-bottom:1px solid var(--light);vertical-align:top}
+.data-table tr:last-child td{border-bottom:none}
+.data-table tr:nth-child(even) td{background:#f5f5f5}
+.callout{border:1.5px solid var(--light);padding:1.5rem 1.8rem;margin:2rem 0}
+.callout__label{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem}
+.callout p{font-size:0.92rem;color:var(--mid);line-height:1.7;margin:0}
+.faq{padding:4rem 0;background:var(--ink);color:var(--paper)}
+.faq .section-tag{color:var(--accent)}
+.faq .section-tag::before{background:var(--accent)}
+.faq__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2.5rem;margin-top:2.5rem}
+.faq__item{border-left:2px solid var(--accent);padding-left:1.5rem}
+.faq__item h3{font-family:var(--sans);font-weight:600;font-size:0.95rem;margin-bottom:0.5rem;color:var(--paper)}
+.faq__item p{font-size:0.85rem;color:rgba(255,255,255,0.88);line-height:1.65}
+.section-tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1rem}
+.section-tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.section-title{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.15;color:var(--paper)}
+.cta{padding:5rem 0;background:var(--accent-soft);border-top:1px solid rgba(230,51,18,0.12)}
+.cta__inner{max-width:680px;margin:0 auto;padding:0 var(--gutter);text-align:center}
+.cta h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.2;margin-bottom:1rem}
+.cta p{font-size:1rem;color:var(--mid);line-height:1.7;margin-bottom:2rem}
+.cta__btn{display:inline-flex;align-items:center;gap:0.6rem;font-family:var(--mono);font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;padding:1rem 2.2rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.cta__btn:hover{background:var(--accent)}
+.foot{padding:2.5rem 0;border-top:1px solid var(--light);text-align:center;font-family:var(--mono);font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid)}
+.foot a{color:var(--mid);text-decoration:none}.foot a:hover{color:var(--accent)}
+@media(max-width:768px){.faq__grid{grid-template-columns:1fr}.nav__back span{display:none}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="https://distk.in" class="nav__logo">
+      <img src="../assets/images/Logo.png" alt="Distk">
+      <div><span>Distk</span><small>Global Growth Partner</small></div>
+    </a>
+    <a href="/blog/" class="nav__back">← <span>All articles</span></a>
+    <a href="https://distk.in/#contact" class="nav__cta">Work with us</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="prose">
+    <div class="hero__tag">AI Development Guide</div>
+    <h1>TypeSafe <em>State Design</em> in 2026: Context Limits, Filtering and Context Rot</h1>
+    <p class="hero__sub">The state is the single input every question in a request reads, which makes it the highest-leverage thing to get right. It is also where the most common accuracy mistake lives: putting in more than the questions need.</p>
+    <div class="hero__meta">
+      <span>Distk Editorial</span>
+      <span>Sep 2026</span>
+      <span>11 min read</span>
+    </div>
+  </div>
+</section>
+
+<div class="prose">
+  <div class="tldr">
+    <p>State is the content you ask TypeSafe to evaluate, sent once per request and read by every question in that request. It can be a plain string, a JSON object, or an array, and TypeSafe recommends an object for most requests so each part is named and addressable by a backticked path in a question. Jev 1.13 allows 64k tokens for the whole request and 32k for the state plus the single longest question, so the practical document ceiling is the smaller number. Accuracy falls as the state grows with unrelated content, a failure mode TypeSafe documents explicitly and describes as context rot, so the recommended approach is to retrieve and filter in code first, or to use a cheap Noul question as a relevance filter. Input is text only in 2026, so images, audio, PDFs and spreadsheets must be converted before they reach the API.</p>
+  </div>
+</div>
+
+<main class="article">
+  <div class="prose">
+<style>
+.prose pre{background:#f4f4f4;border-left:3px solid var(--accent);padding:1rem 1.1rem;margin:1.5rem 0;overflow-x:auto;font-size:0.85rem;line-height:1.6}
+.prose pre code{font-family:var(--mono);color:#1a1a1a;white-space:pre;background:none;padding:0;font-size:1em}
+.prose code{font-family:var(--mono);font-size:0.86em;background:#f0f0f0;padding:0.12em 0.35em;border-radius:2px}
+.prose .eli5{background:var(--accent-soft);border-left:3px solid var(--accent);padding:1.4rem 1.6rem;margin:0 0 1.6rem}
+.prose .eli5 p{font-size:1.02rem}
+.prose .eli5 p:last-child{margin-bottom:0}
+.prose .srcs{font-size:0.88rem;color:var(--mid)}
+.prose .srcs li{font-size:0.88rem;margin-bottom:0.3rem}
+</style>
+
+    <h2>What Is State in TypeSafe in 2026?</h2>
+    <p>State is the content you ask a System One model to evaluate. It could be a support message, a passage of text, or the current state of your application, and it goes in the <code>state</code> field of the request alongside the questions you want answered. Each request evaluates one state against one or more questions, and every question sees the same state and is evaluated independently.</p>
+    <p>That one-state-per-request design is what makes batching so cheap: the content is sent once and every question reads it. It is also why state design is the highest-leverage thing you can get right, because the same material is being used by every judgment in the call.</p>
+
+    <h2>Explain It Like I Am Five: Packing the School Bag</h2>
+    <div class="eli5">
+      <p>Think about packing a school bag in the morning.</p>
+      <p>The bag is the state. Whatever you put in the bag is what the model gets to look at. Nothing else exists as far as it is concerned.</p>
+      <p>If you are going to a maths lesson, you put in the maths book. That is it. You do not also put in the football boots, the lunchbox from last Tuesday, four rocks and a recorder.</p>
+      <p>You might think extra stuff is harmless, because the bag is big enough. It is not harmless. When the bag is full of junk, it takes longer to find the maths book, and sometimes you pull out the wrong thing entirely.</p>
+      <p>That is a real effect here, not just a nice story. The people who built this model wrote it down: the more unrelated stuff you put in, the worse the answers get. They call it context rot.</p>
+      <p>So the rule is simple. Before you pack something, ask whether any of your questions actually need it. If no question needs it, leave it at home.</p>
+    </div>
+
+    <h2>What Shapes Can the State Be in 2026?</h2>
+    <p>Three: a plain string, a JSON object, or an array. TypeSafe recommends an object for most requests so each part of the state has a descriptive name and its relationships remain clear, and reserves the plain string for cases where the use case is simple and requires only one piece of text.</p>
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Format</th><th>Useful for</th><th>Documented example</th></tr></thead>
+      <tbody>
+        <tr><td><strong>String</strong></td><td>A message, article, or passage</td><td><code>"My card was charged twice."</code></td></tr>
+        <tr><td><strong>Object</strong></td><td>Named fields, related records, or application state</td><td><code>{"message": "My card was charged twice.", "order_id": "A-104"}</code></td></tr>
+        <tr><td><strong>Array</strong></td><td>A sequence of messages or records</td><td><code>["Hi", "My customer number is TS1337.", "My card was charged twice."]</code></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>TypeSafe's framing is worth borrowing when you are designing one: think of state as the material you would present to a panel of experts before asking them to make a judgment. That test tends to produce the right answer about what to include. You would hand the panel the complaint, the order record and the relevant policy. You would not hand them the entire policy manual and the customer's purchase history since 2019.</p>
+    <p>A structured state can hold several related things and still be one state. TypeSafe's documented support example contains a conversation, an order and a refund policy in a single object, on the grounds that you put related information together when the decision requires comparing those parts.</p>
+
+<pre><code>{
+  "state": {
+    "ticket_message": "My flight was cancelled. Can I get a refund?",
+    "refund_policy": "Cancelled flights are eligible for a full refund."
+  },
+  "model": "jev-latest",
+  "questions": {
+    "policy_supports_refund": {
+      "type": "noul",
+      "instructions": "Does the refund policy support the refund requested in the ticket?"
+    }
+  }
+}</code></pre>
+
+    <h2>How Do You Separate Content From Questions?</h2>
+    <p>The state contains the content and supporting facts. The questions define the judgments to make about that material. TypeSafe's example of the split is exact: keep the refund request and the policy in the state, then ask whether the customer requested a refund and whether the policy supports it.</p>
+    <p>Getting this boundary wrong is the most common structural mistake. Evaluation logic that belongs in <code>instructions</code> ends up embedded in the state as a preamble, or reference material that belongs in the state gets pasted into every question's instructions and re-sent once per question. The clean version keeps facts in the state, judgment criteria in the questions, and rules in your code.</p>
+
+    <h2>How Do You Point a Question at Part of the State?</h2>
+    <p>Name the part in the <code>instructions</code> with a dot-and-index path to its key, including the backtick characters around the path, such as <code>support.tickets[0].message</code>. TypeSafe's guidance is that explicit paths make it clear which parts of a structured state should inform each judgment.</p>
+    <p>This matters more with Jev than it might with a chat model, because indirection is one of the documented failure modes: a question about a property of a property, or one that requires several hops of reasoning, costs accuracy. A path in the question removes one hop.</p>
+
+    <h2>What Are the Context Limits for Jev in 2026?</h2>
+    <p>Jev 1.13 has a 64k token budget per request covering the state plus all questions combined, and a separate 32k budget covering the state plus the single longest question. TypeSafe explains the structure: Jev ingests the state once and evaluates every question against it in parallel, which is why the two budgets are expressed differently.</p>
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Budget</th><th>What it covers</th><th>What it means in practice</th></tr></thead>
+      <tbody>
+        <tr><td><strong>64k tokens</strong></td><td>The whole request: state plus every question</td><td>Your total headroom. Many questions eat into it, though each one is small.</td></tr>
+        <tr><td><strong>32k tokens</strong></td><td>The state plus the single longest question</td><td>The real ceiling on document size. A long document plus one long question hits this first.</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The practical reading for 2026 is that your document budget is closer to 32k than 64k, and it shrinks by however long your wordiest question is. If you are feeding long documents, keep instructions and criteria terse on the longest question rather than the whole set.</p>
+
+    <h2>Why Does a Bigger State Make Answers Worse?</h2>
+    <p>Because accuracy falls as the state grows with content unrelated to the decision. TypeSafe lists this as one of nine documented failure modes for Jev 1.13 and states the mechanism: unrelated detail acts as a distractor, and a large state also makes it harder to tell which part of the input produced a wrong answer. Its summary line elsewhere is blunter, saying Jev suffers from context rot, so unrelated material in the state costs you accuracy.</p>
+    <p>This is the opposite of the habit many teams built with long-context chat models, where stuffing everything in and letting the model sort it out is often adequate. Here, the recommended approach is to retrieve and filter in code first and send only the fields the question needs.</p>
+    <div class="callout">
+      <div class="callout__label">The diagnostic in 2026</div>
+      <p>If confidence is good on short inputs and poor on long ones with the same question, you are looking at state bloat rather than a question problem. Cut the state before you rewrite the question.</p>
+    </div>
+
+    <h2>How Do You Filter the State When You Cannot Filter in Code?</h2>
+    <p>Use the model itself as the filter. TypeSafe's documented advice is that when it is not possible to filter in the state, you can use a Noul to filter for relevance, and it points to the classifying RAG passages cookbook as the worked example. That cookbook scores each retrieved passage with one TypeSafe request, then decides in code which ones reach the answering model.</p>
+    <p>That is a two-stage shape worth internalising, because it turns an expensive context problem into a cheap decision problem.</p>
+    <ol>
+      <li><strong>Retrieve broadly</strong> with whatever you already use, such as keyword search or embeddings.</li>
+      <li><strong>Judge each candidate</strong> with one cheap question per candidate, all in a single request.</li>
+      <li><strong>Select in code</strong> using a threshold you chose from your own data.</li>
+      <li><strong>Build the real state</strong> from only the selected material.</li>
+      <li><strong>Ask the actual questions</strong> against that much smaller, cleaner state.</li>
+    </ol>
+    <p>The same shape underlies TypeSafe's reranking cookbook, which builds 30-passage shortlists for 40 legal queries and uses one question per query-candidate pair, reporting a rise in top-1 accuracy from 5 percent to 18 percent and top-10 accuracy from 38 percent to 62 percent over the shortlist it started from.</p>
+
+    <h2>How Do You Handle Images, PDFs and Audio in 2026?</h2>
+    <p>You convert them before they reach the API. Jev is text only, accepting a string, JSON object, or array of text values, with no image, audio or video input. TypeSafe's instruction is to pre-process non-text inputs into text or structured fields before sending them as state.</p>
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Input</th><th>Pre-processing step</th><th>What goes in the state</th></tr></thead>
+      <tbody>
+        <tr><td>Scanned invoice or PDF</td><td>OCR or a PDF text extractor</td><td>Extracted text, ideally as named fields rather than one blob</td></tr>
+        <tr><td>Call recording</td><td>Speech to text</td><td>The transcript, optionally with speaker labels as an array</td></tr>
+        <tr><td>Product image</td><td>A multimodal model or existing metadata</td><td>A text description plus whatever structured attributes you already hold</td></tr>
+        <tr><td>Spreadsheet row</td><td>Serialise the relevant columns</td><td>A JSON object of just the fields the questions need</td></tr>
+        <tr><td>Web page</td><td>Strip navigation and boilerplate</td><td>Main content only, because the chrome is pure distractor</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>That last row is the one teams skip. Sending a raw page means sending menus, cookie banners and footers into a model that is documented to lose accuracy on irrelevant content.</p>
+
+    <h2>What Should You Never Put in the State?</h2>
+    <ul>
+      <li><strong>Anything no question asks about.</strong> The single most reliable accuracy improvement available.</li>
+      <li><strong>Evaluation rules.</strong> Those belong in <code>instructions</code> and <code>criteria</code>, or in your code.</li>
+      <li><strong>Arithmetic to perform.</strong> Jev is not a calculator and does not count reliably. Compute in code and pass the result or a named bucket.</li>
+      <li><strong>Raw hex, RGB triples or binary encodings.</strong> TypeSafe notes semantic representations outperform numeric ones; convert to names or buckets first.</li>
+      <li><strong>Dates you want compared.</strong> Extract the parts and do the comparison in code, per the documented guidance.</li>
+      <li><strong>Untrusted text without thought.</strong> State is data, and TypeSafe states that Jev does not treat it as hostile by default, so content written to steer the model can move the answer.</li>
+      <li><strong>Facts you expect the model to already know.</strong> The build guide says not to rely on knowledge stored in model weights when current information can come from your own knowledge base.</li>
+    </ul>
+
+    <h2>How Do You Handle Adversarial Content in the State?</h2>
+    <p>Carefully, and with the expectation that this is a live weakness rather than a solved problem. TypeSafe states that content written to adversarially steer the model, whether an injected instruction, a deliberately misleading framing, or text that argues for its own classification, can move the answer, and that the company expects to improve on this in future.</p>
+    <p>Its recommended mitigations are to be explicit in the criteria and to test your integration thoroughly before deploying it to many users. In practice, if your state contains text written by the people your decision is about, which covers moderation, applications, reviews and support, then adversarial robustness is your problem to design for. Keep the consequential actions behind a confidence gate and a human, as our <a href="typesafe-confidence-calibration-guide-2026.html">confidence guide</a> describes.</p>
+
+    <h2>What Are the Common State Design Mistakes in 2026?</h2>
+    <ul>
+      <li><strong>Filling the window because it is there.</strong> The budget is a limit, not a target.</li>
+      <li><strong>Sending one giant string instead of named fields.</strong> An object makes each part addressable by a question.</li>
+      <li><strong>Pasting reference material into every question.</strong> Put shared material in the state once; the questions all see it.</li>
+      <li><strong>Assuming 64k of document space.</strong> The binding limit is 32k for the state plus your longest question.</li>
+      <li><strong>Sending raw HTML or unfiltered retrieval results.</strong> Boilerplate is a documented accuracy cost.</li>
+      <li><strong>Blaming the question when long inputs fail.</strong> Test the same question on a trimmed state first.</li>
+      <li><strong>Forgetting that state is data, not instructions.</strong> Hostile content in the state can influence answers.</li>
+    </ul>
+
+    <h2>Key Takeaways for 2026</h2>
+    <ul>
+      <li>State is the content being judged, sent once per request and read by every question in that request.</li>
+      <li>Use a JSON object for most requests so each part is named and addressable; a plain string suits only simple single-text cases.</li>
+      <li>Jev 1.13 allows 64k tokens for the whole request and 32k for the state plus the longest single question.</li>
+      <li>Accuracy falls as the state grows with irrelevant content. Filter in code first, and use a cheap Noul as a relevance filter when you cannot.</li>
+      <li>Input is text only, so OCR, transcribe or describe non-text material before it reaches the API.</li>
+      <li>Keep facts in the state, judgment criteria in the questions, and rules and arithmetic in your code.</li>
+      <li>State is data and is not treated as hostile by default, so design for adversarial content where users write the text.</li>
+    </ul>
+    <p>Distk builds the retrieval and filtering layer that sits in front of a decision model, which is usually where the accuracy is won or lost rather than in the model call itself.</p>
+
+    <h2>Sources</h2>
+    <ul class="srcs">
+      <li><a href="https://docs.typesafe.ai/concepts/state" rel="noopener" target="_blank">TypeSafe AI docs: State</a></li>
+      <li><a href="https://docs.typesafe.ai/models" rel="noopener" target="_blank">Models: context length and input</a></li>
+      <li><a href="https://docs.typesafe.ai/model-jaggedness/jev-1.13" rel="noopener" target="_blank">Jev 1.13 jaggedness</a></li>
+      <li><a href="https://docs.typesafe.ai/concepts/how-to-build-with-system-one" rel="noopener" target="_blank">How to build with TypeSafe</a></li>
+      <li><a href="https://docs.typesafe.ai/primitives" rel="noopener" target="_blank">Primitives (Questions)</a></li>
+      <li><a href="https://docs.typesafe.ai/cookbooks/classifying_rag_passages" rel="noopener" target="_blank">Classifying RAG passages cookbook</a></li>
+      <li><a href="https://docs.typesafe.ai/cookbooks/rerank_typesafe" rel="noopener" target="_blank">Re-ranking cookbook</a></li>
+    </ul>
+
+  </div>
+</main>
+
+<section class="faq">
+  <div class="container">
+    <div class="section-tag">Key Questions</div>
+    <h2 class="section-title">TypeSafe State Design in 2026: FAQs</h2>
+    <div class="faq__grid">
+      <div class="faq__item">
+        <h3>What is state in TypeSafe?</h3>
+        <p>The content you ask the model to evaluate, sent in the state field. Each request evaluates one state against one or more questions, and every question sees the same state and is evaluated independently against it.</p>
+      </div>
+      <div class="faq__item">
+        <h3>What is Jev's context window in 2026?</h3>
+        <p>64k tokens per request covering the state plus all questions combined, and 32k tokens for the state plus the single longest question. The 32k figure is usually the binding constraint on document size.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Does a bigger state make answers worse?</h3>
+        <p>Yes. TypeSafe documents that accuracy falls as the state grows with content unrelated to the decision, because unrelated detail acts as a distractor. Its guidance is to retrieve and filter in code first and send only what the questions need.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Can TypeSafe accept images or PDFs?</h3>
+        <p>No. Jev is text only and accepts a string, JSON object, or array of text values, with no image, audio or video input. TypeSafe's instruction is to pre-process non-text inputs into text or structured fields before sending them as state.</p>
+      </div>
+      <div class="faq__item">
+        <h3>How do I point a question at one part of the state?</h3>
+        <p>Name it in the instructions with a dot-and-index path to its key, including the backtick characters around the path. Explicit paths make it clear which part of a structured state should inform each judgment and remove a hop of indirection.</p>
+      </div>
+      <div class="faq__item">
+        <h3>How should I handle untrusted text in the state?</h3>
+        <p>Carefully. TypeSafe states that state is data and that Jev does not treat it as hostile by default, so adversarial content can move an answer. Its recommendations are to be explicit in the criteria and test thoroughly before deploying widely.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED START -->
+<section class="related" style="padding:3.5rem 0;border-top:1px solid #e8e8e8;background:#fafafa">
+  <div style="max-width:720px;margin:0 auto;padding:0 clamp(1.2rem,4vw,3rem)">
+    <div style="font-family:'Space Mono',monospace;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:#e63312;margin-bottom:1.3rem">Related reading</div>
+    <ul style="list-style:none;margin:0;padding:0;display:grid;gap:0.9rem">
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="what-is-typesafe-ai-jev-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">What Is TypeSafe AI and Jev in 2026? The Complete Guide to System One Models</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="typesafe-ai-quickstart-tutorial-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">TypeSafe AI Quick Start for 2026: Your First Jev Call in cURL, Python and JavaScript</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="typesafe-primitives-choice-score-noul-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">TypeSafe Primitives in 2026: Choice, Score and Noul Explained in Depth</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="typesafe-confidence-calibration-guide-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">TypeSafe Confidence and Calibration in 2026: Setting Thresholds That Work</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="typesafe-patterns-fan-out-intent-routing-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">TypeSafe Patterns in 2026: Fan-Out, Intent Routing, Confidence Gating and Composite Scoring</a></li>
+    </ul>
+  </div>
+</section>
+<!-- RELATED END -->
+<section class="cta">
+  <div class="cta__inner">
+    <h2>Most accuracy is won before the model call</h2>
+    <p>Distk builds the retrieval, filtering and pre-processing layer that decides what a decision model actually sees, which is usually where the quality gap sits rather than in the model itself.</p>
+    <a href="https://distk.in/#contact" class="cta__btn">Start the conversation →</a>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="container">
+    © 2026 Distk · <a href="https://distk.in">distk.in</a> · <a href="mailto:connect@distk.in">connect@distk.in</a>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xdifcafwxl");
+  </script>
+
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TypeSafe Confidence and Calibration in 2026: Thresholds That Work | Distk</title>
+<meta name="description" content="How TypeSafe confidence works in 2026: derived from the probability distribution, what calibration promises and does not, the three-band act, verify and escalate pattern, confidence-gated routing code, and how to set thresholds from your own labelled data.">
+<meta name="keywords" content="TypeSafe confidence 2026, calibrated probabilities AI, confidence gated routing, AI confidence threshold, RLCD calibration, TypeSafe Jev confidence, AI development guide 2026">
+<meta name="author" content="Distk"><meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://distk.in/blog/typesafe-confidence-calibration-guide-2026.html">
+<meta property="og:type" content="article"><meta property="og:url" content="https://distk.in/blog/typesafe-confidence-calibration-guide-2026.html">
+<meta property="og:title" content="TypeSafe Confidence and Calibration in 2026: How to Set Thresholds That Actually Work">
+<meta property="og:description" content="Confidence tells you how peaked the distribution is, not whether the answer is right. How to use it properly.">
+<meta property="og:image" content="https://distk.in/assets/images/og-image.jpg"><meta property="og:site_name" content="Distk">
+<meta property="article:published_time" content="2026-09-24T00:00:00+05:30">
+<meta property="article:modified_time" content="2026-09-24T00:00:00+05:30">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="TypeSafe Confidence and Calibration in 2026: How to Set Thresholds That Actually Work"><meta name="twitter:description" content="Confidence tells you how peaked the distribution is, not whether the answer is right. How to use it properly.">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "TypeSafe Confidence and Calibration in 2026: How to Set Thresholds That Actually Work", "description": "A 2026 guide to confidence in TypeSafe: how it is derived from probabilities, what calibration guarantees across groups of predictions, the documented three-band routing pattern, and an empirical method for choosing thresholds.", "author": {"@type": "Organization", "name": "Distk", "url": "https://distk.in"}, "publisher": {"@type": "Organization", "name": "Distk", "logo": {"@type": "ImageObject", "url": "https://distk.in/assets/images/Logo.png"}}, "datePublished": "2026-09-24", "dateModified": "2026-09-24", "inLanguage": "en", "about": [{"@type": "Thing", "name": "TypeSafe AI"}, {"@type": "Thing", "name": "confidence"}, {"@type": "Thing", "name": "calibration"}, {"@type": "Thing", "name": "RLCD"}, {"@type": "Thing", "name": "confidence-gated routing"}, {"@type": "Thing", "name": "probability distribution"}, {"@type": "Thing", "name": "Jev"}], "mentions": [{"@type": "Thing", "name": "TypeSafe AI"}, {"@type": "Thing", "name": "confidence"}, {"@type": "Thing", "name": "calibration"}, {"@type": "Thing", "name": "RLCD"}, {"@type": "Thing", "name": "confidence-gated routing"}, {"@type": "Thing", "name": "probability distribution"}, {"@type": "Thing", "name": "Jev"}], "mainEntityOfPage": {"@type": "WebPage", "@id": "https://distk.in/blog/typesafe-confidence-calibration-guide-2026.html"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is confidence in TypeSafe AI in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "Confidence is a number from 0 to 1 returned on Choice and Score answers, computed from how the probability distribution is spread across your options or levels. Probability concentrated on one outcome gives a confidence near 1.0, while an even spread gives a low value. Noul answers do not include a confidence field."}}, {"@type": "Question", "name": "Does a high confidence value mean the TypeSafe answer is correct?", "acceptedAnswer": {"@type": "Answer", "text": "No. TypeSafe states that calibration is measured across groups of predictions and does not guarantee that any individual answer is correct. Its documentation also demonstrates that adding well-matched examples to Score levels can raise confidence substantially without establishing which answer is right."}}, {"@type": "Question", "name": "What does calibration actually guarantee?", "acceptedAnswer": {"@type": "Answer", "text": "Calibration means that across many predictions, outcomes assigned a probability of 0.2 occur about 20 percent of the time, outcomes at 0.8 about 80 percent of the time, and outcomes at 1.0 occur 100 percent of the time. TypeSafe states these rates describe groups of predictions rather than any single answer."}}, {"@type": "Question", "name": "How should a team choose confidence thresholds in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "Per action rather than per system, and from labelled data. TypeSafe recommends testing thresholds by plotting confidence against accuracy on your own data. The practical method is to label real examples, run them in a batch, bucket the results by confidence band, measure accuracy per band, and set each action's threshold according to the cost of being wrong."}}, {"@type": "Question", "name": "What is TypeSafe's recommended confidence routing pattern?", "acceptedAnswer": {"@type": "Answer", "text": "Divide confidence into three ranges. At high confidence, act automatically. At medium confidence, proceed with caution by asking the user to confirm, flagging for review, or gathering more information. At low confidence, do not act: route to a human, request clarification, or fall back to another system. TypeSafe suggests a 0.5 floor and higher thresholds for destructive operations than for read-only ones."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://distk.in/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://distk.in/blog/"}, {"@type": "ListItem", "position": 3, "name": "TypeSafe Confidence and Calibration in 2026: How to Set Thresholds That Actually Work", "item": "https://distk.in/blog/typesafe-confidence-calibration-guide-2026.html"}]}</script>
+<link rel="icon" type="image/png" href="../assets/images/favicon.png"><link rel="apple-touch-icon" href="../assets/images/Logo.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BWDTQ1JPL2"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-BWDTQ1JPL2');</script>
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1077520544213003');fbq('track','PageView');</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1077520544213003&ev=PageView&noscript=1"></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#0a0a0a;--paper:#fafafa;--mid:#6b6b6b;--light:#e8e8e8;--accent:#e63312;--accent-soft:rgba(230,51,18,0.08);--mono:'Space Mono',monospace;--sans:'Outfit',sans-serif;--container:1120px;--prose:720px;--gutter:clamp(1.2rem,4vw,3rem)}
+html{font-size:16px;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.container{max-width:var(--container);margin:0 auto;padding:0 var(--gutter)}
+.prose{max-width:var(--prose);margin:0 auto;padding:0 var(--gutter)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--light)}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;max-width:var(--container);margin:0 auto;padding:0.9rem var(--gutter)}
+.nav__logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;color:var(--ink)}
+.nav__logo img{height:32px;width:auto}
+.nav__logo span{font-family:var(--mono);font-weight:700;font-size:1.05rem;letter-spacing:-0.02em}
+.nav__logo small{display:block;font-size:0.55rem;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);line-height:1}
+.nav__back{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid);text-decoration:none;display:flex;align-items:center;gap:0.4rem;transition:color 0.2s}
+.nav__back:hover{color:var(--accent)}
+.nav__cta{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.6rem 1.4rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.nav__cta:hover{background:var(--accent)}
+.hero{padding:7.5rem 0 3.5rem;position:relative;overflow:hidden;border-bottom:1px solid var(--light)}
+.hero::before{content:'CONF';position:absolute;right:-1%;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:clamp(6rem,26vw,22rem);font-weight:700;color:rgba(0,0,0,0.03);line-height:1;pointer-events:none;user-select:none;letter-spacing:-0.05em}
+.hero__tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1.5rem}
+.hero__tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.hero h1{font-family:var(--sans);font-weight:700;font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;letter-spacing:-0.03em;max-width:20ch;margin-bottom:1.5rem}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero__sub{font-size:1.1rem;color:var(--mid);max-width:56ch;line-height:1.7;margin-bottom:2rem}
+.hero__meta{display:flex;flex-wrap:wrap;gap:1.5rem;font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid)}
+.tldr{background:var(--accent-soft);border-left:3px solid var(--accent);padding:1.8rem 2rem;margin:3rem 0;position:relative}
+.tldr::before{content:'TL;DR';position:absolute;top:-0.6rem;left:2rem;font-family:var(--mono);font-size:0.62rem;font-weight:700;letter-spacing:0.12em;background:var(--accent);color:#fff;padding:0.2rem 0.6rem}
+.tldr p{font-size:0.95rem;color:var(--ink);line-height:1.7}
+.article{padding:4rem 0 5rem}
+.article h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.35rem,2.8vw,1.8rem);letter-spacing:-0.02em;line-height:1.2;margin:3rem 0 1rem;padding-top:1rem;border-top:1px solid var(--light)}
+.article h2:first-child{border-top:none;margin-top:0}
+.article h3{font-family:var(--mono);font-weight:700;font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin:2rem 0 0.6rem}
+.article p{font-size:1rem;color:#2a2a2a;line-height:1.8;margin-bottom:1.25rem}
+.article ul,.article ol{padding-left:1.4rem;margin-bottom:1.25rem}
+.article li{font-size:1rem;color:#2a2a2a;line-height:1.75;margin-bottom:0.4rem}
+.article strong{font-weight:600;color:var(--ink)}
+.article a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(230,51,18,0.3)}
+.article a:hover{border-bottom-color:var(--accent)}
+.article blockquote{border-left:3px solid var(--accent);padding:0.75rem 1.5rem;margin:2rem 0;background:var(--accent-soft)}
+.article blockquote p{color:var(--ink);font-size:1rem;margin:0}
+.table-wrap{overflow-x:auto;margin:2rem 0}
+.data-table{width:100%;border-collapse:collapse;margin:0;font-size:0.88rem}
+.data-table th{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:0.7rem 1rem;text-align:left;white-space:nowrap}
+.data-table td{padding:0.75rem 1rem;border-bottom:1px solid var(--light);vertical-align:top}
+.data-table tr:last-child td{border-bottom:none}
+.data-table tr:nth-child(even) td{background:#f5f5f5}
+.callout{border:1.5px solid var(--light);padding:1.5rem 1.8rem;margin:2rem 0}
+.callout__label{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem}
+.callout p{font-size:0.92rem;color:var(--mid);line-height:1.7;margin:0}
+.faq{padding:4rem 0;background:var(--ink);color:var(--paper)}
+.faq .section-tag{color:var(--accent)}
+.faq .section-tag::before{background:var(--accent)}
+.faq__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2.5rem;margin-top:2.5rem}
+.faq__item{border-left:2px solid var(--accent);padding-left:1.5rem}
+.faq__item h3{font-family:var(--sans);font-weight:600;font-size:0.95rem;margin-bottom:0.5rem;color:var(--paper)}
+.faq__item p{font-size:0.85rem;color:rgba(255,255,255,0.88);line-height:1.65}
+.section-tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1rem}
+.section-tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.section-title{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.15;color:var(--paper)}
+.cta{padding:5rem 0;background:var(--accent-soft);border-top:1px solid rgba(230,51,18,0.12)}
+.cta__inner{max-width:680px;margin:0 auto;padding:0 var(--gutter);text-align:center}
+.cta h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.2;margin-bottom:1rem}
+.cta p{font-size:1rem;color:var(--mid);line-height:1.7;margin-bottom:2rem}
+.cta__btn{display:inline-flex;align-items:center;gap:0.6rem;font-family:var(--mono);font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;padding:1rem 2.2rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.cta__btn:hover{background:var(--accent)}
+.foot{padding:2.5rem 0;border-top:1px solid var(--light);text-align:center;font-family:var(--mono);font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid)}
+.foot a{color:var(--mid);text-decoration:none}.foot a:hover{color:var(--accent)}
+@media(max-width:768px){.faq__grid{grid-template-columns:1fr}.nav__back span{display:none}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="https://distk.in" class="nav__logo">
+      <img src="../assets/images/Logo.png" alt="Distk">
+      <div><span>Distk</span><small>Global Growth Partner</small></div>
+    </a>
+    <a href="/blog/" class="nav__back">← <span>All articles</span></a>
+    <a href="https://distk.in/#contact" class="nav__cta">Work with us</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="prose">
+    <div class="hero__tag">AI Development Guide</div>
+    <h1>TypeSafe <em>Confidence and Calibration</em> in 2026: Setting Thresholds That Work</h1>
+    <p class="hero__sub">A model that can say it is unsure is worth more than one that always sounds certain. This guide covers what TypeSafe's confidence value actually measures, what calibration does and does not promise, and how to choose thresholds from evidence rather than instinct.</p>
+    <div class="hero__meta">
+      <span>Distk Editorial</span>
+      <span>Sep 2026</span>
+      <span>11 min read</span>
+    </div>
+  </div>
+</section>
+
+<div class="prose">
+  <div class="tldr">
+    <p>TypeSafe returns a <code>confidence</code> value from 0 to 1 on every Choice and Score answer, computed from how peaked the probability distribution is. All the probability on one option gives 1.0; an even spread gives a low number. Noul answers carry no confidence because one number fully describes a two-outcome distribution. Confidence is not a promise of correctness: calibration means stated probabilities match real frequencies across groups of predictions, and TypeSafe states plainly that this is not a guarantee about any single answer. The documented pattern is three bands, act automatically on high confidence, verify or review in the middle, and escalate to a person or another system at the bottom, with a 0.5 floor and a higher bar for destructive actions than read-only ones. Choose the numbers by plotting confidence against accuracy on your own labelled data in 2026, and staff the middle band deliberately.</p>
+  </div>
+</div>
+
+<main class="article">
+  <div class="prose">
+<style>
+.prose pre{background:#f4f4f4;border-left:3px solid var(--accent);padding:1rem 1.1rem;margin:1.5rem 0;overflow-x:auto;font-size:0.85rem;line-height:1.6}
+.prose pre code{font-family:var(--mono);color:#1a1a1a;white-space:pre;background:none;padding:0;font-size:1em}
+.prose code{font-family:var(--mono);font-size:0.86em;background:#f0f0f0;padding:0.12em 0.35em;border-radius:2px}
+.prose .eli5{background:var(--accent-soft);border-left:3px solid var(--accent);padding:1.4rem 1.6rem;margin:0 0 1.6rem}
+.prose .eli5 p{font-size:1.02rem}
+.prose .eli5 p:last-child{margin-bottom:0}
+.prose .srcs{font-size:0.88rem;color:var(--mid)}
+.prose .srcs li{font-size:0.88rem;margin-bottom:0.3rem}
+</style>
+
+    <h2>What Is Confidence in TypeSafe in 2026?</h2>
+    <p>Every Choice and Score answer includes a <code>probabilities</code> property holding the distribution across your options or levels. The shape of that distribution is what tells you how certain the model is: concentrated on one outcome means a confident answer, spread out means an uncertain one. The <code>confidence</code> property collapses that shape into a single number from 0 to 1 so your code can threshold on it without doing the maths. Noul answers do not carry one.</p>
+    <p>Confidence is therefore not an extra opinion from the model. It is a statistic computed from the distribution the answer already gives you. TypeSafe computes it so the common case needs no extra work on your side, but the raw probabilities are always there if you want to compute something else.</p>
+
+    <h2>Explain It Like I Am Five: The Torch Beam</h2>
+    <div class="eli5">
+      <p>Imagine you ask a friend to point at the right door in a corridor, and your friend is holding a torch.</p>
+      <p>If your friend is sure, the beam is narrow and bright and lands on one door. You can walk straight through it.</p>
+      <p>If your friend is not sure, the beam is wide. It spreads across three doors at once, a bit of light on each. The torch is still pointing somewhere, and the brightest patch is still on one door, but you can see the light is smeared.</p>
+      <p>Confidence is just a number describing how narrow the beam is. 1.0 means a tight spot on one door. A low number means a wide wash of light over several.</p>
+      <p>Here is the clever part. Your program can look at the width of the beam before it walks anywhere. If the beam is narrow, walk through the door. If the beam is wide, stop and ask a grown-up.</p>
+      <p>And one more thing, which is important and easy to forget. A narrow beam means your friend is sure. It does not mean your friend is right. Sure and right are different words.</p>
+    </div>
+
+    <h2>How Is Confidence Calculated in 2026?</h2>
+    <p>Confidence is derived from how the probability is spread across the options or levels. All of the probability on one option gives 1.0, and the more evenly it spreads, the lower the confidence. TypeSafe's documentation includes an interactive demo that approximates confidence for a three-option Choice as <code>(3 × largest probability − 1) / 2</code>, and notes this is the demo's approximation rather than a general formula.</p>
+    <p>Work that through and the intuition arrives quickly. With three options, a probability of 1.0 on one gives confidence 1.0. An even split of one third each gives confidence 0.0, because no option is a winner. The documented demo shows 90 percent, 6 percent and 4 percent giving a confidence of 0.85.</p>
+    <p>What low confidence means differs by primitive, and TypeSafe spells it out. Low confidence on a Choice often means none of the options is a clear winner over the others. Low confidence on a Score often means the levels are ambiguous, multi-dimensional, or the state does not contain enough to go on. Those are three different bugs in your question design, and each has a different fix.</p>
+
+    <h2>Why Is Being Able to Say "I Do Not Know" Valuable?</h2>
+    <p>TypeSafe puts this as a principle rather than a feature: if an intelligent system, whether human or machine, cannot express honest uncertainty, the system cannot be trusted. Confidence gives the model a built-in way to say it is not sure about this one, which lets your code implement different behaviour for different levels of certainty.</p>
+    <p>That is the foundation for systems you can rely on, and it is the practical difference from a text model that sounds equally assured whether it is right or guessing. An uncertain answer is not a failed answer. It is a correctly reported state of the world, and the system around it decides what to do about it.</p>
+
+    <h2>What Does Calibration Promise, and What Does It Not?</h2>
+    <p>Calibration is the property TypeSafe trains for with RLCD, reinforcement learning for calibrated decisions. Its stated contract is that higher probability should correspond to a greater chance that the answer is correct, and specifically that across many predictions from a well-calibrated model, outcomes assigned 0.2 should occur about 20 percent of the time, outcomes at 0.8 about 80 percent of the time, and outcomes at 1.0 should occur 100 percent of the time.</p>
+    <p>Then comes the sentence every team should paste into its own internal documentation: these rates describe groups of predictions, not a guarantee about any single answer. TypeSafe repeats the point elsewhere, noting that calibration is measured across groups of predictions and does not guarantee that an individual answer is correct.</p>
+    <div class="callout">
+      <div class="callout__label">What this means operationally in 2026</div>
+      <p>You can use calibration to set a threshold that gives a predictable error rate across a population of decisions. You cannot use it to tell a customer why their individual case was decided a particular way. If your process needs per-case justification, that requirement is met by logging the inputs and the distribution, not by the confidence number.</p>
+    </div>
+
+    <h2>How Should Your Code Use Confidence in 2026?</h2>
+    <p>TypeSafe's documented starting pattern divides confidence into three ranges, each producing a different system behaviour. It is deliberately simple, and it is the right shape for a first implementation.</p>
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Band</th><th>What TypeSafe recommends</th><th>Typical implementation</th></tr></thead>
+      <tbody>
+        <tr><td><strong>High confidence</strong></td><td>Act automatically. The model has a clear read and you can proceed without human involvement.</td><td>Execute the branch.</td></tr>
+        <tr><td><strong>Medium confidence</strong></td><td>Proceed with caution. Ask the user to confirm, flag for review, or gather more information before acting.</td><td>A confirmation step or a review queue.</td></tr>
+        <tr><td><strong>Low confidence</strong></td><td>Do not act. Route to a human, request clarification, or fall back to a different system.</td><td>Escalation, including to a reasoning model.</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Where you draw those boundaries depends on the stakes, and TypeSafe is explicit that a confidence threshold is not one number. Different actions within the same system should be gated at different levels depending on the consequences of getting it wrong. It suggests a 0.5 floor to catch anything the model reports as genuinely uncertain, with the threshold for acting without confirmation set higher for a destructive operation than for a read-only one.</p>
+
+    <h2>How Does Confidence-Gated Routing Work in Practice?</h2>
+    <p>TypeSafe's documented example is a voice banking interface, which is a good choice because the actions have obviously different stakes. One Choice question classifies the intent, and the code then applies a different confidence bar to each action.</p>
+
+<pre><code>action = response.answers["intent"]
+
+# Below 0.6 confidence on any action, route to a human
+if action.confidence &lt; 0.6:
+    route_to_support_agent(account_id)
+
+elif action.choice == "check_balance":
+    # Low stakes. 0.6 confidence is sufficient.
+    show_balance(account_id)
+
+elif action.choice == "approve_transfer":
+    if action.confidence &gt; 0.85:
+        # High stakes, but high confidence. Safe to act automatically.
+        approve_transfer(account_id)
+    else:
+        # High stakes, moderate confidence. Verify intent first.
+        ask_user_to_confirm("Just to confirm: you would like to approve this transfer?")
+
+else:
+    route_to_support_agent(account_id)</code></pre>
+
+    <p>The 0.6 floor catches anything genuinely uncertain. Above it, checking a balance at 0.6 is fine because the worst case is the customer hearing their balance unnecessarily. Approving a transfer needs above 0.85, and anything between goes to a confirmation. One model answer, three different behaviours, all decided by ordinary code you can read in a review.</p>
+
+    <h2>How Do You Choose the Right Threshold for Your Data?</h2>
+    <p>Empirically, not by instinct. TypeSafe's build guide says to test thresholds by plotting confidence against accuracy on your data, and that is the only method that actually tells you anything about your material. The procedure is short enough to do in an afternoon.</p>
+    <ol>
+      <li><strong>Label 100 to 300 real examples yourself.</strong> Real ones from your product, including the awkward ones.</li>
+      <li><strong>Run them all in one batch.</strong> Record the answer, the full probability distribution and the confidence for each.</li>
+      <li><strong>Bucket by confidence.</strong> Group into bands such as 0.9 and above, 0.7 to 0.9, 0.5 to 0.7, and below 0.5.</li>
+      <li><strong>Measure accuracy per band.</strong> This is the number that tells you where automatic action becomes safe.</li>
+      <li><strong>Set each action's threshold from its own cost of being wrong.</strong> A reversible action tolerates a lower bar than an irreversible one.</li>
+      <li><strong>Count how much lands in the middle band.</strong> That volume is your human review workload, and it needs to be a number someone has agreed to staff.</li>
+      <li><strong>Re-run when the model version moves.</strong> Aliases move on their own, so thresholds tuned against one version deserve re-checking against the next.</li>
+    </ol>
+
+    <h2>When Should You Not Use a Confidence Threshold?</h2>
+    <p>TypeSafe's own troubleshooting notes flag this, and it corrects a habit teams pick up quickly. If all you care about is choosing the best option, you simply take the option the model selected; you do not need a threshold at all. And if you have a specific statistical algorithm in mind, you should probably be using the raw probabilities rather than the collapsed confidence value.</p>
+    <p>Two more cases where confidence is the wrong instrument. A Noul has none, so thresholding a Noul means thresholding the <code>noul</code> value itself, which is a probability rather than a certainty measure. And when a second option carries meaningful probability, the useful signal is that probability, not the headline confidence: TypeSafe's Choice documentation shows a ticket routed to returns while billing still gets a copy because its 0.35 share crossed a 0.25 threshold.</p>
+
+    <h2>What Does a Low-Confidence Answer Tell You About Your Question?</h2>
+    <p>Often more than it tells you about the input. Persistent low confidence across many inputs is usually a question design problem, and the fix depends on the primitive.</p>
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Symptom</th><th>Likely cause (per TypeSafe's docs)</th><th>Fix to try in 2026</th></tr></thead>
+      <tbody>
+        <tr><td>Choice confidence low across many inputs</td><td>None of the options is a clear winner; option descriptions overlap</td><td>Rewrite descriptions to separate options, or use structured criteria with what it covers, what it does not, and examples</td></tr>
+        <tr><td>Score confidence low across many inputs</td><td>Levels are ambiguous or multi-dimensional</td><td>Split into several Score questions and combine with weights in code</td></tr>
+        <tr><td>Confidence low only on long inputs</td><td>The state contains material unrelated to the decision</td><td>Filter the state first; accuracy falls as irrelevant content grows</td></tr>
+        <tr><td>Confidence high but answers wrong</td><td>The question is being read literally and means something other than you intended</td><td>State the exact condition; put boundary cases in the criteria</td></tr>
+        <tr><td>Confidence jumps after adding examples</td><td>The examples matched the input shape</td><td>Good, but verify on separate inputs; higher confidence does not establish correctness</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>That last row matters. TypeSafe's Score documentation shows a case where adding a well-matched example moved confidence from 0.35 to 0.96, and states plainly that higher confidence does not establish which answer is correct. Treat a confidence jump as a prompt to re-test, not as proof.</p>
+
+    <h2>What Are the Common Confidence Mistakes in 2026?</h2>
+    <ul>
+      <li><strong>Treating confidence as a probability of correctness for one case.</strong> Calibration describes groups of predictions.</li>
+      <li><strong>Using one threshold across a whole system.</strong> Gate each action at a level matched to its consequences.</li>
+      <li><strong>Sending the uncertain middle to a default branch.</strong> If nobody looks at it, you have a silent failure queue rather than a review queue.</li>
+      <li><strong>Thresholding when you only need the top option.</strong> If the decision is simply "which one", take the choice.</li>
+      <li><strong>Ignoring the runner-up probability.</strong> A second option at 0.35 is information your code can act on.</li>
+      <li><strong>Carrying a Noul threshold over to a Choice.</strong> TypeSafe warns that these answer different questions and are not comparable.</li>
+      <li><strong>Never re-checking after a version change.</strong> An alias moves on its own; thresholds tuned against one version should be re-validated.</li>
+    </ul>
+
+    <h2>Key Takeaways for 2026</h2>
+    <ul>
+      <li>Confidence is a 0 to 1 statistic derived from how peaked the probability distribution is, returned on Choice and Score but not on Noul.</li>
+      <li>Calibration means stated probabilities match real frequencies across groups of predictions, and explicitly does not guarantee any single answer.</li>
+      <li>The documented starting pattern is three bands: act, verify, escalate, with a 0.5 floor for genuine uncertainty.</li>
+      <li>Thresholds are per action, not per system, and should reflect the cost of being wrong.</li>
+      <li>Choose them by plotting confidence against accuracy on your own labelled data, and staff the middle band deliberately.</li>
+      <li>If you only need the top option you need no threshold; if you need statistics, use the raw probabilities.</li>
+      <li>Persistent low confidence is usually a question design problem, and the fix differs for Choice and Score.</li>
+    </ul>
+    <p>Distk sets these thresholds with clients the boring way: label a real sample, measure accuracy per confidence band, and agree who staffs the middle before anything ships.</p>
+
+    <h2>Sources</h2>
+    <ul class="srcs">
+      <li><a href="https://docs.typesafe.ai/confidence" rel="noopener" target="_blank">TypeSafe AI docs: Confidence</a></li>
+      <li><a href="https://docs.typesafe.ai/patterns/confidence-routing" rel="noopener" target="_blank">Confidence-gated routing</a></li>
+      <li><a href="https://docs.typesafe.ai/introduction/machine-learning-primer" rel="noopener" target="_blank">AI primer: calibration and RLCD</a></li>
+      <li><a href="https://docs.typesafe.ai/primitives" rel="noopener" target="_blank">Primitives (Questions)</a></li>
+      <li><a href="https://docs.typesafe.ai/primitives/score" rel="noopener" target="_blank">Score</a></li>
+      <li><a href="https://docs.typesafe.ai/primitives/choice" rel="noopener" target="_blank">Choice</a></li>
+      <li><a href="https://docs.typesafe.ai/concepts/how-to-build-with-system-one" rel="noopener" target="_blank">How to build with TypeSafe</a></li>
+      <li><a href="https://docs.typesafe.ai/agent-skill" rel="noopener" target="_blank">Agent skill: common issues</a></li>
+    </ul>
+
+  </div>
+</main>
+
+<section class="faq">
+  <div class="container">
+    <div class="section-tag">Key Questions</div>
+    <h2 class="section-title">TypeSafe Confidence in 2026: FAQs</h2>
+    <div class="faq__grid">
+      <div class="faq__item">
+        <h3>What is confidence in TypeSafe?</h3>
+        <p>A number from 0 to 1 computed from how the probability is spread across your options or levels. All the probability on one option gives 1.0; the more evenly it spreads, the lower the confidence. It is returned on Choice and Score answers only.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Does high confidence mean the answer is correct?</h3>
+        <p>No. TypeSafe states that calibration is measured across groups of predictions and does not guarantee that an individual answer is correct. Its Score documentation also shows that adding examples can raise confidence without establishing which answer is right.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Why do Noul answers have no confidence?</h3>
+        <p>Because a Noul distribution has only two outcomes, so the single value from 0 to 1 describes it completely. For a Noul you threshold the value itself, choosing the cut point by the cost of being wrong in each direction.</p>
+      </div>
+      <div class="faq__item">
+        <h3>How should I set a confidence threshold?</h3>
+        <p>Per action, not per system, and from data. Label real examples, run them, bucket results by confidence band, and measure accuracy in each band. TypeSafe's own guidance is to test thresholds by plotting confidence against accuracy on your data.</p>
+      </div>
+      <div class="faq__item">
+        <h3>What does low confidence usually mean?</h3>
+        <p>On a Choice it often means no option is a clear winner, which usually points at overlapping option descriptions. On a Score it often means the levels are ambiguous or multi-dimensional, or the state does not contain enough to judge.</p>
+      </div>
+      <div class="faq__item">
+        <h3>When should I not use a confidence threshold?</h3>
+        <p>When all you need is the best option, in which case you simply take the choice. And when you have a specific statistical algorithm in mind, where TypeSafe suggests using the raw probabilities rather than the collapsed confidence value.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED START -->
+<section class="related" style="padding:3.5rem 0;border-top:1px solid #e8e8e8;background:#fafafa">
+  <div style="max-width:720px;margin:0 auto;padding:0 clamp(1.2rem,4vw,3rem)">
+    <div style="font-family:'Space Mono',monospace;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:#e63312;margin-bottom:1.3rem">Related reading</div>
+    <ul style="list-style:none;margin:0;padding:0;display:grid;gap:0.9rem">
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="typesafe-patterns-fan-out-intent-routing-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">TypeSafe Patterns in 2026: Fan-Out, Intent Routing, Confidence Gating and Composite Scoring</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="what-is-typesafe-ai-jev-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">What Is TypeSafe AI and Jev in 2026? The Complete Guide to System One Models</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="typesafe-ai-quickstart-tutorial-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">TypeSafe AI Quick Start for 2026: Your First Jev Call in cURL, Python and JavaScript</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="typesafe-primitives-choice-score-noul-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">TypeSafe Primitives in 2026: Choice, Score and Noul Explained in Depth</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="typesafe-state-input-design-guide-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">TypeSafe State Design in 2026: Context Limits, Filtering and Context Rot</a></li>
+    </ul>
+  </div>
+</section>
+<!-- RELATED END -->
+<section class="cta">
+  <div class="cta__inner">
+    <h2>Set the threshold from evidence, not instinct</h2>
+    <p>Distk runs the unglamorous part of a decision-model rollout: labelling a real sample, measuring accuracy by confidence band, and agreeing who staffs the uncertain middle before anything goes live.</p>
+    <a href="https://distk.in/#contact" class="cta__btn">Start the conversation →</a>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="container">
+    © 2026 Distk · <a href="https://distk.in">distk.in</a> · <a href="mailto:connect@distk.in">connect@distk.in</a>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xdifcafwxl");
+  </script>
+
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Is TypeSafe AI and Jev in 2026? Complete System One Model Guide | Distk</title>
+<meta name="description" content="TypeSafe AI and Jev explained for 2026: what a System One model is, the Choice, Score and Noul primitives, pricing at 42 USD per billion input tokens, the 64k context window, the nine documented failure modes, and how it fits an existing AI stack.">
+<meta name="keywords" content="TypeSafe AI 2026, what is Jev model, System One model, TypeSafe primitives, Choice Score Noul, TypeSafe AI guide, structured AI decisions 2026, AI marketing agency 2026">
+<meta name="author" content="Distk"><meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://distk.in/blog/what-is-typesafe-ai-jev-2026.html">
+<meta property="og:type" content="article"><meta property="og:url" content="https://distk.in/blog/what-is-typesafe-ai-jev-2026.html">
+<meta property="og:title" content="What Is TypeSafe AI and Jev in 2026? The Complete Guide to System One Models">
+<meta property="og:description" content="Jev returns typed decisions instead of text. The primitives, the pricing, the limits, and the nine documented failure modes.">
+<meta property="og:image" content="https://distk.in/assets/images/og-image.jpg"><meta property="og:site_name" content="Distk">
+<meta property="article:published_time" content="2026-09-24T00:00:00+05:30">
+<meta property="article:modified_time" content="2026-09-24T00:00:00+05:30">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="What Is TypeSafe AI and Jev in 2026? The Complete Guide to System One Models"><meta name="twitter:description" content="Jev returns typed decisions instead of text. The primitives, the pricing, the limits, and the nine documented failure modes.">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "What Is TypeSafe AI and Jev in 2026? The Complete Guide to System One Models", "description": "A complete 2026 guide to TypeSafe AI and its flagship model Jev: System One models, the three primitives, request and response shapes, pricing and limits, documented failure modes, and where it fits in an AI stack.", "author": {"@type": "Organization", "name": "Distk", "url": "https://distk.in"}, "publisher": {"@type": "Organization", "name": "Distk", "logo": {"@type": "ImageObject", "url": "https://distk.in/assets/images/Logo.png"}}, "datePublished": "2026-09-24", "dateModified": "2026-09-24", "inLanguage": "en", "about": [{"@type": "Thing", "name": "TypeSafe AI"}, {"@type": "Thing", "name": "Jev"}, {"@type": "Thing", "name": "System One model"}, {"@type": "Thing", "name": "Choice primitive"}, {"@type": "Thing", "name": "Score primitive"}, {"@type": "Thing", "name": "Noul primitive"}, {"@type": "Thing", "name": "calibrated confidence"}, {"@type": "Thing", "name": "RLCD"}, {"@type": "Thing", "name": "structured AI decisions"}], "mentions": [{"@type": "Thing", "name": "TypeSafe AI"}, {"@type": "Thing", "name": "Jev"}, {"@type": "Thing", "name": "System One model"}, {"@type": "Thing", "name": "Choice primitive"}, {"@type": "Thing", "name": "Score primitive"}, {"@type": "Thing", "name": "Noul primitive"}, {"@type": "Thing", "name": "calibrated confidence"}, {"@type": "Thing", "name": "RLCD"}, {"@type": "Thing", "name": "structured AI decisions"}], "mainEntityOfPage": {"@type": "WebPage", "@id": "https://distk.in/blog/what-is-typesafe-ai-jev-2026.html"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is TypeSafe AI in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "TypeSafe AI is the company behind System One models, a class of AI model that returns structured typed decisions instead of generated text. Jev is TypeSafe's flagship model and the first System One model. You send a state plus typed questions to the POST /v1/systemone endpoint and receive typed answers your code can act on directly."}}, {"@type": "Question", "name": "What is a System One model?", "acceptedAnswer": {"@type": "Answer", "text": "A System One model is a class of AI model built to make fast, structured decisions that software can use directly. It understands natural language input like a large language model but returns typed decisions and calibrated probabilities rather than generated text. TypeSafe states that System One models do not write replies, produce code, or generate explanations of their reasoning."}}, {"@type": "Question", "name": "What are the three TypeSafe primitives in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "Choice selects one option from a fixed set and returns choice, probabilities and confidence. Score rates the state against ordered levels you define and returns score, legend, probabilities and confidence. Noul answers a yes or no question and returns a single number from 0 to 1 representing the probability that the answer is yes. All three can be mixed in one API call."}}, {"@type": "Question", "name": "How much does Jev cost in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "Jev 1.13 is priced at 42 US dollars per billion input tokens, equal to 0.042 US dollars per million input tokens, and output tokens are free. TypeSafe publishes rate limits of 250,000 tokens per second and 1,200 requests per minute, a 64k token context window per request with 32k for the state plus the longest question, and text-only input."}}, {"@type": "Question", "name": "Is Jev a replacement for ChatGPT or Claude?", "acceptedAnswer": {"@type": "Answer", "text": "No. Jev does not generate text, write code, or hold a conversation. TypeSafe states that Jev is not a drop-in replacement for the model behind coding agents such as Claude Code, Cursor, opencode or Copilot. It is designed to sit inside software you control and make narrow, typed decisions that your code consumes."}}, {"@type": "Question", "name": "What are Jev's known weaknesses in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "TypeSafe publishes a jaggedness page listing nine failure modes for Jev 1.13: literal reading of instructions, mathematics and counting, date and time comparison, indirection, large state full of irrelevant detail, adversarial content, contradictory instructions and criteria, assumed structural invariants between questions, and text generation. Each has a documented workaround."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://distk.in/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://distk.in/blog/"}, {"@type": "ListItem", "position": 3, "name": "What Is TypeSafe AI and Jev in 2026? The Complete Guide to System One Models", "item": "https://distk.in/blog/what-is-typesafe-ai-jev-2026.html"}]}</script>
+<link rel="icon" type="image/png" href="../assets/images/favicon.png"><link rel="apple-touch-icon" href="../assets/images/Logo.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BWDTQ1JPL2"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-BWDTQ1JPL2');</script>
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1077520544213003');fbq('track','PageView');</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1077520544213003&ev=PageView&noscript=1"></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#0a0a0a;--paper:#fafafa;--mid:#6b6b6b;--light:#e8e8e8;--accent:#e63312;--accent-soft:rgba(230,51,18,0.08);--mono:'Space Mono',monospace;--sans:'Outfit',sans-serif;--container:1120px;--prose:720px;--gutter:clamp(1.2rem,4vw,3rem)}
+html{font-size:16px;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.container{max-width:var(--container);margin:0 auto;padding:0 var(--gutter)}
+.prose{max-width:var(--prose);margin:0 auto;padding:0 var(--gutter)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--light)}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;max-width:var(--container);margin:0 auto;padding:0.9rem var(--gutter)}
+.nav__logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;color:var(--ink)}
+.nav__logo img{height:32px;width:auto}
+.nav__logo span{font-family:var(--mono);font-weight:700;font-size:1.05rem;letter-spacing:-0.02em}
+.nav__logo small{display:block;font-size:0.55rem;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);line-height:1}
+.nav__back{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid);text-decoration:none;display:flex;align-items:center;gap:0.4rem;transition:color 0.2s}
+.nav__back:hover{color:var(--accent)}
+.nav__cta{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.6rem 1.4rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.nav__cta:hover{background:var(--accent)}
+.hero{padding:7.5rem 0 3.5rem;position:relative;overflow:hidden;border-bottom:1px solid var(--light)}
+.hero::before{content:'JEV';position:absolute;right:-1%;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:clamp(6rem,26vw,22rem);font-weight:700;color:rgba(0,0,0,0.03);line-height:1;pointer-events:none;user-select:none;letter-spacing:-0.05em}
+.hero__tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1.5rem}
+.hero__tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.hero h1{font-family:var(--sans);font-weight:700;font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;letter-spacing:-0.03em;max-width:20ch;margin-bottom:1.5rem}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero__sub{font-size:1.1rem;color:var(--mid);max-width:56ch;line-height:1.7;margin-bottom:2rem}
+.hero__meta{display:flex;flex-wrap:wrap;gap:1.5rem;font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid)}
+.tldr{background:var(--accent-soft);border-left:3px solid var(--accent);padding:1.8rem 2rem;margin:3rem 0;position:relative}
+.tldr::before{content:'TL;DR';position:absolute;top:-0.6rem;left:2rem;font-family:var(--mono);font-size:0.62rem;font-weight:700;letter-spacing:0.12em;background:var(--accent);color:#fff;padding:0.2rem 0.6rem}
+.tldr p{font-size:0.95rem;color:var(--ink);line-height:1.7}
+.article{padding:4rem 0 5rem}
+.article h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.35rem,2.8vw,1.8rem);letter-spacing:-0.02em;line-height:1.2;margin:3rem 0 1rem;padding-top:1rem;border-top:1px solid var(--light)}
+.article h2:first-child{border-top:none;margin-top:0}
+.article h3{font-family:var(--mono);font-weight:700;font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin:2rem 0 0.6rem}
+.article p{font-size:1rem;color:#2a2a2a;line-height:1.8;margin-bottom:1.25rem}
+.article ul,.article ol{padding-left:1.4rem;margin-bottom:1.25rem}
+.article li{font-size:1rem;color:#2a2a2a;line-height:1.75;margin-bottom:0.4rem}
+.article strong{font-weight:600;color:var(--ink)}
+.article a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(230,51,18,0.3)}
+.article a:hover{border-bottom-color:var(--accent)}
+.article blockquote{border-left:3px solid var(--accent);padding:0.75rem 1.5rem;margin:2rem 0;background:var(--accent-soft)}
+.article blockquote p{color:var(--ink);font-size:1rem;margin:0}
+.table-wrap{overflow-x:auto;margin:2rem 0}
+.data-table{width:100%;border-collapse:collapse;margin:0;font-size:0.88rem}
+.data-table th{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:0.7rem 1rem;text-align:left;white-space:nowrap}
+.data-table td{padding:0.75rem 1rem;border-bottom:1px solid var(--light);vertical-align:top}
+.data-table tr:last-child td{border-bottom:none}
+.data-table tr:nth-child(even) td{background:#f5f5f5}
+.callout{border:1.5px solid var(--light);padding:1.5rem 1.8rem;margin:2rem 0}
+.callout__label{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem}
+.callout p{font-size:0.92rem;color:var(--mid);line-height:1.7;margin:0}
+.faq{padding:4rem 0;background:var(--ink);color:var(--paper)}
+.faq .section-tag{color:var(--accent)}
+.faq .section-tag::before{background:var(--accent)}
+.faq__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2.5rem;margin-top:2.5rem}
+.faq__item{border-left:2px solid var(--accent);padding-left:1.5rem}
+.faq__item h3{font-family:var(--sans);font-weight:600;font-size:0.95rem;margin-bottom:0.5rem;color:var(--paper)}
+.faq__item p{font-size:0.85rem;color:rgba(255,255,255,0.88);line-height:1.65}
+.section-tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1rem}
+.section-tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.section-title{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.15;color:var(--paper)}
+.cta{padding:5rem 0;background:var(--accent-soft);border-top:1px solid rgba(230,51,18,0.12)}
+.cta__inner{max-width:680px;margin:0 auto;padding:0 var(--gutter);text-align:center}
+.cta h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.2;margin-bottom:1rem}
+.cta p{font-size:1rem;color:var(--mid);line-height:1.7;margin-bottom:2rem}
+.cta__btn{display:inline-flex;align-items:center;gap:0.6rem;font-family:var(--mono);font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;padding:1rem 2.2rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.cta__btn:hover{background:var(--accent)}
+.foot{padding:2.5rem 0;border-top:1px solid var(--light);text-align:center;font-family:var(--mono);font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid)}
+.foot a{color:var(--mid);text-decoration:none}.foot a:hover{color:var(--accent)}
+@media(max-width:768px){.faq__grid{grid-template-columns:1fr}.nav__back span{display:none}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="https://distk.in" class="nav__logo">
+      <img src="../assets/images/Logo.png" alt="Distk">
+      <div><span>Distk</span><small>Global Growth Partner</small></div>
+    </a>
+    <a href="/blog/" class="nav__back">← <span>All articles</span></a>
+    <a href="https://distk.in/#contact" class="nav__cta">Work with us</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="prose">
+    <div class="hero__tag">AI Development Guide</div>
+    <h1>What Is <em>TypeSafe AI</em> and Jev in 2026? The Complete Guide to System One Models</h1>
+    <p class="hero__sub">TypeSafe's model does not write anything. You give it content and typed questions, and it hands back a choice, a score, or a probability your code can branch on. This is the full guide for 2026, built entirely from TypeSafe's official documentation, and it starts simple enough for a five year old.</p>
+    <div class="hero__meta">
+      <span>Distk Editorial</span>
+      <span>Sep 2026</span>
+      <span>14 min read</span>
+    </div>
+  </div>
+</section>
+
+<div class="prose">
+  <div class="tldr">
+    <p>TypeSafe AI builds System One models, a class of model that returns structured decisions instead of generated text, and Jev is its flagship and the first of the class. You send a <code>state</code> plus typed questions to one endpoint and get back typed answers: Choice for one option from a set, Score for a level on a rubric you write, and Noul for the probability a statement is true. All three mix in a single call, run in parallel and in isolation, and Choice and Score answers carry a calibrated confidence value your code can threshold on. Jev 1.13 costs 42 US dollars per billion input tokens with output tokens free, has a 64k context window, is text only, and most queries complete in about 100 ms. TypeSafe also publishes nine known failure modes for the current version, which is the page to read before you build anything in 2026.</p>
+  </div>
+</div>
+
+<main class="article">
+  <div class="prose">
+<style>
+.prose pre{background:#f4f4f4;border-left:3px solid var(--accent);padding:1rem 1.1rem;margin:1.5rem 0;overflow-x:auto;font-size:0.85rem;line-height:1.6}
+.prose pre code{font-family:var(--mono);color:#1a1a1a;white-space:pre;background:none;padding:0;font-size:1em}
+.prose code{font-family:var(--mono);font-size:0.86em;background:#f0f0f0;padding:0.12em 0.35em;border-radius:2px}
+.prose .eli5{background:var(--accent-soft);border-left:3px solid var(--accent);padding:1.4rem 1.6rem;margin:0 0 1.6rem}
+.prose .eli5 p{font-size:1.02rem}
+.prose .eli5 p:last-child{margin-bottom:0}
+.prose .srcs{font-size:0.88rem;color:var(--mid)}
+.prose .srcs li{font-size:0.88rem;margin-bottom:0.3rem}
+</style>
+
+    <h2>What Is TypeSafe AI in 2026?</h2>
+    <p>TypeSafe AI is a company building what it calls System One models, and Jev is its flagship model and the first of that class. Instead of generating text, Jev takes some content you supply, called the <code>state</code>, plus a set of typed questions, and returns structured answers your code can act on directly: a chosen option, a score on a rubric you define, or a probability that a statement is true.</p>
+    <p>The framing TypeSafe uses in its own documentation is worth quoting because it explains the whole product. Large language models are designed to produce text for humans to read. When you need a model to make a judgment that your code will consume, that creates a mismatch: you are coercing a text generation system into outputting structured decisions, then parsing the results back into something your code can depend on. Jev removes that round trip. There is no text to parse, because there is no text.</p>
+
+    <h2>Explain It Like I Am Five: What Does Jev Actually Do?</h2>
+    <div class="eli5">
+      <p>Think about a gymnastics competition. The gymnast finishes her routine. The judges do not write her a letter. They do not tell her a story about her routine. They hold up a card with a number on it.</p>
+      <p>A chatbot is the letter writer. You ask it something and it writes you paragraphs. That is lovely when a person is reading. It is annoying when a computer is reading, because the computer has to dig through the words to find the actual answer, and sometimes the words say something slightly different every time you ask.</p>
+      <p>Jev is the judge with the card. You show it something, like a customer email. You ask it a question, like "is this person angry?" It holds up a number. Not a paragraph. A number.</p>
+      <p>Jev can hold up three kinds of card. One card says which box to put something in, like "this email goes to the billing team". One card is a number on a scale you wrote yourself, like "anger: 1.4 out of 2". One card says how likely a yes is, like "0.95 yes, they want a refund".</p>
+      <p>And here is the best bit. Jev also tells you how sure it is. If it is confused, it says so, and your program can then go ask a real human instead of guessing. A helper who admits when it does not know is far more useful than one that always sounds certain.</p>
+    </div>
+
+    <h2>Why Does TypeSafe Exist in 2026?</h2>
+    <p>TypeSafe's bet, stated plainly in its AI primer, is that large scale automation will be dominated by AI to AI and AI to software interactions, so the machine interface matters more than the chat interface. The company estimates that large scale AI automation will be closer to 99 percent machine to machine interactions and 1 percent human interaction. It calls the goal Machine Native Intelligence: AI with software-like properties such as structure, reliability, observability, testability, speed, consistency, and low cost.</p>
+    <p>That shifts the design target. A chatbot is optimised for responses that feel good to read. A System One model is optimised for outputs that behave predictably inside software. TypeSafe summarises its own philosophy as "building prod, not God": it is not trying to build a model that does everything, it is built for production systems where code needs a narrow decision it can inspect and act on.</p>
+    <p>The training path is the concrete difference. TypeSafe describes three post-training approaches in 2026. RLHF, reinforcement learning from human feedback, turned pretrained models into chatbots by training them to produce responses people prefer. RLVR, reinforcement learning with verifiable rewards, created reasoning models that are strong at tasks such as mathematics but slower and more expensive. RLCD, reinforcement learning for calibrated decisions, is TypeSafe's path, and it trains the model to return decisions and calibrated probabilities instead of generated text.</p>
+    <p>TypeSafe also notes that RLHF was co-invented by Diogo Almeida, a cofounder of TypeSafe, and used to train InstructGPT and ChatGPT. The company's stated criticism of its own lineage is that preference optimisation can reward sycophancy and confident sounding hallucinations, and causes mode dropping, where the model learns to favour a particular style while reducing the probability of other possible outputs.</p>
+
+    <h2>What Is a System One Model in 2026?</h2>
+    <p>A System One model is a class of AI model built to make fast, structured decisions that software can use directly. It reads natural language like an LLM does, but it returns typed decisions and probabilities rather than generated text. TypeSafe states that System One models do not write replies, produce code, or generate explanations of their reasoning. You define the possible answers in advance.</p>
+    <p>The name is a nod to fast, intuitive judgment. TypeSafe describes the target as a gut-check determination: the kind of judgment a highly knowledgeable person could make in a few seconds given the right context. If a question would require extended reasoning or weighs several independent factors, the documented advice is to decompose it into separate questions and combine the results with logic in your code.</p>
+    <p>The properties that make this composable are listed in TypeSafe's own build guide and they read like a list of software virtues rather than model virtues.</p>
+
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Property</th><th>What TypeSafe says about it</th><th>Why it matters in 2026</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Structured</strong></td><td>Type-safe by construction; decisions and probabilities conform to the types and JSON schema your code expects</td><td>Your code never recovers a value from generated prose.</td></tr>
+        <tr><td><strong>Parallel</strong></td><td>Questions are evaluated independently and in parallel; one result does not become hidden context for another</td><td>You can add or remove questions without changing the other answers.</td></tr>
+        <tr><td><strong>Comparable</strong></td><td>Outputs are sortable and can drive if statements, thresholds, and comparisons</td><td>Ranking and routing become ordinary code.</td></tr>
+        <tr><td><strong>Fast</strong></td><td>Most queries complete in about 100 ms</td><td>Fast enough for a real-time request path or a user interface.</td></tr>
+        <tr><td><strong>Calibrated confidence</strong></td><td>RLCD communicates uncertainty through calibrated probabilities instead of tending toward overconfidence</td><td>Uncertainty becomes a value your code can branch on.</td></tr>
+        <tr><td><strong>Self-consistent</strong></td><td>Designed to return stable answers across repeated evaluations</td><td>The same input should not produce a different decision tomorrow.</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h2>What Are the Three TypeSafe Primitives in 2026?</h2>
+    <p>TypeSafe exposes three AI primitives, and every request is built from them. Each asks a different type of question and returns a different type of answer. All three can be mixed in a single API call, and every question is evaluated in parallel and in isolation against the same state.</p>
+
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Primitive</th><th>The question it asks</th><th>What comes back</th><th>Example</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Choice</strong></td><td>Which of these options?</td><td><code>choice</code>, <code>probabilities</code>, <code>confidence</code></td><td>Which team should handle this ticket: billing, technical, or account?</td></tr>
+        <tr><td><strong>Score</strong></td><td>Which level on a rubric you define?</td><td><code>score</code>, <code>legend</code>, <code>probabilities</code>, <code>confidence</code></td><td>How frustrated is this customer, on a scale you wrote?</td></tr>
+        <tr><td><strong>Noul</strong></td><td>Is this statement true?</td><td><code>noul</code>, a number from 0 to 1</td><td>Does this message request a refund?</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Two properties of these answers make them composable, and TypeSafe states both explicitly. Every answer is constrained to the options you supplied, so the model returns a probability distribution over your options and never a value outside them. And every answer is independent, so one question's answer is not hidden context for another. Our <a href="typesafe-primitives-choice-score-noul-2026.html">deep dive on Choice, Score and Noul</a> covers the configuration of each in detail.</p>
+
+    <h2>How Does a TypeSafe Request Work in 2026?</h2>
+    <p>Every call is a POST to a single endpoint with three fields: the <code>state</code> to evaluate, the <code>model</code> to use, and a map of <code>questions</code> whose keys you choose. The response returns one answer per question under the same keys you sent, plus the versioned model ID that answered and a token usage object. Here is the shape, taken from TypeSafe's own quick start.</p>
+
+<pre><code>POST https://api.typesafe.ai/v1/systemone
+Authorization: Bearer &lt;API_KEY&gt;
+Content-Type: application/json</code></pre>
+
+<pre><code>{
+  "state": "Hi, I've been trying to connect my Stripe account for 3 days
+            and the integration keeps failing. I'm losing sales.",
+  "model": "jev-latest",
+  "questions": {
+    "department": {
+      "type": "choice",
+      "instructions": "Which team should handle this",
+      "criteria": {
+        "billing": "Payment or subscription issues",
+        "technical": "Bugs or integration problems",
+        "sales": "Pricing or account questions"
+      }
+    },
+    "frustration": {
+      "type": "score",
+      "instructions": "How frustrated the customer appears",
+      "criteria": [
+        "Calm, just stating facts",
+        "Frustrated but civil",
+        "Very angry, strong language"
+      ]
+    },
+    "is_urgent": {
+      "type": "noul",
+      "instructions": "The message conveys urgency or time-sensitivity"
+    }
+  }
+}</code></pre>
+
+    <p>Three different question types, one request, one state sent once. TypeSafe's documented response to that exact request routes the ticket to <code>technical</code> at 0.85 probability and 0.78 confidence, scores frustration at 1.0 with confidence 1.0, and returns a <code>noul</code> of 1.0 for urgency, with usage of 392 input tokens and 65 output tokens.</p>
+    <p>The question IDs are yours and are never sent to the model. That detail matters more than it looks: it means you can name keys for your codebase's benefit without affecting the judgment. Our <a href="typesafe-ai-quickstart-tutorial-2026.html">quick start tutorial</a> walks through the same call in cURL, Python and JavaScript.</p>
+
+    <h2>What Does Jev Cost and What Are Its Limits in 2026?</h2>
+    <p>Jev 1.13 is priced per input token at 42 US dollars per billion tokens, which is 0.042 US dollars per million tokens, and output tokens are free. The published limits are 250,000 tokens per second and 1,200 requests per minute, with a 64k context window per request. TypeSafe warns that rate limits are adjusting dynamically and can change without notice.</p>
+
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Attribute</th><th>Jev 1.13 (<code>jev-1.13.0</code>)</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Price</strong></td><td>42 USD per Btok, 0.042 USD per Mtok, charged on input tokens only; output tokens free</td></tr>
+        <tr><td><strong>Rate limits</strong></td><td>250,000 tokens per second and 1,200 requests per minute; over either returns <code>429</code></td></tr>
+        <tr><td><strong>Context length</strong></td><td>64k tokens per request; 32k for the <code>state</code> plus the longest single question</td></tr>
+        <tr><td><strong>Input</strong></td><td>Text only: string, JSON object, or array of text values. No image, audio or video input</td></tr>
+        <tr><td><strong>Latency</strong></td><td>Most queries complete in about 100 ms, per TypeSafe's build guide</td></tr>
+        <tr><td><strong>Aliases</strong></td><td><code>jev-latest</code> and <code>jev-preview</code>, both currently pointing at <code>jev-1.13.0</code></td></tr>
+        <tr><td><strong>Languages</strong></td><td>English is the primary training language and where accuracy is currently best; other languages including CJK are handled but not equally well</td></tr>
+        <tr><td><strong>Data handling</strong></td><td>Not trained on customer requests or responses; zero data retention offered to enterprise customers</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The full arithmetic, the alias-versus-pinned-version decision and the 429 handling are covered in our <a href="typesafe-ai-pricing-limits-models-2026.html">pricing, limits and models guide</a>.</p>
+
+    <h2>How Does Jev Fit Into an Existing AI Stack in 2026?</h2>
+    <p>TypeSafe positions Jev as a component inside software you already control, not as a replacement for your chat model or your coding agent. Its build guide contrasts three architectures: traditional software, where reliable primitives compose into a decision tree; LLM agents, where the model chooses its own next step and every loop is another chance to go off the rails; and AI-powered software, where code owns the control flow and the model appears only where the system needs programmable common sense.</p>
+    <p>In practice that puts Jev in four common positions in a 2026 stack.</p>
+    <ul>
+      <li><strong>In front of an LLM as a router.</strong> Classify the request, then send it to deterministic code, a specialist model, or a person. TypeSafe's intent routing pattern is exactly this.</li>
+      <li><strong>Around an LLM as a guardrail.</strong> Screen every message going in and out with one request carrying several hazard questions, then threshold to pass, review, block or route.</li>
+      <li><strong>Inside a retrieval pipeline.</strong> Score or rerank candidate passages before the expensive answering model sees them.</li>
+      <li><strong>Replacing fragile parsing.</strong> Anywhere your code currently uses a brittle chain of string checks to infer meaning from text.</li>
+    </ul>
+    <p>Note what Jev is explicitly not. TypeSafe states plainly that Jev is not a drop-in replacement for the LLM behind Claude Code, Cursor, opencode, Copilot or similar tools. There is no model setting that turns your coding agent into a Jev-powered agent. What you can do is install the official TypeSafe agent skill so your coding agent writes correct TypeSafe integrations for you.</p>
+
+    <h2>What Is Jev Not Good At in 2026?</h2>
+    <p>TypeSafe publishes a page it calls model jaggedness for Jev 1.13, listing nine known failure modes. That page is the most useful thing on the whole documentation site for anyone deciding whether to build on this, and reading it is the honest way to scope a first project. The summary is that Jev is fast, calibrated and good at common-sense judgment, but it can be quite literal, it struggles with numeric precision, and it does worse on tasks needing several layers of indirection.</p>
+
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Documented failure mode</th><th>TypeSafe's recommended fix</th></tr></thead>
+      <tbody>
+        <tr><td>Literal reading of your question</td><td>Write the exact condition; put boundary cases in the criteria</td></tr>
+        <tr><td>Math and counting</td><td>Keep the arithmetic in code</td></tr>
+        <tr><td>Date and time comparison</td><td>Extract the parts with the model, compare them in code</td></tr>
+        <tr><td>Indirection and double negatives</td><td>Reduce the hops; point the question at the relevant part of the state</td></tr>
+        <tr><td>Large state full of irrelevant detail</td><td>Filter first and send only what the question needs</td></tr>
+        <tr><td>Adversarial content in the state</td><td>Be explicit in the criteria and test edge cases before deploying</td></tr>
+        <tr><td>Contradictory instructions and criteria</td><td>Align the two with clear, precise language</td></tr>
+        <tr><td>Assumed structural invariants between questions</td><td>Do not carry a threshold from a Noul to a Choice, or expect arithmetic identities across questions</td></tr>
+        <tr><td>Text generation</td><td>Use a generative model; Jev is not trained for it</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>One line from that page deserves repeating because it contradicts a habit many teams picked up from LLMs: Jev suffers from context rot, so unrelated material in the state costs you accuracy. Stuffing the context window is not a neutral act. Our <a href="typesafe-state-input-design-guide-2026.html">state design guide</a> covers this in full.</p>
+
+    <h2>How Should You Start With TypeSafe in 2026?</h2>
+    <p>The documented path is short, and it is deliberately ordered so that you learn the shape of an answer before you write any integration code. Signing in to the TypeSafe console is required for the playground and for an API key.</p>
+    <ol>
+      <li><strong>Open the playground and paste real text as the state.</strong> Use something from your own product, not a sample, because you are testing whether the answers match your judgment.</li>
+      <li><strong>Add one Noul question.</strong> A yes or no question about that text. Read the number that comes back.</li>
+      <li><strong>Add a Choice and a Score in the same call.</strong> Watch that adding questions barely changes the response time. This is the single most important economic fact about the API.</li>
+      <li><strong>Get an API key and make the same call over HTTP.</strong> Then move to the Python or JavaScript SDK.</li>
+      <li><strong>Write down your thresholds in one file.</strong> TypeSafe's own advice on reviewing this kind of code is that the questions and threshold constants are what humans need to review, so keep them in a single place.</li>
+    </ol>
+
+    <h2>Where to Go Next: The Full TypeSafe Guide Series for 2026</h2>
+    <p>This page is the overview. Each guide below goes deep on one part of the system, built from TypeSafe's official documentation.</p>
+    <ul>
+      <li><a href="system-one-vs-llm-structured-decisions-2026.html">System One vs an LLM in 2026</a>: why not just ask GPT for JSON, and what the two approaches actually differ on.</li>
+      <li><a href="typesafe-ai-quickstart-tutorial-2026.html">TypeSafe AI quick start tutorial</a>: your first call in cURL, Python and JavaScript, plus the first errors you will hit.</li>
+      <li><a href="typesafe-primitives-choice-score-noul-2026.html">Choice, Score and Noul explained</a>: configuration, response fields, and how to pick the right one.</li>
+      <li><a href="typesafe-confidence-calibration-guide-2026.html">Confidence and calibration</a>: what calibration promises, what it does not, and how to set thresholds.</li>
+      <li><a href="typesafe-state-input-design-guide-2026.html">Designing the state</a>: shapes, the 64k and 32k budgets, and the context rot problem.</li>
+      <li><a href="typesafe-patterns-fan-out-intent-routing-2026.html">The four architectural patterns</a>: speculative fan-out, confidence-gated routing, composite scoring, intent routing.</li>
+      <li><a href="typesafe-ai-pricing-limits-models-2026.html">Pricing, limits and model versions</a>: the cost arithmetic and the operational details.</li>
+      <li><a href="typesafe-cookbooks-guide-llm-guardrails-rag-2026.html">All 18 official cookbooks</a>: what each one does and who should copy it.</li>
+      <li><a href="typesafe-ai-for-marketing-teams-2026.html">TypeSafe for marketing and growth teams</a>: where this fits in a commercial workflow, and where it does not.</li>
+    </ul>
+
+    <h2>Glossary: TypeSafe Terms in 2026</h2>
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Term</th><th>What it means</th></tr></thead>
+      <tbody>
+        <tr><td><strong>System One model</strong></td><td>A class of AI model built to make fast, structured decisions software can use directly. Jev is the first.</td></tr>
+        <tr><td><strong>Jev</strong></td><td>TypeSafe's flagship model. Current version <code>jev-1.13.0</code>.</td></tr>
+        <tr><td><strong>State</strong></td><td>The content you ask the model to evaluate, sent in the <code>state</code> field.</td></tr>
+        <tr><td><strong>Question</strong></td><td>One judgment to make about the state. Has an ID you choose, a <code>type</code>, <code>instructions</code>, and usually <code>criteria</code>.</td></tr>
+        <tr><td><strong>Primitive</strong></td><td>One of the three question types: Choice, Score, Noul.</td></tr>
+        <tr><td><strong>Noul</strong></td><td>A yes or no question type. Returns a single probability from 0 to 1 that the answer is yes.</td></tr>
+        <tr><td><strong>Criteria</strong></td><td>The possible answers: options for a Choice, ordered levels for a Score, optional true and false descriptions for a Noul.</td></tr>
+        <tr><td><strong>Confidence</strong></td><td>A 0 to 1 statistic derived from how peaked the probability distribution is. Present on Choice and Score, not on Noul.</td></tr>
+        <tr><td><strong>Calibration</strong></td><td>The property that a stated probability matches the real frequency of being right, measured across groups of predictions.</td></tr>
+        <tr><td><strong>RLCD</strong></td><td>Reinforcement learning for calibrated decisions, TypeSafe's post-training approach.</td></tr>
+        <tr><td><strong>Btok and Mtok</strong></td><td>A billion tokens and a million tokens, the units TypeSafe prices in.</td></tr>
+        <tr><td><strong>Jaggedness</strong></td><td>TypeSafe's own term for the published list of known failure modes for a model version.</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h2>What Are the Common Mistakes With TypeSafe in 2026?</h2>
+    <ul>
+      <li><strong>Expecting it to write something.</strong> Jev returns decisions, not prose. If you need text, you still need a generative model.</li>
+      <li><strong>Asking one big question.</strong> "Analyse this message and determine the best course of action" is the documented example of a bad question. Decompose it.</li>
+      <li><strong>Filling the state because the window allows it.</strong> Accuracy falls as the state grows with content unrelated to the decision.</li>
+      <li><strong>Making several calls instead of one.</strong> Questions run in parallel in a single request. TypeSafe's own cookbook measured one batched call as 12.2 times cheaper and 10.0 times faster than 13 separate calls, with no change in the answers.</li>
+      <li><strong>Treating confidence as correctness.</strong> Calibration is a property of groups of predictions. A confident answer can still be wrong.</li>
+      <li><strong>Asking it to do arithmetic.</strong> Jev is not a calculator and does not count reliably. Keep the maths in code.</li>
+      <li><strong>Skipping the jaggedness page.</strong> Nine documented failure modes, each with a recommended fix. It is a 10 minute read that saves a week.</li>
+    </ul>
+
+    <h2>Key Takeaways for 2026</h2>
+    <ul>
+      <li>TypeSafe AI builds System One models; Jev is the flagship and the first of the class, returning typed decisions instead of text.</li>
+      <li>Three primitives: Choice for one of a set, Score for a level on your rubric, Noul for a yes or no probability. All three mix in one call and run in parallel.</li>
+      <li>Every Choice and Score answer carries confidence derived from the probability distribution, so your code can act, ask, or escalate.</li>
+      <li>Jev 1.13 costs 42 USD per billion input tokens with free output, has a 64k context window, and is text only.</li>
+      <li>Most queries complete in about 100 ms, which puts it on a real-time request path.</li>
+      <li>It is not a chat model, not a coding-agent model, not a calculator, and not a text generator. TypeSafe says all four plainly.</li>
+      <li>Start in the playground with your own content, keep questions atomic, keep thresholds in one file, and read the jaggedness page first.</li>
+    </ul>
+    <p>At Distk we work with teams across India and internationally on where a decision model belongs in a growth or operations stack, which judgments should stay in code, and where a human checkpoint earns its place. If you are scoping a first TypeSafe project in 2026, that mapping is where we start.</p>
+
+    <h2>Sources</h2>
+    <ul class="srcs">
+      <li><a href="https://docs.typesafe.ai/introduction" rel="noopener" target="_blank">TypeSafe AI docs: Introduction</a></li>
+      <li><a href="https://docs.typesafe.ai/concepts/system-one" rel="noopener" target="_blank">System One</a></li>
+      <li><a href="https://docs.typesafe.ai/primitives" rel="noopener" target="_blank">Primitives (Questions)</a></li>
+      <li><a href="https://docs.typesafe.ai/introduction/quickstart" rel="noopener" target="_blank">Quick start</a></li>
+      <li><a href="https://docs.typesafe.ai/introduction/machine-learning-primer" rel="noopener" target="_blank">AI primer</a></li>
+      <li><a href="https://docs.typesafe.ai/concepts/how-to-build-with-system-one" rel="noopener" target="_blank">How to build with TypeSafe</a></li>
+      <li><a href="https://docs.typesafe.ai/models" rel="noopener" target="_blank">Models</a></li>
+      <li><a href="https://docs.typesafe.ai/model-jaggedness/jev-1.13" rel="noopener" target="_blank">Jev 1.13 jaggedness</a></li>
+      <li><a href="https://docs.typesafe.ai/introduction/coding-agents" rel="noopener" target="_blank">Jev with coding agents</a></li>
+      <li><a href="https://docs.typesafe.ai/cookbooks/parallel_questions" rel="noopener" target="_blank">Parallel questions cookbook</a></li>
+    </ul>
+
+  </div>
+</main>
+
+<section class="faq">
+  <div class="container">
+    <div class="section-tag">Key Questions</div>
+    <h2 class="section-title">TypeSafe AI and Jev in 2026: FAQs</h2>
+    <div class="faq__grid">
+      <div class="faq__item">
+        <h3>What is TypeSafe AI?</h3>
+        <p>TypeSafe AI is the company behind System One models, a class of AI model that returns structured, typed decisions instead of generated text. Jev is its flagship model and the first System One model. You send content plus typed questions and get back answers your code can use directly.</p>
+      </div>
+      <div class="faq__item">
+        <h3>What is a System One model in 2026?</h3>
+        <p>A model built to make fast, structured decisions software can use directly. It reads natural language like an LLM but returns typed decisions and probabilities. TypeSafe states that System One models do not write replies, produce code, or explain their reasoning.</p>
+      </div>
+      <div class="faq__item">
+        <h3>What are the three TypeSafe primitives?</h3>
+        <p>Choice picks one option from a set you define and returns the choice, all option probabilities, and confidence. Score rates the state on ordered levels you write and returns a score, legend, probabilities and confidence. Noul answers a yes or no question with a single probability from 0 to 1.</p>
+      </div>
+      <div class="faq__item">
+        <h3>How much does Jev cost in 2026?</h3>
+        <p>Jev 1.13 is priced at 42 US dollars per billion input tokens, which is 0.042 US dollars per million, and output tokens are free. Published limits are 250,000 tokens per second and 1,200 requests per minute, with a 64k context window per request.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Can Jev replace the model in my coding agent?</h3>
+        <p>No. TypeSafe states plainly that Jev is not a drop-in replacement for the LLM behind Claude Code, Cursor, opencode or Copilot, because it does not generate text or code. What it offers instead is an official agent skill so your coding agent writes correct TypeSafe integrations.</p>
+      </div>
+      <div class="faq__item">
+        <h3>What is Jev bad at in 2026?</h3>
+        <p>TypeSafe publishes nine documented failure modes for Jev 1.13: literal reading, maths and counting, date comparison, indirection, large irrelevant state, adversarial content, contradictory criteria, assumed invariants between questions, and text generation. Each comes with a recommended fix.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED START -->
+<section class="related" style="padding:3.5rem 0;border-top:1px solid #e8e8e8;background:#fafafa">
+  <div style="max-width:720px;margin:0 auto;padding:0 clamp(1.2rem,4vw,3rem)">
+    <div style="font-family:'Space Mono',monospace;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:#e63312;margin-bottom:1.3rem">Related reading</div>
+    <ul style="list-style:none;margin:0;padding:0;display:grid;gap:0.9rem">
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="typesafe-ai-quickstart-tutorial-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">TypeSafe AI Quick Start for 2026: Your First Jev Call in cURL, Python and JavaScript</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="typesafe-ai-for-marketing-teams-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">TypeSafe AI for Marketing Teams in 2026: Where Jev Fits and Where It Does Not</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="how-to-use-lm-studio-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">How to Use LM Studio for Local AI Models 2026: Complete Beginner's Guide</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="how-to-use-ollama-local-llms-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">How to Use Ollama for Local LLMs 2026: Complete Guide to Running AI Models Offline</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="how-to-use-hugging-face-marketing-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">How to Use Hugging Face for Marketing 2026: Complete AI Models & NLP Guide</a></li>
+    </ul>
+  </div>
+</section>
+<!-- RELATED END -->
+<section class="cta">
+  <div class="cta__inner">
+    <h2>Work out where a decision model belongs in your stack</h2>
+    <p>Distk helps teams map which judgments belong in code, which belong to a decision model like Jev, and where a human checkpoint earns its place, then builds the thing and instruments it honestly.</p>
+    <a href="https://distk.in/#contact" class="cta__btn">Start the conversation →</a>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="container">
+    © 2026 Distk · <a href="https://distk.in">distk.in</a> · <a href="mailto:connect@distk.in">connect@distk.in</a>
+  </div>
+</footer>
+</body>
+</html>

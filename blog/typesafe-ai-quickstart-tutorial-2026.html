@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xdifcafwxl");
+  </script>
+
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TypeSafe AI Quick Start Tutorial 2026: First Call in cURL, Python, JS | Distk</title>
+<meta name="description" content="A hands-on TypeSafe AI tutorial for 2026: playground steps, your first cURL request, the Python and JavaScript SDKs, how to read a Jev response, environment variables, retries, the four errors you will hit, and the official coding agent skill.">
+<meta name="keywords" content="TypeSafe AI tutorial 2026, TypeSafe quickstart, Jev API tutorial, typesafe-sdk Python, TypeSafe JavaScript SDK, system one API call, AI development guide 2026">
+<meta name="author" content="Distk"><meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://distk.in/blog/typesafe-ai-quickstart-tutorial-2026.html">
+<meta property="og:type" content="article"><meta property="og:url" content="https://distk.in/blog/typesafe-ai-quickstart-tutorial-2026.html">
+<meta property="og:title" content="TypeSafe AI Quick Start Tutorial for 2026: Your First Jev Call in cURL, Python and JavaScript">
+<meta property="og:description" content="Playground, cURL, Python, JavaScript. Real code from the docs, the response fields decoded, and the four errors you will hit first.">
+<meta property="og:image" content="https://distk.in/assets/images/og-image.jpg"><meta property="og:site_name" content="Distk">
+<meta property="article:published_time" content="2026-09-24T00:00:00+05:30">
+<meta property="article:modified_time" content="2026-09-24T00:00:00+05:30">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="TypeSafe AI Quick Start Tutorial for 2026: Your First Jev Call in cURL, Python and JavaScript"><meta name="twitter:description" content="Playground, cURL, Python, JavaScript. Real code from the docs, the response fields decoded, and the four errors you will hit first.">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "TypeSafe AI Quick Start Tutorial for 2026: Your First Jev Call in cURL, Python and JavaScript", "description": "A step-by-step 2026 tutorial for making your first TypeSafe AI request: playground, cURL, Python and JavaScript SDKs, reading the response fields, configuration, error handling, and a first real integration checklist.", "author": {"@type": "Organization", "name": "Distk", "url": "https://distk.in"}, "publisher": {"@type": "Organization", "name": "Distk", "logo": {"@type": "ImageObject", "url": "https://distk.in/assets/images/Logo.png"}}, "datePublished": "2026-09-24", "dateModified": "2026-09-24", "inLanguage": "en", "about": [{"@type": "Thing", "name": "TypeSafe AI"}, {"@type": "Thing", "name": "Jev"}, {"@type": "Thing", "name": "typesafe-sdk"}, {"@type": "Thing", "name": "TypeSafe API"}, {"@type": "Thing", "name": "System One model"}, {"@type": "Thing", "name": "API tutorial"}, {"@type": "Thing", "name": "Python SDK"}, {"@type": "Thing", "name": "JavaScript SDK"}], "mentions": [{"@type": "Thing", "name": "TypeSafe AI"}, {"@type": "Thing", "name": "Jev"}, {"@type": "Thing", "name": "typesafe-sdk"}, {"@type": "Thing", "name": "TypeSafe API"}, {"@type": "Thing", "name": "System One model"}, {"@type": "Thing", "name": "API tutorial"}, {"@type": "Thing", "name": "Python SDK"}, {"@type": "Thing", "name": "JavaScript SDK"}], "mainEntityOfPage": {"@type": "WebPage", "@id": "https://distk.in/blog/typesafe-ai-quickstart-tutorial-2026.html"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I make my first TypeSafe AI API call in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "Send a POST request to https://api.typesafe.ai/v1/systemone with an Authorization Bearer header and a JSON body containing three fields: state, the content to evaluate; model, such as jev-latest; and questions, a map of typed questions whose keys you choose. The response returns one answer per question under the same keys, plus the versioned model ID and token usage."}}, {"@type": "Question", "name": "What Python package do I install to use TypeSafe AI?", "acceptedAnswer": {"@type": "Answer", "text": "Install typesafe-sdk with pip install typesafe-sdk or uv add typesafe-sdk. Set TYPESAFE_API_KEY in your environment, create a TypeSafeClient, and pass a dictionary of Choice, Score and Noul objects to client.system_one(). Answers are returned as typed objects rather than raw dictionaries."}}, {"@type": "Question", "name": "What JavaScript package does TypeSafe provide?", "acceptedAnswer": {"@type": "Answer", "text": "The JavaScript and TypeScript SDK is @typesafe-ai/sdk, installed with npm install @typesafe-ai/sdk and requiring Node.js 20 or newer. Create a TypeSafeClient and call client.systemOne with state and questions. The package ships ESM, CommonJS and TypeScript declarations, and answer types are inferred from the questions you supply."}}, {"@type": "Question", "name": "Which TypeSafe model name should I use in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "Use jev-latest, the alias for the most recent stable official release and the default in TypeSafe's client SDKs. In 2026 it resolves to jev-1.13.0. If you have tuned confidence thresholds against a specific version, pin that versioned ID instead so a new release does not change your answers without warning."}}, {"@type": "Question", "name": "What errors does the TypeSafe API return?", "acceptedAnswer": {"@type": "Answer", "text": "401 Unauthorized for a missing or invalid API key, 422 Unprocessable Entity when the request body fails validation such as a malformed question, 429 Too Many Requests when a rate limit is exceeded, and 529 Overloaded when TypeSafe is temporarily overloaded. TypeSafe's client SDKs retry 429 and 529 with exponential backoff by default and honour the retry-after header."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://distk.in/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://distk.in/blog/"}, {"@type": "ListItem", "position": 3, "name": "TypeSafe AI Quick Start Tutorial for 2026: Your First Jev Call in cURL, Python and JavaScript", "item": "https://distk.in/blog/typesafe-ai-quickstart-tutorial-2026.html"}]}</script>
+<link rel="icon" type="image/png" href="../assets/images/favicon.png"><link rel="apple-touch-icon" href="../assets/images/Logo.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BWDTQ1JPL2"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-BWDTQ1JPL2');</script>
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1077520544213003');fbq('track','PageView');</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1077520544213003&ev=PageView&noscript=1"></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#0a0a0a;--paper:#fafafa;--mid:#6b6b6b;--light:#e8e8e8;--accent:#e63312;--accent-soft:rgba(230,51,18,0.08);--mono:'Space Mono',monospace;--sans:'Outfit',sans-serif;--container:1120px;--prose:720px;--gutter:clamp(1.2rem,4vw,3rem)}
+html{font-size:16px;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.container{max-width:var(--container);margin:0 auto;padding:0 var(--gutter)}
+.prose{max-width:var(--prose);margin:0 auto;padding:0 var(--gutter)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--light)}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;max-width:var(--container);margin:0 auto;padding:0.9rem var(--gutter)}
+.nav__logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;color:var(--ink)}
+.nav__logo img{height:32px;width:auto}
+.nav__logo span{font-family:var(--mono);font-weight:700;font-size:1.05rem;letter-spacing:-0.02em}
+.nav__logo small{display:block;font-size:0.55rem;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);line-height:1}
+.nav__back{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid);text-decoration:none;display:flex;align-items:center;gap:0.4rem;transition:color 0.2s}
+.nav__back:hover{color:var(--accent)}
+.nav__cta{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.6rem 1.4rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.nav__cta:hover{background:var(--accent)}
+.hero{padding:7.5rem 0 3.5rem;position:relative;overflow:hidden;border-bottom:1px solid var(--light)}
+.hero::before{content:'START';position:absolute;right:-1%;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:clamp(6rem,26vw,22rem);font-weight:700;color:rgba(0,0,0,0.03);line-height:1;pointer-events:none;user-select:none;letter-spacing:-0.05em}
+.hero__tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1.5rem}
+.hero__tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.hero h1{font-family:var(--sans);font-weight:700;font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;letter-spacing:-0.03em;max-width:20ch;margin-bottom:1.5rem}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero__sub{font-size:1.1rem;color:var(--mid);max-width:56ch;line-height:1.7;margin-bottom:2rem}
+.hero__meta{display:flex;flex-wrap:wrap;gap:1.5rem;font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid)}
+.tldr{background:var(--accent-soft);border-left:3px solid var(--accent);padding:1.8rem 2rem;margin:3rem 0;position:relative}
+.tldr::before{content:'TL;DR';position:absolute;top:-0.6rem;left:2rem;font-family:var(--mono);font-size:0.62rem;font-weight:700;letter-spacing:0.12em;background:var(--accent);color:#fff;padding:0.2rem 0.6rem}
+.tldr p{font-size:0.95rem;color:var(--ink);line-height:1.7}
+.article{padding:4rem 0 5rem}
+.article h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.35rem,2.8vw,1.8rem);letter-spacing:-0.02em;line-height:1.2;margin:3rem 0 1rem;padding-top:1rem;border-top:1px solid var(--light)}
+.article h2:first-child{border-top:none;margin-top:0}
+.article h3{font-family:var(--mono);font-weight:700;font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin:2rem 0 0.6rem}
+.article p{font-size:1rem;color:#2a2a2a;line-height:1.8;margin-bottom:1.25rem}
+.article ul,.article ol{padding-left:1.4rem;margin-bottom:1.25rem}
+.article li{font-size:1rem;color:#2a2a2a;line-height:1.75;margin-bottom:0.4rem}
+.article strong{font-weight:600;color:var(--ink)}
+.article a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(230,51,18,0.3)}
+.article a:hover{border-bottom-color:var(--accent)}
+.article blockquote{border-left:3px solid var(--accent);padding:0.75rem 1.5rem;margin:2rem 0;background:var(--accent-soft)}
+.article blockquote p{color:var(--ink);font-size:1rem;margin:0}
+.table-wrap{overflow-x:auto;margin:2rem 0}
+.data-table{width:100%;border-collapse:collapse;margin:0;font-size:0.88rem}
+.data-table th{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:0.7rem 1rem;text-align:left;white-space:nowrap}
+.data-table td{padding:0.75rem 1rem;border-bottom:1px solid var(--light);vertical-align:top}
+.data-table tr:last-child td{border-bottom:none}
+.data-table tr:nth-child(even) td{background:#f5f5f5}
+.callout{border:1.5px solid var(--light);padding:1.5rem 1.8rem;margin:2rem 0}
+.callout__label{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem}
+.callout p{font-size:0.92rem;color:var(--mid);line-height:1.7;margin:0}
+.faq{padding:4rem 0;background:var(--ink);color:var(--paper)}
+.faq .section-tag{color:var(--accent)}
+.faq .section-tag::before{background:var(--accent)}
+.faq__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2.5rem;margin-top:2.5rem}
+.faq__item{border-left:2px solid var(--accent);padding-left:1.5rem}
+.faq__item h3{font-family:var(--sans);font-weight:600;font-size:0.95rem;margin-bottom:0.5rem;color:var(--paper)}
+.faq__item p{font-size:0.85rem;color:rgba(255,255,255,0.88);line-height:1.65}
+.section-tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1rem}
+.section-tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.section-title{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.15;color:var(--paper)}
+.cta{padding:5rem 0;background:var(--accent-soft);border-top:1px solid rgba(230,51,18,0.12)}
+.cta__inner{max-width:680px;margin:0 auto;padding:0 var(--gutter);text-align:center}
+.cta h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.2;margin-bottom:1rem}
+.cta p{font-size:1rem;color:var(--mid);line-height:1.7;margin-bottom:2rem}
+.cta__btn{display:inline-flex;align-items:center;gap:0.6rem;font-family:var(--mono);font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;padding:1rem 2.2rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.cta__btn:hover{background:var(--accent)}
+.foot{padding:2.5rem 0;border-top:1px solid var(--light);text-align:center;font-family:var(--mono);font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid)}
+.foot a{color:var(--mid);text-decoration:none}.foot a:hover{color:var(--accent)}
+@media(max-width:768px){.faq__grid{grid-template-columns:1fr}.nav__back span{display:none}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="https://distk.in" class="nav__logo">
+      <img src="../assets/images/Logo.png" alt="Distk">
+      <div><span>Distk</span><small>Global Growth Partner</small></div>
+    </a>
+    <a href="/blog/" class="nav__back">← <span>All articles</span></a>
+    <a href="https://distk.in/#contact" class="nav__cta">Work with us</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="prose">
+    <div class="hero__tag">AI Development Guide</div>
+    <h1>TypeSafe AI <em>Quick Start</em> for 2026: Your First Jev Call in cURL, Python and JavaScript</h1>
+    <p class="hero__sub">One endpoint, three fields, and an answer in about a tenth of a second. This tutorial takes you from the playground to a production-shaped integration, with the real code from TypeSafe's documentation and the errors you will meet on the way.</p>
+    <div class="hero__meta">
+      <span>Distk Editorial</span>
+      <span>Sep 2026</span>
+      <span>12 min read</span>
+    </div>
+  </div>
+</section>
+
+<div class="prose">
+  <div class="tldr">
+    <p>A TypeSafe request is a POST to <code>https://api.typesafe.ai/v1/systemone</code> carrying three fields: the <code>state</code> to evaluate, the <code>model</code> (use <code>jev-latest</code>), and a map of <code>questions</code> whose keys you invent. Answers come back under the same keys, with <code>choice</code>, <code>score</code> or <code>noul</code> plus probabilities and confidence, alongside the versioned model ID and token usage. Start in the playground with your own text, then move to cURL, then to the Python SDK (<code>pip install typesafe-sdk</code>) or the JavaScript SDK (<code>npm install @typesafe-ai/sdk</code>, Node.js 20 or newer). Configure through <code>TYPESAFE_API_KEY</code>. Four errors cover the early days: 401 for a bad key, 422 for a malformed question, 429 for rate limits and 529 for overload, with the SDKs retrying the last two automatically. Install TypeSafe's official agent skill before asking a coding agent to build the integration for you in 2026.</p>
+  </div>
+</div>
+
+<main class="article">
+  <div class="prose">
+<style>
+.prose pre{background:#f4f4f4;border-left:3px solid var(--accent);padding:1rem 1.1rem;margin:1.5rem 0;overflow-x:auto;font-size:0.85rem;line-height:1.6}
+.prose pre code{font-family:var(--mono);color:#1a1a1a;white-space:pre;background:none;padding:0;font-size:1em}
+.prose code{font-family:var(--mono);font-size:0.86em;background:#f0f0f0;padding:0.12em 0.35em;border-radius:2px}
+.prose .eli5{background:var(--accent-soft);border-left:3px solid var(--accent);padding:1.4rem 1.6rem;margin:0 0 1.6rem}
+.prose .eli5 p{font-size:1.02rem}
+.prose .eli5 p:last-child{margin-bottom:0}
+.prose .srcs{font-size:0.88rem;color:var(--mid)}
+.prose .srcs li{font-size:0.88rem;margin-bottom:0.3rem}
+</style>
+
+    <h2>What Do You Need Before Your First TypeSafe Call in 2026?</h2>
+    <p>Three things: an account on the TypeSafe console, which requires signing in, an API key from the dashboard, and some real text to evaluate. There is no local model to download and no infrastructure to provision. Everything runs through one HTTP endpoint, <code>POST https://api.typesafe.ai/v1/systemone</code>, and the SDKs for Python and JavaScript are thin wrappers over it.</p>
+    <p>Use your own content rather than a sample. The whole point of the first hour is finding out whether the model's judgments match yours on the material your business actually handles, and a curated example will not tell you that.</p>
+
+    <h2>Explain It Like I Am Five: What Are You Actually Sending?</h2>
+    <div class="eli5">
+      <p>Remember school worksheets? At the top of the page there is a little story. Underneath there are questions about the story, with boxes to fill in.</p>
+      <p>That is exactly what you send. The story at the top is called the <code>state</code>. It is whatever you want looked at: an email, a review, a form someone filled in.</p>
+      <p>The questions underneath are your questions. You get to write them. You also get to say what the allowed answers are, like on a multiple choice test where you write the options yourself.</p>
+      <p>You send the whole worksheet in one go. The model fills in every box and hands the page straight back, usually in about a tenth of a second.</p>
+      <p>Two nice things. First, it fills in every box at the same time, so ten questions come back nearly as fast as one. Second, each box is marked on its own, so a tricky question at the bottom cannot mess up the easy one at the top.</p>
+      <p>Your program then reads the boxes and decides what to do. The model never decides anything. It just fills in boxes.</p>
+    </div>
+
+    <h2>How Do You Try TypeSafe in the Playground First?</h2>
+    <p>TypeSafe's documented starting path is the playground, not the API, and it is the right order. You want to see the shape of an answer before you write code that depends on it. The steps in the official quick start are short.</p>
+    <ol>
+      <li><strong>Open the playground and log in.</strong> The console requires signing in before you can use the playground or create a key.</li>
+      <li><strong>Paste any text as the state.</strong> TypeSafe's own sample is a support message: "Hi, I've been trying to connect my Stripe account for 3 days and the integration keeps failing. I'm losing sales. Please help ASAP."</li>
+      <li><strong>Add one question.</strong> The documented first question is a Noul: "Does this message express urgency?"</li>
+      <li><strong>Add more questions.</strong> Mix Noul, Choice and Score in one call and watch all results come back together.</li>
+    </ol>
+    <p>That fourth step is the one to linger on. Add a fifth, sixth and seventh question and watch the response time barely move. Understanding that in the playground is what stops you from writing a loop of single-question calls later.</p>
+
+    <h2>How Do You Make Your First TypeSafe API Call With cURL?</h2>
+    <p>Get your API key from the dashboard, export it, and post a JSON body with three fields: <code>state</code>, <code>model</code> and <code>questions</code>. The example below is TypeSafe's own, with a single Noul question. It is the smallest useful request you can make in 2026.</p>
+
+<pre><code>curl -X POST https://api.typesafe.ai/v1/systemone \
+  -H "Authorization: Bearer $TYPESAFE_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "state": "Hi, I have been trying to connect my Stripe account for 3 days and the integration keeps failing. I am losing sales. Please help ASAP.",
+    "model": "jev-latest",
+    "questions": {
+      "urgency": {
+        "type": "noul",
+        "instructions": "Does this message express urgency?"
+      }
+    }
+  }'</code></pre>
+
+    <p>The <code>model</code> field selects which model answers. Use <code>jev-latest</code>, which is the alias for the most recent stable release and the default in the SDKs. In 2026 it resolves to <code>jev-1.13.0</code>.</p>
+
+    <h2>How Do You Ask Three Different Question Types at Once?</h2>
+    <p>Put them all in the same <code>questions</code> map. Each key is an ID you invent, and the matching answer comes back under that same key. The ID is never sent to the model, so name it for your codebase. Below is the request from TypeSafe's quick start, mixing Choice, Score and Noul against one state.</p>
+
+<pre><code>{
+  "state": "Hi, I've been trying to connect my Stripe account for 3 days
+            and the integration keeps failing. I'm losing sales.",
+  "model": "jev-latest",
+  "questions": {
+    "department": {
+      "type": "choice",
+      "instructions": "Which team should handle this",
+      "criteria": {
+        "billing": "Payment or subscription issues",
+        "technical": "Bugs or integration problems",
+        "sales": "Pricing or account questions"
+      }
+    },
+    "frustration": {
+      "type": "score",
+      "instructions": "How frustrated the customer appears",
+      "criteria": [
+        "Calm, just stating facts",
+        "Frustrated but civil",
+        "Very angry, strong language"
+      ]
+    },
+    "is_urgent": {
+      "type": "noul",
+      "instructions": "The message conveys urgency or time-sensitivity"
+    }
+  }
+}</code></pre>
+
+    <h2>How Do You Read a TypeSafe Response in 2026?</h2>
+    <p>The response has three top-level fields: <code>model</code>, which reports the versioned model ID that actually answered, <code>answers</code>, keyed by your question IDs, and <code>usage</code> with input and output token counts. Each answer carries a <code>type</code> matching its question. This is TypeSafe's documented response to the request above.</p>
+
+<pre><code>{
+  "model": "jev-1.13.0",
+  "answers": {
+    "department": {
+      "type": "choice",
+      "choice": "technical",
+      "confidence": 0.78,
+      "probabilities": {
+        "technical": 0.85,
+        "sales": 0.0,
+        "billing": 0.15
+      }
+    },
+    "frustration": {
+      "type": "score",
+      "score": 1.0,
+      "confidence": 1.0,
+      "legend": {
+        "0": "Calm, just stating facts",
+        "1": "Frustrated but civil",
+        "2": "Very angry, strong language"
+      },
+      "probabilities": { "0": 0.0, "1": 1.0, "2": 0.0 }
+    },
+    "is_urgent": {
+      "type": "noul",
+      "noul": 1.0
+    }
+  },
+  "usage": { "input_tokens": 392, "output_tokens": 65 }
+}</code></pre>
+
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Field</th><th>Appears on</th><th>How to read it</th></tr></thead>
+      <tbody>
+        <tr><td><code>choice</code></td><td>Choice</td><td>The option with the highest probability.</td></tr>
+        <tr><td><code>score</code></td><td>Score</td><td>A position along your levels, starting at 0. It can land between two levels.</td></tr>
+        <tr><td><code>noul</code></td><td>Noul</td><td>The probability the answer is yes. Near 1 is a strong yes, near 0 a strong no, near 0.5 uncertain.</td></tr>
+        <tr><td><code>probabilities</code></td><td>Choice, Score</td><td>The full distribution across your options or levels. Values sum to 1.</td></tr>
+        <tr><td><code>legend</code></td><td>Score</td><td>Each level number mapped back to the description you wrote.</td></tr>
+        <tr><td><code>confidence</code></td><td>Choice, Score</td><td>0 to 1, derived from how peaked the distribution is. Noul has none, because two outcomes are fully described by one number.</td></tr>
+        <tr><td><code>model</code></td><td>Response root</td><td>The versioned ID that answered. Log it, so you know which version produced each result.</td></tr>
+        <tr><td><code>usage</code></td><td>Response root</td><td>Input and output token counts. Only input tokens are billed.</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h2>How Do You Call TypeSafe From Python in 2026?</h2>
+    <p>Install the SDK, set <code>TYPESAFE_API_KEY</code> in your environment, and pass typed question objects to <code>client.system_one()</code>. The SDK provides <code>Choice</code>, <code>Score</code> and <code>Noul</code> classes so your editor can check the shapes, and answers come back as typed objects rather than raw dictionaries.</p>
+
+<pre><code>pip install typesafe-sdk
+# or, with uv
+uv add typesafe-sdk</code></pre>
+
+<pre><code>from typesafe_sdk import Choice, Noul, Score, TypeSafeClient
+
+client = TypeSafeClient()
+
+ticket = "Hi, I've been trying to connect my Stripe account for 3 days and the integration keeps failing. I'm losing sales."
+
+response = client.system_one(
+    state=ticket,
+    questions={
+        "department": Choice(
+            instructions="Which team should handle this",
+            criteria={
+                "billing": "Payment or subscription issues",
+                "technical": "Bugs or integration problems",
+                "sales": "Pricing or account questions",
+            },
+        ),
+        "frustration": Score(
+            instructions="How frustrated the customer appears",
+            criteria=[
+                "Calm, just stating facts",
+                "Frustrated but civil",
+                "Very angry, strong language",
+            ],
+        ),
+        "is_urgent": Noul(
+            instructions="The message conveys urgency or time-sensitivity",
+        ),
+    },
+)
+
+print(response.answers["department"].choice)   # "technical"
+print(response.answers["frustration"].score)   # 1.0
+print(response.answers["is_urgent"].noul)      # 1.0</code></pre>
+
+    <p>The SDK also supports a context manager form, <code>with TypeSafeClient() as client:</code>, which the documentation uses in most examples. For a Noul that needs its yes and no spelled out, there is a <code>NoulCriteria</code> type.</p>
+
+<pre><code>from typesafe_sdk import Noul, NoulCriteria, TypeSafeClient
+
+with TypeSafeClient() as client:
+    response = client.system_one(
+        model="jev-latest",
+        state="I have asked three times now. Can I please just talk to a real person?",
+        questions={
+            "is_repeat_contact": Noul(
+                instructions="Has the customer contacted support about this before?",
+                criteria=NoulCriteria(
+                    true="Mentions a prior attempt, ticket, or that they have asked before",
+                    false="No sign of any previous contact",
+                ),
+            ),
+        },
+    )
+    print(response.answers["is_repeat_contact"].noul)</code></pre>
+
+    <h2>How Do You Call TypeSafe From JavaScript or TypeScript?</h2>
+    <p>Install the package on Node.js 20 or newer, set the same environment variable, and call <code>client.systemOne()</code>. Answer types are inferred from your questions, and the package ships ESM, CommonJS and TypeScript declarations. Note the helper functions, <code>choice</code>, <code>score</code> and <code>noul</code>, which build the question objects for you.</p>
+
+<pre><code>npm install @typesafe-ai/sdk</code></pre>
+
+<pre><code>import { choice, TypeSafeClient } from "@typesafe-ai/sdk";
+
+const client = new TypeSafeClient();
+
+const response = await client.systemOne({
+  state: { document: "I was charged twice. Please fix this ASAP." },
+  questions: {
+    category: choice("What is this ticket about?", {
+      billing: null,
+      technical: null,
+      other: null,
+    }),
+  },
+});
+
+console.log(response.answers.category.choice);</code></pre>
+
+    <p>The <code>null</code> values in that criteria map are deliberate. TypeSafe allows <code>null</code> when an option name is clear enough on its own and needs no extra description. Start there and add descriptions only when the model confuses two options.</p>
+
+    <h2>How Do You Configure the Client in 2026?</h2>
+    <p>Configuration is by environment variable with per-client overrides, which keeps keys out of your code. The Python SDK reads four variables, and the defaults are sensible enough that most projects set only the key.</p>
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Variable</th><th>Configures</th><th>Default</th></tr></thead>
+      <tbody>
+        <tr><td><code>TYPESAFE_API_KEY</code></td><td>API key, required</td><td>None</td></tr>
+        <tr><td><code>TYPESAFE_BASE_URL</code></td><td>API root URL</td><td><code>https://api.typesafe.ai</code></td></tr>
+        <tr><td><code>TYPESAFE_DEFAULT_MODEL</code></td><td>Default model</td><td><code>jev-latest</code></td></tr>
+        <tr><td><code>TYPESAFE_LOG_LEVEL</code></td><td>Logger level, applied once at import</td><td>Unset</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Keys are cleaned before use: leading and trailing whitespace is stripped, including newlines from key files, and empty keys, internal whitespace, control characters and non-ASCII characters are rejected before a request is sent. An explicitly empty key does not fall back to the environment. If you have ever lost an afternoon to a trailing newline in a secret, that is a welcome detail.</p>
+    <p>The SDK can also talk to TypeSafe-compatible endpoints from other providers. TypeSafe documents using it with an OpenRouter key and base URL, and with Vercel's AI Gateway, which requires the alternative API to follow the TypeSafe OpenAPI specification.</p>
+
+    <h2>What Errors Will You Hit First, and How Do You Handle Them?</h2>
+    <p>Four status codes cover almost everything in a first integration. TypeSafe documents each with a JSON body describing what went wrong, and the SDKs raise typed exceptions rather than returning error objects.</p>
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Status</th><th>What it means</th><th>What to do in 2026</th></tr></thead>
+      <tbody>
+        <tr><td><code>401 Unauthorized</code></td><td>Missing or invalid API key</td><td>Check the Authorization header. In the SDK, an invalid key raises during client creation, before any request.</td></tr>
+        <tr><td><code>422 Unprocessable Entity</code></td><td>The body failed validation, such as a missing field or a malformed question</td><td>Read the body; it names the offending field. Usually a Score with fewer than two levels or a Choice missing criteria.</td></tr>
+        <tr><td><code>429 Too Many Requests</code></td><td>You exceeded the tokens-per-second or requests-per-minute limit</td><td>Retry with exponential backoff. The SDKs do this by default and honour <code>retry-after</code>.</td></tr>
+        <tr><td><code>529 Overloaded</code></td><td>TypeSafe is temporarily overloaded</td><td>Same treatment as a 429: back off and retry.</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+<pre><code>from typesafe_sdk import RetryPolicy, TypeSafeAPIError, TypeSafeClient
+
+client = TypeSafeClient(retry=RetryPolicy(max_retries=3, backoff_max=0.2, timeout=1.0))
+
+try:
+    response = client.system_one(state, questions)
+except TypeSafeAPIError as error:
+    print(error.status, error.request_id)</code></pre>
+
+    <p>A retry policy can also be passed per call rather than on the client, which is useful when one code path is latency-sensitive and another can afford to wait. For debugging, set the logger to <code>debug</code> and note the caveat TypeSafe publishes: secret headers are redacted from logs, but request and response bodies are not, so debug logging on production traffic will write your customer data to your log sink.</p>
+
+    <h2>How Do You Get a Coding Agent to Write the Integration?</h2>
+    <p>TypeSafe publishes an official agent skill that gives a coding agent full context on the API shapes, the three question types, the patterns and the best practices. Installing it before you ask an agent to build anything prevents the most common failure, which is an agent inventing request or response fields that do not exist.</p>
+
+<pre><code># Claude Code
+claude plugin marketplace add typesafe-ai/skills
+claude plugin install typesafe@typesafe-ai
+
+# Other agents
+npx skills add typesafe-ai/skills --skill typesafe-ai</code></pre>
+
+    <p>TypeSafe's own guidance on working this way is worth following. Talk the problem through with the agent first; review the plan before implementation; put the questions and thresholds in a single file so a human can review them, because agents are not great at writing questions; and do not take the agent's assertions at face value. If the agent starts inventing fields, the usual cause is a stale skill, so update it and retry.</p>
+
+    <h2>What Should Your First Real Integration Look Like in 2026?</h2>
+    <p>Pick one decision your code currently makes badly with string matching, and replace just that. A first integration that tries to restructure a whole pipeline will not tell you whether the model's judgment is good enough for your material.</p>
+    <ol>
+      <li><strong>Find the decision.</strong> Somewhere your code guesses intent, category, urgency or relevance from text.</li>
+      <li><strong>Write the question in one file.</strong> Instructions, criteria and the threshold, all as constants a colleague can read without hunting.</li>
+      <li><strong>Run it over 50 real examples you have already labelled.</strong> Compare the model's answer to yours, and plot confidence against whether it was right.</li>
+      <li><strong>Set the threshold from that plot, not from instinct.</strong> TypeSafe's documented advice is to test thresholds by plotting confidence against accuracy on your own data.</li>
+      <li><strong>Add the speculative questions.</strong> Anything else your code might want to know about the same text, since extra questions barely change response time.</li>
+      <li><strong>Route the uncertain middle to a person.</strong> Not to a default branch.</li>
+      <li><strong>Log the model ID and the probabilities.</strong> When an alias moves to a new version, you will want the history.</li>
+    </ol>
+    <p>Our <a href="typesafe-primitives-choice-score-noul-2026.html">primitives deep dive</a> covers writing good questions, and the <a href="typesafe-confidence-calibration-guide-2026.html">confidence guide</a> covers choosing that threshold properly.</p>
+
+    <h2>What Are the Common First-Integration Mistakes in 2026?</h2>
+    <ul>
+      <li><strong>Looping single-question calls.</strong> The most expensive mistake available. Batch them into one request.</li>
+      <li><strong>Testing on invented examples.</strong> Curated samples tell you the API works, not whether the judgments match yours.</li>
+      <li><strong>Hardcoding <code>jev-1.13.0</code> everywhere, or nowhere.</strong> Pin deliberately if you have tuned thresholds; otherwise use the alias and log the returned model ID.</li>
+      <li><strong>Scattering thresholds through the codebase.</strong> TypeSafe's review advice is a single file. Follow it.</li>
+      <li><strong>Leaving debug logging on in production.</strong> Bodies are not redacted.</li>
+      <li><strong>Skipping the playground.</strong> Ten minutes there teaches the parallel-questions economics better than any documentation.</li>
+      <li><strong>Asking an agent to build it without the skill installed.</strong> That is where invented fields come from.</li>
+    </ul>
+
+    <h2>Key Takeaways for 2026</h2>
+    <ul>
+      <li>One endpoint, <code>POST /v1/systemone</code>, three fields: <code>state</code>, <code>model</code>, <code>questions</code>.</li>
+      <li>Start in the playground with your own text, add questions one at a time, and watch the response time barely move.</li>
+      <li>Question IDs are yours and never reach the model; answers return under the same keys.</li>
+      <li>Python is <code>pip install typesafe-sdk</code>; JavaScript is <code>npm install @typesafe-ai/sdk</code> on Node.js 20 or newer.</li>
+      <li>Configure through <code>TYPESAFE_API_KEY</code> and friends; keys are whitespace-stripped and validated before any request.</li>
+      <li>401, 422, 429 and 529 cover the early errors. The SDKs retry 429 and 529 with backoff by default.</li>
+      <li>Install the official agent skill before letting a coding agent write the integration.</li>
+    </ul>
+    <p>Distk builds these integrations for growth and operations teams, including the part most projects skip: labelling a real sample, plotting confidence against accuracy, and setting thresholds from evidence rather than instinct.</p>
+
+    <h2>Sources</h2>
+    <ul class="srcs">
+      <li><a href="https://docs.typesafe.ai/introduction/quickstart" rel="noopener" target="_blank">TypeSafe AI docs: Quick start</a></li>
+      <li><a href="https://docs.typesafe.ai/api" rel="noopener" target="_blank">API reference</a></li>
+      <li><a href="https://docs.typesafe.ai/sdk" rel="noopener" target="_blank">Client SDKs</a></li>
+      <li><a href="https://docs.typesafe.ai/sdk/python/usage" rel="noopener" target="_blank">Python SDK usage</a></li>
+      <li><a href="https://docs.typesafe.ai/sdk/javascript" rel="noopener" target="_blank">JavaScript SDK</a></li>
+      <li><a href="https://docs.typesafe.ai/primitives/noul" rel="noopener" target="_blank">Noul</a></li>
+      <li><a href="https://docs.typesafe.ai/agent-skill" rel="noopener" target="_blank">Agent skill</a></li>
+      <li><a href="https://docs.typesafe.ai/models" rel="noopener" target="_blank">Models</a></li>
+    </ul>
+
+  </div>
+</main>
+
+<section class="faq">
+  <div class="container">
+    <div class="section-tag">Key Questions</div>
+    <h2 class="section-title">TypeSafe AI Quick Start in 2026: FAQs</h2>
+    <div class="faq__grid">
+      <div class="faq__item">
+        <h3>How do I make my first TypeSafe API call?</h3>
+        <p>POST to https://api.typesafe.ai/v1/systemone with a Bearer token and a JSON body containing state, model and questions. The smallest useful request is one Noul question against a string of text. The response returns your answer under the question ID you chose.</p>
+      </div>
+      <div class="faq__item">
+        <h3>What Python package do I install?</h3>
+        <p>pip install typesafe-sdk, or uv add typesafe-sdk. Set TYPESAFE_API_KEY in your environment, create a TypeSafeClient, and pass Choice, Score and Noul objects to client.system_one().</p>
+      </div>
+      <div class="faq__item">
+        <h3>What JavaScript package do I install?</h3>
+        <p>npm install @typesafe-ai/sdk on Node.js 20 or newer. Create a TypeSafeClient and call client.systemOne() with state and questions. The package includes ESM, CommonJS and TypeScript declarations, and answer types are inferred from your questions.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Which model name should I use?</h3>
+        <p>jev-latest, which is the alias for the most recent stable release and the default in the SDKs. In 2026 it resolves to jev-1.13.0. The response reports the versioned ID that actually answered, so log it.</p>
+      </div>
+      <div class="faq__item">
+        <h3>What errors should I expect?</h3>
+        <p>401 for a missing or invalid API key, 422 when the request body fails validation, 429 when you exceed the rate limit, and 529 when TypeSafe is temporarily overloaded. The SDKs retry 429 and 529 with exponential backoff by default.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Can a coding agent write the integration for me?</h3>
+        <p>Yes, and TypeSafe publishes an official agent skill for exactly that. Install it before you start, because the usual cause of an agent inventing request or response fields is a missing or stale skill.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED START -->
+<section class="related" style="padding:3.5rem 0;border-top:1px solid #e8e8e8;background:#fafafa">
+  <div style="max-width:720px;margin:0 auto;padding:0 clamp(1.2rem,4vw,3rem)">
+    <div style="font-family:'Space Mono',monospace;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:#e63312;margin-bottom:1.3rem">Related reading</div>
+    <ul style="list-style:none;margin:0;padding:0;display:grid;gap:0.9rem">
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="what-is-typesafe-ai-jev-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">What Is TypeSafe AI and Jev in 2026? The Complete Guide to System One Models</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="typesafe-ai-for-marketing-teams-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">TypeSafe AI for Marketing Teams in 2026: Where Jev Fits and Where It Does Not</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="typesafe-primitives-choice-score-noul-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">TypeSafe Primitives in 2026: Choice, Score and Noul Explained in Depth</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="typesafe-confidence-calibration-guide-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">TypeSafe Confidence and Calibration in 2026: Setting Thresholds That Work</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="typesafe-state-input-design-guide-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">TypeSafe State Design in 2026: Context Limits, Filtering and Context Rot</a></li>
+    </ul>
+  </div>
+</section>
+<!-- RELATED END -->
+<section class="cta">
+  <div class="cta__inner">
+    <h2>Get the first integration right, not just running</h2>
+    <p>Distk builds TypeSafe integrations end to end, including the part most first projects skip: labelling a real sample, plotting confidence against accuracy, and setting thresholds from evidence.</p>
+    <a href="https://distk.in/#contact" class="cta__btn">Start the conversation →</a>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="container">
+    © 2026 Distk · <a href="https://distk.in">distk.in</a> · <a href="mailto:connect@distk.in">connect@distk.in</a>
+  </div>
+</footer>
+</body>
+</html>

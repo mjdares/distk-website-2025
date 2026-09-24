@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xdifcafwxl");
+  </script>
+
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TypeSafe Primitives in 2026: Choice, Score and Noul Explained | Distk</title>
+<meta name="description" content="A deep dive on TypeSafe's three primitives in 2026: Choice with up to 255 options, Score with 0-indexed levels and probability-weighted answers, Noul as a yes probability, structured criteria, nested state paths, and when a second request is justified.">
+<meta name="keywords" content="TypeSafe primitives 2026, Choice Score Noul, TypeSafe Choice question, TypeSafe Score levels, what is a Noul, TypeSafe criteria structure, AI development guide 2026">
+<meta name="author" content="Distk"><meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://distk.in/blog/typesafe-primitives-choice-score-noul-2026.html">
+<meta property="og:type" content="article"><meta property="og:url" content="https://distk.in/blog/typesafe-primitives-choice-score-noul-2026.html">
+<meta property="og:title" content="TypeSafe Primitives in 2026: Choice, Score and Noul Explained in Depth">
+<meta property="og:description" content="Up to 255 Choice options, 0-indexed Score levels, and why a Noul is not a scale. The full configuration guide.">
+<meta property="og:image" content="https://distk.in/assets/images/og-image.jpg"><meta property="og:site_name" content="Distk">
+<meta property="article:published_time" content="2026-09-24T00:00:00+05:30">
+<meta property="article:modified_time" content="2026-09-24T00:00:00+05:30">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="TypeSafe Primitives in 2026: Choice, Score and Noul Explained in Depth"><meta name="twitter:description" content="Up to 255 Choice options, 0-indexed Score levels, and why a Noul is not a scale. The full configuration guide.">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "TypeSafe Primitives in 2026: Choice, Score and Noul Explained in Depth", "description": "A practitioner's guide to TypeSafe's three question types in 2026: configuration, response fields, choosing between them, structured instructions and criteria, referencing nested state, and asking many questions in one request.", "author": {"@type": "Organization", "name": "Distk", "url": "https://distk.in"}, "publisher": {"@type": "Organization", "name": "Distk", "logo": {"@type": "ImageObject", "url": "https://distk.in/assets/images/Logo.png"}}, "datePublished": "2026-09-24", "dateModified": "2026-09-24", "inLanguage": "en", "about": [{"@type": "Thing", "name": "TypeSafe AI"}, {"@type": "Thing", "name": "Choice primitive"}, {"@type": "Thing", "name": "Score primitive"}, {"@type": "Thing", "name": "Noul primitive"}, {"@type": "Thing", "name": "Jev"}, {"@type": "Thing", "name": "typed questions"}, {"@type": "Thing", "name": "criteria"}, {"@type": "Thing", "name": "probability distribution"}], "mentions": [{"@type": "Thing", "name": "TypeSafe AI"}, {"@type": "Thing", "name": "Choice primitive"}, {"@type": "Thing", "name": "Score primitive"}, {"@type": "Thing", "name": "Noul primitive"}, {"@type": "Thing", "name": "Jev"}, {"@type": "Thing", "name": "typed questions"}, {"@type": "Thing", "name": "criteria"}, {"@type": "Thing", "name": "probability distribution"}], "mainEntityOfPage": {"@type": "WebPage", "@id": "https://distk.in/blog/typesafe-primitives-choice-score-noul-2026.html"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What are the three TypeSafe primitives in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "Choice selects one option from a defined set and returns the chosen option, a probability for every option, and a confidence value. Score rates the state against ordered levels you write and returns a probability-weighted position, a legend and confidence. Noul evaluates a yes or no statement and returns a single number from 0 to 1 representing the probability the answer is yes."}}, {"@type": "Question", "name": "How many options can a TypeSafe Choice question have?", "acceptedAnswer": {"@type": "Answer", "text": "A Choice question accepts a maximum of 255 options. TypeSafe recommends supplying the full list of teams, categories or products rather than a shortlist because each option costs only a few tokens, and adding an other or none of the above option so the model can indicate that none of the listed options fit."}}, {"@type": "Question", "name": "How does a TypeSafe Score answer work?", "acceptedAnswer": {"@type": "Answer", "text": "Score criteria are an ordered array of level descriptions numbered from 0 by position, with at least two levels and a maximum of 10. The returned score is the probability-weighted sum of the level numbers, so it can fall between two levels. The answer also includes a legend mapping each level number back to its description, the full probability distribution, and a confidence value."}}, {"@type": "Question", "name": "Why does a Noul answer have no confidence field?", "acceptedAnswer": {"@type": "Answer", "text": "A Noul's probability distribution has only two outcomes, yes and no, so the single noul value between 0 and 1 describes that distribution completely. Choice and Score answers spread probability across several options or levels, and their confidence value summarises how peaked or flat that spread is."}}, {"@type": "Question", "name": "When should you send two TypeSafe requests instead of one?", "acceptedAnswer": {"@type": "Answer", "text": "Only when your code genuinely cannot build the second request until it has the first answer, such as when it needs that answer to fetch more data for the state, to decide what the state is made of, or to choose the next question's options. Otherwise all questions should be sent in a single request and unused answers ignored."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://distk.in/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://distk.in/blog/"}, {"@type": "ListItem", "position": 3, "name": "TypeSafe Primitives in 2026: Choice, Score and Noul Explained in Depth", "item": "https://distk.in/blog/typesafe-primitives-choice-score-noul-2026.html"}]}</script>
+<link rel="icon" type="image/png" href="../assets/images/favicon.png"><link rel="apple-touch-icon" href="../assets/images/Logo.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BWDTQ1JPL2"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-BWDTQ1JPL2');</script>
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1077520544213003');fbq('track','PageView');</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1077520544213003&ev=PageView&noscript=1"></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#0a0a0a;--paper:#fafafa;--mid:#6b6b6b;--light:#e8e8e8;--accent:#e63312;--accent-soft:rgba(230,51,18,0.08);--mono:'Space Mono',monospace;--sans:'Outfit',sans-serif;--container:1120px;--prose:720px;--gutter:clamp(1.2rem,4vw,3rem)}
+html{font-size:16px;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.container{max-width:var(--container);margin:0 auto;padding:0 var(--gutter)}
+.prose{max-width:var(--prose);margin:0 auto;padding:0 var(--gutter)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--light)}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;max-width:var(--container);margin:0 auto;padding:0.9rem var(--gutter)}
+.nav__logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;color:var(--ink)}
+.nav__logo img{height:32px;width:auto}
+.nav__logo span{font-family:var(--mono);font-weight:700;font-size:1.05rem;letter-spacing:-0.02em}
+.nav__logo small{display:block;font-size:0.55rem;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);line-height:1}
+.nav__back{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid);text-decoration:none;display:flex;align-items:center;gap:0.4rem;transition:color 0.2s}
+.nav__back:hover{color:var(--accent)}
+.nav__cta{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.6rem 1.4rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.nav__cta:hover{background:var(--accent)}
+.hero{padding:7.5rem 0 3.5rem;position:relative;overflow:hidden;border-bottom:1px solid var(--light)}
+.hero::before{content:'ASK';position:absolute;right:-1%;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:clamp(6rem,26vw,22rem);font-weight:700;color:rgba(0,0,0,0.03);line-height:1;pointer-events:none;user-select:none;letter-spacing:-0.05em}
+.hero__tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1.5rem}
+.hero__tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.hero h1{font-family:var(--sans);font-weight:700;font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;letter-spacing:-0.03em;max-width:20ch;margin-bottom:1.5rem}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero__sub{font-size:1.1rem;color:var(--mid);max-width:56ch;line-height:1.7;margin-bottom:2rem}
+.hero__meta{display:flex;flex-wrap:wrap;gap:1.5rem;font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid)}
+.tldr{background:var(--accent-soft);border-left:3px solid var(--accent);padding:1.8rem 2rem;margin:3rem 0;position:relative}
+.tldr::before{content:'TL;DR';position:absolute;top:-0.6rem;left:2rem;font-family:var(--mono);font-size:0.62rem;font-weight:700;letter-spacing:0.12em;background:var(--accent);color:#fff;padding:0.2rem 0.6rem}
+.tldr p{font-size:0.95rem;color:var(--ink);line-height:1.7}
+.article{padding:4rem 0 5rem}
+.article h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.35rem,2.8vw,1.8rem);letter-spacing:-0.02em;line-height:1.2;margin:3rem 0 1rem;padding-top:1rem;border-top:1px solid var(--light)}
+.article h2:first-child{border-top:none;margin-top:0}
+.article h3{font-family:var(--mono);font-weight:700;font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin:2rem 0 0.6rem}
+.article p{font-size:1rem;color:#2a2a2a;line-height:1.8;margin-bottom:1.25rem}
+.article ul,.article ol{padding-left:1.4rem;margin-bottom:1.25rem}
+.article li{font-size:1rem;color:#2a2a2a;line-height:1.75;margin-bottom:0.4rem}
+.article strong{font-weight:600;color:var(--ink)}
+.article a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(230,51,18,0.3)}
+.article a:hover{border-bottom-color:var(--accent)}
+.article blockquote{border-left:3px solid var(--accent);padding:0.75rem 1.5rem;margin:2rem 0;background:var(--accent-soft)}
+.article blockquote p{color:var(--ink);font-size:1rem;margin:0}
+.table-wrap{overflow-x:auto;margin:2rem 0}
+.data-table{width:100%;border-collapse:collapse;margin:0;font-size:0.88rem}
+.data-table th{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:0.7rem 1rem;text-align:left;white-space:nowrap}
+.data-table td{padding:0.75rem 1rem;border-bottom:1px solid var(--light);vertical-align:top}
+.data-table tr:last-child td{border-bottom:none}
+.data-table tr:nth-child(even) td{background:#f5f5f5}
+.callout{border:1.5px solid var(--light);padding:1.5rem 1.8rem;margin:2rem 0}
+.callout__label{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem}
+.callout p{font-size:0.92rem;color:var(--mid);line-height:1.7;margin:0}
+.faq{padding:4rem 0;background:var(--ink);color:var(--paper)}
+.faq .section-tag{color:var(--accent)}
+.faq .section-tag::before{background:var(--accent)}
+.faq__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2.5rem;margin-top:2.5rem}
+.faq__item{border-left:2px solid var(--accent);padding-left:1.5rem}
+.faq__item h3{font-family:var(--sans);font-weight:600;font-size:0.95rem;margin-bottom:0.5rem;color:var(--paper)}
+.faq__item p{font-size:0.85rem;color:rgba(255,255,255,0.88);line-height:1.65}
+.section-tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1rem}
+.section-tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.section-title{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.15;color:var(--paper)}
+.cta{padding:5rem 0;background:var(--accent-soft);border-top:1px solid rgba(230,51,18,0.12)}
+.cta__inner{max-width:680px;margin:0 auto;padding:0 var(--gutter);text-align:center}
+.cta h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.2;margin-bottom:1rem}
+.cta p{font-size:1rem;color:var(--mid);line-height:1.7;margin-bottom:2rem}
+.cta__btn{display:inline-flex;align-items:center;gap:0.6rem;font-family:var(--mono);font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;padding:1rem 2.2rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.cta__btn:hover{background:var(--accent)}
+.foot{padding:2.5rem 0;border-top:1px solid var(--light);text-align:center;font-family:var(--mono);font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid)}
+.foot a{color:var(--mid);text-decoration:none}.foot a:hover{color:var(--accent)}
+@media(max-width:768px){.faq__grid{grid-template-columns:1fr}.nav__back span{display:none}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="https://distk.in" class="nav__logo">
+      <img src="../assets/images/Logo.png" alt="Distk">
+      <div><span>Distk</span><small>Global Growth Partner</small></div>
+    </a>
+    <a href="/blog/" class="nav__back">← <span>All articles</span></a>
+    <a href="https://distk.in/#contact" class="nav__cta">Work with us</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="prose">
+    <div class="hero__tag">AI Development Guide</div>
+    <h1>TypeSafe Primitives in 2026: <em>Choice, Score and Noul</em> Explained in Depth</h1>
+    <p class="hero__sub">Everything built on TypeSafe is made of three question shapes asked in parallel and combined by ordinary code. This guide covers how each one is configured, what comes back, and the documented traps in between.</p>
+    <div class="hero__meta">
+      <span>Distk Editorial</span>
+      <span>Sep 2026</span>
+      <span>13 min read</span>
+    </div>
+  </div>
+</section>
+
+<div class="prose">
+  <div class="tldr">
+    <p>TypeSafe exposes three question types. Choice picks one option from a map of up to 255 you define, returning the chosen option, the full probability distribution and a confidence value. Score rates the state against an ordered array of 2 to 10 level descriptions, returning a probability-weighted position that can land between levels, plus a legend and confidence. Noul answers a yes or no question with a single number from 0 to 1 and has no confidence field, because one number fully describes a two-outcome distribution. All three mix in a single request, run in parallel and in isolation, and both <code>instructions</code> and <code>criteria</code> accept strings, objects, arrays or null. Questions can point at parts of a structured state using a backticked dot-and-index path, and a second request is only justified when your code could not build it without the first answer.</p>
+  </div>
+</div>
+
+<main class="article">
+  <div class="prose">
+<style>
+.prose pre{background:#f4f4f4;border-left:3px solid var(--accent);padding:1rem 1.1rem;margin:1.5rem 0;overflow-x:auto;font-size:0.85rem;line-height:1.6}
+.prose pre code{font-family:var(--mono);color:#1a1a1a;white-space:pre;background:none;padding:0;font-size:1em}
+.prose code{font-family:var(--mono);font-size:0.86em;background:#f0f0f0;padding:0.12em 0.35em;border-radius:2px}
+.prose .eli5{background:var(--accent-soft);border-left:3px solid var(--accent);padding:1.4rem 1.6rem;margin:0 0 1.6rem}
+.prose .eli5 p{font-size:1.02rem}
+.prose .eli5 p:last-child{margin-bottom:0}
+.prose .srcs{font-size:0.88rem;color:var(--mid)}
+.prose .srcs li{font-size:0.88rem;margin-bottom:0.3rem}
+</style>
+
+    <h2>What Are the TypeSafe Primitives in 2026?</h2>
+    <p>TypeSafe's primitives are small, typed building blocks that come in pairs. A question defines one judgment for the model to make about a state, and its answer is the typed value that comes back. There are three question types in 2026: Choice, which picks one option from a set; Score, which rates the state on ordered levels you write; and Noul, which returns the probability that a statement is true.</p>
+    <p>Every question has an ID you choose, a <code>type</code>, and <code>instructions</code>. Choice and Score also take <code>criteria</code>, which define the options or the levels. Noul accepts <code>criteria</code> optionally, as a clarification of what yes and no mean. The ID is never sent to the model, so name it for your code.</p>
+
+    <h2>Explain It Like I Am Five: Three Shapes of Question</h2>
+    <div class="eli5">
+      <p>Imagine you are making a quiz about a letter someone sent you. There are only three kinds of question you are allowed to write.</p>
+      <p>The first kind is <strong>tick one box</strong>. You write the boxes yourself: is this letter for the kitchen, the garage, or the garden? The model ticks exactly one. It also tells you how much it wanted to tick each of the others.</p>
+      <p>The second kind is <strong>where on the ruler</strong>. You draw a ruler and you label the marks: 0 is calm, 1 is grumpy, 2 is furious. The model puts a pin on the ruler. The pin can land between two marks, like 1.4, which means "quite a lot more than grumpy".</p>
+      <p>The third kind is <strong>yes or no</strong>, but with a twist. Instead of just saying yes, the model says how yes. 0.95 means almost certainly yes. 0.5 means it genuinely cannot tell.</p>
+      <p>That is all there is. Tick a box, point on a ruler, say how yes. Everything clever people build with this is just lots of those three questions asked at once, and then ordinary computer code adding them up.</p>
+      <p>The trick is writing small questions. "Is this letter angry?" is a good question. "What should I do about this letter?" is a bad one, because that is not a quiz question, that is a decision, and decisions belong to your program.</p>
+    </div>
+
+    <h2>How Do You Choose Between Choice, Score and Noul in 2026?</h2>
+    <p>Pick the type that matches the shape of the answer you need, and when two seem to fit, prefer the one your code can act on directly. TypeSafe frames it exactly that way: a Choice between refund, rebook and information maps straight onto three code paths, a Score of customer frustration maps onto a threshold, and a Noul maps onto an if statement.</p>
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Type</th><th>Use it when</th><th>Documented examples</th><th>Maps onto</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Choice</strong></td><td>The answer is one of a known set with no order between the options</td><td>Routing a ticket to a department, classifying a document type, detecting a programming language</td><td>A branch per option</td></tr>
+        <tr><td><strong>Score</strong></td><td>The answer falls on a spectrum you can describe in steps</td><td>Bug severity, customer frustration, skill level</td><td>A numeric threshold</td></tr>
+        <tr><td><strong>Noul</strong></td><td>A clean yes or no where the probability itself is the signal</td><td>Does this contain personal data, is a refund being requested, does the resume mention distributed systems</td><td>A boolean after thresholding</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h2>How Does a Choice Question Work?</h2>
+    <p>A Choice takes <code>criteria</code> as a map where each key is an option name and each value describes that option. The answer returns <code>choice</code>, the option with the highest probability, <code>probabilities</code> across every option summing to 1, and <code>confidence</code> for the selected option. Both the option names and their descriptions are sent to the model, so write descriptions that separate the options from each other.</p>
+
+<pre><code>{
+  "state": "My running shoes arrived in the wrong size. Can I swap them for a size 10?",
+  "model": "jev-latest",
+  "questions": {
+    "department": {
+      "type": "choice",
+      "instructions": "Which team should handle this?",
+      "criteria": {
+        "returns": "Exchanges, wrong or damaged items",
+        "shipping": "Delivery status, delays, lost packages",
+        "billing": "Charges, invoices, payment problems"
+      }
+    }
+  }
+}</code></pre>
+
+    <p>Three configuration facts worth committing to memory in 2026. A Choice accepts up to 255 options, and adding options costs only a few tokens each, so give the model the full list of teams, categories or products rather than a shortlist. A description can be <code>null</code> when the option name is clear on its own. And you should add an <code>other</code> or <code>none of the above</code> option whenever the list might not cover every input, so the model can say that none of the others fit.</p>
+
+    <h3>Reading a split Choice</h3>
+    <p>The interesting answers are the ambiguous ones. TypeSafe documents a ticket that involves three teams: the <code>department</code> answer comes back as <code>returns</code> at 0.61 probability with <code>billing</code> at 0.35 because of a double charge, and the confidence lands at 0.42 to reflect the split. The documented code does not just take the top option. It routes to returns, sends billing a copy because its 0.35 share is over a 0.25 threshold, and asks the customer a clarifying question because a separate resolution answer came back at 0.20 confidence.</p>
+    <p>That is the habit to build. The full distribution is in the response for a reason, and a second option with meaningful probability is often actionable in its own right.</p>
+
+    <h3>Structured Choice criteria</h3>
+    <p>Start with a one-line description per option. When two options are similar and the model keeps confusing them, TypeSafe's documented fix is to describe each one with an object instead of a string, giving it fields for what the option covers, what belongs to a neighbouring option instead, and a few example inputs.</p>
+
+<pre><code>"criteria": {
+  "return_policy": {
+    "what": "Questions about the rules for returning an item",
+    "not_for": "Questions about an existing return already in progress",
+    "examples": ["How long do I have to return this?", "Do I pay return postage?"]
+  },
+  "return_status": {
+    "what": "Questions about a specific return already under way",
+    "not_for": "Questions about what the policy allows",
+    "examples": ["Where is my refund?", "Has my return been received?"]
+  }
+}</code></pre>
+
+    <p>The field names in that object are yours. TypeSafe is explicit that <code>question</code>, <code>focus</code>, <code>what</code>, <code>not_for</code> and <code>examples</code> are not part of the API and none are reserved. The model sees the names alongside the values, so use short names that label what follows.</p>
+
+    <h2>How Does a Score Question Work?</h2>
+    <p>A Score takes <code>criteria</code> as an ordered array of level descriptions, from the low end of the scale to the high end. A level's number is its position in that array starting at 0, so three entries are levels 0, 1 and 2. TypeSafe states that a Score should have at least two levels and that the API accepts up to 10.</p>
+
+<pre><code>{
+  "state": "The export button crashes the settings page in Safari. It works in Chrome, but a few of our customers only use Safari.",
+  "model": "jev-latest",
+  "questions": {
+    "bug_severity": {
+      "type": "score",
+      "instructions": "How severe is the reported issue?",
+      "criteria": [
+        "Cosmetic; no impact to functionality",
+        "Broken or degraded feature, but workaround exists",
+        "Blocking issue; no workaround exists"
+      ]
+    }
+  }
+}</code></pre>
+
+    <p>The returned <code>score</code> is a position along your levels and can land between two of them, because it is computed as the probability-weighted sum: multiply each level number by its probability and add the results. TypeSafe's documented example returns a score of 1.43 with confidence 0.35 from probabilities of 0.0, 0.57 and 0.43, and 0 times 0.0 plus 1 times 0.57 plus 2 times 0.43 is indeed about 1.43. The answer also carries <code>legend</code>, which maps each level number back to the description you wrote, which is useful when logging.</p>
+
+    <h3>Structured Score levels, and a warning about examples</h3>
+    <p>When the model keeps scoring between two neighbouring levels on inputs you consider clear, TypeSafe's fix is to give each level an object with a field for what the level covers and a field of example situations, using the same field names on every level so the model can compare like with like. The documentation then publishes a table that is more honest than most vendor material, and it deserves reproducing.</p>
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Level description style (same ticket)</th><th><code>score</code></th><th><code>confidence</code></th></tr></thead>
+      <tbody>
+        <tr><td>Plain string, no examples</td><td>1.43</td><td>0.35</td></tr>
+        <tr><td>Object with a matching example: "export fails in one browser but works in another"</td><td>1.03</td><td>0.96</td></tr>
+        <tr><td>Object with an unrelated example: "search fails, but browsing categories still works"</td><td>1.43</td><td>0.35</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>A well-chosen example concentrated nearly all the probability on one level. An unrelated example changed nothing. TypeSafe's own conclusion is the important part: higher confidence does not establish which answer is correct. Choose examples with known expected levels, then test the revised descriptions on separate inputs before keeping them. That is straightforward evaluation discipline, and it is rare to see a vendor write it down.</p>
+
+    <h3>Splitting a judgment into several Scores</h3>
+    <p>A judgment that depends on several things is best split into one question per thing, then combined in your code with weights you control. TypeSafe's documented ticket-priority example asks three Scores in one request and combines them.</p>
+
+<pre><code>def normalized(answers, question_id: str) -> float:
+    """Put a score on 0 to 1 by dividing by its top level number."""
+    top_level = len(TRIAGE_QUESTIONS[question_id].criteria) - 1
+    return answers[question_id].score / top_level
+
+severity       = normalized(answers, "severity")
+frustration    = normalized(answers, "frustration")
+report_quality = normalized(answers, "report_quality")
+
+# A detailed report helps an engineer investigate, so it raises priority a little.
+priority = 0.6 * severity + 0.3 * frustration + 0.1 * report_quality</code></pre>
+
+    <p>The weights live in your code, visible and reviewable. TypeSafe's framing is that when the combined result does not match what your team would decide, you change the weights and run again rather than rewriting a prompt. This is the <a href="typesafe-patterns-fan-out-intent-routing-2026.html">composite scoring pattern</a>.</p>
+
+    <h2>How Does a Noul Question Work?</h2>
+    <p>A Noul asks a yes or no question and returns a single number from 0 to 1 that is the probability the answer is yes. Near 1 is a strong yes, near 0 a strong no, near 0.5 means the model gives yes and no similar probability. There is no separate <code>confidence</code> field, because a distribution over two outcomes is fully described by one number.</p>
+    <p>The documentation publishes recorded <code>jev-1.13.0</code> answers for one question across several messages, and the middle of that table is where the design lesson sits.</p>
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>State</th><th><code>noul</code> for "Is the customer asking for a human agent?"</th></tr></thead>
+      <tbody>
+        <tr><td>Thanks, that fixed it!</td><td>0.02</td></tr>
+        <tr><td>How do I reset my password?</td><td>0.07</td></tr>
+        <tr><td>I need this sorted today, whatever it takes.</td><td>0.26</td></tr>
+        <tr><td>Are you a bot?</td><td>0.40</td></tr>
+        <tr><td>Is there any way to speak to someone about my invoice?</td><td>0.84</td></tr>
+        <tr><td>I have asked three times now. Can I please just talk to a real person?</td><td>0.99</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>"I need this sorted today" is urgent but never asks for a person, so it scores 0.26. "Are you a bot?" hints at wanting a human without asking, and the model splits at 0.40. Those are precisely the messages a threshold has to adjudicate, and the number is telling you something real about the input rather than failing.</p>
+
+    <h3>Where to put the threshold</h3>
+    <p>TypeSafe's documented guidance is to set the threshold by the cost of being wrong. Use 0.5 when yes and no are equally easy to act on. Raise it when acting on a false yes is expensive, such as paging someone or issuing a refund. Lower it when missing a true yes is expensive, such as failing to flag a safety issue. Values in the middle can go to a person rather than to either code path.</p>
+
+<pre><code>wants_human = response.answers["is_human_escalation"].noul &gt; 0.9
+
+if wants_human:
+    route_to_agent(ticket)
+else:
+    route_to_bot(ticket)</code></pre>
+
+    <h3>Writing a good Noul question</h3>
+    <ul>
+      <li><strong>One condition per question.</strong> "Is the customer angry and asking for a refund?" makes the model judge two things at once and the value means less. Ask two Nouls and combine them in code.</li>
+      <li><strong>Phrase it so a high value means yes.</strong> "Does the message contain personal data?" is clear. "Is the message free of personal data?" inverts the meaning and code will read it backwards.</li>
+      <li><strong>Make the boundary unambiguous.</strong> "Does this candidate have any Python experience?" works because "any" leaves no middle ground.</li>
+      <li><strong>Try a statement as well as a question.</strong> "The customer is requesting a refund" works as well as the interrogative form; test both on your data.</li>
+      <li><strong>Add <code>criteria</code> only when the boundary is subtle.</strong> Instructions alone are enough for most Nouls. Try with and without and keep whichever performs better on your documents.</li>
+    </ul>
+
+    <h3>Noul is not a scale</h3>
+    <p>This is the misuse TypeSafe warns about most directly. A Noul value runs from 0 to 1 but is not a scale of the thing you asked about; it is the probability that the answer is yes. The documentation compares a Noul and a Score on the same four candidates.</p>
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Candidate</th><th>Noul: "Is the candidate strong in Python?"</th><th>Score: "How much Python experience?"</th></tr></thead>
+      <tbody>
+        <tr><td>Experience in Java and Go; has not used Python</td><td>0.03</td><td>0.0 (No experience)</td></tr>
+        <tr><td>Used Python occasionally for small scripts</td><td>0.14</td><td>1.0 (Some familiarity)</td></tr>
+        <tr><td>Used Python daily for two years on data pipelines</td><td>0.81</td><td>2.05 (Regular use in a job)</td></tr>
+        <tr><td>Python daily for eight years, maintains a large Django codebase</td><td>0.92</td><td>2.89 (Deep expertise)</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>You could invent bands in the 0 to 1 range in your code, but the model never saw them, so nothing in the answer was judged against them. The Score judged each level description on its own, so every candidate landed on or near a level you wrote. If the question is really about degree, use a Score.</p>
+
+    <h2>How Do You Ask Several Questions in One Request?</h2>
+    <p>Put every question that uses the same state in one request and mix the types freely. TypeSafe evaluates them in parallel, so adding questions barely changes the response time and costs only the tokens for the extra questions. The documented phrasing is blunt: asking a question you might not need is close to free.</p>
+    <p>That makes speculative questions the default rather than an optimisation. Ask everything your code might need, including answers that only matter for some inputs, and let the code decide which to use. TypeSafe's parallel questions cookbook measured a 13-question briefing as 12.2 times cheaper and 10.0 times faster in one call than in 13 calls, with no change in the answers.</p>
+
+    <h2>How Do You Point a Question at Part of the State?</h2>
+    <p>When the state is a JSON object with several parts, name the part in the <code>instructions</code> with a dot-and-index path to its key, including the backtick characters around the path. TypeSafe's documented example points a question at something like <code>support.tickets[0].message</code>. Explicit paths make it clear which part of a structured state should inform each judgment, which matters because Jev's documented weaknesses include indirection and distraction by irrelevant content.</p>
+
+    <h2>When Should a Question Be Structured Rather Than a String?</h2>
+    <p>TypeSafe allows structure in more places than most people notice, and its advanced page lists them precisely. Both <code>instructions</code> and every kind of <code>criteria</code> description accept a string, an object, an array, or null.</p>
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Field</th><th>Applies to</th><th>Accepted shape</th></tr></thead>
+      <tbody>
+        <tr><td><code>instructions</code></td><td>Choice, Score, Noul</td><td>string, object, array, or null</td></tr>
+        <tr><td><code>criteria</code> values (option descriptions)</td><td>Choice</td><td>string, object, array, or null</td></tr>
+        <tr><td><code>criteria</code> entries (level descriptions)</td><td>Score</td><td>string, object, array, or null</td></tr>
+        <tr><td><code>criteria.true</code> and <code>criteria.false</code></td><td>Noul</td><td>string, object, array, or null</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>TypeSafe gives two reasons to reach for structure. It helps with clarity when a question has several parts, because the keys are labelled. And it helps when a question needs supporting data, because a schema, a taxonomy or a database row is already JSON, so you can pass the relevant subfields instead of serialising them into a string template.</p>
+
+<pre><code>"instructions": {
+  "potential_duplicate": {
+    "name": "John Smith",
+    "location": "Oakland, California",
+    "last_employer": "Google"
+  },
+  "question": "Is the resume for the same person as `potential_duplicate`?"
+}</code></pre>
+
+    <p>The question sits in one field and the data it refers to sits in others, referenced by name in backticks. Because that data comes from your code, it can change per request without touching the wording of the question.</p>
+
+    <h2>When Does One Question Genuinely Depend on Another?</h2>
+    <p>Rarely, and TypeSafe says so plainly: two requests are the exception, not the rule. Questions in the same request are independent, and one answer does not become context for another. A real dependency exists only when your code cannot build the second request until it has the first answer, because it needs that answer to fetch more data for the state, to decide what the state is made of, or to pick the next question's options.</p>
+    <p>The documentation names the three cookbooks that make a second request for a legitimate reason: skill suggestion ranks 182 skills in one request then fetches the full text of the top three and judges them again against better evidence; structure recovery asks whether each line break split a sentence, merges lines into blocks, then classifies blocks that did not exist until the first answer; and hierarchical classification uses each Choice answer to decide which options the next request offers.</p>
+    <div class="callout">
+      <div class="callout__label">The default in 2026</div>
+      <p>If the second request's questions could have been asked against the original state, ask them in the first request and let the code ignore the ones it does not need. A second round trip costs latency that parallel questions do not.</p>
+    </div>
+
+    <h2>What Are the Common Mistakes With Primitives in 2026?</h2>
+    <ul>
+      <li><strong>Using a Noul for a question about degree.</strong> The number is a probability, not a magnitude. Use a Score with levels you wrote.</li>
+      <li><strong>Hiding two judgments in one question.</strong> "Angry and asking for a refund" is two Nouls.</li>
+      <li><strong>Shortlisting Choice options.</strong> Up to 255 are allowed and each costs a few tokens. Give the full list.</li>
+      <li><strong>Forgetting an <code>other</code> option.</strong> Without it the model must force every input into a box that may not fit.</li>
+      <li><strong>Inverting a Noul.</strong> Phrase so that high means yes, always.</li>
+      <li><strong>Adding examples that do not look like your inputs.</strong> TypeSafe's own table shows an unrelated example changing nothing at all.</li>
+      <li><strong>Reading higher confidence as proof of correctness.</strong> The documentation says it is not.</li>
+      <li><strong>Making a second request out of habit.</strong> Unless the second question could not have been asked against the original state, it belongs in the first call.</li>
+    </ul>
+
+    <h2>Key Takeaways for 2026</h2>
+    <ul>
+      <li>Three primitives: Choice for one of a set, Score for a level on your ordered rubric, Noul for the probability a statement is true.</li>
+      <li>Choice accepts up to 255 options with optional <code>null</code> descriptions; always include an <code>other</code> when the list might not cover every input.</li>
+      <li>Score levels are 0-indexed, need at least two and accept up to 10, and the returned score is the probability-weighted sum across them.</li>
+      <li>Noul has no confidence field because one number fully describes a two-outcome distribution; threshold it by the cost of being wrong.</li>
+      <li>Both <code>instructions</code> and every kind of <code>criteria</code> accept strings, objects, arrays or null. Start with strings and add structure when two options blur.</li>
+      <li>Point questions at parts of a structured state with a backticked dot-and-index path.</li>
+      <li>Ask everything in one request. Two requests are the exception, justified only when the second could not have been built without the first answer.</li>
+    </ul>
+    <p>Distk helps teams write the questions, which is the part that actually determines whether this works, and put them in one reviewable file alongside the thresholds.</p>
+
+    <h2>Sources</h2>
+    <ul class="srcs">
+      <li><a href="https://docs.typesafe.ai/primitives" rel="noopener" target="_blank">TypeSafe AI docs: Primitives (Questions)</a></li>
+      <li><a href="https://docs.typesafe.ai/primitives/choice" rel="noopener" target="_blank">Choice</a></li>
+      <li><a href="https://docs.typesafe.ai/primitives/score" rel="noopener" target="_blank">Score</a></li>
+      <li><a href="https://docs.typesafe.ai/primitives/noul" rel="noopener" target="_blank">Noul</a></li>
+      <li><a href="https://docs.typesafe.ai/primitives/advanced" rel="noopener" target="_blank">Advanced: structure</a></li>
+      <li><a href="https://docs.typesafe.ai/api" rel="noopener" target="_blank">API reference</a></li>
+      <li><a href="https://docs.typesafe.ai/concepts/how-to-build-with-system-one" rel="noopener" target="_blank">How to build with TypeSafe</a></li>
+      <li><a href="https://docs.typesafe.ai/cookbooks/parallel_questions" rel="noopener" target="_blank">Parallel questions cookbook</a></li>
+    </ul>
+
+  </div>
+</main>
+
+<section class="faq">
+  <div class="container">
+    <div class="section-tag">Key Questions</div>
+    <h2 class="section-title">TypeSafe Primitives in 2026: FAQs</h2>
+    <div class="faq__grid">
+      <div class="faq__item">
+        <h3>What is the difference between Choice, Score and Noul?</h3>
+        <p>Choice picks one option from a fixed set with no order between them. Score rates the state on ordered levels you write and can return a value between levels. Noul answers a yes or no question with the probability that the answer is yes. When two fit, pick the one your code can act on directly.</p>
+      </div>
+      <div class="faq__item">
+        <h3>How many options can a Choice question have?</h3>
+        <p>Up to 255. TypeSafe recommends giving the full list rather than a shortlist because each option costs only a few tokens, and adding an other or none of the above option when the list might not cover every input.</p>
+      </div>
+      <div class="faq__item">
+        <h3>How many levels can a Score have?</h3>
+        <p>At least two, and the API accepts up to 10. Levels are numbered by their position in the criteria array starting at 0, and the returned score is the probability-weighted sum across them, so it can land between two levels.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Why does a Noul have no confidence value?</h3>
+        <p>Because a Noul's probability distribution has only two outcomes, yes and no, so the single noul value describes it completely. Choice and Score spread probability across several options or levels, and confidence summarises that spread.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Can a Noul be used as a 0 to 100 scale?</h3>
+        <p>No. The value is the probability that the answer is yes, not a measure of degree. TypeSafe publishes a comparison showing that a Score with written levels places candidates on levels you defined, while a Noul only tells you how likely a single proposition is.</p>
+      </div>
+      <div class="faq__item">
+        <h3>When should I make two TypeSafe requests instead of one?</h3>
+        <p>Only when your code cannot build the second request without the first answer, for example because it must fetch more data, decide what the state contains, or pick the next question's options. Otherwise ask everything in one call and ignore the answers you do not need.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED START -->
+<section class="related" style="padding:3.5rem 0;border-top:1px solid #e8e8e8;background:#fafafa">
+  <div style="max-width:720px;margin:0 auto;padding:0 clamp(1.2rem,4vw,3rem)">
+    <div style="font-family:'Space Mono',monospace;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:#e63312;margin-bottom:1.3rem">Related reading</div>
+    <ul style="list-style:none;margin:0;padding:0;display:grid;gap:0.9rem">
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="what-is-typesafe-ai-jev-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">What Is TypeSafe AI and Jev in 2026? The Complete Guide to System One Models</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="typesafe-ai-quickstart-tutorial-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">TypeSafe AI Quick Start for 2026: Your First Jev Call in cURL, Python and JavaScript</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="typesafe-confidence-calibration-guide-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">TypeSafe Confidence and Calibration in 2026: Setting Thresholds That Work</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="typesafe-state-input-design-guide-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">TypeSafe State Design in 2026: Context Limits, Filtering and Context Rot</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="typesafe-patterns-fan-out-intent-routing-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">TypeSafe Patterns in 2026: Fan-Out, Intent Routing, Confidence Gating and Composite Scoring</a></li>
+    </ul>
+  </div>
+</section>
+<!-- RELATED END -->
+<section class="cta">
+  <div class="cta__inner">
+    <h2>The questions are the product</h2>
+    <p>Most TypeSafe projects succeed or fail on how the questions are written, not on the integration. Distk helps teams write, test and version them, with the thresholds in one reviewable place.</p>
+    <a href="https://distk.in/#contact" class="cta__btn">Start the conversation →</a>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="container">
+    © 2026 Distk · <a href="https://distk.in">distk.in</a> · <a href="mailto:connect@distk.in">connect@distk.in</a>
+  </div>
+</footer>
+</body>
+</html>

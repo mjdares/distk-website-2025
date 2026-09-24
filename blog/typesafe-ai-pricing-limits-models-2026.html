@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xdifcafwxl");
+  </script>
+
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TypeSafe AI Pricing and Limits in 2026: Jev Cost, Rate Limits, Versions | Distk</title>
+<meta name="description" content="TypeSafe Jev pricing and operations in 2026: 42 USD per billion input tokens with free output, 250,000 tokens per second and 1,200 requests per minute, the 64k and 32k context budgets, aliases versus pinned versions, no fine-tuning, and data handling.">
+<meta name="keywords" content="TypeSafe pricing 2026, Jev cost per token, TypeSafe rate limits, jev-latest alias, TypeSafe zero data retention, Btok Mtok pricing, AI development guide 2026">
+<meta name="author" content="Distk"><meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://distk.in/blog/typesafe-ai-pricing-limits-models-2026.html">
+<meta property="og:type" content="article"><meta property="og:url" content="https://distk.in/blog/typesafe-ai-pricing-limits-models-2026.html">
+<meta property="og:title" content="TypeSafe AI Pricing and Limits in 2026: What Jev Costs and How to Operate It">
+<meta property="og:description" content="42 USD per billion input tokens, output free. Why that single fact changes how you design the whole workload.">
+<meta property="og:image" content="https://distk.in/assets/images/og-image.jpg"><meta property="og:site_name" content="Distk">
+<meta property="article:published_time" content="2026-09-24T00:00:00+05:30">
+<meta property="article:modified_time" content="2026-09-24T00:00:00+05:30">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="TypeSafe AI Pricing and Limits in 2026: What Jev Costs and How to Operate It"><meta name="twitter:description" content="42 USD per billion input tokens, output free. Why that single fact changes how you design the whole workload.">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "TypeSafe AI Pricing and Limits in 2026: What Jev Costs and How to Operate It", "description": "A 2026 guide to TypeSafe Jev pricing and operations: input-only billing, a labelled cost illustration, rate limits and retry handling, context budgets, model aliases versus pinned versions, customisation without fine-tuning, language support and data handling.", "author": {"@type": "Organization", "name": "Distk", "url": "https://distk.in"}, "publisher": {"@type": "Organization", "name": "Distk", "logo": {"@type": "ImageObject", "url": "https://distk.in/assets/images/Logo.png"}}, "datePublished": "2026-09-24", "dateModified": "2026-09-24", "inLanguage": "en", "about": [{"@type": "Thing", "name": "TypeSafe AI"}, {"@type": "Thing", "name": "Jev"}, {"@type": "Thing", "name": "API pricing"}, {"@type": "Thing", "name": "rate limits"}, {"@type": "Thing", "name": "model versioning"}, {"@type": "Thing", "name": "zero data retention"}, {"@type": "Thing", "name": "token billing"}], "mentions": [{"@type": "Thing", "name": "TypeSafe AI"}, {"@type": "Thing", "name": "Jev"}, {"@type": "Thing", "name": "API pricing"}, {"@type": "Thing", "name": "rate limits"}, {"@type": "Thing", "name": "model versioning"}, {"@type": "Thing", "name": "zero data retention"}, {"@type": "Thing", "name": "token billing"}], "mainEntityOfPage": {"@type": "WebPage", "@id": "https://distk.in/blog/typesafe-ai-pricing-limits-models-2026.html"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How much does TypeSafe Jev cost in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "Jev 1.13 is priced at 42 US dollars per Btok and 0.042 US dollars per Mtok, where a Btok is a billion tokens and an Mtok is a million tokens. Charging is per input token only and output tokens are free, which makes the amount of text you send the dominant cost lever rather than the length of the answers."}}, {"@type": "Question", "name": "What are TypeSafe's rate limits in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "TypeSafe publishes 250,000 tokens per second and 1,200 requests per minute for Jev 1.13, and a request over either limit returns 429 Too Many Requests. A 529 Overloaded status is returned when TypeSafe is temporarily overloaded. The company warns that rate limits are adjusting dynamically and can change without notice, with higher limits available on custom and enterprise plans."}}, {"@type": "Question", "name": "Can you fine-tune Jev on your own data?", "acceptedAnswer": {"@type": "Answer", "text": "No. TypeSafe states that Jev is not fine-tuned or LoRA-adapted with customer data and that the same weights serve every account. Customisation happens through the request instead: putting proprietary content in the state, encoding domain rules and boundary cases in instructions and criteria, and decomposing broad judgments into atomic questions combined in code."}}, {"@type": "Question", "name": "Should you use the jev-latest alias or pin a model version?", "acceptedAnswer": {"@type": "Answer", "text": "An alias moves when a new release ships, so the answers behind it can change without any change on your side. TypeSafe recommends pinning the versioned model ID such as jev-1.13.0 if you have tuned confidence thresholds against a specific version, then moving to a new one on your own schedule. The response's model field always reports the versioned ID that answered."}}, {"@type": "Question", "name": "Is TypeSafe trained on customer data, and is zero data retention available?", "acceptedAnswer": {"@type": "Answer", "text": "TypeSafe states that Jev is not trained on customer requests or responses. Its legal page lists a Data Processing Agreement covering data retention, a Master Customer Agreement, and a Privacy Policy that includes the commitment not to train models on user data. Zero data retention is offered to enterprise customers."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://distk.in/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://distk.in/blog/"}, {"@type": "ListItem", "position": 3, "name": "TypeSafe AI Pricing and Limits in 2026: What Jev Costs and How to Operate It", "item": "https://distk.in/blog/typesafe-ai-pricing-limits-models-2026.html"}]}</script>
+<link rel="icon" type="image/png" href="../assets/images/favicon.png"><link rel="apple-touch-icon" href="../assets/images/Logo.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BWDTQ1JPL2"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-BWDTQ1JPL2');</script>
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1077520544213003');fbq('track','PageView');</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1077520544213003&ev=PageView&noscript=1"></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#0a0a0a;--paper:#fafafa;--mid:#6b6b6b;--light:#e8e8e8;--accent:#e63312;--accent-soft:rgba(230,51,18,0.08);--mono:'Space Mono',monospace;--sans:'Outfit',sans-serif;--container:1120px;--prose:720px;--gutter:clamp(1.2rem,4vw,3rem)}
+html{font-size:16px;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.container{max-width:var(--container);margin:0 auto;padding:0 var(--gutter)}
+.prose{max-width:var(--prose);margin:0 auto;padding:0 var(--gutter)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--light)}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;max-width:var(--container);margin:0 auto;padding:0.9rem var(--gutter)}
+.nav__logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;color:var(--ink)}
+.nav__logo img{height:32px;width:auto}
+.nav__logo span{font-family:var(--mono);font-weight:700;font-size:1.05rem;letter-spacing:-0.02em}
+.nav__logo small{display:block;font-size:0.55rem;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);line-height:1}
+.nav__back{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid);text-decoration:none;display:flex;align-items:center;gap:0.4rem;transition:color 0.2s}
+.nav__back:hover{color:var(--accent)}
+.nav__cta{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.6rem 1.4rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.nav__cta:hover{background:var(--accent)}
+.hero{padding:7.5rem 0 3.5rem;position:relative;overflow:hidden;border-bottom:1px solid var(--light)}
+.hero::before{content:'COST';position:absolute;right:-1%;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:clamp(6rem,26vw,22rem);font-weight:700;color:rgba(0,0,0,0.03);line-height:1;pointer-events:none;user-select:none;letter-spacing:-0.05em}
+.hero__tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1.5rem}
+.hero__tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.hero h1{font-family:var(--sans);font-weight:700;font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;letter-spacing:-0.03em;max-width:20ch;margin-bottom:1.5rem}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero__sub{font-size:1.1rem;color:var(--mid);max-width:56ch;line-height:1.7;margin-bottom:2rem}
+.hero__meta{display:flex;flex-wrap:wrap;gap:1.5rem;font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid)}
+.tldr{background:var(--accent-soft);border-left:3px solid var(--accent);padding:1.8rem 2rem;margin:3rem 0;position:relative}
+.tldr::before{content:'TL;DR';position:absolute;top:-0.6rem;left:2rem;font-family:var(--mono);font-size:0.62rem;font-weight:700;letter-spacing:0.12em;background:var(--accent);color:#fff;padding:0.2rem 0.6rem}
+.tldr p{font-size:0.95rem;color:var(--ink);line-height:1.7}
+.article{padding:4rem 0 5rem}
+.article h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.35rem,2.8vw,1.8rem);letter-spacing:-0.02em;line-height:1.2;margin:3rem 0 1rem;padding-top:1rem;border-top:1px solid var(--light)}
+.article h2:first-child{border-top:none;margin-top:0}
+.article h3{font-family:var(--mono);font-weight:700;font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin:2rem 0 0.6rem}
+.article p{font-size:1rem;color:#2a2a2a;line-height:1.8;margin-bottom:1.25rem}
+.article ul,.article ol{padding-left:1.4rem;margin-bottom:1.25rem}
+.article li{font-size:1rem;color:#2a2a2a;line-height:1.75;margin-bottom:0.4rem}
+.article strong{font-weight:600;color:var(--ink)}
+.article a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(230,51,18,0.3)}
+.article a:hover{border-bottom-color:var(--accent)}
+.article blockquote{border-left:3px solid var(--accent);padding:0.75rem 1.5rem;margin:2rem 0;background:var(--accent-soft)}
+.article blockquote p{color:var(--ink);font-size:1rem;margin:0}
+.table-wrap{overflow-x:auto;margin:2rem 0}
+.data-table{width:100%;border-collapse:collapse;margin:0;font-size:0.88rem}
+.data-table th{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:0.7rem 1rem;text-align:left;white-space:nowrap}
+.data-table td{padding:0.75rem 1rem;border-bottom:1px solid var(--light);vertical-align:top}
+.data-table tr:last-child td{border-bottom:none}
+.data-table tr:nth-child(even) td{background:#f5f5f5}
+.callout{border:1.5px solid var(--light);padding:1.5rem 1.8rem;margin:2rem 0}
+.callout__label{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem}
+.callout p{font-size:0.92rem;color:var(--mid);line-height:1.7;margin:0}
+.faq{padding:4rem 0;background:var(--ink);color:var(--paper)}
+.faq .section-tag{color:var(--accent)}
+.faq .section-tag::before{background:var(--accent)}
+.faq__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2.5rem;margin-top:2.5rem}
+.faq__item{border-left:2px solid var(--accent);padding-left:1.5rem}
+.faq__item h3{font-family:var(--sans);font-weight:600;font-size:0.95rem;margin-bottom:0.5rem;color:var(--paper)}
+.faq__item p{font-size:0.85rem;color:rgba(255,255,255,0.88);line-height:1.65}
+.section-tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1rem}
+.section-tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.section-title{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.15;color:var(--paper)}
+.cta{padding:5rem 0;background:var(--accent-soft);border-top:1px solid rgba(230,51,18,0.12)}
+.cta__inner{max-width:680px;margin:0 auto;padding:0 var(--gutter);text-align:center}
+.cta h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.2;margin-bottom:1rem}
+.cta p{font-size:1rem;color:var(--mid);line-height:1.7;margin-bottom:2rem}
+.cta__btn{display:inline-flex;align-items:center;gap:0.6rem;font-family:var(--mono);font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;padding:1rem 2.2rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.cta__btn:hover{background:var(--accent)}
+.foot{padding:2.5rem 0;border-top:1px solid var(--light);text-align:center;font-family:var(--mono);font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid)}
+.foot a{color:var(--mid);text-decoration:none}.foot a:hover{color:var(--accent)}
+@media(max-width:768px){.faq__grid{grid-template-columns:1fr}.nav__back span{display:none}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="https://distk.in" class="nav__logo">
+      <img src="../assets/images/Logo.png" alt="Distk">
+      <div><span>Distk</span><small>Global Growth Partner</small></div>
+    </a>
+    <a href="/blog/" class="nav__back">← <span>All articles</span></a>
+    <a href="https://distk.in/#contact" class="nav__cta">Work with us</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="prose">
+    <div class="hero__tag">AI Development Guide</div>
+    <h1>TypeSafe AI <em>Pricing and Limits</em> in 2026: What Jev Costs and How to Operate It</h1>
+    <p class="hero__sub">You pay for what you send, not for what comes back. That one rule reshapes the architecture, the batching strategy and the budget, and it is why asking a question you might not need is close to free.</p>
+    <div class="hero__meta">
+      <span>Distk Editorial</span>
+      <span>Sep 2026</span>
+      <span>11 min read</span>
+    </div>
+  </div>
+</section>
+
+<div class="prose">
+  <div class="tldr">
+    <p>Jev 1.13 costs 42 US dollars per Btok and 0.042 US dollars per Mtok, charged on input tokens only, with output tokens free. Published limits are 250,000 tokens per second and 1,200 requests per minute, with 429 and 529 responses retried automatically by the official SDKs using exponential backoff and the retry-after header. TypeSafe warns that rate limits are adjusting dynamically and can change without notice. The context budget is 64k tokens per request and 32k for the state plus the longest question. Because only input is billed and a state is sent once per request, batching is the dominant cost lever: TypeSafe measured one 13-question call as 12.2 times cheaper and 10.0 times faster than 13 separate calls. There is no fine-tuning; customisation happens through state, instructions, criteria and decomposition, and zero data retention is available to enterprise customers in 2026.</p>
+  </div>
+</div>
+
+<main class="article">
+  <div class="prose">
+<style>
+.prose pre{background:#f4f4f4;border-left:3px solid var(--accent);padding:1rem 1.1rem;margin:1.5rem 0;overflow-x:auto;font-size:0.85rem;line-height:1.6}
+.prose pre code{font-family:var(--mono);color:#1a1a1a;white-space:pre;background:none;padding:0;font-size:1em}
+.prose code{font-family:var(--mono);font-size:0.86em;background:#f0f0f0;padding:0.12em 0.35em;border-radius:2px}
+.prose .eli5{background:var(--accent-soft);border-left:3px solid var(--accent);padding:1.4rem 1.6rem;margin:0 0 1.6rem}
+.prose .eli5 p{font-size:1.02rem}
+.prose .eli5 p:last-child{margin-bottom:0}
+.prose .srcs{font-size:0.88rem;color:var(--mid)}
+.prose .srcs li{font-size:0.88rem;margin-bottom:0.3rem}
+</style>
+
+    <h2>How Much Does TypeSafe Jev Cost in 2026?</h2>
+    <p>Jev 1.13 is priced at 42 US dollars per Btok and 0.042 US dollars per Mtok, where a Btok is a billion tokens and an Mtok is a million tokens. Charging is per input token, and output tokens are free. That single line changes how you budget compared with a generative model, because the thing you usually try to control, the length of the response, costs nothing here.</p>
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Attribute</th><th>Jev 1.13 (<code>jev-1.13.0</code>)</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Price</strong></td><td>42 USD per Btok, 0.042 USD per Mtok, input tokens only; output tokens free</td></tr>
+        <tr><td><strong>Rate limits</strong></td><td>250,000 tokens per second and 1,200 requests per minute</td></tr>
+        <tr><td><strong>Context length</strong></td><td>64k tokens per request; 32k for the state plus the longest question</td></tr>
+        <tr><td><strong>Input</strong></td><td>Text only: string, JSON object, or array of text values. No image, audio or video</td></tr>
+        <tr><td><strong>Endpoint</strong></td><td><code>POST /v1/systemone</code>, shared by every model on the page</td></tr>
+        <tr><td><strong>Aliases</strong></td><td><code>jev-latest</code> and <code>jev-preview</code>, both pointing at <code>jev-1.13.0</code></td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h2>Explain It Like I Am Five: Paying for the Question, Not the Answer</h2>
+    <div class="eli5">
+      <p>Imagine a shop where you pay for what you carry in, and everything you carry out is free.</p>
+      <p>You walk in holding a big heavy book. They weigh the book and charge you for the weight. Then you ask the shopkeeper eleven questions about the book, and she answers all eleven, and the answers cost nothing at all.</p>
+      <p>Now here is the important bit. If you walked in eleven separate times, each time carrying the same heavy book, you would pay for that book eleven times. Same book. Same answers. Eleven times the money, and eleven times the waiting.</p>
+      <p>So you go in once, carrying the book once, and you ask everything you can think of while you are in there. Even questions you might not need. Asking is basically free. Carrying the book is what costs.</p>
+      <p>And because carrying is what costs, you should not bring extra books you were not going to ask about. They make the bill bigger, and they make the shopkeeper's answers a bit worse too.</p>
+      <p>One trip. One book. Lots of questions.</p>
+    </div>
+
+    <h2>Why Does Input-Only Billing Change the Design in 2026?</h2>
+    <p>Because the cost of a decision workload becomes almost entirely a function of how much text you send and how many times you send it. Two consequences follow, and both are load-bearing.</p>
+    <p>First, extra questions are close to free. TypeSafe states that adding questions barely changes the response time and costs only the tokens for the extra questions, which are cheap, so asking a question you might not need is close to free. That is why speculative fan-out is the default pattern rather than an optimisation.</p>
+    <p>Second, re-sending the same state is where money actually goes. TypeSafe's parallel questions cookbook measured a 13-question briefing over the GDPR Wikipedia article: one batched call cost 0.000497 US dollars and took 0.27 seconds, while 13 separate single-question calls cost 0.006090 US dollars and took 2.71 seconds. That is 12.2 times cheaper and 10.0 times faster, with no change in the answers, because the separate calls re-sent the article 13 times.</p>
+
+    <h2>What Does a Realistic Monthly Bill Look Like in 2026?</h2>
+    <p>The table below is arithmetic applied to TypeSafe's published rate at invented volumes. The volumes are illustrative placeholders chosen to show the shape of the cost, not measured figures from any deployment, and your own token counts are the only input that matters.</p>
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Illustrative workload</th><th>Input tokens per month</th><th>At 0.042 USD per Mtok</th></tr></thead>
+      <tbody>
+        <tr><td>10,000 support messages, about 800 tokens of state plus questions each</td><td>8M</td><td>0.34 USD</td></tr>
+        <tr><td>100,000 support messages at the same size</td><td>80M</td><td>3.36 USD</td></tr>
+        <tr><td>1,000,000 messages at the same size</td><td>800M</td><td>33.60 USD</td></tr>
+        <tr><td>50,000 documents at about 4,000 tokens each</td><td>200M</td><td>8.40 USD</td></tr>
+        <tr><td>The same 50,000 documents, asked in 8 separate calls instead of 1</td><td>1,600M</td><td>67.20 USD</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="callout">
+      <div class="callout__label">Clearly labelled as an illustration</div>
+      <p>These numbers are the published per-token rate multiplied by invented volumes. They exclude nothing because there is nothing else to exclude on the published rate card, but they are not a forecast and not an observed bill. Substitute your own measured <code>usage.input_tokens</code> before putting any of this in a budget.</p>
+    </div>
+    <p>The last two rows are the point of the table. The same work, asked badly, costs eight times as much. The response's <code>usage</code> object reports <code>input_tokens</code> and <code>output_tokens</code> on every call, so measuring this on your own traffic takes an afternoon rather than a modelling exercise.</p>
+
+    <h2>What Are the Rate Limits, and What Happens When You Hit Them?</h2>
+    <p>TypeSafe publishes 250,000 tokens per second and 1,200 requests per minute for Jev 1.13, measured on both axes, and a request over either limit returns <code>429 Too Many Requests</code>. There is also a <code>529 Overloaded</code> status when TypeSafe itself is temporarily overloaded.</p>
+    <p>Both should be retried with exponential backoff rather than immediately. TypeSafe's client SDKs do this by default and honour the <code>retry-after</code> header when the response carries one, so a team using the official SDK with its default retry policy needs no extra handling. If you call the HTTP API directly, that logic is yours to write.</p>
+
+<pre><code>from typesafe_sdk import RetryPolicy, TypeSafeClient
+
+# On the client, for everything
+client = TypeSafeClient(retry=RetryPolicy(max_retries=3, backoff_max=0.2, timeout=1.0))
+
+# Or per call, when one path is latency-sensitive and another is not
+client.system_one(state, questions, retry=RetryPolicy(max_retries=3, backoff_max=0.2, timeout=1.0))</code></pre>
+
+    <p>One caveat deserves prominence because it affects capacity planning. TypeSafe publishes a warning that rate limits are adjusting dynamically, that it is serving a very large volume of demand, and that the limits can change without notice while upcoming large GPU deals land and more users are let in. It says higher limits are available on custom and enterprise plans. Treat the published numbers as current rather than contractual in 2026, and design your retry and queueing behaviour so a tighter limit degrades throughput rather than breaking the workflow.</p>
+
+    <h2>How Do the Context Budgets Affect Cost in 2026?</h2>
+    <p>The 64k budget covers the state plus all questions combined, and the 32k budget applies to the state plus the single longest question. Because Jev ingests the state once and evaluates every question against it in parallel, those two limits shape the request rather than the bill directly, but they interact with cost in one important way: they cap how much you can amortise a single state across questions.</p>
+    <p>The practical guidance is to keep the state as small as the questions allow, which is the same advice that improves accuracy. Our <a href="typesafe-state-input-design-guide-2026.html">state design guide</a> covers the filtering approaches, including using a cheap Noul as a relevance filter before building the real state.</p>
+
+    <h2>Should You Use an Alias or Pin a Version in 2026?</h2>
+    <p>TypeSafe offers two aliases and is explicit about the trade. An alias is a model name that resolves to a versioned model ID, and it moves when a new release ships, so the answers behind it can change without a change on your side.</p>
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Name</th><th>Points to</th><th>Meaning</th></tr></thead>
+      <tbody>
+        <tr><td><code>jev-latest</code></td><td><code>jev-1.13.0</code></td><td>The most recent stable, official release. The default in the SDKs and the name used throughout the docs.</td></tr>
+        <tr><td><code>jev-preview</code></td><td><code>jev-1.13.0</code></td><td>The most recent release whether or not it is official. Moves ahead of <code>jev-latest</code> when a preview build exists, and TypeSafe notes none is available at present.</td></tr>
+        <tr><td><code>jev-1.13.0</code></td><td>Itself</td><td>A pinned version. Accepted whether or not it appears in the model list.</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>TypeSafe's own recommendation is the sensible default: if you have tuned confidence thresholds against a specific version, pin that version's ID and move to the new one on your own schedule. Either way, log the <code>model</code> field from the response, which reports the versioned ID that actually answered, so you can tell which version produced each historical result.</p>
+    <p>You can also list what your account may use. <code>GET /v1/models</code> returns the names accepted in the <code>model</code> field with a description and release date for each, and currently lists the aliases.</p>
+
+<pre><code>curl https://api.typesafe.ai/v1/models \
+  -H "Authorization: Bearer $TYPESAFE_API_KEY"</code></pre>
+
+    <h2>Can You Fine-Tune Jev for Your Domain?</h2>
+    <p>No, and TypeSafe is direct about it. Jev is not fine-tuned or LoRA-adapted with customer data; it is trained with RLCD to return calibrated decisions, and the same weights serve every account. You shape its answers through the request rather than through per-account weights, in three documented ways.</p>
+    <ul>
+      <li><strong>Put your proprietary content in the <code>state</code>.</strong> Records, reference material, policies, the documents themselves.</li>
+      <li><strong>Encode domain rules and boundary cases in <code>instructions</code> and <code>criteria</code>.</strong> This is where your expertise actually lives.</li>
+      <li><strong>Decompose broad judgments into atomic questions and combine outputs in code.</strong> TypeSafe also points to training a downstream classical model on Jev's probabilities as a form of learned composition.</li>
+    </ul>
+    <p>For a buyer used to fine-tuning as the customisation story, this is a genuine difference to plan around. It removes a training pipeline and a per-account artefact to maintain, and it moves the tuning surface into text you can read, version and review in a pull request.</p>
+
+    <h2>What About Languages Other Than English?</h2>
+    <p>Jev accepts natural-language text, and TypeSafe states that English is the primary training language and where accuracy is currently best. Other languages, including CJK scripts, are handled but not equally well. The documented advice is to test on your own content before relying on Jev for a non-English workload, and to pay close attention to confidence when routing.</p>
+    <p>For teams in India that matters concretely. A support queue mixing English, Hindi and regional languages, or transliterated text, is exactly the case the caveat is about. It does not mean it will not work; it means the labelled-sample evaluation described in our <a href="typesafe-confidence-calibration-guide-2026.html">confidence guide</a> should be run per language rather than once overall, and thresholds may reasonably differ by language.</p>
+
+    <h2>How Does TypeSafe Handle Your Data in 2026?</h2>
+    <p>TypeSafe states that Jev is not trained on customer requests or responses. Its legal page lists three documents that govern this: a Data Processing Agreement covering how customer data is processed on your behalf including data retention, a Master Customer Agreement, and a Privacy Policy that includes the commitment not to train models on user data. Zero data retention is offered to enterprise customers, with sales contact for details.</p>
+    <p>Two operational notes for anyone doing a procurement review. The SDK's debug logging redacts secret headers, including authorization, API keys, cookies and any header whose name contains token or secret, but request and response bodies are not redacted, so debug logging in production writes your state to your own log sink. And if you route through a compatible third-party gateway, which TypeSafe documents as possible with OpenRouter and Vercel's AI Gateway, your data handling review needs to cover that provider too, not just TypeSafe.</p>
+
+    <h2>What Are the Common Cost Mistakes in 2026?</h2>
+    <ul>
+      <li><strong>Budgeting as if output tokens are billed.</strong> They are not. The cost lever is what you send, not what comes back.</li>
+      <li><strong>One call per question.</strong> The measured penalty in TypeSafe's own cookbook is 12.2 times the cost and 10.0 times the wall clock.</li>
+      <li><strong>Sending the whole document when a filtered extract would do.</strong> This costs money and accuracy at the same time.</li>
+      <li><strong>Treating published rate limits as contractual.</strong> TypeSafe warns they are adjusting dynamically and can change without notice.</li>
+      <li><strong>Using an alias after tuning thresholds.</strong> Pin the version, or re-validate when it moves.</li>
+      <li><strong>Not logging the returned model ID.</strong> Without it you cannot tell which version produced a historical answer.</li>
+      <li><strong>Planning a fine-tune.</strong> There is not one. Budget the effort into question design and evaluation instead.</li>
+      <li><strong>Assuming non-English parity.</strong> Test per language and set thresholds per language.</li>
+    </ul>
+
+    <h2>Key Takeaways for 2026</h2>
+    <ul>
+      <li>Jev 1.13 costs 42 USD per billion input tokens, or 0.042 USD per million, with output tokens free.</li>
+      <li>Because only input is billed, extra questions are nearly free and re-sending the same state is the real expense.</li>
+      <li>Published limits are 250,000 tokens per second and 1,200 requests per minute, with 429 and 529 both handled by SDK retries with backoff.</li>
+      <li>TypeSafe warns those limits are adjusting dynamically and may change without notice; higher limits exist on custom and enterprise plans.</li>
+      <li>Use <code>jev-latest</code> for convenience or pin <code>jev-1.13.0</code> if you have tuned thresholds, and log the model ID the response returns.</li>
+      <li>There is no fine-tuning. Customisation happens through state, instructions, criteria and decomposition.</li>
+      <li>English is where accuracy is currently best; test other languages on your own content and route on confidence.</li>
+      <li>Jev is not trained on customer requests or responses, and zero data retention is available to enterprise customers.</li>
+    </ul>
+    <p>Distk instruments token usage per workflow before a rollout, so the bill is a measured number rather than an estimate, and so the batching wins are captured at design time rather than discovered later.</p>
+
+    <h2>Sources</h2>
+    <ul class="srcs">
+      <li><a href="https://docs.typesafe.ai/models" rel="noopener" target="_blank">TypeSafe AI docs: Models</a></li>
+      <li><a href="https://docs.typesafe.ai/api" rel="noopener" target="_blank">API reference: errors and rate limits</a></li>
+      <li><a href="https://docs.typesafe.ai/cookbooks/parallel_questions" rel="noopener" target="_blank">Parallel questions cookbook</a></li>
+      <li><a href="https://docs.typesafe.ai/sdk/python/usage" rel="noopener" target="_blank">Python SDK usage: retries and logging</a></li>
+      <li><a href="https://docs.typesafe.ai/legal" rel="noopener" target="_blank">Legal</a></li>
+      <li><a href="https://docs.typesafe.ai/introduction/machine-learning-primer" rel="noopener" target="_blank">AI primer: RLCD</a></li>
+      <li><a href="https://docs.typesafe.ai/concepts/state" rel="noopener" target="_blank">State</a></li>
+    </ul>
+
+  </div>
+</main>
+
+<section class="faq">
+  <div class="container">
+    <div class="section-tag">Key Questions</div>
+    <h2 class="section-title">TypeSafe Pricing and Limits in 2026: FAQs</h2>
+    <div class="faq__grid">
+      <div class="faq__item">
+        <h3>How much does TypeSafe Jev cost?</h3>
+        <p>42 US dollars per Btok, which is 0.042 US dollars per Mtok, where a Btok is a billion tokens and an Mtok is a million. Charging is per input token and output tokens are free.</p>
+      </div>
+      <div class="faq__item">
+        <h3>What are the TypeSafe rate limits?</h3>
+        <p>250,000 tokens per second and 1,200 requests per minute for Jev 1.13. A request over either limit returns 429. TypeSafe warns that these limits are adjusting dynamically and can change without notice, with higher limits on custom and enterprise plans.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Can I fine-tune Jev on my data?</h3>
+        <p>No. Jev is not fine-tuned or LoRA-adapted with customer data and the same weights serve every account. You customise through the state, through instructions and criteria, and by decomposing judgments into atomic questions combined in code.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Should I use jev-latest or pin a version?</h3>
+        <p>Use jev-latest for convenience. Pin jev-1.13.0 if you have tuned confidence thresholds against it, because an alias moves when a new release ships and the answers behind it can change without a change on your side.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Is TypeSafe trained on my requests?</h3>
+        <p>TypeSafe states that Jev is not trained on customer requests or responses. Its legal page covers the Data Processing Agreement and Privacy Policy, and zero data retention is offered to enterprise customers.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Does Jev work as well in other languages?</h3>
+        <p>English is the primary training language and where accuracy is currently best. Other languages including CJK scripts are handled but not equally well, and TypeSafe advises testing on your own content and watching confidence closely when routing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED START -->
+<section class="related" style="padding:3.5rem 0;border-top:1px solid #e8e8e8;background:#fafafa">
+  <div style="max-width:720px;margin:0 auto;padding:0 clamp(1.2rem,4vw,3rem)">
+    <div style="font-family:'Space Mono',monospace;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:#e63312;margin-bottom:1.3rem">Related reading</div>
+    <ul style="list-style:none;margin:0;padding:0;display:grid;gap:0.9rem">
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="typesafe-cookbooks-guide-llm-guardrails-rag-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">All 18 TypeSafe Cookbooks in 2026: Guardrails, RAG, Extraction and Ranking</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="ai-model-pricing-comparison-september-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">AI Model Pricing and Fit Comparison, September 2026: GPT-6 Astra, Claude Fable 5.1, Gemini and DeepSeek</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="glm-coding-plan-pricing-guide-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">GLM Coding Plan Pricing in 2026: Lite, Pro and Max Explained</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="marketing-agency-pricing-models-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">Marketing Agency Pricing Models 2026 Explained: Retainer, Project, Performance</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="system-one-vs-llm-structured-decisions-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">System One vs an LLM in 2026: Why Not Just Ask GPT for JSON?</a></li>
+    </ul>
+  </div>
+</section>
+<!-- RELATED END -->
+<section class="cta">
+  <div class="cta__inner">
+    <h2>Measure the token bill before you commit to the architecture</h2>
+    <p>Distk instruments usage per workflow during a pilot, captures the batching wins at design time, and gives you a cost per completed decision rather than a per-token rate.</p>
+    <a href="https://distk.in/#contact" class="cta__btn">Start the conversation →</a>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="container">
+    © 2026 Distk · <a href="https://distk.in">distk.in</a> · <a href="mailto:connect@distk.in">connect@distk.in</a>
+  </div>
+</footer>
+</body>
+</html>

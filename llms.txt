@@ -54,7 +54,23 @@ Distk is a business consulting company based in Bengaluru, India. We help SMEs a
 - [DeepSeek V4.1 Flash for Marketing Teams in 2026](https://distk.in/blog/deepseek-v4-1-flash-for-marketing-teams-2026.html): Workflow fit, reasoning effort, and DPDP and GDPR data-handling considerations.
 - [DeepSeek V4.1 Flash Open Weights and Self-Hosting in 2026](https://distk.in/blog/deepseek-v4-1-flash-open-weights-self-host-guide-2026.html): MIT licence, hardware reality, prompt encoding and when self-hosting beats the API.
 
+## TypeSafe AI and Jev Guides (September 2026)
+
+Built entirely from TypeSafe's official documentation at docs.typesafe.ai. Each guide opens with a plain-language explanation before going deep.
+
+- [What Is TypeSafe AI and Jev in 2026?](https://distk.in/blog/what-is-typesafe-ai-jev-2026.html): Hub guide to System One models, the Choice, Score and Noul primitives, pricing, limits, the published failure modes, and where Jev fits in an AI stack.
+- [System One vs an LLM in 2026](https://distk.in/blog/system-one-vs-llm-structured-decisions-2026.html): Why JSON mode is not the same as a calibrated decision model, what RLCD changes, and when a generative model is still the right tool.
+- [TypeSafe AI Quick Start for 2026](https://distk.in/blog/typesafe-ai-quickstart-tutorial-2026.html): First Jev call in cURL, Python and JavaScript, reading the response, configuration, error handling and the official coding agent skill.
+- [TypeSafe Primitives in 2026](https://distk.in/blog/typesafe-primitives-choice-score-noul-2026.html): Choice, Score and Noul in depth, including criteria structure, 255 option limit, 0-indexed score levels and why a Noul is not a scale.
+- [TypeSafe Confidence and Calibration in 2026](https://distk.in/blog/typesafe-confidence-calibration-guide-2026.html): How confidence is derived, what calibration promises across groups of predictions, and how to set thresholds from labelled data.
+- [TypeSafe State Design in 2026](https://distk.in/blog/typesafe-state-input-design-guide-2026.html): State shapes, the 64k and 32k context budgets, context rot, filtering strategies and pre-processing non-text input.
+- [TypeSafe Patterns in 2026](https://distk.in/blog/typesafe-patterns-fan-out-intent-routing-2026.html): Speculative fan-out, confidence-gated routing, composite scoring and intent routing, with the official code for each.
+- [TypeSafe AI Pricing and Limits in 2026](https://distk.in/blog/typesafe-ai-pricing-limits-models-2026.html): 42 USD per billion input tokens with free output, rate limits, aliases versus pinned versions, no fine-tuning, and data handling.
+- [All 18 TypeSafe Cookbooks in 2026](https://distk.in/blog/typesafe-cookbooks-guide-llm-guardrails-rag-2026.html): Every official recipe grouped by job, from LLM guardrails and reranking to extraction and hierarchical classification.
+- [TypeSafe AI for Marketing Teams in 2026](https://distk.in/blog/typesafe-ai-for-marketing-teams-2026.html): Lead scoring, intent routing, review triage and claims pre-checks mapped to primitives and human checkpoints, with the honest limits.
+
 ## Key Terms
+
 
 - **GEO (Generative Engine Optimization)**: Making your brand visible in AI chatbot responses like ChatGPT and Perplexity.
 - **AEO (Answer Engine Optimization)**: Getting your content into Google's featured snippets and answer boxes.
