@@ -2550,4 +2550,12 @@
         <priority>1.0</priority>
     </url>
 
+    <!-- Added September 2026 -->
+    <url>
+        <loc>https://distk.in/blog/claude-opus-5-5-marketing-guide-2026.html</loc>
+        <lastmod>2026-09-24</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
 </urlset>
