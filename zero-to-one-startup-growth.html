@@ -164,7 +164,7 @@ img{max-width:100%;display:block}
 .pillar{border:1px solid rgba(255,255,255,0.14);padding:1.8rem;position:relative;transition:border-color .3s,transform .3s;background:var(--ink-2)}
 .pillar:hover{border-color:var(--accent-hot);transform:translateY(-4px)}
 .pillar__num{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.12em;color:var(--accent-hot);margin-bottom:1.1rem;display:block}
-.pillar h3{font-size:1.35rem;font-weight:700;letter-spacing:-0.02em;margin-bottom:0.35rem}
+.pillar h3{font-size:1.35rem;font-weight:700;letter-spacing:-0.02em;margin-bottom:0.35rem;color:var(--paper)}
 .pillar__full{font-family:var(--mono);font-size:0.64rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.45);display:block;margin-bottom:0.9rem}
 .pillar p{font-size:0.92rem;color:rgba(255,255,255,0.68);line-height:1.65;margin-bottom:1rem}
 .pillar ul{list-style:none}
@@ -321,6 +321,20 @@ img{max-width:100%;display:block}
   .sticky-cta{display:block;padding-bottom:calc(0.4rem + env(safe-area-inset-bottom))}
   .nav__logo span small{display:none}
 }
+
+/* ===== light card tiles (for .section blocks on the paper background) ===== */
+.cards__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.8rem}
+.card{border:1px solid var(--light);background:#fff;padding:1.8rem;position:relative;transition:border-color .3s,transform .3s,box-shadow .3s}
+.card:hover{border-color:var(--accent);transform:translateY(-4px);box-shadow:0 12px 30px rgba(10,10,10,0.06)}
+.card__num{font-family:var(--mono);font-size:0.7rem;font-weight:700;letter-spacing:0.12em;color:var(--accent);display:block;margin-bottom:0.9rem}
+.card h3{font-size:1.28rem;font-weight:700;letter-spacing:-0.02em;margin-bottom:0.5rem;color:var(--ink)}
+.card h3 a{color:var(--ink);text-decoration:none;border-bottom:2px solid var(--accent)}
+.card h3 a:hover{color:var(--accent)}
+.card p{font-size:0.92rem;color:#4a4a4a;line-height:1.7;margin-bottom:0}
+.card p + p{margin-top:0.9rem}
+.card__quote{font-style:italic;color:#333}
+.card__meta{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid)}
+@media (max-width:920px){.cards__grid{grid-template-columns:1fr;gap:1.1rem}}
 </style>
 </head>
 <body>
@@ -415,34 +429,34 @@ img{max-width:100%;display:block}
   <div class="container">
     <div class="section-tag reveal">The Rules We Work By</div>
     <h2 class="section-title reveal">Five commitments, including the two that cost us money.</h2>
-    <div class="pillars__grid" style="margin-top:2.5rem">
-      <div class="pillar reveal">
-        <span class="pillar__num">01</span>
+    <div class="cards__grid" style="margin-top:2.5rem">
+      <div class="card reveal">
+        <span class="card__num">01</span>
         <h3>We will tell you to spend less</h3>
         <p>If automation or paid spend is not going to earn its keep at your stage, we say so and we do not build it yet. An agency that sells you a chatbot in month one is optimising its own invoice, not your runway.</p>
       </div>
-      <div class="pillar reveal">
-        <span class="pillar__num">02</span>
+      <div class="card reveal">
+        <span class="card__num">02</span>
         <h3>Missing inputs do not stop the work</h3>
         <p>No brand assets yet? We build a working stand-in and get you live, then swap in the real thing when it exists. What is interim gets labelled as interim, so nothing provisional goes out as final.</p>
       </div>
-      <div class="pillar reveal">
-        <span class="pillar__num">03</span>
+      <div class="card reveal">
+        <span class="card__num">03</span>
         <h3>You hear about a slip before the date</h3>
         <p>If Wednesday is going to be missed you will know on Monday, with the reason and the fix, including the times the dependency is on your side. We would rather have the awkward conversation early than the trust conversation later.</p>
       </div>
-      <div class="pillar reveal">
-        <span class="pillar__num">04</span>
+      <div class="card reveal">
+        <span class="card__num">04</span>
         <h3>Our tooling is how we work, not a lock-in</h3>
         <p>We use our own internal tools to move faster. Your accounts, pages, content, ad accounts and creative are yours, in your name, and they keep working the day you take them in-house or hand them to someone else.</p>
       </div>
-      <div class="pillar reveal">
-        <span class="pillar__num">05</span>
+      <div class="card reveal">
+        <span class="card__num">05</span>
         <h3>A founder talks to a founder</h3>
         <p>At this stage the person who understands the customer is usually the person who built the thing. Discovery is a real conversation about who has paid you and why, not a form that produces a generic plan.</p>
       </div>
-      <div class="pillar reveal">
-        <span class="pillar__num">06</span>
+      <div class="card reveal">
+        <span class="card__num">06</span>
         <h3>We will tell you when it is too early</h3>
         <p>If the offer is still changing every week, distribution will not save it. We will say that, tell you what we think needs settling first, and be here when it has.</p>
       </div>
@@ -455,16 +469,16 @@ img{max-width:100%;display:block}
   <div class="container">
     <div class="section-tag reveal">Scope, Plainly</div>
     <h2 class="section-title reveal">What sits with us, and what stays with you.</h2>
-    <div class="pillars__grid" style="margin-top:2.5rem">
-      <div class="pillar reveal">
+    <div class="cards__grid" style="margin-top:2.5rem">
+      <div class="card reveal">
         <h3>We handle</h3>
         <p>Positioning and messaging you can actually say out loud. Site or landing pages. Social presence and the content that makes it look alive. SEO, AEO and GEO so you are findable in search and citable in AI answers. Ad account setup, tracking and deliberate paid tests. Automation and internal process when the stage justifies it.</p>
       </div>
-      <div class="pillar reveal">
+      <div class="card reveal">
         <h3>You keep</h3>
         <p>The product decisions. Pricing. Who you sell to. Final say on anything customer-facing. Ownership of every account and asset. And the sales conversations themselves in the early weeks, because those conversations are where your positioning actually gets tested.</p>
       </div>
-      <div class="pillar reveal">
+      <div class="card reveal">
         <h3>We will say no to</h3>
         <p>Paid spend pointed at a destination that is not ready. Automation with no volume behind it. Vanity rebrands before there is a market position to protect. Claims in your copy that we cannot support. Six channels at once when one would teach you more.</p>
       </div>
@@ -478,18 +492,18 @@ img{max-width:100%;display:block}
     <div class="section-tag reveal">In Their Words</div>
     <h2 class="section-title reveal">Founders who started at this stage.</h2>
     <p class="section-sub reveal">Published with permission on our homepage. We will also put you in touch with founders we work with, so you can ask them directly rather than take our word for it.</p>
-    <div class="pillars__grid" style="margin-top:2.5rem">
-      <div class="pillar reveal">
-        <p style="font-style:italic">"We worked with DistK during our early marketing and content setup, and the experience has been genuinely impactful for Saral AI. What stood out was their deep understanding of Google's latest updates, evolving internet policies, and compliance considerations across global markets. They don't follow generic playbooks, they adapt strategies and content to what's working today. If you're an early-stage startup looking to build sustainable inbound growth, I'd definitely recommend giving DistK a try."</p>
-        <p style="font-family:var(--mono);font-size:0.72rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid);margin-top:1rem">Renish Narula &bull; Founder, Saral Hire AI</p>
+    <div class="cards__grid" style="margin-top:2.5rem">
+      <div class="card reveal">
+        <p class="card__quote">"We worked with DistK during our early marketing and content setup, and the experience has been genuinely impactful for Saral AI. What stood out was their deep understanding of Google's latest updates, evolving internet policies, and compliance considerations across global markets. They don't follow generic playbooks, they adapt strategies and content to what's working today. If you're an early-stage startup looking to build sustainable inbound growth, I'd definitely recommend giving DistK a try."</p>
+        <p class="card__meta">Renish Narula &bull; Founder, Saral Hire AI</p>
       </div>
-      <div class="pillar reveal">
-        <p style="font-style:italic">"Distk helped us with our complete digital transformation, content creation, digital marketing, lead generation, increasing footfall, automation, and improving internal processes. They made sure we were ready both process-wise and tech-wise before implementing solutions. Highly recommend."</p>
-        <p style="font-family:var(--mono);font-size:0.72rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid);margin-top:1rem">Giftson J. &bull; Marketing &amp; Creative Manager, Paradise Stile Studio</p>
+      <div class="card reveal">
+        <p class="card__quote">"Distk helped us with our complete digital transformation, content creation, digital marketing, lead generation, increasing footfall, automation, and improving internal processes. They made sure we were ready both process-wise and tech-wise before implementing solutions. Highly recommend."</p>
+        <p class="card__meta">Giftson J. &bull; Marketing &amp; Creative Manager, Paradise Stile Studio</p>
       </div>
-      <div class="pillar reveal">
-        <p style="font-style:italic">"Distk helped us establish our digital presence from scratch. They built our website, set up marketing automation, and created a proper lead generation system. I love their end to end approach."</p>
-        <p style="font-family:var(--mono);font-size:0.72rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid);margin-top:1rem">Nishant Khokhawat &bull; Founder, Khokhawat Solar Energy</p>
+      <div class="card reveal">
+        <p class="card__quote">"Distk helped us establish our digital presence from scratch. They built our website, set up marketing automation, and created a proper lead generation system. I love their end to end approach."</p>
+        <p class="card__meta">Nishant Khokhawat &bull; Founder, Khokhawat Solar Energy</p>
       </div>
     </div>
   </div>
@@ -501,17 +515,17 @@ img{max-width:100%;display:block}
     <div class="section-tag reveal">Read Before You Hire Anyone</div>
     <h2 class="section-title reveal">Our reasoning, written out in full.</h2>
     <p class="section-sub reveal">These are the three arguments behind the sequence above. Read them before you sign with us or with anyone else, and hold whoever you pick to them.</p>
-    <div class="pillars__grid" style="margin-top:2.5rem">
-      <div class="pillar reveal">
-        <h3><a href="blog/how-to-choose-marketing-agency-0-1-startup-2026.html" style="color:var(--ink);text-decoration:none;border-bottom:2px solid var(--accent)">How to choose a marketing agency as a 0 to 1 startup</a></h3>
+    <div class="cards__grid" style="margin-top:2.5rem">
+      <div class="card reveal">
+        <h3><a href="blog/how-to-choose-marketing-agency-0-1-startup-2026.html">How to choose a marketing agency as a 0 to 1 startup</a></h3>
         <p>The questions that separate a partner from a vendor, the four answers that should end a conversation, and how to actually use a reference call instead of asking whether they were good.</p>
       </div>
-      <div class="pillar reveal">
-        <h3><a href="blog/when-to-automate-marketing-startup-2026.html" style="color:var(--ink);text-decoration:none;border-bottom:2px solid var(--accent)">When a startup should automate marketing, and when not to</a></h3>
+      <div class="card reveal">
+        <h3><a href="blog/when-to-automate-marketing-startup-2026.html">When a startup should automate marketing, and when not to</a></h3>
         <p>Automation removes existing work. Before paying customers there usually is not enough of it, which turns a force multiplier into a subscription. The test we use to decide.</p>
       </div>
-      <div class="pillar reveal">
-        <h3><a href="blog/ads-before-social-proof-startup-mistake-2026.html" style="color:var(--ink);text-decoration:none;border-bottom:2px solid var(--accent)">Why running ads before your presence is ready wastes the budget</a></h3>
+      <div class="card reveal">
+        <h3><a href="blog/ads-before-social-proof-startup-mistake-2026.html">Why running ads before your presence is ready wastes the budget</a></h3>
         <p>An ad buys a visit. The destination decides what that visit is worth. What has to exist before spend starts, and the readiness checklist we run.</p>
       </div>
     </div>
