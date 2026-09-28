@@ -3,6 +3,9 @@
 update_sitemap.py  -  keep sitemap.xml honest, in place.
 
 For every <url> block (comments and ordering preserved):
+Pages on disk that are missing from the sitemap are appended automatically,
+including root-level service and landing pages, not just blog posts.
+
   * lastmod  = date of the latest git commit that touched the file, ignoring
                housekeeping commits (internal-link rebuilds, sitemap-only edits,
                and any commit touching more than 20 files, e.g. site-wide nav,
@@ -37,8 +40,9 @@ def files_touched(h):
         _touch_cache[h] = len(out.splitlines())
     return _touch_cache[h]
 LEGAL = {"privacy.html", "terms.html", "refund.html", "shipping.html", "success.html", "visibility-success.html"}
-SERVICE_HINT = re.compile(r"marketing-agency|geo-services|distk-visibility|brand-kickstart|hiring-training-ops|remote-marketing|global-marketing|100-brands")
+SERVICE_HINT = re.compile(r"marketing-agency|geo-services|distk-visibility|brand-kickstart|hiring-training-ops|remote-marketing|global-marketing|100-brands|zero-to-one")
 EXCLUDE_BLOG = {"saas-pricing-ai-era-per-seat-dying-2026.html"}  # intentional orphan
+EXCLUDE_ROOT = {"404.html", "success.html", "visibility-success.html"}  # not for the index
 
 
 RELATED_LINE = re.compile(r"RELATED (START|END)|class=\"related\"|Related reading|border-left:2px solid #e63312|list-style:none|^[+-]\s*</?(ul|div|section)>?\s*$|^[+-]\s*$")
@@ -115,12 +119,14 @@ def main():
 
     xml = re.sub(r"<url>.*?</url>", fix, xml, flags=re.S)
 
-    # append blog posts that exist on disk but not in the sitemap
+    # append pages that exist on disk but not in the sitemap (blog posts and root pages)
     added = []
-    for f in sorted(glob.glob(os.path.join(ROOT, "blog", "*.html"))):
+    disk = sorted(glob.glob(os.path.join(ROOT, "blog", "*.html"))) + sorted(glob.glob(os.path.join(ROOT, "*.html")))
+    for f in disk:
         name = os.path.basename(f)
-        rel = f"blog/{name}"
-        if name == "index.html" or name in EXCLUDE_BLOG or rel in seen:
+        in_blog = os.path.dirname(f).endswith("blog")
+        rel = f"blog/{name}" if in_blog else name
+        if name == "index.html" or name in EXCLUDE_BLOG or name in EXCLUDE_ROOT or rel in seen:
             continue
         lm = lastmod_for(rel)
         pr, cf = scheme(rel, lm)
