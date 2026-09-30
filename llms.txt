@@ -45,6 +45,10 @@ Distk is a business consulting company based in Bengaluru, India. We help SMEs a
 
 ## Featured Guides (September 2026)
 
+- [Claude Sonnet 5.5 in 2026](https://distk.in/blog/claude-sonnet-5-5-marketing-guide-2026.html): Anthropic's second Claude 5.5 model at unchanged $2/$10 pricing but up to 30 percent cheaper per task, with near-parity to Opus 5.5 on knowledge work and two migration traps.
+- [GPT-6.1 Sol in 2026](https://distk.in/blog/gpt-6-1-sol-pricing-benchmarks-guide-2026.html): OpenAI's mid-tier upgrade at $2/$10 with $0.10 cached input, matching Astra on coding at a fifth of the cost and beating Opus 5.5 on business workflows.
+- [OpenAI dots in 2026](https://distk.in/blog/openai-dots-always-on-agents-guide-2026.html): OpenAI's always-on agents explained: the read-only constraint on proactive research, auto-review and Custom Rules, plan availability, and the usage-limit split between conversations and delegated work.
+
 - [0 to 1 Startup Growth (service page)](https://distk.in/zero-to-one-startup-growth.html): How Distk works with pre-revenue and early-revenue startups, in sequence: presence, then proof, then paid, then automation only once revenue justifies it. Includes what we say no to and what stays client-owned.
 - [How to Choose a Marketing Agency as a 0 to 1 Startup](https://distk.in/blog/how-to-choose-marketing-agency-0-1-startup-2026.html): The questions that reveal judgement, four answers that should end a conversation, reference-call questions, and how to judge the first 90 days.
 - [When Should a Startup Automate Marketing](https://distk.in/blog/when-to-automate-marketing-startup-2026.html): The four-part readiness test (volume, repetition, stability, revenue) and the real cost of automating before there is work to remove.
