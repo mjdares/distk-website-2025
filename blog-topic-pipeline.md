@@ -1,6 +1,6 @@
 # Distk.in Blog Topic Pipeline
 
-> **Status (1 Oct 2026):** Clusters A (TRAI, #357-364) and C (ChatGPT Ads, #365-370) are PUBLISHED. Cluster B (WhatsApp) in progress. Clusters D-H still open. Correction applied to the TRAI complaint-trigger summary after the writer checked it against the press release.
+> **Status (1 Oct 2026):** PUBLISHED: A (TRAI, #357-364), C (ChatGPT Ads, #365-370), D (agentic commerce, #371-375), B (WhatsApp, #376-383). IN PROGRESS: E, F, H (Google). Corrections: WhatsApp Cloud API changelog lives at developers.facebook.com/docs/whatsapp/cloud-api/changelog (the row #2 URL is dead); row #12 allowlist cap is disputed between sources (15 vs 500) and moot after Open Beta, so it was omitted. Correction applied to the TRAI complaint-trigger summary after the writer checked it against the press release.
 **Research date:** 30 September 2026
 **Sources:** Official primary sources only (vendor docs, developer changelogs, product help centres, Indian regulator PDFs). Every fact below was fetched and read during research; no secondary or SEO-blog sources were used.
 **Dedupe baseline:** all 355 existing slugs in `tools/_existing_slugs.txt` were read before proposing anything.
