@@ -122,12 +122,15 @@ def main():
     # append pages that exist on disk but not in the sitemap (blog posts and root pages)
     added = []
     disk = sorted(glob.glob(os.path.join(ROOT, "blog", "*.html"))) + sorted(glob.glob(os.path.join(ROOT, "*.html")))
+    published = open(os.path.join(ROOT, "blog", "index.html"), encoding="utf-8").read()
     for f in disk:
         name = os.path.basename(f)
         in_blog = os.path.dirname(f).endswith("blog")
         rel = f"blog/{name}" if in_blog else name
         if name == "index.html" or name in EXCLUDE_BLOG or name in EXCLUDE_ROOT or rel in seen:
             continue
+        if in_blog and f'href="{name}"' not in published:
+            continue  # a draft on disk with no index card is not published yet
         lm = lastmod_for(rel)
         pr, cf = scheme(rel, lm)
         added.append(f"    <url>\n        <loc>https://distk.in/{rel}</loc>\n        <lastmod>{lm}</lastmod>\n        <changefreq>{cf}</changefreq>\n        <priority>{pr}</priority>\n    </url>\n")

@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xdifcafwxl");
+  </script>
+
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ChatGPT Ads Targeting 2026: Geography, Platform, Audiences and Context Hints | Distk</title>
+<meta name="description" content="How targeting works in ChatGPT Ads in 2026: campaign-level geography, platform and audiences versus ad-group context hints, the six platform values and why web is not desktop, custom audience size thresholds, the partial-update trap that erases exclusions, and the EEA restriction.">
+<meta name="keywords" content="chatgpt ads targeting, openai ads context hints, chatgpt ads custom audiences, chatgpt ads platform targeting, openai ads geo targeting, chatgpt ads audience size threshold">
+<meta name="author" content="Distk"><meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://distk.in/blog/chatgpt-ads-targeting-guide-2026.html">
+<meta property="og:type" content="article"><meta property="og:url" content="https://distk.in/blog/chatgpt-ads-targeting-guide-2026.html">
+<meta property="og:title" content="ChatGPT Ads Targeting in 2026: Geography, Platform, Audiences and Context Hints">
+<meta property="og:description" content="Context hints are a targeting primitive that does not exist on Meta or Google. Plus the partial-update behaviour that can silently erase your exclusion list.">
+<meta property="og:image" content="https://distk.in/assets/images/og-image.jpg"><meta property="og:site_name" content="Distk">
+<meta property="article:published_time" content="2026-10-01T00:00:00+05:30">
+<meta property="article:modified_time" content="2026-10-01T00:00:00+05:30">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="ChatGPT Ads Targeting in 2026: Geography, Platform, Audiences and Context Hints"><meta name="twitter:description" content="Context hints are a targeting primitive that does not exist on Meta or Google. Plus the partial-update behaviour that can silently erase your exclusion list.">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "ChatGPT Ads Targeting in 2026: Geography, Platform, Audiences and Context Hints", "description": "A media buyer's guide to ChatGPT Ads targeting in 2026: which primitives sit on the campaign and which on the ad group, geographic targeting by country code or location ID, the six platform values including granular web options, custom audience eligibility thresholds for inclusion, exclusion and bid multipliers, the read-modify-write rule for targeting updates, and how to write context hints.", "author": {"@type": "Organization", "name": "Distk", "url": "https://distk.in"}, "publisher": {"@type": "Organization", "name": "Distk", "logo": {"@type": "ImageObject", "url": "https://distk.in/assets/images/Logo.png"}}, "datePublished": "2026-10-01", "dateModified": "2026-10-01", "inLanguage": "en", "about": [{"@type": "Thing", "name": "ChatGPT Ads"}, {"@type": "Thing", "name": "ad targeting"}, {"@type": "Thing", "name": "custom audiences"}, {"@type": "Thing", "name": "context hints"}, {"@type": "Thing", "name": "OpenAI"}, {"@type": "Thing", "name": "paid media"}], "mentions": [{"@type": "Thing", "name": "ChatGPT Ads"}, {"@type": "Thing", "name": "ad targeting"}, {"@type": "Thing", "name": "custom audiences"}, {"@type": "Thing", "name": "context hints"}, {"@type": "Thing", "name": "OpenAI"}, {"@type": "Thing", "name": "paid media"}], "mainEntityOfPage": {"@type": "WebPage", "@id": "https://distk.in/blog/chatgpt-ads-targeting-guide-2026.html"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is ChatGPT Ads targeting configured on the campaign or the ad group in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "Geographic targeting, platform targeting and custom audience inclusion and exclusion are all campaign-level settings in ChatGPT Ads. Context hints and custom audience bid multipliers are configured on the ad group. Because targeting lives on the campaign, each targeting variation requires a separate campaign with its own budget rather than multiple differently targeted children under one budget."}}, {"@type": "Question", "name": "Does the web platform value in ChatGPT Ads mean desktop traffic only?", "acceptedAnswer": {"@type": "Answer", "text": "No. OpenAI's documentation states that the web value includes all web platforms, including mobile browsers, and gives the example that an iPhone user visiting ChatGPT in a browser belongs to web inventory rather than the iOS app group. A changelog entry dated 10 September 2026 added granular values desktop_web, ios_web and android_web for advertisers who want to separate those surfaces."}}, {"@type": "Question", "name": "How large must a custom audience be to use in ChatGPT Ads in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "Eligibility depends on the intended use and is separate from the audience being ready. Ready small or empty audiences can be used for exclusion with no minimum matched size. Inclusion and bid multipliers require the matched-user minimum, and OpenAI gives 25,000 matched users as the public planning threshold while noting that privacy safeguards can affect the exact boundary and that uploading 25,000 identifiers does not guarantee enough matched users."}}, {"@type": "Question", "name": "What is the difference between audience inclusion and a bid multiplier in ChatGPT Ads?", "acceptedAnswer": {"@type": "Answer", "text": "Including an audience restricts campaign eligibility to matching users. An audience bid multiplier adjusts the maximum bid for matching users while leaving non-members eligible under the campaign's other targeting. OpenAI states that bid multipliers do not change which users are eligible to see a campaign, and multipliers are only compatible with the fixed_bid strategy."}}, {"@type": "Question", "name": "Why can a targeting update remove existing ChatGPT Ads exclusions?", "acceptedAnswer": {"@type": "Answer", "text": "OpenAI documents that geographic and audience updates can replace existing targeting criteria rather than merging with them. The recommended approach is to retrieve the campaign first, build the complete intended geographic and audience configuration including anything you want to keep, send that, then retrieve the campaign again to confirm the saved settings. Platform-only updates are handled separately from geographic and audience changes."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://distk.in/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://distk.in/blog/"}, {"@type": "ListItem", "position": 3, "name": "ChatGPT Ads Targeting in 2026: Geography, Platform, Audiences and Context Hints", "item": "https://distk.in/blog/chatgpt-ads-targeting-guide-2026.html"}]}</script>
+<link rel="icon" type="image/png" href="../assets/images/favicon.png"><link rel="apple-touch-icon" href="../assets/images/Logo.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BWDTQ1JPL2"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-BWDTQ1JPL2');</script>
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1077520544213003');fbq('track','PageView');</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1077520544213003&ev=PageView&noscript=1"></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#0a0a0a;--paper:#fafafa;--mid:#6b6b6b;--light:#e8e8e8;--accent:#e63312;--accent-soft:rgba(230,51,18,0.08);--mono:'Space Mono',monospace;--sans:'Outfit',sans-serif;--container:1120px;--prose:720px;--gutter:clamp(1.2rem,4vw,3rem)}
+html{font-size:16px;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.container{max-width:var(--container);margin:0 auto;padding:0 var(--gutter)}
+.prose{max-width:var(--prose);margin:0 auto;padding:0 var(--gutter)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--light)}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;max-width:var(--container);margin:0 auto;padding:0.9rem var(--gutter)}
+.nav__logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;color:var(--ink)}
+.nav__logo img{height:32px;width:auto}
+.nav__logo span{font-family:var(--mono);font-weight:700;font-size:1.05rem;letter-spacing:-0.02em}
+.nav__logo small{display:block;font-size:0.55rem;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);line-height:1}
+.nav__back{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid);text-decoration:none;display:flex;align-items:center;gap:0.4rem;transition:color 0.2s}
+.nav__back:hover{color:var(--accent)}
+.nav__cta{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.6rem 1.4rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.nav__cta:hover{background:var(--accent)}
+.hero{padding:7.5rem 0 3.5rem;position:relative;overflow:hidden;border-bottom:1px solid var(--light)}
+.hero::before{content:'TARGET';position:absolute;right:-1%;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:clamp(6rem,26vw,22rem);font-weight:700;color:rgba(0,0,0,0.03);line-height:1;pointer-events:none;user-select:none;letter-spacing:-0.05em}
+.hero__tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1.5rem}
+.hero__tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.hero h1{font-family:var(--sans);font-weight:700;font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;letter-spacing:-0.03em;max-width:20ch;margin-bottom:1.5rem}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero__sub{font-size:1.1rem;color:var(--mid);max-width:56ch;line-height:1.7;margin-bottom:2rem}
+.hero__meta{display:flex;flex-wrap:wrap;gap:1.5rem;font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid)}
+.tldr{background:var(--accent-soft);border-left:3px solid var(--accent);padding:1.8rem 2rem;margin:3rem 0;position:relative}
+.tldr::before{content:'TL;DR';position:absolute;top:-0.6rem;left:2rem;font-family:var(--mono);font-size:0.62rem;font-weight:700;letter-spacing:0.12em;background:var(--accent);color:#fff;padding:0.2rem 0.6rem}
+.tldr p{font-size:0.95rem;color:var(--ink);line-height:1.7}
+.article{padding:4rem 0 5rem}
+.article h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.35rem,2.8vw,1.8rem);letter-spacing:-0.02em;line-height:1.2;margin:3rem 0 1rem;padding-top:1rem;border-top:1px solid var(--light)}
+.article h2:first-child{border-top:none;margin-top:0}
+.article h3{font-family:var(--mono);font-weight:700;font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin:2rem 0 0.6rem}
+.article p{font-size:1rem;color:#2a2a2a;line-height:1.8;margin-bottom:1.25rem}
+.article ul,.article ol{padding-left:1.4rem;margin-bottom:1.25rem}
+.article li{font-size:1rem;color:#2a2a2a;line-height:1.75;margin-bottom:0.4rem}
+.article strong{font-weight:600;color:var(--ink)}
+.article a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(230,51,18,0.3)}
+.article a:hover{border-bottom-color:var(--accent)}
+.article blockquote{border-left:3px solid var(--accent);padding:0.75rem 1.5rem;margin:2rem 0;background:var(--accent-soft)}
+.article blockquote p{color:var(--ink);font-size:1rem;margin:0}
+.table-wrap{overflow-x:auto;margin:2rem 0}
+.data-table{width:100%;border-collapse:collapse;margin:0;font-size:0.88rem}
+.data-table th{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:0.7rem 1rem;text-align:left;white-space:nowrap}
+.data-table td{padding:0.75rem 1rem;border-bottom:1px solid var(--light);vertical-align:top}
+.data-table tr:last-child td{border-bottom:none}
+.data-table tr:nth-child(even) td{background:#f5f5f5}
+.callout{border:1.5px solid var(--light);padding:1.5rem 1.8rem;margin:2rem 0}
+.callout__label{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem}
+.callout p{font-size:0.92rem;color:var(--mid);line-height:1.7;margin:0}
+.faq{padding:4rem 0;background:var(--ink);color:var(--paper)}
+.faq .section-tag{color:var(--accent)}
+.faq .section-tag::before{background:var(--accent)}
+.faq__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2.5rem;margin-top:2.5rem}
+.faq__item{border-left:2px solid var(--accent);padding-left:1.5rem}
+.faq__item h3{font-family:var(--sans);font-weight:600;font-size:0.95rem;margin-bottom:0.5rem;color:var(--paper)}
+.faq__item p{font-size:0.85rem;color:rgba(255,255,255,0.88);line-height:1.65}
+.section-tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1rem}
+.section-tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.section-title{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.15;color:var(--paper)}
+.cta{padding:5rem 0;background:var(--accent-soft);border-top:1px solid rgba(230,51,18,0.12)}
+.cta__inner{max-width:680px;margin:0 auto;padding:0 var(--gutter);text-align:center}
+.cta h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.2;margin-bottom:1rem}
+.cta p{font-size:1rem;color:var(--mid);line-height:1.7;margin-bottom:2rem}
+.cta__btn{display:inline-flex;align-items:center;gap:0.6rem;font-family:var(--mono);font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;padding:1rem 2.2rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.cta__btn:hover{background:var(--accent)}
+.foot{padding:2.5rem 0;border-top:1px solid var(--light);text-align:center;font-family:var(--mono);font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid)}
+.foot a{color:var(--mid);text-decoration:none}.foot a:hover{color:var(--accent)}
+@media(max-width:768px){.faq__grid{grid-template-columns:1fr}.nav__back span{display:none}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="https://distk.in" class="nav__logo">
+      <img src="../assets/images/Logo.png" alt="Distk">
+      <div><span>Distk</span><small>Global Growth Partner</small></div>
+    </a>
+    <a href="/blog/" class="nav__back">← <span>All articles</span></a>
+    <a href="https://distk.in/#contact" class="nav__cta">Work with us</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="prose">
+    <div class="hero__tag">Paid Media Guide</div>
+    <h1>ChatGPT Ads <em>Targeting</em> in 2026: Geography, Platform, Audiences and Context Hints</h1>
+    <p class="hero__sub">Targeting here is narrower than Meta's and arranged differently, and the arrangement has consequences for how you structure an account. Here is what each primitive controls, what it cannot do, and the update behaviour that quietly breaks campaigns.</p>
+    <div class="hero__meta">
+      <span>Distk Editorial</span>
+      <span>Oct 2026</span>
+      <span>12 min read</span>
+    </div>
+  </div>
+</section>
+
+<div class="prose">
+  <div class="tldr">
+    <p>ChatGPT Ads offers four targeting primitives in 2026. Geography, platform and custom audiences are campaign-level settings, which means targeting variations require separate campaigns and therefore separate budgets. Context hints sit on the ad group, cap at 2,000 per group, and are descriptions rather than keywords. Geographic targeting accepts ISO country codes or location IDs from the geo lookup endpoint, up to 2,500 per list, though new product-feed campaigns support country level only. Six platform values exist after the 10 September 2026 changelog added desktop_web, ios_web and android_web, and web still includes mobile browsers rather than meaning desktop. Custom audience exclusion works at any ready size while inclusion and bid multipliers require the matched-user minimum, with 25,000 given as the public planning threshold. Exclusions take precedence over inclusions. The most dangerous behaviour is that geographic and audience updates can replace existing criteria, so you must read a campaign and send the complete intended configuration. Custom audiences are not supported for EEA or Swiss campaigns.</p>
+  </div>
+</div>
+
+<main class="article">
+  <div class="prose">
+<style>
+.prose pre{background:#f4f4f4;border-left:3px solid var(--accent);padding:1rem 1.1rem;overflow-x:auto;margin:1.5rem 0;font-size:0.85rem;line-height:1.6}
+.prose pre code{font-family:var(--mono);font-size:0.85rem;color:#1a1a1a;background:none;padding:0;white-space:pre}
+.prose p code,.prose li code,.prose td code{font-family:var(--mono);font-size:0.86em;background:#f0f0f0;padding:0.1rem 0.35rem;border-radius:2px}
+</style>
+
+    <h2>What Targeting Does ChatGPT Ads Offer in 2026?</h2>
+    <p>Four primitives, and they do not all live at the same level. Geographic targeting, platform targeting, and audience inclusion and exclusion are all campaign-level settings. Context hints sit on the ad group. OpenAI states that these settings work together and that matching one does not override the others, so a user has to satisfy every configured dimension to be eligible.</p>
+    <p>The fourth primitive, context hints, has no direct equivalent on Meta or Google. It is how you describe what an ad is about so the platform can judge relevance to a conversation, and understanding what it is not is as important as understanding what it is. The <a href="chatgpt-ads-api-campaign-bidding-guide-2026.html">Ads API guide</a> covers structure and bidding; this one covers who sees the ad.</p>
+
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Primitive</th><th>Level</th><th>Field</th><th>What it does</th></tr></thead>
+      <tbody>
+        <tr><td>Geographic</td><td>Campaign</td><td><code>targeting.locations</code>, <code>targeting.excluded_locations</code></td><td>Country codes or location IDs, with exclusions</td></tr>
+        <tr><td>Platform</td><td>Campaign</td><td><code>targeting.platforms.included</code></td><td>Which ChatGPT surfaces can deliver</td></tr>
+        <tr><td>Custom audiences</td><td>Campaign</td><td><code>targeting.custom_audiences</code>, <code>targeting.excluded_custom_audiences</code></td><td>First-party lists for inclusion or exclusion</td></tr>
+        <tr><td>Context hints</td><td>Ad group</td><td><code>context_hints</code></td><td>Describes the offering so the platform can judge relevance</td></tr>
+        <tr><td>Audience bid multipliers</td><td>Ad group</td><td><code>bidding_config.custom_audience_bid_multipliers</code></td><td>Adjusts a fixed bid for members, without restricting eligibility</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h2>Why Does Everything Being Campaign-Level Change Your Account Structure?</h2>
+    <p>Because on Meta or Google you would express several targeting variations as several ad sets under one budget. Here, targeting changes mean new campaigns, and each campaign carries its own budget. A media buyer planning three geographies and two audience splits is planning six campaigns and six budgets, not one campaign with six children.</p>
+    <p>That has a practical consequence for testing. Budget fragmentation is real: six campaigns each learning separately will take longer to produce readable results than one campaign would. In 2026 the sensible approach on a new channel is to start with the smallest number of campaigns that still answers one clear question, then split once something works.</p>
+
+    <h2>How Do You Set Geographic Targeting in 2026?</h2>
+    <p>Two ways: ISO 3166-1 alpha-2 country codes, or location IDs returned by the geo lookup endpoint. Country codes are simple; location IDs let you reach regions and markets. OpenAI warns that a code's ISO validity does not mean it is available for advertising in your account, so use supported advertising locations rather than assuming.</p>
+
+<pre><code>curl -G "https://api.ads.openai.com/v1/geo_lookup/search"   -H "Authorization: Bearer ${OPENAI_ADS_API_KEY}"   --data-urlencode 'q=San Francisco'   --data-urlencode 'limit=5'</code></pre>
+
+    <p>The response returns the location <code>id</code>, display <code>name</code>, <code>canonical_name</code>, <code>country_code</code>, <code>type</code>, <code>parent_id</code> and <code>parent_country</code>, plus <code>region_code</code> where available. The ID identifies the target; the names are there to help you pick the right result. OpenAI also publishes the full catalogue as a downloadable CSV, which is the practical way to build a mapping table once rather than querying repeatedly.</p>
+
+    <h3>Targeting a country while excluding a region</h3>
+<pre><code>curl -X POST "https://api.ads.openai.com/v1/campaigns/cmpn_123"   -H "Authorization: Bearer ${OPENAI_ADS_API_KEY}"   -H "Content-Type: application/json"   -d '{
+    "targeting": {
+      "locations": { "countries": ["US"] },
+      "excluded_locations": { "include": [ { "id": "2000043" } ] }
+    }
+  }'</code></pre>
+
+    <p>You can include up to 2,500 IDs in geographic inclusion and exclusion lists. If you provide no location targeting at all, the campaign can target all available locations, which is rarely what anyone intends on a first test.</p>
+
+    <div class="callout">
+      <div class="callout__label">The product-feed limitation to check before you plan in 2026</div>
+      <p>OpenAI documents that new product-feed campaigns support geographic targeting and exclusions only at country level. If your retail plan assumed city or region targeting on a catalogue campaign, that assumption needs revisiting before the media plan is signed off.</p>
+    </div>
+
+    <h2>Which Platforms Can You Target, and What Does web Actually Mean?</h2>
+    <p>Six values, and one of them is routinely misread. The broad groups are <code>ios_app</code>, <code>android_app</code> and <code>web</code>. A changelog entry dated 10 September 2026 added granular web values: <code>desktop_web</code>, <code>ios_web</code> and <code>android_web</code>. The existing <code>web</code> value continues to include all web platforms, so existing campaigns using it do not need to change.</p>
+
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>API value</th><th>Platform</th><th>Includes</th></tr></thead>
+      <tbody>
+        <tr><td><code>ios_app</code></td><td>iOS app</td><td>The native ChatGPT app on iOS</td></tr>
+        <tr><td><code>android_app</code></td><td>Android app</td><td>The native ChatGPT app on Android</td></tr>
+        <tr><td><code>desktop_web</code></td><td>Desktop web</td><td>ChatGPT in a desktop web browser</td></tr>
+        <tr><td><code>ios_web</code></td><td>iOS web</td><td>ChatGPT in a web browser on iOS</td></tr>
+        <tr><td><code>android_web</code></td><td>Android web</td><td>ChatGPT in a web browser on Android</td></tr>
+        <tr><td><code>web</code></td><td>Web</td><td>All web platforms, including mobile browsers</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The misreading OpenAI explicitly corrects: selecting <code>web</code> does not mean desktop-only traffic. An iPhone user visiting ChatGPT in a browser belongs to web inventory rather than the iOS app group. If you want desktop only, use <code>desktop_web</code> without <code>web</code>. And at creation, omitting platform targeting defaults to all platforms.</p>
+
+    <h2>How Do Custom Audiences Work in ChatGPT Ads in 2026?</h2>
+    <p>You upload first-party identifiers, OpenAI matches them to users, and the resulting audience can be included, excluded or used to adjust a fixed bid. Uploads support email, phone, their supported SHA-256 variants, and GAID identifiers. OpenAI tells you to use the audience-specific normalisation rules before hashing and not to assume another API uses the same phone format, which is a genuine trap for teams reusing a Meta or Google pipeline.</p>
+
+<pre><code>curl -X POST "https://api.ads.openai.com/v1/uploads"   -H "Authorization: Bearer ${OPENAI_ADS_API_KEY}"   -F "file=@/path/to/audience.csv;type=text/csv"   -F "purpose=custom_audience"</code></pre>
+
+<pre><code>curl -X POST "https://api.ads.openai.com/v1/custom_audiences"   -H "Authorization: Bearer ${OPENAI_ADS_API_KEY}"   -H "Content-Type: application/json"   -d '{
+    "name": "High-value customers",
+    "file_id": "oaisdmntci_123",
+    "identifier_resolution": "auto",
+    "filename": "audience.csv",
+    "mimetype": "text/csv",
+    "file_size": 123456
+  }'</code></pre>
+
+    <p>Files are UTF-8 CSV or TXT up to 500 MB, with <code>identifier_resolution: "auto"</code> processing supported columns in a CSV. For a single-type TXT file, provide <code>identifier_type</code> with one identifier per line. Everything is asynchronous, so you wait for <code>status: "ready"</code> before using the audience.</p>
+
+    <h3>The size thresholds that decide what an audience can do</h3>
+    <p>This is the most commercially important table on the page, because it determines whether your CRM list is usable at all. Eligibility is per intended use and is separate from the audience being ready.</p>
+
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Intended use</th><th>Size requirement</th><th>What it means in practice</th></tr></thead>
+      <tbody>
+        <tr><td><code>exclusion</code></td><td>Ready small or empty audiences can be used, with no minimum matched size</td><td>Suppression works at any list size, including an empty list you add to later</td></tr>
+        <tr><td><code>inclusion</code></td><td>Must meet the matched-user minimum</td><td>Targeting your customer list needs scale</td></tr>
+        <tr><td><code>bid_multiplier</code></td><td>Must meet the matched-user minimum</td><td>Bid adjustments need the same scale as inclusion</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>OpenAI gives 25,000 matched users as the public planning threshold for inclusion and bid adjustments, and is careful about what that means: privacy safeguards can affect the exact boundary, and uploading 25,000 identifiers does not guarantee enough matched users. Uploaded row counts do not equal matched-user counts. For most mid-market advertisers in 2026, that makes suppression the realistic first use of custom audiences and inclusion a later one.</p>
+
+    <p>You can check eligibility directly rather than guessing:</p>
+<pre><code>curl -G "https://api.ads.openai.com/v1/custom_audiences"   -H "Authorization: Bearer ${OPENAI_ADS_API_KEY}"   --data-urlencode "intended_use=exclusion"   --data-urlencode "custom_audience_ids[]=caud_123"</code></pre>
+
+    <h3>Maintaining an audience without breaking your campaigns</h3>
+    <p>Add, remove and replace operations update membership while keeping the audience ID, so the campaigns and ad groups referencing it keep working. Each returns an operation rather than the updated audience, and you poll the returned <code>operation_id</code> for completion.</p>
+
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Action</th><th>Endpoint</th><th>Input</th></tr></thead>
+      <tbody>
+        <tr><td>Add members, keeping existing ones</td><td><code>POST /v1/custom_audiences/{id}/add</code></td><td>Inline identifiers or an uploaded file</td></tr>
+        <tr><td>Remove selected members</td><td><code>POST /v1/custom_audiences/{id}/remove</code></td><td>Inline identifiers or an uploaded file</td></tr>
+        <tr><td>Replace the complete list</td><td><code>POST /v1/custom_audiences/{id}/replace</code></td><td>An uploaded file</td></tr>
+        <tr><td>Merge existing audiences</td><td>Merge operation</td><td>2 to 64 existing audience IDs, producing a new union audience</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Inline request bodies must not exceed 16 MiB, and each new add, remove, replace or merge needs a new <code>Idempotency-Key</code>, reusing the original key only when retrying the same submission.</p>
+
+    <h2>What Is the Difference Between Inclusion and a Bid Multiplier?</h2>
+    <p>Inclusion restricts eligibility to matching users. A bid multiplier adjusts a fixed bid for matching users while leaving everyone else eligible under the campaign's targeting. OpenAI states plainly that bid multipliers do not change which users are eligible to see a campaign.</p>
+    <p>For a media buyer that distinction is the difference between a prospecting campaign that quietly stopped reaching new people and one that simply pays more for known customers. Two constraints go with it: multipliers work only with <code>fixed_bid</code>, not with Maximize Results, and small exclusion audiences are not automatically eligible for bid adjustments.</p>
+
+    <h2>How Do Inclusion and Exclusion Interact?</h2>
+    <p>Exclusions win. OpenAI documents that you may configure both inclusion and exclusion targeting on the same campaign, that exclusions take precedence when someone belongs to both, and that the same audience ID cannot appear in both lists in one campaign. If you combine inclusion and exclusion, the remaining eligible audience must still meet the inclusion minimum, which is an easy way to accidentally make a campaign undeliverable.</p>
+
+<pre><code>curl -X POST "https://api.ads.openai.com/v1/campaigns/cmpn_123"   -H "Authorization: Bearer ${OPENAI_ADS_API_KEY}"   -H "Content-Type: application/json"   -d '{
+    "targeting": {
+      "locations": { "countries": ["US"] },
+      "custom_audiences": { "ids": ["caud_123"] },
+      "excluded_custom_audiences": { "ids": ["caud_456"] }
+    }
+  }'</code></pre>
+
+    <h2>Why Must You Read a Campaign Before Changing Its Targeting?</h2>
+    <p>Because a partial update can erase targeting you meant to keep. OpenAI's warning is specific: geographic and audience updates can replace existing targeting criteria, so you should retrieve the campaign first and send the complete intended configuration for those objects. The API does handle a platform-only update separately from geographic and audience changes, but if you send geographic or audience fields you must build the full object.</p>
+    <p>This is the single most dangerous operational behaviour on the platform for an agency. A script that nudges one country onto a campaign can silently drop an exclusion list that was protecting a client from advertising to existing customers. Build read-modify-write into your tooling from the start, and retrieve the campaign afterwards to confirm what saved.</p>
+
+    <h2>What Are Context Hints, and How Should You Write Them?</h2>
+    <p>Context hints are ad-group-level text that describes relevant products, use cases or needs the creative and landing page may not fully cover. OpenAI is explicit about two things they are not: they are not exact-match keywords, and they do not replace explicit geographic, platform or audience targeting. An ad group can hold up to 2,000 hints.</p>
+
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Less useful</th><th>More useful</th></tr></thead>
+      <tbody>
+        <tr><td>Shoes</td><td>Lightweight trail running shoes for rocky terrain</td></tr>
+        <tr><td>Outdoors</td><td>Water-resistant footwear for wet-weather hiking</td></tr>
+        <tr><td>California customers</td><td>Use geographic targeting for California; describe the product's use case in hints</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>OpenAI notes these examples illustrate writing style rather than guaranteeing that a particular conversation will trigger an ad. The mental model that fits the documentation is a short, plain-language product description written for a reader who has never seen your brand, not a keyword list. The third row is the instructive one: geography belongs in targeting, not in a hint.</p>
+
+<pre><code>curl -X POST "https://api.ads.openai.com/v1/ad_groups/adgrp_123"   -H "Authorization: Bearer ${OPENAI_ADS_API_KEY}"   -H "Content-Type: application/json"   -d '{
+    "context_hints": [
+      "Lightweight trail running shoes for rocky terrain",
+      "Water-resistant footwear for wet-weather hiking"
+    ]
+  }'</code></pre>
+
+    <p>Updating <code>context_hints</code> replaces the current list. To add one hint you retrieve the ad group, append to the existing list and submit the complete intended list. An empty array clears the list, and omitting the field leaves it unchanged.</p>
+
+    <h2>What Are the Compliance Limits on Audiences in 2026?</h2>
+    <p>Two that matter commercially. First, custom audiences are not supported for campaigns targeting the European Economic Area or Switzerland, where OpenAI states personalised ads are not yet available. If you run European media, audience-based targeting is simply not part of the plan there.</p>
+    <p>Second, OpenAI sets a clear data-sourcing rule: upload only first-party audience data you have the right to use for ads, and do not upload broker-sourced data. Before uploading, confirm your use complies with required rights, notices, consents, permissions and legal bases and the Ad Tools Terms, and obtain privacy or legal approval. For teams operating under the DPDP Act in India or GDPR in Europe, that is a step with a named owner, not a checkbox. This is a summary of OpenAI's published platform terms rather than legal advice; confirm your own obligations with counsel.</p>
+
+    <h2>What Are the Common Targeting Mistakes in 2026?</h2>
+    <ul>
+      <li><strong>Sending a partial targeting update.</strong> Geographic and audience updates can replace existing criteria. Read first, send the complete object, verify after.</li>
+      <li><strong>Reading <code>web</code> as desktop.</strong> It includes mobile browsers. Use <code>desktop_web</code> for desktop only.</li>
+      <li><strong>Assuming uploaded rows equal matched users.</strong> They do not, and 25,000 identifiers does not guarantee 25,000 matches.</li>
+      <li><strong>Planning inclusion targeting on a small CRM list.</strong> Exclusion works at any size; inclusion and bid multipliers need the minimum.</li>
+      <li><strong>Confusing a bid multiplier with inclusion.</strong> Multipliers do not restrict who is eligible.</li>
+      <li><strong>Pairing multipliers with Maximize Results.</strong> They work only with fixed bidding.</li>
+      <li><strong>Expecting sub-country targeting on product-feed campaigns.</strong> New ones support country level only.</li>
+      <li><strong>Writing context hints as keywords.</strong> They are descriptions, not match types, and geography belongs in targeting.</li>
+      <li><strong>Planning audience targeting for EEA or Swiss campaigns.</strong> Custom audiences are not supported there.</li>
+    </ul>
+
+    <h2>Key Takeaways for 2026</h2>
+    <p>ChatGPT Ads targeting is narrower than Meta's and shaped differently, and the structural consequences matter more than the option list.</p>
+    <ul>
+      <li>Geography, platform and audiences are campaign-level; context hints and bid multipliers are ad-group-level.</li>
+      <li>Targeting variations mean separate campaigns, and therefore separate budgets.</li>
+      <li>Geographic targeting takes country codes or looked-up location IDs, up to 2,500 per list, with a downloadable catalogue.</li>
+      <li>Six platform values exist; <code>web</code> includes mobile browsers, and omitting platform targeting defaults to all platforms.</li>
+      <li>Custom audience exclusion works at any ready size; inclusion and bid multipliers need the matched-user minimum, with 25,000 as the published planning threshold.</li>
+      <li>Add, remove, replace and merge keep the audience ID so campaigns referencing it keep working.</li>
+      <li>Exclusions take precedence over inclusions, and an audience ID cannot be in both lists.</li>
+      <li>Always read a campaign before updating targeting, because partial updates can replace existing criteria.</li>
+      <li>Context hints are descriptions capped at 2,000 per ad group, not keywords, and updating replaces the list.</li>
+      <li>Custom audiences are unavailable for EEA and Swiss campaigns, and only first-party data may be uploaded.</li>
+    </ul>
+    <p>Distk plans and runs paid media for growth teams across India and internationally, including the account structure decisions that are expensive to undo. If you are building a ChatGPT Ads test in 2026, the structure question comes before the targeting question, and that is where we would start.</p>
+
+    <h2>Sources</h2>
+    <ul>
+      <li><a href="https://developers.openai.com/ads/campaign-targeting" target="_blank" rel="noopener">OpenAI, Targeting</a>, including inclusion and exclusion, geographic, platform and context hints.</li>
+      <li><a href="https://developers.openai.com/ads/custom-audiences" target="_blank" rel="noopener">OpenAI, Custom Audiences</a>, including eligibility thresholds, file rules and the EEA restriction.</li>
+      <li><a href="https://developers.openai.com/ads/platform-targeting" target="_blank" rel="noopener">OpenAI, Platform Targeting</a>.</li>
+      <li><a href="https://developers.openai.com/ads/location-targeting" target="_blank" rel="noopener">OpenAI, Location Targeting</a>.</li>
+      <li><a href="https://openai.com/policies/ad-tools-terms/" target="_blank" rel="noopener">OpenAI, Ad Tools Terms</a>.</li>
+    </ul>
+    <p style="font-size:0.88rem;color:var(--mid)">Every field, value and threshold in this guide is quoted from OpenAI's published Ads documentation as of 1 October 2026. This is a summary of platform documentation and terms, not legal advice.</p>
+
+  </div>
+</main>
+
+<section class="faq">
+  <div class="container">
+    <div class="section-tag">Key Questions</div>
+    <h2 class="section-title">ChatGPT Ads Targeting in 2026: FAQs</h2>
+    <div class="faq__grid">
+      <div class="faq__item">
+        <h3>Is targeting set on the campaign or the ad group in ChatGPT Ads?</h3>
+        <p>Geographic, platform and custom audience targeting are all campaign-level. Context hints and audience bid multipliers are ad-group-level. That means a targeting variation requires a new campaign with its own budget, unlike platforms where ad sets carry targeting under a shared campaign budget.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Does the web platform value mean desktop only?</h3>
+        <p>No. OpenAI states explicitly that web includes all web platforms including mobile browsers, so an iPhone user visiting ChatGPT in a browser counts as web inventory rather than the iOS app group. For desktop only, use desktop_web without web.</p>
+      </div>
+      <div class="faq__item">
+        <h3>How large does a custom audience need to be in ChatGPT Ads?</h3>
+        <p>It depends on the use. Ready small or empty audiences can be used for exclusion with no minimum matched size. Inclusion and bid multipliers require the matched-user minimum, for which OpenAI gives 25,000 matched users as the public planning threshold. Uploaded row counts do not equal matched users.</p>
+      </div>
+      <div class="faq__item">
+        <h3>What is the difference between including an audience and using a bid multiplier?</h3>
+        <p>Inclusion restricts eligibility to matching users. A bid multiplier adjusts a fixed bid for matching users while leaving everyone else eligible under the campaign's targeting. Multipliers work only with fixed_bid, not with Maximize Results, and do not change who can see the campaign.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Why did my exclusion list disappear after a targeting update?</h3>
+        <p>Because geographic and audience updates can replace existing targeting criteria. OpenAI advises retrieving the campaign first and sending the complete intended configuration for those objects, then retrieving it again to confirm what saved. Build read-modify-write into any script that edits targeting.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Can I use custom audiences for campaigns in Europe?</h3>
+        <p>No. OpenAI states custom audiences are not supported for campaigns targeting the European Economic Area or Switzerland, where personalised ads are not yet available. OpenAI also requires that only first-party data you have the right to use is uploaded, and not broker-sourced data.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED START -->
+<section class="related" style="padding:3.5rem 0;border-top:1px solid #e8e8e8;background:#fafafa">
+  <div style="max-width:720px;margin:0 auto;padding:0 clamp(1.2rem,4vw,3rem)">
+    <div style="font-family:'Space Mono',monospace;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:#e63312;margin-bottom:1.3rem">Related reading</div>
+    <ul style="list-style:none;margin:0;padding:0;display:grid;gap:0.9rem">
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="chatgpt-ads-api-campaign-bidding-guide-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">The ChatGPT Ads API in 2026: Campaign Structure, Bidding and What You Actually Control</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="chatgpt-ads-account-management-guide-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">ChatGPT Ads Account Management in 2026: Branding, Reviews, Spend Limits and Account States</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="chatgpt-ads-bulk-api-agencies-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">Bulk Campaign Management in ChatGPT Ads: The Bulk API for Agencies in 2026</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="chatgpt-ads-advertising-inside-ai-india-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">ChatGPT Ads Are Here: What Advertising Inside AI Means for Indian Brands in 2026</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="chatgpt-conversion-optimized-campaigns-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">Conversion-Optimised ChatGPT Campaigns in 2026: Optimising to an Event While Paying Per Click</a></li>
+    </ul>
+  </div>
+</section>
+<!-- RELATED END -->
+<section class="cta">
+  <div class="cta__inner">
+    <h2>Get the account structure right before the targeting</h2>
+    <p>Distk plans paid media structure for growth teams across India and internationally, including the decisions that are cheap to make early and expensive to undo once budgets are live.</p>
+    <a href="https://distk.in/#contact" class="cta__btn">Start the conversation →</a>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="container">
+    © 2026 Distk · <a href="https://distk.in">distk.in</a> · <a href="mailto:connect@distk.in">connect@distk.in</a>
+  </div>
+</footer>
+</body>
+</html>

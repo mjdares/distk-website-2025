@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xdifcafwxl");
+  </script>
+
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ChatGPT Ads Bulk API for Agencies 2026: Jobs, Limits and Safe Retries | Distk</title>
+<meta name="description" content="The ChatGPT Ads Bulk API explained for agencies in 2026: limited preview enabled per account, up to 1,000 operations per job, parent references by idempotency key, why partial_failure does not roll back, what validate_only misses, campaign create defaults, limits and retry rules.">
+<meta name="keywords" content="chatgpt ads bulk api, openai ads bulk mutation jobs, chatgpt ads agency tools, bulk campaign management chatgpt, openai ads api agencies, chatgpt ads bulk upload">
+<meta name="author" content="Distk"><meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://distk.in/blog/chatgpt-ads-bulk-api-agencies-2026.html">
+<meta property="og:type" content="article"><meta property="og:url" content="https://distk.in/blog/chatgpt-ads-bulk-api-agencies-2026.html">
+<meta property="og:title" content="Bulk Campaign Management in ChatGPT Ads: The Bulk API for Agencies in 2026">
+<meta property="og:description" content="One job, up to 1,000 operations, no rollback. What the Bulk API guarantees, what it does not, and the defaults that catch agencies out.">
+<meta property="og:image" content="https://distk.in/assets/images/og-image.jpg"><meta property="og:site_name" content="Distk">
+<meta property="article:published_time" content="2026-10-01T00:00:00+05:30">
+<meta property="article:modified_time" content="2026-10-01T00:00:00+05:30">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Bulk Campaign Management in ChatGPT Ads: The Bulk API for Agencies in 2026"><meta name="twitter:description" content="One job, up to 1,000 operations, no rollback. What the Bulk API guarantees, what it does not, and the defaults that catch agencies out.">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Bulk Campaign Management in ChatGPT Ads: The Bulk API for Agencies in 2026", "description": "An agency guide to the ChatGPT Ads Bulk API in 2026: limited preview status and per-account enablement, submitting up to 1,000 operations per job, referencing parents through idempotency keys, what partial_failure and validate_only do and do not guarantee, operation types and defaults, job and operation statuses, limits and retry behaviour.", "author": {"@type": "Organization", "name": "Distk", "url": "https://distk.in"}, "publisher": {"@type": "Organization", "name": "Distk", "logo": {"@type": "ImageObject", "url": "https://distk.in/assets/images/Logo.png"}}, "datePublished": "2026-10-01", "dateModified": "2026-10-01", "inLanguage": "en", "about": [{"@type": "Thing", "name": "ChatGPT Ads"}, {"@type": "Thing", "name": "Bulk API"}, {"@type": "Thing", "name": "agency operations"}, {"@type": "Thing", "name": "campaign management"}, {"@type": "Thing", "name": "OpenAI"}, {"@type": "Thing", "name": "paid media"}], "mentions": [{"@type": "Thing", "name": "ChatGPT Ads"}, {"@type": "Thing", "name": "Bulk API"}, {"@type": "Thing", "name": "agency operations"}, {"@type": "Thing", "name": "campaign management"}, {"@type": "Thing", "name": "OpenAI"}, {"@type": "Thing", "name": "paid media"}], "mainEntityOfPage": {"@type": "WebPage", "@id": "https://distk.in/blog/chatgpt-ads-bulk-api-agencies-2026.html"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is the ChatGPT Ads Bulk API available to all advertisers in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "No. OpenAI's documentation states the Bulk API is in limited preview and is enabled per ad account, and that it is not included in the downloadable OpenAPI spec. If a bulk endpoint returns a 404 error, OpenAI instructs users to contact their OpenAI account team to confirm access for the account associated with their Ads API key."}}, {"@type": "Question", "name": "How many operations can a ChatGPT Ads bulk job contain?", "acceptedAnswer": {"@type": "Answer", "text": "A single bulk mutation job accepts between 1 and 1,000 create or update operations. OpenAI documents a 16 MiB request body limit, a 512 KiB limit per serialised operation, and a creation rate limit of 10 bulk job requests per 10 seconds for each ad account."}}, {"@type": "Question", "name": "Does setting partial_failure to false roll back a ChatGPT Ads bulk job?", "acceptedAnswer": {"@type": "Answer", "text": "No. OpenAI states that setting partial_failure to false causes later operations to be skipped after an operation fails, but that it does not roll back operations that have already completed. Because there is no transactional rollback, creating resources in a paused state prevents a partially completed job from leaving live campaigns spending budget."}}, {"@type": "Question", "name": "What does validate_only not verify in the ChatGPT Ads Bulk API?", "acceptedAnswer": {"@type": "Answer", "text": "Validation-only jobs check request fields and dependencies without changing ad resources, but OpenAI's documentation states they do not guarantee operations can complete, because they do not check update-target existence, image fetching, entity limits or other write-time errors."}}, {"@type": "Question", "name": "How do operations reference parent resources created in the same ChatGPT Ads bulk job?", "acceptedAnswer": {"@type": "Answer", "text": "Through idempotency keys rather than resource IDs, since the IDs do not exist at submission time. An ad group sets campaign_idempotency_key to the campaign operation's idempotency_key, and an ad sets ad_group_idempotency_key to the ad group operation's key. Update operations can only target resources that already exist when the job is submitted, and each resource can be updated only once per job."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://distk.in/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://distk.in/blog/"}, {"@type": "ListItem", "position": 3, "name": "Bulk Campaign Management in ChatGPT Ads: The Bulk API for Agencies in 2026", "item": "https://distk.in/blog/chatgpt-ads-bulk-api-agencies-2026.html"}]}</script>
+<link rel="icon" type="image/png" href="../assets/images/favicon.png"><link rel="apple-touch-icon" href="../assets/images/Logo.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BWDTQ1JPL2"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-BWDTQ1JPL2');</script>
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1077520544213003');fbq('track','PageView');</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1077520544213003&ev=PageView&noscript=1"></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#0a0a0a;--paper:#fafafa;--mid:#6b6b6b;--light:#e8e8e8;--accent:#e63312;--accent-soft:rgba(230,51,18,0.08);--mono:'Space Mono',monospace;--sans:'Outfit',sans-serif;--container:1120px;--prose:720px;--gutter:clamp(1.2rem,4vw,3rem)}
+html{font-size:16px;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.container{max-width:var(--container);margin:0 auto;padding:0 var(--gutter)}
+.prose{max-width:var(--prose);margin:0 auto;padding:0 var(--gutter)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--light)}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;max-width:var(--container);margin:0 auto;padding:0.9rem var(--gutter)}
+.nav__logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;color:var(--ink)}
+.nav__logo img{height:32px;width:auto}
+.nav__logo span{font-family:var(--mono);font-weight:700;font-size:1.05rem;letter-spacing:-0.02em}
+.nav__logo small{display:block;font-size:0.55rem;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);line-height:1}
+.nav__back{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid);text-decoration:none;display:flex;align-items:center;gap:0.4rem;transition:color 0.2s}
+.nav__back:hover{color:var(--accent)}
+.nav__cta{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.6rem 1.4rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.nav__cta:hover{background:var(--accent)}
+.hero{padding:7.5rem 0 3.5rem;position:relative;overflow:hidden;border-bottom:1px solid var(--light)}
+.hero::before{content:'BULK';position:absolute;right:-1%;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:clamp(6rem,26vw,22rem);font-weight:700;color:rgba(0,0,0,0.03);line-height:1;pointer-events:none;user-select:none;letter-spacing:-0.05em}
+.hero__tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1.5rem}
+.hero__tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.hero h1{font-family:var(--sans);font-weight:700;font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;letter-spacing:-0.03em;max-width:20ch;margin-bottom:1.5rem}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero__sub{font-size:1.1rem;color:var(--mid);max-width:56ch;line-height:1.7;margin-bottom:2rem}
+.hero__meta{display:flex;flex-wrap:wrap;gap:1.5rem;font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid)}
+.tldr{background:var(--accent-soft);border-left:3px solid var(--accent);padding:1.8rem 2rem;margin:3rem 0;position:relative}
+.tldr::before{content:'TL;DR';position:absolute;top:-0.6rem;left:2rem;font-family:var(--mono);font-size:0.62rem;font-weight:700;letter-spacing:0.12em;background:var(--accent);color:#fff;padding:0.2rem 0.6rem}
+.tldr p{font-size:0.95rem;color:var(--ink);line-height:1.7}
+.article{padding:4rem 0 5rem}
+.article h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.35rem,2.8vw,1.8rem);letter-spacing:-0.02em;line-height:1.2;margin:3rem 0 1rem;padding-top:1rem;border-top:1px solid var(--light)}
+.article h2:first-child{border-top:none;margin-top:0}
+.article h3{font-family:var(--mono);font-weight:700;font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin:2rem 0 0.6rem}
+.article p{font-size:1rem;color:#2a2a2a;line-height:1.8;margin-bottom:1.25rem}
+.article ul,.article ol{padding-left:1.4rem;margin-bottom:1.25rem}
+.article li{font-size:1rem;color:#2a2a2a;line-height:1.75;margin-bottom:0.4rem}
+.article strong{font-weight:600;color:var(--ink)}
+.article a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(230,51,18,0.3)}
+.article a:hover{border-bottom-color:var(--accent)}
+.article blockquote{border-left:3px solid var(--accent);padding:0.75rem 1.5rem;margin:2rem 0;background:var(--accent-soft)}
+.article blockquote p{color:var(--ink);font-size:1rem;margin:0}
+.table-wrap{overflow-x:auto;margin:2rem 0}
+.data-table{width:100%;border-collapse:collapse;margin:0;font-size:0.88rem}
+.data-table th{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:0.7rem 1rem;text-align:left;white-space:nowrap}
+.data-table td{padding:0.75rem 1rem;border-bottom:1px solid var(--light);vertical-align:top}
+.data-table tr:last-child td{border-bottom:none}
+.data-table tr:nth-child(even) td{background:#f5f5f5}
+.callout{border:1.5px solid var(--light);padding:1.5rem 1.8rem;margin:2rem 0}
+.callout__label{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem}
+.callout p{font-size:0.92rem;color:var(--mid);line-height:1.7;margin:0}
+.faq{padding:4rem 0;background:var(--ink);color:var(--paper)}
+.faq .section-tag{color:var(--accent)}
+.faq .section-tag::before{background:var(--accent)}
+.faq__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2.5rem;margin-top:2.5rem}
+.faq__item{border-left:2px solid var(--accent);padding-left:1.5rem}
+.faq__item h3{font-family:var(--sans);font-weight:600;font-size:0.95rem;margin-bottom:0.5rem;color:var(--paper)}
+.faq__item p{font-size:0.85rem;color:rgba(255,255,255,0.88);line-height:1.65}
+.section-tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1rem}
+.section-tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.section-title{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.15;color:var(--paper)}
+.cta{padding:5rem 0;background:var(--accent-soft);border-top:1px solid rgba(230,51,18,0.12)}
+.cta__inner{max-width:680px;margin:0 auto;padding:0 var(--gutter);text-align:center}
+.cta h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.2;margin-bottom:1rem}
+.cta p{font-size:1rem;color:var(--mid);line-height:1.7;margin-bottom:2rem}
+.cta__btn{display:inline-flex;align-items:center;gap:0.6rem;font-family:var(--mono);font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;padding:1rem 2.2rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.cta__btn:hover{background:var(--accent)}
+.foot{padding:2.5rem 0;border-top:1px solid var(--light);text-align:center;font-family:var(--mono);font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid)}
+.foot a{color:var(--mid);text-decoration:none}.foot a:hover{color:var(--accent)}
+@media(max-width:768px){.faq__grid{grid-template-columns:1fr}.nav__back span{display:none}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="https://distk.in" class="nav__logo">
+      <img src="../assets/images/Logo.png" alt="Distk">
+      <div><span>Distk</span><small>Global Growth Partner</small></div>
+    </a>
+    <a href="/blog/" class="nav__back">← <span>All articles</span></a>
+    <a href="https://distk.in/#contact" class="nav__cta">Work with us</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="prose">
+    <div class="hero__tag">Paid Media Guide</div>
+    <h1>Bulk Campaign Management in <em>ChatGPT Ads</em>: The Bulk API for Agencies in 2026</h1>
+    <p class="hero__sub">For an agency, the Bulk API turns a fragile chain of single requests into one auditable job. It is also in limited preview, enabled per account, and offers no rollback. Here is how to use it without leaving half-built campaigns behind.</p>
+    <div class="hero__meta">
+      <span>Distk Editorial</span>
+      <span>Oct 2026</span>
+      <span>11 min read</span>
+    </div>
+  </div>
+</section>
+
+<div class="prose">
+  <div class="tldr">
+    <p>The ChatGPT Ads Bulk API creates or updates campaigns, ad groups and ads in one asynchronous job of up to 1,000 operations, submitted to POST /bulk_mutation_jobs. OpenAI states it is in limited preview, enabled per ad account and not in the downloadable OpenAPI spec, so a 404 means contacting your OpenAI account team. Children reference parents created in the same job through idempotency keys rather than IDs. partial_failure defaults to true; setting it false skips later operations but does not roll back completed ones. validate_only checks fields and dependencies but not update-target existence, image fetching or entity limits. campaign.create defaults to an impression-billed, lifetime, paused campaign with a minimum budget of 1,000,000 micros. Create requests are limited to 10 per 10 seconds per ad account, with 16 MiB request bodies and 512 KiB per operation. Results are only final once complete is true, and retries should reuse the original create-operation idempotency keys so successful creates are reused.</p>
+  </div>
+</div>
+
+<main class="article">
+  <div class="prose">
+<style>
+.prose pre{background:#f4f4f4;border-left:3px solid var(--accent);padding:1rem 1.1rem;overflow-x:auto;margin:1.5rem 0;font-size:0.85rem;line-height:1.6}
+.prose pre code{font-family:var(--mono);font-size:0.85rem;color:#1a1a1a;background:none;padding:0;white-space:pre}
+.prose p code,.prose li code,.prose td code{font-family:var(--mono);font-size:0.86em;background:#f0f0f0;padding:0.1rem 0.35rem;border-radius:2px}
+</style>
+
+    <h2>What Is the ChatGPT Ads Bulk API in 2026?</h2>
+    <p>The Bulk API creates or updates campaigns, ad groups and ads in a single asynchronous job. You submit up to 1,000 operations, poll the job, and inspect the result of each operation. It is the tool an agency reaches for when a launch involves dozens of campaigns, or a weekly change touches hundreds of ad groups, and making one request per object would be slow and fragile.</p>
+    <p>One status line governs everything below. OpenAI states the Bulk API is in limited preview and is enabled per ad account. It is not included in the downloadable OpenAPI spec, and if a bulk endpoint returns <code>404</code>, OpenAI's instruction is to contact your OpenAI account team to confirm access for the account associated with your Ads API key. Plan around that gate before you build tooling that depends on it.</p>
+
+    <div class="callout">
+      <div class="callout__label">Access check before anything else in 2026</div>
+      <p>Because access is enabled per ad account, an agency can find bulk working on one client account and returning 404 on the next. Confirm access for every client account you intend to manage this way before committing to a bulk-based workflow, and keep a non-bulk fallback using the standard endpoints covered in the <a href="chatgpt-ads-api-campaign-bidding-guide-2026.html">Ads API guide</a>.</p>
+    </div>
+
+    <h2>Why Would an Agency Use the Bulk API Instead of Single Requests?</h2>
+    <p>Because a launch built from single requests is a sequence of dependencies, and every dependency is a place for a script to fail halfway. You create a campaign, wait for its ID, create an ad group using that ID, wait, create an ad. Bulk collapses that into one submission where operations can refer to parents created in the same job, and returns a per-operation result you can audit.</p>
+    <ul>
+      <li><strong>One submission for a whole structure.</strong> Campaign, ad groups and ads in a single job, linked by idempotency keys rather than returned IDs.</li>
+      <li><strong>Per-operation results.</strong> Every operation reports created, updated, validated, failed or skipped, with retry guidance on failures.</li>
+      <li><strong>A dry-run mode.</strong> <code>validate_only</code> checks fields and dependencies without changing anything.</li>
+      <li><strong>Safer retries.</strong> Idempotency at both the request and operation level, so a rerun reuses successful creates.</li>
+      <li><strong>A separate rate limit.</strong> Bulk job creation has its own budget distinct from the standard per-endpoint limits.</li>
+    </ul>
+
+    <h2>How Do You Submit a Bulk Job?</h2>
+    <p>One <code>POST</code> to <code>/bulk_mutation_jobs</code> containing an <code>operations</code> array. OpenAI's own example creates a campaign, an ad group and an ad in one request, all paused so they can be verified before delivery starts.</p>
+
+<pre><code>curl -X POST "https://api.ads.openai.com/v1/bulk_mutation_jobs"   -H "Authorization: Bearer $OPENAI_ADS_API_KEY"   -H "Content-Type: application/json"   -H "Idempotency-Key: spring-launch-job-001"   -d '{
+    "validate_only": false,
+    "partial_failure": true,
+    "operations": [
+      {
+        "operation_id": "create-campaign",
+        "type": "campaign.create",
+        "idempotency_key": "campaign-spring-launch",
+        "input": {
+          "name": "Spring launch",
+          "max_budget_micros": 100000000,
+          "billing_event_type": "impression",
+          "budget_type": "lifetime",
+          "status": "paused"
+        }
+      },
+      {
+        "operation_id": "create-ad-group",
+        "type": "ad_group.create",
+        "idempotency_key": "ad-group-prospecting",
+        "input": {
+          "campaign_idempotency_key": "campaign-spring-launch",
+          "name": "Prospecting",
+          "context_hints": ["shoes", "spring fashion"],
+          "status": "paused"
+        }
+      },
+      {
+        "operation_id": "create-ad",
+        "type": "ad.create",
+        "idempotency_key": "ad-prospecting-1",
+        "input": {
+          "campaign_idempotency_key": "campaign-spring-launch",
+          "ad_group_idempotency_key": "ad-group-prospecting",
+          "title": "Fresh shoes",
+          "body": "Find your next pair",
+          "target_url": "https://example.com/shoes",
+          "source_image_url": "https://developers.openai.com/showcase/openai-imagegen-demo.png",
+          "status": "paused"
+        }
+      }
+    ]
+  }'</code></pre>
+
+    <p>The API returns <code>202 Accepted</code> with a job ID and a status of <code>pending</code>. Notice two differences from the standard endpoints that will trip up anyone porting existing code: the bulk campaign input uses <code>max_budget_micros</code> with a <code>budget_type</code> field rather than the separate daily and lifetime budget fields, and the ad input takes a <code>source_image_url</code> rather than an uploaded file ID.</p>
+
+    <h3>The three request-level fields</h3>
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Field</th><th>Required</th><th>What it does</th></tr></thead>
+      <tbody>
+        <tr><td><code>operations</code></td><td>Yes</td><td>Between 1 and 1,000 create or update operations</td></tr>
+        <tr><td><code>validate_only</code></td><td>No</td><td>Validates fields and dependencies without changing resources. Defaults to <code>false</code></td></tr>
+        <tr><td><code>partial_failure</code></td><td>No</td><td>Continues independent operations after an error. Defaults to <code>true</code></td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h2>What Do partial_failure and validate_only Actually Guarantee?</h2>
+    <p>Less than their names suggest, and this is the section to read before you trust a bulk run on a client account. With <code>partial_failure</code> set to <code>false</code>, later operations are skipped after one fails, but OpenAI states this setting does not roll back operations that already completed. There is no transaction. A failed job can leave a campaign created and its ad group missing.</p>
+    <p><code>validate_only</code> has a similar limit. OpenAI states that validation-only jobs do not guarantee operations can complete successfully, because they do not check update-target existence, image fetching, entity limits or other write-time errors. It catches malformed requests and broken references, not everything that can go wrong at write time.</p>
+
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Setting</th><th>What it does</th><th>What it does not do</th></tr></thead>
+      <tbody>
+        <tr><td><code>partial_failure: true</code></td><td>Keeps running independent operations after a failure</td><td>Does not retry the failed one</td></tr>
+        <tr><td><code>partial_failure: false</code></td><td>Skips later operations after a failure</td><td>Does not roll back operations already completed</td></tr>
+        <tr><td><code>validate_only: true</code></td><td>Checks fields and dependencies, changes nothing</td><td>Does not check update-target existence, image fetching, entity limits or other write-time errors</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The practical rule for agencies in 2026: always create bulk resources as <code>paused</code>, as OpenAI's example does, so a half-completed job leaves inert objects rather than partially-built live campaigns spending money.</p>
+
+    <h2>Which Operations Does the Bulk API Support?</h2>
+    <p>Six operation types: create and update for each of campaigns, ad groups and ads. Every entry needs a unique <code>operation_id</code>, a <code>type</code> and an <code>input</code> object. Creates also need a unique <code>idempotency_key</code>; updates need a <code>target_resource_id</code> and at least one input field.</p>
+
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Type</th><th>Required input</th><th>Other supported input</th></tr></thead>
+      <tbody>
+        <tr><td><code>campaign.create</code></td><td><code>name</code>, <code>max_budget_micros</code></td><td><code>billing_event_type</code>, <code>budget_type</code>, <code>status</code>, <code>target_countries</code>, <code>location_ids</code></td></tr>
+        <tr><td><code>campaign.update</code></td><td>At least one supported field</td><td><code>name</code>, <code>description</code>, <code>status</code>, <code>max_budget_micros</code>, <code>budget_type</code>, <code>start_time</code>, <code>end_time</code> and others</td></tr>
+        <tr><td><code>ad_group.create</code></td><td><code>campaign_idempotency_key</code>, <code>name</code></td><td><code>context_hints</code>, <code>exclusion_hints</code>, <code>max_bid_micros</code>, <code>max_cpm_bid_micros</code>, <code>status</code></td></tr>
+        <tr><td><code>ad_group.update</code></td><td>At least one supported field</td><td><code>name</code>, <code>description</code>, <code>status</code>, <code>context_hints</code>, <code>exclusion_hints</code>, bids</td></tr>
+        <tr><td><code>ad.create</code></td><td><code>campaign_idempotency_key</code>, <code>ad_group_idempotency_key</code>, <code>title</code>, <code>body</code>, <code>target_url</code>, <code>source_image_url</code></td><td><code>status</code></td></tr>
+        <tr><td><code>ad.update</code></td><td>At least one supported field</td><td><code>name</code>, <code>status</code>, <code>creative</code></td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h3>The defaults and limits that catch people out</h3>
+    <ul>
+      <li><strong><code>campaign.create</code> defaults to an impression-billed, lifetime, paused campaign.</strong> If you omit billing and budget type, that is what you get, which is not what most performance campaigns want.</li>
+      <li><strong>Campaign budget must be at least <code>1000000</code> currency micros,</strong> which is one unit of the account currency.</li>
+      <li><strong>Ad group bids must match the parent's billing event.</strong> Provide only one of <code>max_bid_micros</code> for clicks or <code>max_cpm_bid_micros</code> for impressions. OpenAI notes CPM requires account access.</li>
+      <li><strong>Names run 3 to 1,000 characters</strong> for campaigns and ad groups. Ad titles allow 3 to 50, bodies up to 100, URLs up to 2,048.</li>
+      <li><strong>Campaigns support up to 2,500 location IDs,</strong> and ad groups up to 2,000 context hints.</li>
+      <li><strong>Create statuses are <code>active</code> or <code>paused</code>;</strong> update statuses also support <code>archived</code>.</li>
+      <li><strong>Updating an ad creative</strong> requires <code>title</code>, <code>body</code>, <code>target_url</code> and <code>file_id</code> together.</li>
+    </ul>
+
+    <h2>How Do Parent and Child References Work in One Job?</h2>
+    <p>Through idempotency keys rather than IDs, because the IDs do not exist yet when you submit. Set <code>campaign_idempotency_key</code> on an ad group to the campaign operation's key, and set <code>ad_group_idempotency_key</code> on an ad to the ad group operation's key. OpenAI adds that the campaign reference on <code>ad.create</code> must match the campaign reference on its parent <code>ad_group.create</code>.</p>
+    <p>Three rules constrain how you can mix operations. You can combine creates and updates in one job. Updates can only target resources that exist when you submit, so you cannot update something created in the same job. And each resource can be updated only once per job. If your tooling generates changes from a diff, deduplicate per resource before submitting.</p>
+
+    <h2>How Do You Track a Job and Read the Results?</h2>
+    <p>Poll the job until it reaches a terminal status, then page through the per-operation results. <code>completed</code>, <code>partially_failed</code> and <code>failed</code> are terminal.</p>
+
+<pre><code>curl -X GET   "https://api.ads.openai.com/v1/bulk_mutation_jobs/blkmtnjob_6a2b773d47b481908aa6078025a64ad3"   -H "Authorization: Bearer $OPENAI_ADS_API_KEY"</code></pre>
+
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Job status</th><th>Meaning</th></tr></thead>
+      <tbody>
+        <tr><td><code>pending</code></td><td>Waiting to run</td></tr>
+        <tr><td><code>in_progress</code></td><td>Processing operations</td></tr>
+        <tr><td><code>completed</code></td><td>All operations completed successfully</td></tr>
+        <tr><td><code>partially_failed</code></td><td>At least one succeeded and another failed or was skipped</td></tr>
+        <tr><td><code>failed</code></td><td>No operations succeeded</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <p>Results come from <code>GET /bulk_mutation_jobs/{job_id}/operations</code>, 1 to 100 per page, defaulting to 100. Each result carries its <code>operation_id</code>, type, status and nullable error fields. OpenAI notes that pagination cursors are only available after <code>complete</code> is <code>true</code>, and that while a job is running the endpoint can return an incomplete snapshot. Do not treat a mid-run read as final.</p>
+
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Operation status</th><th>Meaning</th></tr></thead>
+      <tbody>
+        <tr><td><code>created</code></td><td>The create succeeded</td></tr>
+        <tr><td><code>updated</code></td><td>The update succeeded</td></tr>
+        <tr><td><code>validated</code></td><td>Passed validation in a validation-only job</td></tr>
+        <tr><td><code>failed</code></td><td>Returned an error; check <code>retryable</code> and <code>retry_after_seconds</code></td></tr>
+        <tr><td><code>skipped</code></td><td>Did not run because a dependency or earlier operation failed</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h2>What Are the Limits and Retry Rules in 2026?</h2>
+    <p>The limits are generous for a single client and tight for an agency running many accounts in parallel, mainly because of the create rate.</p>
+
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Limit</th><th>Value</th></tr></thead>
+      <tbody>
+        <tr><td>Operations per job</td><td>1,000</td></tr>
+        <tr><td>Request body size</td><td>16 MiB</td></tr>
+        <tr><td>Serialised operation size</td><td>512 KiB</td></tr>
+        <tr><td>Create requests per ad account</td><td>10 requests per 10 seconds</td></tr>
+        <tr><td>Operation results per page</td><td>100</td></tr>
+        <tr><td>Self-serve campaigns per ad account</td><td>5,000 non-archived</td></tr>
+        <tr><td>Self-serve ad groups per ad account</td><td>5,000 non-archived</td></tr>
+        <tr><td>Self-serve ads per ad account</td><td>5,000 active or paused</td></tr>
+        <tr><td><code>operation_id</code> and idempotency key length</td><td>Up to 255 characters</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <p>Retries have two layers. The request-level <code>Idempotency-Key</code> header makes it safe to retry an uncertain request with the same body; reusing it with a different body returns an error. To rerun a <code>failed</code> or <code>partially_failed</code> job, submit the same body with a new request-level key, and OpenAI states successful creates are reused. At operation level, if a result is <code>retryable</code>, wait for <code>retry_after_seconds</code> where provided, then resubmit in a new job reusing the original create-operation <code>idempotency_key</code> values.</p>
+
+    <h2>How Should an Agency Use the Bulk API Safely?</h2>
+    <p>Treat it as a deployment tool with the same discipline you would apply to production code. The documentation gives you the primitives for safe operation; the workflow is yours to impose.</p>
+    <ol>
+      <li><strong>Confirm access per client account</strong> before building a workflow around it, since it is limited preview and enabled per account.</li>
+      <li><strong>Run <code>validate_only</code> first</strong>, knowing it does not catch write-time errors.</li>
+      <li><strong>Create everything paused</strong> so a partial job cannot leave live spend behind.</li>
+      <li><strong>Use deterministic idempotency keys</strong> derived from your own campaign naming, so retries reuse rather than duplicate.</li>
+      <li><strong>Read all results only after <code>complete</code> is true</strong>, then reconcile failed and skipped operations.</li>
+      <li><strong>Activate deliberately afterwards</strong>, through the standard endpoints, once each level is verified.</li>
+      <li><strong>Pace jobs across accounts</strong> to stay inside 10 create requests per 10 seconds per account.</li>
+    </ol>
+    <p>One header detail matters for multi-client tooling: OpenAI states each Ads API key works with one ad account, so you do not add an <code>OpenAI-Ad-Account</code> header when using an API key. Account switching is therefore a key-management problem, which pushes agencies toward a proper secrets store per client rather than a shared credential. The <a href="chatgpt-ads-account-management-guide-2026.html">account management guide</a> covers the partner-side setup.</p>
+
+    <h2>What Are the Common Bulk API Mistakes in 2026?</h2>
+    <ul>
+      <li><strong>Assuming bulk is available everywhere.</strong> It is limited preview, enabled per ad account, and absent from the OpenAPI spec.</li>
+      <li><strong>Expecting rollback.</strong> <code>partial_failure: false</code> skips later operations but does not undo completed ones.</li>
+      <li><strong>Trusting <code>validate_only</code> as a full test.</strong> It skips update-target existence, image fetching and entity-limit checks.</li>
+      <li><strong>Omitting billing and budget type.</strong> <code>campaign.create</code> defaults to impression-billed and lifetime.</li>
+      <li><strong>Updating a resource created in the same job.</strong> Updates can only target resources that exist at submission.</li>
+      <li><strong>Reading results mid-run.</strong> The snapshot can be incomplete until <code>complete</code> is true.</li>
+      <li><strong>Generating new idempotency keys on retry.</strong> Reuse the original create-operation keys so successful creates are reused.</li>
+      <li><strong>Creating resources active.</strong> A partial job then leaves partially-built live campaigns.</li>
+    </ul>
+
+    <h2>Key Takeaways for 2026</h2>
+    <p>The Bulk API is the right tool for agency-scale launches and changes on ChatGPT Ads, provided you treat its guarantees precisely and plan around its preview status.</p>
+    <ul>
+      <li>Up to 1,000 create or update operations per asynchronous job, submitted to <code>/bulk_mutation_jobs</code>.</li>
+      <li>Limited preview, enabled per ad account, not in the OpenAPI spec; a 404 means contact your OpenAI account team.</li>
+      <li>Children reference parents in the same job through idempotency keys, not IDs.</li>
+      <li><code>partial_failure: false</code> skips later work but does not roll back; <code>validate_only</code> does not catch write-time errors.</li>
+      <li><code>campaign.create</code> defaults to impression-billed, lifetime and paused, with a minimum budget of one currency unit.</li>
+      <li>Create requests are limited to 10 per 10 seconds per ad account, with 16 MiB request bodies.</li>
+      <li>Read results only once <code>complete</code> is true, and retry with the original create-operation keys.</li>
+      <li>Create everything paused, and activate deliberately afterwards.</li>
+    </ul>
+    <p>Distk runs paid media operations for growth teams across India and internationally, and for multi-account work we treat bulk changes like a production deployment: validated, paused on creation, reconciled, then activated. If you are scaling ChatGPT Ads across several accounts in 2026, that operating discipline is the part we would set up first.</p>
+
+    <h2>Sources</h2>
+    <ul>
+      <li><a href="https://developers.openai.com/ads/bulk-api" target="_blank" rel="noopener">OpenAI, Bulk API</a>, including operations, job statuses, limits and retries.</li>
+      <li><a href="https://developers.openai.com/ads/api-partner-setup" target="_blank" rel="noopener">OpenAI, API Partner Setup</a>.</li>
+      <li><a href="https://developers.openai.com/ads/api-overview" target="_blank" rel="noopener">OpenAI, Ads API Overview</a>, including standard rate limits.</li>
+    </ul>
+    <p style="font-size:0.88rem;color:var(--mid)">Every field, limit and status in this guide is quoted from OpenAI's published Ads documentation as of 1 October 2026. The Bulk API is documented as limited preview; confirm access and current behaviour before relying on it.</p>
+
+  </div>
+</main>
+
+<section class="faq">
+  <div class="container">
+    <div class="section-tag">Key Questions</div>
+    <h2 class="section-title">ChatGPT Ads Bulk API in 2026: FAQs</h2>
+    <div class="faq__grid">
+      <div class="faq__item">
+        <h3>Is the ChatGPT Ads Bulk API available to every account?</h3>
+        <p>No. OpenAI states it is in limited preview and enabled per ad account, and it is not included in the downloadable OpenAPI spec. If a bulk endpoint returns 404, contact your OpenAI account team to confirm access for the account tied to your Ads API key.</p>
+      </div>
+      <div class="faq__item">
+        <h3>How many operations can one bulk job contain?</h3>
+        <p>Between 1 and 1,000 create or update operations, within a 16 MiB request body and 512 KiB per serialised operation. Create requests are limited to 10 per 10 seconds per ad account.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Does partial_failure false roll back a failed bulk job?</h3>
+        <p>No. Setting partial_failure to false skips later operations after one fails, but OpenAI states it does not roll back operations that already completed. Create resources paused so a partial job cannot leave live spend behind.</p>
+      </div>
+      <div class="faq__item">
+        <h3>What does validate_only not check in the Bulk API?</h3>
+        <p>It validates request fields and dependencies without changing resources, but OpenAI states it does not check update-target existence, image fetching, entity limits or other write-time errors. A clean validation run does not guarantee the real job succeeds.</p>
+      </div>
+      <div class="faq__item">
+        <h3>How do I reference a campaign created in the same bulk job?</h3>
+        <p>Use idempotency keys. Set campaign_idempotency_key on the ad group to the campaign operation's idempotency_key, and ad_group_idempotency_key on the ad to the ad group's key. Updates cannot target resources created in the same job.</p>
+      </div>
+      <div class="faq__item">
+        <h3>How should I retry a failed bulk job?</h3>
+        <p>Submit the same body with a new request-level Idempotency-Key; OpenAI states successful creates are reused. For an operation marked retryable, wait for retry_after_seconds where provided and resubmit in a new job reusing the original create-operation idempotency keys.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED START -->
+<section class="related" style="padding:3.5rem 0;border-top:1px solid #e8e8e8;background:#fafafa">
+  <div style="max-width:720px;margin:0 auto;padding:0 clamp(1.2rem,4vw,3rem)">
+    <div style="font-family:'Space Mono',monospace;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:#e63312;margin-bottom:1.3rem">Related reading</div>
+    <ul style="list-style:none;margin:0;padding:0;display:grid;gap:0.9rem">
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="chatgpt-ads-api-campaign-bidding-guide-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">The ChatGPT Ads API in 2026: Campaign Structure, Bidding and What You Actually Control</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="chatgpt-ads-account-management-guide-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">ChatGPT Ads Account Management in 2026: Branding, Reviews, Spend Limits and Account States</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="chatgpt-ads-targeting-guide-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">ChatGPT Ads Targeting in 2026: Geography, Platform, Audiences and Context Hints</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="chatgpt-measurement-pixel-conversions-api-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">The ChatGPT Measurement Pixel and Conversions API in 2026</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="chatgpt-ads-advertising-inside-ai-india-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">ChatGPT Ads Are Here: What Advertising Inside AI Means for Indian Brands in 2026</a></li>
+    </ul>
+  </div>
+</section>
+<!-- RELATED END -->
+<section class="cta">
+  <div class="cta__inner">
+    <h2>Run bulk changes like a deployment, not a script</h2>
+    <p>Distk manages multi-account paid media with the same discipline as a production release: validated first, created paused, reconciled operation by operation, then activated on purpose.</p>
+    <a href="https://distk.in/#contact" class="cta__btn">Start the conversation →</a>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="container">
+    © 2026 Distk · <a href="https://distk.in">distk.in</a> · <a href="mailto:connect@distk.in">connect@distk.in</a>
+  </div>
+</footer>
+</body>
+</html>

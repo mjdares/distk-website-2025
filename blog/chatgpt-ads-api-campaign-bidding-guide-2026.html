@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xdifcafwxl");
+  </script>
+
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ChatGPT Ads API 2026: Campaign Structure, Bidding and Budgets Explained | Distk</title>
+<meta name="description" content="The ChatGPT Ads API explained for media buyers in 2026: the four-level account structure, three objectives, the five valid objective and bid strategy combinations, micros and the CPM-per-impression trap, what cannot be changed after creation, rate limits and how to read reporting.">
+<meta name="keywords" content="chatgpt ads api, chatgpt ads api 2026, openai advertiser api, chatgpt ads bidding, maximize results openai ads, chatgpt ads budget micros, openai ads campaign structure">
+<meta name="author" content="Distk"><meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://distk.in/blog/chatgpt-ads-api-campaign-bidding-guide-2026.html">
+<meta property="og:type" content="article"><meta property="og:url" content="https://distk.in/blog/chatgpt-ads-api-campaign-bidding-guide-2026.html">
+<meta property="og:title" content="The ChatGPT Ads API in 2026: Campaign Structure, Bidding and What You Actually Control">
+<meta property="og:description" content="A full ad platform inside ChatGPT. The structure, the five valid bidding combinations, the CPM trap, and the settings you cannot change after creation.">
+<meta property="og:image" content="https://distk.in/assets/images/og-image.jpg"><meta property="og:site_name" content="Distk">
+<meta property="article:published_time" content="2026-09-30T00:00:00+05:30">
+<meta property="article:modified_time" content="2026-09-30T00:00:00+05:30">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="The ChatGPT Ads API in 2026: Campaign Structure, Bidding and What You Actually Control"><meta name="twitter:description" content="A full ad platform inside ChatGPT. The structure, the five valid bidding combinations, the CPM trap, and the settings you cannot change after creation.">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "The ChatGPT Ads API in 2026: Campaign Structure, Bidding and What You Actually Control", "description": "A media buyer's guide to the ChatGPT Ads API in 2026: account, campaign, ad group and ad levels and what each owns, the three objectives, fixed bid versus Maximize Results and the five valid combinations, budgets in micros, the launch sequence, what is immutable after creation, rate and account limits, tracking macros and reporting freshness.", "author": {"@type": "Organization", "name": "Distk", "url": "https://distk.in"}, "publisher": {"@type": "Organization", "name": "Distk", "logo": {"@type": "ImageObject", "url": "https://distk.in/assets/images/Logo.png"}}, "datePublished": "2026-09-30", "dateModified": "2026-09-30", "inLanguage": "en", "about": [{"@type": "Thing", "name": "ChatGPT Ads"}, {"@type": "Thing", "name": "OpenAI Advertiser API"}, {"@type": "Thing", "name": "paid media"}, {"@type": "Thing", "name": "campaign bidding"}, {"@type": "Thing", "name": "OpenAI"}, {"@type": "Thing", "name": "performance marketing"}], "mentions": [{"@type": "Thing", "name": "ChatGPT Ads"}, {"@type": "Thing", "name": "OpenAI Advertiser API"}, {"@type": "Thing", "name": "paid media"}, {"@type": "Thing", "name": "campaign bidding"}, {"@type": "Thing", "name": "OpenAI"}, {"@type": "Thing", "name": "performance marketing"}], "mainEntityOfPage": {"@type": "WebPage", "@id": "https://distk.in/blog/chatgpt-ads-api-campaign-bidding-guide-2026.html"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the base URL and authentication method for the ChatGPT Ads API in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "Requests go to https://api.ads.openai.com using an Authorization bearer header. The Advertiser API key is created in the Settings page of Ads Manager at ads.openai.com, and each key works with a single ad account, so no separate account header is required. Supported create endpoints also accept an Idempotency-Key header so a network retry does not create a duplicate resource."}}, {"@type": "Question", "name": "What bid strategies does the ChatGPT Ads API support in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "Three strategies set on the ad group as bidding_config.strategy: fixed_bid, where the advertiser supplies max_bid_micros, and maximize_clicks and maximize_conversions, which OpenAI jointly brands Maximize Results and which allow OpenAI to adjust bids within a daily campaign budget. OpenAI's documentation states both Maximize Results strategies are available for standard and product-feed campaigns."}}, {"@type": "Question", "name": "Why does creating a Maximize Results ad group fail in ChatGPT Ads?", "acceptedAnswer": {"@type": "Answer", "text": "OpenAI documents five prerequisites. The parent campaign must use a daily budget rather than a lifetime budget, billing_event_type must be click, max_bid_micros must be omitted, audience bid multipliers must not be configured, and an Idempotency-Key header is required when creating a Maximize Results ad group. For conversions, the campaign must also have exactly one active standard conversion event setting."}}, {"@type": "Question", "name": "How do you set a CPM bid correctly in the ChatGPT Ads API?", "acceptedAnswer": {"@type": "Answer", "text": "The API expects an impression bid rather than a cost per thousand impressions. Divide the CPM figure by 1,000 and then multiply by 1,000,000 to get micros. OpenAI's documented example is a 60 US dollar CPM, which equals 0.06 US dollars per impression and is sent as 60000 micros."}}, {"@type": "Question", "name": "What settings cannot be changed after creating a ChatGPT Ads campaign in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "OpenAI documents several immutable settings: the campaign objective, the selected conversion event on a conversion-optimised campaign, and switching a daily budget back to a lifetime budget. An ad cannot be moved to a different ad group after creation, and an ad account's currency and timezone are creation-time choices that cannot be edited through a branding update."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://distk.in/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://distk.in/blog/"}, {"@type": "ListItem", "position": 3, "name": "The ChatGPT Ads API in 2026: Campaign Structure, Bidding and What You Actually Control", "item": "https://distk.in/blog/chatgpt-ads-api-campaign-bidding-guide-2026.html"}]}</script>
+<link rel="icon" type="image/png" href="../assets/images/favicon.png"><link rel="apple-touch-icon" href="../assets/images/Logo.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BWDTQ1JPL2"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-BWDTQ1JPL2');</script>
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1077520544213003');fbq('track','PageView');</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1077520544213003&ev=PageView&noscript=1"></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#0a0a0a;--paper:#fafafa;--mid:#6b6b6b;--light:#e8e8e8;--accent:#e63312;--accent-soft:rgba(230,51,18,0.08);--mono:'Space Mono',monospace;--sans:'Outfit',sans-serif;--container:1120px;--prose:720px;--gutter:clamp(1.2rem,4vw,3rem)}
+html{font-size:16px;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.container{max-width:var(--container);margin:0 auto;padding:0 var(--gutter)}
+.prose{max-width:var(--prose);margin:0 auto;padding:0 var(--gutter)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--light)}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;max-width:var(--container);margin:0 auto;padding:0.9rem var(--gutter)}
+.nav__logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;color:var(--ink)}
+.nav__logo img{height:32px;width:auto}
+.nav__logo span{font-family:var(--mono);font-weight:700;font-size:1.05rem;letter-spacing:-0.02em}
+.nav__logo small{display:block;font-size:0.55rem;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);line-height:1}
+.nav__back{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid);text-decoration:none;display:flex;align-items:center;gap:0.4rem;transition:color 0.2s}
+.nav__back:hover{color:var(--accent)}
+.nav__cta{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.6rem 1.4rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.nav__cta:hover{background:var(--accent)}
+.hero{padding:7.5rem 0 3.5rem;position:relative;overflow:hidden;border-bottom:1px solid var(--light)}
+.hero::before{content:'ADS';position:absolute;right:-1%;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:clamp(6rem,26vw,22rem);font-weight:700;color:rgba(0,0,0,0.03);line-height:1;pointer-events:none;user-select:none;letter-spacing:-0.05em}
+.hero__tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1.5rem}
+.hero__tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.hero h1{font-family:var(--sans);font-weight:700;font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;letter-spacing:-0.03em;max-width:20ch;margin-bottom:1.5rem}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero__sub{font-size:1.1rem;color:var(--mid);max-width:56ch;line-height:1.7;margin-bottom:2rem}
+.hero__meta{display:flex;flex-wrap:wrap;gap:1.5rem;font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid)}
+.tldr{background:var(--accent-soft);border-left:3px solid var(--accent);padding:1.8rem 2rem;margin:3rem 0;position:relative}
+.tldr::before{content:'TL;DR';position:absolute;top:-0.6rem;left:2rem;font-family:var(--mono);font-size:0.62rem;font-weight:700;letter-spacing:0.12em;background:var(--accent);color:#fff;padding:0.2rem 0.6rem}
+.tldr p{font-size:0.95rem;color:var(--ink);line-height:1.7}
+.article{padding:4rem 0 5rem}
+.article h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.35rem,2.8vw,1.8rem);letter-spacing:-0.02em;line-height:1.2;margin:3rem 0 1rem;padding-top:1rem;border-top:1px solid var(--light)}
+.article h2:first-child{border-top:none;margin-top:0}
+.article h3{font-family:var(--mono);font-weight:700;font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin:2rem 0 0.6rem}
+.article p{font-size:1rem;color:#2a2a2a;line-height:1.8;margin-bottom:1.25rem}
+.article ul,.article ol{padding-left:1.4rem;margin-bottom:1.25rem}
+.article li{font-size:1rem;color:#2a2a2a;line-height:1.75;margin-bottom:0.4rem}
+.article strong{font-weight:600;color:var(--ink)}
+.article a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(230,51,18,0.3)}
+.article a:hover{border-bottom-color:var(--accent)}
+.article blockquote{border-left:3px solid var(--accent);padding:0.75rem 1.5rem;margin:2rem 0;background:var(--accent-soft)}
+.article blockquote p{color:var(--ink);font-size:1rem;margin:0}
+.table-wrap{overflow-x:auto;margin:2rem 0}
+.data-table{width:100%;border-collapse:collapse;margin:0;font-size:0.88rem}
+.data-table th{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:0.7rem 1rem;text-align:left;white-space:nowrap}
+.data-table td{padding:0.75rem 1rem;border-bottom:1px solid var(--light);vertical-align:top}
+.data-table tr:last-child td{border-bottom:none}
+.data-table tr:nth-child(even) td{background:#f5f5f5}
+.callout{border:1.5px solid var(--light);padding:1.5rem 1.8rem;margin:2rem 0}
+.callout__label{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem}
+.callout p{font-size:0.92rem;color:var(--mid);line-height:1.7;margin:0}
+.faq{padding:4rem 0;background:var(--ink);color:var(--paper)}
+.faq .section-tag{color:var(--accent)}
+.faq .section-tag::before{background:var(--accent)}
+.faq__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2.5rem;margin-top:2.5rem}
+.faq__item{border-left:2px solid var(--accent);padding-left:1.5rem}
+.faq__item h3{font-family:var(--sans);font-weight:600;font-size:0.95rem;margin-bottom:0.5rem;color:var(--paper)}
+.faq__item p{font-size:0.85rem;color:rgba(255,255,255,0.88);line-height:1.65}
+.section-tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1rem}
+.section-tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.section-title{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.15;color:var(--paper)}
+.cta{padding:5rem 0;background:var(--accent-soft);border-top:1px solid rgba(230,51,18,0.12)}
+.cta__inner{max-width:680px;margin:0 auto;padding:0 var(--gutter);text-align:center}
+.cta h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.2;margin-bottom:1rem}
+.cta p{font-size:1rem;color:var(--mid);line-height:1.7;margin-bottom:2rem}
+.cta__btn{display:inline-flex;align-items:center;gap:0.6rem;font-family:var(--mono);font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;padding:1rem 2.2rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.cta__btn:hover{background:var(--accent)}
+.foot{padding:2.5rem 0;border-top:1px solid var(--light);text-align:center;font-family:var(--mono);font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid)}
+.foot a{color:var(--mid);text-decoration:none}.foot a:hover{color:var(--accent)}
+@media(max-width:768px){.faq__grid{grid-template-columns:1fr}.nav__back span{display:none}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="https://distk.in" class="nav__logo">
+      <img src="../assets/images/Logo.png" alt="Distk">
+      <div><span>Distk</span><small>Global Growth Partner</small></div>
+    </a>
+    <a href="/blog/" class="nav__back">← <span>All articles</span></a>
+    <a href="https://distk.in/#contact" class="nav__cta">Work with us</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="prose">
+    <div class="hero__tag">Paid Media Guide</div>
+    <h1>The <em>ChatGPT Ads API</em> in 2026: Campaign Structure, Bidding and What You Actually Control</h1>
+    <p class="hero__sub">OpenAI has shipped a complete advertising API: objectives, bid strategies, budget types, targeting, creative review, spend limits and insights. This is the media buyer's read on how it is structured, what it decides for you, and where the expensive mistakes are.</p>
+    <div class="hero__meta">
+      <span>Distk Editorial</span>
+      <span>Sep 2026</span>
+      <span>14 min read</span>
+    </div>
+  </div>
+</section>
+
+<div class="prose">
+  <div class="tldr">
+    <p>The ChatGPT Ads API, formally the Advertiser API, runs at https://api.ads.openai.com with bearer authentication and one key per ad account. Structure is account, campaign, ad group, ad, with targeting on the campaign and bidding on the ad group. There are three objectives set as bidding_type (impressions, clicks, conversions) and three bid strategies (fixed_bid, maximize_clicks, maximize_conversions, the latter two branded Maximize Results), but only five valid combinations of objective, billing event and strategy. Maximize Results requires a daily budget, click billing, no explicit bid, no audience bid multipliers and a mandatory Idempotency-Key. Budgets and bids use micros at 1,000,000 per major currency unit, and impression bids are per impression, so a 60 USD CPM is 60000 micros. New resources are created paused and you activate from the ad upward. Campaign objective, the oCPC conversion event, a daily-to-lifetime budget change and an ad's parent ad group are all fixed after creation.</p>
+  </div>
+</div>
+
+<main class="article">
+  <div class="prose">
+<style>
+.prose pre{background:#f4f4f4;border-left:3px solid var(--accent);padding:1rem 1.1rem;overflow-x:auto;margin:1.5rem 0;font-size:0.85rem;line-height:1.6}
+.prose pre code{font-family:var(--mono);font-size:0.85rem;color:#1a1a1a;background:none;padding:0;white-space:pre}
+.prose p code,.prose li code,.prose td code{font-family:var(--mono);font-size:0.86em;background:#f0f0f0;padding:0.1rem 0.35rem;border-radius:2px}
+</style>
+
+    <h2>What Is the ChatGPT Ads API in 2026?</h2>
+    <p>The ChatGPT Ads API, which OpenAI calls the Advertiser API, is the programmatic interface for creating and managing ads that appear inside ChatGPT. It handles campaigns, ad groups, ads, product feeds, conversion tracking and reporting. Requests go to <code>https://api.ads.openai.com</code> with a bearer token, and you create that key in the Settings page of Ads Manager at ads.openai.com.</p>
+    <p>This is a full ad platform rather than a placement you buy through someone else. It has objectives, bid strategies, budget types, geographic and platform targeting, audience inclusion and exclusion, creative review, spend limits, audit logs and an insights endpoint. If you buy media for a living, the useful question is not whether it works but which decisions it leaves you and which it takes away. This guide answers that, using only OpenAI's own documentation.</p>
+
+    <h2>How Is a ChatGPT Ads Account Structured in 2026?</h2>
+    <p>Four levels, each owning different settings. An ad account contains campaigns, each campaign contains ad groups, and each ad group contains ads. OpenAI's guidance is to configure each setting at the level that owns it, use separate campaigns when you need separate budgets, objectives or targeting, and use ad groups for different bid configurations, context hints or product sets.</p>
+
+<pre><code>Ad account
+└── Campaign
+    └── Ad group
+        └── Ad</code></pre>
+
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Level</th><th>What you configure here</th><th>What this means for a media buyer</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Ad account</strong></td><td>Advertiser branding, currency, timezone, account access, spend limits</td><td>Currency and timezone are creation-time choices and cannot be edited later.</td></tr>
+        <tr><td><strong>Campaign</strong></td><td>Objective, budget, schedule, geographic and platform targeting, audience inclusion and exclusion, conversion events</td><td>Targeting lives here, not on the ad group. One budget is shared across all its ad groups.</td></tr>
+        <tr><td><strong>Ad group</strong></td><td>Bid strategy, context hints, audience bid multipliers, product set</td><td>This is your bidding and relevance layer.</td></tr>
+        <tr><td><strong>Ad</strong></td><td>Creative, image or product template, destination URL</td><td>An ad cannot be moved to another ad group after creation.</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>One structural constraint is worth planning around in 2026: targeting is a campaign-level setting. If you want two different geographies or two different audience definitions, that is two campaigns, and therefore two budgets. Teams used to building one campaign with many differently-targeted ad sets will need to restructure.</p>
+
+    <h2>What Campaign Objectives Does ChatGPT Ads Support in 2026?</h2>
+    <p>Three objectives, set as <code>bidding_type</code> on the campaign: <code>impressions</code>, <code>clicks</code> and <code>conversions</code>. The objective determines what delivery optimises for. A separate setting on the ad group, <code>billing_event_type</code>, determines what you actually pay for. Those two are not the same field and not always the same thing, which is the single most useful mechanic to understand before you build anything.</p>
+
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Objective</th><th>Best for</th><th>How you pay</th><th>What delivery optimises for</th></tr></thead>
+      <tbody>
+        <tr><td><code>impressions</code> (CPM)</td><td>Reach and awareness</td><td>Per 1,000 impressions</td><td>Broad delivery at scale</td></tr>
+        <tr><td><code>clicks</code> (CPC)</td><td>Engagement and traffic</td><td>Per valid click</td><td>Clicks from people likely to engage</td></tr>
+        <tr><td><code>conversions</code> (oCPC)</td><td>A tracked action after a click</td><td>Per valid click, not per conversion</td><td>Clicks more likely to lead to your selected conversion event</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The third row is the unusual one. A conversions campaign optimises toward a conversion event but bills on valid clicks, so the bid you set is a CPA bid used as an optimisation input rather than a price you pay per conversion. We cover that billing shape separately in the <a href="chatgpt-conversion-optimized-campaigns-2026.html">conversion-optimised campaigns guide</a>.</p>
+
+    <h2>How Do Bid Strategies Work in ChatGPT Ads in 2026?</h2>
+    <p>Three strategies, set as <code>bidding_config.strategy</code> on the ad group. <code>fixed_bid</code> means you supply the bid. <code>maximize_clicks</code> and <code>maximize_conversions</code> let OpenAI adjust bids within your daily budget, and OpenAI brands those two jointly as Maximize Results. The documentation states both are available for standard and product-feed campaigns.</p>
+
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Strategy</th><th>Use when</th><th>Compatible objectives</th><th>Budget</th><th>Bid amount</th></tr></thead>
+      <tbody>
+        <tr><td><code>fixed_bid</code></td><td>You want to set and adjust the bid yourself</td><td>Impressions, clicks, conversions</td><td>Daily or lifetime</td><td>Provide <code>max_bid_micros</code></td></tr>
+        <tr><td><code>maximize_clicks</code></td><td>You want OpenAI to seek more clicks from your budget</td><td>Clicks</td><td>Daily only</td><td>Omit <code>max_bid_micros</code></td></tr>
+        <tr><td><code>maximize_conversions</code></td><td>You want OpenAI to seek more conversions from your budget</td><td>Conversions</td><td>Daily only</td><td>Omit <code>max_bid_micros</code></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Only five combinations of objective, billing event and strategy are valid, and the documentation lists them explicitly. Memorise this table and most of your 400-level errors disappear.</p>
+
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Campaign <code>bidding_type</code></th><th>Ad group <code>billing_event_type</code></th><th>Ad group <code>strategy</code></th></tr></thead>
+      <tbody>
+        <tr><td><code>impressions</code></td><td><code>impression</code></td><td><code>fixed_bid</code></td></tr>
+        <tr><td><code>clicks</code></td><td><code>click</code></td><td><code>fixed_bid</code></td></tr>
+        <tr><td><code>clicks</code></td><td><code>click</code></td><td><code>maximize_clicks</code></td></tr>
+        <tr><td><code>conversions</code></td><td><code>click</code></td><td><code>fixed_bid</code></td></tr>
+        <tr><td><code>conversions</code></td><td><code>click</code></td><td><code>maximize_conversions</code></td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h3>The Maximize Results prerequisites people miss</h3>
+    <ul>
+      <li><strong>Daily budget required.</strong> Maximize Results does not work with a lifetime budget.</li>
+      <li><strong>Click billing required.</strong> Both strategies use <code>billing_event_type: "click"</code>.</li>
+      <li><strong>Omit the bid.</strong> Sending <code>max_bid_micros</code> with a Maximize strategy is a configuration error.</li>
+      <li><strong>No audience bid multipliers.</strong> Those work only with <code>fixed_bid</code>.</li>
+      <li><strong>An <code>Idempotency-Key</code> is required</strong> when creating a Maximize Results ad group. It is optional elsewhere on create endpoints and mandatory here.</li>
+      <li><strong>For conversions,</strong> the campaign needs exactly one active standard conversion event setting.</li>
+    </ul>
+
+    <h2>How Do Budgets and Micros Work in 2026?</h2>
+    <p>Budgets sit on the campaign and are expressed in micros, where one million micros equals one major unit of the account currency. You provide exactly one budget field: either <code>daily_spend_limit_micros</code> or <code>lifetime_spend_limit_micros</code>. A campaign cannot have both. Daily minimums depend on the account currency, and a request below the minimum returns an error stating the required amount.</p>
+
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Amount in a USD account</th><th>Value to send</th></tr></thead>
+      <tbody>
+        <tr><td>1.00 USD</td><td><code>1000000</code></td></tr>
+        <tr><td>2.50 USD</td><td><code>2500000</code></td></tr>
+        <tr><td>50.00 USD</td><td><code>50000000</code></td></tr>
+        <tr><td>500.00 USD lifetime</td><td><code>500000000</code></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Two behaviours matter operationally. A budget update sets the new amount rather than adding to the old one, so sending 75000000 makes the daily budget 75 USD and does not add 75 USD. And you cannot reduce a lifetime budget below what the campaign has already spent.</p>
+
+    <h3>The budget switch that only works one way</h3>
+    <p>You can switch a lifetime-budget campaign to a daily budget through a campaign update. You cannot switch a daily budget back to lifetime; OpenAI's documentation says to create a new campaign if you need a lifetime budget instead. That matters because Maximize Results requires a daily budget, so moving a lifetime campaign onto automated bidding is a one-way door for that campaign.</p>
+
+    <h2>How Do You Set a Bid Correctly, Including CPM?</h2>
+    <p><code>max_bid_micros</code> uses the same micros scaling as budgets, so a 2.50 USD click bid is <code>2500000</code>. Impression bidding is where teams get this wrong. The API expects a bid per impression, not per thousand impressions. OpenAI's own worked example: a 60 USD CPM is 0.06 USD per impression, so you send <code>60000</code> micros, calculated as 60 divided by 1,000 multiplied by 1,000,000.</p>
+    <p>Getting this backwards by a factor of 1,000 in either direction is the most expensive arithmetic error available on this platform in 2026, so it is worth a second pair of eyes on the first impressions campaign you build.</p>
+
+    <div class="callout">
+      <div class="callout__label">The default that protects you in 2026</div>
+      <p>OpenAI's documentation states that new resources are created paused so you can finish setup before enabling delivery. Nothing you create through the API starts spending on its own. Activation is a separate, explicit call on each level, and you activate from the bottom up: the ad, then the ad group, then the campaign.</p>
+    </div>
+
+    <h2>How Do You Launch a First Campaign Through the API in 2026?</h2>
+    <p>Five creates and three activations. The sequence below follows OpenAI's own quickstart: a paused clicks campaign with a fixed bid, then an ad group, then an uploaded image, then a chat-card ad, then preview and activate. Budget and bid values in the documentation are illustrative USD amounts.</p>
+
+    <h3>1. Create the campaign</h3>
+<pre><code>curl -X POST "https://api.ads.openai.com/v1/campaigns"   -H "Authorization: Bearer ${OPENAI_ADS_API_KEY}"   -H "Idempotency-Key: first-campaign-001"   -H "Content-Type: application/json"   -d '{
+    "name": "Spring launch",
+    "status": "paused",
+    "bidding_type": "clicks",
+    "budget": { "daily_spend_limit_micros": 50000000 },
+    "targeting": { "locations": { "countries": ["US"] } }
+  }'</code></pre>
+
+    <h3>2. Create the ad group with a bid and context hints</h3>
+<pre><code>curl -X POST "https://api.ads.openai.com/v1/ad_groups"   -H "Authorization: Bearer ${OPENAI_ADS_API_KEY}"   -H "Idempotency-Key: first-ad-group-001"   -H "Content-Type: application/json"   -d '{
+    "campaign_id": "cmpn_123",
+    "name": "Trail running",
+    "status": "paused",
+    "context_hints": ["Trail running shoes for rocky terrain"],
+    "bidding_config": {
+      "billing_event_type": "click",
+      "strategy": "fixed_bid",
+      "max_bid_micros": 2000000
+    }
+  }'</code></pre>
+
+    <h3>3. Upload the creative image</h3>
+<pre><code>curl -X POST "https://api.ads.openai.com/v1/upload"   -H "Authorization: Bearer ${OPENAI_ADS_API_KEY}"   -F "file=@/path/to/product-image.png"</code></pre>
+    <p>Use JPEG, PNG or WebP at a minimum of 640 by 640 pixels, and save the returned <code>file_id</code>.</p>
+
+    <h3>4. Create the ad</h3>
+<pre><code>curl -X POST "https://api.ads.openai.com/v1/ads"   -H "Authorization: Bearer ${OPENAI_ADS_API_KEY}"   -H "Idempotency-Key: first-ad-001"   -H "Content-Type: application/json"   -d '{
+    "ad_group_id": "adgrp_123",
+    "name": "Trail shoe launch",
+    "status": "paused",
+    "creative": {
+      "type": "chat_card",
+      "title": "Find your next trail shoe",
+      "body": "Explore shoes made for your next outdoor run.",
+      "target_url": "https://example.com/trail-shoes",
+      "file_id": "file_123"
+    }
+  }'</code></pre>
+    <p>Creating an ad submits its creative for review. Titles run 3 to 50 characters, bodies up to 100 characters, and the destination must be an HTTP or HTTPS URL no longer than 2,048 characters that is accessible to OpenAI's ad crawlers.</p>
+
+    <h3>5. Preview, inspect, then activate bottom-up</h3>
+<pre><code>curl -X POST "https://api.ads.openai.com/v1/ads/ad_123/preview"   -H "Authorization: Bearer ${OPENAI_ADS_API_KEY}"
+
+curl -X POST "https://api.ads.openai.com/v1/ads/ad_123/activate"   -H "Authorization: Bearer ${OPENAI_ADS_API_KEY}"
+curl -X POST "https://api.ads.openai.com/v1/ad_groups/adgrp_123/activate"   -H "Authorization: Bearer ${OPENAI_ADS_API_KEY}"
+curl -X POST "https://api.ads.openai.com/v1/campaigns/cmpn_123/activate"   -H "Authorization: Bearer ${OPENAI_ADS_API_KEY}"</code></pre>
+    <p>OpenAI is explicit that a preview shows appearance and does not confirm serving eligibility, and that activation enables delivery only when the remaining requirements are satisfied.</p>
+
+    <h2>What Cannot You Change After Creation in 2026?</h2>
+    <p>More than on most ad platforms, and this is the section worth reading before you build a naming convention. OpenAI documents several settings as fixed at creation, which means your structure has to anticipate them rather than correct them later.</p>
+
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Setting</th><th>Changeable?</th><th>What to do instead</th></tr></thead>
+      <tbody>
+        <tr><td>Campaign objective (<code>bidding_type</code>)</td><td>No</td><td>Create a new campaign.</td></tr>
+        <tr><td>Selected conversion event on an oCPC campaign</td><td>No</td><td>Create a new campaign.</td></tr>
+        <tr><td>Daily budget back to lifetime</td><td>No</td><td>Create a new campaign.</td></tr>
+        <tr><td>Moving an ad to a different ad group</td><td>No</td><td>Create the ad in the target ad group.</td></tr>
+        <tr><td>Account currency and timezone</td><td>No</td><td>Set correctly at account creation.</td></tr>
+        <tr><td>Bid strategy within the same objective</td><td>Yes</td><td>Update <code>bidding_config</code>, respecting the budget rules.</td></tr>
+        <tr><td>Creative</td><td>Yes</td><td>Updating it creates a new submitted version and starts another review.</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h2>How Do You Diagnose a Campaign That Is Not Delivering?</h2>
+    <p>Two include parameters do most of the work. Request <code>bid_too_low</code> and <code>serving_issues</code> on the ad group, and <code>serving_issues</code> on the campaign. OpenAI is careful about what the first one means: <code>bid_too_low: true</code> indicates the bid may be too low for reliable delivery, and it is guidance rather than a serving restriction.</p>
+
+<pre><code>curl -G "https://api.ads.openai.com/v1/ad_groups/adgrp_123"   -H "Authorization: Bearer ${OPENAI_ADS_API_KEY}"   --data-urlencode 'include[]=bid_too_low'   --data-urlencode 'include[]=serving_issues'</code></pre>
+
+    <p>Work through the layers in order, because each one can independently stop delivery: account status and account reviews, the account spend limit, the campaign budget and schedule, campaign targeting, the ad group bid, ad review status, and for product-feed campaigns whether any products match your filters. OpenAI states plainly that campaign budgets and account spend limits apply independently, so raising a campaign budget does not override an exhausted account limit. The <a href="chatgpt-ads-account-management-guide-2026.html">account management guide</a> covers that layer.</p>
+
+    <h2>What Are the Rate Limits and Account Limits in 2026?</h2>
+    <p>The Advertiser API enforces limits by both ad account and IP address, and a request has to stay within both. Bulk job creation has its own separate limit, covered in the <a href="chatgpt-ads-bulk-api-agencies-2026.html">Bulk API guide</a>.</p>
+
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Limit</th><th>Value</th></tr></thead>
+      <tbody>
+        <tr><td>Per endpoint</td><td>600 requests per minute</td></tr>
+        <tr><td>Overall</td><td>1,200 requests per minute</td></tr>
+        <tr><td>Bulk job creation</td><td>10 requests per 10 seconds per ad account</td></tr>
+        <tr><td>Self-serve campaigns per ad account</td><td>5,000 non-archived</td></tr>
+        <tr><td>Self-serve ad groups per ad account</td><td>5,000 non-archived</td></tr>
+        <tr><td>Self-serve ads per ad account</td><td>5,000 active or paused</td></tr>
+        <tr><td>Location IDs per campaign</td><td>2,500</td></tr>
+        <tr><td>Context hints per ad group</td><td>2,000</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h2>How Do You Add Tracking Parameters to ChatGPT Ads?</h2>
+    <p>Through <code>landing_page_configuration.query_string_template</code>, which can be set at campaign, ad group or ad level. The template supports macros, and the one that matters for stitching platform data to your own analytics is <code>{oppref}</code>, the click identifier.</p>
+
+<pre><code>{
+  "landing_page_configuration": {
+    "query_string_template": "utm_source=openai&utm_campaign={campaign_id}&utm_content={ad_id}&click_id={oppref}"
+  }
+}</code></pre>
+    <p>Capture <code>oppref</code> on your landing page and pass it back on server-side conversions, because the Conversions API does not capture it automatically. That mechanic is the backbone of attribution on this platform and is covered in the <a href="chatgpt-measurement-pixel-conversions-api-2026.html">Measurement Pixel and Conversions API guide</a>.</p>
+
+    <h2>How Should You Read ChatGPT Ads Reporting in 2026?</h2>
+    <p>Through the Insights endpoints, and with patience about which numbers have settled. OpenAI documents three different processing speeds, and conflating them produces the classic false alarm on day one of a campaign.</p>
+
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Metrics</th><th>Freshness</th><th>Reporting history available</th></tr></thead>
+      <tbody>
+        <tr><td>Impressions, clicks, CTR</td><td>Can appear within minutes; recent values may change</td><td>Hourly: about 30 days</td></tr>
+        <tr><td>Spend, CPC, CPM</td><td>Reflect finalised activity and can update later</td><td>Non-hourly, excluding product: most recent 365 days</td></tr>
+        <tr><td>Conversions and purchase outcomes</td><td>Daily processing; allow at least one day to appear</td><td>Product reporting: about 30 days</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Two reading notes from the documentation. CTR is returned as a ratio, so <code>0.04</code> means 4 percent. And a <code>null</code> metric means unavailable or not calculable, not zero, which matters for ROAS when purchase value is missing or spend is zero. Because recent clicks can arrive before finalised spend, dividing the latest spend by the latest clicks can disagree with the returned CPC.</p>
+
+    <h2>What Has Changed in the ChatGPT Ads API During 2026?</h2>
+    <p>OpenAI publishes a changelog, and the cadence tells you how young this platform is. The initial version was published as v1, and the documented 2026 additions run through the year.</p>
+    <ul>
+      <li><strong>10 September 2026:</strong> granular web platform targeting with <code>desktop_web</code>, <code>ios_web</code> and <code>android_web</code>.</li>
+      <li><strong>9 September 2026:</strong> daily account spending limits for accounts on postpaid invoice billing.</li>
+      <li><strong>25 August 2026:</strong> custom audience Add, Remove, Replace and Merge operations, automatic identifier matching, and support for small and empty exclusion-only audiences.</li>
+      <li><strong>16 July 2026:</strong> support for passing the Pixel browser reference as <code>events[].user.obref</code> in Conversions API requests.</li>
+      <li><strong>16 June 2026:</strong> conversion-optimised campaign bidding with <code>bidding_type: "conversions"</code>.</li>
+      <li><strong>11 June 2026:</strong> segmented insights for product, country and device breakdowns.</li>
+      <li><strong>3 June 2026:</strong> location targeting including <code>/geo_lookup/search</code>, plus conversion setup and reporting endpoints.</li>
+    </ul>
+    <p>Practical consequence for an agency in 2026: pin nothing to a capability you have not re-checked this quarter, and read the changelog before you conclude a feature does not exist.</p>
+
+    <h2>What Are the Common Mistakes With the ChatGPT Ads API in 2026?</h2>
+    <ul>
+      <li><strong>Sending a CPM bid per thousand instead of per impression.</strong> A 60 USD CPM is <code>60000</code> micros, not 60000000.</li>
+      <li><strong>Pairing Maximize Results with a lifetime budget.</strong> It requires a daily budget, and the switch back to lifetime is not available.</li>
+      <li><strong>Forgetting the mandatory <code>Idempotency-Key</code></strong> when creating a Maximize Results ad group.</li>
+      <li><strong>Sending a partial targeting update.</strong> Geographic and audience updates can replace existing criteria, so retrieve the campaign and send the complete intended configuration.</li>
+      <li><strong>Assuming a budget update adds to the old budget.</strong> It replaces it.</li>
+      <li><strong>Treating activation as delivery.</strong> Account reviews, spend limits, creative review and targeting can each independently block serving.</li>
+      <li><strong>Judging a campaign on day-one conversion data.</strong> Conversions update through daily processing, so allow at least a day.</li>
+      <li><strong>Planning one campaign with several differently-targeted ad groups.</strong> Targeting is a campaign-level setting on this platform.</li>
+    </ul>
+
+    <h2>Key Takeaways for 2026</h2>
+    <p>ChatGPT Ads in 2026 is a real auction platform with its own structural logic, and most of the early mistakes come from carrying Meta or Google habits across unchanged.</p>
+    <ul>
+      <li>Base URL <code>https://api.ads.openai.com</code>, bearer auth, keys created in Ads Manager Settings, and one key per ad account.</li>
+      <li>Four levels: account, campaign, ad group, ad. Targeting sits on the campaign, bidding on the ad group.</li>
+      <li>Three objectives and three bid strategies, but only five valid combinations of objective, billing event and strategy.</li>
+      <li>Maximize Results needs a daily budget, click billing, no explicit bid, no audience multipliers and a mandatory idempotency key.</li>
+      <li>Budgets and bids are in micros; impression bids are per impression, not per thousand.</li>
+      <li>Everything is created paused, and you activate from the ad upward.</li>
+      <li>Objective, oCPC event, daily-to-lifetime budget and an ad's parent ad group are all fixed after creation.</li>
+      <li>Rate limits are 600 per endpoint and 1,200 overall per minute, enforced by both account and IP.</li>
+      <li>Conversion reporting needs at least a day, and CTR comes back as a ratio.</li>
+    </ul>
+    <p>Distk builds and runs paid media for growth teams across India and internationally, including the measurement layer that makes a new channel readable rather than a guess. If you are evaluating ChatGPT Ads in 2026, the sensible first step is a small structured test with tracking verified end to end before any budget scales, and that is the piece we would set up with you.</p>
+
+    <h2>Sources</h2>
+    <ul>
+      <li><a href="https://developers.openai.com/ads/api-overview" target="_blank" rel="noopener">OpenAI, Ads API Overview</a>, including campaign structure, first campaign, rate limits and changelog.</li>
+      <li><a href="https://developers.openai.com/ads/bidding-and-budgets" target="_blank" rel="noopener">OpenAI, Bidding and Budgets</a>.</li>
+      <li><a href="https://developers.openai.com/ads/campaign-management" target="_blank" rel="noopener">OpenAI, Campaign Management</a>, including creative limits and tracking parameters.</li>
+      <li><a href="https://developers.openai.com/ads/reporting" target="_blank" rel="noopener">OpenAI, Reporting</a>, including metric definitions, data freshness and retention.</li>
+      <li><a href="https://developers.openai.com/ads/llms.txt" target="_blank" rel="noopener">OpenAI, Ads documentation index</a>.</li>
+    </ul>
+    <p style="font-size:0.88rem;color:var(--mid)">Every endpoint, field, limit and default in this guide is quoted from OpenAI's published Ads documentation as of 30 September 2026. Platform capabilities change; check the changelog before relying on any specific behaviour.</p>
+
+  </div>
+</main>
+
+<section class="faq">
+  <div class="container">
+    <div class="section-tag">Key Questions</div>
+    <h2 class="section-title">ChatGPT Ads API in 2026: FAQs</h2>
+    <div class="faq__grid">
+      <div class="faq__item">
+        <h3>What is the base URL and authentication for the ChatGPT Ads API?</h3>
+        <p>Requests go to https://api.ads.openai.com with an Authorization bearer header. You create the Advertiser API key in the Settings page of Ads Manager at ads.openai.com. Each key works with one ad account, so you do not add an account header when using it.</p>
+      </div>
+      <div class="faq__item">
+        <h3>What bid strategies does ChatGPT Ads support in 2026?</h3>
+        <p>Three: fixed_bid, where you supply max_bid_micros, plus maximize_clicks and maximize_conversions, which OpenAI brands jointly as Maximize Results and which let OpenAI adjust bids within a daily budget. Both Maximize strategies are available for standard and product-feed campaigns.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Why is my Maximize Results ad group failing to create?</h3>
+        <p>Check five things: the campaign needs a daily budget rather than lifetime, billing_event_type must be click, max_bid_micros must be omitted, audience bid multipliers must not be set, and an Idempotency-Key header is required for Maximize Results ad group creation.</p>
+      </div>
+      <div class="faq__item">
+        <h3>How do I set a CPM bid in the ChatGPT Ads API?</h3>
+        <p>The API expects a bid per impression, not per thousand impressions. Divide your CPM by 1,000 then multiply by 1,000,000. OpenAI's own example: a 60 USD CPM is 0.06 USD per impression, so you send 60000 micros.</p>
+      </div>
+      <div class="faq__item">
+        <h3>What cannot be changed after a ChatGPT Ads campaign is created?</h3>
+        <p>The campaign objective, the selected conversion event on a conversion-optimised campaign, and a daily budget cannot be switched back to lifetime. An ad also cannot be moved to a different ad group, and account currency and timezone are creation-time choices.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Why is my ChatGPT Ads campaign not delivering after activation?</h3>
+        <p>Activation only permits delivery. Check account status and account reviews, the account spend limit, the campaign budget and schedule, targeting, the ad group bid using the bid_too_low include, and ad review status. Campaign budgets and account spend limits apply independently.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED START -->
+<section class="related" style="padding:3.5rem 0;border-top:1px solid #e8e8e8;background:#fafafa">
+  <div style="max-width:720px;margin:0 auto;padding:0 clamp(1.2rem,4vw,3rem)">
+    <div style="font-family:'Space Mono',monospace;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:#e63312;margin-bottom:1.3rem">Related reading</div>
+    <ul style="list-style:none;margin:0;padding:0;display:grid;gap:0.9rem">
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="chatgpt-ads-bulk-api-agencies-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">Bulk Campaign Management in ChatGPT Ads: The Bulk API for Agencies in 2026</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="chatgpt-ads-account-management-guide-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">ChatGPT Ads Account Management in 2026: Branding, Reviews, Spend Limits and Account States</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="chatgpt-ads-targeting-guide-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">ChatGPT Ads Targeting in 2026: Geography, Platform, Audiences and Context Hints</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="chatgpt-measurement-pixel-conversions-api-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">The ChatGPT Measurement Pixel and Conversions API in 2026</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="chatgpt-ads-advertising-inside-ai-india-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">ChatGPT Ads Are Here: What Advertising Inside AI Means for Indian Brands in 2026</a></li>
+    </ul>
+  </div>
+</section>
+<!-- RELATED END -->
+<section class="cta">
+  <div class="cta__inner">
+    <h2>Test a new channel properly before you scale it</h2>
+    <p>Distk sets up paid media on new platforms with tracking verified end to end first, so the data you get back tells you whether the message worked rather than whether the plumbing was broken.</p>
+    <a href="https://distk.in/#contact" class="cta__btn">Start the conversation →</a>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="container">
+    © 2026 Distk · <a href="https://distk.in">distk.in</a> · <a href="mailto:connect@distk.in">connect@distk.in</a>
+  </div>
+</footer>
+</body>
+</html>

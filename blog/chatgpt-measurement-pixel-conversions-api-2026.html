@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xdifcafwxl");
+  </script>
+
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ChatGPT Measurement Pixel and Conversions API 2026: Setup and Attribution | Distk</title>
+<meta name="description" content="How to set up attribution for ChatGPT Ads in 2026: the Measurement Pixel install snippet, the four CSP entries, consent behaviour, cookie lifetimes, server-side Conversions API events, the oppref identifier you must capture yourself, deduplication rules and all 13 supported events.">
+<meta name="keywords" content="chatgpt measurement pixel, openai conversions api, chatgpt ads attribution 2026, oaiq pixel setup, oppref identifier, chatgpt ads conversion tracking, openai ads pixel consent">
+<meta name="author" content="Distk"><meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://distk.in/blog/chatgpt-measurement-pixel-conversions-api-2026.html">
+<meta property="og:type" content="article"><meta property="og:url" content="https://distk.in/blog/chatgpt-measurement-pixel-conversions-api-2026.html">
+<meta property="og:title" content="The ChatGPT Measurement Pixel and Conversions API in 2026: Attribution That Actually Reports">
+<meta property="og:description" content="Three objects, two identifiers that are not interchangeable, and one click identifier the API will not capture for you. The measurement layer under ChatGPT Ads.">
+<meta property="og:image" content="https://distk.in/assets/images/og-image.jpg"><meta property="og:site_name" content="Distk">
+<meta property="article:published_time" content="2026-09-30T00:00:00+05:30">
+<meta property="article:modified_time" content="2026-09-30T00:00:00+05:30">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="The ChatGPT Measurement Pixel and Conversions API in 2026: Attribution That Actually Reports"><meta name="twitter:description" content="Three objects, two identifiers that are not interchangeable, and one click identifier the API will not capture for you. The measurement layer under ChatGPT Ads.">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "The ChatGPT Measurement Pixel and Conversions API in 2026: Attribution That Actually Reports", "description": "A practical guide to ChatGPT Ads measurement in 2026: data sources, conversion event settings and campaign attachment, the pixel install snippet and CSP requirements, consent defaults, first-party cookie lifetimes, the Conversions API with the oppref identifier you must capture yourself, browser and server deduplication, the 13 supported events and how view-through attribution is reported.", "author": {"@type": "Organization", "name": "Distk", "url": "https://distk.in"}, "publisher": {"@type": "Organization", "name": "Distk", "logo": {"@type": "ImageObject", "url": "https://distk.in/assets/images/Logo.png"}}, "datePublished": "2026-09-30", "dateModified": "2026-09-30", "inLanguage": "en", "about": [{"@type": "Thing", "name": "ChatGPT Measurement Pixel"}, {"@type": "Thing", "name": "OpenAI Conversions API"}, {"@type": "Thing", "name": "conversion tracking"}, {"@type": "Thing", "name": "ad attribution"}, {"@type": "Thing", "name": "OpenAI"}, {"@type": "Thing", "name": "ChatGPT Ads"}], "mentions": [{"@type": "Thing", "name": "ChatGPT Measurement Pixel"}, {"@type": "Thing", "name": "OpenAI Conversions API"}, {"@type": "Thing", "name": "conversion tracking"}, {"@type": "Thing", "name": "ad attribution"}, {"@type": "Thing", "name": "OpenAI"}, {"@type": "Thing", "name": "ChatGPT Ads"}], "mainEntityOfPage": {"@type": "WebPage", "@id": "https://distk.in/blog/chatgpt-measurement-pixel-conversions-api-2026.html"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the difference between pixel_id and id in ChatGPT Ads conversion setup?", "acceptedAnswer": {"@type": "Answer", "text": "When you create a data source, the response returns both values with different jobs. The pixel_id is used to initialise the Measurement Pixel, send server-side events and check recent events. The id is used to select the source when creating a conversion event setting, where it goes in the source_ids field. OpenAI's documentation states explicitly to use the source's id in source_ids and not its pixel_id."}}, {"@type": "Question", "name": "Should you use both the ChatGPT Measurement Pixel and the Conversions API in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "OpenAI documents running both as a supported configuration and states that the Conversions API is a more reliable tracking source than the pixel alone. When using both for the same action, send the same Pixel ID, the same event name such as order_created, and the same event ID, which is event_id on the pixel and id on the Conversions API. For custom events also match custom_event_name. These shared values allow deduplication so the action is not counted twice."}}, {"@type": "Question", "name": "What Content Security Policy entries does the ChatGPT Measurement Pixel require?", "acceptedAnswer": {"@type": "Answer", "text": "Four entries. script-src must allow https://bzrcdn.openai.com to load the SDK. connect-src must allow https://bzr.openai.com to send events with fetch or sendBeacon, and https://bzrcdn.openai.com to fetch per-pixel configuration. img-src must allow https://bzr.openai.com for the image request fallback."}}, {"@type": "Question", "name": "How does measurement consent work in the ChatGPT Measurement Pixel?", "acceptedAnswer": {"@type": "Answer", "text": "The pixel initialises consent to true by default unless you set it to false before initialisation or the pixel finds a stored denial. While consent is false, the pixel does not send measurement-event pings, and OpenAI states that blocked events are not replayed when consent is subsequently granted. Calling the consent method with false also removes the pixel's first-party cookies."}}, {"@type": "Question", "name": "Why must you capture the oppref identifier yourself for ChatGPT Ads?", "acceptedAnswer": {"@type": "Answer", "text": "When an ad click supplies an oppref identifier, OpenAI's documentation states the Conversions API does not capture this value automatically. Your landing page must read the parameter and persist it so it can be included as oppref on the server-side event. The pixel separately stores it in a __oppref first-party cookie whose expiry resets to 30 days each time a non-empty oppref parameter is captured."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://distk.in/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://distk.in/blog/"}, {"@type": "ListItem", "position": 3, "name": "The ChatGPT Measurement Pixel and Conversions API in 2026: Attribution That Actually Reports", "item": "https://distk.in/blog/chatgpt-measurement-pixel-conversions-api-2026.html"}]}</script>
+<link rel="icon" type="image/png" href="../assets/images/favicon.png"><link rel="apple-touch-icon" href="../assets/images/Logo.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BWDTQ1JPL2"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-BWDTQ1JPL2');</script>
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1077520544213003');fbq('track','PageView');</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1077520544213003&ev=PageView&noscript=1"></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#0a0a0a;--paper:#fafafa;--mid:#6b6b6b;--light:#e8e8e8;--accent:#e63312;--accent-soft:rgba(230,51,18,0.08);--mono:'Space Mono',monospace;--sans:'Outfit',sans-serif;--container:1120px;--prose:720px;--gutter:clamp(1.2rem,4vw,3rem)}
+html{font-size:16px;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.container{max-width:var(--container);margin:0 auto;padding:0 var(--gutter)}
+.prose{max-width:var(--prose);margin:0 auto;padding:0 var(--gutter)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--light)}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;max-width:var(--container);margin:0 auto;padding:0.9rem var(--gutter)}
+.nav__logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;color:var(--ink)}
+.nav__logo img{height:32px;width:auto}
+.nav__logo span{font-family:var(--mono);font-weight:700;font-size:1.05rem;letter-spacing:-0.02em}
+.nav__logo small{display:block;font-size:0.55rem;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);line-height:1}
+.nav__back{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid);text-decoration:none;display:flex;align-items:center;gap:0.4rem;transition:color 0.2s}
+.nav__back:hover{color:var(--accent)}
+.nav__cta{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.6rem 1.4rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.nav__cta:hover{background:var(--accent)}
+.hero{padding:7.5rem 0 3.5rem;position:relative;overflow:hidden;border-bottom:1px solid var(--light)}
+.hero::before{content:'PIXEL';position:absolute;right:-1%;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:clamp(6rem,26vw,22rem);font-weight:700;color:rgba(0,0,0,0.03);line-height:1;pointer-events:none;user-select:none;letter-spacing:-0.05em}
+.hero__tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1.5rem}
+.hero__tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.hero h1{font-family:var(--sans);font-weight:700;font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;letter-spacing:-0.03em;max-width:20ch;margin-bottom:1.5rem}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero__sub{font-size:1.1rem;color:var(--mid);max-width:56ch;line-height:1.7;margin-bottom:2rem}
+.hero__meta{display:flex;flex-wrap:wrap;gap:1.5rem;font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid)}
+.tldr{background:var(--accent-soft);border-left:3px solid var(--accent);padding:1.8rem 2rem;margin:3rem 0;position:relative}
+.tldr::before{content:'TL;DR';position:absolute;top:-0.6rem;left:2rem;font-family:var(--mono);font-size:0.62rem;font-weight:700;letter-spacing:0.12em;background:var(--accent);color:#fff;padding:0.2rem 0.6rem}
+.tldr p{font-size:0.95rem;color:var(--ink);line-height:1.7}
+.article{padding:4rem 0 5rem}
+.article h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.35rem,2.8vw,1.8rem);letter-spacing:-0.02em;line-height:1.2;margin:3rem 0 1rem;padding-top:1rem;border-top:1px solid var(--light)}
+.article h2:first-child{border-top:none;margin-top:0}
+.article h3{font-family:var(--mono);font-weight:700;font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin:2rem 0 0.6rem}
+.article p{font-size:1rem;color:#2a2a2a;line-height:1.8;margin-bottom:1.25rem}
+.article ul,.article ol{padding-left:1.4rem;margin-bottom:1.25rem}
+.article li{font-size:1rem;color:#2a2a2a;line-height:1.75;margin-bottom:0.4rem}
+.article strong{font-weight:600;color:var(--ink)}
+.article a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(230,51,18,0.3)}
+.article a:hover{border-bottom-color:var(--accent)}
+.article blockquote{border-left:3px solid var(--accent);padding:0.75rem 1.5rem;margin:2rem 0;background:var(--accent-soft)}
+.article blockquote p{color:var(--ink);font-size:1rem;margin:0}
+.table-wrap{overflow-x:auto;margin:2rem 0}
+.data-table{width:100%;border-collapse:collapse;margin:0;font-size:0.88rem}
+.data-table th{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:0.7rem 1rem;text-align:left;white-space:nowrap}
+.data-table td{padding:0.75rem 1rem;border-bottom:1px solid var(--light);vertical-align:top}
+.data-table tr:last-child td{border-bottom:none}
+.data-table tr:nth-child(even) td{background:#f5f5f5}
+.callout{border:1.5px solid var(--light);padding:1.5rem 1.8rem;margin:2rem 0}
+.callout__label{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem}
+.callout p{font-size:0.92rem;color:var(--mid);line-height:1.7;margin:0}
+.faq{padding:4rem 0;background:var(--ink);color:var(--paper)}
+.faq .section-tag{color:var(--accent)}
+.faq .section-tag::before{background:var(--accent)}
+.faq__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2.5rem;margin-top:2.5rem}
+.faq__item{border-left:2px solid var(--accent);padding-left:1.5rem}
+.faq__item h3{font-family:var(--sans);font-weight:600;font-size:0.95rem;margin-bottom:0.5rem;color:var(--paper)}
+.faq__item p{font-size:0.85rem;color:rgba(255,255,255,0.88);line-height:1.65}
+.section-tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1rem}
+.section-tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.section-title{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.15;color:var(--paper)}
+.cta{padding:5rem 0;background:var(--accent-soft);border-top:1px solid rgba(230,51,18,0.12)}
+.cta__inner{max-width:680px;margin:0 auto;padding:0 var(--gutter);text-align:center}
+.cta h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.2;margin-bottom:1rem}
+.cta p{font-size:1rem;color:var(--mid);line-height:1.7;margin-bottom:2rem}
+.cta__btn{display:inline-flex;align-items:center;gap:0.6rem;font-family:var(--mono);font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;padding:1rem 2.2rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.cta__btn:hover{background:var(--accent)}
+.foot{padding:2.5rem 0;border-top:1px solid var(--light);text-align:center;font-family:var(--mono);font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid)}
+.foot a{color:var(--mid);text-decoration:none}.foot a:hover{color:var(--accent)}
+@media(max-width:768px){.faq__grid{grid-template-columns:1fr}.nav__back span{display:none}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="https://distk.in" class="nav__logo">
+      <img src="../assets/images/Logo.png" alt="Distk">
+      <div><span>Distk</span><small>Global Growth Partner</small></div>
+    </a>
+    <a href="/blog/" class="nav__back">← <span>All articles</span></a>
+    <a href="https://distk.in/#contact" class="nav__cta">Work with us</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="prose">
+    <div class="hero__tag">Paid Media Guide</div>
+    <h1>The ChatGPT <em>Measurement Pixel</em> and Conversions API in 2026</h1>
+    <p class="hero__sub">Without this layer you can report spend and clicks but not outcomes, and conversion bidding is unavailable entirely. Here is the setup, the identifiers people get wrong, and the consent and cookie behaviour your privacy review will ask about.</p>
+    <div class="hero__meta">
+      <span>Distk Editorial</span>
+      <span>Sep 2026</span>
+      <span>12 min read</span>
+    </div>
+  </div>
+</section>
+
+<div class="prose">
+  <div class="tldr">
+    <p>ChatGPT Ads measurement has three separate objects: a data source created at POST /v1/conversions/pixels, a conversion event setting that defines which event counts, and the campaign attachment through conversion_event_setting_ids. A source returns both a pixel_id for sending events and an id for creating settings, and they are not interchangeable. OpenAI states the Conversions API is a more reliable tracking source than the pixel alone, and recommends running both with the same Pixel ID, event name and event ID so duplicates are recognised. The pixel loads from bzrcdn.openai.com and sends to bzr.openai.com, so a strict Content Security Policy needs four specific entries. Consent initialises to true unless you set it false, and blocked events are not replayed. Two first-party cookies are set: __oppref for 30 days and __obref for 365 days. Critically, when an ad click supplies an oppref identifier the Conversions API does not capture it automatically, so your landing page must persist it. Thirteen event names are supported, with app_installed and app_opened available through the Conversions API only.</p>
+  </div>
+</div>
+
+<main class="article">
+  <div class="prose">
+<style>
+.prose pre{background:#f4f4f4;border-left:3px solid var(--accent);padding:1rem 1.1rem;overflow-x:auto;margin:1.5rem 0;font-size:0.85rem;line-height:1.6}
+.prose pre code{font-family:var(--mono);font-size:0.85rem;color:#1a1a1a;background:none;padding:0;white-space:pre}
+.prose p code,.prose li code,.prose td code{font-family:var(--mono);font-size:0.86em;background:#f0f0f0;padding:0.1rem 0.35rem;border-radius:2px}
+</style>
+
+    <h2>What Is the ChatGPT Measurement Pixel in 2026?</h2>
+    <p>The Measurement Pixel is OpenAI's browser SDK for measuring website events that can be attributed to ads in ChatGPT. You add a script to your site, initialise it with a Pixel ID, and call <code>oaiq("measure", ...)</code> when a conversion happens. Alongside it, the Conversions API sends the same kinds of events from your server. Both identify the same data source through a Pixel ID.</p>
+    <p>If you are evaluating ChatGPT Ads as a channel, this is the part to build first. Without it you can report clicks and spend but not outcomes, and you cannot use conversion-optimised bidding at all. The <a href="chatgpt-ads-api-campaign-bidding-guide-2026.html">Ads API guide</a> covers campaign mechanics; this one covers the measurement layer underneath.</p>
+
+    <h2>How Do the Three Building Blocks Fit Together in 2026?</h2>
+    <p>Three distinct objects, and conflating them is the most common setup error. A data source receives events from your website or server. A conversion event setting defines which event from that source counts as a conversion. A campaign then uses the attached event setting for reporting and, when configured, for optimisation. Sending an event and creating a setting are separate steps: a setting selects an event from a source, it does not send events itself.</p>
+
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Object</th><th>What it does</th><th>Created by</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Data source (pixel)</strong></td><td>Receives events from browser or server</td><td><code>POST /v1/conversions/pixels</code></td></tr>
+        <tr><td><strong>Conversion event setting</strong></td><td>Defines which event counts as a conversion, with an attribution window</td><td><code>POST /v1/conversions/event_settings</code></td></tr>
+        <tr><td><strong>Campaign attachment</strong></td><td>Connects the setting to a campaign for reporting or optimisation</td><td><code>conversion_event_setting_ids</code> on the campaign</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>One detail catches nearly everyone: a data source returns two identifiers with different jobs. The <code>pixel_id</code> initialises the Pixel, sends server events and checks recent events. The <code>id</code> selects the source when creating a conversion event setting. OpenAI's documentation is explicit that you use the source's <code>id</code> in <code>source_ids</code>, not its <code>pixel_id</code>.</p>
+
+    <h2>Why Would You Use the Conversions API as Well as the Pixel?</h2>
+    <p>Because a server records things a browser cannot see, and because OpenAI states directly that the Conversions API is a more reliable tracking source than the pixel alone. The browser pixel measures what happens on the page. The server integration reports confirmed outcomes such as a completed order that survived payment capture. Running both, with shared event IDs so duplicates are recognised, is the configuration that reports the truth.</p>
+
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Integration</th><th>Where events are sent</th><th>When to use it</th></tr></thead>
+      <tbody>
+        <tr><td>Measurement Pixel</td><td>The customer's browser</td><td>Measure actions that happen on your website</td></tr>
+        <tr><td>Conversions API</td><td>Your server</td><td>Send actions recorded by your server, such as confirmed orders</td></tr>
+        <tr><td>Both</td><td>Browser and server</td><td>Measure the same actions through both, with shared event IDs to prevent duplicates</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>A server-only integration still needs a Pixel ID, but does not require installing the browser pixel. That is useful for teams whose consent posture or site architecture makes a client-side tag awkward.</p>
+
+    <h2>How Do You Install the Measurement Pixel in 2026?</h2>
+    <p>One script in the <code>&lt;head&gt;</code> of every page where you want to capture conversions. OpenAI advises putting it near the top of the head so early conversions are not lost while other content loads. <code>pixelId</code> is required; <code>debug</code> is optional and logs SDK activity to the browser console while you test.</p>
+
+<pre><code>&lt;script&gt;
+  (function (w, d, s, u) {
+    if (w.oaiq) return;
+    var q = function () { q.q.push(arguments); };
+    q.q = [];
+    w.oaiq = q;
+    var js = d.createElement(s);
+    js.async = true;
+    js.src = u;
+    var f = d.getElementsByTagName(s)[0];
+    f.parentNode.insertBefore(js, f);
+  })(window, document, "script", "https://bzrcdn.openai.com/sdk/oaiq.min.js");
+  oaiq("init", { pixelId: "&lt;YOUR-PIXEL-ID&gt;" });
+&lt;/script&gt;</code></pre>
+
+    <h3>Then fire an event when the action completes</h3>
+<pre><code>oaiq(
+  "measure",
+  "order_created",
+  { type: "contents", amount: 8900, currency: "USD" },
+  { event_id: "order_12345" }
+);</code></pre>
+    <p>Amounts use the currency's standard minor unit, so <code>8900</code> is 89.00 USD. Use the real order ID as the event ID, and keep it identical if you also send the same purchase from your server.</p>
+
+    <h2>What Does the Content Security Policy Need to Allow?</h2>
+    <p>Four entries, and this is the step that silently breaks installs on sites with a strict CSP. If your site enforces one, merge these sources into the existing policy rather than discovering later that events never left the browser.</p>
+
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Directive</th><th>Source</th><th>Purpose</th></tr></thead>
+      <tbody>
+        <tr><td><code>script-src</code></td><td><code>https://bzrcdn.openai.com</code></td><td>Load the Measurement Pixel SDK</td></tr>
+        <tr><td><code>connect-src</code></td><td><code>https://bzr.openai.com</code></td><td>Send events with fetch or sendBeacon</td></tr>
+        <tr><td><code>connect-src</code></td><td><code>https://bzrcdn.openai.com</code></td><td>Fetch per-pixel configuration</td></tr>
+        <tr><td><code>img-src</code></td><td><code>https://bzr.openai.com</code></td><td>Send events with the image request fallback</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h2>How Do You Handle Consent in 2026?</h2>
+    <p>Set consent before initialising the pixel. OpenAI documents that the pixel initialises consent to <code>true</code> by default unless you set it to <code>false</code> or the pixel finds a stored denial. When consent is <code>false</code> the pixel does not send measurement-event pings, and setting it back to <code>true</code> allows future events but does not replay blocked ones.</p>
+
+<pre><code>oaiq("consent", false);
+oaiq("init", { pixelId: "&lt;YOUR-PIXEL-ID&gt;" });
+
+// Call this after the user grants measurement consent.
+oaiq("consent", true);</code></pre>
+
+    <p>Two consequences worth stating to a client. Blocked events are gone, not queued, so a slow consent banner costs you measurable conversions. And calling <code>oaiq("consent", false)</code> removes the pixel's cookies. For any team operating under the DPDP Act in India or GDPR in Europe, the default-true behaviour is the setting your privacy review will ask about, so configure it deliberately rather than inheriting it.</p>
+
+    <h2>What Cookies Does the Pixel Set, and for How Long?</h2>
+    <p>Two first-party cookies when measurement consent is granted, with different lifetimes and different refresh behaviour. OpenAI notes these are the lifetimes requested by the pixel, and that browser restrictions or cleared cookies can shorten them.</p>
+
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Cookie</th><th>Expiry</th><th>What it stores and how it refreshes</th></tr></thead>
+      <tbody>
+        <tr><td><code>__oppref</code></td><td>30 days after the pixel writes it</td><td>The <code>oppref</code> attribution identifier from the landing page URL. Each time the pixel captures a non-empty oppref parameter, including the same value again, the expiry resets to 30 days. Reading the stored cookie on a visit without the parameter does not extend it.</td></tr>
+        <tr><td><code>__obref</code></td><td>365 days after creation</td><td>A randomly generated browser reference for your website. A valid stored reference is reused without extending expiry.</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>OpenAI is careful to separate these from attribution: cookie expiry is browser storage only and is distinct from conversion attribution windows and conversion-data retention.</p>
+
+    <h2>How Do You Send Server-Side Conversions in 2026?</h2>
+    <p>Create a Conversions API key with your Advertiser API key, then post events to a different host. Setup and management requests go to <code>api.ads.openai.com</code> with the Advertiser key; event requests go to <code>bzr.openai.com</code> with the Conversions key. Keep both on your server.</p>
+
+<pre><code>curl -X POST "https://api.ads.openai.com/v1/conversions/api_keys"   -H "Authorization: Bearer ${OPENAI_ADS_API_KEY}"   -H "Content-Type: application/json"   -d '{ "name": "Acme server events" }'</code></pre>
+
+<pre><code>curl -X POST "https://bzr.openai.com/v1/events?pid=${PIXEL_ID}"   -H "Authorization: Bearer ${OPENAI_CONVERSIONS_API_KEY}"   -H "Content-Type: application/json"   -d '{
+    "events": [
+      {
+        "id": "order_12345",
+        "type": "order_created",
+        "timestamp_ms": 1784304000000,
+        "action_source": "web",
+        "source_url": "https://shop.example.com/checkout/confirmation",
+        "data": { "type": "contents", "amount": 8900, "currency": "USD" }
+      }
+    ]
+  }'</code></pre>
+
+    <p>Two testing affordances are genuinely useful. Adding <code>"validate_only": true</code> at the top level validates a request without saving events, and those requests do not appear in event monitoring. And the recent-events endpoint returns a sample from roughly the last 15 minutes, which is how you confirm an integration before you trust a report.</p>
+
+    <h3>The identifier the Conversions API will not capture for you</h3>
+    <p>When an ad click supplies an <code>oppref</code> identifier, you must capture it and include the original value as <code>oppref</code> on the server event. OpenAI states the Conversions API does not capture this value automatically. Practically, that means your landing page needs to read the parameter and persist it into your order record, which is a development task somebody has to own before launch rather than after.</p>
+
+    <h2>How Does Deduplication Work Between Browser and Server?</h2>
+    <p>Through three shared values. For the same purchase sent through both integrations, use the same Pixel ID, the same event name such as <code>order_created</code>, and the same event ID, which is <code>event_id</code> on the pixel and <code>id</code> on the Conversions API. For custom events, also use the same <code>custom_event_name</code>. Those shared values let OpenAI recognise the duplicate so the action is not counted twice.</p>
+
+    <div class="callout">
+      <div class="callout__label">The one-line rule for 2026</div>
+      <p>Use your real order or lead identifier as the event ID everywhere. Teams that generate a fresh random ID per integration get double-counted conversions, and double-counted conversions feed conversion-optimised bidding, so the error does not stay a reporting problem for long.</p>
+    </div>
+
+    <h2>Which Conversion Events Can You Send in 2026?</h2>
+    <p>Thirteen event names, each with a defined data type. Standard events cover most commerce and lead flows, and <code>custom</code> exists for anything the taxonomy does not describe. Monetary values are integers in the ISO 4217 minor unit for the currency you send, so 129.99 USD is <code>12999</code>.</p>
+
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Event name</th><th>Data type</th><th>Use for</th></tr></thead>
+      <tbody>
+        <tr><td><code>order_created</code></td><td><code>contents</code></td><td>A purchase is completed</td></tr>
+        <tr><td><code>checkout_started</code></td><td><code>contents</code></td><td>A user starts checkout</td></tr>
+        <tr><td><code>items_added</code></td><td><code>contents</code></td><td>Items added to a cart, bundle or selection</td></tr>
+        <tr><td><code>contents_viewed</code></td><td><code>contents</code></td><td>A product, listing or article is viewed</td></tr>
+        <tr><td><code>page_viewed</code></td><td><code>contents</code></td><td>An important page loads</td></tr>
+        <tr><td><code>lead_created</code></td><td><code>customer_action</code></td><td>A lead form is submitted or contact requested</td></tr>
+        <tr><td><code>registration_completed</code></td><td><code>customer_action</code></td><td>Account or event registration finishes</td></tr>
+        <tr><td><code>appointment_scheduled</code></td><td><code>customer_action</code></td><td>A meeting, demo or consultation is booked</td></tr>
+        <tr><td><code>subscription_created</code></td><td><code>plan_enrollment</code></td><td>A paid subscription starts</td></tr>
+        <tr><td><code>trial_started</code></td><td><code>plan_enrollment</code></td><td>A free trial starts</td></tr>
+        <tr><td><code>app_installed</code></td><td><code>customer_action</code></td><td>An app install. Conversions API only, with <code>action_source: mobile_app</code></td></tr>
+        <tr><td><code>app_opened</code></td><td><code>customer_action</code></td><td>An app open. Conversions API only</td></tr>
+        <tr><td><code>custom</code></td><td><code>custom</code></td><td>Anything outside the standard taxonomy</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Two boundaries to respect. <code>app_installed</code> and <code>app_opened</code> are not supported by the JavaScript pixel and must go through the Conversions API. And OpenAI distinguishes <code>page_viewed</code> for page loads from <code>contents_viewed</code> for viewing a specific product or content item, including interactions after the page has loaded.</p>
+
+    <h2>How Do You Create a Conversion Event Setting?</h2>
+    <p>Name it, pick the event type, set an attribution window in days, and point it at one source. OpenAI's example uses a 30-day click attribution window, described as the time after an eligible ad click during which a conversion can be credited to it.</p>
+
+<pre><code>curl -X POST "https://api.ads.openai.com/v1/conversions/event_settings"   -H "Authorization: Bearer ${OPENAI_ADS_API_KEY}"   -H "Content-Type: application/json"   -d '{
+    "name": "Acme purchases",
+    "event_type": "order_created",
+    "attribution_window_days": 30,
+    "source_ids": ["cds_123"]
+  }'</code></pre>
+
+    <p>For a custom event, send <code>event_type: "custom"</code> plus a <code>custom_event_name</code> that matches exactly what your integration sends. Keep that name consistent across the event and the setting or the setting will never match anything.</p>
+
+    <h2>How Do Conversions Attach to Campaigns, and What Is a View-Through?</h2>
+    <p>Attach settings through <code>conversion_event_setting_ids</code> on the campaign. Clicks and impressions campaigns can track conversions without changing their objective, which means you can measure outcomes on a traffic campaign without committing to conversion bidding. Updating the field replaces the list, so include every setting you want to keep.</p>
+    <p>On attribution, the documentation draws a line worth quoting to anyone reading a dashboard. The same events support click-through attribution and, where available for your account, view-through attribution. View-through conversions use a fixed one-day window after an eligible ad impression, require no integration changes, and are reported as a separate campaign-level metric in Ads Manager. They are not included in <code>Conversions</code>, which remains the click-through total. CPA, post-click conversion rate, bidding, billing and conversion optimisation all remain click-through-based. Where a conversion is eligible for both, the click takes precedence.</p>
+
+    <h2>How Do You Verify the Integration Before Trusting a Report?</h2>
+    <p>Check recent events on the source, then confirm the channel each event arrived through. The monitoring endpoint returns a sample of events from roughly the last 15 minutes, which is a testing and troubleshooting tool rather than a reporting one.</p>
+
+<pre><code>curl -G "https://api.ads.openai.com/v1/conversions/events"   -H "Authorization: Bearer ${OPENAI_ADS_API_KEY}"   --data-urlencode "pid=${PIXEL_ID}"   --data-urlencode "limit=50"</code></pre>
+
+    <p>Browser events show as <code>pixel_sdk</code> and server events as <code>server_to_server</code>, so you can prove both legs of a dual integration are live. For attributed conversion reporting and history, use Insights instead, and remember from the <a href="chatgpt-ads-api-campaign-bidding-guide-2026.html">Ads API guide</a> that conversions update through daily processing, so allow at least a day before drawing conclusions.</p>
+
+    <h2>What Is Automatic Advanced Matching?</h2>
+    <p>A pixel feature that improves measurement when a click identifier is unavailable. When enabled, the pixel automatically detects supported customer information on your website, then normalises and hashes it in the browser using SHA-256 before including it with conversion events. OpenAI states that raw customer information is not sent through automatic advanced matching, and that you do not need to pass customer information manually or change your implementation.</p>
+    <p>For agencies, the useful framing for a client conversation is that hashing happens client-side before transmission. That is still a processing activity you should be able to describe in a privacy notice, so document it rather than leaving it implicit.</p>
+
+    <h2>What Are the Common Mistakes in 2026?</h2>
+    <ul>
+      <li><strong>Using <code>pixel_id</code> where the API wants <code>id</code>.</strong> Event settings take the source's <code>id</code> in <code>source_ids</code>.</li>
+      <li><strong>Forgetting the CSP entries.</strong> A strict policy blocks the SDK or the event send with no visible error on the page.</li>
+      <li><strong>Not capturing <code>oppref</code> on the landing page.</strong> The Conversions API will not capture it for you, so server-side attribution degrades.</li>
+      <li><strong>Different event IDs per integration.</strong> That produces double-counted conversions, which then feed optimisation.</li>
+      <li><strong>Sending amounts in major units.</strong> Values are integers in the currency's minor unit, so 89.00 USD is 8900.</li>
+      <li><strong>Trying to send app events from the pixel.</strong> <code>app_installed</code> and <code>app_opened</code> are Conversions API only.</li>
+      <li><strong>Reading view-through numbers as part of Conversions.</strong> They are a separate campaign-level metric and do not affect bidding or billing.</li>
+      <li><strong>Leaving consent at the default without a decision.</strong> It initialises to true unless you set it otherwise, which is a choice your privacy review should make deliberately.</li>
+    </ul>
+
+    <h2>Key Takeaways for 2026</h2>
+    <p>Measurement on ChatGPT Ads is conventional in shape and unforgiving in detail, and almost every problem traces back to one of three identifiers being wrong.</p>
+    <ul>
+      <li>Three objects: a data source, a conversion event setting, and the campaign attachment. They are created separately.</li>
+      <li>A source returns both <code>pixel_id</code> and <code>id</code>, and they are not interchangeable.</li>
+      <li>OpenAI states the Conversions API is more reliable than the pixel alone; running both with shared event IDs is the recommended configuration.</li>
+      <li>Install the SDK high in the head, and add the four CSP entries if you enforce a policy.</li>
+      <li>Consent defaults to true unless you set it false, and blocked events are not replayed.</li>
+      <li>Cookies are <code>__oppref</code> at 30 days, refreshed on each captured parameter, and <code>__obref</code> at 365 days.</li>
+      <li>Thirteen event names exist; app install and open are Conversions API only; amounts are integers in minor units.</li>
+      <li>View-through uses a fixed one-day window, is reported separately, and does not feed bidding, billing or CPA.</li>
+      <li>Verify with the recent-events endpoint before trusting any report, and allow a day for conversions to settle.</li>
+    </ul>
+    <p>Distk builds and verifies tracking before any budget goes live, because a channel measured badly looks the same as a channel that does not work. If you are standing up ChatGPT Ads measurement in 2026, the dual pixel and server integration with shared event IDs is the configuration we would set up, and the <code>oppref</code> capture is the piece we would make sure your developers own from day one.</p>
+
+    <h2>Sources</h2>
+    <ul>
+      <li><a href="https://developers.openai.com/ads/conversion-tracking" target="_blank" rel="noopener">OpenAI, Conversion Tracking</a>.</li>
+      <li><a href="https://developers.openai.com/ads/measurement-pixel" target="_blank" rel="noopener">OpenAI, Measurement Pixel</a>, including install, consent, CSP, advanced matching and cookie expiry.</li>
+      <li><a href="https://developers.openai.com/ads/conversions-api" target="_blank" rel="noopener">OpenAI, Conversions API</a>.</li>
+      <li><a href="https://developers.openai.com/ads/supported-events" target="_blank" rel="noopener">OpenAI, Supported Events</a>.</li>
+      <li><a href="https://developers.openai.com/ads/api-reference/conversion-setup" target="_blank" rel="noopener">OpenAI, Conversion Setup API reference</a>.</li>
+    </ul>
+    <p style="font-size:0.88rem;color:var(--mid)">Every snippet, field name, cookie lifetime and event name in this guide is quoted from OpenAI's published Ads documentation as of 30 September 2026.</p>
+
+  </div>
+</main>
+
+<section class="faq">
+  <div class="container">
+    <div class="section-tag">Key Questions</div>
+    <h2 class="section-title">ChatGPT Ads Measurement in 2026: FAQs</h2>
+    <div class="faq__grid">
+      <div class="faq__item">
+        <h3>What is the difference between pixel_id and id in ChatGPT Ads?</h3>
+        <p>A data source returns both. The pixel_id initialises the Measurement Pixel, sends server events and checks recent events. The id selects the source when creating a conversion event setting, so it goes in source_ids. Using the wrong one is the most common setup error.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Do I need both the Measurement Pixel and the Conversions API?</h3>
+        <p>OpenAI states the Conversions API is a more reliable tracking source than the pixel alone, and documents running both as a supported configuration. Use the same Pixel ID, the same event name and the same event ID across both so OpenAI recognises the duplicate and does not count the action twice.</p>
+      </div>
+      <div class="faq__item">
+        <h3>What CSP entries does the ChatGPT pixel need?</h3>
+        <p>Four: script-src for https://bzrcdn.openai.com to load the SDK, connect-src for https://bzr.openai.com to send events, connect-src for https://bzrcdn.openai.com to fetch per-pixel configuration, and img-src for https://bzr.openai.com for the image request fallback.</p>
+      </div>
+      <div class="faq__item">
+        <h3>How does consent work with the ChatGPT Measurement Pixel?</h3>
+        <p>The pixel initialises consent to true by default unless you call oaiq("consent", false) before init or it finds a stored denial. While consent is false no measurement pings are sent, and blocked events are not replayed when consent is later granted. Setting consent to false also removes the pixel's cookies.</p>
+      </div>
+      <div class="faq__item">
+        <h3>What is oppref and why does it matter?</h3>
+        <p>It is the click attribution identifier supplied on an ad click, stored by the pixel in a __oppref cookie for 30 days. For server-side events you must capture it on the landing page and include the original value as oppref on the event, because OpenAI states the Conversions API does not capture it automatically.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Are view-through conversions included in the Conversions metric?</h3>
+        <p>No. View-through conversions use a fixed one-day window after an eligible ad impression and are reported as a separate campaign-level metric in Ads Manager. The Conversions metric remains the click-through total, and CPA, post-click conversion rate, bidding, billing and optimisation all stay click-through-based.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED START -->
+<section class="related" style="padding:3.5rem 0;border-top:1px solid #e8e8e8;background:#fafafa">
+  <div style="max-width:720px;margin:0 auto;padding:0 clamp(1.2rem,4vw,3rem)">
+    <div style="font-family:'Space Mono',monospace;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:#e63312;margin-bottom:1.3rem">Related reading</div>
+    <ul style="list-style:none;margin:0;padding:0;display:grid;gap:0.9rem">
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="chatgpt-ads-api-campaign-bidding-guide-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">The ChatGPT Ads API in 2026: Campaign Structure, Bidding and What You Actually Control</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="chatgpt-ads-bulk-api-agencies-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">Bulk Campaign Management in ChatGPT Ads: The Bulk API for Agencies in 2026</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="chatgpt-ads-account-management-guide-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">ChatGPT Ads Account Management in 2026: Branding, Reviews, Spend Limits and Account States</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="chatgpt-conversion-optimized-campaigns-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">Conversion-Optimised ChatGPT Campaigns in 2026: Optimising to an Event While Paying Per Click</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="chatgpt-ads-targeting-guide-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">ChatGPT Ads Targeting in 2026: Geography, Platform, Audiences and Context Hints</a></li>
+    </ul>
+  </div>
+</section>
+<!-- RELATED END -->
+<section class="cta">
+  <div class="cta__inner">
+    <h2>Verify the tracking before the budget moves</h2>
+    <p>Distk sets up and proves the measurement layer first, so your first report on a new channel answers whether the message worked rather than whether the tags fired.</p>
+    <a href="https://distk.in/#contact" class="cta__btn">Start the conversation →</a>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="container">
+    © 2026 Distk · <a href="https://distk.in">distk.in</a> · <a href="mailto:connect@distk.in">connect@distk.in</a>
+  </div>
+</footer>
+</body>
+</html>
