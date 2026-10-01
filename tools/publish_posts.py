@@ -11,7 +11,10 @@ Given a JSON manifest, this:
   4. runs tools/build_internal_links.py then tools/update_sitemap.py
   5. re-validates sitemap XML
 
-Manifest format (JSON list, oldest-first is fine, cards are emitted newest-first):
+Manifest format (JSON list, oldest-first is fine, cards are emitted newest-first).
+Only "slug" and "category" are required: title, excerpt and read time are filled from the
+post's own <h1>, meta description and hero meta when omitted, and "llms": true reuses the
+excerpt as the llms.txt line.
   [{"slug": "foo-2026.html",
     "title": "Foo in 2026: ...",
     "category": "AI Models",          # reuse an existing blog/index.html label
@@ -70,6 +73,23 @@ def validate(slug):
     return problems
 
 
+def fill_from_file(post):
+    """Fill title, excerpt and read time from the post's own <title>, meta description and hero meta."""
+    s = open(os.path.join("blog", post["slug"]), encoding="utf-8").read()
+    if not post.get("title"):
+        m = re.search(r"<h1>(.*?)</h1>", s, re.S)
+        post["title"] = re.sub(r"<[^>]+>", "", m.group(1)).strip() if m else post["slug"]
+    if not post.get("excerpt"):
+        m = re.search(r'<meta name="description" content="([^"]*)"', s)
+        post["excerpt"] = m.group(1) if m else ""
+    if not post.get("read"):
+        m = re.search(r"<span>(\d+) min read</span>", s)
+        post["read"] = int(m.group(1)) if m else 10
+    if post.get("llms") is True:
+        post["llms"] = post["excerpt"]
+    return post
+
+
 def card(num, post, month):
     return (
         f'                        <!-- Blog Card #{num} - {post["slug"].replace("-2026.html", "")} -->\n'
@@ -102,6 +122,7 @@ def main():
             failed = True
     if failed:
         sys.exit("\nvalidation failed; nothing written")
+    posts = [fill_from_file(p) for p in posts]
     if DRY:
         print("\ndry run: validation passed, no files changed")
         return
