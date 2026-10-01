@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xdifcafwxl");
+  </script>
+
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WhatsApp Landing Page View Events 2026: The landing_page_view Webhook | Distk</title>
+<meta name="description" content="WhatsApp's landing_page_view webhook, added 23 September 2026, reports when a marketing message link opens a landing page in the In-App Browser. The payload, how to correlate it to click events, why arrival order is not guaranteed, the seven-day limit, and an implementation checklist.">
+<meta name="keywords" content="whatsapp landing_page_view webhook, whatsapp landing page view events, whatsapp marketing message click tracking, marketing_messages_link_click_data, whatsapp campaign attribution 2026">
+<meta name="author" content="Distk"><meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://distk.in/blog/whatsapp-landing-page-view-webhook-2026.html">
+<meta property="og:type" content="article"><meta property="og:url" content="https://distk.in/blog/whatsapp-landing-page-view-webhook-2026.html">
+<meta property="og:title" content="WhatsApp Landing Page View Events in 2026: Attribution for Marketing Message Clicks">
+<meta property="og:description" content="A tap is not a visit. WhatsApp now reports when a marketing message link actually loads a page, and here is how to wire the funnel without the usual mistakes.">
+<meta property="og:image" content="https://distk.in/assets/images/og-image.jpg"><meta property="og:site_name" content="Distk">
+<meta property="article:published_time" content="2026-10-01T00:00:00+05:30">
+<meta property="article:modified_time" content="2026-10-01T00:00:00+05:30">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="WhatsApp Landing Page View Events in 2026: Attribution for Marketing Message Clicks"><meta name="twitter:description" content="A tap is not a visit. WhatsApp now reports when a marketing message link actually loads a page, and here is how to wire the funnel without the usual mistakes.">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "WhatsApp Landing Page View Events in 2026: Attribution for Marketing Message Clicks", "description": "A guide to WhatsApp's landing_page_view webhook in 2026: what triggers it, the whatsapp_business_account topic and messages field, the marketing_messages_link_click_data payload with tracking_token and click_id, how to correlate views to click events when arrival order is not guaranteed and keys can be missing, the limited availability and seven-day window, the open enum rule, and how marketing teams use the tap-to-load funnel.", "author": {"@type": "Organization", "name": "Distk", "url": "https://distk.in"}, "publisher": {"@type": "Organization", "name": "Distk", "logo": {"@type": "ImageObject", "url": "https://distk.in/assets/images/Logo.png"}}, "datePublished": "2026-10-01", "dateModified": "2026-10-01", "inLanguage": "en", "about": [{"@type": "Thing", "name": "WhatsApp Marketing Messages API"}, {"@type": "Thing", "name": "landing_page_view webhook"}, {"@type": "Thing", "name": "WhatsApp webhooks"}, {"@type": "Thing", "name": "Meta"}, {"@type": "Thing", "name": "marketing attribution"}], "mentions": [{"@type": "Thing", "name": "WhatsApp Marketing Messages API"}, {"@type": "Thing", "name": "landing_page_view webhook"}, {"@type": "Thing", "name": "WhatsApp webhooks"}, {"@type": "Thing", "name": "Meta"}, {"@type": "Thing", "name": "marketing attribution"}], "mainEntityOfPage": {"@type": "WebPage", "@id": "https://distk.in/blog/whatsapp-landing-page-view-webhook-2026.html"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the WhatsApp landing_page_view webhook in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "The landing_page_view webhook is an event Meta delivers when a WhatsApp user taps a link in a marketing message and the landing page opens in the WhatsApp In-App Browser. Meta added the webhook reference on 23 September 2026 so businesses can measure how many WhatsApp users reached their landing page rather than only how many tapped the link. It is available using the Marketing Messages API for WhatsApp and Ads Manager only."}}, {"@type": "Question", "name": "How is the WhatsApp landing page view webhook delivered?", "acceptedAnswer": {"@type": "Answer", "text": "Businesses subscribe to the whatsapp_business_account webhook topic and Meta delivers the payload on the messages field. The event carries an action_type of landing_page_view, a timestamp, and a marketing_messages_link_click_data object, which is the same container used by click events. Businesses already receiving click events do not need to add a subscription."}}, {"@type": "Question", "name": "How do you correlate a WhatsApp landing page view to a click event?", "acceptedAnswer": {"@type": "Answer", "text": "A landing page view corresponds to a click event with the same tracking_token. When tracking_token is missing, click_id, which appears on both payloads, can be used instead. Both keys are optional, and when neither is present the landing page view cannot be correlated. Meta does not guarantee arrival order, and a landing page view can arrive without a matching click event."}}, {"@type": "Question", "name": "What are the limitations of WhatsApp landing page view events?", "acceptedAnswer": {"@type": "Answer", "text": "The feature is currently in limited availability, and landing page view events are only available for tracking links created in the last seven days. Click events are similarly limited to messages sent in the last seven days, so businesses that want longer-term analysis need to store events as they arrive."}}, {"@type": "Question", "name": "Why must WhatsApp webhook handlers ignore unknown action_type values?", "acceptedAnswer": {"@type": "Answer", "text": "Meta states that action_type is an open enum, meaning new values may be added over time without being treated as a breaking change. Webhook handlers must therefore ignore action types they do not recognise rather than treating them as errors, or they will fail when Meta introduces a new action type."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://distk.in/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://distk.in/blog/"}, {"@type": "ListItem", "position": 3, "name": "WhatsApp Landing Page View Events in 2026: Attribution for Marketing Message Clicks", "item": "https://distk.in/blog/whatsapp-landing-page-view-webhook-2026.html"}]}</script>
+<link rel="icon" type="image/png" href="../assets/images/favicon.png"><link rel="apple-touch-icon" href="../assets/images/Logo.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BWDTQ1JPL2"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-BWDTQ1JPL2');</script>
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1077520544213003');fbq('track','PageView');</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1077520544213003&ev=PageView&noscript=1"></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#0a0a0a;--paper:#fafafa;--mid:#6b6b6b;--light:#e8e8e8;--accent:#e63312;--accent-soft:rgba(230,51,18,0.08);--mono:'Space Mono',monospace;--sans:'Outfit',sans-serif;--container:1120px;--prose:720px;--gutter:clamp(1.2rem,4vw,3rem)}
+html{font-size:16px;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.container{max-width:var(--container);margin:0 auto;padding:0 var(--gutter)}
+.prose{max-width:var(--prose);margin:0 auto;padding:0 var(--gutter)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--light)}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;max-width:var(--container);margin:0 auto;padding:0.9rem var(--gutter)}
+.nav__logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;color:var(--ink)}
+.nav__logo img{height:32px;width:auto}
+.nav__logo span{font-family:var(--mono);font-weight:700;font-size:1.05rem;letter-spacing:-0.02em}
+.nav__logo small{display:block;font-size:0.55rem;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);line-height:1}
+.nav__back{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid);text-decoration:none;display:flex;align-items:center;gap:0.4rem;transition:color 0.2s}
+.nav__back:hover{color:var(--accent)}
+.nav__cta{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.6rem 1.4rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.nav__cta:hover{background:var(--accent)}
+.hero{padding:7.5rem 0 3.5rem;position:relative;overflow:hidden;border-bottom:1px solid var(--light)}
+.hero::before{content:'WEBHOOK';position:absolute;right:-1%;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:clamp(6rem,26vw,22rem);font-weight:700;color:rgba(0,0,0,0.03);line-height:1;pointer-events:none;user-select:none;letter-spacing:-0.05em}
+.hero__tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1.5rem}
+.hero__tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.hero h1{font-family:var(--sans);font-weight:700;font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;letter-spacing:-0.03em;max-width:20ch;margin-bottom:1.5rem}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero__sub{font-size:1.1rem;color:var(--mid);max-width:56ch;line-height:1.7;margin-bottom:2rem}
+.hero__meta{display:flex;flex-wrap:wrap;gap:1.5rem;font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid)}
+.tldr{background:var(--accent-soft);border-left:3px solid var(--accent);padding:1.8rem 2rem;margin:3rem 0;position:relative}
+.tldr::before{content:'TL;DR';position:absolute;top:-0.6rem;left:2rem;font-family:var(--mono);font-size:0.62rem;font-weight:700;letter-spacing:0.12em;background:var(--accent);color:#fff;padding:0.2rem 0.6rem}
+.tldr p{font-size:0.95rem;color:var(--ink);line-height:1.7}
+.article{padding:4rem 0 5rem}
+.article h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.35rem,2.8vw,1.8rem);letter-spacing:-0.02em;line-height:1.2;margin:3rem 0 1rem;padding-top:1rem;border-top:1px solid var(--light)}
+.article h2:first-child{border-top:none;margin-top:0}
+.article h3{font-family:var(--mono);font-weight:700;font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin:2rem 0 0.6rem}
+.article p{font-size:1rem;color:#2a2a2a;line-height:1.8;margin-bottom:1.25rem}
+.article ul,.article ol{padding-left:1.4rem;margin-bottom:1.25rem}
+.article li{font-size:1rem;color:#2a2a2a;line-height:1.75;margin-bottom:0.4rem}
+.article strong{font-weight:600;color:var(--ink)}
+.article a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(230,51,18,0.3)}
+.article a:hover{border-bottom-color:var(--accent)}
+.article blockquote{border-left:3px solid var(--accent);padding:0.75rem 1.5rem;margin:2rem 0;background:var(--accent-soft)}
+.article blockquote p{color:var(--ink);font-size:1rem;margin:0}
+.table-wrap{overflow-x:auto;margin:2rem 0}
+.data-table{width:100%;border-collapse:collapse;margin:0;font-size:0.88rem}
+.data-table th{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:0.7rem 1rem;text-align:left;white-space:nowrap}
+.data-table td{padding:0.75rem 1rem;border-bottom:1px solid var(--light);vertical-align:top}
+.data-table tr:last-child td{border-bottom:none}
+.data-table tr:nth-child(even) td{background:#f5f5f5}
+.callout{border:1.5px solid var(--light);padding:1.5rem 1.8rem;margin:2rem 0}
+.callout__label{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem}
+.callout p{font-size:0.92rem;color:var(--mid);line-height:1.7;margin:0}
+.faq{padding:4rem 0;background:var(--ink);color:var(--paper)}
+.faq .section-tag{color:var(--accent)}
+.faq .section-tag::before{background:var(--accent)}
+.faq__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2.5rem;margin-top:2.5rem}
+.faq__item{border-left:2px solid var(--accent);padding-left:1.5rem}
+.faq__item h3{font-family:var(--sans);font-weight:600;font-size:0.95rem;margin-bottom:0.5rem;color:var(--paper)}
+.faq__item p{font-size:0.85rem;color:rgba(255,255,255,0.88);line-height:1.65}
+.section-tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1rem}
+.section-tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.section-title{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.15;color:var(--paper)}
+.cta{padding:5rem 0;background:var(--accent-soft);border-top:1px solid rgba(230,51,18,0.12)}
+.cta__inner{max-width:680px;margin:0 auto;padding:0 var(--gutter);text-align:center}
+.cta h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.2;margin-bottom:1rem}
+.cta p{font-size:1rem;color:var(--mid);line-height:1.7;margin-bottom:2rem}
+.cta__btn{display:inline-flex;align-items:center;gap:0.6rem;font-family:var(--mono);font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;padding:1rem 2.2rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.cta__btn:hover{background:var(--accent)}
+.foot{padding:2.5rem 0;border-top:1px solid var(--light);text-align:center;font-family:var(--mono);font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid)}
+.foot a{color:var(--mid);text-decoration:none}.foot a:hover{color:var(--accent)}
+@media(max-width:768px){.faq__grid{grid-template-columns:1fr}.nav__back span{display:none}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="https://distk.in" class="nav__logo">
+      <img src="../assets/images/Logo.png" alt="Distk">
+      <div><span>Distk</span><small>Global Growth Partner</small></div>
+    </a>
+    <a href="/blog/" class="nav__back">← <span>All articles</span></a>
+    <a href="https://distk.in/#contact" class="nav__cta">Work with us</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="prose">
+    <div class="hero__tag">WhatsApp Guide</div>
+    <h1>WhatsApp <em>Landing Page View</em> Events in 2026: Attribution for Marketing Message Clicks</h1>
+    <p class="hero__sub">Until September 2026 a WhatsApp marketer could see that a link was tapped, but not whether the page ever loaded. The new landing_page_view webhook closes that gap. Here is how it works, how to match it to clicks, and the three behaviours a naive implementation gets wrong.</p>
+    <div class="hero__meta">
+      <span>Distk Editorial</span>
+      <span>Oct 2026</span>
+      <span>11 min read</span>
+    </div>
+  </div>
+</section>
+
+<div class="prose">
+  <div class="tldr">
+    <p>Meta added a landing_page_view webhook on 23 September 2026 that fires when a WhatsApp user taps a link in your marketing message and the landing page opens in the WhatsApp In-App Browser. It is available using the Marketing Messages API for WhatsApp and Ads Manager only, and it lets you measure how many users actually reached the page, not just how many tapped. It arrives on the whatsapp_business_account topic and messages field, with action_type set to landing_page_view, inside the same marketing_messages_link_click_data container as click events, so existing click subscribers need nothing new. Correlate it to the click event using tracking_token, falling back to click_id, but both keys are optional and can both be missing. Meta does not guarantee arrival order, a view can arrive without a matching click, the feature is in limited availability, and events only cover tracking links created in the last seven days. Because action_type is an open enum, handlers must ignore values they do not recognise.</p>
+  </div>
+</div>
+
+<main class="article">
+  <div class="prose">
+
+    <h2>What Are WhatsApp Landing Page View Events in 2026?</h2>
+    <p>A landing page view event is a webhook Meta sends when a WhatsApp user taps a link in your marketing message and the landing page opens in the WhatsApp In-App Browser. Meta added the webhook reference on 23 September 2026. It is available using the Marketing Messages API for WhatsApp and Ads Manager only, and its purpose is precise: to measure how many users actually reached your landing page, not just how many tapped the link.</p>
+    <p>That distinction is the whole value. A tap tells you intent. A landing page view tells you the page actually loaded in front of someone. The gap between the two is where slow pages, broken links and redirect chains quietly lose a campaign's traffic, and until now a WhatsApp marketer could see only the first number.</p>
+
+    <h2>Why Does a Landing Page View Event Matter for Attribution in 2026?</h2>
+    <p>Because WhatsApp campaigns have had a blind spot exactly where most of the money is lost. A click event tells you a link was tapped. It says nothing about whether the page rendered. If a tenth of your taps never reach a loaded page, every downstream metric, from cost per visit to conversion rate, is computed against an audience that partly never existed.</p>
+    <ul>
+      <li><strong>Tap-to-load drop-off becomes visible:</strong> compare click events to landing page views for the same campaign and you have a direct measure of how much traffic the page itself is losing.</li>
+      <li><strong>Page speed gets a WhatsApp-specific number:</strong> the In-App Browser is its own environment, and this is a measurement taken inside it.</li>
+      <li><strong>Campaign cost becomes honest:</strong> cost per landing page view is a more truthful denominator than cost per click.</li>
+      <li><strong>Creative and page problems separate:</strong> a high click rate with low page views points at the page, not the message.</li>
+    </ul>
+    <p>Meta has also just introduced a way to bid on marketing message delivery, covered in our <a href="whatsapp-marketing-message-max-price-2026.html">guide to max price</a>. Paying more for delivery only makes sense if you can see whether the delivered taps reach a page, which is why these two features belong in the same plan.</p>
+
+    <h2>How Does the Landing Page View Webhook Work in 2026?</h2>
+    <p>You subscribe to the <code>whatsapp_business_account</code> webhook topic, and Meta delivers the payload on the <code>messages</code> field. If you already receive click events for marketing messages, you do not need to add a subscription, because landing page views arrive through the same topic and field.</p>
+    <p>Inside the payload, a <code>user_actions</code> entry carries the event. Its <code>action_type</code> is <code>landing_page_view</code>, and it includes a <code>timestamp</code> plus a <code>marketing_messages_link_click_data</code> object holding the correlation keys.</p>
+
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Field</th><th>Required</th><th>What it is</th></tr></thead>
+      <tbody>
+        <tr><td><code>action_type</code></td><td>Required</td><td>The name of the action, set to <code>landing_page_view</code>.</td></tr>
+        <tr><td><code>timestamp</code></td><td>Required</td><td>Unix timestamp in seconds of when Meta recorded the landing page view.</td></tr>
+        <tr><td><code>marketing_messages_link_click_data.tracking_token</code></td><td>Optional</td><td>Internal Meta token used to match the landing page view to the click event for the same marketing message. Omitted when a token is not available.</td></tr>
+        <tr><td><code>marketing_messages_link_click_data.click_id</code></td><td>Optional</td><td>Unique identifier for the click that opened the In-App Browser. Omitted when not available.</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h3>Why the container is called link_click_data</h3>
+    <p>Landing page view data arrives in <code>marketing_messages_link_click_data</code>, the same container used by click events. Meta explains that the object holds the payload for every user action on a marketing message, and that its name reflects its original click-only use. The <code>action_type</code> is what tells you which action a given payload describes, so never infer the event type from the container name.</p>
+
+    <h2>How Do Landing Page Views Relate to Click Events in 2026?</h2>
+    <p>A landing page view corresponds to a click event with the same <code>tracking_token</code>. Click events arrive with <code>action_type</code> set to <code>marketing_messages_link_click</code> on the same topic and field. Matching the two is how you build the tap-to-load funnel, but Meta is explicit about three behaviours that a naive implementation will get wrong.</p>
+    <ul>
+      <li><strong>Order is not guaranteed.</strong> Meta does not guarantee which of the two events arrives first, so do not require the click event to have arrived before processing a landing page view.</li>
+      <li><strong>A landing page view can arrive with no matching click.</strong> Design your store to accept an unmatched view rather than discarding it.</li>
+      <li><strong>Both keys can be missing.</strong> When <code>tracking_token</code> is absent, use <code>click_id</code>, which appears on both payloads. When neither is present, the landing page view cannot be correlated to a click event.</li>
+    </ul>
+
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Field</th><th>Click event</th><th>Landing page view</th></tr></thead>
+      <tbody>
+        <tr><td><code>action_type</code></td><td><code>marketing_messages_link_click</code></td><td><code>landing_page_view</code></td></tr>
+        <tr><td><code>tracking_token</code></td><td>Optional</td><td>Optional</td></tr>
+        <tr><td><code>click_id</code></td><td>Optional</td><td>Optional</td></tr>
+        <tr><td><code>click_component</code></td><td>Optional, <code>cta</code> or <code>body</code></td><td>Not included</td></tr>
+        <tr><td><code>product_id</code></td><td>Optional, when assigned through Ads Manager or the Marketing API</td><td>Not included</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>One more detail matters for analytics. The <code>click_id</code> on a click event is appended to the original URL when the user visits it. That means your own landing page analytics can capture the same identifier the webhook carries, which is the cleanest way to join WhatsApp-side events to on-site behaviour.</p>
+
+    <h2>What Are the Limitations to Know Before You Build in 2026?</h2>
+    <p>Two limitations shape any implementation. The feature is currently in limited availability, so not every account will receive these events yet. And landing page view events are only available for tracking links created in the last seven days. Click events carry a parallel restriction: they are only available for messages sent in the last seven days.</p>
+    <div class="callout">
+      <div class="callout__label">What the seven-day window means in practice</div>
+      <p>This is a live measurement stream, not a historical report. If you want month-over-month funnel analysis, you have to capture and store the events yourself as they arrive. A team that plans to look back at last quarter's tap-to-load rate in Meta's tools will find there is nothing there to look at.</p>
+    </div>
+
+    <h3>Build for new action types</h3>
+    <p>Meta states that <code>action_type</code> is an open enum, which means new values may be added over time without that being a breaking change. Your webhook handler must ignore action types it does not recognise rather than treating them as errors. A handler that throws on an unknown value will start failing the day Meta adds the next one, so this is a one-line fix worth making before you deploy.</p>
+
+    <h2>How Should a Team Implement This in 2026?</h2>
+    <p>Treat it as a small data pipeline rather than a dashboard toggle. The checklist below is the minimum for a funnel you can trust.</p>
+    <ol>
+      <li><strong>Confirm availability</strong> for your account, since the feature is in limited availability, and confirm you are sending through the Marketing Messages API or Ads Manager.</li>
+      <li><strong>Confirm your subscription</strong> to the <code>whatsapp_business_account</code> topic. If you already receive click events, nothing else is needed.</li>
+      <li><strong>Branch on <code>action_type</code></strong>, not on the container name, and ignore unknown values.</li>
+      <li><strong>Store every event immediately</strong>, since the data is limited to links and messages from the last seven days.</li>
+      <li><strong>Join on <code>tracking_token</code>, then fall back to <code>click_id</code></strong>, and keep unmatched views rather than dropping them.</li>
+      <li><strong>Never require the click first.</strong> Arrival order is not guaranteed.</li>
+      <li><strong>Capture <code>click_id</code> on your landing page</strong> from the URL, so WhatsApp events and site analytics share a key.</li>
+      <li><strong>Report tap-to-load as a ratio</strong> per campaign, and investigate the page whenever it falls.</li>
+    </ol>
+
+    <h2>How Should Marketing Teams Use the Funnel in 2026?</h2>
+    <p>Use the gap between taps and page views as a diagnostic, not a vanity metric. The two numbers tell you different things, and the ratio between them points at a specific owner when something goes wrong.</p>
+
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>What you see in 2026</th><th>Likely cause</th><th>Who should look at it</th></tr></thead>
+      <tbody>
+        <tr><td>Low taps, healthy tap-to-load ratio</td><td>The message or offer is not compelling</td><td>Copy and creative</td></tr>
+        <tr><td>Healthy taps, low landing page views</td><td>Page loads slowly or fails in the In-App Browser</td><td>Web team</td></tr>
+        <tr><td>Ratio drops after a site change</td><td>A new script, redirect or broken link</td><td>Web team, compared against the release</td></tr>
+        <tr><td>Many unmatched landing page views</td><td>Missing correlation keys</td><td>Whoever owns the webhook pipeline</td></tr>
+        <tr><td>Nothing arriving at all</td><td>Limited availability or wrong API path</td><td>Whoever owns the WhatsApp integration</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>A landing page that loads fast for a desktop visitor can still struggle inside a mobile in-app browser, so this is one of the few places where WhatsApp campaign performance and page performance can be measured on the same footing. For the cost changes landing in the same month, see our <a href="whatsapp-service-message-pricing-october-2026.html">service message pricing hub</a>, and for the broader channel, the <a href="whatsapp-sales-98-open-rates-revenue-growth-2026.html">WhatsApp sales and open rates guide</a>.</p>
+
+    <h2>What Are the Common Mistakes in 2026?</h2>
+    <ul>
+      <li><strong>Inferring the event type from the container name.</strong> Landing page views arrive in <code>marketing_messages_link_click_data</code>. Use <code>action_type</code>.</li>
+      <li><strong>Requiring the click event first.</strong> Meta does not guarantee arrival order.</li>
+      <li><strong>Dropping unmatched views.</strong> A landing page view can arrive without a matching click.</li>
+      <li><strong>Joining on <code>tracking_token</code> only.</strong> Fall back to <code>click_id</code> when the token is missing.</li>
+      <li><strong>Throwing on unknown <code>action_type</code> values.</strong> It is an open enum; ignore what you do not recognise.</li>
+      <li><strong>Expecting history in Meta's tools.</strong> Events cover only the last seven days, so store them yourself.</li>
+      <li><strong>Adding a duplicate subscription.</strong> If you already receive click events, nothing more is needed.</li>
+    </ul>
+
+    <h2>Key Takeaways for 2026</h2>
+    <p>Landing page view events close the most expensive blind spot in WhatsApp campaign measurement: the gap between a tap and a loaded page.</p>
+    <ul>
+      <li>Meta added the landing page view webhook reference on 23 September 2026, for the Marketing Messages API for WhatsApp and Ads Manager only.</li>
+      <li>It fires when a link in a marketing message opens a landing page in the WhatsApp In-App Browser.</li>
+      <li>It arrives on the <code>whatsapp_business_account</code> topic, <code>messages</code> field, with <code>action_type</code> set to <code>landing_page_view</code>.</li>
+      <li>Correlate to click events on <code>tracking_token</code>, falling back to <code>click_id</code>; both are optional and can both be missing.</li>
+      <li>Arrival order is not guaranteed and views can arrive without a matching click.</li>
+      <li>The feature is in limited availability and covers only tracking links created in the last seven days.</li>
+      <li><code>action_type</code> is an open enum, so handlers must ignore unrecognised values.</li>
+    </ul>
+    <p>Distk helps growth teams across India and internationally build the tap-to-load funnel for WhatsApp campaigns, store the events Meta only keeps for seven days, and route each drop to the team that can fix it. If WhatsApp is carrying real campaign spend, that funnel is where we start.</p>
+
+    <h2>Sources</h2>
+    <ul>
+      <li><a href="https://developers.facebook.com/documentation/business-messaging/whatsapp/marketing-messages/track-landing-page-views/" target="_blank" rel="noopener">Tracking landing page view events</a>, Meta for Developers, updated 23 September 2026.</li>
+      <li><a href="https://developers.facebook.com/documentation/business-messaging/whatsapp/marketing-messages/track-click-events/" target="_blank" rel="noopener">Tracking click events</a>, Meta for Developers.</li>
+      <li><a href="https://developers.facebook.com/docs/whatsapp/cloud-api/changelog" target="_blank" rel="noopener">WhatsApp changelog</a>, Meta for Developers, entry dated 23 September 2026.</li>
+    </ul>
+
+  </div>
+</main>
+
+<section class="faq">
+  <div class="container">
+    <div class="section-tag">Key Questions</div>
+    <h2 class="section-title">WhatsApp Landing Page View Events: FAQs</h2>
+    <div class="faq__grid">
+      <div class="faq__item">
+        <h3>What is the WhatsApp landing_page_view webhook?</h3>
+        <p>A webhook Meta sends when a WhatsApp user taps a link in your marketing message and the landing page opens in the WhatsApp In-App Browser. Meta added it on 23 September 2026 so businesses can measure how many users reached the page, not just how many tapped the link.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Which WhatsApp APIs support landing page view events?</h3>
+        <p>They are available using the Marketing Messages API for WhatsApp and Ads Manager only. The feature is also currently in limited availability, so not every account receives these events yet.</p>
+      </div>
+      <div class="faq__item">
+        <h3>How do I subscribe to WhatsApp landing page view events?</h3>
+        <p>Subscribe to the whatsapp_business_account webhook topic. Meta delivers the payload on the messages field. If you already receive click events for marketing messages, you do not need to add a subscription.</p>
+      </div>
+      <div class="faq__item">
+        <h3>How do I match a landing page view to a click event?</h3>
+        <p>A landing page view corresponds to a click event with the same tracking_token. When tracking_token is missing, use click_id, which appears on both payloads. When neither is present, the view cannot be correlated to a click.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Does the click event always arrive before the landing page view?</h3>
+        <p>No. Meta does not guarantee which of the two events arrives first, and a landing page view can arrive without any matching click event. Your pipeline should not require the click first.</p>
+      </div>
+      <div class="faq__item">
+        <h3>How far back can I get WhatsApp landing page view data?</h3>
+        <p>Landing page view events are only available for tracking links created in the last seven days, and click events only for messages sent in the last seven days. Store events as they arrive if you want longer-term funnel analysis.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED START -->
+<section class="related" style="padding:3.5rem 0;border-top:1px solid #e8e8e8;background:#fafafa">
+  <div style="max-width:720px;margin:0 auto;padding:0 clamp(1.2rem,4vw,3rem)">
+    <div style="font-family:'Space Mono',monospace;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:#e63312;margin-bottom:1.3rem">Related reading</div>
+    <ul style="list-style:none;margin:0;padding:0;display:grid;gap:0.9rem">
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="whatsapp-marketing-message-max-price-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">Set a Max Price for WhatsApp Marketing Messages in 2026</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="how-to-use-wati-whatsapp-marketing-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">How to Use Wati AI for WhatsApp Business API Marketing 2026: Complete Chatbot, Automation & Growth Guide</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="how-to-use-haptik-whatsapp-marketing-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">How to Use Haptik for WhatsApp Business API Marketing 2026: Complete Chatbot, Commerce & Automation Guide</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="whatsapp-marketing-agency-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">WhatsApp Marketing Agency India 2026: Business API, Automation & Commerce</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="whatsapp-service-message-pricing-october-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">WhatsApp Service Messages Stop Being Free on 1 October 2026</a></li>
+    </ul>
+  </div>
+</section>
+<!-- RELATED END -->
+<section class="cta">
+  <div class="cta__inner">
+    <h2>Measure the visit, not just the tap</h2>
+    <p>Distk helps growth teams build the tap-to-load funnel for WhatsApp campaigns, store events Meta keeps for only seven days, and route every drop-off to the team that can fix it.</p>
+    <a href="https://distk.in/#contact" class="cta__btn">Start the conversation →</a>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="container">
+    © 2026 Distk · <a href="https://distk.in">distk.in</a> · <a href="mailto:connect@distk.in">connect@distk.in</a>
+  </div>
+</footer>
+</body>
+</html>

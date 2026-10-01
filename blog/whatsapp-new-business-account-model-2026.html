@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xdifcafwxl");
+  </script>
+
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WhatsApp's New Business Account Model 2026: WAAC, Messaging Accounts, Phases | Distk</title>
+<meta name="description" content="WhatsApp's business account model splits into a WhatsApp account and a Messaging account from 23 September 2026, reaching all businesses by mid-October. What stays the same, the template quality reset, shared throughput, credit line rules, and the 2027 and 2028 deadlines.">
+<meta name="keywords" content="whatsapp new business account model 2026, whatsapp waac messaging account, whatsapp waba split 2026, whatsapp account model evolution, whatsapp multiple partners one number">
+<meta name="author" content="Distk"><meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://distk.in/blog/whatsapp-new-business-account-model-2026.html">
+<meta property="og:type" content="article"><meta property="og:url" content="https://distk.in/blog/whatsapp-new-business-account-model-2026.html">
+<meta property="og:title" content="WhatsApp's New Business Account Model in 2026: What Changes Before Mid-October">
+<meta property="og:description" content="The WABA splits in two from 23 September 2026. Your IDs keep working, but templates, throughput and credit lines behave differently once a second partner arrives.">
+<meta property="og:image" content="https://distk.in/assets/images/og-image.jpg"><meta property="og:site_name" content="Distk">
+<meta property="article:published_time" content="2026-10-01T00:00:00+05:30">
+<meta property="article:modified_time" content="2026-10-01T00:00:00+05:30">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="WhatsApp's New Business Account Model in 2026: What Changes Before Mid-October"><meta name="twitter:description" content="The WABA splits in two from 23 September 2026. Your IDs keep working, but templates, throughput and credit lines behave differently once a second partner arrives.">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "WhatsApp's New Business Account Model in 2026: What Changes Before Mid-October", "description": "A guide to WhatsApp's new business account model in 2026: the split of the WABA into a WhatsApp account and a Messaging account, the Phase 1 rollout from 23 September to mid-October 2026, what stays the same, template isolation and the two to four week quality reset, billing isolation and credit lines, shared throughput and messaging limits, partner switching without number migration, and the Phase 2 and Phase 3 deadlines.", "author": {"@type": "Organization", "name": "Distk", "url": "https://distk.in"}, "publisher": {"@type": "Organization", "name": "Distk", "logo": {"@type": "ImageObject", "url": "https://distk.in/assets/images/Logo.png"}}, "datePublished": "2026-10-01", "dateModified": "2026-10-01", "inLanguage": "en", "about": [{"@type": "Thing", "name": "WhatsApp Business Platform"}, {"@type": "Thing", "name": "WhatsApp account"}, {"@type": "Thing", "name": "Messaging account"}, {"@type": "Thing", "name": "Meta"}, {"@type": "Thing", "name": "WhatsApp Business account migration"}], "mentions": [{"@type": "Thing", "name": "WhatsApp Business Platform"}, {"@type": "Thing", "name": "WhatsApp account"}, {"@type": "Thing", "name": "Messaging account"}, {"@type": "Thing", "name": "Meta"}, {"@type": "Thing", "name": "WhatsApp Business account migration"}], "mainEntityOfPage": {"@type": "WebPage", "@id": "https://distk.in/blog/whatsapp-new-business-account-model-2026.html"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is changing in the WhatsApp Business account model in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "The legacy WhatsApp Business account is splitting into two accounts. A WhatsApp account, abbreviated WAAC, holds phone numbers, business usernames in future, business profile information and product catalogs, and is always owned by the client or direct developer. A Messaging account holds message templates, billing and payment methods, and webhook subscriptions, and each partner working with a client gets its own Messaging account so templates, billing and metrics stay isolated."}}, {"@type": "Question", "name": "When does the new WhatsApp account model roll out?", "acceptedAnswer": {"@type": "Answer", "text": "Phase 1, general availability, rolls out from 23 September 2026 and reaches all businesses by mid-October 2026, migrating businesses in stages. Phase 2, a new Graph API version, follows in H1 2027, and Phase 3, the mandatory transition, is scheduled for H1 2028."}}, {"@type": "Question", "name": "Will existing WhatsApp Business API integrations break with the new account model?", "acceptedAnswer": {"@type": "Answer", "text": "Meta states that existing IDs and API calls continue to work. The existing WABA ID becomes the Messaging account ID, phone number IDs continue to work with all APIs, and access tokens and endpoints are unchanged at Phase 1. No code changes are required except for setups where an access token has messaging access to more than one Messaging account on the same phone number."}}, {"@type": "Question", "name": "What happens to WhatsApp templates when a business adds a new partner?", "acceptedAnswer": {"@type": "Answer", "text": "Templates belong to the Messaging account in which they were created and are not shared across Messaging accounts. A new partner must create them again or copy them using the Template Migration API. When templates are migrated to a new Messaging account, their quality ratings and messaging tier reset to baseline, requiring a ramp-up period of approximately two to four weeks."}}, {"@type": "Question", "name": "Do multiple WhatsApp partners on one number get separate throughput?", "acceptedAnswer": {"@type": "Answer", "text": "No. Throughput remains at the phone number level, so partners sharing a number share its throughput capacity. Messaging limits remain at the business portfolio level, so the limit on unique users per 24-hour period is shared across all partners on that number."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://distk.in/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://distk.in/blog/"}, {"@type": "ListItem", "position": 3, "name": "WhatsApp's New Business Account Model in 2026: What Changes Before Mid-October", "item": "https://distk.in/blog/whatsapp-new-business-account-model-2026.html"}]}</script>
+<link rel="icon" type="image/png" href="../assets/images/favicon.png"><link rel="apple-touch-icon" href="../assets/images/Logo.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BWDTQ1JPL2"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-BWDTQ1JPL2');</script>
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1077520544213003');fbq('track','PageView');</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1077520544213003&ev=PageView&noscript=1"></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#0a0a0a;--paper:#fafafa;--mid:#6b6b6b;--light:#e8e8e8;--accent:#e63312;--accent-soft:rgba(230,51,18,0.08);--mono:'Space Mono',monospace;--sans:'Outfit',sans-serif;--container:1120px;--prose:720px;--gutter:clamp(1.2rem,4vw,3rem)}
+html{font-size:16px;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.container{max-width:var(--container);margin:0 auto;padding:0 var(--gutter)}
+.prose{max-width:var(--prose);margin:0 auto;padding:0 var(--gutter)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--light)}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;max-width:var(--container);margin:0 auto;padding:0.9rem var(--gutter)}
+.nav__logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;color:var(--ink)}
+.nav__logo img{height:32px;width:auto}
+.nav__logo span{font-family:var(--mono);font-weight:700;font-size:1.05rem;letter-spacing:-0.02em}
+.nav__logo small{display:block;font-size:0.55rem;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);line-height:1}
+.nav__back{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid);text-decoration:none;display:flex;align-items:center;gap:0.4rem;transition:color 0.2s}
+.nav__back:hover{color:var(--accent)}
+.nav__cta{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.6rem 1.4rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.nav__cta:hover{background:var(--accent)}
+.hero{padding:7.5rem 0 3.5rem;position:relative;overflow:hidden;border-bottom:1px solid var(--light)}
+.hero::before{content:'ACCOUNT';position:absolute;right:-1%;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:clamp(6rem,26vw,22rem);font-weight:700;color:rgba(0,0,0,0.03);line-height:1;pointer-events:none;user-select:none;letter-spacing:-0.05em}
+.hero__tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1.5rem}
+.hero__tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.hero h1{font-family:var(--sans);font-weight:700;font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;letter-spacing:-0.03em;max-width:20ch;margin-bottom:1.5rem}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero__sub{font-size:1.1rem;color:var(--mid);max-width:56ch;line-height:1.7;margin-bottom:2rem}
+.hero__meta{display:flex;flex-wrap:wrap;gap:1.5rem;font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid)}
+.tldr{background:var(--accent-soft);border-left:3px solid var(--accent);padding:1.8rem 2rem;margin:3rem 0;position:relative}
+.tldr::before{content:'TL;DR';position:absolute;top:-0.6rem;left:2rem;font-family:var(--mono);font-size:0.62rem;font-weight:700;letter-spacing:0.12em;background:var(--accent);color:#fff;padding:0.2rem 0.6rem}
+.tldr p{font-size:0.95rem;color:var(--ink);line-height:1.7}
+.article{padding:4rem 0 5rem}
+.article h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.35rem,2.8vw,1.8rem);letter-spacing:-0.02em;line-height:1.2;margin:3rem 0 1rem;padding-top:1rem;border-top:1px solid var(--light)}
+.article h2:first-child{border-top:none;margin-top:0}
+.article h3{font-family:var(--mono);font-weight:700;font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin:2rem 0 0.6rem}
+.article p{font-size:1rem;color:#2a2a2a;line-height:1.8;margin-bottom:1.25rem}
+.article ul,.article ol{padding-left:1.4rem;margin-bottom:1.25rem}
+.article li{font-size:1rem;color:#2a2a2a;line-height:1.75;margin-bottom:0.4rem}
+.article strong{font-weight:600;color:var(--ink)}
+.article a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(230,51,18,0.3)}
+.article a:hover{border-bottom-color:var(--accent)}
+.article blockquote{border-left:3px solid var(--accent);padding:0.75rem 1.5rem;margin:2rem 0;background:var(--accent-soft)}
+.article blockquote p{color:var(--ink);font-size:1rem;margin:0}
+.table-wrap{overflow-x:auto;margin:2rem 0}
+.data-table{width:100%;border-collapse:collapse;margin:0;font-size:0.88rem}
+.data-table th{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:0.7rem 1rem;text-align:left;white-space:nowrap}
+.data-table td{padding:0.75rem 1rem;border-bottom:1px solid var(--light);vertical-align:top}
+.data-table tr:last-child td{border-bottom:none}
+.data-table tr:nth-child(even) td{background:#f5f5f5}
+.callout{border:1.5px solid var(--light);padding:1.5rem 1.8rem;margin:2rem 0}
+.callout__label{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem}
+.callout p{font-size:0.92rem;color:var(--mid);line-height:1.7;margin:0}
+.faq{padding:4rem 0;background:var(--ink);color:var(--paper)}
+.faq .section-tag{color:var(--accent)}
+.faq .section-tag::before{background:var(--accent)}
+.faq__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2.5rem;margin-top:2.5rem}
+.faq__item{border-left:2px solid var(--accent);padding-left:1.5rem}
+.faq__item h3{font-family:var(--sans);font-weight:600;font-size:0.95rem;margin-bottom:0.5rem;color:var(--paper)}
+.faq__item p{font-size:0.85rem;color:rgba(255,255,255,0.88);line-height:1.65}
+.section-tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1rem}
+.section-tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.section-title{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.15;color:var(--paper)}
+.cta{padding:5rem 0;background:var(--accent-soft);border-top:1px solid rgba(230,51,18,0.12)}
+.cta__inner{max-width:680px;margin:0 auto;padding:0 var(--gutter);text-align:center}
+.cta h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.2;margin-bottom:1rem}
+.cta p{font-size:1rem;color:var(--mid);line-height:1.7;margin-bottom:2rem}
+.cta__btn{display:inline-flex;align-items:center;gap:0.6rem;font-family:var(--mono);font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;padding:1rem 2.2rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.cta__btn:hover{background:var(--accent)}
+.foot{padding:2.5rem 0;border-top:1px solid var(--light);text-align:center;font-family:var(--mono);font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid)}
+.foot a{color:var(--mid);text-decoration:none}.foot a:hover{color:var(--accent)}
+@media(max-width:768px){.faq__grid{grid-template-columns:1fr}.nav__back span{display:none}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="https://distk.in" class="nav__logo">
+      <img src="../assets/images/Logo.png" alt="Distk">
+      <div><span>Distk</span><small>Global Growth Partner</small></div>
+    </a>
+    <a href="/blog/" class="nav__back">← <span>All articles</span></a>
+    <a href="https://distk.in/#contact" class="nav__cta">Work with us</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="prose">
+    <div class="hero__tag">WhatsApp Guide</div>
+    <h1>WhatsApp's New <em>Business Account Model</em> in 2026: What Changes Before Mid-October</h1>
+    <p class="hero__sub">Meta is splitting the WABA into an identity account and a messaging account, and migrating every business automatically. Your integration keeps working. What changes is how templates, throughput and billing behave the moment a second partner shares your number.</p>
+    <div class="hero__meta">
+      <span>Distk Editorial</span>
+      <span>Oct 2026</span>
+      <span>12 min read</span>
+    </div>
+  </div>
+</section>
+
+<div class="prose">
+  <div class="tldr">
+    <p>WhatsApp's business account is splitting in two. A WhatsApp account, or WAAC, holds phone numbers, business profile information and product catalogs, and is always owned by the client. A Messaging account holds templates, billing and webhook subscriptions, and each partner gets its own. Phase 1 rolls out from 23 September 2026 and reaches all businesses by mid-October 2026, and Meta states existing IDs, endpoints and access tokens keep working, with your WABA ID becoming your Messaging account ID. Three behaviours matter once a second partner shares a number: templates do not carry across Messaging accounts and migrated templates reset to baseline quality with roughly a two to four week ramp, throughput and messaging limits are shared across all partners on the number, and a credit line on a client-owned Messaging account prevents sharing it. Developers should replace paid_messaging_account_id by 31 December 2026, ahead of Phase 2 in H1 2027 and Phase 3 in H1 2028.</p>
+  </div>
+</div>
+
+<main class="article">
+  <div class="prose">
+
+    <h2>What Is Changing in the WhatsApp Business Account Model in 2026?</h2>
+    <p>The WhatsApp Business account, the WABA most teams have worked with for years, is splitting into two separate accounts. A WhatsApp account, which Meta abbreviates as WAAC, holds the business's identity: phone numbers, business usernames in future, business profile information and product catalogs. A Messaging account holds template messages, billing and payment methods, and webhook subscriptions. Meta's stated reason is to let one phone number work with several partners without the business appearing as several contacts.</p>
+    <p>The phrase that matters most for anyone running a live integration comes straight from Meta: your existing IDs and API calls continue to work. Your existing WABA ID becomes your Messaging account ID. Nothing in day-to-day sending has to change at the first phase, unless you are in one specific multi-account situation covered below.</p>
+
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>New account</th><th>What it contains</th><th>Who owns it</th></tr></thead>
+      <tbody>
+        <tr><td><strong>WhatsApp account (WAAC)</strong></td><td>Phone numbers, business usernames (future), business profile information, product catalogs</td><td>Always the client or direct developer. Shareable with direct integrations and multiple partners.</td></tr>
+        <tr><td><strong>Messaging account</strong></td><td>Message templates, billing and payment methods, webhook subscriptions</td><td>The client or a partner. Each partner working with a client gets its own Messaging account.</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h2>Why Is Meta Splitting the WABA in 2026?</h2>
+    <p>Because the old WABA bundled phone numbers, templates, billing, webhooks and partner access into one entity, which meant working with several partners required a separate phone number for each. Customers then saw the same brand as several different contacts in their chat list. Separating identity from templates and billing lets one trusted number work across every integration, with each integration keeping its own isolated templates, billing and analytics.</p>
+    <p>For a marketing team this solves a real and common problem. A brand that uses one provider for marketing campaigns, another for customer support and its own developers for transactional messages no longer needs three numbers. WhatsApp users see a single contact regardless of how many partners sit behind it.</p>
+    <ul>
+      <li><strong>Specialist partners on one number:</strong> one provider can run marketing, another service, another authentication or calling, all on the same number.</li>
+      <li><strong>Separate billing per partner:</strong> each partner has its own Messaging account and its own payment method.</li>
+      <li><strong>Different currencies on one number:</strong> each currency can have its own Messaging account, without separate phone numbers per currency.</li>
+      <li><strong>No number migration to add a partner:</strong> clients can add or change partners without migrating their phone number, and existing conversations continue uninterrupted.</li>
+    </ul>
+
+    <h2>When Does the New Account Model Arrive in 2026?</h2>
+    <p>Phase 1, general availability, rolls out from 23 September 2026 and reaches all businesses by mid-October 2026. Businesses migrate in stages rather than on a single day. Until your business is migrated, WhatsApp Manager and Meta Business Suite keep showing the previous WABA experience, so the documentation can be ahead of what you see on screen for a while.</p>
+
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Phase</th><th>Timing</th><th>What it means for you</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Phase 1: General availability</strong></td><td>From 23 September 2026, all businesses by mid-October 2026</td><td>Meta migrates accounts automatically. Existing IDs and API calls keep working. No code changes required except multi-Messaging account setups.</td></tr>
+        <tr><td><strong>Phase 2: New Graph API version</strong></td><td>H1 2027</td><td>The newest Messages API requires <code>messaging_account_id</code> for multi-Messaging account setups. New endpoints and a distinct WAAC ID arrive.</td></tr>
+        <tr><td><strong>Phase 3: Mandatory transition</strong></td><td>H1 2028</td><td>All Messages API versions require <code>messaging_account_id</code> in multi-Messaging account setups, and APIs that target a phone number ID in the path must use WAAC IDs.</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The practical reading: Phase 1 in October 2026 is a migration Meta performs for you. The engineering work belongs to 2027, ahead of the Phase 3 cutover in H1 2028. That is a long runway, which is exactly why it is easy to leave until it is short.</p>
+
+    <h2>What Stays the Same After the Migration in 2026?</h2>
+    <p>Almost all of the surface you use today. Meta's position is that the migration preserves your data: phone numbers, templates, business profiles and payment methods carry over, and existing clients do not need to re-onboard. The list below is what a team should be able to tell a nervous client on the day their dashboard changes.</p>
+    <ul>
+      <li><strong>Your WABA ID:</strong> it becomes your Messaging account ID, unchanged.</li>
+      <li><strong>Your phone number IDs:</strong> they continue to work with all APIs during Phases 1 and 2.</li>
+      <li><strong>Your access tokens and endpoints:</strong> unchanged at Phase 1.</li>
+      <li><strong>Template workflows:</strong> create, edit, delete and submit for review work the same way, and template management stays on the Messaging account.</li>
+      <li><strong>Webhook subscriptions:</strong> you continue to subscribe using your Messaging account ID.</li>
+    </ul>
+
+    <h2>What Changes That Teams Will Actually Notice in 2026?</h2>
+    <p>Three operational behaviours change in ways that affect cost, delivery and quality, and none of them are obvious from the headline. Each matters more the moment a second partner is added to a number.</p>
+
+    <h3>Template isolation and the quality reset</h3>
+    <p>Templates belong to the Messaging account in which they were created and are not shared across Messaging accounts. If a second partner needs the same template, it must be created again in that partner's Messaging account or copied with the Template Migration API. Meta states that when templates are migrated to a new Messaging account, their quality ratings and messaging tier reset to baseline, requiring a ramp-up period of approximately two to four weeks.</p>
+    <div class="callout">
+      <div class="callout__label">The planning point most teams miss in 2026</div>
+      <p>A template copied to a new partner's Messaging account starts again at baseline quality and messaging tier, and needs roughly two to four weeks to ramp. If you are moving campaign sending to a new partner ahead of a seasonal peak, start the move a month earlier than the calendar suggests, or the new account will not have the throughput history to carry the volume.</p>
+    </div>
+
+    <h3>Billing isolation and credit lines</h3>
+    <p>Each Messaging account has its own payment method, completely independent from other Messaging accounts and from ad accounts. Meta adds a specific rule that matters to agencies: if you attach your credit line to a client-owned Messaging account, that Messaging account cannot be shared with another partner. Agencies that extend credit to clients should decide deliberately whose Messaging account carries it.</p>
+
+    <h3>Shared throughput and shared limits</h3>
+    <p>Throughput stays at the phone number level, so when several partners share a number, they share its throughput capacity. Messaging limits stay at the business portfolio level, so the limit on unique users per 24-hour period is shared across every partner on that number. Two partners on one number do not get double the headroom. They split it.</p>
+
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Behaviour</th><th>Where it sits in 2026</th><th>Consequence with several partners</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Templates</strong></td><td>Messaging account</td><td>Not shared. Recreate or migrate, with a quality and tier reset.</td></tr>
+        <tr><td><strong>Billing</strong></td><td>Messaging account</td><td>Isolated per partner. A credit line on a client-owned account blocks sharing.</td></tr>
+        <tr><td><strong>Throughput</strong></td><td>Phone number</td><td>Shared across all partners on the number.</td></tr>
+        <tr><td><strong>Messaging limits</strong></td><td>Business portfolio</td><td>Unique users per 24 hours shared across all partners on the number.</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h2>How Does Switching Partner Work Under the New Model in 2026?</h2>
+    <p>It no longer involves moving the number. Clients can add or change partners without migrating their phone number, and existing conversations are not interrupted when a new partner is added. Meta notes that the phone number migration process that used to act as a natural switching barrier no longer applies, and tells partners who extend credit lines to factor that into their risk management.</p>
+    <p>That is good news for brands and a genuine shift for agencies. Leaving a provider used to be painful enough that it rarely happened. In 2026 the switching cost falls sharply, which means retention depends on results rather than inertia. Before adding a partner, though, read our <a href="whatsapp-partner-reassignment-checklist-2026.html">partner assignment readiness checklist</a>, because adding one can change which integration receives incoming messages.</p>
+
+    <h2>What Do Developers Need to Do in 2026?</h2>
+    <p>For most direct developers, nothing during Phase 1. The exception is any setup where an access token has messaging access to more than one Messaging account on the same business phone number. That is the case in which Meta cannot tell which Messaging account to bill and attribute a message to, and it is where the <code>messaging_account_id</code> parameter comes in.</p>
+    <ul>
+      <li><strong>Phase 1:</strong> <code>messaging_account_id</code> is available and optional. The older <code>paid_messaging_account_id</code> works as a deprecated alias.</li>
+      <li><strong>By 31 December 2026:</strong> migrate from <code>paid_messaging_account_id</code> to <code>messaging_account_id</code>. After that date the alias is planned for removal in a future Graph API version.</li>
+      <li><strong>Phase 2, H1 2027:</strong> the newest Messages API version requires <code>messaging_account_id</code> in multi-Messaging account setups.</li>
+      <li><strong>Phase 3, H1 2028:</strong> all Messages API versions require it in those setups, and phone-number-ID paths move to WAAC IDs.</li>
+    </ul>
+    <p>Our <a href="whatsapp-messaging-account-id-migration-2026.html">messaging_account_id migration guide</a> covers the rule, the deadline and the attribution consequences in detail.</p>
+
+    <h2>How Should Brands and Agencies Prepare in 2026?</h2>
+    <p>Map who sends what from each number before October ends, because that map is what every later decision depends on. The checklist below is the minimum a brand or an agency managing client numbers should complete.</p>
+    <ol>
+      <li><strong>List every phone number</strong> and every partner and direct integration that sends from it.</li>
+      <li><strong>Note who owns each Messaging account</strong> and whose payment method or credit line sits on it.</li>
+      <li><strong>Identify any shared-number setups</strong> where one access token reaches more than one Messaging account.</li>
+      <li><strong>Search your code for <code>paid_messaging_account_id</code></strong> and schedule its replacement before 31 December 2026.</li>
+      <li><strong>Plan template moves early</strong>, allowing two to four weeks for quality and tier to ramp on a new Messaging account.</li>
+      <li><strong>Budget shared throughput and limits</strong> across partners on the same number rather than assuming each partner gets its own.</li>
+      <li><strong>Brief clients before their dashboard changes,</strong> since Meta Business Suite will show separate WhatsApp Accounts and Messaging Accounts tabs after migration.</li>
+    </ol>
+    <p>For the cost side of the same month, see our <a href="whatsapp-service-message-pricing-october-2026.html">guide to the 1 October 2026 service message pricing change</a>. For the broader platform, the <a href="how-to-use-whatsapp-business-api-2026.html">WhatsApp Business API guide</a> covers the fundamentals.</p>
+
+    <h2>What Are the Common Mistakes in 2026?</h2>
+    <ul>
+      <li><strong>Assuming your integration breaks in October.</strong> Meta states existing IDs and API calls continue to work.</li>
+      <li><strong>Assuming a copied template keeps its quality.</strong> Quality rating and messaging tier reset to baseline with a two to four week ramp.</li>
+      <li><strong>Assuming a second partner doubles capacity.</strong> Throughput and messaging limits are shared on the number.</li>
+      <li><strong>Attaching a credit line without thinking about sharing.</strong> A credit line on a client-owned Messaging account prevents sharing it with another partner.</li>
+      <li><strong>Leaving <code>paid_messaging_account_id</code> in the code.</strong> Migrate by 31 December 2026.</li>
+      <li><strong>Treating Phase 3 as distant.</strong> H1 2028 needs engineering work planned during 2027.</li>
+      <li><strong>Adding a partner without checking routing.</strong> It can change which integration receives incoming messages.</li>
+    </ul>
+
+    <h2>Key Takeaways for 2026</h2>
+    <p>The account model change is a migration Meta runs for you in October 2026, with real engineering work scheduled for 2027 and a hard cutover in H1 2028.</p>
+    <ul>
+      <li>The WABA splits into a WhatsApp account for identity and a Messaging account for templates, billing and webhooks.</li>
+      <li>Phase 1 rolls out from 23 September 2026 and reaches all businesses by mid-October 2026, in stages.</li>
+      <li>Existing IDs, endpoints and access tokens keep working, and your WABA ID becomes your Messaging account ID.</li>
+      <li>Templates do not move between Messaging accounts without migration, and migrated templates reset to baseline quality with a two to four week ramp.</li>
+      <li>Throughput and messaging limits are shared across every partner on a number.</li>
+      <li>Clients can add or change partners without migrating their number.</li>
+      <li>Replace <code>paid_messaging_account_id</code> with <code>messaging_account_id</code> by 31 December 2026.</li>
+    </ul>
+    <p>Distk helps growth teams across India and internationally map who sends what from each WhatsApp number, plan partner and template moves around quality ramp-up, and keep the 2027 engineering work on schedule. If the new account model is about to reach your numbers, that map is where we start.</p>
+
+    <h2>Sources</h2>
+    <ul>
+      <li><a href="https://developers.facebook.com/documentation/business-messaging/whatsapp/account-model-evolution/" target="_blank" rel="noopener">Updates to WhatsApp Business accounts</a>, Meta for Developers.</li>
+      <li><a href="https://developers.facebook.com/docs/whatsapp/cloud-api/changelog" target="_blank" rel="noopener">WhatsApp changelog</a>, Meta for Developers, entry dated 22 September 2026 adding the general availability dates.</li>
+    </ul>
+
+  </div>
+</main>
+
+<section class="faq">
+  <div class="container">
+    <div class="section-tag">Key Questions</div>
+    <h2 class="section-title">WhatsApp Account Model 2026: FAQs</h2>
+    <div class="faq__grid">
+      <div class="faq__item">
+        <h3>What is changing in the WhatsApp Business account model?</h3>
+        <p>The WABA splits into two accounts. A WhatsApp account, or WAAC, holds phone numbers, business usernames in future, business profile information and product catalogs. A Messaging account holds message templates, billing and payment methods, and webhook subscriptions. Each partner working with a client gets its own Messaging account.</p>
+      </div>
+      <div class="faq__item">
+        <h3>When does the new WhatsApp account model roll out?</h3>
+        <p>Phase 1, general availability, rolls out from 23 September 2026 and reaches all businesses by mid-October 2026, in stages. Phase 2, a new Graph API version, is H1 2027. Phase 3, the mandatory transition, is H1 2028.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Will my existing WhatsApp integration break?</h3>
+        <p>Meta states that existing IDs and API calls continue to work. Your existing WABA ID becomes your Messaging account ID, phone number IDs keep working, and access tokens and endpoints are unchanged at Phase 1. No code changes are required except in multi-Messaging account setups.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Do templates carry over when I add a new partner?</h3>
+        <p>No. Templates belong to the Messaging account in which they were created and are not shared. A new partner must recreate them or copy them with the Template Migration API, and migrated templates reset to baseline quality rating and messaging tier, needing roughly two to four weeks to ramp up.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Does adding a second partner give me more throughput?</h3>
+        <p>No. Throughput stays at the phone number level and messaging limits stay at the business portfolio level, so partners sharing a number share its throughput and its limit on unique users per 24 hours.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Can I switch WhatsApp partner without moving my number?</h3>
+        <p>Yes. Under the new model clients can add or change partners without migrating their phone number, and existing conversations are not interrupted. Check Conversation Routing first, because assigning a partner can change which integration receives incoming messages.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED START -->
+<section class="related" style="padding:3.5rem 0;border-top:1px solid #e8e8e8;background:#fafafa">
+  <div style="max-width:720px;margin:0 auto;padding:0 clamp(1.2rem,4vw,3rem)">
+    <div style="font-family:'Space Mono',monospace;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:#e63312;margin-bottom:1.3rem">Related reading</div>
+    <ul style="list-style:none;margin:0;padding:0;display:grid;gap:0.9rem">
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="gpt-6-astra-marketing-guide-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">GPT-6 Astra in 2026: What OpenAI's Computer-Use Model Means for Business Teams</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="chatgpt-ads-account-management-guide-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">ChatGPT Ads Account Management in 2026: Branding, Reviews, Spend Limits and Account States</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="claude-sonnet-5-5-marketing-guide-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">Claude Sonnet 5.5 in 2026: The Mid Tier Just Caught the Flagship</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="ai-model-pricing-comparison-september-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">AI Model Pricing and Fit Comparison, September 2026: GPT-6 Astra, Claude Fable 5.1, Gemini and DeepSeek</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="claude-fable-5-1-mythos-5-1-marketing-guide-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">Claude Fable 5.1 and Mythos 5.1 in 2026: What Changed for Business Teams</a></li>
+    </ul>
+  </div>
+</section>
+<!-- RELATED END -->
+<section class="cta">
+  <div class="cta__inner">
+    <h2>Map every number before the migration reaches it</h2>
+    <p>Distk helps growth teams map who sends what from each WhatsApp number, plan partner and template moves around quality ramp-up, and keep the 2027 engineering work on schedule.</p>
+    <a href="https://distk.in/#contact" class="cta__btn">Start the conversation →</a>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="container">
+    © 2026 Distk · <a href="https://distk.in">distk.in</a> · <a href="mailto:connect@distk.in">connect@distk.in</a>
+  </div>
+</footer>
+</body>
+</html>

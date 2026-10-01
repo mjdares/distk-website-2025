@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xdifcafwxl");
+  </script>
+
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Migrate to messaging_account_id Before 31 December 2026 | Distk</title>
+<meta name="description" content="Replace WhatsApp's deprecated paid_messaging_account_id with messaging_account_id by 31 December 2026. When the parameter is required, how it decides billing and analytics, and the same-day INR billing deadline after which Meta stops delivering non-INR messages for eligible Indian customers.">
+<meta name="keywords" content="messaging_account_id whatsapp migration, paid_messaging_account_id deprecated, whatsapp inr billing migration 2026, whatsapp currency migration india, whatsapp cloud api deprecation december 2026">
+<meta name="author" content="Distk"><meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://distk.in/blog/whatsapp-messaging-account-id-migration-2026.html">
+<meta property="og:type" content="article"><meta property="og:url" content="https://distk.in/blog/whatsapp-messaging-account-id-migration-2026.html">
+<meta property="og:title" content="Migrate to messaging_account_id Before 31 December 2026">
+<meta property="og:description" content="31 December 2026 is two deadlines for Indian WhatsApp users: a deprecated parameter in your code, and a currency migration that stops delivery if missed.">
+<meta property="og:image" content="https://distk.in/assets/images/og-image.jpg"><meta property="og:site_name" content="Distk">
+<meta property="article:published_time" content="2026-10-01T00:00:00+05:30">
+<meta property="article:modified_time" content="2026-10-01T00:00:00+05:30">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Migrate to messaging_account_id Before 31 December 2026"><meta name="twitter:description" content="31 December 2026 is two deadlines for Indian WhatsApp users: a deprecated parameter in your code, and a currency migration that stops delivery if missed.">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Migrate to messaging_account_id Before 31 December 2026", "description": "A migration guide to WhatsApp's messaging_account_id in 2026: the 31 December 2026 deadline to replace the deprecated paid_messaging_account_id alias, the rule for when the parameter is needed, its effect on billing and analytics attribution, the Phase 2 and Phase 3 requirements, and the same-date INR billing migration deadline for eligible Indian customers with non-INR delivery stopping on 1 January 2027.", "author": {"@type": "Organization", "name": "Distk", "url": "https://distk.in"}, "publisher": {"@type": "Organization", "name": "Distk", "logo": {"@type": "ImageObject", "url": "https://distk.in/assets/images/Logo.png"}}, "datePublished": "2026-10-01", "dateModified": "2026-10-01", "inLanguage": "en", "about": [{"@type": "Thing", "name": "WhatsApp Cloud API"}, {"@type": "Thing", "name": "messaging_account_id"}, {"@type": "Thing", "name": "WhatsApp billing currency"}, {"@type": "Thing", "name": "Meta"}, {"@type": "Thing", "name": "INR billing localisation"}], "mentions": [{"@type": "Thing", "name": "WhatsApp Cloud API"}, {"@type": "Thing", "name": "messaging_account_id"}, {"@type": "Thing", "name": "WhatsApp billing currency"}, {"@type": "Thing", "name": "Meta"}, {"@type": "Thing", "name": "INR billing localisation"}], "mainEntityOfPage": {"@type": "WebPage", "@id": "https://distk.in/blog/whatsapp-messaging-account-id-migration-2026.html"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the WhatsApp paid_messaging_account_id deprecation deadline?", "acceptedAnswer": {"@type": "Answer", "text": "Meta supports paid_messaging_account_id only as a deprecated, backward-compatible alias for messaging_account_id and states that integrations should migrate to messaging_account_id by 31 December 2026, after which the alias is planned for removal in a future Graph API version."}}, {"@type": "Question", "name": "When must the WhatsApp messaging_account_id parameter be sent?", "acceptedAnswer": {"@type": "Answer", "text": "messaging_account_id should be included whenever the access token being used has messaging access to more than one Messaging account on the business phone number in the request, because in that situation Meta cannot determine which Messaging account to bill and attribute the message to. It is optional at Phase 1, required on the newest Messages API version from Phase 2 in H1 2027, and required on all Messages API versions from Phase 3 in H1 2028 for multi-Messaging account setups."}}, {"@type": "Question", "name": "How does messaging_account_id affect WhatsApp billing and analytics?", "acceptedAnswer": {"@type": "Answer", "text": "A WhatsApp message counts toward the analytics and charges of the Messaging account it was sent from, and messaging_account_id is what selects that Messaging account when more than one is reachable. Because each Messaging account has its own payment method and can use its own currency, the parameter determines which account and currency a message is billed to."}}, {"@type": "Question", "name": "What is the WhatsApp INR billing migration deadline for India?", "acceptedAnswer": {"@type": "Answer", "text": "Billing localisation launched on 1 January 2026 for partners and directly integrated businesses whose Sold-To country is India in Billing Hub. These eligible customers must migrate all accounts in their business portfolio to INR by 31 December 2026, because from 1 January 2027 Meta will no longer deliver the messages of their non-INR accounts. A Currency Migration API has been available since 1 June 2026."}}, {"@type": "Question", "name": "What is the WhatsApp BRL billing migration deadline for Brazil?", "acceptedAnswer": {"@type": "Answer", "text": "Eligible Brazilian customers, whose Sold-To country is Brazil in Billing Hub, must migrate all accounts in their business portfolio to BRL by 30 June 2027, because from 1 July 2027 Meta will no longer deliver the messages of their non-BRL accounts."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://distk.in/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://distk.in/blog/"}, {"@type": "ListItem", "position": 3, "name": "Migrate to messaging_account_id Before 31 December 2026", "item": "https://distk.in/blog/whatsapp-messaging-account-id-migration-2026.html"}]}</script>
+<link rel="icon" type="image/png" href="../assets/images/favicon.png"><link rel="apple-touch-icon" href="../assets/images/Logo.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BWDTQ1JPL2"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-BWDTQ1JPL2');</script>
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1077520544213003');fbq('track','PageView');</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1077520544213003&ev=PageView&noscript=1"></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#0a0a0a;--paper:#fafafa;--mid:#6b6b6b;--light:#e8e8e8;--accent:#e63312;--accent-soft:rgba(230,51,18,0.08);--mono:'Space Mono',monospace;--sans:'Outfit',sans-serif;--container:1120px;--prose:720px;--gutter:clamp(1.2rem,4vw,3rem)}
+html{font-size:16px;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.container{max-width:var(--container);margin:0 auto;padding:0 var(--gutter)}
+.prose{max-width:var(--prose);margin:0 auto;padding:0 var(--gutter)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--light)}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;max-width:var(--container);margin:0 auto;padding:0.9rem var(--gutter)}
+.nav__logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;color:var(--ink)}
+.nav__logo img{height:32px;width:auto}
+.nav__logo span{font-family:var(--mono);font-weight:700;font-size:1.05rem;letter-spacing:-0.02em}
+.nav__logo small{display:block;font-size:0.55rem;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);line-height:1}
+.nav__back{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid);text-decoration:none;display:flex;align-items:center;gap:0.4rem;transition:color 0.2s}
+.nav__back:hover{color:var(--accent)}
+.nav__cta{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.6rem 1.4rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.nav__cta:hover{background:var(--accent)}
+.hero{padding:7.5rem 0 3.5rem;position:relative;overflow:hidden;border-bottom:1px solid var(--light)}
+.hero::before{content:'MIGRATE';position:absolute;right:-1%;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:clamp(6rem,26vw,22rem);font-weight:700;color:rgba(0,0,0,0.03);line-height:1;pointer-events:none;user-select:none;letter-spacing:-0.05em}
+.hero__tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1.5rem}
+.hero__tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.hero h1{font-family:var(--sans);font-weight:700;font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;letter-spacing:-0.03em;max-width:20ch;margin-bottom:1.5rem}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero__sub{font-size:1.1rem;color:var(--mid);max-width:56ch;line-height:1.7;margin-bottom:2rem}
+.hero__meta{display:flex;flex-wrap:wrap;gap:1.5rem;font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid)}
+.tldr{background:var(--accent-soft);border-left:3px solid var(--accent);padding:1.8rem 2rem;margin:3rem 0;position:relative}
+.tldr::before{content:'TL;DR';position:absolute;top:-0.6rem;left:2rem;font-family:var(--mono);font-size:0.62rem;font-weight:700;letter-spacing:0.12em;background:var(--accent);color:#fff;padding:0.2rem 0.6rem}
+.tldr p{font-size:0.95rem;color:var(--ink);line-height:1.7}
+.article{padding:4rem 0 5rem}
+.article h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.35rem,2.8vw,1.8rem);letter-spacing:-0.02em;line-height:1.2;margin:3rem 0 1rem;padding-top:1rem;border-top:1px solid var(--light)}
+.article h2:first-child{border-top:none;margin-top:0}
+.article h3{font-family:var(--mono);font-weight:700;font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin:2rem 0 0.6rem}
+.article p{font-size:1rem;color:#2a2a2a;line-height:1.8;margin-bottom:1.25rem}
+.article ul,.article ol{padding-left:1.4rem;margin-bottom:1.25rem}
+.article li{font-size:1rem;color:#2a2a2a;line-height:1.75;margin-bottom:0.4rem}
+.article strong{font-weight:600;color:var(--ink)}
+.article a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(230,51,18,0.3)}
+.article a:hover{border-bottom-color:var(--accent)}
+.article blockquote{border-left:3px solid var(--accent);padding:0.75rem 1.5rem;margin:2rem 0;background:var(--accent-soft)}
+.article blockquote p{color:var(--ink);font-size:1rem;margin:0}
+.table-wrap{overflow-x:auto;margin:2rem 0}
+.data-table{width:100%;border-collapse:collapse;margin:0;font-size:0.88rem}
+.data-table th{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:0.7rem 1rem;text-align:left;white-space:nowrap}
+.data-table td{padding:0.75rem 1rem;border-bottom:1px solid var(--light);vertical-align:top}
+.data-table tr:last-child td{border-bottom:none}
+.data-table tr:nth-child(even) td{background:#f5f5f5}
+.callout{border:1.5px solid var(--light);padding:1.5rem 1.8rem;margin:2rem 0}
+.callout__label{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem}
+.callout p{font-size:0.92rem;color:var(--mid);line-height:1.7;margin:0}
+.faq{padding:4rem 0;background:var(--ink);color:var(--paper)}
+.faq .section-tag{color:var(--accent)}
+.faq .section-tag::before{background:var(--accent)}
+.faq__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2.5rem;margin-top:2.5rem}
+.faq__item{border-left:2px solid var(--accent);padding-left:1.5rem}
+.faq__item h3{font-family:var(--sans);font-weight:600;font-size:0.95rem;margin-bottom:0.5rem;color:var(--paper)}
+.faq__item p{font-size:0.85rem;color:rgba(255,255,255,0.88);line-height:1.65}
+.section-tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1rem}
+.section-tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.section-title{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.15;color:var(--paper)}
+.cta{padding:5rem 0;background:var(--accent-soft);border-top:1px solid rgba(230,51,18,0.12)}
+.cta__inner{max-width:680px;margin:0 auto;padding:0 var(--gutter);text-align:center}
+.cta h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.2;margin-bottom:1rem}
+.cta p{font-size:1rem;color:var(--mid);line-height:1.7;margin-bottom:2rem}
+.cta__btn{display:inline-flex;align-items:center;gap:0.6rem;font-family:var(--mono);font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;padding:1rem 2.2rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.cta__btn:hover{background:var(--accent)}
+.foot{padding:2.5rem 0;border-top:1px solid var(--light);text-align:center;font-family:var(--mono);font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid)}
+.foot a{color:var(--mid);text-decoration:none}.foot a:hover{color:var(--accent)}
+@media(max-width:768px){.faq__grid{grid-template-columns:1fr}.nav__back span{display:none}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="https://distk.in" class="nav__logo">
+      <img src="../assets/images/Logo.png" alt="Distk">
+      <div><span>Distk</span><small>Global Growth Partner</small></div>
+    </a>
+    <a href="/blog/" class="nav__back">← <span>All articles</span></a>
+    <a href="https://distk.in/#contact" class="nav__cta">Work with us</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="prose">
+    <div class="hero__tag">WhatsApp Guide</div>
+    <h1>Migrate to <em>messaging_account_id</em> Before 31 December 2026</h1>
+    <p class="hero__sub">A deprecated parameter and a currency deadline land on the same day. The first is a code cleanup. The second, for eligible Indian customers, stops message delivery on 1 January 2027 if it is missed. Here is what each requires and who has to act.</p>
+    <div class="hero__meta">
+      <span>Distk Editorial</span>
+      <span>Oct 2026</span>
+      <span>11 min read</span>
+    </div>
+  </div>
+</section>
+
+<div class="prose">
+  <div class="tldr">
+    <p>WhatsApp's new account model adds a messaging_account_id parameter to the Messages API. The older paid_messaging_account_id is supported only as a deprecated alias, and Meta says to migrate by 31 December 2026, after which it is planned for removal in a future Graph API version. Send messaging_account_id whenever your access token has messaging access to more than one Messaging account on the business phone number in the request, because that is when Meta cannot tell which account to bill and attribute the message to. It is optional at Phase 1, required on the newest Messages API version from H1 2027, and required on every version from H1 2028 in those setups. A message counts toward the analytics and charges of the Messaging account it is sent from. On the same date, eligible Indian customers must migrate every account to INR, because from 1 January 2027 Meta stops delivering messages of their non-INR accounts. The Currency Migration API has been available since 1 June 2026.</p>
+  </div>
+</div>
+
+<main class="article">
+  <div class="prose">
+
+    <h2>What Is the messaging_account_id Deadline in 2026?</h2>
+    <p>The deadline is 31 December 2026. Under WhatsApp's new account model, the Messages API gains a <code>messaging_account_id</code> parameter. The older <code>paid_messaging_account_id</code> parameter is supported only as a deprecated, backward-compatible alias, and Meta says to migrate to <code>messaging_account_id</code> by 31 December 2026, after which the alias is planned for removal in a future Graph API version.</p>
+    <p>For Indian businesses, the same date carries a second and more serious deadline. Eligible customers must migrate every account in their business portfolio to INR billing by 31 December 2026, because from 1 January 2027 Meta will no longer deliver messages from their non-INR accounts. One date is a code cleanup. The other is a delivery cut-off.</p>
+
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Deadline</th><th>Who it affects</th><th>What happens if missed</th></tr></thead>
+      <tbody>
+        <tr><td><strong>31 December 2026: replace <code>paid_messaging_account_id</code></strong></td><td>Integrations sending the deprecated alias</td><td>The alias is planned for removal in a future Graph API version</td></tr>
+        <tr><td><strong>31 December 2026: migrate to INR</strong></td><td>Eligible customers whose Sold-To country is India in Billing Hub</td><td>From 1 January 2027 Meta stops delivering messages of their non-INR accounts</td></tr>
+        <tr><td><strong>H1 2027: Phase 2</strong></td><td>Multi-Messaging account setups on the newest Messages API version</td><td><code>messaging_account_id</code> becomes required</td></tr>
+        <tr><td><strong>H1 2028: Phase 3</strong></td><td>Multi-Messaging account setups on every Messages API version</td><td><code>messaging_account_id</code> required everywhere in those setups</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h2>Why Does messaging_account_id Exist in 2026?</h2>
+    <p>Because one phone number can now be linked to more than one Messaging account. Under the <a href="whatsapp-new-business-account-model-2026.html">new account model</a>, each partner working with a client gets its own Messaging account for templates and billing, and each billing currency can have its own Messaging account too. When a single access token can reach several of those on the same number, Meta cannot tell which one to bill and attribute a message to. <code>messaging_account_id</code> is how you tell it.</p>
+    <p>Meta states the rule as a single condition: include the parameter whenever the access token you are sending with has messaging access to more than one Messaging account on the business phone number in your request. Everything else, the multi-partner cases, the multi-currency cases, a direct developer holding several Messaging accounts on its own number, is an example of that one rule rather than an exception to it.</p>
+
+    <h2>When Do You Actually Need to Send It in 2026?</h2>
+    <p>Only in multi-Messaging account situations. If your token reaches exactly one Messaging account on the number you are sending from, the question does not arise, because there is only one account to bill. The table below sorts the common setups.</p>
+
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Setup</th><th>Token reaches more than one Messaging account on the number?</th><th>Send <code>messaging_account_id</code>?</th></tr></thead>
+      <tbody>
+        <tr><td>One brand, one provider, one currency</td><td>No</td><td>Not needed</td></tr>
+        <tr><td>Two partners on one number, each using its own token</td><td>Usually no, each token sees its own account</td><td>Not needed unless a token reaches both</td></tr>
+        <tr><td>Direct developer with several Messaging accounts on its own number</td><td>Yes</td><td>Yes</td></tr>
+        <tr><td>One number billing in two currencies via two Messaging accounts</td><td>Yes, if one token reaches both</td><td>Yes</td></tr>
+        <tr><td>Agency token with access to several client Messaging accounts on one number</td><td>Yes</td><td>Yes</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The timing of the requirement is staged. At Phase 1, general availability in late 2026, the parameter is optional. From Phase 2 in H1 2027 the newest Messages API version requires it for multi-Messaging account setups, while older versions still accept calls without it and Meta attempts to resolve the account from your app's association. From Phase 3 in H1 2028, every Messages API version requires it in those setups.</p>
+
+    <h2>What Does messaging_account_id Do to Billing and Analytics in 2026?</h2>
+    <p>It decides where a message is counted. Meta explains that a message counts toward the analytics and the charges of the Messaging account it was sent from, and that <code>messaging_account_id</code> is what selects that Messaging account when more than one is reachable. Get it wrong and nothing fails loudly. The message is delivered, billed and reported against the wrong account.</p>
+    <div class="callout">
+      <div class="callout__label">Why this is a finance problem, not just a developer one</div>
+      <p>If a brand runs marketing through one partner and support through another on the same number, and a shared token sends without the right <code>messaging_account_id</code>, marketing spend can land on the support account or the reverse. Each Messaging account carries its own payment method, so the error shows up as an unexpected invoice on the wrong card, and as campaign metrics that do not add up.</p>
+    </div>
+    <ul>
+      <li><strong>Analytics:</strong> a message appears in the analytics of the Messaging account it was sent from.</li>
+      <li><strong>Charges:</strong> a message is billed to that Messaging account's payment method.</li>
+      <li><strong>Currency:</strong> because currencies can sit on separate Messaging accounts, the parameter also decides which currency a message is billed in.</li>
+    </ul>
+
+    <h2>What Is the INR Billing Deadline for Indian Businesses in 2026?</h2>
+    <p>WhatsApp billing localisation launched on 1 January 2026 for partners and directly integrated businesses whose Sold-To country is India in Billing Hub. Meta calls these eligible customers. Eligible customers must ensure every account in their business portfolio is migrated to INR by 31 December 2026 to avoid disruption, because from 1 January 2027 Meta will no longer deliver the messages of non-INR accounts belonging to eligible customers.</p>
+    <p>Meta provides a Currency Migration API, available since 1 June 2026, to make the move faster. Brazil follows the same pattern a year later: eligible Brazilian customers must migrate to BRL by 30 June 2027, with non-BRL delivery stopping on 1 July 2027.</p>
+
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Market</th><th>Localisation launch</th><th>Migrate all accounts by</th><th>Non-local delivery stops</th></tr></thead>
+      <tbody>
+        <tr><td><strong>India (INR)</strong></td><td>1 January 2026</td><td>31 December 2026</td><td>1 January 2027</td></tr>
+        <tr><td><strong>Brazil (BRL)</strong></td><td>1 July 2026 for new accounts</td><td>30 June 2027</td><td>1 July 2027</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The link between the two deadlines is direct. The new account model lets one phone number carry several Messaging accounts in different currencies. An Indian business mid-migration may briefly have both a USD and an INR Messaging account on the same number, which is exactly the situation where <code>messaging_account_id</code> decides which one a message is billed to.</p>
+
+    <h3>Prepaid billing with UPI in India</h3>
+    <p>Meta also added a guide in September 2026 for accounts in India that fund messaging with UPI top-ups instead of invoiced billing. It covers how the funds check works and why a send can return <code>accepted</code> and still be rejected for insufficient funds on the status webhook, with error <code>131042</code>. Teams on prepaid UPI billing should treat the status webhook, not the API's acceptance response, as the record of whether a message actually went out.</p>
+
+    <h2>How Do You Migrate Before 31 December 2026?</h2>
+    <p>Treat it as two parallel workstreams: one in the code, one in Billing Hub. Neither is large, and both have the same deadline.</p>
+    <h3>Code workstream</h3>
+    <ol>
+      <li><strong>Search every integration for <code>paid_messaging_account_id</code></strong>, including any provider SDK you depend on.</li>
+      <li><strong>Replace it with <code>messaging_account_id</code></strong>. Meta documents precedence when both are supplied, but the clean state is to send only the new name.</li>
+      <li><strong>List every access token</strong> and, for each phone number, how many Messaging accounts that token can reach.</li>
+      <li><strong>Send <code>messaging_account_id</code> explicitly</strong> wherever a token reaches more than one, rather than relying on Meta's resolution.</li>
+      <li><strong>Plan the move to the Phase 2 Messages API version</strong> for 2027, since that is where the parameter becomes required.</li>
+    </ol>
+    <h3>Billing workstream for India</h3>
+    <ol>
+      <li><strong>Confirm your Sold-To country</strong> in Billing Hub, since that is what makes you an eligible customer.</li>
+      <li><strong>List every account in the business portfolio</strong> and its current billing currency.</li>
+      <li><strong>Migrate each non-INR account to INR</strong> using the Currency Migration API or Billing Hub, well before 31 December 2026.</li>
+      <li><strong>Verify sends after each migration</strong> by checking status webhooks rather than API acceptance.</li>
+      <li><strong>Brief finance</strong> that invoices and payment methods will change currency.</li>
+    </ol>
+
+    <h2>Who Has to Act: the Business, the Partner or the Developer in 2026?</h2>
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Party</th><th>What they own</th></tr></thead>
+      <tbody>
+        <tr><td><strong>The business</strong></td><td>Billing Hub settings, the INR migration decision for its own portfolio, and confirming partners are ready.</td></tr>
+        <tr><td><strong>The partner or BSP</strong></td><td>Its own integration code, its own Messaging accounts, and any tokens that reach several client accounts.</td></tr>
+        <tr><td><strong>The direct developer</strong></td><td>Replacing <code>paid_messaging_account_id</code>, sending <code>messaging_account_id</code> where needed, and the 2027 API version upgrade.</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>If you work through a provider, the right question to ask them this quarter is short: have you replaced <code>paid_messaging_account_id</code>, and have our accounts been moved to INR? For the cost changes already live from 1 October 2026, see the <a href="whatsapp-service-message-pricing-october-2026.html">service message pricing hub</a>.</p>
+
+    <h2>What Are the Common Mistakes in 2026?</h2>
+    <ul>
+      <li><strong>Treating the INR deadline as a billing preference.</strong> From 1 January 2027 non-INR accounts of eligible customers stop delivering.</li>
+      <li><strong>Assuming a provider has handled it.</strong> Ask, and confirm in Billing Hub.</li>
+      <li><strong>Leaving <code>paid_messaging_account_id</code> in place.</strong> Migrate by 31 December 2026.</li>
+      <li><strong>Relying on Meta to guess the account.</strong> Send <code>messaging_account_id</code> whenever a token reaches more than one Messaging account.</li>
+      <li><strong>Ignoring misattribution.</strong> A message with the wrong account is billed and reported against the wrong account, silently.</li>
+      <li><strong>Trusting <code>accepted</code> on prepaid UPI billing.</strong> Insufficient funds can still reject the send on the status webhook.</li>
+      <li><strong>Leaving the 2027 upgrade until 2028.</strong> Phase 3 makes the parameter required on every API version.</li>
+    </ul>
+
+    <h2>Key Takeaways for 2026</h2>
+    <p>31 December 2026 is a double deadline for Indian WhatsApp users: one in the code, one in the currency.</p>
+    <ul>
+      <li>Replace <code>paid_messaging_account_id</code> with <code>messaging_account_id</code> by 31 December 2026; the alias is planned for removal in a future Graph API version.</li>
+      <li>Send <code>messaging_account_id</code> whenever your access token can reach more than one Messaging account on the number.</li>
+      <li>It is optional at Phase 1, required on the newest API version from H1 2027, and required on every version from H1 2028 in those setups.</li>
+      <li>A message counts toward the analytics and charges of the Messaging account it is sent from.</li>
+      <li>Eligible Indian customers must migrate all accounts to INR by 31 December 2026, or Meta stops delivering their non-INR messages from 1 January 2027.</li>
+      <li>The Currency Migration API has been available since 1 June 2026.</li>
+      <li>On prepaid UPI billing, a send can be accepted and still rejected for insufficient funds.</li>
+    </ul>
+    <p>Distk helps growth teams across India and internationally audit WhatsApp integrations for deprecated parameters, sort out which Messaging account each send belongs to, and get the INR migration done before it becomes a delivery outage. If 31 December 2026 is on your calendar, that audit is where we start.</p>
+
+    <h2>Sources</h2>
+    <ul>
+      <li><a href="https://developers.facebook.com/documentation/business-messaging/whatsapp/account-model-evolution/" target="_blank" rel="noopener">Updates to WhatsApp Business accounts</a>, Meta for Developers, for <code>messaging_account_id</code>, the alias deadline and the phase timeline.</li>
+      <li><a href="https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing/" target="_blank" rel="noopener">Pricing on the WhatsApp Business Platform</a>, Meta for Developers, for India and Brazil billing localisation.</li>
+      <li><a href="https://developers.facebook.com/docs/whatsapp/cloud-api/changelog" target="_blank" rel="noopener">WhatsApp changelog</a>, Meta for Developers, entries dated 29 August and 8 September 2026.</li>
+    </ul>
+
+  </div>
+</main>
+
+<section class="faq">
+  <div class="container">
+    <div class="section-tag">Key Questions</div>
+    <h2 class="section-title">messaging_account_id Migration: FAQs</h2>
+    <div class="faq__grid">
+      <div class="faq__item">
+        <h3>What is the deadline to replace paid_messaging_account_id?</h3>
+        <p>31 December 2026. Meta supports paid_messaging_account_id only as a deprecated, backward-compatible alias and says to migrate to messaging_account_id by that date, after which the alias is planned for removal in a future Graph API version.</p>
+      </div>
+      <div class="faq__item">
+        <h3>When do I need to send messaging_account_id?</h3>
+        <p>Whenever the access token you are sending with has messaging access to more than one Messaging account on the business phone number in your request. That is the case in which Meta cannot determine which Messaging account to bill and attribute the message to.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Is messaging_account_id required now?</h3>
+        <p>It is optional at Phase 1, general availability, in late 2026. From Phase 2 in H1 2027 the newest Messages API version requires it for multi-Messaging account setups, and from Phase 3 in H1 2028 every Messages API version requires it in those setups.</p>
+      </div>
+      <div class="faq__item">
+        <h3>What happens if I send a WhatsApp message with the wrong messaging_account_id?</h3>
+        <p>The message counts toward the analytics and charges of the Messaging account it was sent from. A wrong or missing value can therefore bill and report the message against the wrong account and its payment method, without any error.</p>
+      </div>
+      <div class="faq__item">
+        <h3>What is the WhatsApp INR billing deadline for Indian businesses?</h3>
+        <p>Eligible customers, meaning partners and directly integrated businesses whose Sold-To country is India in Billing Hub, must migrate every account in their portfolio to INR by 31 December 2026. From 1 January 2027 Meta will no longer deliver messages of their non-INR accounts.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Is there a tool to migrate WhatsApp billing currency?</h3>
+        <p>Yes. Meta provides a Currency Migration API, available since 1 June 2026, to make the INR migration easier and faster. Brazil follows the same pattern with a BRL deadline of 30 June 2027.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED START -->
+<section class="related" style="padding:3.5rem 0;border-top:1px solid #e8e8e8;background:#fafafa">
+  <div style="max-width:720px;margin:0 auto;padding:0 clamp(1.2rem,4vw,3rem)">
+    <div style="font-family:'Space Mono',monospace;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:#e63312;margin-bottom:1.3rem">Related reading</div>
+    <ul style="list-style:none;margin:0;padding:0;display:grid;gap:0.9rem">
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="whatsapp-partner-reassignment-checklist-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">Switching WhatsApp Partner in 2026: The Readiness Checklist Before You Switch BSP</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="whatsapp-service-message-pricing-october-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">WhatsApp Service Messages Stop Being Free on 1 October 2026</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="whatsapp-template-category-auto-updates-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">Why an Approved WhatsApp Template Can Still Be Reclassified in 2026</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="whatsapp-calling-rate-cards-october-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">WhatsApp Calling Rate Cards Change on 1 October 2026: Nine Markets Move</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="whatsapp-landing-page-view-webhook-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">WhatsApp Landing Page View Events in 2026: Attribution for Marketing Message Clicks</a></li>
+    </ul>
+  </div>
+</section>
+<!-- RELATED END -->
+<section class="cta">
+  <div class="cta__inner">
+    <h2>Clear both deadlines before the year ends</h2>
+    <p>Distk helps growth teams audit WhatsApp integrations for deprecated parameters, sort out which Messaging account each send belongs to, and complete the INR migration before it becomes a delivery outage.</p>
+    <a href="https://distk.in/#contact" class="cta__btn">Start the conversation →</a>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="container">
+    © 2026 Distk · <a href="https://distk.in">distk.in</a> · <a href="mailto:connect@distk.in">connect@distk.in</a>
+  </div>
+</footer>
+</body>
+</html>
