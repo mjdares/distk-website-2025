@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xdifcafwxl");
+  </script>
+
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agentic Checkout in 2026: What Merchants Must Implement for ChatGPT | Distk</title>
+<meta name="description" content="OpenAI's Agentic Checkout Spec explained for merchants in 2026: the five endpoints you host, the cart state and arithmetic rules, headers and signatures, delegated payments, webhooks, PCI scope, and why the card-only, three-PSP spec matters for Indian D2C brands.">
+<meta name="keywords" content="agentic checkout spec, chatgpt checkout merchant guide, delegated payment spec openai, instant checkout chatgpt 2026, agentic commerce protocol checkout, ecommerce marketing agency 2026">
+<meta name="author" content="Distk"><meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://distk.in/blog/agentic-checkout-spec-merchant-guide-2026.html">
+<meta property="og:type" content="article"><meta property="og:url" content="https://distk.in/blog/agentic-checkout-spec-merchant-guide-2026.html">
+<meta property="og:title" content="Agentic Checkout in 2026: What Merchants Have to Implement to Sell Inside ChatGPT">
+<meta property="og:description" content="Five endpoints you host, a cart state with strict arithmetic, and a payment spec that lists Stripe, Adyen and Braintree and accepts card only. What it takes to sell inside ChatGPT.">
+<meta property="og:image" content="https://distk.in/assets/images/og-image.jpg"><meta property="og:site_name" content="Distk">
+<meta property="article:published_time" content="2026-10-01T00:00:00+05:30">
+<meta property="article:modified_time" content="2026-10-01T00:00:00+05:30">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Agentic Checkout in 2026: What Merchants Have to Implement to Sell Inside ChatGPT"><meta name="twitter:description" content="Five endpoints you host, a cart state with strict arithmetic, and a payment spec that lists Stripe, Adyen and Braintree and accepts card only. What it takes to sell inside ChatGPT.">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Agentic Checkout in 2026: What Merchants Have to Implement to Sell Inside ChatGPT", "description": "A merchant guide to OpenAI's Agentic Checkout Spec and Delegated Payment Spec in 2026: the five checkout endpoints, request headers, cart state and total arithmetic, shipping and error messages, delegated payment tokens and allowances, PCI scope, order webhooks, and readiness criteria.", "author": {"@type": "Organization", "name": "Distk", "url": "https://distk.in"}, "publisher": {"@type": "Organization", "name": "Distk", "logo": {"@type": "ImageObject", "url": "https://distk.in/assets/images/Logo.png"}}, "datePublished": "2026-10-01", "dateModified": "2026-10-01", "inLanguage": "en", "about": [{"@type": "Thing", "name": "Agentic Commerce Protocol"}, {"@type": "Thing", "name": "Agentic Checkout Spec"}, {"@type": "Thing", "name": "Delegated Payment Spec"}, {"@type": "Thing", "name": "OpenAI"}, {"@type": "Thing", "name": "ChatGPT checkout"}], "mentions": [{"@type": "Thing", "name": "Agentic Commerce Protocol"}, {"@type": "Thing", "name": "Agentic Checkout Spec"}, {"@type": "Thing", "name": "Delegated Payment Spec"}, {"@type": "Thing", "name": "OpenAI"}, {"@type": "Thing", "name": "ChatGPT checkout"}], "mainEntityOfPage": {"@type": "WebPage", "@id": "https://distk.in/blog/agentic-checkout-spec-merchant-guide-2026.html"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What must a merchant implement for ChatGPT agentic checkout in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "Merchants implement five HTTPS JSON endpoints that ChatGPT calls: POST /checkout_sessions to create a session, POST /checkout_sessions/{id} to update it, POST /checkout_sessions/{id}/complete to finalise it, POST /checkout_sessions/{id}/cancel, and GET /checkout_sessions/{id}. Every response returns the full cart state, and merchants send signed order_created and order_updated webhooks to OpenAI."}}, {"@type": "Question", "name": "Does ChatGPT agentic checkout support UPI payments in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "Not in the current published specification. The Agentic Checkout Spec's PaymentProvider object lists stripe, adyen and braintree as possible providers and card as the only supported payment method, and the Delegated Payment Spec states that card is the only accepted credential type."}}, {"@type": "Question", "name": "Who is the merchant of record in a ChatGPT checkout?", "acceptedAnswer": {"@type": "Answer", "text": "The merchant actually selling the goods and taking payment is the merchant of record, not OpenAI. Customers see the merchant's name on their card statement, and the merchant is responsible for refunds and chargebacks, which it should report to ChatGPT through the order update webhook."}}, {"@type": "Question", "name": "Who can integrate directly with OpenAI's Delegated Payment Spec?", "acceptedAnswer": {"@type": "Answer", "text": "OpenAI states that direct integration with the Delegated Payment Spec is only for payment service providers or PCI DSS level 1 merchants using their own vaults. Other merchants should use their PSP's implementation, and OpenAI identifies Stripe's Shared Payment Token as the first compatible implementation."}}, {"@type": "Question", "name": "Does ChatGPT agentic checkout affect PCI compliance scope?", "acceptedAnswer": {"@type": "Answer", "text": "OpenAI states that the Product Feed Spec and Agentic Checkout Spec are deliberately kept out of PCI scope and do not transmit cardholder data. Using a PSP's delegated payment implementation may avoid a change in PCI scope, while forwarding APIs or direct integration with OpenAI's delegated payment endpoints involve cardholder data and will likely be in scope. OpenAI may require an attestation of compliance before enabling production access."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://distk.in/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://distk.in/blog/"}, {"@type": "ListItem", "position": 3, "name": "Agentic Checkout in 2026: What Merchants Have to Implement to Sell Inside ChatGPT", "item": "https://distk.in/blog/agentic-checkout-spec-merchant-guide-2026.html"}]}</script>
+<link rel="icon" type="image/png" href="../assets/images/favicon.png"><link rel="apple-touch-icon" href="../assets/images/Logo.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BWDTQ1JPL2"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-BWDTQ1JPL2');</script>
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1077520544213003');fbq('track','PageView');</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1077520544213003&ev=PageView&noscript=1"></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#0a0a0a;--paper:#fafafa;--mid:#6b6b6b;--light:#e8e8e8;--accent:#e63312;--accent-soft:rgba(230,51,18,0.08);--mono:'Space Mono',monospace;--sans:'Outfit',sans-serif;--container:1120px;--prose:720px;--gutter:clamp(1.2rem,4vw,3rem)}
+html{font-size:16px;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.container{max-width:var(--container);margin:0 auto;padding:0 var(--gutter)}
+.prose{max-width:var(--prose);margin:0 auto;padding:0 var(--gutter)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--light)}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;max-width:var(--container);margin:0 auto;padding:0.9rem var(--gutter)}
+.nav__logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;color:var(--ink)}
+.nav__logo img{height:32px;width:auto}
+.nav__logo span{font-family:var(--mono);font-weight:700;font-size:1.05rem;letter-spacing:-0.02em}
+.nav__logo small{display:block;font-size:0.55rem;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);line-height:1}
+.nav__back{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid);text-decoration:none;display:flex;align-items:center;gap:0.4rem;transition:color 0.2s}
+.nav__back:hover{color:var(--accent)}
+.nav__cta{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.6rem 1.4rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.nav__cta:hover{background:var(--accent)}
+.hero{padding:7.5rem 0 3.5rem;position:relative;overflow:hidden;border-bottom:1px solid var(--light)}
+.hero::before{content:'CHECKOUT';position:absolute;right:-1%;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:clamp(6rem,26vw,22rem);font-weight:700;color:rgba(0,0,0,0.03);line-height:1;pointer-events:none;user-select:none;letter-spacing:-0.05em}
+.hero__tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1.5rem}
+.hero__tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.hero h1{font-family:var(--sans);font-weight:700;font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;letter-spacing:-0.03em;max-width:20ch;margin-bottom:1.5rem}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero__sub{font-size:1.1rem;color:var(--mid);max-width:56ch;line-height:1.7;margin-bottom:2rem}
+.hero__meta{display:flex;flex-wrap:wrap;gap:1.5rem;font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid)}
+.tldr{background:var(--accent-soft);border-left:3px solid var(--accent);padding:1.8rem 2rem;margin:3rem 0;position:relative}
+.tldr::before{content:'TL;DR';position:absolute;top:-0.6rem;left:2rem;font-family:var(--mono);font-size:0.62rem;font-weight:700;letter-spacing:0.12em;background:var(--accent);color:#fff;padding:0.2rem 0.6rem}
+.tldr p{font-size:0.95rem;color:var(--ink);line-height:1.7}
+.article{padding:4rem 0 5rem}
+.article h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.35rem,2.8vw,1.8rem);letter-spacing:-0.02em;line-height:1.2;margin:3rem 0 1rem;padding-top:1rem;border-top:1px solid var(--light)}
+.article h2:first-child{border-top:none;margin-top:0}
+.article h3{font-family:var(--mono);font-weight:700;font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin:2rem 0 0.6rem}
+.article p{font-size:1rem;color:#2a2a2a;line-height:1.8;margin-bottom:1.25rem}
+.article ul,.article ol{padding-left:1.4rem;margin-bottom:1.25rem}
+.article li{font-size:1rem;color:#2a2a2a;line-height:1.75;margin-bottom:0.4rem}
+.article strong{font-weight:600;color:var(--ink)}
+.article a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(230,51,18,0.3)}
+.article a:hover{border-bottom-color:var(--accent)}
+.article blockquote{border-left:3px solid var(--accent);padding:0.75rem 1.5rem;margin:2rem 0;background:var(--accent-soft)}
+.article blockquote p{color:var(--ink);font-size:1rem;margin:0}
+.table-wrap{overflow-x:auto;margin:2rem 0}
+.data-table{width:100%;border-collapse:collapse;margin:0;font-size:0.88rem}
+.data-table th{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:0.7rem 1rem;text-align:left;white-space:nowrap}
+.data-table td{padding:0.75rem 1rem;border-bottom:1px solid var(--light);vertical-align:top}
+.data-table tr:last-child td{border-bottom:none}
+.data-table tr:nth-child(even) td{background:#f5f5f5}
+.callout{border:1.5px solid var(--light);padding:1.5rem 1.8rem;margin:2rem 0}
+.callout__label{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem}
+.callout p{font-size:0.92rem;color:var(--mid);line-height:1.7;margin:0}
+.faq{padding:4rem 0;background:var(--ink);color:var(--paper)}
+.faq .section-tag{color:var(--accent)}
+.faq .section-tag::before{background:var(--accent)}
+.faq__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2.5rem;margin-top:2.5rem}
+.faq__item{border-left:2px solid var(--accent);padding-left:1.5rem}
+.faq__item h3{font-family:var(--sans);font-weight:600;font-size:0.95rem;margin-bottom:0.5rem;color:var(--paper)}
+.faq__item p{font-size:0.85rem;color:rgba(255,255,255,0.88);line-height:1.65}
+.section-tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1rem}
+.section-tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.section-title{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.15;color:var(--paper)}
+.cta{padding:5rem 0;background:var(--accent-soft);border-top:1px solid rgba(230,51,18,0.12)}
+.cta__inner{max-width:680px;margin:0 auto;padding:0 var(--gutter);text-align:center}
+.cta h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.2;margin-bottom:1rem}
+.cta p{font-size:1rem;color:var(--mid);line-height:1.7;margin-bottom:2rem}
+.cta__btn{display:inline-flex;align-items:center;gap:0.6rem;font-family:var(--mono);font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;padding:1rem 2.2rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.cta__btn:hover{background:var(--accent)}
+.foot{padding:2.5rem 0;border-top:1px solid var(--light);text-align:center;font-family:var(--mono);font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid)}
+.foot a{color:var(--mid);text-decoration:none}.foot a:hover{color:var(--accent)}
+@media(max-width:768px){.faq__grid{grid-template-columns:1fr}.nav__back span{display:none}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="https://distk.in" class="nav__logo">
+      <img src="../assets/images/Logo.png" alt="Distk">
+      <div><span>Distk</span><small>Global Growth Partner</small></div>
+    </a>
+    <a href="/blog/" class="nav__back">← <span>All articles</span></a>
+    <a href="https://distk.in/#contact" class="nav__cta">Work with us</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="prose">
+    <div class="hero__tag">Commerce Guide</div>
+    <h1><em>Agentic Checkout</em> in 2026: What Merchants Have to Implement to Sell Inside ChatGPT</h1>
+    <p class="hero__sub">ChatGPT does not become your shop. It becomes a front end calling yours. OpenAI's checkout spec is public and precise, and the most important line in it for an Indian brand is the list of accepted payment methods.</p>
+    <div class="hero__meta">
+      <span>Distk Editorial</span>
+      <span>Oct 2026</span>
+      <span>13 min read</span>
+    </div>
+  </div>
+</section>
+
+<div class="prose">
+  <div class="tldr">
+    <p>OpenAI's Agentic Checkout Spec lets shoppers buy inside ChatGPT while orders, payments and compliance stay on your stack. You host five HTTPS endpoints that ChatGPT calls to create, update, complete, cancel and retrieve a checkout session, each returning the full cart with strict arithmetic: subtotal equals base amount minus discount, total adds tax. Requests arrive signed, with an idempotency key and an API version you must verify. Payment uses your existing PSP, with a single-use delegated token capped by a maximum amount and expiry, and you remain merchant of record for refunds and chargebacks, syncing them back by webhook. The constraint to read first: the current spec lists stripe, adyen and braintree as providers and card as the only accepted payment method, so a UPI-led Indian brand should check fit before scoping a build. Checkout also requires a separately enabled integration on top of approved-partner feed access.</p>
+  </div>
+</div>
+
+<main class="article">
+  <div class="prose">
+
+    <style>
+      .article pre{background:#f4f4f4;border-left:3px solid var(--accent);padding:1rem 1.2rem;overflow-x:auto;margin:1.5rem 0;font-size:0.85rem;line-height:1.55}
+      .article code{font-family:var(--mono);font-size:0.85em;background:#f4f4f4;padding:0.05rem 0.3rem}
+      .article pre code{background:none;padding:0;font-size:inherit}
+    </style>
+
+    <h2>What Is the Agentic Checkout Spec in 2026?</h2>
+    <p>The Agentic Checkout Spec is OpenAI's published contract for letting a shopper buy your product inside ChatGPT while the order, payment and compliance stay on your own commerce stack. You implement five REST endpoints that ChatGPT calls, you return an authoritative cart state on every call, you process payment with your existing payment service provider, and you send order events back to OpenAI by webhook. ChatGPT never becomes the shop. It becomes a front end calling yours.</p>
+    <p>Checkout sits on top of discovery. OpenAI states that onboarding product feeds in ChatGPT is currently available to approved partners, and its feed specification says checkout requires a separately enabled integration. This guide is the checkout spoke in our <a href="chatgpt-product-feed-agentic-commerce-protocol-2026.html">guide to the Agentic Commerce Protocol product feed</a>.</p>
+
+    <div class="callout">
+      <div class="callout__label">Read this before scoping a build in 2026</div>
+      <p>In the published spec, the <code>PaymentProvider</code> object lists three possible providers, <code>stripe</code>, <code>adyen</code> and <code>braintree</code>, and one accepted payment method, <code>card</code>. The Delegated Payment Spec likewise states the only accepted credential type is card. There is no UPI, wallet or bank-transfer value in the current spec. For an Indian D2C brand whose customers pay mostly by UPI, that is the first fact to put in front of the business case.</p>
+    </div>
+
+    <h2>How Does an Agentic Checkout Flow Work in 2026?</h2>
+    <p>OpenAI describes the flow in six steps, and the direction of each call matters: ChatGPT calls you, and you call OpenAI only for webhooks. Every session response must return the full cart state, including items, pricing, taxes and fees, shipping, discounts, totals and status.</p>
+    <ol>
+      <li><strong>Create session.</strong> ChatGPT calls your <code>POST /checkout_sessions</code> with cart contents and buyer context.</li>
+      <li><strong>Update session.</strong> As the shopper changes items, shipping or discounts, ChatGPT calls <code>POST /checkout_sessions/{checkout_session_id}</code> and you return the full cart again.</li>
+      <li><strong>Order events.</strong> Your system publishes lifecycle events such as order created and order updated to the webhook OpenAI provides.</li>
+      <li><strong>Complete checkout.</strong> ChatGPT finalises with <code>POST /checkout_sessions/{checkout_session_id}/complete</code>, and you confirm the order and return the final cart and order identifiers.</li>
+      <li><strong>Cancel or retrieve.</strong> Optionally, <code>POST /checkout_sessions/{checkout_session_id}/cancel</code> and <code>GET /checkout_sessions/{checkout_session_id}</code>.</li>
+      <li><strong>Payments on your rails.</strong> You process payment with your existing PSP, accepting the delegated token if you use Delegated Payments.</li>
+    </ol>
+    <p>OpenAI also notes that in the future the Agentic Checkout Spec will support MCP servers.</p>
+
+    <h2>What Must Every Checkout Endpoint Handle in 2026?</h2>
+    <p>Every endpoint must use HTTPS and return JSON, and every request from ChatGPT arrives with the same set of headers. Those headers are where most of the security and reliability work lives, because they carry authentication, the signature over the request body, the idempotency key, and the API version you must check.</p>
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Header</th><th>What it carries</th><th>What you must do with it</th></tr></thead>
+      <tbody>
+        <tr><td><code>Authorization</code></td><td>API key used to make requests</td><td>Authenticate every request.</td></tr>
+        <tr><td><code>Signature</code></td><td>Base64-encoded signature of the request body</td><td>Verify it before acting.</td></tr>
+        <tr><td><code>Timestamp</code></td><td>RFC 3339 time</td><td>Use it as part of request validation.</td></tr>
+        <tr><td><code>Idempotency-Key</code></td><td>Key ensuring requests are idempotent</td><td>Return the same result for safe duplicates; echo it in the response.</td></tr>
+        <tr><td><code>Request-Id</code></td><td>Unique key for tracing</td><td>Log it and echo it in the response.</td></tr>
+        <tr><td><code>API-Version</code></td><td>API version, for example <code>2025-09-12</code></td><td>Confirm it is present and matches a supported version.</td></tr>
+        <tr><td><code>Accept-Language</code></td><td>Preferred locale for messages and errors</td><td>Localise customer-facing messages.</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h2>What Does the Cart State Have to Contain in 2026?</h2>
+    <p>Your create, update, complete and cancel responses all return the same shape: an ID, a status, a currency, line items, fulfilment options, totals, messages and links, with buyer and address details where present. The status values are <code>not_ready_for_payment</code>, <code>ready_for_payment</code>, <code>completed</code> and <code>canceled</code>. Currency follows ISO 4217 in lower case.</p>
+    <p>The arithmetic is specified, not left to interpretation. A line item's <code>subtotal</code> must equal <code>base_amount - discount</code>, and its <code>total</code> must equal <code>base_amount - discount + tax</code>, with every amount an integer of zero or more. Totals use types such as <code>items_base_amount</code>, <code>items_discount</code>, <code>subtotal</code>, <code>discount</code>, <code>fulfillment</code>, <code>tax</code>, <code>fee</code> and <code>total</code>, expressed in minor units. If your platform rounds tax per order but the spec expects per-line values that sum, this is where a build discovers it.</p>
+<pre><code>POST Request to /checkout_sessions
+
+{
+   "items": [
+       {
+           "id": "item_123",
+           "quantity": 1
+       }
+   ]
+}</code></pre>
+    <p>That is OpenAI's own first example: a session created with a single item and no fulfilment address, which therefore cannot yet be completed. One detail worth checking when you implement: the example response in the same document shows a status of <code>in_progress</code>, which is not among the four status values the response table lists. Confirm the expected value with OpenAI during onboarding rather than coding to either.</p>
+
+    <h2>How Do Shipping, Messages and Errors Work in 2026?</h2>
+    <p>Fulfilment options come in two types, shipping and digital. A shipping option needs a title, a subtitle describing the timeline, a carrier, earliest and latest delivery times in RFC 3339, and a subtotal, tax and total where total equals subtotal plus tax. OpenAI's production guide notes the protocol models a single shipping address and one selected shipping option per session, and advises consolidating split shipments into a single buyer-visible selection with aggregate totals.</p>
+    <p>Problems are surfaced to the shopper as messages, not just HTTP errors. An error message carries a code from <code>missing</code>, <code>invalid</code>, <code>out_of_stock</code>, <code>payment_declined</code>, <code>requires_sign_in</code> and <code>requires_3ds</code>, plus an RFC 9535 JSONPath such as <code>$.line_items[1]</code> pointing at the part of the session it concerns. When a request cannot succeed at all, you return an error object with a 4xx or 5xx status.</p>
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Object</th><th>Key fields in 2026</th><th>Constraint worth knowing</th></tr></thead>
+      <tbody>
+        <tr><td><code>Address</code></td><td>name, line_one, city, state, country, postal_code</td><td><code>line_one</code> and <code>city</code> max 60 characters; state and country follow ISO 3166-1.</td></tr>
+        <tr><td><code>Buyer</code></td><td>name, email, optional phone_number</td><td>Phone numbers follow E.164.</td></tr>
+        <tr><td><code>Link</code></td><td>type and url</td><td>Types are <code>terms_of_use</code>, <code>privacy_policy</code>, <code>seller_shop_policies</code>.</td></tr>
+        <tr><td><code>PaymentData</code></td><td>token, provider, optional billing_address</td><td>Provider is <code>stripe</code>, <code>adyen</code> or <code>braintree</code>.</td></tr>
+        <tr><td><code>Order</code></td><td>id, checkout_session_id, permalink_url</td><td>Customers should reach the order by providing at most their email address.</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h2>How Do Delegated Payments Work in 2026?</h2>
+    <p>The Delegated Payment Spec lets OpenAI share payment details securely with you or your PSP. The shopper saves a payment method in ChatGPT, a single-use payload with an allowance is sent to your PSP or vault, the PSP returns a token scoped to that payment, and OpenAI forwards the token on the complete call. OpenAI is not the merchant of record, and settlement, refunds, chargebacks and compliance stay with you and your PSP.</p>
+    <p>Who should integrate directly is stated precisely: direct integration is only for PSPs or PCI DSS level 1 merchants using their own vaults. For everyone else, OpenAI points to Stripe's Shared Payment Token as the first compatible implementation. The allowance is tight by design, with a <code>reason</code> that must be <code>one_time</code>, a <code>max_amount</code>, a currency, the checkout session and merchant IDs, and an <code>expires_at</code> timestamp.</p>
+    <p>On PCI scope, OpenAI's production guide says the feed and checkout specs are deliberately kept out of PCI scope and do not transmit cardholder data. Using your PSP's implementation of delegated payments may avoid any change in scope, while forwarding APIs or direct integration involve cardholder data and will likely be in scope. OpenAI says it may require your attestation of compliance before enabling production access, and recommends consulting your PSP and Qualified Security Assessor.</p>
+
+    <h2>What Do the Webhooks Have to Send in 2026?</h2>
+    <p>You send OpenAI webhook events on order creation and update so the buyer's view stays in sync, signed with an HMAC signature in a request header. Event types are <code>order_created</code> and <code>order_updated</code>. Order status values are <code>created</code>, <code>manual_review</code>, <code>confirmed</code>, <code>canceled</code>, <code>shipped</code> and <code>fulfilled</code>, and each event carries a list of refunds typed as <code>store_credit</code> or <code>original_payment</code>.</p>
+    <p>OpenAI's production FAQs add the operational consequence: because you are the merchant of record, you handle refunds and chargebacks, and you should use the order update webhook to notify ChatGPT when a refund or chargeback status changes. Customers see your name on their card statement, as if they bought directly from your site.</p>
+
+    <h2>Who Should Build Agentic Checkout in 2026?</h2>
+    <p>Teams whose payments already run on Stripe, Adyen or Braintree, whose customers mostly pay by card, and whose products and market are within what OpenAI has confirmed for their integration. For many Indian D2C brands, at least one of those conditions fails today. That does not make the specification irrelevant: the feed work is reusable, and knowing exactly what checkout requires lets you decide when it becomes worth building rather than guessing.</p>
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Readiness question for 2026</th><th>If yes</th><th>If no</th></tr></thead>
+      <tbody>
+        <tr><td>Accepted as an approved partner?</td><td>Proceed to integration planning.</td><td>Apply at chatgpt.com/merchants; prepare the feed meanwhile.</td></tr>
+        <tr><td>PSP is Stripe, Adyen or Braintree?</td><td>Use the PSP's delegated payment path.</td><td>Checkout is not buildable on the current spec.</td></tr>
+        <tr><td>Customers pay mostly by card?</td><td>Checkout matches demand.</td><td>Weigh demand before building; the spec accepts card only.</td></tr>
+        <tr><td>Can you compute per-line tax and totals that sum exactly?</td><td>Cart state is straightforward.</td><td>Fix pricing logic first.</td></tr>
+        <tr><td>Can you sign, verify, and handle idempotency?</td><td>Security work is incremental.</td><td>Plan engineering time for it.</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Our <a href="agentic-commerce-production-checklist-2026.html">production checklist guide</a> covers the certification tests OpenAI requires before launch.</p>
+
+    <h2>What Are the Common Mistakes With Agentic Checkout in 2026?</h2>
+    <ul>
+      <li><strong>Scoping a build before checking the payment provider.</strong> The spec lists Stripe, Adyen and Braintree, and card only.</li>
+      <li><strong>Treating ChatGPT as the merchant of record.</strong> It is not. Refunds, chargebacks and compliance stay with you.</li>
+      <li><strong>Returning partial cart state.</strong> Every response must return the full cart, not a diff.</li>
+      <li><strong>Letting totals drift by rounding.</strong> Subtotal and total rules are arithmetic, not guidance.</li>
+      <li><strong>Skipping signature verification and idempotency.</strong> Both are required and both are tested before launch.</li>
+      <li><strong>Assuming direct delegated payments are simpler.</strong> Direct integration is for PSPs and PCI DSS level 1 merchants only.</li>
+      <li><strong>Coding to an example instead of the schema.</strong> Where they disagree, confirm with OpenAI.</li>
+    </ul>
+
+    <h2>Key Takeaways for 2026</h2>
+    <ul>
+      <li>Five merchant-hosted endpoints: create, update, complete, cancel and retrieve a checkout session, all HTTPS and JSON.</li>
+      <li>Every response returns the full, authoritative cart state with strict subtotal and total arithmetic.</li>
+      <li>Payment providers in the spec are <code>stripe</code>, <code>adyen</code> and <code>braintree</code>, and the accepted method is <code>card</code>.</li>
+      <li>Delegated payment tokens are single-use, capped by <code>max_amount</code> and <code>expires_at</code>.</li>
+      <li>You stay merchant of record, owning refunds, chargebacks and compliance, and syncing them by webhook.</li>
+      <li>Direct delegated integration is for PSPs and PCI DSS level 1 merchants; others use their PSP's implementation.</li>
+    </ul>
+    <p>Distk helps D2C and e-commerce teams in India and internationally work out whether agentic checkout is buildable on their current payment stack, scope the integration honestly, and prepare the product feed that has to exist first. If agentic checkout is on your 2026 roadmap, that assessment is where we start.</p>
+
+    <h2>Sources</h2>
+    <ul>
+      <li><a href="https://developers.openai.com/commerce/specs/checkout.md" target="_blank" rel="noopener">OpenAI, Agentic Checkout Spec</a></li>
+      <li><a href="https://developers.openai.com/commerce/specs/payment.md" target="_blank" rel="noopener">OpenAI, Delegated Payment Spec</a></li>
+      <li><a href="https://developers.openai.com/commerce/guides/production.md" target="_blank" rel="noopener">OpenAI, Agentic commerce in production</a></li>
+      <li><a href="https://developers.openai.com/commerce/specs/file-upload/products.md" target="_blank" rel="noopener">OpenAI, Products (file upload specification)</a></li>
+    </ul>
+
+  </div>
+</main>
+
+<section class="faq">
+  <div class="container">
+    <div class="section-tag">Key Questions</div>
+    <h2 class="section-title">Agentic Checkout in 2026: FAQs</h2>
+    <div class="faq__grid">
+      <div class="faq__item">
+        <h3>What do merchants need to build for ChatGPT checkout?</h3>
+        <p>Five HTTPS JSON endpoints that ChatGPT calls: create, update, complete and cancel a checkout session, and retrieve it. Each returns the full cart state. You also send signed order_created and order_updated webhooks, and process payment through your existing PSP.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Does ChatGPT checkout support UPI in 2026?</h3>
+        <p>Not in the current published spec. The PaymentProvider object lists stripe, adyen and braintree, the accepted payment method is card, and the Delegated Payment Spec states card is the only accepted credential type. Indian brands whose customers mainly use UPI should weigh that before building.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Is OpenAI the merchant of record?</h3>
+        <p>No. OpenAI states the merchant selling the goods and taking payment is the merchant of record. Customers see the merchant's name on their card statement, and the merchant handles refunds and chargebacks.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Who can integrate the Delegated Payment Spec directly?</h3>
+        <p>OpenAI states direct integration is only for PSPs or PCI DSS level 1 merchants using their own vaults. Others should use their PSP's implementation, and OpenAI names Stripe's Shared Payment Token as the first compatible one.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Does agentic checkout put me in PCI scope?</h3>
+        <p>OpenAI says the feed and checkout specs are kept out of PCI scope. Using your PSP's delegated payment implementation may avoid a change in scope, while forwarding APIs or direct integration involve cardholder data and will likely be in scope. Confirm with your PSP and QSA.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Can I ship one order in multiple packages?</h3>
+        <p>The protocol currently models one shipping address and one selected shipping option per checkout session. OpenAI advises consolidating split shipments into a single buyer-visible selection and returning aggregate shipping and tax totals.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED START -->
+<section class="related" style="padding:3.5rem 0;border-top:1px solid #e8e8e8;background:#fafafa">
+  <div style="max-width:720px;margin:0 auto;padding:0 clamp(1.2rem,4vw,3rem)">
+    <div style="font-family:'Space Mono',monospace;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:#e63312;margin-bottom:1.3rem">Related reading</div>
+    <ul style="list-style:none;margin:0;padding:0;display:grid;gap:0.9rem">
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="chatgpt-product-feed-agentic-commerce-protocol-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">How to Get Your Products Into ChatGPT in 2026: The Agentic Commerce Protocol Feed, Explained</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="chatgpt-ads-advertising-inside-ai-india-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">ChatGPT Ads Are Here: What Advertising Inside AI Means for Indian Brands in 2026</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="chatgpt-shopping-promotions-api-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">Promotions in ChatGPT Shopping in 2026: Why They Are API-Only, and What That Breaks</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="chatgpt-product-feed-field-requirements-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">ChatGPT Product Feed Requirements in 2026: The Fields That Decide Whether You Get Shown</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="chatgpt-ads-api-campaign-bidding-guide-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">The ChatGPT Ads API in 2026: Campaign Structure, Bidding and What You Actually Control</a></li>
+    </ul>
+  </div>
+</section>
+<!-- RELATED END -->
+<section class="cta">
+  <div class="cta__inner">
+    <h2>Check the payment fit before you scope the build</h2>
+    <p>Distk helps D2C teams work out whether agentic checkout is buildable on their current PSP and payment mix, scope the integration honestly, and get the product feed ready that has to exist first.</p>
+    <a href="https://distk.in/#contact" class="cta__btn">Start the conversation →</a>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="container">
+    © 2026 Distk · <a href="https://distk.in">distk.in</a> · <a href="mailto:connect@distk.in">connect@distk.in</a>
+  </div>
+</footer>
+</body>
+</html>

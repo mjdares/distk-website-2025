@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xdifcafwxl");
+  </script>
+
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agentic Commerce in Production 2026: OpenAI's Launch Checklist Explained | Distk</title>
+<meta name="description" content="OpenAI's agentic commerce production checklist explained for 2026: the sandbox tests required before launch, idempotency and error handling, TLS and IP allowlisting, PCI scope and attestation, merchant-of-record duties, feed best practices, and a realistic launch sequence.">
+<meta name="keywords" content="agentic commerce production checklist, chatgpt checkout launch checklist, openai agentic commerce certification, agentic commerce pci scope, chatgpt instant checkout launch 2026, ecommerce marketing agency 2026">
+<meta name="author" content="Distk"><meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://distk.in/blog/agentic-commerce-production-checklist-2026.html">
+<meta property="og:type" content="article"><meta property="og:url" content="https://distk.in/blog/agentic-commerce-production-checklist-2026.html">
+<meta property="og:title" content="Agentic Commerce in Production in 2026: OpenAI's Own Launch Checklist, Explained">
+<meta property="og:description" content="A vendor-published launch checklist: nine test groups, a 201 on completion, a 409 on idempotency conflicts, TLS 1.2 on port 443, and a possible PCI attestation before you go live.">
+<meta property="og:image" content="https://distk.in/assets/images/og-image.jpg"><meta property="og:site_name" content="Distk">
+<meta property="article:published_time" content="2026-10-01T00:00:00+05:30">
+<meta property="article:modified_time" content="2026-10-01T00:00:00+05:30">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Agentic Commerce in Production in 2026: OpenAI's Own Launch Checklist, Explained"><meta name="twitter:description" content="A vendor-published launch checklist: nine test groups, a 201 on completion, a 409 on idempotency conflicts, TLS 1.2 on port 443, and a possible PCI attestation before you go live.">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Agentic Commerce in Production in 2026: OpenAI's Own Launch Checklist, Explained", "description": "A guide to OpenAI's published production checklist for agentic commerce in 2026: required sandbox tests, idempotency and error scenarios, TLS and IP allowlist requirements, PCI scope and attestation of compliance, merchant-of-record responsibilities, feed best practices and a launch sequence.", "author": {"@type": "Organization", "name": "Distk", "url": "https://distk.in"}, "publisher": {"@type": "Organization", "name": "Distk", "logo": {"@type": "ImageObject", "url": "https://distk.in/assets/images/Logo.png"}}, "datePublished": "2026-10-01", "dateModified": "2026-10-01", "inLanguage": "en", "about": [{"@type": "Thing", "name": "Agentic Commerce Protocol"}, {"@type": "Thing", "name": "agentic checkout"}, {"@type": "Thing", "name": "PCI DSS"}, {"@type": "Thing", "name": "OpenAI"}, {"@type": "Thing", "name": "ecommerce launch"}], "mentions": [{"@type": "Thing", "name": "Agentic Commerce Protocol"}, {"@type": "Thing", "name": "agentic checkout"}, {"@type": "Thing", "name": "PCI DSS"}, {"@type": "Thing", "name": "OpenAI"}, {"@type": "Thing", "name": "ecommerce launch"}], "mainEntityOfPage": {"@type": "WebPage", "@id": "https://distk.in/blog/agentic-commerce-production-checklist-2026.html"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What must be tested before launching agentic checkout in ChatGPT?", "acceptedAnswer": {"@type": "Answer", "text": "OpenAI's production guide requires sandbox tests demonstrated end to end with request and response logs: creating a checkout session with and without a shipping address, updating the shipping option, creating a delegated payment token, completing an order that returns the completed state with HTTP 201, sending signed order_created and order_updated webhooks, handling missing, out_of_stock and payment_declined errors, verifying idempotency including a 409 idempotency_conflict, confirming Terms of Service and Privacy Policy links, and allowlisting OpenAI's IP ranges."}}, {"@type": "Question", "name": "What are the security requirements for ChatGPT agentic commerce in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "OpenAI requires all traffic to the merchant to use TLS 1.2 or later on port 443 with a valid public certificate, and states it will call merchant endpoints from published IP ranges that should be allowlisted. The checkout specification also requires authenticating every request, verifying signatures, enforcing idempotency, validating inputs and supporting safe retries."}}, {"@type": "Question", "name": "Does ChatGPT agentic commerce affect PCI DSS scope?", "acceptedAnswer": {"@type": "Answer", "text": "OpenAI states the Product Feed Spec and Agentic Checkout Spec are deliberately kept out of PCI scope and do not transmit cardholder data. Using a PSP's implementation of the Delegated Payment Spec may avoid a change in PCI scope, but using PSP forwarding APIs or integrating directly with OpenAI's delegated payment endpoints involves cardholder data and will likely be in scope. OpenAI may require an attestation of compliance before enabling production access."}}, {"@type": "Question", "name": "Who is responsible for refunds and chargebacks in ChatGPT agentic checkout?", "acceptedAnswer": {"@type": "Answer", "text": "The merchant is the merchant of record and is responsible for refunds and chargebacks, because it accepted the payment directly from the customer. OpenAI recommends using the order update webhook to notify ChatGPT when a refund or chargeback status changes so order state stays synchronised."}}, {"@type": "Question", "name": "How can a merchant track sales originating from ChatGPT product feeds?", "acceptedAnswer": {"@type": "Answer", "text": "OpenAI's best practices recommend adding feed attribution parameters to the product url field, for example utm_medium=feed, when feed-specific click tracking is needed, and keeping internal tracking parameters consistent across feed snapshots."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://distk.in/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://distk.in/blog/"}, {"@type": "ListItem", "position": 3, "name": "Agentic Commerce in Production in 2026: OpenAI's Own Launch Checklist, Explained", "item": "https://distk.in/blog/agentic-commerce-production-checklist-2026.html"}]}</script>
+<link rel="icon" type="image/png" href="../assets/images/favicon.png"><link rel="apple-touch-icon" href="../assets/images/Logo.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BWDTQ1JPL2"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-BWDTQ1JPL2');</script>
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1077520544213003');fbq('track','PageView');</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1077520544213003&ev=PageView&noscript=1"></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#0a0a0a;--paper:#fafafa;--mid:#6b6b6b;--light:#e8e8e8;--accent:#e63312;--accent-soft:rgba(230,51,18,0.08);--mono:'Space Mono',monospace;--sans:'Outfit',sans-serif;--container:1120px;--prose:720px;--gutter:clamp(1.2rem,4vw,3rem)}
+html{font-size:16px;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.container{max-width:var(--container);margin:0 auto;padding:0 var(--gutter)}
+.prose{max-width:var(--prose);margin:0 auto;padding:0 var(--gutter)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--light)}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;max-width:var(--container);margin:0 auto;padding:0.9rem var(--gutter)}
+.nav__logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;color:var(--ink)}
+.nav__logo img{height:32px;width:auto}
+.nav__logo span{font-family:var(--mono);font-weight:700;font-size:1.05rem;letter-spacing:-0.02em}
+.nav__logo small{display:block;font-size:0.55rem;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);line-height:1}
+.nav__back{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid);text-decoration:none;display:flex;align-items:center;gap:0.4rem;transition:color 0.2s}
+.nav__back:hover{color:var(--accent)}
+.nav__cta{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.6rem 1.4rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.nav__cta:hover{background:var(--accent)}
+.hero{padding:7.5rem 0 3.5rem;position:relative;overflow:hidden;border-bottom:1px solid var(--light)}
+.hero::before{content:'READY';position:absolute;right:-1%;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:clamp(6rem,26vw,22rem);font-weight:700;color:rgba(0,0,0,0.03);line-height:1;pointer-events:none;user-select:none;letter-spacing:-0.05em}
+.hero__tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1.5rem}
+.hero__tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.hero h1{font-family:var(--sans);font-weight:700;font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;letter-spacing:-0.03em;max-width:20ch;margin-bottom:1.5rem}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero__sub{font-size:1.1rem;color:var(--mid);max-width:56ch;line-height:1.7;margin-bottom:2rem}
+.hero__meta{display:flex;flex-wrap:wrap;gap:1.5rem;font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid)}
+.tldr{background:var(--accent-soft);border-left:3px solid var(--accent);padding:1.8rem 2rem;margin:3rem 0;position:relative}
+.tldr::before{content:'TL;DR';position:absolute;top:-0.6rem;left:2rem;font-family:var(--mono);font-size:0.62rem;font-weight:700;letter-spacing:0.12em;background:var(--accent);color:#fff;padding:0.2rem 0.6rem}
+.tldr p{font-size:0.95rem;color:var(--ink);line-height:1.7}
+.article{padding:4rem 0 5rem}
+.article h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.35rem,2.8vw,1.8rem);letter-spacing:-0.02em;line-height:1.2;margin:3rem 0 1rem;padding-top:1rem;border-top:1px solid var(--light)}
+.article h2:first-child{border-top:none;margin-top:0}
+.article h3{font-family:var(--mono);font-weight:700;font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin:2rem 0 0.6rem}
+.article p{font-size:1rem;color:#2a2a2a;line-height:1.8;margin-bottom:1.25rem}
+.article ul,.article ol{padding-left:1.4rem;margin-bottom:1.25rem}
+.article li{font-size:1rem;color:#2a2a2a;line-height:1.75;margin-bottom:0.4rem}
+.article strong{font-weight:600;color:var(--ink)}
+.article a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(230,51,18,0.3)}
+.article a:hover{border-bottom-color:var(--accent)}
+.article blockquote{border-left:3px solid var(--accent);padding:0.75rem 1.5rem;margin:2rem 0;background:var(--accent-soft)}
+.article blockquote p{color:var(--ink);font-size:1rem;margin:0}
+.table-wrap{overflow-x:auto;margin:2rem 0}
+.data-table{width:100%;border-collapse:collapse;margin:0;font-size:0.88rem}
+.data-table th{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:0.7rem 1rem;text-align:left;white-space:nowrap}
+.data-table td{padding:0.75rem 1rem;border-bottom:1px solid var(--light);vertical-align:top}
+.data-table tr:last-child td{border-bottom:none}
+.data-table tr:nth-child(even) td{background:#f5f5f5}
+.callout{border:1.5px solid var(--light);padding:1.5rem 1.8rem;margin:2rem 0}
+.callout__label{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem}
+.callout p{font-size:0.92rem;color:var(--mid);line-height:1.7;margin:0}
+.faq{padding:4rem 0;background:var(--ink);color:var(--paper)}
+.faq .section-tag{color:var(--accent)}
+.faq .section-tag::before{background:var(--accent)}
+.faq__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2.5rem;margin-top:2.5rem}
+.faq__item{border-left:2px solid var(--accent);padding-left:1.5rem}
+.faq__item h3{font-family:var(--sans);font-weight:600;font-size:0.95rem;margin-bottom:0.5rem;color:var(--paper)}
+.faq__item p{font-size:0.85rem;color:rgba(255,255,255,0.88);line-height:1.65}
+.section-tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1rem}
+.section-tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.section-title{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.15;color:var(--paper)}
+.cta{padding:5rem 0;background:var(--accent-soft);border-top:1px solid rgba(230,51,18,0.12)}
+.cta__inner{max-width:680px;margin:0 auto;padding:0 var(--gutter);text-align:center}
+.cta h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.2;margin-bottom:1rem}
+.cta p{font-size:1rem;color:var(--mid);line-height:1.7;margin-bottom:2rem}
+.cta__btn{display:inline-flex;align-items:center;gap:0.6rem;font-family:var(--mono);font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;padding:1rem 2.2rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.cta__btn:hover{background:var(--accent)}
+.foot{padding:2.5rem 0;border-top:1px solid var(--light);text-align:center;font-family:var(--mono);font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid)}
+.foot a{color:var(--mid);text-decoration:none}.foot a:hover{color:var(--accent)}
+@media(max-width:768px){.faq__grid{grid-template-columns:1fr}.nav__back span{display:none}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="https://distk.in" class="nav__logo">
+      <img src="../assets/images/Logo.png" alt="Distk">
+      <div><span>Distk</span><small>Global Growth Partner</small></div>
+    </a>
+    <a href="/blog/" class="nav__back">← <span>All articles</span></a>
+    <a href="https://distk.in/#contact" class="nav__cta">Work with us</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="prose">
+    <div class="hero__tag">Commerce Guide</div>
+    <h1>Agentic Commerce in Production in 2026: <em>OpenAI's Own Launch Checklist</em>, Explained</h1>
+    <p class="hero__sub">OpenAI publishes exactly what it tests before a merchant goes live with checkout in ChatGPT. That turns a vague integration into a project with a defined finish line, and it shows which decisions can block launch if you leave them late.</p>
+    <div class="hero__meta">
+      <span>Distk Editorial</span>
+      <span>Oct 2026</span>
+      <span>12 min read</span>
+    </div>
+  </div>
+</section>
+
+<div class="prose">
+  <div class="tldr">
+    <p>OpenAI's agentic commerce production guide lists the tests a merchant must complete and document in a sandbox before going live, each shown end to end with request and response logs: creating sessions with and without an address, updating shipping options, creating a delegated payment token with correct signing, completing an order that returns the completed state with HTTP 201, sending signed order_created and order_updated webhooks, handling missing, out_of_stock and payment_declined errors, proving idempotency with a 409 idempotency_conflict, checking Terms and Privacy links, and allowlisting OpenAI's IP ranges. Traffic must use TLS 1.2 or later on port 443. Feed and checkout specs are out of PCI scope, but direct delegated payment integration will likely be in scope, and OpenAI may require an attestation of compliance before production access. The merchant is merchant of record and owns refunds and chargebacks.</p>
+  </div>
+</div>
+
+<main class="article">
+  <div class="prose">
+
+    <style>
+      .article pre{background:#f4f4f4;border-left:3px solid var(--accent);padding:1rem 1.2rem;overflow-x:auto;margin:1.5rem 0;font-size:0.85rem;line-height:1.55}
+      .article code{font-family:var(--mono);font-size:0.85em;background:#f4f4f4;padding:0.05rem 0.3rem}
+      .article pre code{background:none;padding:0;font-size:inherit}
+    </style>
+
+    <h2>What Is OpenAI's Agentic Commerce Production Checklist in 2026?</h2>
+    <p>It is a list of tests OpenAI says you must complete and document in a sandbox before going live with agentic checkout, each demonstrated end to end with request and response logs. It covers session creation, shipping updates, payment tokenisation, order completion, order webhooks, error handling, idempotency, legal links and IP allowlisting. Alongside it sit security and PCI requirements and a short set of FAQs that settle who owns refunds and chargebacks.</p>
+    <p>A vendor-published launch checklist is unusually useful, because it tells you exactly what certification will look at. It also makes clear that checkout is an engineering project with a defined finish line rather than a plugin. This guide is the production spoke in our <a href="chatgpt-product-feed-agentic-commerce-protocol-2026.html">guide to the Agentic Commerce Protocol product feed</a>, and it assumes you have already been accepted as an approved partner via chatgpt.com/merchants, which OpenAI states is currently required for feed onboarding.</p>
+
+    <h2>What Tests Must Be Demonstrated Before Launch in 2026?</h2>
+    <p>Nine groups of tests, each with specific pass conditions. The table restates them as OpenAI lists them, with the evidence you should keep. Every item should be demonstrated end to end with logs, so plan to capture request and response pairs from the start rather than reconstructing them later.</p>
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Test group</th><th>What OpenAI asks you to demonstrate in 2026</th><th>Evidence to keep</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Session creation and address handling</strong></td><td>Create a checkout session with and without a shipping address; shipping options and tax totals returned once a valid address is provided; <code>API-Version</code> header present and supported.</td><td>Both request and response pairs, showing totals appearing after the address.</td></tr>
+        <tr><td><strong>Shipping option updates</strong></td><td>Update the selected shipping option and recompute order totals correctly.</td><td>Before and after totals.</td></tr>
+        <tr><td><strong>Payment tokenisation</strong></td><td>Create a delegated payment token via <code>POST /agentic_commerce/delegate_payment</code> with a valid <code>payment_method</code>, <code>allowance</code>, <code>billing_address</code>, <code>risk_signals</code> and <code>metadata</code>; all required headers; canonical JSON serialisation and correct detached signature.</td><td>Signed request, token response.</td></tr>
+        <tr><td><strong>Order completion</strong></td><td>Complete the order with a tokenised payment; final order object in the <code>completed</code> state; <code>HTTP 201 Created</code>.</td><td>Completion response with order object.</td></tr>
+        <tr><td><strong>Order updates</strong></td><td><code>order_created</code> and subsequent <code>order_updated</code> webhooks sent with a valid HMAC signature.</td><td>Webhook payloads and signature verification.</td></tr>
+        <tr><td><strong>Error scenarios</strong></td><td>Trigger and log <code>missing</code> (for example invalid_request / 400), <code>out_of_stock</code> and <code>payment_declined</code>.</td><td>One logged example of each.</td></tr>
+        <tr><td><strong>Idempotency</strong></td><td>Repeat create and complete calls with the same Idempotency-Key: duplicates return the same result, mismatched parameters return <code>idempotency_conflict</code> with HTTP 409.</td><td>Paired duplicate calls and the 409.</td></tr>
+        <tr><td><strong>Documentation and links</strong></td><td>Terms of Service and Privacy Policy links present and functional.</td><td>Working URLs.</td></tr>
+        <tr><td><strong>IP egress ranges</strong></td><td>Allowlist OpenAI's published IP ranges, since OpenAI will call your action from them.</td><td>Firewall configuration.</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h2>Why Do Idempotency and Error Handling Get Their Own Tests in 2026?</h2>
+    <p>Because an agent retries. A conversational checkout has more places for a request to be repeated than a web checkout does, and the cost of a non-idempotent complete call is a double charge on a real customer. OpenAI's checklist tests both halves: identical duplicates must return the same result, and a reused key with different parameters must fail with <code>idempotency_conflict</code> and HTTP 409 rather than silently doing something new.</p>
+    <p>Error handling is tested for a related reason. In the checkout spec, errors such as <code>out_of_stock</code> and <code>payment_declined</code> are not only HTTP failures; they are messages surfaced to the shopper with a path to the part of the cart they concern. A store that returns a generic 500 when stock runs out gives ChatGPT nothing to tell the customer, and the session simply fails. The three named scenarios in the checklist are the three a real launch will hit in its first week.</p>
+
+    <h2>What Are the Security Requirements in 2026?</h2>
+    <p>Two are stated precisely. All traffic to you must use TLS 1.2 or later on port 443 with a valid public certificate. And OpenAI will call you from its published IP ranges, which you are expected to allowlist. The checkout specification adds the per-request discipline: authenticate every request, verify signatures, enforce idempotency, validate inputs and support safe retries.</p>
+    <p>PCI scope is where planning most often goes wrong, so OpenAI's wording is worth keeping close. The product feed and checkout specs are deliberately kept out of PCI scope and do not transmit cardholder data. Using your PSP's implementation of the Delegated Payment Spec may avoid any change in your PCI scope. Using your PSP's forwarding APIs, or integrating directly with OpenAI's delegated payment endpoints, involves handling cardholder data and will likely be in scope. OpenAI says it intends to migrate entirely to network tokens as they become supported, and that it may require your attestation of compliance before enabling production access.</p>
+    <div class="callout">
+      <div class="callout__label">Before you book a launch date in 2026</div>
+      <p>OpenAI's guidance is to check with your PSP and consult your Qualified Security Assessor or other PCI compliance advisor about the impact on your specific obligations. If production access can depend on an attestation of compliance, that conversation belongs at the start of the project, not the week before launch.</p>
+    </div>
+
+    <h2>Who Owns Refunds, Chargebacks and Shipping Questions in 2026?</h2>
+    <p>You do. OpenAI's production FAQs are direct: the merchant actually selling the goods and taking payment is the merchant of record, not OpenAI or the payment provider, and customers see the merchant's name on their card statement as if they bought on the merchant's website. Because you accepted the payment, refunds and chargebacks are yours to handle.</p>
+    <ul>
+      <li><strong>Sync state back.</strong> Use the order update webhook to notify ChatGPT when a refund or chargeback status changes, so order state stays synchronised.</li>
+      <li><strong>One shipment per session.</strong> The protocol currently models a single shipping address and one selected shipping option per checkout session.</li>
+      <li><strong>Consolidate split shipments.</strong> If your system splits orders across warehouses, present a single buyer-visible selection and return aggregate shipping and tax totals.</li>
+    </ul>
+
+    <h2>What Feed Quality Work Should Happen Before Launch in 2026?</h2>
+    <p>Checkout only works on products ChatGPT already understands, so OpenAI's feed best practices belong in the same launch plan. They are short and practical, and each one prevents a specific class of bad listing.</p>
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Best practice</th><th>What OpenAI recommends in 2026</th></tr></thead>
+      <tbody>
+        <tr><td>Descriptions</td><td>Concise, factual copy; plain text and bullet-style text are both acceptable.</td></tr>
+        <tr><td>Optional fields</td><td>Fields such as <code>description.html</code>, <code>description.markdown</code>, <code>categories.taxonomy</code> and <code>seller.links</code> can improve answer quality but are not required. If a field needs brittle transforms, omit it until data quality is stable.</td></tr>
+        <tr><td>URLs</td><td>Keep <code>url</code>, <code>media.url</code> and seller link URLs valid and encoded, for example <code>%20</code> for spaces.</td></tr>
+        <tr><td>Seller attribution</td><td>Set <code>seller.name</code> to the seller users should see, use durable public URLs in <code>seller.links</code>, and reuse supported link types consistently.</td></tr>
+        <tr><td>Variants</td><td>Stable parent product <code>id</code>, unique variant <code>id</code> per purchasable option, variant-specific title, URL, media, availability and price where they differ.</td></tr>
+        <tr><td>Attribution</td><td>Add feed attribution parameters to <code>url</code>, such as <code>utm_medium=feed</code>, and keep tracking parameters consistent across snapshots.</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The attribution point is the one marketing teams should own. Without a consistent feed parameter, sales that start in ChatGPT and finish on your site look like direct or organic traffic, and you cannot tell whether the channel is working. Field-level detail is in our <a href="chatgpt-product-feed-field-requirements-2026.html">ChatGPT product feed requirements guide</a>.</p>
+
+    <h2>What Does a Realistic Launch Sequence Look Like in 2026?</h2>
+    <p>One that front-loads the decisions that can block launch and back-loads the ones that only need time. The sequence below is our ordering of OpenAI's published requirements, not a timeline OpenAI publishes.</p>
+    <ol>
+      <li><strong>Confirm eligibility.</strong> Approved-partner access, a supported payment provider, and the markets OpenAI has confirmed for your integration.</li>
+      <li><strong>Settle PCI scope</strong> with your PSP and QSA, and decide on your PSP's delegated payment implementation versus direct integration.</li>
+      <li><strong>Ship a clean product feed</strong> with stable IDs, valid availability, and feed attribution parameters.</li>
+      <li><strong>Build the five checkout endpoints</strong> with signature verification, idempotency and full cart state.</li>
+      <li><strong>Build signed order webhooks,</strong> including refund and chargeback updates.</li>
+      <li><strong>Run every checklist test in the sandbox</strong> and keep the logs.</li>
+      <li><strong>Allowlist OpenAI's IP ranges</strong> and confirm TLS on port 443.</li>
+      <li><strong>Check legal links</strong> and request production access.</li>
+    </ol>
+    <p>For the endpoint-level specification behind steps four and five, see our <a href="agentic-checkout-spec-merchant-guide-2026.html">agentic checkout merchant guide</a>.</p>
+
+    <h2>What Are the Common Production Mistakes in 2026?</h2>
+    <ul>
+      <li><strong>Not keeping logs from the start.</strong> Every test must be demonstrated end to end with request and response logs.</li>
+      <li><strong>Leaving PCI scope until the end.</strong> OpenAI may require an attestation of compliance before production access.</li>
+      <li><strong>Returning generic errors.</strong> Out of stock and payment declined must be handled as recoverable, logged scenarios.</li>
+      <li><strong>Assuming retries are rare.</strong> Idempotency conflicts must return 409, not a second order.</li>
+      <li><strong>Forgetting the IP allowlist.</strong> OpenAI calls you from published ranges.</li>
+      <li><strong>Skipping feed attribution.</strong> Without it, ChatGPT-sourced sales disappear into direct traffic.</li>
+      <li><strong>Assuming OpenAI handles refunds.</strong> As merchant of record, you do.</li>
+    </ul>
+
+    <h2>Key Takeaways for 2026</h2>
+    <ul>
+      <li>OpenAI requires sandbox tests for sessions, shipping updates, tokenisation, completion, webhooks, errors, idempotency, legal links and IP allowlisting, all logged end to end.</li>
+      <li>Completion must return the order in the <code>completed</code> state with HTTP 201, and idempotency conflicts must return HTTP 409.</li>
+      <li>TLS 1.2 or later on port 443 with a valid public certificate is mandatory.</li>
+      <li>Feed and checkout specs are out of PCI scope; direct delegated payment integration likely is not, and an attestation may be required.</li>
+      <li>You are merchant of record, own refunds and chargebacks, and sync them by webhook.</li>
+      <li>Feed attribution parameters such as <code>utm_medium=feed</code> are how you will measure the channel at all.</li>
+    </ul>
+    <p>Distk helps D2C and e-commerce teams in India and internationally plan agentic commerce launches against the published requirements, sequence the work so PCI and eligibility questions are answered first, and set up the attribution that proves whether the channel pays. If you are planning a ChatGPT checkout launch in 2026, that plan is where we start.</p>
+
+    <h2>Sources</h2>
+    <ul>
+      <li><a href="https://developers.openai.com/commerce/guides/production.md" target="_blank" rel="noopener">OpenAI, Agentic commerce in production</a></li>
+      <li><a href="https://developers.openai.com/commerce/guides/best-practices.md" target="_blank" rel="noopener">OpenAI, Best practices</a></li>
+      <li><a href="https://developers.openai.com/commerce/specs/checkout.md" target="_blank" rel="noopener">OpenAI, Agentic Checkout Spec</a></li>
+    </ul>
+
+  </div>
+</main>
+
+<section class="faq">
+  <div class="container">
+    <div class="section-tag">Key Questions</div>
+    <h2 class="section-title">Agentic Commerce in Production: FAQs</h2>
+    <div class="faq__grid">
+      <div class="faq__item">
+        <h3>What does OpenAI test before an agentic checkout goes live?</h3>
+        <p>Session creation with and without an address, shipping option updates, delegated payment token creation, order completion with HTTP 201, signed order webhooks, the missing, out_of_stock and payment_declined error scenarios, idempotency with a 409 on conflicts, legal links, and IP allowlisting, each shown end to end with logs.</p>
+      </div>
+      <div class="faq__item">
+        <h3>What security is required for ChatGPT agentic checkout?</h3>
+        <p>All traffic must use TLS 1.2 or later on port 443 with a valid public certificate, and you should allowlist OpenAI's published IP ranges. The checkout spec also requires authenticating every request, verifying signatures, enforcing idempotency and validating inputs.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Will agentic checkout bring my business into PCI scope?</h3>
+        <p>The feed and checkout specs are kept out of PCI scope. Your PSP's delegated payment implementation may avoid a scope change, while forwarding APIs or direct integration involve cardholder data and will likely be in scope. OpenAI may require an attestation of compliance before production access.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Who handles refunds and chargebacks?</h3>
+        <p>The merchant, as merchant of record. OpenAI advises using the order update webhook to tell ChatGPT when a refund or chargeback status changes so order state stays in sync.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Can one checkout ship to multiple addresses?</h3>
+        <p>Not today. The protocol models a single shipping address and one selected shipping option per checkout session, and OpenAI advises consolidating split shipments into one buyer-visible selection with aggregate totals.</p>
+      </div>
+      <div class="faq__item">
+        <h3>How do I track sales that come from ChatGPT?</h3>
+        <p>OpenAI's best practices recommend adding feed attribution parameters to product URLs, for example utm_medium=feed, and keeping tracking parameters consistent across feed snapshots.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED START -->
+<section class="related" style="padding:3.5rem 0;border-top:1px solid #e8e8e8;background:#fafafa">
+  <div style="max-width:720px;margin:0 auto;padding:0 clamp(1.2rem,4vw,3rem)">
+    <div style="font-family:'Space Mono',monospace;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:#e63312;margin-bottom:1.3rem">Related reading</div>
+    <ul style="list-style:none;margin:0;padding:0;display:grid;gap:0.9rem">
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="universal-cart-commerce-protocol-ucp-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">Universal Cart & the Universal Commerce Protocol (UCP) in 2026: The Agentic Commerce Guide</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="prepare-brand-ai-shopping-agents-agentic-commerce-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">How to Prepare Your Brand for AI Shopping Agents in 2026: The Agentic Commerce Guide</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="openai-dots-always-on-agents-guide-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">OpenAI dots in 2026: Always-On Agents, and the Permission Model That Matters More</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="how-to-use-openai-operator-marketing-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">How to Use OpenAI Operator for Marketing Tasks 2026: Complete AI Browser Agent Guide</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="what-are-ai-marketing-agents-agentic-workflows-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">What Are AI Marketing Agents? How to Use Agentic Workflows for Campaigns 2026</a></li>
+    </ul>
+  </div>
+</section>
+<!-- RELATED END -->
+<section class="cta">
+  <div class="cta__inner">
+    <h2>Sequence the launch so nothing blocks you late</h2>
+    <p>Distk plans agentic commerce launches against OpenAI's published requirements, settles eligibility and PCI questions first, and sets up the feed attribution that shows whether the channel actually pays.</p>
+    <a href="https://distk.in/#contact" class="cta__btn">Start the conversation →</a>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="container">
+    © 2026 Distk · <a href="https://distk.in">distk.in</a> · <a href="mailto:connect@distk.in">connect@distk.in</a>
+  </div>
+</footer>
+</body>
+</html>

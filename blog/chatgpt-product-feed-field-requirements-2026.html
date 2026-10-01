@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xdifcafwxl");
+  </script>
+
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ChatGPT Product Feed Requirements 2026: Required Fields, Variants, Rules | Distk</title>
+<meta name="description" content="ChatGPT product feed requirements for 2026: the nine required fields, the availability values that reject rows, price formatting, variant rules, optional fields worth supplying, Ads and checkout flags, and the US-only default that Indian sellers need to know.">
+<meta name="keywords" content="chatgpt product feed requirements, chatgpt product feed fields 2026, openai product feed spec, chatgpt shopping feed, agentic commerce protocol feed, ecommerce marketing agency 2026">
+<meta name="author" content="Distk"><meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://distk.in/blog/chatgpt-product-feed-field-requirements-2026.html">
+<meta property="og:type" content="article"><meta property="og:url" content="https://distk.in/blog/chatgpt-product-feed-field-requirements-2026.html">
+<meta property="og:title" content="ChatGPT Product Feed Requirements in 2026: The Fields That Decide Whether You Get Shown">
+<meta property="og:description" content="Nine required fields, a closed availability list that rejects rows, a price format with no separators, and a US-only default. The spec, decoded for sellers.">
+<meta property="og:image" content="https://distk.in/assets/images/og-image.jpg"><meta property="og:site_name" content="Distk">
+<meta property="article:published_time" content="2026-10-01T00:00:00+05:30">
+<meta property="article:modified_time" content="2026-10-01T00:00:00+05:30">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="ChatGPT Product Feed Requirements in 2026: The Fields That Decide Whether You Get Shown"><meta name="twitter:description" content="Nine required fields, a closed availability list that rejects rows, a price format with no separators, and a US-only default. The spec, decoded for sellers.">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "ChatGPT Product Feed Requirements in 2026: The Fields That Decide Whether You Get Shown", "description": "A field-by-field guide to OpenAI's product feed specification for ChatGPT in 2026: the nine required fields, availability and price formatting rules, variant identity, optional fields, Ads and checkout eligibility flags, Google-compatible feeds, and the default US market limit.", "author": {"@type": "Organization", "name": "Distk", "url": "https://distk.in"}, "publisher": {"@type": "Organization", "name": "Distk", "logo": {"@type": "ImageObject", "url": "https://distk.in/assets/images/Logo.png"}}, "datePublished": "2026-10-01", "dateModified": "2026-10-01", "inLanguage": "en", "about": [{"@type": "Thing", "name": "Agentic Commerce Protocol"}, {"@type": "Thing", "name": "ChatGPT product feed"}, {"@type": "Thing", "name": "OpenAI"}, {"@type": "Thing", "name": "product data feed"}, {"@type": "Thing", "name": "ecommerce"}], "mentions": [{"@type": "Thing", "name": "Agentic Commerce Protocol"}, {"@type": "Thing", "name": "ChatGPT product feed"}, {"@type": "Thing", "name": "OpenAI"}, {"@type": "Thing", "name": "product data feed"}, {"@type": "Thing", "name": "ecommerce"}], "mainEntityOfPage": {"@type": "WebPage", "@id": "https://distk.in/blog/chatgpt-product-feed-field-requirements-2026.html"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What fields are required in a ChatGPT product feed in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "OpenAI's product feed specification requires nine fields on every row for a useful discovery feed: item_id, title, description, url, brand, seller_name, image_url, availability and price. Other fields are optional for discovery, and Ads and checkout integrations carry separate additional requirements."}}, {"@type": "Question", "name": "Can an Indian seller reach Indian shoppers through a ChatGPT product feed in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "Not by default. OpenAI's file-upload specification states that the standard OpenAI-format upload currently targets the US and that row-level market columns do not change that default. The shared format currently represents US, CA and MX, and additional markets apply only after OpenAI confirms the integration and its allowed countries and currencies."}}, {"@type": "Question", "name": "Which availability values does a ChatGPT product feed accept?", "acceptedAnswer": {"@type": "Answer", "text": "The accepted values are in_stock, out_of_stock, pre_order, backorder and unknown. OpenAI's specification states that omitted, empty or unrecognised availability values reject the row, and that unknown must be supplied explicitly when stock status is unavailable. Google-compatible feeds use preorder instead and do not accept unknown."}}, {"@type": "Question", "name": "How must prices be formatted in a ChatGPT product feed?", "acceptedAnswer": {"@type": "Answer", "text": "In the file-upload format, prices are written as a decimal amount in major currency units followed by a space and an uppercase three-letter ISO 4217 code, such as 79.99 USD, with no thousands separators or exponent notation. A sale_price must be positive, strictly below price, and in the same currency. The API product schema uses integer minor units with a separate currency field."}}, {"@type": "Question", "name": "Does the is_eligible_checkout flag enable checkout in ChatGPT?", "acceptedAnswer": {"@type": "Answer", "text": "No. OpenAI states that checkout requires a separately enabled integration and that setting an eligibility flag does not complete checkout onboarding. The flag opts a product in only when search eligibility is also true and checkout is enabled for that integration."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://distk.in/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://distk.in/blog/"}, {"@type": "ListItem", "position": 3, "name": "ChatGPT Product Feed Requirements in 2026: The Fields That Decide Whether You Get Shown", "item": "https://distk.in/blog/chatgpt-product-feed-field-requirements-2026.html"}]}</script>
+<link rel="icon" type="image/png" href="../assets/images/favicon.png"><link rel="apple-touch-icon" href="../assets/images/Logo.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BWDTQ1JPL2"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-BWDTQ1JPL2');</script>
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1077520544213003');fbq('track','PageView');</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1077520544213003&ev=PageView&noscript=1"></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#0a0a0a;--paper:#fafafa;--mid:#6b6b6b;--light:#e8e8e8;--accent:#e63312;--accent-soft:rgba(230,51,18,0.08);--mono:'Space Mono',monospace;--sans:'Outfit',sans-serif;--container:1120px;--prose:720px;--gutter:clamp(1.2rem,4vw,3rem)}
+html{font-size:16px;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.container{max-width:var(--container);margin:0 auto;padding:0 var(--gutter)}
+.prose{max-width:var(--prose);margin:0 auto;padding:0 var(--gutter)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--light)}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;max-width:var(--container);margin:0 auto;padding:0.9rem var(--gutter)}
+.nav__logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;color:var(--ink)}
+.nav__logo img{height:32px;width:auto}
+.nav__logo span{font-family:var(--mono);font-weight:700;font-size:1.05rem;letter-spacing:-0.02em}
+.nav__logo small{display:block;font-size:0.55rem;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);line-height:1}
+.nav__back{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid);text-decoration:none;display:flex;align-items:center;gap:0.4rem;transition:color 0.2s}
+.nav__back:hover{color:var(--accent)}
+.nav__cta{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.6rem 1.4rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.nav__cta:hover{background:var(--accent)}
+.hero{padding:7.5rem 0 3.5rem;position:relative;overflow:hidden;border-bottom:1px solid var(--light)}
+.hero::before{content:'FIELDS';position:absolute;right:-1%;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:clamp(6rem,26vw,22rem);font-weight:700;color:rgba(0,0,0,0.03);line-height:1;pointer-events:none;user-select:none;letter-spacing:-0.05em}
+.hero__tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1.5rem}
+.hero__tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.hero h1{font-family:var(--sans);font-weight:700;font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;letter-spacing:-0.03em;max-width:20ch;margin-bottom:1.5rem}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero__sub{font-size:1.1rem;color:var(--mid);max-width:56ch;line-height:1.7;margin-bottom:2rem}
+.hero__meta{display:flex;flex-wrap:wrap;gap:1.5rem;font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid)}
+.tldr{background:var(--accent-soft);border-left:3px solid var(--accent);padding:1.8rem 2rem;margin:3rem 0;position:relative}
+.tldr::before{content:'TL;DR';position:absolute;top:-0.6rem;left:2rem;font-family:var(--mono);font-size:0.62rem;font-weight:700;letter-spacing:0.12em;background:var(--accent);color:#fff;padding:0.2rem 0.6rem}
+.tldr p{font-size:0.95rem;color:var(--ink);line-height:1.7}
+.article{padding:4rem 0 5rem}
+.article h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.35rem,2.8vw,1.8rem);letter-spacing:-0.02em;line-height:1.2;margin:3rem 0 1rem;padding-top:1rem;border-top:1px solid var(--light)}
+.article h2:first-child{border-top:none;margin-top:0}
+.article h3{font-family:var(--mono);font-weight:700;font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin:2rem 0 0.6rem}
+.article p{font-size:1rem;color:#2a2a2a;line-height:1.8;margin-bottom:1.25rem}
+.article ul,.article ol{padding-left:1.4rem;margin-bottom:1.25rem}
+.article li{font-size:1rem;color:#2a2a2a;line-height:1.75;margin-bottom:0.4rem}
+.article strong{font-weight:600;color:var(--ink)}
+.article a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(230,51,18,0.3)}
+.article a:hover{border-bottom-color:var(--accent)}
+.article blockquote{border-left:3px solid var(--accent);padding:0.75rem 1.5rem;margin:2rem 0;background:var(--accent-soft)}
+.article blockquote p{color:var(--ink);font-size:1rem;margin:0}
+.table-wrap{overflow-x:auto;margin:2rem 0}
+.data-table{width:100%;border-collapse:collapse;margin:0;font-size:0.88rem}
+.data-table th{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:0.7rem 1rem;text-align:left;white-space:nowrap}
+.data-table td{padding:0.75rem 1rem;border-bottom:1px solid var(--light);vertical-align:top}
+.data-table tr:last-child td{border-bottom:none}
+.data-table tr:nth-child(even) td{background:#f5f5f5}
+.callout{border:1.5px solid var(--light);padding:1.5rem 1.8rem;margin:2rem 0}
+.callout__label{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem}
+.callout p{font-size:0.92rem;color:var(--mid);line-height:1.7;margin:0}
+.faq{padding:4rem 0;background:var(--ink);color:var(--paper)}
+.faq .section-tag{color:var(--accent)}
+.faq .section-tag::before{background:var(--accent)}
+.faq__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2.5rem;margin-top:2.5rem}
+.faq__item{border-left:2px solid var(--accent);padding-left:1.5rem}
+.faq__item h3{font-family:var(--sans);font-weight:600;font-size:0.95rem;margin-bottom:0.5rem;color:var(--paper)}
+.faq__item p{font-size:0.85rem;color:rgba(255,255,255,0.88);line-height:1.65}
+.section-tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1rem}
+.section-tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.section-title{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.15;color:var(--paper)}
+.cta{padding:5rem 0;background:var(--accent-soft);border-top:1px solid rgba(230,51,18,0.12)}
+.cta__inner{max-width:680px;margin:0 auto;padding:0 var(--gutter);text-align:center}
+.cta h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.2;margin-bottom:1rem}
+.cta p{font-size:1rem;color:var(--mid);line-height:1.7;margin-bottom:2rem}
+.cta__btn{display:inline-flex;align-items:center;gap:0.6rem;font-family:var(--mono);font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;padding:1rem 2.2rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.cta__btn:hover{background:var(--accent)}
+.foot{padding:2.5rem 0;border-top:1px solid var(--light);text-align:center;font-family:var(--mono);font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid)}
+.foot a{color:var(--mid);text-decoration:none}.foot a:hover{color:var(--accent)}
+@media(max-width:768px){.faq__grid{grid-template-columns:1fr}.nav__back span{display:none}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="https://distk.in" class="nav__logo">
+      <img src="../assets/images/Logo.png" alt="Distk">
+      <div><span>Distk</span><small>Global Growth Partner</small></div>
+    </a>
+    <a href="/blog/" class="nav__back">← <span>All articles</span></a>
+    <a href="https://distk.in/#contact" class="nav__cta">Work with us</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="prose">
+    <div class="hero__tag">Commerce Guide</div>
+    <h1>ChatGPT <em>Product Feed</em> Requirements in 2026: The Fields That Decide Whether You Get Shown</h1>
+    <p class="hero__sub">OpenAI's feed specification is public and unusually precise. Most rejected rows come from a handful of rules: a closed availability list, a strict price format, variant identity, and a market default most sellers never notice.</p>
+    <div class="hero__meta">
+      <span>Distk Editorial</span>
+      <span>Oct 2026</span>
+      <span>12 min read</span>
+    </div>
+  </div>
+</section>
+
+<div class="prose">
+  <div class="tldr">
+    <p>A ChatGPT product feed needs nine fields on every row: item_id, title, description, url, brand, seller_name, image_url, availability and price. Availability must be one of in_stock, out_of_stock, pre_order, backorder or unknown, and anything else rejects the row. Prices are written as amount plus a three-letter ISO 4217 code, such as 79.99 USD, with no thousands separators. Each variant is its own row sharing a group_id, and OpenAI forbids putting price in an offer ID. Search defaults to on, while Ads and checkout default to off, and the checkout flag alone does not enable checkout. Two gates matter before any of this: feed onboarding is currently limited to approved partners via chatgpt.com/merchants, and the standard upload currently targets the US, with the shared format representing only US, CA and MX until OpenAI confirms another market.</p>
+  </div>
+</div>
+
+<main class="article">
+  <div class="prose">
+
+    <style>
+      .article pre{background:#f4f4f4;border-left:3px solid var(--accent);padding:1rem 1.2rem;overflow-x:auto;margin:1.5rem 0;font-size:0.85rem;line-height:1.55}
+      .article code{font-family:var(--mono);font-size:0.85em;background:#f4f4f4;padding:0.05rem 0.3rem}
+      .article pre code{background:none;padding:0;font-size:inherit}
+    </style>
+
+    <h2>What Does a ChatGPT Product Feed Actually Require in 2026?</h2>
+    <p>A ChatGPT product feed requires nine fields on every row before it is useful for discovery: <code>item_id</code>, <code>title</code>, <code>description</code>, <code>url</code>, <code>brand</code>, <code>seller_name</code>, <code>image_url</code>, <code>availability</code> and <code>price</code>. Everything else is optional for discovery, and Ads and checkout each carry their own separate requirements. OpenAI's specification says plainly that one row is submitted per purchasable item or variant.</p>
+    <p>Before any of this matters, one gate applies. OpenAI states that onboarding product feeds in ChatGPT is currently available to approved partners, with applications through chatgpt.com/merchants. The field specification is public, so you can prepare a feed today, but you cannot switch it on without acceptance. This guide is the spoke on field-level detail in our <a href="chatgpt-product-feed-agentic-commerce-protocol-2026.html">guide to the Agentic Commerce Protocol product feed</a>.</p>
+
+    <div class="callout">
+      <div class="callout__label">The market limit Indian sellers need to read first in 2026</div>
+      <p>OpenAI's file-upload specification states that the standard OpenAI-format upload currently targets the US, and that row-level market columns do not change that default. The shared format currently represents <code>US</code>, <code>CA</code> and <code>MX</code>, and additional markets apply only after OpenAI confirms the integration and its allowed countries and currencies. A rupee price or an Indian product URL does not select India as a destination market.</p>
+    </div>
+
+    <h2>What Are the Nine Required Fields in 2026?</h2>
+    <p>The nine required fields are the minimum for a useful discovery feed, and OpenAI's specification is specific about each one. It also asks for a real brand and seller name rather than placeholders, and recommends keeping titles to at most 150 characters and descriptions to at most 5,000, in plain text.</p>
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Field</th><th>Type</th><th>What OpenAI requires in 2026</th></tr></thead>
+      <tbody>
+        <tr><td><code>item_id</code></td><td>String</td><td>Stable ID, unique per item or variant within your feed. Never reuse it for a different item.</td></tr>
+        <tr><td><code>title</code></td><td>String</td><td>Product name, including the selected variant when relevant.</td></tr>
+        <tr><td><code>description</code></td><td>String</td><td>Factual product description for this item.</td></tr>
+        <tr><td><code>url</code></td><td>String (URL)</td><td>Product detail page, with the variant selected when possible. Keep it stable.</td></tr>
+        <tr><td><code>brand</code></td><td>String</td><td>Product brand as shown on the product page.</td></tr>
+        <tr><td><code>seller_name</code></td><td>String</td><td>Name of the seller supplying this offer.</td></tr>
+        <tr><td><code>image_url</code></td><td>String (URL)</td><td>Main product image showing this variant, as a direct image URL such as a JPEG or PNG.</td></tr>
+        <tr><td><code>availability</code></td><td>String</td><td><code>in_stock</code>, <code>out_of_stock</code>, <code>pre_order</code>, <code>backorder</code> or <code>unknown</code>. Omitted, empty or unrecognised values reject the row.</td></tr>
+        <tr><td><code>price</code></td><td>String (money)</td><td>Regular item price in major currency units, written as <code>amount CURRENCY</code>.</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>OpenAI's minimal example is a single JSONL record. It notes that search defaults to enabled and checkout to disabled, and that Ads defaults to disabled unless your feed has an Ads default configured.</p>
+<pre><code>{"item_id":"MUG-350-BLUE","title":"Blue ceramic mug, 350 mL","description":"Dishwasher-safe glazed ceramic mug with a handle.","url":"https://example.com/products/mug-blue","brand":"Northline","seller_name":"Northline Home","image_url":"https://example.com/images/mug-blue.jpg","price":"18.00 USD","availability":"in_stock"}</code></pre>
+
+    <h2>Why Does the Availability Field Reject So Many Rows in 2026?</h2>
+    <p>Because it is the one required field with a closed list and no silent default. The specification states that omitted, empty or unrecognised availability values reject the row, and that <code>unknown</code> must be used explicitly when stock status is unavailable. Many commerce platforms export stock as a number or as a phrase such as "In stock", and either will fail without a mapping step.</p>
+    <p>Two further rules matter. OpenAI notes that <code>unknown</code> does not assert that the item is in stock, so it is not a safe default for products you actually sell. And <code>pre_order</code> and <code>backorder</code> do not schedule a future stock change: you update <code>availability</code> yourself when the item becomes available or sells out.</p>
+
+    <h2>How Should Prices Be Formatted in 2026?</h2>
+    <p>Prices are written as a decimal amount in major units, a space, and an uppercase three-letter ISO 4217 code, for example <code>79.99 USD</code>. The specification spells out that this means 79 dollars and 99 cents, not 7,999 dollars, and forbids thousands separators, exponent notation, and more fractional digits than the currency permits. It also warns against rounding a price into a different payable amount.</p>
+    <ul>
+      <li><strong>Regular price must be positive</strong> for discovery and in the currency agreed for your feed.</li>
+      <li><strong><code>sale_price</code> is optional</strong> and must be greater than zero, strictly less than <code>price</code>, and in the same currency. A sale price that fails any of those conditions is not used.</li>
+      <li><strong>Dates do not schedule prices.</strong> Sale-window and expiration dates do not trigger price changes in this contract. Submit the current price and update the feed when a sale starts or ends.</li>
+    </ul>
+    <p>One format trap catches teams moving between the two delivery formats: the API product schema expresses money as an integer in ISO 4217 minor units with a separate <code>currency</code> field, while the file-upload format uses the <code>amount CURRENCY</code> string. Do not reuse a formatter across both without converting.</p>
+
+    <h2>How Do Variants Work in a ChatGPT Feed in 2026?</h2>
+    <p>Each purchasable selection gets its own row with a distinct <code>item_id</code>, the same <code>group_id</code>, <code>listing_has_variations=true</code>, and a <code>variant_dict</code> mapping option names to the selected values. The group ID must differ from every item ID, and each row carries its own price, availability, URL and images. OpenAI is blunt about one rule: never include price in an offer ID.</p>
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Field</th><th>Requirement in 2026</th><th>Rule to follow</th></tr></thead>
+      <tbody>
+        <tr><td><code>group_id</code></td><td>Conditionally required for variants</td><td>Stable parent-listing ID shared by all variants. If omitted, <code>item_id</code> is used and no variant group exists.</td></tr>
+        <tr><td><code>listing_has_variations</code></td><td>Conditionally required for variants</td><td>Set <code>true</code> on every variant row.</td></tr>
+        <tr><td><code>variant_dict</code></td><td>Conditionally required for variants</td><td>Option names to selected values. Ignored unless the two fields above are set correctly.</td></tr>
+        <tr><td><code>offer_id</code></td><td>Optional</td><td>Stable and unique within the feed. Never includes price.</td></tr>
+        <tr><td><code>gtin</code></td><td>Optional</td><td>Exactly 8, 12, 13 or 14 digits with a valid check digit. Preserve leading zeros. Omit if unassigned.</td></tr>
+        <tr><td><code>mpn</code></td><td>Optional</td><td>Submit with <code>brand</code>. Do not invent one to replace a missing GTIN.</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>OpenAI also asks that all three identifiers, item, group and offer, stay stable when price, stock, title or images change. Re-keying products on every export is the quickest way to lose whatever history the platform has built against your items.</p>
+
+    <h2>Which Optional Fields Are Worth Supplying in 2026?</h2>
+    <p>The optional fields that most change what a shopper sees are the ones describing returns, reviews, condition and dimensions. OpenAI's guidance on optional data is consistent: omit an unknown value rather than inventing one, and never use placeholder strings such as <code>null</code>, <code>unknown</code> or <code>n/a</code> except where <code>unknown</code> is explicitly listed.</p>
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Field</th><th>What it does in 2026</th><th>Rule that trips people up</th></tr></thead>
+      <tbody>
+        <tr><td><code>condition</code></td><td><code>new</code>, <code>refurbished</code> or <code>used</code></td><td>Omitted may be treated as new. Always declare used or refurbished.</td></tr>
+        <tr><td><code>accepts_returns</code></td><td>Boolean return acceptance</td><td>A policy URL does not set or override it.</td></tr>
+        <tr><td><code>return_deadline_in_days</code></td><td>Positive whole number of days</td><td>Only with <code>accepts_returns=true</code>. It is a duration, not a deadline date.</td></tr>
+        <tr><td><code>review_count</code> and <code>star_rating</code></td><td>Review aggregates, rating on a 0 to 5 scale to two decimals</td><td>Same review population for both. Exclude seller and store reviews.</td></tr>
+        <tr><td><code>shipping_price</code></td><td>Shipping charge in the same currency as price</td><td>Omitted means unknown, not free shipping. Zero means no charge.</td></tr>
+        <tr><td><code>dimensions</code></td><td>Structured product dimensions</td><td>Product dimensions, not package dimensions. Units are not inferred.</td></tr>
+        <tr><td><code>additional_image_urls</code></td><td>Extra product views</td><td>Use an array in JSONL; never spaces or semicolons as separators.</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Some optional fields only work if your integration is configured for them. The specification lists <code>marketplace_seller</code>, <code>size_system</code>, store review fields, <code>accepts_exchanges</code> and <code>is_digital</code> as requiring setup, and notes that adding these columns to a standard upload does not enable them. Confirm support during onboarding before relying on them.</p>
+
+    <h2>How Are Ads and Checkout Fields Different in 2026?</h2>
+    <p>They are separate layers on top of the discovery feed, each with its own flag, and neither is switched on by the flag alone. Search eligibility defaults to on. Ads defaults to off unless a feed-level default applies. Checkout defaults to off and requires a separately enabled integration.</p>
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Flag</th><th>Default</th><th>What OpenAI says about it in 2026</th></tr></thead>
+      <tbody>
+        <tr><td><code>is_eligible_search</code></td><td>True when omitted</td><td><code>false</code> disables search and checkout. Eligibility does not guarantee display.</td></tr>
+        <tr><td><code>is_ads_eligible</code></td><td>Disabled unless a feed-level Ads default applies</td><td>Independent of search eligibility. Pair with the <a href="chatgpt-ads-api-campaign-bidding-guide-2026.html">ChatGPT Ads setup</a>.</td></tr>
+        <tr><td><code>is_eligible_checkout</code></td><td>Disabled</td><td>Opts in only when search is also true and checkout is enabled for the integration.</td></tr>
+        <tr><td><code>seller_privacy_policy</code>, <code>seller_tos</code></td><td>None</td><td>Conditionally required for checkout. Supplying them does not establish checkout readiness.</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>For the full checkout implementation behind that flag, see our <a href="agentic-checkout-spec-merchant-guide-2026.html">agentic checkout merchant guide</a>.</p>
+
+    <h2>Can You Upload a Google Merchant Center Style Feed in 2026?</h2>
+    <p>Yes, but only after OpenAI confirms it for your registered feed, and only within a defined compatibility profile. The specification accepts UTF-8 tab-delimited <code>.txt</code> or <code>.tsv</code>, or comma-delimited <code>.csv</code>, including gzip-compressed versions, with one header row. JSON, spreadsheets, XML, RSS and Atom are not supported on this path, and <code>g:</code>-prefixed XML names must not be used.</p>
+    <p>The differences from the OpenAI format are small and easy to miss. Availability must use <code>preorder</code>, not <code>pre_order</code>, and <code>unknown</code> is not accepted. A registered merchant display name becomes the seller on every row, so an uploaded <code>seller_name</code> cannot override it. And accepted products on this path have search enabled and checkout disabled, so uploaded opt-out flags do not apply. If you need per-item search controls, OpenAI says to use a feed confirmed to follow the OpenAI format.</p>
+
+    <h2>What Are the Common Mistakes With Feed Fields in 2026?</h2>
+    <ul>
+      <li><strong>Assuming an Indian feed reaches Indian shoppers.</strong> Standard uploads target the US. Additional markets need OpenAI's confirmation.</li>
+      <li><strong>Exporting stock as a number.</strong> <code>availability</code> is a closed list, and anything unrecognised rejects the row.</li>
+      <li><strong>Using placeholder text for unknowns.</strong> Omit the value. <code>unknown</code> is valid only where explicitly listed.</li>
+      <li><strong>Putting price in an offer ID.</strong> OpenAI forbids it, and it breaks stability every time the price moves.</li>
+      <li><strong>Reading empty shipping as free.</strong> Omitted <code>shipping_price</code> means unknown.</li>
+      <li><strong>Relying on dates to change prices or stock.</strong> They are metadata only in this contract.</li>
+      <li><strong>Mixing money formats</strong> between file upload strings and API minor-unit integers.</li>
+      <li><strong>Setting the checkout flag and expecting checkout.</strong> It needs a separately enabled integration.</li>
+    </ul>
+
+    <h2>Key Takeaways for 2026</h2>
+    <ul>
+      <li>Nine required fields per row: <code>item_id</code>, <code>title</code>, <code>description</code>, <code>url</code>, <code>brand</code>, <code>seller_name</code>, <code>image_url</code>, <code>availability</code>, <code>price</code>.</li>
+      <li>Feed onboarding is limited to approved partners, applied for at chatgpt.com/merchants.</li>
+      <li>The standard format targets the US; the shared format represents US, CA and MX; other markets need confirmation.</li>
+      <li>Availability rejects anything outside its list. Prices use <code>amount CURRENCY</code> with no separators.</li>
+      <li>One row per variant, stable IDs, shared <code>group_id</code>, and never price in an offer ID.</li>
+      <li>Search defaults on, Ads and checkout default off, and flags alone do not enable checkout.</li>
+    </ul>
+    <p>Distk helps D2C and e-commerce teams in India and internationally audit catalogue exports against specifications like this one, fix the mapping layer before it rejects rows, and decide whether AI shopping surfaces are worth building for yet. If you are preparing a feed for ChatGPT in 2026, that audit is where we start.</p>
+
+    <h2>Sources</h2>
+    <ul>
+      <li><a href="https://developers.openai.com/commerce/specs/file-upload/products.md" target="_blank" rel="noopener">OpenAI, Products (file upload specification)</a></li>
+      <li><a href="https://developers.openai.com/commerce/specs/api/products.md" target="_blank" rel="noopener">OpenAI, Products (API specification)</a></li>
+      <li><a href="https://developers.openai.com/commerce/guides/get-started.md" target="_blank" rel="noopener">OpenAI, Get Started with agentic commerce</a></li>
+    </ul>
+
+  </div>
+</main>
+
+<section class="faq">
+  <div class="container">
+    <div class="section-tag">Key Questions</div>
+    <h2 class="section-title">ChatGPT Product Feed Requirements: FAQs</h2>
+    <div class="faq__grid">
+      <div class="faq__item">
+        <h3>What fields are required in a ChatGPT product feed in 2026?</h3>
+        <p>Nine fields on every row: item_id, title, description, url, brand, seller_name, image_url, availability and price. Everything else is optional for discovery, while Ads and checkout carry their own separate requirements on top.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Can an Indian store sell to Indian shoppers through a ChatGPT feed?</h3>
+        <p>Not by default. OpenAI's specification states the standard upload currently targets the US and the shared format represents US, CA and MX. Additional markets apply only after OpenAI confirms the integration and its allowed countries and currencies. A rupee price does not select India.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Why are rows in my feed being rejected?</h3>
+        <p>The most common cause is availability. It must be in_stock, out_of_stock, pre_order, backorder or unknown, and omitted, empty or unrecognised values reject the row. Price formatting and missing required fields are the next most likely causes.</p>
+      </div>
+      <div class="faq__item">
+        <h3>How should prices be formatted in a ChatGPT feed?</h3>
+        <p>As a decimal amount in major units, a space, and an uppercase ISO 4217 code, for example 79.99 USD. No thousands separators, no exponent notation, and no more decimals than the currency allows. The API schema instead uses integer minor units with a separate currency field.</p>
+      </div>
+      <div class="faq__item">
+        <h3>How do I list product variants?</h3>
+        <p>One row per purchasable selection, each with a distinct item_id, the same group_id, listing_has_variations set to true, and a variant_dict of the selected options. The group ID must differ from every item ID, and OpenAI says never to put price in an offer ID.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Does setting is_eligible_checkout to true enable checkout?</h3>
+        <p>No. OpenAI states checkout requires a separately enabled integration. The flag opts a product in only when search eligibility is also true and checkout is enabled for the integration.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED START -->
+<section class="related" style="padding:3.5rem 0;border-top:1px solid #e8e8e8;background:#fafafa">
+  <div style="max-width:720px;margin:0 auto;padding:0 clamp(1.2rem,4vw,3rem)">
+    <div style="font-family:'Space Mono',monospace;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:#e63312;margin-bottom:1.3rem">Related reading</div>
+    <ul style="list-style:none;margin:0;padding:0;display:grid;gap:0.9rem">
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="chatgpt-product-feed-agentic-commerce-protocol-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">How to Get Your Products Into ChatGPT in 2026: The Agentic Commerce Protocol Feed, Explained</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="chatgpt-shopping-promotions-api-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">Promotions in ChatGPT Shopping in 2026: Why They Are API-Only, and What That Breaks</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="agentic-checkout-spec-merchant-guide-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">Agentic Checkout in 2026: What Merchants Have to Implement to Sell Inside ChatGPT</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="chatgpt-ads-api-campaign-bidding-guide-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">The ChatGPT Ads API in 2026: Campaign Structure, Bidding and What You Actually Control</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="chatgpt-ads-account-management-guide-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">ChatGPT Ads Account Management in 2026: Branding, Reviews, Spend Limits and Account States</a></li>
+    </ul>
+  </div>
+</section>
+<!-- RELATED END -->
+<section class="cta">
+  <div class="cta__inner">
+    <h2>Fix the mapping layer before it rejects your catalogue</h2>
+    <p>Distk audits catalogue exports against AI shopping feed specifications, fixes the availability, price and variant mapping that causes rejected rows, and tells you honestly whether your market is supported yet.</p>
+    <a href="https://distk.in/#contact" class="cta__btn">Start the conversation →</a>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="container">
+    © 2026 Distk · <a href="https://distk.in">distk.in</a> · <a href="mailto:connect@distk.in">connect@distk.in</a>
+  </div>
+</footer>
+</body>
+</html>

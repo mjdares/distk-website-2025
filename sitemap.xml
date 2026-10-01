@@ -2439,7 +2439,7 @@
     <!-- Added September 2026 -->
     <url>
         <loc>https://distk.in/blog/ai-model-pricing-comparison-september-2026.html</loc>
-        <lastmod>2026-09-24</lastmod>
+        <lastmod>2026-10-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -2623,7 +2623,7 @@
     <!-- Added October 2026 -->
     <url>
         <loc>https://distk.in/blog/a2p-calls-india-trai-rules-2026.html</loc>
-        <lastmod>2026-09-30</lastmod>
+        <lastmod>2026-10-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -2641,7 +2641,7 @@
     </url>
     <url>
         <loc>https://distk.in/blog/chatgpt-ads-api-campaign-bidding-guide-2026.html</loc>
-        <lastmod>2026-09-30</lastmod>
+        <lastmod>2026-10-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -2665,7 +2665,7 @@
     </url>
     <url>
         <loc>https://distk.in/blog/chatgpt-measurement-pixel-conversions-api-2026.html</loc>
-        <lastmod>2026-09-30</lastmod>
+        <lastmod>2026-10-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -2689,18 +2689,50 @@
     </url>
     <url>
         <loc>https://distk.in/blog/trai-seven-day-inquiry-window-lead-followup-2026.html</loc>
-        <lastmod>2026-09-30</lastmod>
+        <lastmod>2026-10-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>https://distk.in/blog/trai-tcccpr-third-amendment-2026.html</loc>
-        <lastmod>2026-09-30</lastmod>
+        <lastmod>2026-10-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>https://distk.in/blog/trai-ucc-complaint-appeal-mechanism-2026.html</loc>
+        <lastmod>2026-10-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- Added October 2026 -->
+    <url>
+        <loc>https://distk.in/blog/agentic-checkout-spec-merchant-guide-2026.html</loc>
+        <lastmod>2026-10-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://distk.in/blog/agentic-commerce-production-checklist-2026.html</loc>
+        <lastmod>2026-10-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://distk.in/blog/chatgpt-product-feed-agentic-commerce-protocol-2026.html</loc>
+        <lastmod>2026-10-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://distk.in/blog/chatgpt-product-feed-field-requirements-2026.html</loc>
+        <lastmod>2026-10-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://distk.in/blog/chatgpt-shopping-promotions-api-2026.html</loc>
         <lastmod>2026-10-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>

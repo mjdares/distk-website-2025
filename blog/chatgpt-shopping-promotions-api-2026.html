@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xdifcafwxl");
+  </script>
+
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Promotions in ChatGPT Shopping 2026: Why They Are API-Only | Distk</title>
+<meta name="description" content="Promotions in ChatGPT Shopping explained for 2026: OpenAI states they can only be provided via the API, not file upload. The promotion object, the three supported benefit types, minor-unit money, PATCH upsert behaviour, and what it means for festive-season discounts.">
+<meta name="keywords" content="chatgpt promotions api, chatgpt shopping promotions 2026, agentic commerce promotions, openai product feed promotions, chatgpt shopping discounts, ecommerce marketing agency 2026">
+<meta name="author" content="Distk"><meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://distk.in/blog/chatgpt-shopping-promotions-api-2026.html">
+<meta property="og:type" content="article"><meta property="og:url" content="https://distk.in/blog/chatgpt-shopping-promotions-api-2026.html">
+<meta property="og:title" content="Promotions in ChatGPT Shopping in 2026: Why They Are API-Only, and What That Breaks">
+<meta property="og:description" content="One sentence in OpenAI's docs breaks the nightly-feed plan: promotions can only be provided via the API. The schema, the three discount types, and the PATCH trap.">
+<meta property="og:image" content="https://distk.in/assets/images/og-image.jpg"><meta property="og:site_name" content="Distk">
+<meta property="article:published_time" content="2026-10-01T00:00:00+05:30">
+<meta property="article:modified_time" content="2026-10-01T00:00:00+05:30">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Promotions in ChatGPT Shopping in 2026: Why They Are API-Only, and What That Breaks"><meta name="twitter:description" content="One sentence in OpenAI's docs breaks the nightly-feed plan: promotions can only be provided via the API. The schema, the three discount types, and the PATCH trap.">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Promotions in ChatGPT Shopping in 2026: Why They Are API-Only, and What That Breaks", "description": "A guide to promotions in OpenAI's Agentic Commerce Protocol in 2026: why promotions must be delivered by API rather than file upload, the promotion schema and required fields, the three supported benefit types, minor-unit money, PATCH upsert semantics, product targeting, and the build implications.", "author": {"@type": "Organization", "name": "Distk", "url": "https://distk.in"}, "publisher": {"@type": "Organization", "name": "Distk", "logo": {"@type": "ImageObject", "url": "https://distk.in/assets/images/Logo.png"}}, "datePublished": "2026-10-01", "dateModified": "2026-10-01", "inLanguage": "en", "about": [{"@type": "Thing", "name": "Agentic Commerce Protocol"}, {"@type": "Thing", "name": "ChatGPT Shopping"}, {"@type": "Thing", "name": "promotions API"}, {"@type": "Thing", "name": "OpenAI"}, {"@type": "Thing", "name": "ecommerce discounts"}], "mentions": [{"@type": "Thing", "name": "Agentic Commerce Protocol"}, {"@type": "Thing", "name": "ChatGPT Shopping"}, {"@type": "Thing", "name": "promotions API"}, {"@type": "Thing", "name": "OpenAI"}, {"@type": "Thing", "name": "ecommerce discounts"}], "mainEntityOfPage": {"@type": "WebPage", "@id": "https://distk.in/blog/chatgpt-shopping-promotions-api-2026.html"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can promotions be delivered in a ChatGPT product feed file upload?", "acceptedAnswer": {"@type": "Answer", "text": "No. OpenAI's agentic commerce Get Started guide states that promotions data can only be provided via the API. While it recommends delivering the full product feed once a day by file upload with updates through the API, promotions have no file-upload path and must be sent to the promotions endpoint."}}, {"@type": "Question", "name": "What discount types can a ChatGPT Shopping promotion express in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "OpenAI's promotions schema defines PromotionBenefit as a union of three types: AmountOffBenefit with type amount_off, PercentOffBenefit with type percent_off, and FreeShippingBenefit with type free_shipping. Other offer structures such as bundles or buy-one-get-one have no dedicated benefit type."}}, {"@type": "Question", "name": "What are the required fields for a ChatGPT Shopping promotion?", "acceptedAnswer": {"@type": "Answer", "text": "A Promotion object requires id, title, active_period and benefits. The active_period is a DateTimeRange with required start_time and end_time. Optional fields are description, status, applies_to and url, and known status values are draft, scheduled, active, expired and disabled."}}, {"@type": "Question", "name": "How does the ChatGPT promotions PATCH endpoint behave?", "acceptedAnswer": {"@type": "Answer", "text": "PATCH /product_feeds/{id}/promotions upserts promotions into the specified feed, matched by id, and promotions not included in the request remain unchanged. A successful response returns the feed id and an accepted boolean, a 400 indicates an invalid payload, and a 404 indicates the feed was not found."}}, {"@type": "Question", "name": "How are promotion discount amounts formatted in OpenAI's commerce API?", "acceptedAnswer": {"@type": "Answer", "text": "Amounts use a Price object with an integer amount expressed in ISO 4217 minor units and a currency identifier. This differs from OpenAI's file-upload product format, which expresses prices as a decimal amount in major units followed by a three-letter currency code."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://distk.in/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://distk.in/blog/"}, {"@type": "ListItem", "position": 3, "name": "Promotions in ChatGPT Shopping in 2026: Why They Are API-Only, and What That Breaks", "item": "https://distk.in/blog/chatgpt-shopping-promotions-api-2026.html"}]}</script>
+<link rel="icon" type="image/png" href="../assets/images/favicon.png"><link rel="apple-touch-icon" href="../assets/images/Logo.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BWDTQ1JPL2"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-BWDTQ1JPL2');</script>
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1077520544213003');fbq('track','PageView');</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1077520544213003&ev=PageView&noscript=1"></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#0a0a0a;--paper:#fafafa;--mid:#6b6b6b;--light:#e8e8e8;--accent:#e63312;--accent-soft:rgba(230,51,18,0.08);--mono:'Space Mono',monospace;--sans:'Outfit',sans-serif;--container:1120px;--prose:720px;--gutter:clamp(1.2rem,4vw,3rem)}
+html{font-size:16px;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.container{max-width:var(--container);margin:0 auto;padding:0 var(--gutter)}
+.prose{max-width:var(--prose);margin:0 auto;padding:0 var(--gutter)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--light)}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;max-width:var(--container);margin:0 auto;padding:0.9rem var(--gutter)}
+.nav__logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;color:var(--ink)}
+.nav__logo img{height:32px;width:auto}
+.nav__logo span{font-family:var(--mono);font-weight:700;font-size:1.05rem;letter-spacing:-0.02em}
+.nav__logo small{display:block;font-size:0.55rem;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);line-height:1}
+.nav__back{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid);text-decoration:none;display:flex;align-items:center;gap:0.4rem;transition:color 0.2s}
+.nav__back:hover{color:var(--accent)}
+.nav__cta{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.6rem 1.4rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.nav__cta:hover{background:var(--accent)}
+.hero{padding:7.5rem 0 3.5rem;position:relative;overflow:hidden;border-bottom:1px solid var(--light)}
+.hero::before{content:'PROMO';position:absolute;right:-1%;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:clamp(6rem,26vw,22rem);font-weight:700;color:rgba(0,0,0,0.03);line-height:1;pointer-events:none;user-select:none;letter-spacing:-0.05em}
+.hero__tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1.5rem}
+.hero__tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.hero h1{font-family:var(--sans);font-weight:700;font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;letter-spacing:-0.03em;max-width:20ch;margin-bottom:1.5rem}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero__sub{font-size:1.1rem;color:var(--mid);max-width:56ch;line-height:1.7;margin-bottom:2rem}
+.hero__meta{display:flex;flex-wrap:wrap;gap:1.5rem;font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid)}
+.tldr{background:var(--accent-soft);border-left:3px solid var(--accent);padding:1.8rem 2rem;margin:3rem 0;position:relative}
+.tldr::before{content:'TL;DR';position:absolute;top:-0.6rem;left:2rem;font-family:var(--mono);font-size:0.62rem;font-weight:700;letter-spacing:0.12em;background:var(--accent);color:#fff;padding:0.2rem 0.6rem}
+.tldr p{font-size:0.95rem;color:var(--ink);line-height:1.7}
+.article{padding:4rem 0 5rem}
+.article h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.35rem,2.8vw,1.8rem);letter-spacing:-0.02em;line-height:1.2;margin:3rem 0 1rem;padding-top:1rem;border-top:1px solid var(--light)}
+.article h2:first-child{border-top:none;margin-top:0}
+.article h3{font-family:var(--mono);font-weight:700;font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin:2rem 0 0.6rem}
+.article p{font-size:1rem;color:#2a2a2a;line-height:1.8;margin-bottom:1.25rem}
+.article ul,.article ol{padding-left:1.4rem;margin-bottom:1.25rem}
+.article li{font-size:1rem;color:#2a2a2a;line-height:1.75;margin-bottom:0.4rem}
+.article strong{font-weight:600;color:var(--ink)}
+.article a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(230,51,18,0.3)}
+.article a:hover{border-bottom-color:var(--accent)}
+.article blockquote{border-left:3px solid var(--accent);padding:0.75rem 1.5rem;margin:2rem 0;background:var(--accent-soft)}
+.article blockquote p{color:var(--ink);font-size:1rem;margin:0}
+.table-wrap{overflow-x:auto;margin:2rem 0}
+.data-table{width:100%;border-collapse:collapse;margin:0;font-size:0.88rem}
+.data-table th{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:0.7rem 1rem;text-align:left;white-space:nowrap}
+.data-table td{padding:0.75rem 1rem;border-bottom:1px solid var(--light);vertical-align:top}
+.data-table tr:last-child td{border-bottom:none}
+.data-table tr:nth-child(even) td{background:#f5f5f5}
+.callout{border:1.5px solid var(--light);padding:1.5rem 1.8rem;margin:2rem 0}
+.callout__label{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem}
+.callout p{font-size:0.92rem;color:var(--mid);line-height:1.7;margin:0}
+.faq{padding:4rem 0;background:var(--ink);color:var(--paper)}
+.faq .section-tag{color:var(--accent)}
+.faq .section-tag::before{background:var(--accent)}
+.faq__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2.5rem;margin-top:2.5rem}
+.faq__item{border-left:2px solid var(--accent);padding-left:1.5rem}
+.faq__item h3{font-family:var(--sans);font-weight:600;font-size:0.95rem;margin-bottom:0.5rem;color:var(--paper)}
+.faq__item p{font-size:0.85rem;color:rgba(255,255,255,0.88);line-height:1.65}
+.section-tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1rem}
+.section-tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.section-title{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.15;color:var(--paper)}
+.cta{padding:5rem 0;background:var(--accent-soft);border-top:1px solid rgba(230,51,18,0.12)}
+.cta__inner{max-width:680px;margin:0 auto;padding:0 var(--gutter);text-align:center}
+.cta h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.2;margin-bottom:1rem}
+.cta p{font-size:1rem;color:var(--mid);line-height:1.7;margin-bottom:2rem}
+.cta__btn{display:inline-flex;align-items:center;gap:0.6rem;font-family:var(--mono);font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;padding:1rem 2.2rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.cta__btn:hover{background:var(--accent)}
+.foot{padding:2.5rem 0;border-top:1px solid var(--light);text-align:center;font-family:var(--mono);font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid)}
+.foot a{color:var(--mid);text-decoration:none}.foot a:hover{color:var(--accent)}
+@media(max-width:768px){.faq__grid{grid-template-columns:1fr}.nav__back span{display:none}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="https://distk.in" class="nav__logo">
+      <img src="../assets/images/Logo.png" alt="Distk">
+      <div><span>Distk</span><small>Global Growth Partner</small></div>
+    </a>
+    <a href="/blog/" class="nav__back">← <span>All articles</span></a>
+    <a href="https://distk.in/#contact" class="nav__cta">Work with us</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="prose">
+    <div class="hero__tag">Commerce Guide</div>
+    <h1>Promotions in <em>ChatGPT Shopping</em> in 2026: Why They Are API-Only, and What That Breaks</h1>
+    <p class="hero__sub">Most teams plan a nightly file feed with discounts as a column. OpenAI's spec does not allow it. Promotions are their own object, on their own endpoint, with only three discount types and a PATCH that never deletes.</p>
+    <div class="hero__meta">
+      <span>Distk Editorial</span>
+      <span>Oct 2026</span>
+      <span>11 min read</span>
+    </div>
+  </div>
+</section>
+
+<div class="prose">
+  <div class="tldr">
+    <p>OpenAI's agentic commerce integration guide states that promotions data can only be provided via the API, even though it recommends delivering the full product feed by daily file upload. A promotion is its own object with four required fields: id, title, active_period and benefits. Benefits are limited to amount_off, percent_off and free_shipping, so buy-one-get-one, bundles and tiered offers have no direct representation. Money uses integer ISO 4217 minor units with a currency, not the amount-plus-code string used in file feeds. The PATCH endpoint upserts promotions matched by id and leaves any promotion not included unchanged, so ending a promotion means updating it, not omitting it. Products are targeted through applies_to with product and optional variant IDs, which only works if those IDs are stable. Feed onboarding in ChatGPT is currently limited to approved partners via chatgpt.com/merchants.</p>
+  </div>
+</div>
+
+<main class="article">
+  <div class="prose">
+
+    <style>
+      .article pre{background:#f4f4f4;border-left:3px solid var(--accent);padding:1rem 1.2rem;overflow-x:auto;margin:1.5rem 0;font-size:0.85rem;line-height:1.55}
+      .article code{font-family:var(--mono);font-size:0.85em;background:#f4f4f4;padding:0.05rem 0.3rem}
+      .article pre code{background:none;padding:0;font-size:inherit}
+    </style>
+
+    <h2>Why Are Promotions in ChatGPT Shopping API-Only in 2026?</h2>
+    <p>Because OpenAI's integration guide says so in one plain sentence: "Promotions data can only be provided via the API." The same guide recommends providing the entire product feed once a day by file upload and sending updates through the API during the day. That pattern works for products. For promotions, the file-upload half does not exist, so a team planning a daily feed with discounts baked in has to build an API path regardless of feed size.</p>
+    <p>This is easy to miss because most commerce teams think of a sale as a column on a product row. In OpenAI's model, a promotion is its own object with its own endpoint, its own identity and its own time window, linked to products by reference. This guide is the promotions spoke in our <a href="chatgpt-product-feed-agentic-commerce-protocol-2026.html">guide to the Agentic Commerce Protocol product feed</a>, and the usual gate applies: feed onboarding in ChatGPT is currently available to approved partners via chatgpt.com/merchants.</p>
+
+    <h2>What Is a Promotion Object in 2026?</h2>
+    <p>A promotion is a record with an identifier, a title, an active period, and one or more benefits, plus optional description, status, product targets and URL. Four fields are required: <code>id</code>, <code>title</code>, <code>active_period</code> and <code>benefits</code>. Everything that ties a promotion to particular products, the <code>applies_to</code> list, is optional in the schema.</p>
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Field</th><th>Type</th><th>Required</th><th>What it does in 2026</th></tr></thead>
+      <tbody>
+        <tr><td><code>id</code></td><td>string</td><td>Yes</td><td>Promotion identifier; upserts are matched by it.</td></tr>
+        <tr><td><code>title</code></td><td>string</td><td>Yes</td><td>Promotion title.</td></tr>
+        <tr><td><code>description</code></td><td>Description</td><td>No</td><td>At least one of <code>plain</code>, <code>html</code> or <code>markdown</code> when supplied.</td></tr>
+        <tr><td><code>status</code></td><td>PromotionStatus</td><td>No</td><td>Known values: <code>draft</code>, <code>scheduled</code>, <code>active</code>, <code>expired</code>, <code>disabled</code>.</td></tr>
+        <tr><td><code>active_period</code></td><td>DateTimeRange</td><td>Yes</td><td>Required <code>start_time</code> and <code>end_time</code>.</td></tr>
+        <tr><td><code>benefits</code></td><td>PromotionBenefit[]</td><td>Yes</td><td>One or more of amount off, percent off, free shipping.</td></tr>
+        <tr><td><code>applies_to</code></td><td>ProductTarget[]</td><td>No</td><td>Products, and optionally specific variants, targeted.</td></tr>
+        <tr><td><code>url</code></td><td>string (uri)</td><td>No</td><td>Canonical promotion URL.</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h2>What Kinds of Discounts Can a Promotion Express in 2026?</h2>
+    <p>Three, and only three. <code>PromotionBenefit</code> is a union of <code>AmountOffBenefit</code>, <code>PercentOffBenefit</code> and <code>FreeShippingBenefit</code>. That covers the large majority of retail promotions and excludes the structured ones that are common in Indian D2C, such as buy-two-get-one, bundle pricing, tiered spend thresholds and gift-with-purchase. Those either need to be expressed as one of the three types or left out of the promotion feed.</p>
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Benefit type</th><th>Required fields</th><th>Example use in 2026</th></tr></thead>
+      <tbody>
+        <tr><td><code>amount_off</code></td><td><code>type</code>, <code>amount_off</code> as a Price</td><td>A flat discount in currency.</td></tr>
+        <tr><td><code>percent_off</code></td><td><code>type</code>, <code>percent_off</code> as a number</td><td>A percentage discount.</td></tr>
+        <tr><td><code>free_shipping</code></td><td><code>type</code> only</td><td>Shipping waived.</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Money inside a promotion follows the API convention, not the file-upload one. A <code>Price</code> is an integer <code>amount</code> in ISO 4217 minor units plus a <code>currency</code>. So a 200 rupee discount is the integer 20000 in minor units, not the string "200.00 INR". Reusing a file-feed price formatter here produces discounts a hundred times too large or too small.</p>
+
+    <h2>How Do the Promotion Endpoints Work in 2026?</h2>
+    <p>There are two: one to read and one to write. <code>GET /product_feeds/{id}/promotions</code> returns the promotions for a feed. <code>PATCH /product_feeds/{id}/promotions</code> upserts promotions into the feed, matched by <code>id</code>, and promotions not included in the request remain unchanged.</p>
+    <p>That last sentence shapes how you run promotions operationally. A PATCH is not a replace. Sending today's three live promotions does not remove yesterday's, because promotions not included are left untouched. Ending a promotion therefore means updating it, for example by changing its status or its active period, rather than omitting it from the next request.</p>
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Response</th><th>When it is returned</th><th>What to do in 2026</th></tr></thead>
+      <tbody>
+        <tr><td><code>200 OK</code> on PATCH</td><td>Returns <code>id</code> and an <code>accepted</code> boolean</td><td>Check <code>accepted</code>, not just the status code.</td></tr>
+        <tr><td><code>400 Bad Request</code></td><td>The promotion payload is invalid</td><td>Validate required fields and benefit shapes before sending.</td></tr>
+        <tr><td><code>404 Not Found</code></td><td>The feed is not found</td><td>Confirm the feed ID belongs to your onboarded integration.</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h2>How Should Promotions Connect to Products in 2026?</h2>
+    <p>Through <code>applies_to</code>, a list of <code>ProductTarget</code> objects. Each target requires a <code>product_id</code> and optionally lists <code>variant_ids</code> within that product. That means your promotion targets only work if your product IDs are stable, which is the same identity discipline the product feed specification asks for: never reuse an ID for a different item, and keep IDs stable when price, stock, title or images change.</p>
+    <p>A separate point applies to the product rows themselves. The file-upload specification supports a <code>sale_price</code> on a product, which must be greater than zero, strictly below the regular price, and in the same currency. That is a price on the product, not a promotion object. Teams should decide deliberately which mechanism represents a given discount, rather than sending both and leaving the platform to reconcile them, because the specification states that neither representation reconciles conflicting values for you in related cases such as variant attributes.</p>
+
+    <h2>How Do Common Indian D2C Offers Map to the Three Benefit Types in 2026?</h2>
+    <p>Some map cleanly, some map with a compromise, and some have no representation at all. The table below applies only the three documented benefit types to offers that Indian D2C brands commonly run. It is our mapping of the schema, not guidance OpenAI has published, and anything marked as a compromise should be checked with OpenAI during onboarding before you rely on it.</p>
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Offer you run</th><th>Closest documented benefit</th><th>Fit in 2026</th></tr></thead>
+      <tbody>
+        <tr><td>Flat 200 off on a product</td><td><code>amount_off</code></td><td>Clean fit.</td></tr>
+        <tr><td>20 percent off sitewide or a category</td><td><code>percent_off</code> with <code>applies_to</code> listing the products</td><td>Clean fit if you can enumerate the products.</td></tr>
+        <tr><td>Free delivery above no threshold</td><td><code>free_shipping</code></td><td>Clean fit.</td></tr>
+        <tr><td>Free delivery above a minimum order value</td><td><code>free_shipping</code></td><td>Compromise: the schema has no threshold field.</td></tr>
+        <tr><td>Extra discount for prepaid orders</td><td>None</td><td>No representation; payment-method conditions are not in the schema.</td></tr>
+        <tr><td>Buy two get one free</td><td>None</td><td>No representation.</td></tr>
+        <tr><td>Bundle price for a combo</td><td>None as a promotion</td><td>Consider listing the bundle as its own product with its own price.</td></tr>
+        <tr><td>Coupon code shared on Instagram</td><td>None documented</td><td>No code field in the schema; do not assume code support.</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The practical consequence for a festive-season calendar is that the offers you can describe to ChatGPT are a subset of the offers you actually run. That is not a reason to skip promotions, because the clean fits are usually the headline offers. It is a reason to decide in advance which offers you will represent, rather than discovering the gap when a Diwali campaign goes live.</p>
+
+    <h2>What Does a Promotion Payload Look Like in 2026?</h2>
+    <p>OpenAI's promotions page documents the schema but does not include a sample payload. The example below is our own illustration, assembled strictly from the documented field names, types and enum values, for a 15 percent discount on two variants of one product. Treat it as a shape to validate against the specification, not as an OpenAI example.</p>
+<pre><code>[
+  {
+    "id": "promo-diwali-15",
+    "title": "Diwali 15% off",
+    "status": "scheduled",
+    "active_period": {
+      "start_time": "2026-10-17T00:00:00+05:30",
+      "end_time": "2026-10-24T23:59:59+05:30"
+    },
+    "benefits": [
+      { "type": "percent_off", "percent_off": 15 }
+    ],
+    "applies_to": [
+      { "product_id": "KURTA-COTTON", "variant_ids": ["KURTA-COTTON-M", "KURTA-COTTON-L"] }
+    ]
+  }
+]</code></pre>
+    <p>Two things in that illustration deserve a check against your own integration. The specification describes <code>start_time</code> and <code>end_time</code> only as start and end timestamps without fixing a format, so confirm the expected timestamp format during onboarding. And the request body is an array of promotions, so a single promotion is still sent inside a list.</p>
+
+    <h2>Why Does API-Only Change the Build Plan in 2026?</h2>
+    <p>Because the cheapest integration most teams plan, a nightly file export dropped on a server, cannot carry promotions at all. If discounts matter to your conversion, and for most Indian D2C brands during festive season they matter a great deal, then an API integration is not optional work for a later phase. It is part of the minimum build.</p>
+    <ul>
+      <li><strong>You need API credentials and a feed ID,</strong> which come with onboarding as an approved partner.</li>
+      <li><strong>You need a promotions source of truth</strong> in your own systems, with stable IDs and explicit start and end times.</li>
+      <li><strong>You need a process for ending promotions,</strong> because omitting one from a PATCH leaves it unchanged.</li>
+      <li><strong>You need a money converter</strong> for minor units, separate from any file-feed formatter.</li>
+      <li><strong>You need to map rich offers</strong> onto amount off, percent off or free shipping, or accept leaving them out.</li>
+    </ul>
+
+    <h2>What Are the Common Mistakes With ChatGPT Promotions in 2026?</h2>
+    <ul>
+      <li><strong>Planning promotions into a nightly file feed.</strong> OpenAI states promotions can only be provided via the API.</li>
+      <li><strong>Treating PATCH as replace.</strong> Promotions not included in a request remain unchanged.</li>
+      <li><strong>Formatting discounts as strings.</strong> Promotion money is an integer in minor units with a currency.</li>
+      <li><strong>Expecting buy-X-get-Y support.</strong> Benefits are amount off, percent off or free shipping.</li>
+      <li><strong>Targeting unstable product IDs.</strong> <code>applies_to</code> depends on the same IDs your feed uses.</li>
+      <li><strong>Ignoring the <code>accepted</code> flag.</strong> A 200 response still tells you whether the payload was accepted.</li>
+      <li><strong>Representing the same discount twice</strong> as both a product sale price and a promotion without deciding which is authoritative.</li>
+    </ul>
+
+    <h2>Key Takeaways for 2026</h2>
+    <ul>
+      <li>OpenAI states promotions data can only be provided via the API, not by file upload.</li>
+      <li>A promotion needs <code>id</code>, <code>title</code>, <code>active_period</code> and <code>benefits</code>.</li>
+      <li>Benefits are limited to <code>amount_off</code>, <code>percent_off</code> and <code>free_shipping</code>.</li>
+      <li>Money is an integer in ISO 4217 minor units, not the <code>amount CURRENCY</code> string used in file feeds.</li>
+      <li><code>PATCH</code> upserts by ID and leaves unlisted promotions unchanged, so ending one means updating it.</li>
+      <li>Product targeting depends on stable product and variant IDs.</li>
+    </ul>
+    <p>Distk helps D2C and e-commerce teams in India and internationally map their real promotion calendar onto what AI shopping surfaces can actually express, and plan the API work that file feeds cannot cover. If festive-season discounts are part of your ChatGPT plan for 2026, that mapping is where we start. For the full field reference on products, see our <a href="chatgpt-product-feed-field-requirements-2026.html">ChatGPT product feed requirements guide</a>.</p>
+
+    <h2>Sources</h2>
+    <ul>
+      <li><a href="https://developers.openai.com/commerce/specs/api/promotions.md" target="_blank" rel="noopener">OpenAI, Promotions (API specification)</a></li>
+      <li><a href="https://developers.openai.com/commerce/guides/get-started.md" target="_blank" rel="noopener">OpenAI, Get Started with agentic commerce</a></li>
+      <li><a href="https://developers.openai.com/commerce/specs/file-upload/products.md" target="_blank" rel="noopener">OpenAI, Products (file upload specification)</a></li>
+    </ul>
+
+  </div>
+</main>
+
+<section class="faq">
+  <div class="container">
+    <div class="section-tag">Key Questions</div>
+    <h2 class="section-title">ChatGPT Shopping Promotions: FAQs</h2>
+    <div class="faq__grid">
+      <div class="faq__item">
+        <h3>Can promotions be included in a ChatGPT product feed file?</h3>
+        <p>No. OpenAI's integration guide states that promotions data can only be provided via the API. Products can be delivered by file upload, but promotions need the promotions endpoint.</p>
+      </div>
+      <div class="faq__item">
+        <h3>What discount types does ChatGPT Shopping support?</h3>
+        <p>Three benefit types: amount_off, percent_off and free_shipping. Offers such as buy-two-get-one, bundle pricing or tiered spend discounts have no direct type and must be mapped onto these or left out.</p>
+      </div>
+      <div class="faq__item">
+        <h3>What fields does a promotion need?</h3>
+        <p>Four are required: id, title, active_period with start_time and end_time, and benefits. Description, status, applies_to product targets and url are optional.</p>
+      </div>
+      <div class="faq__item">
+        <h3>How do I end a promotion?</h3>
+        <p>Update it, for example by changing its status or active period. The PATCH endpoint upserts promotions matched by id and leaves any promotion not included in the request unchanged, so omitting it does not remove it.</p>
+      </div>
+      <div class="faq__item">
+        <h3>How should discount amounts be formatted?</h3>
+        <p>As a Price object with an integer amount in ISO 4217 minor units and a currency. This differs from the file-upload product format, which writes money as a decimal string followed by a currency code.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Can a promotion apply to specific variants?</h3>
+        <p>Yes. The applies_to list holds ProductTarget objects, each requiring a product_id and optionally listing variant_ids within that product.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED START -->
+<section class="related" style="padding:3.5rem 0;border-top:1px solid #e8e8e8;background:#fafafa">
+  <div style="max-width:720px;margin:0 auto;padding:0 clamp(1.2rem,4vw,3rem)">
+    <div style="font-family:'Space Mono',monospace;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:#e63312;margin-bottom:1.3rem">Related reading</div>
+    <ul style="list-style:none;margin:0;padding:0;display:grid;gap:0.9rem">
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="chatgpt-product-feed-field-requirements-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">ChatGPT Product Feed Requirements in 2026: The Fields That Decide Whether You Get Shown</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="chatgpt-ads-api-campaign-bidding-guide-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">The ChatGPT Ads API in 2026: Campaign Structure, Bidding and What You Actually Control</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="chatgpt-ads-bulk-api-agencies-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">Bulk Campaign Management in ChatGPT Ads: The Bulk API for Agencies in 2026</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="chatgpt-measurement-pixel-conversions-api-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">The ChatGPT Measurement Pixel and Conversions API in 2026</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="chatgpt-product-feed-agentic-commerce-protocol-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">How to Get Your Products Into ChatGPT in 2026: The Agentic Commerce Protocol Feed, Explained</a></li>
+    </ul>
+  </div>
+</section>
+<!-- RELATED END -->
+<section class="cta">
+  <div class="cta__inner">
+    <h2>Map your real promotion calendar onto what the API can express</h2>
+    <p>Distk maps festive-season and everyday offers onto AI shopping promotion schemas, plans the API work that file feeds cannot cover, and tells you which discounts will not survive the translation.</p>
+    <a href="https://distk.in/#contact" class="cta__btn">Start the conversation →</a>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="container">
+    © 2026 Distk · <a href="https://distk.in">distk.in</a> · <a href="mailto:connect@distk.in">connect@distk.in</a>
+  </div>
+</footer>
+</body>
+</html>
