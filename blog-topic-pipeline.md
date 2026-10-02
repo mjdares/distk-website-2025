@@ -224,7 +224,7 @@ Correction to R2.5: the Google Ads Developer Blog post bodies ARE reachable thro
 
 **Cluster I: ASCI AI-generated content labelling (India, thinnest competition, dated)**
 Hub: #1 `asci-ai-generated-content-labelling-guidelines-2026`. Spokes: #2 sponsored AI chatbot recommendations, #3 virtual influencers and AI likeness, #4 what does not need a label.
-Why: one document, four separate searches, binding on every Indian advertiser from roughly mid-December 2026. Links to our ChatGPT Ads, influencer and TRAI clusters.
+Why: one document, four separate searches, binding on every Indian advertiser from three months from publication; ASCI does not state the calendar date (press release dated 29 September 2026 implies 29 December 2026 if that is the publication date; the guideline is signed 17 September 2026). Links to our ChatGPT Ads, influencer and TRAI clusters.
 
 **Cluster J: Google Ads measurement and Demand Gen, September 2026**
 Hub: #9 `google-ads-data-manager-data-strength-2026`. Spokes: #10 Demand Gen September Drop, #13 Meridian GeoX, #14 AI Max reporting, #17 Asset Studio video.
