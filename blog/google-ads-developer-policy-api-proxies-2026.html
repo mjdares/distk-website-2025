@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xdifcafwxl");
+  </script>
+
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Google Ads Developer Policy 2026: The Proxy and MCP Ban Explained for Agencies | Distk</title>
+<meta name="description" content="Google's 31 August 2026 Google Ads Developer Policies update prohibits programmatic proxies, including hosted MCP servers. What counts as a proxy, what is still allowed, how it affects AI agents, the enforcement process, and the agency checklist for 2026.">
+<meta name="keywords" content="google ads developer policy 2026, google ads api proxy ban, google ads mcp server policy, programmatic proxy google ads, google ads api policy change, google ads AI agent compliance">
+<meta name="author" content="Distk"><meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://distk.in/blog/google-ads-developer-policy-api-proxies-2026.html">
+<meta property="og:type" content="article"><meta property="og:url" content="https://distk.in/blog/google-ads-developer-policy-api-proxies-2026.html">
+<meta property="og:title" content="Google Bans Programmatic Proxies in 2026: What the Developer Policy Means for Your Agency's Tools">
+<meta property="og:description" content="Google now prohibits programmatic proxies, and its definition names MCP servers. What that means for agency tools and AI agents connected to Google Ads.">
+<meta property="og:image" content="https://distk.in/assets/images/og-image.jpg"><meta property="og:site_name" content="Distk">
+<meta property="article:published_time" content="2026-10-02T00:00:00+05:30">
+<meta property="article:modified_time" content="2026-10-02T00:00:00+05:30">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Google Bans Programmatic Proxies in 2026: What the Developer Policy Means for Your Agency's Tools"><meta name="twitter:description" content="Google now prohibits programmatic proxies, and its definition names MCP servers. What that means for agency tools and AI agents connected to Google Ads.">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Google Bans Programmatic Proxies in 2026: What the Developer Policy Means for Your Agency's Tools", "description": "An agency guide to the Google Ads Developer Policies update announced on 31 August 2026: the definition of a programmatic proxy including hosted MCP servers, the prohibited practices word for word, what remains allowed, how it affects AI agents, enforcement, and a checklist.", "author": {"@type": "Organization", "name": "Distk", "url": "https://distk.in"}, "publisher": {"@type": "Organization", "name": "Distk", "logo": {"@type": "ImageObject", "url": "https://distk.in/assets/images/Logo.png"}}, "datePublished": "2026-10-02", "dateModified": "2026-10-02", "inLanguage": "en", "about": [{"@type": "Thing", "name": "Google Ads Developer Policies"}, {"@type": "Thing", "name": "Google Ads API"}, {"@type": "Thing", "name": "programmatic proxy"}, {"@type": "Thing", "name": "Model Context Protocol"}, {"@type": "Thing", "name": "Google Cloud project"}, {"@type": "Thing", "name": "AI agents"}], "mentions": [{"@type": "Thing", "name": "Google Ads Developer Policies"}, {"@type": "Thing", "name": "Google Ads API"}, {"@type": "Thing", "name": "programmatic proxy"}, {"@type": "Thing", "name": "Model Context Protocol"}, {"@type": "Thing", "name": "Google Cloud project"}, {"@type": "Thing", "name": "AI agents"}], "mainEntityOfPage": {"@type": "WebPage", "@id": "https://distk.in/blog/google-ads-developer-policy-api-proxies-2026.html"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What changed in the Google Ads Developer Policies in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "On 31 August 2026 Google announced updates to the Google Ads Developer Policies, formerly the Google Ads API Policy. Integrations now need to connect directly to Google Ads services using their own dedicated Google Cloud project, and programmatic proxies that bypass the verifiable interface between end users and Google are prohibited. The policy now explicitly covers developer tools such as MCPs."}}, {"@type": "Question", "name": "What is a programmatic proxy under Google Ads policy?", "acceptedAnswer": {"@type": "Answer", "text": "Google defines a programmatic proxy as a third-party hosted interface, secondary Application Programming Interface (API), wrapper service, Model Context Protocol (MCP) server, proxy endpoint, or any similar service that solely replicates, wraps, or re-exposes Google Ads programmatic capabilities as an intermediate layer."}}, {"@type": "Question", "name": "Can agencies still connect Google Ads to AI agents through MCP in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, under conditions. The policy does not restrict your own programmatic use of the Google Ads API or open-source tools that end users download and connect using their own access credentials. A third-party hosted MCP server that re-exposes Google Ads capabilities through the vendor's access matches Google's definition of a prohibited programmatic proxy, and account changes require manual sign-in and per-entity authentication."}}, {"@type": "Question", "name": "Is there a deadline for the Google Ads proxy policy?", "acceptedAnswer": {"@type": "Answer", "text": "Google's announcement of 31 August 2026 does not give a single switch-off date. It states that integrations now need to connect directly using their own dedicated Google Cloud project, and that the Ads API Compliance team is actively reviewing existing integrations and will contact developers who need to transition."}}, {"@type": "Question", "name": "What are the penalties for breaching the Google Ads Developer Policies?", "acceptedAnswer": {"@type": "Answer", "text": "Google sends a notice to the email address on file with the developer's Google Cloud project and may allow a period to correct violations with no penalty. It may issue a warning before charging non-compliance fees according to the Google Ads API rate sheet, and violations can also lead to downgraded access, additional quota limits or termination of Google Ads programmatic access."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://distk.in/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://distk.in/blog/"}, {"@type": "ListItem", "position": 3, "name": "Google Bans Programmatic Proxies in 2026: What the Developer Policy Means for Your Agency's Tools", "item": "https://distk.in/blog/google-ads-developer-policy-api-proxies-2026.html"}]}</script>
+<link rel="icon" type="image/png" href="../assets/images/favicon.png"><link rel="apple-touch-icon" href="../assets/images/Logo.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BWDTQ1JPL2"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-BWDTQ1JPL2');</script>
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1077520544213003');fbq('track','PageView');</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1077520544213003&ev=PageView&noscript=1"></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#0a0a0a;--paper:#fafafa;--mid:#6b6b6b;--light:#e8e8e8;--accent:#e63312;--accent-soft:rgba(230,51,18,0.08);--mono:'Space Mono',monospace;--sans:'Outfit',sans-serif;--container:1120px;--prose:720px;--gutter:clamp(1.2rem,4vw,3rem)}
+html{font-size:16px;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.container{max-width:var(--container);margin:0 auto;padding:0 var(--gutter)}
+.prose{max-width:var(--prose);margin:0 auto;padding:0 var(--gutter)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--light)}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;max-width:var(--container);margin:0 auto;padding:0.9rem var(--gutter)}
+.nav__logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;color:var(--ink)}
+.nav__logo img{height:32px;width:auto}
+.nav__logo span{font-family:var(--mono);font-weight:700;font-size:1.05rem;letter-spacing:-0.02em}
+.nav__logo small{display:block;font-size:0.55rem;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);line-height:1}
+.nav__back{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid);text-decoration:none;display:flex;align-items:center;gap:0.4rem;transition:color 0.2s}
+.nav__back:hover{color:var(--accent)}
+.nav__cta{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.6rem 1.4rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.nav__cta:hover{background:var(--accent)}
+.hero{padding:7.5rem 0 3.5rem;position:relative;overflow:hidden;border-bottom:1px solid var(--light)}
+.hero::before{content:'POLICY';position:absolute;right:-1%;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:clamp(6rem,26vw,22rem);font-weight:700;color:rgba(0,0,0,0.03);line-height:1;pointer-events:none;user-select:none;letter-spacing:-0.05em}
+.hero__tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1.5rem}
+.hero__tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.hero h1{font-family:var(--sans);font-weight:700;font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;letter-spacing:-0.03em;max-width:20ch;margin-bottom:1.5rem}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero__sub{font-size:1.1rem;color:var(--mid);max-width:56ch;line-height:1.7;margin-bottom:2rem}
+.hero__meta{display:flex;flex-wrap:wrap;gap:1.5rem;font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid)}
+.tldr{background:var(--accent-soft);border-left:3px solid var(--accent);padding:1.8rem 2rem;margin:3rem 0;position:relative}
+.tldr::before{content:'TL;DR';position:absolute;top:-0.6rem;left:2rem;font-family:var(--mono);font-size:0.62rem;font-weight:700;letter-spacing:0.12em;background:var(--accent);color:#fff;padding:0.2rem 0.6rem}
+.tldr p{font-size:0.95rem;color:var(--ink);line-height:1.7}
+.article{padding:4rem 0 5rem}
+.article h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.35rem,2.8vw,1.8rem);letter-spacing:-0.02em;line-height:1.2;margin:3rem 0 1rem;padding-top:1rem;border-top:1px solid var(--light)}
+.article h2:first-child{border-top:none;margin-top:0}
+.article h3{font-family:var(--mono);font-weight:700;font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin:2rem 0 0.6rem}
+.article p{font-size:1rem;color:#2a2a2a;line-height:1.8;margin-bottom:1.25rem}
+.article ul,.article ol{padding-left:1.4rem;margin-bottom:1.25rem}
+.article li{font-size:1rem;color:#2a2a2a;line-height:1.75;margin-bottom:0.4rem}
+.article strong{font-weight:600;color:var(--ink)}
+.article a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(230,51,18,0.3)}
+.article a:hover{border-bottom-color:var(--accent)}
+.article blockquote{border-left:3px solid var(--accent);padding:0.75rem 1.5rem;margin:2rem 0;background:var(--accent-soft)}
+.article blockquote p{color:var(--ink);font-size:1rem;margin:0}
+.table-wrap{overflow-x:auto;margin:2rem 0}
+.data-table{width:100%;border-collapse:collapse;margin:0;font-size:0.88rem}
+.data-table th{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:0.7rem 1rem;text-align:left;white-space:nowrap}
+.data-table td{padding:0.75rem 1rem;border-bottom:1px solid var(--light);vertical-align:top}
+.data-table tr:last-child td{border-bottom:none}
+.data-table tr:nth-child(even) td{background:#f5f5f5}
+.callout{border:1.5px solid var(--light);padding:1.5rem 1.8rem;margin:2rem 0}
+.callout__label{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem}
+.callout p{font-size:0.92rem;color:var(--mid);line-height:1.7;margin:0}
+.faq{padding:4rem 0;background:var(--ink);color:var(--paper)}
+.faq .section-tag{color:var(--accent)}
+.faq .section-tag::before{background:var(--accent)}
+.faq__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2.5rem;margin-top:2.5rem}
+.faq__item{border-left:2px solid var(--accent);padding-left:1.5rem}
+.faq__item h3{font-family:var(--sans);font-weight:600;font-size:0.95rem;margin-bottom:0.5rem;color:var(--paper)}
+.faq__item p{font-size:0.85rem;color:rgba(255,255,255,0.88);line-height:1.65}
+.section-tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1rem}
+.section-tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.section-title{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.15;color:var(--paper)}
+.cta{padding:5rem 0;background:var(--accent-soft);border-top:1px solid rgba(230,51,18,0.12)}
+.cta__inner{max-width:680px;margin:0 auto;padding:0 var(--gutter);text-align:center}
+.cta h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.2;margin-bottom:1rem}
+.cta p{font-size:1rem;color:var(--mid);line-height:1.7;margin-bottom:2rem}
+.cta__btn{display:inline-flex;align-items:center;gap:0.6rem;font-family:var(--mono);font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;padding:1rem 2.2rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.cta__btn:hover{background:var(--accent)}
+.foot{padding:2.5rem 0;border-top:1px solid var(--light);text-align:center;font-family:var(--mono);font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid)}
+.foot a{color:var(--mid);text-decoration:none}.foot a:hover{color:var(--accent)}
+@media(max-width:768px){.faq__grid{grid-template-columns:1fr}.nav__back span{display:none}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="https://distk.in" class="nav__logo">
+      <img src="../assets/images/Logo.png" alt="Distk">
+      <div><span>Distk</span><small>Global Growth Partner</small></div>
+    </a>
+    <a href="/blog/" class="nav__back">← <span>All articles</span></a>
+    <a href="https://distk.in/#contact" class="nav__cta">Work with us</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="prose">
+    <div class="hero__tag">Paid Media Guide</div>
+    <h1>Google Bans <em>Programmatic Proxies</em> in 2026: What It Means for Your Agency's Tools</h1>
+    <p class="hero__sub">There is no switch-off date, which is why this one is easy to miss. Google's updated developer policy decides whether the tools touching your clients' accounts, and the AI agents you plug in, are allowed to work the way they do now.</p>
+    <div class="hero__meta">
+      <span>Distk Editorial</span>
+      <span>Oct 2026</span>
+      <span>12 min read</span>
+    </div>
+  </div>
+</section>
+
+<div class="prose">
+  <div class="tldr">
+    <p>On 31 August 2026 Google updated what it now calls the Google Ads Developer Policies, formerly the Google Ads API Policy. Integrations must now connect directly to Google Ads using their own dedicated Google Cloud project, and programmatic proxies are prohibited. Google defines a programmatic proxy as a third-party hosted interface, secondary API, wrapper service, Model Context Protocol (MCP) server, proxy endpoint or similar service that solely replicates, wraps or re-exposes Google Ads capabilities as an intermediate layer. Your own programmatic use and open-source tools that end users run with their own credentials remain allowed. Account changes require manual sign-in and per-entity authentication. Enforcement is graduated, starting with a notice to the email on your Google Cloud project, and Google's compliance team is already reviewing existing integrations.</p>
+  </div>
+</div>
+
+<main class="article">
+  <div class="prose">
+<style>
+.prose pre{background:#f4f4f4;border-left:3px solid var(--accent);padding:1rem 1.1rem;overflow-x:auto;margin:1.5rem 0;font-size:0.85rem;line-height:1.6}
+.prose pre code{font-family:var(--mono);font-size:0.85rem;color:#1a1a1a;background:none;padding:0;white-space:pre}
+.prose p code,.prose li code,.prose td code{font-family:var(--mono);font-size:0.86em;background:#f0f0f0;padding:0.1rem 0.35rem;border-radius:2px}
+</style>
+
+    <h2>What Changed in the Google Ads Developer Policies in 2026?</h2>
+    <p>On 31 August 2026 Google announced updates to what it now calls the Google Ads Developer Policies, formerly the "Google Ads API Policy". The core change is that integrations "now need to connect directly to Google Ads services using their own dedicated Google Cloud project", and that programmatic proxies, which Google says "bypass the verifiable and secure interface between end-users and Google", are prohibited. Google also says its Ads API Compliance team is "actively reviewing existing integrations" and will contact developers who need to transition.</p>
+    <p>Nothing stops working on a single date here, which is exactly why this change is easy to miss. It is a policy that is already published and being enforced through reviews, not a version that switches off. If your agency uses a tool that touches Google Ads accounts on your behalf, or plans to connect Google Ads to an AI agent, this is the policy that decides whether that tool is allowed to exist in its current form. It sits alongside the hard deadline covered in our <a href="google-ads-api-v22-sunset-october-2026.html">Google Ads API v22 sunset guide</a>.</p>
+
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>What</th><th>What Google published in 2026</th><th>Why an agency should care</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Announced</strong></td><td>31 August 2026, Google Ads Developer Blog</td><td>No single switch-off date. Enforcement runs through compliance reviews.</td></tr>
+        <tr><td><strong>Renamed policy</strong></td><td>Google Ads Developer Policies, formerly the Google Ads API Policy</td><td>The policy now explicitly covers "other Google Ads developer tools like MCPs".</td></tr>
+        <tr><td><strong>Core rule</strong></td><td>Integrations must connect directly using their own dedicated Google Cloud project</td><td>Shared access routed through someone else's project is the target.</td></tr>
+        <tr><td><strong>Prohibited</strong></td><td>Programmatic proxies, including MCP servers that solely re-expose Google Ads capabilities</td><td>Hosted AI-agent connectors are named directly.</td></tr>
+        <tr><td><strong>Explicitly allowed</strong></td><td>Your own programmatic use, and open-source tools that end users run with their own credentials</td><td>Self-hosted tooling on your own access is fine.</td></tr>
+        <tr><td><strong>Enforcement</strong></td><td>Notice, a possible correction period, warnings, non-compliance fees, downgrades or termination</td><td>Contact email on your Google Cloud project matters.</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h2>What Exactly Is a Programmatic Proxy in 2026?</h2>
+    <p>Google defines it precisely, and the definition is broader than most people expect. In its help article, a programmatic proxy is "a third-party hosted interface, secondary Application Programming Interface (API), wrapper service, Model Context Protocol (MCP) server, proxy endpoint, or any similar service that solely replicates, wraps, or re-exposes Google Ads programmatic capabilities as an intermediate layer."</p>
+    <p>Two words in that sentence do most of the work. "Hosted" means the service runs on someone else's infrastructure rather than yours. "Solely" means its purpose is to pass Google Ads capabilities through, rather than being a tool with its own functionality that happens to use the API. A full reporting or management product with its own interface is a tool. A service whose job is to hand you or your AI agent a second API in front of Google Ads is the thing being prohibited.</p>
+    <p>The policy text repeats the definition in its Programmatic use section and states the consequence: "Any use of Google Ads by agencies or end-advertiser clients requires them to use their own Google Cloud Platform account and Google Ads access in order to ensure Google Ads API access is associated with the individual end-advertiser or agency."</p>
+
+    <h2>Why Is Google Doing This in 2026?</h2>
+    <p>Google gives two reasons in its 31 August announcement, both framed as protecting advertisers rather than restricting developers. Its stated context is that "new AI capabilities continue to shape the advertising industry", which is a fair reading of why a rule about intermediate layers arrives now: AI agents are the new and fast-growing reason people want a second API in front of Google Ads.</p>
+    <ul>
+      <li><strong>Security:</strong> "Using unaudited proxies can provide unauthorized actors access to your account. They also introduce the risk of cross-tenant data leaks, which could expose your data more broadly than intended."</li>
+      <li><strong>Performance:</strong> "High-volume traffic routed through a single proxy can throttle throughput, cause latency across all users, and require enforcement across all users of a proxy when mitigating localized Denial of Service (DoS)."</li>
+    </ul>
+    <p>The second reason is the one with commercial teeth. If many advertisers share one proxy and one of them triggers enforcement, Google's own description is that enforcement can land on every user of that proxy. Your client's account access can depend on the behaviour of strangers sharing the same intermediary.</p>
+
+    <h2>What Does the Policy Prohibit, Word for Word, in 2026?</h2>
+    <p>The Programmatic use section is short and specific. These are the practices it names, quoted from the Google Ads Developer Policies page.</p>
+    <ul>
+      <li>Allowing third parties "to access Google Ads access in a way that would allow those third parties to avoid applying for their own Google Ads developer access and Google Cloud Platform project, or avoid circumventing Google's RMF."</li>
+      <li>Embedding "credentials in middleware that obfuscate the origin of the automated action".</li>
+      <li>Operating "shared developer proxy services that route automated requests from multiple independent businesses to bypass individual access".</li>
+      <li>"Granting end-users headless programmatic access to make account modifications to Google Ads accounts without Google review of the developer's proposed use case, or without direct, per-entity Google authentication".</li>
+    </ul>
+    <p>The policy also states that "end users of your tool will need to manually sign in to make changes to their accounts". For anyone designing an AI workflow that edits campaigns, that sentence is the constraint to design around: account changes need a human sign-in and per-entity authentication, not a shared credential the agent reuses.</p>
+
+    <h2>What Is Still Allowed Under the 2026 Policy?</h2>
+    <p>More than the headlines suggest. Google writes that the policy "doesn't restrict your own use of the Google Ads API in a programmatic or automated way, nor does it restrict open-source tools where the end-users download the software and connect it to Google Ads using their own access credentials." The prohibition is on enabling other parties through your access, not on automation itself.</p>
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Setup</th><th>Status under the policy text in 2026</th><th>Why</th></tr></thead>
+      <tbody>
+        <tr><td>Your agency's own scripts on your own Google Cloud project and developer access</td><td>Allowed</td><td>Your own programmatic use is explicitly not restricted.</td></tr>
+        <tr><td>An open-source MCP server you download and run with your own credentials</td><td>Allowed</td><td>The open-source, own-credentials carve-out.</td></tr>
+        <tr><td>A full-service or reporting tool where users sign in themselves</td><td>Normal tool use, subject to RMF</td><td>It is a tool with its own functionality, not a pass-through.</td></tr>
+        <tr><td>A hosted MCP or API wrapper using the vendor's access for many advertisers</td><td>Prohibited as a programmatic proxy</td><td>Third-party hosted, solely re-exposes capabilities.</td></tr>
+        <tr><td>Middleware with embedded credentials making changes for clients</td><td>Prohibited</td><td>Obfuscates the origin of the automated action.</td></tr>
+        <tr><td>A secondary interface you want to offer properly</td><td>Possible via Google's Developer Secondary Interface Review</td><td>Any developer may request review of a proposed use.</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>That last row matters for tool vendors. Google describes a review path for secondary programmatic interfaces with stated standards: full RMF adherence, "unbiased cross-channel measurement frameworks", and auditing that includes "immutable transaction logs that map every automated programmatic action directly to a verified end-advertiser account" and "industry-standard third-party security assessments (e.g., SOC 2 Type II)". A vendor that says its proxy is compliant should be able to tell you whether it has been through that review.</p>
+
+    <h2>How Does This Affect Agencies Using AI Agents in 2026?</h2>
+    <p>Directly, because the policy names MCP servers. The Model Context Protocol is how most AI agents in 2026 connect to external systems, and the fastest way to give an agent Google Ads access has been a hosted MCP connector. If that connector is operated by a third party and works by re-exposing Google Ads through its own access, it now matches Google's definition of a programmatic proxy.</p>
+    <p>The compliant pattern is the one the carve-out describes: run the connector yourself, on your own Google Cloud project, with your own developer access, and with each advertiser authenticating as themselves. That is more setup than pasting an API key into a hosted service, and it is the setup Google now requires. Our <a href="how-to-audit-google-ads-account-2026.html">Google Ads account audit guide</a> is a good place to fold an integrations review into routine account hygiene.</p>
+
+    <h2>What Other Obligations in the Policy Do Agencies Miss in 2026?</h2>
+    <p>The proxy rule is the news, but the same policy page carries obligations that apply to agencies every day, and several are easy to breach without realising.</p>
+    <ul>
+      <li><strong>Delayed data disclosure:</strong> "If your reporting of Google Ads performance data is delayed to end-advertisers or other clients by more than 24 hours, you must prominently disclose this delay to your clients."</li>
+      <li><strong>Client data consent:</strong> agencies "must obtain written consent from your clients before selling, redistributing, sub-licensing, or otherwise disclosing or transferring data specific to their Google Ads accounts including keywords, bids, campaign settings, or performance data."</li>
+      <li><strong>Unused access:</strong> "Google may revoke your access if it's not used consecutively for 90 days."</li>
+      <li><strong>Demo on request:</strong> "Upon request from Google, you must provide a demo account to your tool within 7 days of the request."</li>
+      <li><strong>Contact details:</strong> "Failure to respond to requests or notices from the API team will constitute a violation of these policies and may result in downgrading your status or termination of your API access."</li>
+    </ul>
+
+    <h2>What Happens If an Integration Breaches the Policy in 2026?</h2>
+    <p>Google describes a graduated process, which is why the contact email matters more than it sounds. Notices go "to the email address on file with your Google Cloud project, and you might have a period of time to correct these violations with no penalty." Google "may send you a warning before charging non-compliance fees in accordance with the rates detailed on the Google Ads API rate sheet." Further consequences can include "downgrading your access, imposing other quota limits on your Google Ads usage, or termination of your Google Ads programmatic access."</p>
+    <p>The 31 August announcement adds that compliance communications "will come from the google.com domain". If the contact on your Google Cloud project is a former employee's mailbox, the correction period can run out without anyone reading the notice.</p>
+
+    <h2>What Should an Agency Do This Week in 2026?</h2>
+    <ol>
+      <li><strong>List every system that touches Google Ads.</strong> Scripts, connectors, BI pipelines, bid tools, reporting dashboards, AI agents and MCP connectors.</li>
+      <li><strong>For each, answer one question:</strong> whose Google Cloud project and whose developer access does it use? Yours, the vendor's, or a shared intermediary's?</li>
+      <li><strong>Flag hosted MCP connectors and API wrappers</strong> that run on a vendor's access. Those are the closest match to Google's definition.</li>
+      <li><strong>Ask vendors directly</strong> whether they have been through Google's Developer Secondary Interface Review, and get the answer in writing.</li>
+      <li><strong>Update the contact email</strong> in API Center and on your Google Cloud project to a monitored alias, as Google recommends.</li>
+      <li><strong>Check the 24-hour disclosure and client consent rules</strong> against how you currently report and share client data.</li>
+      <li><strong>If unsure whether a tool qualifies,</strong> Google says to contact the Google Ads API Compliance team rather than guess.</li>
+    </ol>
+
+    <h2>What Are the Common Mistakes in 2026?</h2>
+    <ul>
+      <li><strong>Waiting for a deadline.</strong> There is no single switch-off date. Enforcement happens through reviews, starting now.</li>
+      <li><strong>Assuming "it is a popular tool" means "it is compliant".</strong> Popularity is not the test. Whose access it uses is.</li>
+      <li><strong>Treating all automation as banned.</strong> Your own programmatic use and self-run open-source tools are explicitly allowed.</li>
+      <li><strong>Plugging client accounts into a hosted MCP connector for an AI agent</strong> without checking how it authenticates.</li>
+      <li><strong>Letting an AI agent make account changes on a shared credential.</strong> The policy requires manual sign-in and per-entity authentication for changes.</li>
+      <li><strong>Leaving a stale contact email on the Google Cloud project.</strong> That is where the correction-period notice goes.</li>
+      <li><strong>Overlooking the 24-hour delayed-data disclosure</strong> in client dashboards that refresh daily.</li>
+    </ul>
+
+    <h2>Key Takeaways for 2026</h2>
+    <ul>
+      <li>Google updated the Google Ads Developer Policies on 31 August 2026. Integrations must connect directly using their own dedicated Google Cloud project.</li>
+      <li>Programmatic proxies are prohibited, and Google's definition explicitly includes hosted MCP servers that solely re-expose Google Ads capabilities.</li>
+      <li>Your own automation and open-source tools run on your own credentials remain allowed.</li>
+      <li>Account changes require manual sign-in and per-entity authentication, which shapes how AI agents can be connected.</li>
+      <li>Enforcement is graduated: notice to your Google Cloud contact email, a possible correction window, then fees, downgrades or termination.</li>
+      <li>The same policy requires disclosing reporting delays over 24 hours and written client consent before sharing account data.</li>
+    </ul>
+    <p>Distk audits the integrations behind Google Ads accounts for agencies and in-house teams in India and internationally: which tools touch the account, whose access they use, and whether an AI agent setup meets the policy before Google's compliance team asks. If you are connecting Google Ads to AI tooling in 2026, that review is where we start.</p>
+
+    <h2>Sources</h2>
+    <ul>
+      <li><a href="http://feeds.feedburner.com/GoogleAdsDeveloperBlog" target="_blank" rel="noopener">Google Ads Developer Blog, "Making Google Ads More Secure with Updates to Developer Policies"</a>, Nadine Wang, 31 August 2026 (read via the blog's official feed).</li>
+      <li><a href="https://support.google.com/adspolicy/answer/6169371?hl=en" target="_blank" rel="noopener">Google Ads Developer Policies</a>, Advertising Policies Help.</li>
+      <li><a href="https://support.google.com/google-ads/answer/18103182" target="_blank" rel="noopener">Google Ads Help, definition of a programmatic proxy</a>.</li>
+    </ul>
+
+  </div>
+</main>
+
+<section class="faq">
+  <div class="container">
+    <div class="section-tag">Key Questions</div>
+    <h2 class="section-title">Google Ads Developer Policy in 2026: FAQs</h2>
+    <div class="faq__grid">
+      <div class="faq__item">
+        <h3>What changed in the Google Ads Developer Policies in 2026?</h3>
+        <p>Google announced on 31 August 2026 that integrations must connect directly to Google Ads services using their own dedicated Google Cloud project, and that programmatic proxies are prohibited. The policy was renamed from the Google Ads API Policy and now explicitly covers developer tools such as MCPs.</p>
+      </div>
+      <div class="faq__item">
+        <h3>What counts as a programmatic proxy?</h3>
+        <p>Google defines it as a third-party hosted interface, secondary API, wrapper service, Model Context Protocol (MCP) server, proxy endpoint or any similar service that solely replicates, wraps or re-exposes Google Ads programmatic capabilities as an intermediate layer.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Can I still use an MCP server to connect Google Ads to an AI agent?</h3>
+        <p>Yes, if you run it yourself. The policy does not restrict open-source tools that end users download and connect using their own access credentials, or your own programmatic use. A third-party hosted MCP that re-exposes Google Ads through the vendor's access matches Google's definition of a prohibited proxy.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Is there a deadline for the proxy policy?</h3>
+        <p>Google's 31 August 2026 announcement gives no single switch-off date. It states that integrations now need to connect directly and that its Ads API Compliance team is actively reviewing existing integrations and will contact developers who need to transition.</p>
+      </div>
+      <div class="faq__item">
+        <h3>What happens if a tool breaches the policy?</h3>
+        <p>Google sends a notice to the email on file with your Google Cloud project, may allow a period to correct with no penalty, may warn before charging non-compliance fees per its API rate sheet, and can downgrade access, impose quota limits or terminate programmatic access.</p>
+      </div>
+      <div class="faq__item">
+        <h3>What other agency obligations are in the policy?</h3>
+        <p>Agencies must prominently disclose reporting delays of more than 24 hours, obtain written client consent before selling or sharing their Google Ads account data, provide a demo account within 7 days if Google asks, and keep contact details current. Google may revoke access unused for 90 consecutive days.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED START -->
+<section class="related" style="padding:3.5rem 0;border-top:1px solid #e8e8e8;background:#fafafa">
+  <div style="max-width:720px;margin:0 auto;padding:0 clamp(1.2rem,4vw,3rem)">
+    <div style="font-family:'Space Mono',monospace;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:#e63312;margin-bottom:1.3rem">Related reading</div>
+    <ul style="list-style:none;margin:0;padding:0;display:grid;gap:0.9rem">
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="google-ads-api-v22-sunset-october-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">Google Ads API v22 Stops Working on 7 October 2026: What You Must Check</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="google-ads-api-v25-2-features-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">Google Ads API v25.2 for Marketers in 2026: Benchmarks, PMax Drafts and Creator Insights</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="apify-marketing-guide-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">Apify in 2026: A $29 Plan Is Not a $29 Bill</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="sarvam-ai-api-guide-developers-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">Sarvam AI API Guide for Developers 2026: Speech, Translation & Indian Language Integration</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="how-to-use-open-webui-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">How to Use Open WebUI 2026: Complete Guide to Self-Hosted AI Chat Interface</a></li>
+    </ul>
+  </div>
+</section>
+<!-- RELATED END -->
+<section class="cta">
+  <div class="cta__inner">
+    <h2>Know whose access your tools are using</h2>
+    <p>Distk reviews the scripts, connectors, dashboards and AI agents touching your Google Ads accounts, works out whose Google Cloud project and developer access each one uses, and fixes anything that matches Google's proxy definition before a compliance notice arrives.</p>
+    <a href="https://distk.in/#contact" class="cta__btn">Start the conversation →</a>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="container">
+    © 2026 Distk · <a href="https://distk.in">distk.in</a> · <a href="mailto:connect@distk.in">connect@distk.in</a>
+  </div>
+</footer>
+</body>
+</html>

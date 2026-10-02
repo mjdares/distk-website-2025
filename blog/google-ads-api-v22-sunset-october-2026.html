@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xdifcafwxl");
+  </script>
+
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Google Ads API v22 Sunset 7 October 2026: What Agencies Must Check Now | Distk</title>
+<meta name="description" content="Google Ads API v22 sunsets on 7 October 2026 and all v22 requests will fail. Who is affected even without developers, how to check which API version your tools use in Google Cloud Console, which version to move to, and a this-week checklist for agencies.">
+<meta name="keywords" content="google ads api v22 sunset, google ads api october 2026, google ads api version check, google ads api upgrade 2026, google ads api deprecation, google ads reporting broken october 2026">
+<meta name="author" content="Distk"><meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://distk.in/blog/google-ads-api-v22-sunset-october-2026.html">
+<meta property="og:type" content="article"><meta property="og:url" content="https://distk.in/blog/google-ads-api-v22-sunset-october-2026.html">
+<meta property="og:title" content="Google Ads API v22 Stops Working on 7 October 2026: What Agencies and Tool Users Must Check">
+<meta property="og:description" content="From 7 October 2026 every v22 request fails. Your ads keep running; your dashboards, scripts and connectors may not. How to check in five minutes.">
+<meta property="og:image" content="https://distk.in/assets/images/og-image.jpg"><meta property="og:site_name" content="Distk">
+<meta property="article:published_time" content="2026-10-02T00:00:00+05:30">
+<meta property="article:modified_time" content="2026-10-02T00:00:00+05:30">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Google Ads API v22 Stops Working on 7 October 2026: What Agencies and Tool Users Must Check"><meta name="twitter:description" content="From 7 October 2026 every v22 request fails. Your ads keep running; your dashboards, scripts and connectors may not. How to check in five minutes.">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Google Ads API v22 Stops Working on 7 October 2026: What Agencies and Tool Users Must Check", "description": "An agency guide to the Google Ads API v22 sunset on 7 October 2026: what stops working, who is affected including users of third-party tools, how to check which API version your tools call in the Google Cloud Console, the version timetable, major versus minor upgrades, and a checklist for this week.", "author": {"@type": "Organization", "name": "Distk", "url": "https://distk.in"}, "publisher": {"@type": "Organization", "name": "Distk", "logo": {"@type": "ImageObject", "url": "https://distk.in/assets/images/Logo.png"}}, "datePublished": "2026-10-02", "dateModified": "2026-10-02", "inLanguage": "en", "about": [{"@type": "Thing", "name": "Google Ads API"}, {"@type": "Thing", "name": "Google Ads API v22"}, {"@type": "Thing", "name": "API sunset"}, {"@type": "Thing", "name": "Google Cloud Console"}, {"@type": "Thing", "name": "Google Ads reporting"}], "mentions": [{"@type": "Thing", "name": "Google Ads API"}, {"@type": "Thing", "name": "Google Ads API v22"}, {"@type": "Thing", "name": "API sunset"}, {"@type": "Thing", "name": "Google Cloud Console"}, {"@type": "Thing", "name": "Google Ads reporting"}], "mainEntityOfPage": {"@type": "WebPage", "@id": "https://distk.in/blog/google-ads-api-v22-sunset-october-2026.html"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "When does Google Ads API v22 stop working?", "acceptedAnswer": {"@type": "Answer", "text": "Google Ads API v22 sunsets on 7 October 2026. Google's reminder on its Ads Developer Blog dated 2 September 2026 states that starting on this date all v22 API requests will begin to fail. Google's deprecation timetable lists the sunset as October 2026 (tentative), and the reminder specifies the day."}}, {"@type": "Question", "name": "Do Google Ads campaigns stop when the API version sunsets?", "acceptedAnswer": {"@type": "Answer", "text": "No. Campaigns run inside Google Ads and continue to serve. The sunset affects only tools, scripts, connectors, dashboards and integrations that read from or write to Google Ads through API version 22, which will receive errors from 7 October 2026."}}, {"@type": "Question", "name": "How can I check which Google Ads API version my tools are using?", "acceptedAnswer": {"@type": "Answer", "text": "Google documents a method in the Google Cloud Console: open APIs and Services, click Google Ads API, and on the Metrics subtab view the Methods table. Each method name includes the API version, a service and a method, such as google.ads.googleads.v22.services.GoogleAdsService.Mutate. Any method containing v22 indicates a tool still calling the sunsetting version."}}, {"@type": "Question", "name": "Which Google Ads API version should I upgrade to from v22?", "acceptedAnswer": {"@type": "Answer", "text": "Google recommends always upgrading to the newest version and allows skipping versions, for example from N directly to N+2. Per Google's timetable, v23 sunsets in February 2027 while v25 and v25.2 sunset in August 2027, so moving to a later version generally avoids a second migration within months."}}, {"@type": "Question", "name": "Is upgrading from Google Ads API v22 a breaking change?", "acceptedAnswer": {"@type": "Answer", "text": "Moving from v22 to any later version is a major-version upgrade. Google states that the endpoint changes when you change major versions and that major releases can include changes such as renamed or removed fields, so testing is needed. Google describes only minor versions, such as v25 to v25.2, as containing no breaking changes."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://distk.in/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://distk.in/blog/"}, {"@type": "ListItem", "position": 3, "name": "Google Ads API v22 Stops Working on 7 October 2026: What Agencies and Tool Users Must Check", "item": "https://distk.in/blog/google-ads-api-v22-sunset-october-2026.html"}]}</script>
+<link rel="icon" type="image/png" href="../assets/images/favicon.png"><link rel="apple-touch-icon" href="../assets/images/Logo.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BWDTQ1JPL2"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-BWDTQ1JPL2');</script>
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1077520544213003');fbq('track','PageView');</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1077520544213003&ev=PageView&noscript=1"></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#0a0a0a;--paper:#fafafa;--mid:#6b6b6b;--light:#e8e8e8;--accent:#e63312;--accent-soft:rgba(230,51,18,0.08);--mono:'Space Mono',monospace;--sans:'Outfit',sans-serif;--container:1120px;--prose:720px;--gutter:clamp(1.2rem,4vw,3rem)}
+html{font-size:16px;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.container{max-width:var(--container);margin:0 auto;padding:0 var(--gutter)}
+.prose{max-width:var(--prose);margin:0 auto;padding:0 var(--gutter)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--light)}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;max-width:var(--container);margin:0 auto;padding:0.9rem var(--gutter)}
+.nav__logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;color:var(--ink)}
+.nav__logo img{height:32px;width:auto}
+.nav__logo span{font-family:var(--mono);font-weight:700;font-size:1.05rem;letter-spacing:-0.02em}
+.nav__logo small{display:block;font-size:0.55rem;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);line-height:1}
+.nav__back{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid);text-decoration:none;display:flex;align-items:center;gap:0.4rem;transition:color 0.2s}
+.nav__back:hover{color:var(--accent)}
+.nav__cta{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.6rem 1.4rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.nav__cta:hover{background:var(--accent)}
+.hero{padding:7.5rem 0 3.5rem;position:relative;overflow:hidden;border-bottom:1px solid var(--light)}
+.hero::before{content:'V22';position:absolute;right:-1%;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:clamp(6rem,26vw,22rem);font-weight:700;color:rgba(0,0,0,0.03);line-height:1;pointer-events:none;user-select:none;letter-spacing:-0.05em}
+.hero__tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1.5rem}
+.hero__tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.hero h1{font-family:var(--sans);font-weight:700;font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;letter-spacing:-0.03em;max-width:20ch;margin-bottom:1.5rem}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero__sub{font-size:1.1rem;color:var(--mid);max-width:56ch;line-height:1.7;margin-bottom:2rem}
+.hero__meta{display:flex;flex-wrap:wrap;gap:1.5rem;font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid)}
+.tldr{background:var(--accent-soft);border-left:3px solid var(--accent);padding:1.8rem 2rem;margin:3rem 0;position:relative}
+.tldr::before{content:'TL;DR';position:absolute;top:-0.6rem;left:2rem;font-family:var(--mono);font-size:0.62rem;font-weight:700;letter-spacing:0.12em;background:var(--accent);color:#fff;padding:0.2rem 0.6rem}
+.tldr p{font-size:0.95rem;color:var(--ink);line-height:1.7}
+.article{padding:4rem 0 5rem}
+.article h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.35rem,2.8vw,1.8rem);letter-spacing:-0.02em;line-height:1.2;margin:3rem 0 1rem;padding-top:1rem;border-top:1px solid var(--light)}
+.article h2:first-child{border-top:none;margin-top:0}
+.article h3{font-family:var(--mono);font-weight:700;font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin:2rem 0 0.6rem}
+.article p{font-size:1rem;color:#2a2a2a;line-height:1.8;margin-bottom:1.25rem}
+.article ul,.article ol{padding-left:1.4rem;margin-bottom:1.25rem}
+.article li{font-size:1rem;color:#2a2a2a;line-height:1.75;margin-bottom:0.4rem}
+.article strong{font-weight:600;color:var(--ink)}
+.article a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(230,51,18,0.3)}
+.article a:hover{border-bottom-color:var(--accent)}
+.article blockquote{border-left:3px solid var(--accent);padding:0.75rem 1.5rem;margin:2rem 0;background:var(--accent-soft)}
+.article blockquote p{color:var(--ink);font-size:1rem;margin:0}
+.table-wrap{overflow-x:auto;margin:2rem 0}
+.data-table{width:100%;border-collapse:collapse;margin:0;font-size:0.88rem}
+.data-table th{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:0.7rem 1rem;text-align:left;white-space:nowrap}
+.data-table td{padding:0.75rem 1rem;border-bottom:1px solid var(--light);vertical-align:top}
+.data-table tr:last-child td{border-bottom:none}
+.data-table tr:nth-child(even) td{background:#f5f5f5}
+.callout{border:1.5px solid var(--light);padding:1.5rem 1.8rem;margin:2rem 0}
+.callout__label{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem}
+.callout p{font-size:0.92rem;color:var(--mid);line-height:1.7;margin:0}
+.faq{padding:4rem 0;background:var(--ink);color:var(--paper)}
+.faq .section-tag{color:var(--accent)}
+.faq .section-tag::before{background:var(--accent)}
+.faq__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2.5rem;margin-top:2.5rem}
+.faq__item{border-left:2px solid var(--accent);padding-left:1.5rem}
+.faq__item h3{font-family:var(--sans);font-weight:600;font-size:0.95rem;margin-bottom:0.5rem;color:var(--paper)}
+.faq__item p{font-size:0.85rem;color:rgba(255,255,255,0.88);line-height:1.65}
+.section-tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1rem}
+.section-tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.section-title{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.15;color:var(--paper)}
+.cta{padding:5rem 0;background:var(--accent-soft);border-top:1px solid rgba(230,51,18,0.12)}
+.cta__inner{max-width:680px;margin:0 auto;padding:0 var(--gutter);text-align:center}
+.cta h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.2;margin-bottom:1rem}
+.cta p{font-size:1rem;color:var(--mid);line-height:1.7;margin-bottom:2rem}
+.cta__btn{display:inline-flex;align-items:center;gap:0.6rem;font-family:var(--mono);font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;padding:1rem 2.2rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.cta__btn:hover{background:var(--accent)}
+.foot{padding:2.5rem 0;border-top:1px solid var(--light);text-align:center;font-family:var(--mono);font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid)}
+.foot a{color:var(--mid);text-decoration:none}.foot a:hover{color:var(--accent)}
+@media(max-width:768px){.faq__grid{grid-template-columns:1fr}.nav__back span{display:none}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="https://distk.in" class="nav__logo">
+      <img src="../assets/images/Logo.png" alt="Distk">
+      <div><span>Distk</span><small>Global Growth Partner</small></div>
+    </a>
+    <a href="/blog/" class="nav__back">← <span>All articles</span></a>
+    <a href="https://distk.in/#contact" class="nav__cta">Work with us</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="prose">
+    <div class="hero__tag">Paid Media Guide</div>
+    <h1>Google Ads API <em>v22</em> Stops Working on 7 October 2026: What You Must Check</h1>
+    <p class="hero__sub">Your campaigns will keep serving. The dashboards, scripts, connectors and bid tools reading from them may not, and they will fail quietly. Here is how to find out in five minutes whether anything you rely on is still calling v22.</p>
+    <div class="hero__meta">
+      <span>Distk Editorial</span>
+      <span>Oct 2026</span>
+      <span>12 min read</span>
+    </div>
+  </div>
+</section>
+
+<div class="prose">
+  <div class="tldr">
+    <p>Google Ads API v22 sunsets on 7 October 2026. Google's reminder of 2 September 2026 states that from that date all v22 API requests will begin to fail. Campaigns keep serving, but any script, connector, reporting dashboard, bid tool, CRM conversion sync or AI agent that still calls v22 will stop working, often without an alert. You are affected even without developers if a third-party tool calls v22 for you. To check, open APIs and Services in the Google Cloud Console, click Google Ads API, and look in the Methods table on the Metrics subtab for method names containing v22, such as google.ads.googleads.v22.services.GoogleAdsService.Mutate. Google lets you skip versions: moving to v25 lasts until August 2027, while v23 sunsets in February 2027.</p>
+  </div>
+</div>
+
+<main class="article">
+  <div class="prose">
+<style>
+.prose pre{background:#f4f4f4;border-left:3px solid var(--accent);padding:1rem 1.1rem;overflow-x:auto;margin:1.5rem 0;font-size:0.85rem;line-height:1.6}
+.prose pre code{font-family:var(--mono);font-size:0.85rem;color:#1a1a1a;background:none;padding:0;white-space:pre}
+.prose p code,.prose li code,.prose td code{font-family:var(--mono);font-size:0.86em;background:#f0f0f0;padding:0.1rem 0.35rem;border-radius:2px}
+</style>
+
+    <h2>What Stops Working on 7 October 2026?</h2>
+    <p>Version 22 of the Google Ads API. Google's own announcement is one sentence long and leaves no room for interpretation: "Google Ads API v22 will sunset on October 7, 2026. Starting on this date, all v22 API requests will begin to fail." Any script, connector, dashboard, bid tool or integration that still sends requests to v22 will start returning errors from that day, and Google's documentation adds that sunset versions "are no longer supported after the sunset date".</p>
+    <p>Your ads keep running. Campaigns live inside Google Ads, not inside the API, so nothing stops serving. What breaks is everything that reads from or writes to Google Ads through v22: the overnight report that fills a client dashboard, the script that pauses out-of-stock products, the connector that pushes spend into a BI tool, the bid management software, the AI agent you wired up last quarter. The failure is quiet. A dashboard that stops refreshing does not send an alert. It just shows last week's numbers.</p>
+
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Question</th><th>Answer, from Google's official pages</th></tr></thead>
+      <tbody>
+        <tr><td><strong>What is sunsetting?</strong></td><td>Google Ads API v22</td></tr>
+        <tr><td><strong>When?</strong></td><td>7 October 2026, per Google's reminder of 2 September 2026</td></tr>
+        <tr><td><strong>What happens?</strong></td><td>"All v22 API requests will begin to fail"</td></tr>
+        <tr><td><strong>Do ads stop?</strong></td><td>No. Tools that call v22 stop. Campaigns are unaffected.</td></tr>
+        <tr><td><strong>v22 released</strong></td><td>15 October 2025, per Google's sunset timetable</td></tr>
+        <tr><td><strong>What to move to</strong></td><td>A newer version. Google lists v23 through v25.2 as released, with v26 upcoming in October 2026.</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="callout">
+      <div class="callout__label">A note on the date in 2026</div>
+      <p>Google's deprecation and sunset timetable still shows v22's sunset as "October 2026 (tentative)", and explains that a tentative date "means that the sunset could happen any time in that month". The specific day comes from Google's later reminder on its Ads Developer Blog, dated 2 September 2026, which names October 7. Plan against the specific date, not the month.</p>
+    </div>
+
+    <h2>Who Is Affected, Including People Who Never Touch the API?</h2>
+    <p>Far more people than write code. The Google Ads API is the plumbing under most of the tools agencies and in-house teams use, so being affected does not require a developer on staff. If any software reads or changes your Google Ads accounts on your behalf, it is calling a specific version of the API, and the question is simply which one.</p>
+    <ul>
+      <li><strong>Agencies with custom reporting:</strong> dashboards in Looker Studio, Power BI or a data warehouse fed by a connector or a script.</li>
+      <li><strong>Teams running scripts or automations:</strong> anything scheduled that pauses, adjusts budgets, updates bids or uploads data.</li>
+      <li><strong>Users of third-party tools:</strong> bid management, feed management, reporting suites, call tracking and CRM integrations that sync conversions.</li>
+      <li><strong>Teams experimenting with AI agents:</strong> connectors and MCP servers that give an assistant access to Google Ads.</li>
+      <li><strong>Anyone with an integration a freelancer built:</strong> the riskiest category, because nobody currently maintains it.</li>
+    </ul>
+    <p>The last group is where October failures concentrate. An integration built once and left alone keeps calling the version it was built on until the day that version stops answering.</p>
+
+    <h2>How Do You Check Which API Version Your Tools Use in 2026?</h2>
+    <p>Google documents a direct method using the Google Cloud Console, and it works whether or not you wrote the code. Every request to the Google Ads API is logged against the Google Cloud project that made it, and the method name in that log includes the version number. If you see <code>v22</code> in the list, something you own is still calling the version that sunsets on 7 October.</p>
+    <h3>The Google Cloud Console method, as Google describes it</h3>
+    <ol>
+      <li>Open APIs and Services in the Google Cloud Console.</li>
+      <li>Click Google Ads API in the table.</li>
+      <li>On the Metrics subtab, your recent requests are plotted on each graph. You can see which methods you have sent requests to in the Methods table.</li>
+      <li>Optionally, select the timeframe you want to view.</li>
+    </ol>
+    <p>Google explains what to look for in the result: "The method name includes a Google Ads API version, a service, and a method name, such as":</p>
+    <pre><code>google.ads.googleads.v22.services.GoogleAdsService.Mutate</code></pre>
+    <p>Any method beginning <code>google.ads.googleads.v22</code> is the problem. Look across a long enough timeframe to catch jobs that only run weekly or monthly, because a monthly report that last ran on 30 September will not appear in the last seven days.</p>
+
+    <h3>If you do not own a Google Cloud project</h3>
+    <p>Then you cannot see the logs, because the tool calls the API from its own project. Ask the vendor or the person who built it directly, in writing, and ask for a version number rather than reassurance:</p>
+    <ul>
+      <li>"Which Google Ads API version does your integration currently call?"</li>
+      <li>"Will it be on v23 or later before 7 October 2026?"</li>
+      <li>"Which Google Cloud project and developer access does it use?"</li>
+    </ul>
+    <p>That third question matters for a separate reason. Google's updated developer policy now prohibits programmatic proxies, and how a tool connects is the deciding factor. Our <a href="google-ads-developer-policy-api-proxies-2026.html">guide to the 2026 proxy and MCP policy</a> covers what to listen for in the answer.</p>
+
+    <h3>Check the client library version too</h3>
+    <p>If your own code uses one of Google's official client libraries, the library version determines which API versions it can reach. Google's sunset page also notes that "client libraries no longer support the sunset API versions in any new client library versions after the sunset dates." Its compatibility table lists minimum library versions for v23, v24 and v25.</p>
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Language</th><th>Minimum for v23</th><th>Minimum for v25</th></tr></thead>
+      <tbody>
+        <tr><td>Python</td><td>29.2.0</td><td>31.2.0</td></tr>
+        <tr><td>Java</td><td>42.0.0</td><td>44.0.0</td></tr>
+        <tr><td>.NET</td><td>25.1.0</td><td>26.1.0</td></tr>
+        <tr><td>PHP</td><td>32.2.0</td><td>33.6.0</td></tr>
+        <tr><td>Ruby</td><td>38.0.0</td><td>43.0.0</td></tr>
+        <tr><td>Perl</td><td>31.0.0</td><td>33.0.0</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Google notes these minimums are sufficient for the major release; minor releases such as v25.2 may need a later library version, listed in each language's changelog.</p>
+
+    <h2>Which Version Should You Move To in 2026?</h2>
+    <p>The newest one you can test properly before 7 October. Google's guidance is that "we recommend that you always upgrade to the newest version", and that you do not have to upgrade in strict order: you can move from version N directly to N+2. Moving from v22 straight to v25 is allowed and saves you a second migration next year.</p>
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Version</th><th>Released</th><th>Sunset (Google's timetable)</th></tr></thead>
+      <tbody>
+        <tr><td><strong>v22</strong></td><td>15 October 2025</td><td>7 October 2026 (per the 2 September reminder)</td></tr>
+        <tr><td>v23</td><td>28 January 2026</td><td>February 2027</td></tr>
+        <tr><td>v24</td><td>22 April 2026</td><td>May 2027</td></tr>
+        <tr><td>v25</td><td>22 July 2026</td><td>August 2027</td></tr>
+        <tr><td>v25.2</td><td>23 September 2026</td><td>August 2027</td></tr>
+        <tr><td>v26 (upcoming)</td><td>October 2026</td><td>November 2027</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The arithmetic is worth doing out loud. Moving only to v23 buys you until February 2027, roughly four months. Moving to v25 buys you until August 2027. If you have to touch the integration anyway, the extra testing for a later version is usually cheaper than a second migration in January. v25.2 also brings genuinely useful additions, such as competitive benchmark percentiles, covered in our <a href="google-ads-api-v25-2-features-2026.html">v25.2 guide for marketers</a>.</p>
+
+    <h2>How Do Major and Minor Versions Differ in 2026?</h2>
+    <p>The distinction decides how much testing you need. Google states that minor versions "don't contain breaking changes", so moving from v25 to v25.2 is described as a drop-in upgrade. Major versions are different: Google's migration guide says "your endpoint will change when you change major versions", and major releases can rename or remove fields. A move from v22 to anything later is a major-version change and needs real testing.</p>
+    <p>Google's policy also explains the cadence you are on. It aims to sunset "a version 1 year after its release", releases a new version "every 3 to 4 months" on average, and says "you'll have to perform at most two upgrades per year." Build that into the maintenance plan for every integration, so October is a scheduled task rather than an emergency.</p>
+
+    <h2>What Should You Do This Week in 2026?</h2>
+    <ol>
+      <li><strong>Inventory every tool that touches Google Ads.</strong> Include scripts, connectors, dashboards, feed and bid tools, CRM conversion syncs and AI agents.</li>
+      <li><strong>Check your Google Cloud Console Methods table</strong> for anything beginning <code>google.ads.googleads.v22</code>, across at least a month of history.</li>
+      <li><strong>Email every vendor and freelancer</strong> for the exact API version and their upgrade date, in writing.</li>
+      <li><strong>Upgrade your own code</strong> to the newest version you can test, using Google's version migration guide and the release notes for each version you skip.</li>
+      <li><strong>Test against a non-critical account first,</strong> then confirm a full reporting cycle completes after the change.</li>
+      <li><strong>Set a check for 7 and 8 October:</strong> confirm dashboards refreshed, scheduled scripts ran, and conversion syncs arrived.</li>
+      <li><strong>Calendar the next one.</strong> If you land on v23, its sunset is February 2027.</li>
+    </ol>
+
+    <h2>What Are the Common Mistakes in 2026?</h2>
+    <ul>
+      <li><strong>Assuming you are unaffected because nobody on the team codes.</strong> Most exposure comes through tools and connectors.</li>
+      <li><strong>Treating "October" as the deadline.</strong> Google's reminder names 7 October. The timetable's "tentative" month is less precise.</li>
+      <li><strong>Checking only the last week of API logs.</strong> Monthly jobs hide outside short timeframes.</li>
+      <li><strong>Accepting "we are on it" from a vendor.</strong> Ask for the version number and the date.</li>
+      <li><strong>Upgrading one step to v23.</strong> It sunsets in February 2027. A later version saves a second migration.</li>
+      <li><strong>Treating a major-version upgrade as drop-in.</strong> Only minor versions carry that guarantee.</li>
+      <li><strong>Expecting an alert when it breaks.</strong> A stale dashboard looks normal until someone checks the date.</li>
+    </ul>
+
+    <h2>Key Takeaways for 2026</h2>
+    <ul>
+      <li>Google Ads API v22 sunsets on 7 October 2026, and from that date "all v22 API requests will begin to fail."</li>
+      <li>Campaigns keep serving. The tools that read from or write to Google Ads through v22 stop.</li>
+      <li>Check the Google Cloud Console Methods table for method names containing <code>v22</code>, over a long enough window to catch monthly jobs.</li>
+      <li>If a vendor calls the API for you, get the version number and upgrade date in writing.</li>
+      <li>You can skip versions. Moving to v25 lasts until August 2027; v23 only until February 2027.</li>
+      <li>Google upgrades the API every three to four months and expects at most two upgrades a year, so plan the next one now.</li>
+    </ul>
+    <p>Distk audits the scripts, connectors and tools behind Google Ads accounts for agencies and in-house teams in India and internationally, finds anything still calling a sunsetting version, and makes the upgrade before the reporting goes quiet. With 7 October 2026 days away, that audit is where we start.</p>
+
+    <h2>Sources</h2>
+    <ul>
+      <li><a href="http://feeds.feedburner.com/GoogleAdsDeveloperBlog" target="_blank" rel="noopener">Google Ads Developer Blog, "Google Ads API v22 sunset reminder"</a>, Ben Karl on behalf of the Google Ads API Team, 2 September 2026 (read via the blog's official feed).</li>
+      <li><a href="https://developers.google.com/google-ads/api/docs/sunset-dates" target="_blank" rel="noopener">Google Ads API, Deprecation and sunset timetable and client library compatibility</a>.</li>
+      <li><a href="https://developers.google.com/google-ads/api/docs/version-migration" target="_blank" rel="noopener">Google Ads API, Upgrade your API version</a>.</li>
+      <li><a href="https://developers.google.com/google-ads/api/docs/release-notes" target="_blank" rel="noopener">Google Ads API release notes</a>.</li>
+    </ul>
+
+  </div>
+</main>
+
+<section class="faq">
+  <div class="container">
+    <div class="section-tag">Key Questions</div>
+    <h2 class="section-title">Google Ads API v22 Sunset: FAQs</h2>
+    <div class="faq__grid">
+      <div class="faq__item">
+        <h3>When does Google Ads API v22 stop working?</h3>
+        <p>On 7 October 2026. Google's reminder of 2 September 2026 states that from this date all v22 API requests will begin to fail. Google's sunset timetable lists the month as October 2026 (tentative), and the reminder names the specific day.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Will my Google Ads campaigns stop running?</h3>
+        <p>No. Campaigns run inside Google Ads and keep serving. What stops is any tool, script, connector or dashboard that reads from or writes to Google Ads through API v22.</p>
+      </div>
+      <div class="faq__item">
+        <h3>How do I check which Google Ads API version my tools use?</h3>
+        <p>In the Google Cloud Console, open APIs and Services, click Google Ads API, and check the Methods table on the Metrics subtab. Method names include the version, such as google.ads.googleads.v22.services.GoogleAdsService.Mutate. Look over at least a month to catch infrequent jobs.</p>
+      </div>
+      <div class="faq__item">
+        <h3>What if a third-party tool calls the API for me?</h3>
+        <p>You cannot see its logs, because it uses its own Google Cloud project. Ask the vendor in writing which Google Ads API version it calls and when it will move to v23 or later, and ask which project and developer access it uses.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Which version should I upgrade to?</h3>
+        <p>The newest one you can test properly. Google says you can skip versions. v23 sunsets in February 2027, while v25 and v25.2 last until August 2027, so a later version usually saves a second migration.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Is upgrading from v22 a drop-in change?</h3>
+        <p>No. Moving from v22 to any later version is a major-version change. Google states the endpoint changes when you change major versions and major releases can change fields, so test first. Only minor versions such as v25 to v25.2 are described as drop-in.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED START -->
+<section class="related" style="padding:3.5rem 0;border-top:1px solid #e8e8e8;background:#fafafa">
+  <div style="max-width:720px;margin:0 auto;padding:0 clamp(1.2rem,4vw,3rem)">
+    <div style="font-family:'Space Mono',monospace;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:#e63312;margin-bottom:1.3rem">Related reading</div>
+    <ul style="list-style:none;margin:0;padding:0;display:grid;gap:0.9rem">
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="google-ads-api-v25-2-features-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">Google Ads API v25.2 for Marketers in 2026: Benchmarks, PMax Drafts and Creator Insights</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="google-ads-developer-policy-api-proxies-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">Google Bans Programmatic Proxies in 2026: What It Means for Your Agency's Tools</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="sarvam-ai-api-guide-developers-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">Sarvam AI API Guide for Developers 2026: Speech, Translation & Indian Language Integration</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="how-to-use-whatsapp-business-api-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">How to Use WhatsApp Business API for Marketing 2026: Complete Setup & Campaign Guide</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="apify-marketing-guide-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">Apify in 2026: A $29 Plan Is Not a $29 Bill</a></li>
+    </ul>
+  </div>
+</section>
+<!-- RELATED END -->
+<section class="cta">
+  <div class="cta__inner">
+    <h2>Find what is still calling v22 before it breaks</h2>
+    <p>Distk audits the scripts, connectors, dashboards and third-party tools behind your Google Ads accounts, identifies anything on a sunsetting API version, and completes the upgrade before your reporting goes quiet on 7 October.</p>
+    <a href="https://distk.in/#contact" class="cta__btn">Start the conversation →</a>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="container">
+    © 2026 Distk · <a href="https://distk.in">distk.in</a> · <a href="mailto:connect@distk.in">connect@distk.in</a>
+  </div>
+</footer>
+</body>
+</html>

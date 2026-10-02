@@ -2821,12 +2821,32 @@
     </url>
     <url>
         <loc>https://distk.in/blog/search-console-multimodal-search-reporting-2026.html</loc>
-        <lastmod>2026-10-01</lastmod>
+        <lastmod>2026-10-02</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>https://distk.in/blog/search-console-platform-properties-social-2026.html</loc>
+        <lastmod>2026-10-02</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- Added October 2026 -->
+    <url>
+        <loc>https://distk.in/blog/google-ads-api-v22-sunset-october-2026.html</loc>
+        <lastmod>2026-10-02</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://distk.in/blog/google-ads-api-v25-2-features-2026.html</loc>
+        <lastmod>2026-10-02</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://distk.in/blog/google-ads-developer-policy-api-proxies-2026.html</loc>
         <lastmod>2026-10-02</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
