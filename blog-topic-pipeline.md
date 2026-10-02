@@ -156,3 +156,121 @@ These have real dates attached and should be published first, in this order:
 - Every TRAI post must state that it summarises the press release and amendment, and point readers to the regulation itself before acting. Compliance content carries a duty of care that model-launch content does not.
 - Update `ai-model-pricing-comparison-september-2026` with the Sonnet 5.5 row when #9 ships, per the standing rule.
 - Sources re-verified: all URLs in this file were fetched successfully during research on 30 September 2026 except those listed under Rejected.
+
+---
+
+## Round 2 (October 2026)
+
+**Research date:** 1-2 October 2026. **Sources:** official primary sources only, fetched with WebFetch (Jina reader still returns 401 from this machine). **Dedupe baseline:** `tools/_existing_slugs.txt` refreshed to 385 slugs before proposing; none of the slugs below collide.
+
+**Pass 1 written first (ranked table + rejected). Clusters, facts and deadlines follow in pass 2 below.**
+
+### R2.1 What is moving
+
+Four things are new since round one and still thinly covered. **ASCI published binding guidelines on labelling AI-generated ("synthetically generated") content in advertising**, signed 17 September 2026 and taking effect three months after publication, including a rule that paid product recommendations inside AI chatbots must say "Sponsored by [Brand]". **Meta launched paid Meta One plans for businesses** (USD 14.99 to 499 a month) and made Instagram Live video ads generally available from 29 September. **Google shipped a cluster of Ads measurement and Demand Gen changes in September** (Data Manager, data strength uplift, Meridian GeoX GA, AI Max reporting, Business Agent in YouTube ads). **OpenAI's API changelog** adds the GPT-6 Luna budget tier, an Agents API with computer use, Ultrafast for Astra, and a hard 26 February 2027 shutdown for its older transcription models. LinkedIn's Marketing API has two version sunsets landing in the next seven weeks.
+
+### R2.2 Ranked topic table
+
+| Rank | Working title | Suggested slug | Primary keyword | Intent | Audience | Why it can rank now | Official sources | Card category | Est. words |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | ASCI's AI Ad Labelling Rules in 2026: What Indian Brands Must Disclose and When | `asci-ai-generated-content-labelling-guidelines-2026` | asci ai generated content guidelines | informational / compliance | Indian brands, agencies, creators | Signed 17 Sep 2026, effective 3 months after publication; no operational marketer guide exists | https://www.ascionline.in/wp-content/uploads/2026/09/Guidelines-for-Responsible-Labelling-of-Synthetically-Generated-Content-in-Advertising.pdf | Compliance | 2,600 |
+| 2 | "Sponsored by [Brand]": ASCI's Rule for Paid Recommendations Inside AI Chatbots | `asci-sponsored-ai-chatbot-recommendations-2026` | sponsored ai recommendations label india | informational / compliance | Brands buying AI ads (ChatGPT Ads etc.) | First Indian code to address paid answers in AI assistants; links straight into our ChatGPT Ads cluster | same ASCI PDF | Compliance | 1,900 |
+| 3 | Virtual Influencers and AI Likeness in Indian Ads: When Labelling Is Mandatory | `asci-virtual-influencer-ai-likeness-rules-2026` | virtual influencer rules india | informational / compliance | Influencer marketers, D2C | Guideline names "synthetically generated influencers and ambassadors" and consented voice/face replication as mandatory-label cases | same ASCI PDF | Influencer Marketing | 1,900 |
+| 4 | Do You Need to Label AI Edits? ASCI's Exemptions for Retouching, Backgrounds and Captions | `asci-ai-ad-label-exemptions-2026` | do i need to label ai in ads india | informational | Creative teams, designers | The "no label required" list (colour correction, ambient music, fantastical effects, accessibility) is the question creative teams will actually search | same ASCI PDF | Compliance | 1,800 |
+| 5 | LinkedIn Marketing API Versions 202510 and 202511 Sunset on 15 Oct and 16 Nov 2026 | `linkedin-marketing-api-version-sunset-2026` | linkedin marketing api sunset | technical / deadline | Agencies, martech and CRM integrators | Two hard dates inside seven weeks; only LinkedIn's own changelog states them | https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes | LinkedIn / B2B Social | 1,800 |
+| 6 | Meta One Plans for Businesses in 2026: Pricing, Tiers and What You Actually Get | `meta-one-business-plans-pricing-2026` | meta one plans for businesses | commercial | SMBs, D2C, creators | Launched 15 Sep 2026 with four USD price points; Indian pricing not stated, which is itself the useful finding | https://www.facebook.com/business/news/introducing-meta-one-plans-for-businesses | Social Media | 2,000 |
+| 7 | Instagram Live Video Ads Are Generally Available: A 2026 Setup Guide | `instagram-live-video-ads-guide-2026` | instagram live video ads | how-to / commercial | Performance and social teams | GA rollout began 29 Sep 2026 for all advertisers; fresh and procedural | https://www.facebook.com/business/news/iab-global-creator-week-making-it-easier-for-businesses-to-partner-with-creators | Performance Marketing | 1,800 |
+| 8 | Meta Creator Marketing Hub in 2026: Discovery, Permissions and One-Click Partnership Ads | `meta-creator-marketing-hub-guide-2026` | meta creator marketing hub | how-to | Influencer and brand teams, agencies | Global launch announced 15 Sep 2026 with content-level permissions and expiry dates, plus partnership ads coming to the Meta Ads MCP connector | same Meta IAB URL | Influencer Marketing | 2,000 |
+| 9 | Google Ads Data Manager and Data Strength in 2026: The First-Party Data Setup Google Now Scores | `google-ads-data-manager-data-strength-2026` | google ads data strength | how-to / commercial | Performance marketers, analytics leads | New data strength uplift metric and universal Data Manager API (10 Sep 2026); Google-reported uplift figures are specific | https://blog.google/products/ads-commerce/data-strength-updates/ | Marketing Analytics | 2,200 |
+| 10 | Google's September 2026 Demand Gen Drop: Business Agent in YouTube Ads, One-Click Shorts and Maps Pins | `google-demand-gen-september-2026-drop` | demand gen updates 2026 | informational / commercial | Performance and YouTube buyers | Published 24 Sep 2026; three features, one with a Google-reported 40% conversion figure | https://blog.google/products/ads-commerce/demand-gen-drop-september-2026/ | PPC | 1,900 |
+| 11 | GPT-6 Luna Pricing in 2026: OpenAI's $0.10 Model and What It Is Good For | `gpt-6-luna-pricing-guide-2026` | gpt-6 luna pricing | commercial / informational | Builders of high-volume workflows | Released 22 Sep 2026 at $0.10 / $0.50 per 1M tokens; no business guide yet; feeds the pricing hub | https://developers.openai.com/changelog | AI Models | 1,900 |
+| 12 | OpenAI's Transcription Models Shut Down on 26 February 2027: Whisper Migration Guide | `openai-whisper-transcribe-shutdown-2027` | whisper-1 shutdown | technical / deadline | Teams running call analytics, captioning, voice notes | Hard date for whisper-1, gpt-4o-transcribe, gpt-4o-mini-transcribe and gpt-4o-transcribe-diarize | https://developers.openai.com/changelog | AI Development | 1,800 |
+| 13 | Meridian GeoX Is Generally Available: Running Geo Experiments to Prove Incrementality in 2026 | `meridian-geox-geo-experiments-guide-2026` | meridian geox | how-to | Analytics and marketing-mix teams | GeoX moved from beta to GA globally; causal geo-experiment content is scarce | https://blog.google/products/ads-commerce/data-strength-updates/ | Marketing Analytics | 1,900 |
+| 14 | AI Max for Search in 2026: AI Brief in Seven New Languages and Unified Journey Reporting | `google-ai-max-ai-brief-reporting-2026` | ai max for search reporting | informational | Search advertisers | Published 23 Sep 2026; reporting availability "later this year" is the honest framing | https://blog.google/products/ads-commerce/ai-max-language-reporting-features/ | PPC | 1,700 |
+| 15 | LinkedIn Conversions API in 2026: 180-Day Attribution, MQL and SQL Events, and Qualified-Lead Bidding | `linkedin-conversions-api-qualified-leads-2026` | linkedin conversions api qualified leads | technical / commercial | B2B demand gen, RevOps | 180-day windows (202609), MQL/SQL types (202608), MAX_QUALIFIED_LEAD (202602); no consolidated guide | https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes | LinkedIn / B2B Social | 2,100 |
+| 16 | OpenAI's Agents API and Computer Use in 2026: What It Means for Marketing Automation | `openai-agents-api-computer-use-guide-2026` | openai agents api | informational / technical | Builders, ops and automation leads | Agents API public beta (10 Sep) plus hosted-browser computer use (29 Sep 2026) | https://developers.openai.com/changelog | AI Agents | 2,000 |
+| 17 | Google Asset Studio Turns Your Website Into YouTube Video Ads: What Gemini Omni Changes | `google-asset-studio-youtube-video-ads-2026` | asset studio youtube video ads | how-to | SMBs, D2C, creative leads | Published 1 Oct 2026; links to our existing Gemini Omni post | https://blog.google/products/ads-commerce/creating-assets-youtube-ads/ | AI Video | 1,700 |
+| 18 | LinkedIn Message Ads Now Show "Not Interested", and Rotation Defaults Changed in 2026 | `linkedin-message-ads-not-interested-cta-2026` | linkedin conversation ads changes | informational | LinkedIn advertisers | Auto "Not Interested" CTA (202606) and OPTIMIZED rotation default for lead-gen InMail (July 2026) silently affect results | https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes | LinkedIn / B2B Social | 1,600 |
+| 19 | GPT-6 Astra Ultrafast in 2026: Lower Latency, and the US-Only Data Residency Catch | `gpt-6-astra-ultrafast-service-tier-2026` | gpt-6 astra ultrafast | technical | Builders with latency-sensitive agents | Shipped 29 Sep 2026 via `service_tier: "ultrafast"`; EU residency unsupported | https://developers.openai.com/changelog | AI Models | 1,500 |
+| 20 | LinkedIn's 1,000-Segment Cap and the End of Legacy Geo Targeting in 2026 | `linkedin-dmp-segment-cap-geo-migration-2026` | linkedin dmp segment limit | technical | Agencies and ABM teams | 1,000 DMP segments per account (Aug 2026) and legacy geo rejected from 31 Aug 2026 | https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes | LinkedIn / B2B Social | 1,600 |
+| 21 | GPT-Live 1 Voice Is Generally Available at $0.05 a Minute: Voice Agents for Business in 2026 | `gpt-live-voice-agents-pricing-2026` | gpt-live 1 pricing | commercial | Support, sales and ops teams | GA 10 Sep 2026 with per-second billing; pairs with TRAI A2P rules for India | https://developers.openai.com/changelog | AI Agents | 1,700 |
+| 22 | Meta Marketing API Version Expiry Dates for 2027: The Upgrade Calendar for Agencies | `meta-marketing-api-version-expiry-2026` | meta marketing api version expiry | technical / deadline | Agencies, integrators | v22.0 available until 20 May 2027 and v23.0 until 8 Oct 2027; auto-upgrade launched 29 Jul 2026 | https://developers.facebook.com/docs/graph-api/changelog/ | Developer Guide | 1,500 |
+
+### R2.5 Rejected and unreachable (stop retrying these)
+
+- **India DPDP Act and Rules: UNREACHABLE.** `meity.gov.in/data-protection-framework` returned 403; the MeitY static PDF returned 403; `pib.gov.in/PressReleasePage.aspx` and `PressReleaseIframePage.aspx` both returned 403; `www.dpb.gov.in` failed DNS (ENOTFOUND). Do not propose DPDP content until someone supplies the rules PDF manually or fetches from another network. A compliance post on unread rules is a liability.
+- **Google Ads API sunset dates and developer-policy change: BODY NOT EXTRACTABLE.** `developers.google.com/google-ads/api/docs/sunset-dates` returned navigation only; the ads-developers.googleblog.com posts "Google Ads API v22 sunset reminder" (2 Sep 2026), "Making Google Ads More Secure with Updates to Developer Policies" (31 Aug 2026) and "Announcing v25.2" (23 Sep 2026) rendered header only. Titles and dates are confirmed; contents are not. Next attempt: the Blogger feed at `ads-developers.googleblog.com/feeds/posts/default` or the Google Ads API release notes page.
+- **Claude Haiku 5.5: NOT SHIPPED** as of 1 October 2026 (anthropic.com/news latest items: Barclays 1 Oct, Sonnet 5.5 28 Sep). Recheck weekly.
+- **GPT-6.1 Sol Ultrafast: NOT YET IN CHANGELOG.** Only GPT-6 Astra Ultrafast shipped (29 Sep). Topic #19 covers Astra; add Sol when it appears.
+- **openai.com/news: 403** via WebFetch. developers.openai.com/changelog worked and is the better source anyway.
+- **Meta newsroom other items** (Agency Awards 21 Sep, Instant Hydration spotlight 10 Sep, "How businesses are driving results" 3 Sep): case-study marketing content with vendor-reported results, not a guide opportunity.
+- **GPT-Rosalind** (trusted access, billing from 5 Oct 2026): life-sciences audience, off-target for Distk.
+- **OpenAI API key expiry and governance controls** (10 and 15 Sep): admin security detail, thin marketing angle.
+- **ASCI Annual Complaints Report 25-26** (May 2026 PDF): available but not read this pass; possible future data piece.
+- **CCPA dark-patterns enforcement:** not reached this pass; ASCI's homepage only links to third-party news coverage of a February 2026 awareness campaign, which does not meet the official-source bar.
+- **Google Marketing Live 2026 recap, Merchant Center Next, PMax-specific changes:** the ads-commerce blog listing surfaced no posts on these; not reached.
+
+### R2.2b Additional ranked topics (added in pass 2, reached via the Google Ads Developer Blog feed)
+
+| Rank | Working title | Suggested slug | Primary keyword | Intent | Audience | Why it can rank now | Official sources | Card category | Est. words |
+|---|---|---|---|---|---|---|---|---|---|
+| 23 | Google Ads API v22 Stops Working on 7 October 2026: What Agencies and Tool Users Must Check | `google-ads-api-v22-sunset-october-2026` | google ads api v22 sunset | technical / deadline | Agencies, in-house teams on reporting or bid tools | Hard date: "all v22 API requests will begin to fail"; most advertisers do not know which version their tools call | http://feeds.feedburner.com/GoogleAdsDeveloperBlog (post: "Google Ads API v22 sunset reminder", 2 Sep 2026) | PPC | 1,600 |
+| 24 | Google Bans Unaudited API Proxies: What the 2026 Developer Policy Change Means for Your Agency's Tools | `google-ads-developer-policy-api-proxies-2026` | google ads developer policy proxy | informational / compliance | Agencies, SaaS tool buyers | Effective 31 Aug 2026; integrations must use dedicated Google Cloud projects, which changes how to vet third-party Google Ads tools | same feed (post: "Making Google Ads More Secure with Updates to Developer Policies", 31 Aug 2026) | PPC | 1,700 |
+| 25 | Google Ads API v25.2 for Marketers: Competitive Benchmark Percentiles, PMax Drafts and YouTube Creator Insights | `google-ads-api-v25-2-features-2026` | google ads api v25.2 | informational | Agencies with reporting stacks, PPC leads | Released 23 Sep 2026 as a drop-in upgrade; benchmark percentiles and creator insights by channel handle are marketer-relevant | same feed (post: "Announcing v25.2 of the Google Ads API", 23 Sep 2026) | PPC | 1,600 |
+
+Correction to R2.5: the Google Ads Developer Blog post bodies ARE reachable through the FeedBurner feed (`http://feeds.feedburner.com/GoogleAdsDeveloperBlog`). Only the sunset-dates documentation page remains unread. The Meta Marketing API changelog (`developers.facebook.com/docs/marketing-api/marketing-api-changelog/`) was read and has no entries after 4 May 2026, so there are no post-pillar Meta API changes to propose.
+
+### R2.3 Clusters
+
+**Cluster I: ASCI AI-generated content labelling (India, thinnest competition, dated)**
+Hub: #1 `asci-ai-generated-content-labelling-guidelines-2026`. Spokes: #2 sponsored AI chatbot recommendations, #3 virtual influencers and AI likeness, #4 what does not need a label.
+Why: one document, four separate searches, binding on every Indian advertiser from roughly mid-December 2026. Links to our ChatGPT Ads, influencer and TRAI clusters.
+
+**Cluster J: Google Ads measurement and Demand Gen, September 2026**
+Hub: #9 `google-ads-data-manager-data-strength-2026`. Spokes: #10 Demand Gen September Drop, #13 Meridian GeoX, #14 AI Max reporting, #17 Asset Studio video.
+Why: Google shipped all of this inside three weeks; core Distk service territory that round one could not reach.
+
+**Cluster K: Google Ads API deadlines for agencies**
+Hub: #23 `google-ads-api-v22-sunset-october-2026`. Spokes: #24 developer policy and proxies, #25 v25.2 features.
+Why: a hard 7 October date. Publish this cluster first; it loses most of its value after the date.
+
+**Cluster L: Meta business and creator changes, September 2026**
+Hub: #6 `meta-one-business-plans-pricing-2026`. Spokes: #7 Instagram Live video ads, #8 Creator Marketing Hub, #22 Meta API version expiry.
+Why: freshens the Meta Ads pillar (13 Sep) with what changed after it.
+
+**Cluster M: LinkedIn Marketing API and B2B ads changes 2026**
+Hub: #15 `linkedin-conversions-api-qualified-leads-2026`. Spokes: #5 version sunsets, #18 message ads changes, #20 segment cap and geo migration.
+Why: B2B is high-value for Distk and LinkedIn documents these only in its developer changelog.
+
+**Cluster N: OpenAI platform changes (maintenance, feeds the pricing hub)**
+Hub: #11 `gpt-6-luna-pricing-guide-2026`. Spokes: #16 Agents API and computer use, #19 Astra Ultrafast, #12 transcription shutdown, #21 GPT-Live 1 voice.
+Why: Luna completes the GPT-6 tier picture in the pricing hub; the transcription shutdown is a dated migration.
+
+### R2.4 Facts worth leading with (top 12, verbatim from source)
+
+1. **#1 ASCI effective date.** "These Guidelines shall come into effect on the expiration of 3 months from the date of their publication." Signed "Chairman Board of Governors, ASCI September 17th 2026". Source: ASCI SGC guidelines PDF (URL above). Note: the exact publication date is not stated in the PDF, so write "three months after publication", not a specific day.
+2. **#2 Sponsored AI answers.** "Where AI recommends a product that is sponsored, the disclosure should clearly state "Sponsored by [Brand]."" Illustration in the guideline: a chatbot asked for a good moisturiser for Mumbai recommends a brand that paid for the recommendation. Source: ASCI PDF.
+3. **#3 Mandatory label cases.** "Labelling is mandatory in all such cases", examples include "Using synthetically generated influencers and ambassadors" and "Replicating a real person's likeness or voice even with their consent, for personalised messaging." Source: ASCI PDF.
+4. **#4 No label needed.** "No labelling is required when advertisements feature minor modifications or use of SGC in ways that have no material impact on a consumer's ability to make an informed choice", covering routine editing, decorative backgrounds and ambient music, obviously fantastical effects, copy generation, and accessibility such as subtitles. Labels suggested: "Audio/Video created using AI" or "Audio/Video enhanced using AI". Also: an AI label does not cure prohibited content such as fabricated testimonials. Source: ASCI PDF.
+5. **#23 Google Ads API v22.** Sunset date "October 7, 2026"; after it "all v22 API requests will begin to fail". Source: FeedBurner feed, post dated 2 Sep 2026.
+6. **#5 LinkedIn sunsets.** "202510 - Sunset on Oct 15, 2026" and "202511 - Sunset on Nov 16, 2026". Source: LinkedIn recent-changes page. Note: a summary table generated from that page mislabelled these as 202610/202611; use the per-month section wording.
+7. **#6 Meta One prices.** Essential "$14.99/mo", Advanced "$49.99/mo", Expert "$149.00/mo", Max "$499.00/mo"; "Plans, benefits, pricing and availability may vary by region, by app, and by account." Source: Meta One announcement, 15 Sep 2026.
+8. **#7 Instagram Live ads.** "Rolling out to general availability beginning September 29". Source: Meta IAB Global Creator Week post, 15 Sep 2026.
+9. **#9 Data strength.** "Advertisers who build their data strength with Google tag gateway observe on average a 14% conversion uplift"; Data Manager users "see an average 26% increase in incremental ROAS". Google-reported. Source: blog.google data-strength-updates, 10 Sep 2026.
+10. **#11 GPT-6 Luna.** Released 22 Sep 2026 at "$0.10 input/$0.50 output per 1M tokens" (272K max input). Source: developers.openai.com/changelog.
+11. **#12 Transcription shutdown.** "Feb 26, 2027" shutdown for `whisper-1`, `gpt-4o-transcribe`, `gpt-4o-mini-transcribe`, `gpt-4o-transcribe-diarize`. Source: developers.openai.com/changelog.
+12. **#24 Proxy ban.** Integrations must connect directly using dedicated Google Cloud projects rather than programmatic proxies; Google's rationale: "Using unaudited proxies can provide unauthorized actors access to your account". Effective on announcement, 31 Aug 2026. Source: FeedBurner feed.
+
+### R2.6 Deadline-shaped topics
+
+| Date | What happens | Topics |
+|---|---|---|
+| **7 Oct 2026** | Google Ads API v22 requests begin to fail | #23 (publish immediately) |
+| **15 Oct 2026** | LinkedIn Marketing API version 202510 sunsets | #5 |
+| **16 Nov 2026** | LinkedIn Marketing API version 202511 sunsets | #5 |
+| **About mid-December 2026** (three months after publication; signed 17 Sep 2026) | ASCI synthetically generated content labelling guidelines take effect | #1, #2, #3, #4 |
+| **26 Feb 2027** | OpenAI shuts down whisper-1 and the gpt-4o transcription models | #12 |
+| **20 May 2027 / 8 Oct 2027** | Meta Graph and Marketing API v22.0 / v23.0 stop being available | #22 |
+| **Already passed (context only)** | 31 Aug 2026 LinkedIn legacy geo rejected; 31 Aug 2026 Google Ads proxy policy effective; 26 Aug 2026 OpenAI Assistants API shut down | #20, #24 |
+
+**Publish order recommendation:** Cluster K first (7 October), then Cluster I (ASCI, India, effective December), then M (LinkedIn sunset 15 October), then J, L, N.

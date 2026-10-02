@@ -2777,13 +2777,57 @@
     </url>
     <url>
         <loc>https://distk.in/blog/whatsapp-service-message-pricing-october-2026.html</loc>
-        <lastmod>2026-09-30</lastmod>
+        <lastmod>2026-10-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>https://distk.in/blog/whatsapp-template-category-auto-updates-2026.html</loc>
         <lastmod>2026-10-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- Added October 2026 -->
+    <url>
+        <loc>https://distk.in/blog/back-button-hijacking-google-spam-policy-2026.html</loc>
+        <lastmod>2026-10-02</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://distk.in/blog/google-discover-core-update-february-2026.html</loc>
+        <lastmod>2026-10-02</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://distk.in/blog/google-site-reputation-policy-update-2026.html</loc>
+        <lastmod>2026-10-02</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://distk.in/blog/search-central-live-india-bengaluru-2026.html</loc>
+        <lastmod>2026-10-02</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://distk.in/blog/search-console-generative-ai-reports-guide-2026.html</loc>
+        <lastmod>2026-10-02</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://distk.in/blog/search-console-multimodal-search-reporting-2026.html</loc>
+        <lastmod>2026-10-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://distk.in/blog/search-console-platform-properties-social-2026.html</loc>
+        <lastmod>2026-10-02</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>

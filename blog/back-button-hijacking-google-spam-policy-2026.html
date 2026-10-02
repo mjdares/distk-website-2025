@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xdifcafwxl");
+  </script>
+
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Back Button Hijacking Is Now a Google Spam Violation 2026: What to Fix | Distk</title>
+<meta name="description" content="Google made back button hijacking an explicit malicious-practices spam violation, enforced from 15 June 2026. What counts, why ad scripts and libraries are a common cause, how to audit your site, and what happens if you are penalised.">
+<meta name="keywords" content="back button hijacking google, google spam policy 2026, malicious practices policy, back button redirect penalty, exit intent redirect seo, google manual action 2026">
+<meta name="author" content="Distk"><meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://distk.in/blog/back-button-hijacking-google-spam-policy-2026.html">
+<meta property="og:type" content="article"><meta property="og:url" content="https://distk.in/blog/back-button-hijacking-google-spam-policy-2026.html">
+<meta property="og:title" content="Back Button Hijacking Is Now an Explicit Google Spam Violation: What It Means in 2026">
+<meta property="og:description" content="Since 15 June 2026, breaking the back button is a named spam violation. The usual culprit is a script nobody audited.">
+<meta property="og:image" content="https://distk.in/assets/images/og-image.jpg"><meta property="og:site_name" content="Distk">
+<meta property="article:published_time" content="2026-10-02T00:00:00+05:30">
+<meta property="article:modified_time" content="2026-10-02T00:00:00+05:30">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Back Button Hijacking Is Now an Explicit Google Spam Violation: What It Means in 2026"><meta name="twitter:description" content="Since 15 June 2026, breaking the back button is a named spam violation. The usual culprit is a script nobody audited.">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Back Button Hijacking Is Now an Explicit Google Spam Violation: What It Means in 2026", "description": "A guide to Google's 2026 back button hijacking spam policy: the definition, the 15 June 2026 enforcement date, who is affected including via third-party scripts, what does not count, how to audit a site, the consequences, and alternatives to exit-intercept tactics.", "author": {"@type": "Organization", "name": "Distk", "url": "https://distk.in"}, "publisher": {"@type": "Organization", "name": "Distk", "logo": {"@type": "ImageObject", "url": "https://distk.in/assets/images/Logo.png"}}, "datePublished": "2026-10-02", "dateModified": "2026-10-02", "inLanguage": "en", "about": [{"@type": "Thing", "name": "Google spam policies"}, {"@type": "Thing", "name": "back button hijacking"}, {"@type": "Thing", "name": "malicious practices"}, {"@type": "Thing", "name": "manual actions"}, {"@type": "Thing", "name": "Google Search Console"}], "mentions": [{"@type": "Thing", "name": "Google spam policies"}, {"@type": "Thing", "name": "back button hijacking"}, {"@type": "Thing", "name": "malicious practices"}, {"@type": "Thing", "name": "manual actions"}, {"@type": "Thing", "name": "Google Search Console"}], "mainEntityOfPage": {"@type": "WebPage", "@id": "https://distk.in/blog/back-button-hijacking-google-spam-policy-2026.html"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is back button hijacking according to Google?", "acceptedAnswer": {"@type": "Answer", "text": "Google's spam policies define back button hijacking as when a site interferes with user browser navigation by manipulating the browser history or other functionalities, preventing users from using their back button to immediately get back to the page they came from. It is listed as an example of malicious practices."}}, {"@type": "Question", "name": "When is Google enforcing its back button hijacking policy?", "acceptedAnswer": {"@type": "Answer", "text": "Google announced the policy on 13 April 2026 and stated it was publishing it two months in advance of enforcement, which began on 15 June 2026."}}, {"@type": "Question", "name": "What penalties apply to back button hijacking in Google Search?", "acceptedAnswer": {"@type": "Answer", "text": "Google states that pages engaging in back button hijacking may be subject to manual spam actions or automated demotions, which can impact the site's performance in Google Search results."}}, {"@type": "Question", "name": "Can advertising scripts cause back button hijacking?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Google notes that some instances of back button hijacking may originate from a site's included libraries or advertising platform, and encourages site owners to thoroughly review their technical implementation and remove or disable any code, imports or configurations responsible."}}, {"@type": "Question", "name": "How can a site recover from a back button hijacking manual action?", "acceptedAnswer": {"@type": "Answer", "text": "According to Google, if a site has been impacted by a manual action and the issue has been fixed, the owner can submit a reconsideration request in Search Console."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://distk.in/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://distk.in/blog/"}, {"@type": "ListItem", "position": 3, "name": "Back Button Hijacking Is Now an Explicit Google Spam Violation: What It Means in 2026", "item": "https://distk.in/blog/back-button-hijacking-google-spam-policy-2026.html"}]}</script>
+<link rel="icon" type="image/png" href="../assets/images/favicon.png"><link rel="apple-touch-icon" href="../assets/images/Logo.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BWDTQ1JPL2"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-BWDTQ1JPL2');</script>
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1077520544213003');fbq('track','PageView');</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1077520544213003&ev=PageView&noscript=1"></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#0a0a0a;--paper:#fafafa;--mid:#6b6b6b;--light:#e8e8e8;--accent:#e63312;--accent-soft:rgba(230,51,18,0.08);--mono:'Space Mono',monospace;--sans:'Outfit',sans-serif;--container:1120px;--prose:720px;--gutter:clamp(1.2rem,4vw,3rem)}
+html{font-size:16px;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.container{max-width:var(--container);margin:0 auto;padding:0 var(--gutter)}
+.prose{max-width:var(--prose);margin:0 auto;padding:0 var(--gutter)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--light)}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;max-width:var(--container);margin:0 auto;padding:0.9rem var(--gutter)}
+.nav__logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;color:var(--ink)}
+.nav__logo img{height:32px;width:auto}
+.nav__logo span{font-family:var(--mono);font-weight:700;font-size:1.05rem;letter-spacing:-0.02em}
+.nav__logo small{display:block;font-size:0.55rem;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);line-height:1}
+.nav__back{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid);text-decoration:none;display:flex;align-items:center;gap:0.4rem;transition:color 0.2s}
+.nav__back:hover{color:var(--accent)}
+.nav__cta{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.6rem 1.4rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.nav__cta:hover{background:var(--accent)}
+.hero{padding:7.5rem 0 3.5rem;position:relative;overflow:hidden;border-bottom:1px solid var(--light)}
+.hero::before{content:'BACK';position:absolute;right:-1%;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:clamp(6rem,26vw,22rem);font-weight:700;color:rgba(0,0,0,0.03);line-height:1;pointer-events:none;user-select:none;letter-spacing:-0.05em}
+.hero__tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1.5rem}
+.hero__tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.hero h1{font-family:var(--sans);font-weight:700;font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;letter-spacing:-0.03em;max-width:20ch;margin-bottom:1.5rem}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero__sub{font-size:1.1rem;color:var(--mid);max-width:56ch;line-height:1.7;margin-bottom:2rem}
+.hero__meta{display:flex;flex-wrap:wrap;gap:1.5rem;font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid)}
+.tldr{background:var(--accent-soft);border-left:3px solid var(--accent);padding:1.8rem 2rem;margin:3rem 0;position:relative}
+.tldr::before{content:'TL;DR';position:absolute;top:-0.6rem;left:2rem;font-family:var(--mono);font-size:0.62rem;font-weight:700;letter-spacing:0.12em;background:var(--accent);color:#fff;padding:0.2rem 0.6rem}
+.tldr p{font-size:0.95rem;color:var(--ink);line-height:1.7}
+.article{padding:4rem 0 5rem}
+.article h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.35rem,2.8vw,1.8rem);letter-spacing:-0.02em;line-height:1.2;margin:3rem 0 1rem;padding-top:1rem;border-top:1px solid var(--light)}
+.article h2:first-child{border-top:none;margin-top:0}
+.article h3{font-family:var(--mono);font-weight:700;font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin:2rem 0 0.6rem}
+.article p{font-size:1rem;color:#2a2a2a;line-height:1.8;margin-bottom:1.25rem}
+.article ul,.article ol{padding-left:1.4rem;margin-bottom:1.25rem}
+.article li{font-size:1rem;color:#2a2a2a;line-height:1.75;margin-bottom:0.4rem}
+.article strong{font-weight:600;color:var(--ink)}
+.article a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(230,51,18,0.3)}
+.article a:hover{border-bottom-color:var(--accent)}
+.article blockquote{border-left:3px solid var(--accent);padding:0.75rem 1.5rem;margin:2rem 0;background:var(--accent-soft)}
+.article blockquote p{color:var(--ink);font-size:1rem;margin:0}
+.table-wrap{overflow-x:auto;margin:2rem 0}
+.data-table{width:100%;border-collapse:collapse;margin:0;font-size:0.88rem}
+.data-table th{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:0.7rem 1rem;text-align:left;white-space:nowrap}
+.data-table td{padding:0.75rem 1rem;border-bottom:1px solid var(--light);vertical-align:top}
+.data-table tr:last-child td{border-bottom:none}
+.data-table tr:nth-child(even) td{background:#f5f5f5}
+.callout{border:1.5px solid var(--light);padding:1.5rem 1.8rem;margin:2rem 0}
+.callout__label{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem}
+.callout p{font-size:0.92rem;color:var(--mid);line-height:1.7;margin:0}
+.faq{padding:4rem 0;background:var(--ink);color:var(--paper)}
+.faq .section-tag{color:var(--accent)}
+.faq .section-tag::before{background:var(--accent)}
+.faq__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2.5rem;margin-top:2.5rem}
+.faq__item{border-left:2px solid var(--accent);padding-left:1.5rem}
+.faq__item h3{font-family:var(--sans);font-weight:600;font-size:0.95rem;margin-bottom:0.5rem;color:var(--paper)}
+.faq__item p{font-size:0.85rem;color:rgba(255,255,255,0.88);line-height:1.65}
+.section-tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1rem}
+.section-tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.section-title{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.15;color:var(--paper)}
+.cta{padding:5rem 0;background:var(--accent-soft);border-top:1px solid rgba(230,51,18,0.12)}
+.cta__inner{max-width:680px;margin:0 auto;padding:0 var(--gutter);text-align:center}
+.cta h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.2;margin-bottom:1rem}
+.cta p{font-size:1rem;color:var(--mid);line-height:1.7;margin-bottom:2rem}
+.cta__btn{display:inline-flex;align-items:center;gap:0.6rem;font-family:var(--mono);font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;padding:1rem 2.2rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.cta__btn:hover{background:var(--accent)}
+.foot{padding:2.5rem 0;border-top:1px solid var(--light);text-align:center;font-family:var(--mono);font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid)}
+.foot a{color:var(--mid);text-decoration:none}.foot a:hover{color:var(--accent)}
+@media(max-width:768px){.faq__grid{grid-template-columns:1fr}.nav__back span{display:none}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="https://distk.in" class="nav__logo">
+      <img src="../assets/images/Logo.png" alt="Distk">
+      <div><span>Distk</span><small>Global Growth Partner</small></div>
+    </a>
+    <a href="/blog/" class="nav__back">← <span>All articles</span></a>
+    <a href="https://distk.in/#contact" class="nav__cta">Work with us</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="prose">
+    <div class="hero__tag">Search Guide</div>
+    <h1><em>Back Button Hijacking</em> Is Now an Explicit Google Spam Violation in 2026</h1>
+    <p class="hero__sub">Some engagement tactics work by making the back button lie. Google now names that as a malicious practice, and says the cause is often an ad platform or library the site owner never checked. Here is what counts and how to audit for it.</p>
+    <div class="hero__meta">
+      <span>Distk Editorial</span>
+      <span>Oct 2026</span>
+      <span>10 min read</span>
+    </div>
+  </div>
+</section>
+
+<div class="prose">
+  <div class="tldr">
+    <p>On 13 April 2026 Google announced that back button hijacking is an explicit violation of the malicious practices section of its spam policies, with enforcement from 15 June 2026. Google defines it as a site interfering with user browser navigation by manipulating the browser history or other functionalities, preventing users from using their back button to immediately get back to the page they came from. Pages doing this may face manual spam actions or automated demotions. Google says some instances originate from a site's included libraries or advertising platform, and expects site owners to remove or disable any responsible code. The practical audit is to arrive from a search result and press back once on every key template, with ads and widgets live. After fixing a manual action, submit a reconsideration request in Search Console.</p>
+  </div>
+</div>
+
+<main class="article">
+  <div class="prose">
+
+    <h2>What Is Back Button Hijacking in 2026?</h2>
+    <p>Back button hijacking is when a site interferes with a user's browser navigation so they cannot use the back button to return to the page they came from. Google's spam policies define it as "when a site interferes with user browser navigation by manipulating the browser history or other functionalities, preventing them from using their back button to immediately get back to the page they came from." Google announced on 13 April 2026 that it is now an explicit spam violation, with enforcement from 15 June 2026.</p>
+    <p>Google describes what users experience instead of going back: they "might be sent to pages they never visited before, be presented with unsolicited recommendations or ads, or are otherwise just prevented from normally browsing the web." If you have ever pressed back on a news or deals site and landed on a "you might also like" page you never opened, you have seen it.</p>
+
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Attribute</th><th>What Google published in 2026</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Announced</strong></td><td>13 April 2026, on the Search Central blog</td></tr>
+        <tr><td><strong>Enforcement date</strong></td><td>15 June 2026, published "two months in advance of enforcement"</td></tr>
+        <tr><td><strong>Policy category</strong></td><td>An explicit violation of the "malicious practices" section of the spam policies</td></tr>
+        <tr><td><strong>Possible consequences</strong></td><td>Manual spam actions or automated demotions</td></tr>
+        <tr><td><strong>Who is responsible</strong></td><td>The site owner, including for behaviour from included libraries or advertising platforms</td></tr>
+        <tr><td><strong>Recovery route</strong></td><td>Fix the issue, then submit a reconsideration request in Search Console if a manual action was applied</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h2>Why Did Google Make It an Explicit Violation in 2026?</h2>
+    <p>Because, in Google's words, "we've seen a rise of this type of behavior." Google says the practice "breaks the expected user journey, and results in user frustration," and that people "report feeling manipulated and eventually less willing to visit unfamiliar sites." That last point is the one with consequences beyond any single site: it erodes trust in clicking unfamiliar results at all.</p>
+    <p>Google is also clear this is not a new principle. It states that "inserting deceptive or manipulative pages into a user's browser history has always been against our Google Search Essentials." What changed in 2026 is that the behaviour is now named explicitly inside the malicious practices policy, which removes any argument that it was a grey area. The malicious practices policy itself says such practices "create a mismatch between user expectations and the actual outcome, leading to a negative and deceptive user experience, or compromised user security or privacy."</p>
+
+    <h2>Who Is Affected by the Back Button Hijacking Policy in 2026?</h2>
+    <p>Any site whose pages manipulate browser history to stop a user leaving, whether the code was written on purpose or arrived with a third-party script. Google is explicit about the second case, and it is the one most site owners miss: "some instances of back button hijacking may originate from the site's included libraries or advertising platform." Responsibility still sits with the site.</p>
+    <ul>
+      <li><strong>Publishers running ad or recommendation scripts</strong> that push extra history entries to show "more stories" on back.</li>
+      <li><strong>Affiliate and deals sites</strong> that redirect leaving users to offer pages.</li>
+      <li><strong>Landing pages built for engagement metrics</strong> where an exit intercept was added to reduce bounce.</li>
+      <li><strong>Sites using widgets or libraries</strong> they did not write and have never audited for history manipulation.</li>
+    </ul>
+
+    <div class="callout">
+      <div class="callout__label">The CRO angle in 2026</div>
+      <p>Some conversion tactics sold as "engagement recovery" or "exit intent redirects" work by inserting pages into browser history so the back button lands somewhere else. Under the 2026 policy that is a spam risk, not a growth tactic. If an agency or a plugin promises lower bounce rates by changing what back does, ask exactly how it works before it goes live.</p>
+    </div>
+
+    <h2>What Does Not Count as Back Button Hijacking in 2026?</h2>
+    <p>The policy targets interference with the back button, not normal navigation design. Google's description is specific: a site that prevents users "from using their back button to immediately get back to the page they came from", or that inserts or replaces "deceptive or manipulative pages" in browser history. Ordinary features that do not change what back does are not described as violations.</p>
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Pattern</th><th>Read against Google's wording in 2026</th></tr></thead>
+      <tbody>
+        <tr><td>Back sends the user to a page they never visited</td><td>Described by Google as back button hijacking.</td></tr>
+        <tr><td>Back shows unsolicited recommendations or ads first</td><td>Described by Google as back button hijacking.</td></tr>
+        <tr><td>Script pushes extra history entries to trap the user</td><td>Inserting manipulative pages into history; described as a violation.</td></tr>
+        <tr><td>Related articles shown at the end of a page</td><td>Not a change to back behaviour; not what the policy describes.</td></tr>
+        <tr><td>A newsletter prompt that does not alter navigation</td><td>Not a change to back behaviour; not what the policy describes.</td></tr>
+        <tr><td>Single-page app updating history as the user moves between real views</td><td>Not described as a violation, provided back returns to where the user actually was.</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The test that follows from Google's wording is simple. Click into your page from a search result, then press back once. If you are not immediately back on the page you came from, you have a problem worth fixing.</p>
+
+    <h2>How Do You Audit a Site for Back Button Hijacking in 2026?</h2>
+    <p>Test it the way a user would, then trace any failure to the code responsible. Google's guidance to site owners is to "thoroughly review their technical implementation and remove or disable any code, imports or any configurations that are responsible for back button hijacking." That includes third-party code you did not write.</p>
+    <ol>
+      <li><strong>Manual test:</strong> from a Google result, open each key template (article, product, landing page) and press back once. Repeat on mobile.</li>
+      <li><strong>Test with ads and widgets live:</strong> many issues only appear when ad or recommendation scripts load.</li>
+      <li><strong>Inventory scripts:</strong> list every third-party library, ad tag and widget on each template.</li>
+      <li><strong>Check history manipulation:</strong> ask developers to search for code that adds or replaces history entries outside genuine in-app navigation.</li>
+      <li><strong>Ask vendors directly:</strong> request written confirmation that their script does not alter back behaviour.</li>
+      <li><strong>Remove or disable</strong> anything responsible, then re-test.</li>
+      <li><strong>Check Search Console</strong> for manual actions, and if one was applied, submit a reconsideration request after fixing.</li>
+    </ol>
+
+    <h2>What Happens If a Site Is Penalised in 2026?</h2>
+    <p>Google states that pages engaging in back button hijacking "may be subject to manual spam actions or automated demotions, which can impact the site's performance in Google Search results." A manual action is reported in Search Console. Google says that if your site has been impacted by a manual action and you have fixed the issue, you can submit a reconsideration request in Search Console.</p>
+    <p>Automated demotions are not reported the same way, so a site affected that way may see only a traffic decline. That is the practical reason to audit proactively rather than waiting for a notice. For broader context on how Google treats deceptive patterns, see our <a href="google-site-reputation-policy-update-2026.html">site reputation policy guide</a> in this cluster.</p>
+
+    <h2>How Should Marketing Teams Replace Exit-Intercept Tactics in 2026?</h2>
+    <p>Earn the second pageview instead of forcing it. Every legitimate alternative works with the back button, not against it, and most of them also improve the metrics the hijack was meant to fake.</p>
+    <ul>
+      <li><strong>Better in-page next steps:</strong> clear related links, a strong final section, and a relevant call to action before the user decides to leave.</li>
+      <li><strong>Fast pages:</strong> slow pages produce the bounces exit tactics try to hide.</li>
+      <li><strong>Matching intent:</strong> a landing page that answers the search query reduces the urge to go back at all. See our <a href="conversion-rate-optimization-agency-2026.html">CRO guide</a>.</li>
+      <li><strong>Honest measurement:</strong> if bounce rate was inflated by hijacking, expect it to rise when you remove it. Report that as a correction, not a decline.</li>
+    </ul>
+
+    <h2>What Are the Common Mistakes in 2026?</h2>
+    <ul>
+      <li><strong>Assuming it only applies to code you wrote.</strong> Google names libraries and ad platforms explicitly.</li>
+      <li><strong>Testing with ads blocked.</strong> The problem often lives in ad scripts.</li>
+      <li><strong>Testing on desktop only.</strong> Mobile behaviour can differ.</li>
+      <li><strong>Buying "exit recovery" tools without asking how they work.</strong> Some rely on history manipulation.</li>
+      <li><strong>Waiting for a manual action notice.</strong> Automated demotions may not announce themselves.</li>
+      <li><strong>Treating the removal's bounce increase as a loss.</strong> It is the real number returning.</li>
+    </ul>
+
+    <h2>Key Takeaways for 2026</h2>
+    <p>Back button hijacking is now a named spam violation, and the most likely cause on a legitimate site is a script nobody audited.</p>
+    <ul>
+      <li>Announced 13 April 2026 and enforced from 15 June 2026.</li>
+      <li>It is an explicit violation of Google's malicious practices policy.</li>
+      <li>Consequences include manual spam actions or automated demotions.</li>
+      <li>Google says it may come from included libraries or advertising platforms, and site owners must remove it.</li>
+      <li>The simplest test: arrive from search, press back once, and check you land where you came from.</li>
+      <li>After fixing a manual action, submit a reconsideration request in Search Console.</li>
+    </ul>
+    <p>Distk audits landing pages and site templates for spam-policy risks, including third-party scripts, for growth teams in India and internationally, and replaces exit tactics with conversion work that survives Google's policies. If your bounce rate looks too good to be true, that audit is where we start.</p>
+
+    <h2>Sources</h2>
+    <ul>
+      <li><a href="https://developers.google.com/search/blog/2026/04/back-button-hijacking" target="_blank" rel="noopener">Google Search Central Blog, back button hijacking spam policy announcement</a>, 13 April 2026.</li>
+      <li><a href="https://developers.google.com/search/docs/essentials/spam-policies" target="_blank" rel="noopener">Google Search Central, Spam policies for Google web search</a>, malicious practices section.</li>
+    </ul>
+
+  </div>
+</main>
+
+<section class="faq">
+  <div class="container">
+    <div class="section-tag">Key Questions</div>
+    <h2 class="section-title">Back Button Hijacking: FAQs</h2>
+    <div class="faq__grid">
+      <div class="faq__item">
+        <h3>What is back button hijacking?</h3>
+        <p>Google defines it as when a site interferes with user browser navigation by manipulating the browser history or other functionalities, preventing users from using their back button to immediately get back to the page they came from.</p>
+      </div>
+      <div class="faq__item">
+        <h3>When did Google start enforcing the policy?</h3>
+        <p>Google announced it on 13 April 2026 and said it was publishing the policy two months in advance of enforcement on 15 June 2026.</p>
+      </div>
+      <div class="faq__item">
+        <h3>What happens to sites that hijack the back button?</h3>
+        <p>Google says such pages may be subject to manual spam actions or automated demotions, which can impact the site's performance in Google Search results.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Can third-party scripts cause back button hijacking?</h3>
+        <p>Yes. Google notes some instances may originate from the site's included libraries or advertising platform, and encourages site owners to review and remove or disable any responsible code.</p>
+      </div>
+      <div class="faq__item">
+        <h3>How do I check if my site does this?</h3>
+        <p>Arrive at your page from a Google result and press back once, on desktop and mobile, with ads and widgets loaded. If you do not land immediately on the page you came from, investigate the scripts on that template.</p>
+      </div>
+      <div class="faq__item">
+        <h3>How do I recover from a manual action?</h3>
+        <p>Fix the issue, then submit a reconsideration request in Search Console, as Google describes in its announcement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED START -->
+<section class="related" style="padding:3.5rem 0;border-top:1px solid #e8e8e8;background:#fafafa">
+  <div style="max-width:720px;margin:0 auto;padding:0 clamp(1.2rem,4vw,3rem)">
+    <div style="font-family:'Space Mono',monospace;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:#e63312;margin-bottom:1.3rem">Related reading</div>
+    <ul style="list-style:none;margin:0;padding:0;display:grid;gap:0.9rem">
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="search-central-live-india-bengaluru-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">Search Central Live India 2026 in Bengaluru: What Google Is Bringing and Why It Matters</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="google-site-reputation-policy-update-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">Google's Site Reputation Policy Update: What Changed in August 2026</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="google-discover-core-update-february-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">Google's February 2026 Discover Core Update: What Changed for Publishers</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="search-console-platform-properties-social-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">Search Console Platform Properties in 2026: Tracking Instagram, TikTok, X and YouTube in Google Search</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="search-console-multimodal-search-reporting-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">Search Console Now Reports Multimodal Search: What Lens and Circle to Search Data Means in 2026</a></li>
+    </ul>
+  </div>
+</section>
+<!-- RELATED END -->
+<section class="cta">
+  <div class="cta__inner">
+    <h2>Audit the scripts you did not write</h2>
+    <p>Distk audits landing pages and site templates for Google spam-policy risks, including third-party scripts, and replaces exit tactics with conversion work that survives policy changes.</p>
+    <a href="https://distk.in/#contact" class="cta__btn">Start the conversation →</a>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="container">
+    © 2026 Distk · <a href="https://distk.in">distk.in</a> · <a href="mailto:connect@distk.in">connect@distk.in</a>
+  </div>
+</footer>
+</body>
+</html>
