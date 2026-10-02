@@ -2878,4 +2878,30 @@
         <priority>1.0</priority>
     </url>
 
+    <!-- Added October 2026 -->
+    <url>
+        <loc>https://distk.in/blog/linkedin-conversions-api-qualified-leads-2026.html</loc>
+        <lastmod>2026-10-02</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://distk.in/blog/linkedin-dmp-segment-cap-geo-migration-2026.html</loc>
+        <lastmod>2026-10-02</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://distk.in/blog/linkedin-marketing-api-version-sunset-2026.html</loc>
+        <lastmod>2026-10-02</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://distk.in/blog/linkedin-message-ads-not-interested-cta-2026.html</loc>
+        <lastmod>2026-10-02</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
 </urlset>

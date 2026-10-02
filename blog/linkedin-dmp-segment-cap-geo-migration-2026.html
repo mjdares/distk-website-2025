@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xdifcafwxl");
+  </script>
+
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LinkedIn's 1,000-Segment Cap and the End of Legacy Geo Targeting in 2026 | Distk</title>
+<meta name="description" content="Since August 2026 every LinkedIn ad account is capped at 1,000 DMP segments, returning a 429 SEGMENT_LIMIT_EXCEEDED error, and from 31 August 2026 legacy geo targeting is rejected with a 400 error. Who is affected, how to check, and how to clean up safely.">
+<meta name="keywords" content="linkedin dmp segment limit 2026, linkedin 1000 segments, SEGMENT_LIMIT_EXCEEDED, linkedin legacy geo targeting, linkedin bing geo migration, linkedin matched audiences limit">
+<meta name="author" content="Distk"><meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://distk.in/blog/linkedin-dmp-segment-cap-geo-migration-2026.html">
+<meta property="og:type" content="article"><meta property="og:url" content="https://distk.in/blog/linkedin-dmp-segment-cap-geo-migration-2026.html">
+<meta property="og:title" content="LinkedIn's 1,000-Segment Cap and the End of Legacy Geo Targeting in 2026">
+<meta property="og:description" content="A hard cap of 1,000 audience segments per account, and the old location map switched off. Why LinkedIn campaign launches started failing.">
+<meta property="og:image" content="https://distk.in/assets/images/og-image.jpg"><meta property="og:site_name" content="Distk">
+<meta property="article:published_time" content="2026-10-02T00:00:00+05:30">
+<meta property="article:modified_time" content="2026-10-02T00:00:00+05:30">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="LinkedIn's 1,000-Segment Cap and the End of Legacy Geo Targeting in 2026"><meta name="twitter:description" content="A hard cap of 1,000 audience segments per account, and the old location map switched off. Why LinkedIn campaign launches started failing.">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "LinkedIn's 1,000-Segment Cap and the End of Legacy Geo Targeting in 2026", "description": "A guide to two August 2026 LinkedIn targeting changes: the 1,000 DMP segment limit per ad account across Matched and Predictive Audiences with its 429 SEGMENT_LIMIT_EXCEEDED error, and the end of legacy geo targeting from 31 August 2026 in favour of Bing geo, with checks and clean-up steps.", "author": {"@type": "Organization", "name": "Distk", "url": "https://distk.in"}, "publisher": {"@type": "Organization", "name": "Distk", "logo": {"@type": "ImageObject", "url": "https://distk.in/assets/images/Logo.png"}}, "datePublished": "2026-10-02", "dateModified": "2026-10-02", "inLanguage": "en", "about": [{"@type": "Thing", "name": "LinkedIn Matched Audiences"}, {"@type": "Thing", "name": "DMP segments"}, {"@type": "Thing", "name": "LinkedIn Predictive Audiences"}, {"@type": "Thing", "name": "Bing geo targeting"}, {"@type": "Thing", "name": "account-based marketing"}], "mentions": [{"@type": "Thing", "name": "LinkedIn Matched Audiences"}, {"@type": "Thing", "name": "DMP segments"}, {"@type": "Thing", "name": "LinkedIn Predictive Audiences"}, {"@type": "Thing", "name": "Bing geo targeting"}, {"@type": "Thing", "name": "account-based marketing"}], "mainEntityOfPage": {"@type": "WebPage", "@id": "https://distk.in/blog/linkedin-dmp-segment-cap-geo-migration-2026.html"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the LinkedIn DMP segment limit per ad account in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "Starting August 2026, LinkedIn restricts each sponsored account to a maximum of 1,000 DMP segments for Matched Audiences, covering USER, COMPANY and LIST_UPLOAD types, and Predictive Audiences. LinkedIn states the limit applies to all API versions."}}, {"@type": "Question", "name": "What error does LinkedIn return when an ad account reaches the segment limit?", "acceptedAnswer": {"@type": "Answer", "text": "LinkedIn returns a 429 response with the code SEGMENT_LIMIT_EXCEEDED and a message stating that the account has reached the maximum limit of 1000 segments and should delete unused segments before creating new ones. Because the account is full, retrying does not resolve it."}}, {"@type": "Question", "name": "What is deleted when a LinkedIn DMP segment is deleted?", "acceptedAnswer": {"@type": "Answer", "text": "LinkedIn's documentation states that everything related to the deleted DMP segment is removed as well, including its destinations, the corresponding ad segment and the DMP segment list if one exists. A successful deletion returns 204 No Content and requires write access to the sponsored account."}}, {"@type": "Question", "name": "When did LinkedIn stop supporting legacy geo for ads targeting?", "acceptedAnswer": {"@type": "Answer", "text": "LinkedIn stated that starting August 31, 2026 it would completely stop supporting legacy geo for ads targeting. Requests to create campaigns using legacy geo result in a 400 error with the INVALID_VALUE_FOR_FIELD code, and all partners and developers must use Bing geo."}}, {"@type": "Question", "name": "What changed with the LinkedIn profile location field in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "LinkedIn is removing the top-level location field from /v2/me and /v2/people responses. Partners relying on it may receive an empty or null value and should migrate to the geoLocation field, which is already available on both endpoints."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://distk.in/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://distk.in/blog/"}, {"@type": "ListItem", "position": 3, "name": "LinkedIn's 1,000-Segment Cap and the End of Legacy Geo Targeting in 2026", "item": "https://distk.in/blog/linkedin-dmp-segment-cap-geo-migration-2026.html"}]}</script>
+<link rel="icon" type="image/png" href="../assets/images/favicon.png"><link rel="apple-touch-icon" href="../assets/images/Logo.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BWDTQ1JPL2"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-BWDTQ1JPL2');</script>
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1077520544213003');fbq('track','PageView');</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1077520544213003&ev=PageView&noscript=1"></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#0a0a0a;--paper:#fafafa;--mid:#6b6b6b;--light:#e8e8e8;--accent:#e63312;--accent-soft:rgba(230,51,18,0.08);--mono:'Space Mono',monospace;--sans:'Outfit',sans-serif;--container:1120px;--prose:720px;--gutter:clamp(1.2rem,4vw,3rem)}
+html{font-size:16px;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.container{max-width:var(--container);margin:0 auto;padding:0 var(--gutter)}
+.prose{max-width:var(--prose);margin:0 auto;padding:0 var(--gutter)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--light)}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;max-width:var(--container);margin:0 auto;padding:0.9rem var(--gutter)}
+.nav__logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;color:var(--ink)}
+.nav__logo img{height:32px;width:auto}
+.nav__logo span{font-family:var(--mono);font-weight:700;font-size:1.05rem;letter-spacing:-0.02em}
+.nav__logo small{display:block;font-size:0.55rem;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);line-height:1}
+.nav__back{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid);text-decoration:none;display:flex;align-items:center;gap:0.4rem;transition:color 0.2s}
+.nav__back:hover{color:var(--accent)}
+.nav__cta{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.6rem 1.4rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.nav__cta:hover{background:var(--accent)}
+.hero{padding:7.5rem 0 3.5rem;position:relative;overflow:hidden;border-bottom:1px solid var(--light)}
+.hero::before{content:'SEGMENT';position:absolute;right:-1%;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:clamp(6rem,26vw,22rem);font-weight:700;color:rgba(0,0,0,0.03);line-height:1;pointer-events:none;user-select:none;letter-spacing:-0.05em}
+.hero__tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1.5rem}
+.hero__tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.hero h1{font-family:var(--sans);font-weight:700;font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;letter-spacing:-0.03em;max-width:20ch;margin-bottom:1.5rem}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero__sub{font-size:1.1rem;color:var(--mid);max-width:56ch;line-height:1.7;margin-bottom:2rem}
+.hero__meta{display:flex;flex-wrap:wrap;gap:1.5rem;font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid)}
+.tldr{background:var(--accent-soft);border-left:3px solid var(--accent);padding:1.8rem 2rem;margin:3rem 0;position:relative}
+.tldr::before{content:'TL;DR';position:absolute;top:-0.6rem;left:2rem;font-family:var(--mono);font-size:0.62rem;font-weight:700;letter-spacing:0.12em;background:var(--accent);color:#fff;padding:0.2rem 0.6rem}
+.tldr p{font-size:0.95rem;color:var(--ink);line-height:1.7}
+.article{padding:4rem 0 5rem}
+.article h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.35rem,2.8vw,1.8rem);letter-spacing:-0.02em;line-height:1.2;margin:3rem 0 1rem;padding-top:1rem;border-top:1px solid var(--light)}
+.article h2:first-child{border-top:none;margin-top:0}
+.article h3{font-family:var(--mono);font-weight:700;font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin:2rem 0 0.6rem}
+.article p{font-size:1rem;color:#2a2a2a;line-height:1.8;margin-bottom:1.25rem}
+.article ul,.article ol{padding-left:1.4rem;margin-bottom:1.25rem}
+.article li{font-size:1rem;color:#2a2a2a;line-height:1.75;margin-bottom:0.4rem}
+.article strong{font-weight:600;color:var(--ink)}
+.article a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(230,51,18,0.3)}
+.article a:hover{border-bottom-color:var(--accent)}
+.article blockquote{border-left:3px solid var(--accent);padding:0.75rem 1.5rem;margin:2rem 0;background:var(--accent-soft)}
+.article blockquote p{color:var(--ink);font-size:1rem;margin:0}
+.table-wrap{overflow-x:auto;margin:2rem 0}
+.data-table{width:100%;border-collapse:collapse;margin:0;font-size:0.88rem}
+.data-table th{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:0.7rem 1rem;text-align:left;white-space:nowrap}
+.data-table td{padding:0.75rem 1rem;border-bottom:1px solid var(--light);vertical-align:top}
+.data-table tr:last-child td{border-bottom:none}
+.data-table tr:nth-child(even) td{background:#f5f5f5}
+.callout{border:1.5px solid var(--light);padding:1.5rem 1.8rem;margin:2rem 0}
+.callout__label{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem}
+.callout p{font-size:0.92rem;color:var(--mid);line-height:1.7;margin:0}
+.faq{padding:4rem 0;background:var(--ink);color:var(--paper)}
+.faq .section-tag{color:var(--accent)}
+.faq .section-tag::before{background:var(--accent)}
+.faq__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2.5rem;margin-top:2.5rem}
+.faq__item{border-left:2px solid var(--accent);padding-left:1.5rem}
+.faq__item h3{font-family:var(--sans);font-weight:600;font-size:0.95rem;margin-bottom:0.5rem;color:var(--paper)}
+.faq__item p{font-size:0.85rem;color:rgba(255,255,255,0.88);line-height:1.65}
+.section-tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1rem}
+.section-tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.section-title{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.15;color:var(--paper)}
+.cta{padding:5rem 0;background:var(--accent-soft);border-top:1px solid rgba(230,51,18,0.12)}
+.cta__inner{max-width:680px;margin:0 auto;padding:0 var(--gutter);text-align:center}
+.cta h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.2;margin-bottom:1rem}
+.cta p{font-size:1rem;color:var(--mid);line-height:1.7;margin-bottom:2rem}
+.cta__btn{display:inline-flex;align-items:center;gap:0.6rem;font-family:var(--mono);font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;padding:1rem 2.2rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.cta__btn:hover{background:var(--accent)}
+.foot{padding:2.5rem 0;border-top:1px solid var(--light);text-align:center;font-family:var(--mono);font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid)}
+.foot a{color:var(--mid);text-decoration:none}.foot a:hover{color:var(--accent)}
+@media(max-width:768px){.faq__grid{grid-template-columns:1fr}.nav__back span{display:none}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="https://distk.in" class="nav__logo">
+      <img src="../assets/images/Logo.png" alt="Distk">
+      <div><span>Distk</span><small>Global Growth Partner</small></div>
+    </a>
+    <a href="/blog/" class="nav__back">← <span>All articles</span></a>
+    <a href="https://distk.in/#contact" class="nav__cta">Work with us</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="prose">
+    <div class="hero__tag">Paid Media Guide</div>
+    <h1>LinkedIn's <em>1,000-Segment Cap</em> and the End of Legacy Geo Targeting in 2026</h1>
+    <p class="hero__sub">Two infrastructure changes in August 2026 now reject requests outright: one for accounts with too many audience segments, one for campaigns built on the old location system. ABM teams and agencies hit both first.</p>
+    <div class="hero__meta">
+      <span>Distk Editorial</span>
+      <span>Oct 2026</span>
+      <span>10 min read</span>
+    </div>
+  </div>
+</section>
+
+<div class="prose">
+  <div class="tldr">
+    <p>Two LinkedIn targeting rules tightened in August 2026. Each sponsored account is now limited to 1,000 DMP segments across Matched Audiences (USER, COMPANY, LIST_UPLOAD) and Predictive Audiences, on all API versions; creating more returns a 429 error with SEGMENT_LIMIT_EXCEEDED, which retrying will not fix because only deleting segments frees space, and deleting a segment also removes its destinations, ad segment and list. Separately, from 31 August 2026 LinkedIn stopped supporting legacy geo for ads targeting, so campaign creation with legacy locations returns a 400 INVALID_VALUE_FOR_FIELD error and Bing geo is required. LinkedIn is also removing the top-level location field from profile responses in favour of geoLocation. ABM programmes, agencies and CRM syncs that create a new segment per run are most exposed.</p>
+  </div>
+</div>
+
+<main class="article">
+  <div class="prose">
+
+    <style>
+    .article pre{background:#f3f3f3;border-left:3px solid var(--accent);padding:1rem 1.2rem;margin:1.5rem 0;overflow-x:auto}
+    .article code{font-family:var(--mono);font-size:0.85rem}
+    .article p code,.article li code,.article td code{background:#f3f3f3;padding:0.1rem 0.35rem}
+    </style>
+
+    <h2>What Are LinkedIn's 2026 Audience Segment Cap and Geo Targeting Changes?</h2>
+    <p>Two targeting rules tightened in August 2026. First, every LinkedIn ad account is now capped at 1,000 DMP segments, the audience objects behind Matched Audiences and Predictive Audiences. Second, from 31 August 2026 LinkedIn stopped accepting legacy geo locations for ad targeting entirely, so campaigns must use the Bing geo locations it has been migrating to for years. Both changes reject requests outright rather than degrading quietly.</p>
+    <p>Neither is a headline feature, which is exactly why they cause trouble. Account-based marketing teams and agencies that have been uploading lists for years can be near the segment ceiling without knowing it, and an old campaign template or tool with hardcoded legacy locations will now fail when it tries to create a campaign.</p>
+
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Change</th><th>Effective</th><th>What happens</th><th>Error returned</th></tr></thead>
+      <tbody>
+        <tr><td><strong>1,000 DMP segment cap</strong></td><td>August 2026, all versions</td><td>New segments blocked once an ad account holds 1,000</td><td><code>429</code> with <code>SEGMENT_LIMIT_EXCEEDED</code></td></tr>
+        <tr><td><strong>Legacy geo removed</strong></td><td>31 August 2026</td><td>Campaign creation with legacy geo rejected</td><td><code>400</code> with <code>INVALID_VALUE_FOR_FIELD</code></td></tr>
+        <tr><td><strong>Profile location field removed</strong></td><td>Same reminder</td><td>Top-level <code>location</code> in <code>/v2/me</code> and <code>/v2/people</code> may come back empty or null</td><td>Not an error, a missing value</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h2>Explain It Like I Am Five</h2>
+    <div class="callout">
+      <div class="callout__label">The simple version</div>
+      <p>Think of your ad account as a cupboard of labelled jars, each jar holding a list of people or companies you want to reach. LinkedIn has said the cupboard now holds 1,000 jars and no more. If it is full, you must throw old jars away before adding new ones. Separately, LinkedIn has changed the map it uses for places. The old map has been taken away completely, so any instruction that still points to a place on the old map gets sent back with a "that place does not exist here" note.</p>
+    </div>
+
+    <h2>What Exactly Is the 1,000 DMP Segment Limit?</h2>
+    <p>It is a hard per-account ceiling on stored audience segments. LinkedIn's changelog states: "Starting August 2026, each sponsored account is restricted to a maximum of 1,000 DMP segments for Matched Audiences (USER, COMPANY, LIST_UPLOAD) and Predictive Audiences." It also states that "This update applies to all versions", so upgrading the API version does not change it.</p>
+    <p>When an account is full, LinkedIn returns a 429 response. Its documentation shows the message text:</p>
+    <pre><code>"code": "SEGMENT_LIMIT_EXCEEDED",
+"message": "Account has reached the maximum limit of 1000 segments. Please delete unused segments before creating new ones.",
+"maxValue": 1000
+"status": 429</code></pre>
+    <p>Note the status code. A 429 is usually how APIs signal rate limiting, and many tools respond to a 429 by waiting and retrying. Retrying will not help here. The account is full, and only deleting segments frees space, so tools that treat every 429 as a temporary throttle will loop rather than fail clearly.</p>
+
+    <h2>Who Is Most Likely to Hit the Segment Cap in 2026?</h2>
+    <p>Teams that create a new audience for every campaign, client or upload and never clean up. ABM programmes refreshing target account lists monthly, agencies managing many campaigns in one client account, and CRM integrations that sync a new list on a schedule rather than updating an existing one are the usual sources of segment sprawl.</p>
+    <ul>
+      <li><strong>ABM programmes</strong> uploading fresh company lists per quarter or per campaign.</li>
+      <li><strong>Agencies</strong> running many campaigns inside a single client ad account.</li>
+      <li><strong>CRM and CDP syncs</strong> that create a new segment each run instead of updating one.</li>
+      <li><strong>Predictive Audiences users,</strong> since those count towards the same limit.</li>
+    </ul>
+
+    <h2>How Do You Free Up Segment Capacity?</h2>
+    <p>Delete segments you no longer use, carefully, because deletion is broader than it looks. LinkedIn states the delete call returns "204 No Content if the deletion succeeds" and that "Everything related to this DMP segment will be deleted altogether as well, including the DMP segment destinations, the corresponding Ad segment, the DMP segment list (if there's any)." You also need write access to the sponsored account, otherwise LinkedIn returns "403 Forbidden".</p>
+    <ol>
+      <li><strong>Count segments</strong> in each ad account before the cap becomes a surprise.</li>
+      <li><strong>Map segments to live campaigns.</strong> Never delete a segment a running campaign targets.</li>
+      <li><strong>Archive the source list</strong> outside LinkedIn before deletion, since the list goes with it.</li>
+      <li><strong>Delete in batches</strong> and record what was removed and why.</li>
+      <li><strong>Change the upload pattern</strong> so integrations update a standing segment rather than creating a new one each run.</li>
+    </ol>
+
+    <h2>What Changed With Legacy Geo Targeting in 2026?</h2>
+    <p>Legacy geo is gone for campaign creation. LinkedIn's August reminder says: "Starting Aug 31, 2026, LinkedIn will completely stop supporting Legacy Geo for Ads Targeting. Requests to create campaigns using legacy geo will result in a 400 error with the INVALID_VALUE_FOR_FIELD code. All partners and developers must use Bing-geo as previously published in this migration guide."</p>
+    <p>The migration itself is old. LinkedIn's guide describes a three-phase move whose final phase says "Only Bing geo locations will be accepted in ad campaigns. Legacy locations can no longer be used for campaign creation, campaigns with legacy locations will be rejected." The guide frames the benefit in scale: roughly "~6k standardized locations, primarily in US" under the old system against "around 2.6 million locations" with Bing geo, including "a large number of international locations". For Indian advertisers targeting specific cities and regions, that broader coverage is the upside.</p>
+    <p>LinkedIn's guide also notes that use of Bing Maps location data is subject to Microsoft's terms, which "are now incorporated into our LinkedIn Marketing API Program Terms." Agencies building tooling on these locations should read those terms.</p>
+
+    <h2>How Do You Check Whether Your Tools Still Use Legacy Geo?</h2>
+    <p>Look for campaign templates, saved configurations or code that hardcode old-style location values. LinkedIn's guide gives "urn:li:country:us" as an example of a legacy location returned in the earliest migration phase. Anything still constructing campaigns from stored legacy values will fail at creation time with a 400 error.</p>
+    <ul>
+      <li><strong>Search stored templates and code</strong> for legacy location identifiers used in campaign targeting.</li>
+      <li><strong>Re-resolve locations</strong> through LinkedIn's typeahead and URN-to-name resolution, as the migration guide describes.</li>
+      <li><strong>Test campaign creation</strong> in each tool rather than assuming success.</li>
+      <li><strong>Check profile integrations</strong> that read the top-level <code>location</code> field. LinkedIn says partners "may begin receiving an empty or null value and should migrate to the geoLocation field."</li>
+    </ul>
+
+    <h2>What Are the Common Mistakes in 2026?</h2>
+    <ul>
+      <li><strong>Treating SEGMENT_LIMIT_EXCEEDED as a rate limit.</strong> It is a 429 that retrying will not fix.</li>
+      <li><strong>Deleting segments without mapping them to live campaigns.</strong> The related ad segment goes too.</li>
+      <li><strong>Assuming an API upgrade lifts the cap.</strong> LinkedIn says it applies to all versions.</li>
+      <li><strong>Creating a new segment per sync.</strong> That is how accounts reach 1,000.</li>
+      <li><strong>Keeping old campaign templates with legacy geo.</strong> They now fail with INVALID_VALUE_FOR_FIELD.</li>
+      <li><strong>Ignoring the profile location change</strong> in tools that personalise by member location.</li>
+    </ul>
+
+    <h2>Key Takeaways for 2026</h2>
+    <ul>
+      <li>Since August 2026 each LinkedIn ad account can hold at most 1,000 DMP segments across Matched Audiences and Predictive Audiences, on all versions.</li>
+      <li>Hitting the cap returns a 429 with <code>SEGMENT_LIMIT_EXCEEDED</code>; only deleting segments frees space.</li>
+      <li>Deleting a segment also deletes its destinations, ad segment and list.</li>
+      <li>From 31 August 2026 legacy geo is rejected for campaign creation with a 400 <code>INVALID_VALUE_FOR_FIELD</code> error; use Bing geo.</li>
+      <li>The top-level profile <code>location</code> field is being removed; use <code>geoLocation</code>.</li>
+      <li>Audit segment counts, upload patterns and stored location values now rather than at the next failed launch.</li>
+    </ul>
+    <p>Distk helps B2B and ABM teams across India and internationally keep their LinkedIn audiences and targeting clean, from segment hygiene to location setup, so campaign launches do not fail on infrastructure. Related reading: <a href="account-based-marketing-agency-2026.html">account-based marketing in 2026</a> and the <a href="linkedin-marketing-api-version-sunset-2026.html">LinkedIn API version sunsets</a>.</p>
+<p><em>Every version number, date, field name and error code in this guide is quoted from LinkedIn's own developer documentation on Microsoft Learn as read on 2 October 2026. LinkedIn updates these pages monthly, so confirm against the live changelog before acting.</em></p>
+    <h2>Sources</h2>
+    <ul>
+      <li><a href="https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes" target="_blank" rel="noopener">LinkedIn Marketing API, Recent Marketing API Changes</a> (Microsoft Learn), the September, August, July and June 2026 release notes.</li>
+      <li><a href="https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segments" target="_blank" rel="noopener">LinkedIn Marketing API, Create and Manage DMP Segments</a> (Microsoft Learn).</li>
+      <li><a href="https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/bing-geo-migration-guide" target="_blank" rel="noopener">LinkedIn Marketing API, Ads Targeting Migration Guide to Bing Geo</a> (Microsoft Learn).</li>
+    </ul>
+
+  </div>
+</main>
+
+<section class="faq">
+  <div class="container">
+    <div class="section-tag">Key Questions</div>
+    <h2 class="section-title">LinkedIn Segment Cap and Geo Changes in 2026: FAQs</h2>
+    <div class="faq__grid">
+      <div class="faq__item">
+        <h3>What is LinkedIn's DMP segment limit in 2026?</h3>
+        <p>Since August 2026 each sponsored account can hold a maximum of 1,000 DMP segments for Matched Audiences (USER, COMPANY, LIST_UPLOAD) and Predictive Audiences. LinkedIn says this applies to all versions.</p>
+      </div>
+      <div class="faq__item">
+        <h3>What error do you get at the segment cap?</h3>
+        <p>A 429 response with the code SEGMENT_LIMIT_EXCEEDED and the message that the account has reached the maximum limit of 1000 segments and should delete unused segments before creating new ones.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Will retrying fix SEGMENT_LIMIT_EXCEEDED?</h3>
+        <p>No. Although it uses a 429 status, the account is full. Only deleting unused segments frees capacity, so tools that automatically retry 429s will loop instead of succeeding.</p>
+      </div>
+      <div class="faq__item">
+        <h3>What gets deleted when you delete a DMP segment?</h3>
+        <p>LinkedIn says everything related to the segment is deleted, including its destinations, the corresponding ad segment and the segment list if there is one. Archive the list and confirm no live campaign uses it first.</p>
+      </div>
+      <div class="faq__item">
+        <h3>What happened to legacy geo targeting on LinkedIn?</h3>
+        <p>From 31 August 2026 LinkedIn completely stopped supporting legacy geo for ads targeting. Creating campaigns with legacy geo returns a 400 error with INVALID_VALUE_FOR_FIELD, and Bing geo must be used instead.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Why move to Bing geo beyond avoiding errors?</h3>
+        <p>LinkedIn's migration guide compares about 6,000 standardized locations, primarily in the US, with around 2.6 million Bing geo locations including many international ones, which gives finer targeting outside the US.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED START -->
+<section class="related" style="padding:3.5rem 0;border-top:1px solid #e8e8e8;background:#fafafa">
+  <div style="max-width:720px;margin:0 auto;padding:0 clamp(1.2rem,4vw,3rem)">
+    <div style="font-family:'Space Mono',monospace;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:#e63312;margin-bottom:1.3rem">Related reading</div>
+    <ul style="list-style:none;margin:0;padding:0;display:grid;gap:0.9rem">
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="beyond-seo-why-brands-need-geo-strategy-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">Beyond SEO in 2026: Why Your Brand Needs a GEO Strategy</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="geo-aeo-seo-agency-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">GEO, AEO & SEO Agency 2026: Complete Guide to AI Search Optimization</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="seo-vs-aeo-vs-geo-search-strategy-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">SEO vs AEO vs GEO: Which Search Strategy Does Your Business Need in 2026?</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="how-indian-brands-compete-ai-search-geo-guide-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">How Indian Brands Can Compete in AI Search: A Practical GEO Guide for India</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="seo-dead-aeo-geo-replacing-search-b2b-india-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">SEO Is Dead? How AEO and GEO Are Replacing Traditional Search for B2B Startups in India</a></li>
+    </ul>
+  </div>
+</section>
+<!-- RELATED END -->
+<section class="cta">
+  <div class="cta__inner">
+    <h2>Clean audiences, clean launches</h2>
+    <p>Distk audits LinkedIn ad accounts for segment sprawl and outdated targeting, cleans up safely around live campaigns, and fixes the sync patterns that cause the problem in the first place.</p>
+    <a href="https://distk.in/#contact" class="cta__btn">Start the conversation →</a>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="container">
+    © 2026 Distk · <a href="https://distk.in">distk.in</a> · <a href="mailto:connect@distk.in">connect@distk.in</a>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xdifcafwxl");
+  </script>
+
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LinkedIn Marketing API Versions 202510 and 202511 Sunset in 2026 | Distk</title>
+<meta name="description" content="LinkedIn Marketing API version 202510 sunsets on 15 October 2026 and 202511 on 16 November 2026. Who is affected, how to check which version your tools send, how the Linkedin-Version header works, and what to do before the date.">
+<meta name="keywords" content="linkedin marketing api sunset 2026, linkedin api version 202510, linkedin api 202511 sunset, Linkedin-Version header, linkedin ads api migration, linkedin api deprecation">
+<meta name="author" content="Distk"><meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://distk.in/blog/linkedin-marketing-api-version-sunset-2026.html">
+<meta property="og:type" content="article"><meta property="og:url" content="https://distk.in/blog/linkedin-marketing-api-version-sunset-2026.html">
+<meta property="og:title" content="LinkedIn Marketing API Versions 202510 and 202511 Sunset on 15 October and 16 November 2026">
+<meta property="og:description" content="Two LinkedIn API versions switch off within seven weeks. How to find out whether your reporting, CRM or audience tools still call them.">
+<meta property="og:image" content="https://distk.in/assets/images/og-image.jpg"><meta property="og:site_name" content="Distk">
+<meta property="article:published_time" content="2026-10-02T00:00:00+05:30">
+<meta property="article:modified_time" content="2026-10-02T00:00:00+05:30">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="LinkedIn Marketing API Versions 202510 and 202511 Sunset on 15 October and 16 November 2026"><meta name="twitter:description" content="Two LinkedIn API versions switch off within seven weeks. How to find out whether your reporting, CRM or audience tools still call them.">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "LinkedIn Marketing API Versions 202510 and 202511 Sunset on 15 October and 16 November 2026", "description": "A guide for B2B marketers and agencies to the LinkedIn Marketing API version sunsets in 2026: the exact dates for 202510 and 202511, how monthly versioning and the Linkedin-Version header work, who is affected through their tools, how to check, and how to migrate.", "author": {"@type": "Organization", "name": "Distk", "url": "https://distk.in"}, "publisher": {"@type": "Organization", "name": "Distk", "logo": {"@type": "ImageObject", "url": "https://distk.in/assets/images/Logo.png"}}, "datePublished": "2026-10-02", "dateModified": "2026-10-02", "inLanguage": "en", "about": [{"@type": "Thing", "name": "LinkedIn Marketing API"}, {"@type": "Thing", "name": "API versioning"}, {"@type": "Thing", "name": "LinkedIn Ads"}, {"@type": "Thing", "name": "Linkedin-Version header"}, {"@type": "Thing", "name": "B2B advertising"}], "mentions": [{"@type": "Thing", "name": "LinkedIn Marketing API"}, {"@type": "Thing", "name": "API versioning"}, {"@type": "Thing", "name": "LinkedIn Ads"}, {"@type": "Thing", "name": "Linkedin-Version header"}, {"@type": "Thing", "name": "B2B advertising"}], "mainEntityOfPage": {"@type": "WebPage", "@id": "https://distk.in/blog/linkedin-marketing-api-version-sunset-2026.html"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "When do LinkedIn Marketing API versions 202510 and 202511 sunset in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "LinkedIn's September 2026 changelog lists 202510 sunsetting on October 15, 2026 and 202511 sunsetting on November 16, 2026. LinkedIn's developer pages also carry a notice that the Marketing Version 202510, the October 2025 release, will be sunset on October 15, 2026."}}, {"@type": "Question", "name": "What happens when a tool calls a sunset LinkedIn Marketing API version?", "acceptedAnswer": {"@type": "Answer", "text": "LinkedIn's versioning documentation states that an error response is returned when the version header is deprecated, and also when the header is missing. There is no automatic fallback to a newer version, so the integration stops returning normal results until its header is updated."}}, {"@type": "Question", "name": "How can a marketing team check which LinkedIn API version its tools use?", "acceptedAnswer": {"@type": "Answer", "text": "For code the team owns, search the codebase and configuration for the Linkedin-Version request header and read its value, which uses YYYYMM format. For third-party tools, ask the vendor which Marketing API version they currently send and when they plan to migrate, and confirm in writing."}}, {"@type": "Question", "name": "How do you migrate to a newer LinkedIn Marketing API version?", "acceptedAnswer": {"@type": "Answer", "text": "LinkedIn's guidance is to update the YYYYMM value in the Linkedin-Version header to the newer version. Because fields and behaviours change between monthly versions, teams should read the release notes in between, test in a non-production environment, and compare key report totals before deploying."}}, {"@type": "Question", "name": "Which LinkedIn API features require a recent version in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "MARKETING_QUALIFIED_LEAD and SALES_QUALIFIED_LEAD conversion types require version 202608 or later, hashedFirstName and hashedLastName matching fields require 202609, account-level dynamic UTM parameters require 202608, and the 365-day Company Intelligence lookback requires 202606."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://distk.in/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://distk.in/blog/"}, {"@type": "ListItem", "position": 3, "name": "LinkedIn Marketing API Versions 202510 and 202511 Sunset on 15 October and 16 November 2026", "item": "https://distk.in/blog/linkedin-marketing-api-version-sunset-2026.html"}]}</script>
+<link rel="icon" type="image/png" href="../assets/images/favicon.png"><link rel="apple-touch-icon" href="../assets/images/Logo.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BWDTQ1JPL2"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-BWDTQ1JPL2');</script>
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1077520544213003');fbq('track','PageView');</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1077520544213003&ev=PageView&noscript=1"></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#0a0a0a;--paper:#fafafa;--mid:#6b6b6b;--light:#e8e8e8;--accent:#e63312;--accent-soft:rgba(230,51,18,0.08);--mono:'Space Mono',monospace;--sans:'Outfit',sans-serif;--container:1120px;--prose:720px;--gutter:clamp(1.2rem,4vw,3rem)}
+html{font-size:16px;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.container{max-width:var(--container);margin:0 auto;padding:0 var(--gutter)}
+.prose{max-width:var(--prose);margin:0 auto;padding:0 var(--gutter)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--light)}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;max-width:var(--container);margin:0 auto;padding:0.9rem var(--gutter)}
+.nav__logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;color:var(--ink)}
+.nav__logo img{height:32px;width:auto}
+.nav__logo span{font-family:var(--mono);font-weight:700;font-size:1.05rem;letter-spacing:-0.02em}
+.nav__logo small{display:block;font-size:0.55rem;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);line-height:1}
+.nav__back{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid);text-decoration:none;display:flex;align-items:center;gap:0.4rem;transition:color 0.2s}
+.nav__back:hover{color:var(--accent)}
+.nav__cta{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.6rem 1.4rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.nav__cta:hover{background:var(--accent)}
+.hero{padding:7.5rem 0 3.5rem;position:relative;overflow:hidden;border-bottom:1px solid var(--light)}
+.hero::before{content:'SUNSET';position:absolute;right:-1%;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:clamp(6rem,26vw,22rem);font-weight:700;color:rgba(0,0,0,0.03);line-height:1;pointer-events:none;user-select:none;letter-spacing:-0.05em}
+.hero__tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1.5rem}
+.hero__tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.hero h1{font-family:var(--sans);font-weight:700;font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;letter-spacing:-0.03em;max-width:20ch;margin-bottom:1.5rem}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero__sub{font-size:1.1rem;color:var(--mid);max-width:56ch;line-height:1.7;margin-bottom:2rem}
+.hero__meta{display:flex;flex-wrap:wrap;gap:1.5rem;font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid)}
+.tldr{background:var(--accent-soft);border-left:3px solid var(--accent);padding:1.8rem 2rem;margin:3rem 0;position:relative}
+.tldr::before{content:'TL;DR';position:absolute;top:-0.6rem;left:2rem;font-family:var(--mono);font-size:0.62rem;font-weight:700;letter-spacing:0.12em;background:var(--accent);color:#fff;padding:0.2rem 0.6rem}
+.tldr p{font-size:0.95rem;color:var(--ink);line-height:1.7}
+.article{padding:4rem 0 5rem}
+.article h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.35rem,2.8vw,1.8rem);letter-spacing:-0.02em;line-height:1.2;margin:3rem 0 1rem;padding-top:1rem;border-top:1px solid var(--light)}
+.article h2:first-child{border-top:none;margin-top:0}
+.article h3{font-family:var(--mono);font-weight:700;font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin:2rem 0 0.6rem}
+.article p{font-size:1rem;color:#2a2a2a;line-height:1.8;margin-bottom:1.25rem}
+.article ul,.article ol{padding-left:1.4rem;margin-bottom:1.25rem}
+.article li{font-size:1rem;color:#2a2a2a;line-height:1.75;margin-bottom:0.4rem}
+.article strong{font-weight:600;color:var(--ink)}
+.article a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(230,51,18,0.3)}
+.article a:hover{border-bottom-color:var(--accent)}
+.article blockquote{border-left:3px solid var(--accent);padding:0.75rem 1.5rem;margin:2rem 0;background:var(--accent-soft)}
+.article blockquote p{color:var(--ink);font-size:1rem;margin:0}
+.table-wrap{overflow-x:auto;margin:2rem 0}
+.data-table{width:100%;border-collapse:collapse;margin:0;font-size:0.88rem}
+.data-table th{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:0.7rem 1rem;text-align:left;white-space:nowrap}
+.data-table td{padding:0.75rem 1rem;border-bottom:1px solid var(--light);vertical-align:top}
+.data-table tr:last-child td{border-bottom:none}
+.data-table tr:nth-child(even) td{background:#f5f5f5}
+.callout{border:1.5px solid var(--light);padding:1.5rem 1.8rem;margin:2rem 0}
+.callout__label{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem}
+.callout p{font-size:0.92rem;color:var(--mid);line-height:1.7;margin:0}
+.faq{padding:4rem 0;background:var(--ink);color:var(--paper)}
+.faq .section-tag{color:var(--accent)}
+.faq .section-tag::before{background:var(--accent)}
+.faq__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2.5rem;margin-top:2.5rem}
+.faq__item{border-left:2px solid var(--accent);padding-left:1.5rem}
+.faq__item h3{font-family:var(--sans);font-weight:600;font-size:0.95rem;margin-bottom:0.5rem;color:var(--paper)}
+.faq__item p{font-size:0.85rem;color:rgba(255,255,255,0.88);line-height:1.65}
+.section-tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1rem}
+.section-tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.section-title{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.15;color:var(--paper)}
+.cta{padding:5rem 0;background:var(--accent-soft);border-top:1px solid rgba(230,51,18,0.12)}
+.cta__inner{max-width:680px;margin:0 auto;padding:0 var(--gutter);text-align:center}
+.cta h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.2;margin-bottom:1rem}
+.cta p{font-size:1rem;color:var(--mid);line-height:1.7;margin-bottom:2rem}
+.cta__btn{display:inline-flex;align-items:center;gap:0.6rem;font-family:var(--mono);font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;padding:1rem 2.2rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.cta__btn:hover{background:var(--accent)}
+.foot{padding:2.5rem 0;border-top:1px solid var(--light);text-align:center;font-family:var(--mono);font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid)}
+.foot a{color:var(--mid);text-decoration:none}.foot a:hover{color:var(--accent)}
+@media(max-width:768px){.faq__grid{grid-template-columns:1fr}.nav__back span{display:none}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="https://distk.in" class="nav__logo">
+      <img src="../assets/images/Logo.png" alt="Distk">
+      <div><span>Distk</span><small>Global Growth Partner</small></div>
+    </a>
+    <a href="/blog/" class="nav__back">← <span>All articles</span></a>
+    <a href="https://distk.in/#contact" class="nav__cta">Work with us</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="prose">
+    <div class="hero__tag">Paid Media Guide</div>
+    <h1>LinkedIn Marketing API <em>202510 and 202511</em> Sunset in 2026: What Breaks and How to Check</h1>
+    <p class="hero__sub">LinkedIn retires a Marketing API version every month, and two of them go this quarter. Most teams affected will never see the API. They will see an empty report. Here is how to find out first.</p>
+    <div class="hero__meta">
+      <span>Distk Editorial</span>
+      <span>Oct 2026</span>
+      <span>10 min read</span>
+    </div>
+  </div>
+</section>
+
+<div class="prose">
+  <div class="tldr">
+    <p>LinkedIn's changelog lists two Marketing API sunsets this quarter: "202510 - Oct 15, 2026" and "202511 - Nov 16, 2026". Versions are selected with the Linkedin-Version request header in YYYYMM format and are supported for a minimum of one year, and LinkedIn returns an error rather than falling back when a request uses a deprecated or missing version. That means any reporting script, CRM connector, audience sync or automation tool still sending either version stops working on those dates. To check, search owned code and configuration for Linkedin-Version and get each vendor's version in writing. Migrating means changing the header and testing what changed between versions, ideally to 202609, which LinkedIn supports until 15 September 2027. Moving to 202608 or later also unlocks the new MQL and SQL conversion types.</p>
+  </div>
+</div>
+
+<main class="article">
+  <div class="prose">
+
+    <style>
+    .article pre{background:#f3f3f3;border-left:3px solid var(--accent);padding:1rem 1.2rem;margin:1.5rem 0;overflow-x:auto}
+    .article code{font-family:var(--mono);font-size:0.85rem}
+    .article p code,.article li code,.article td code{background:#f3f3f3;padding:0.1rem 0.35rem}
+    </style>
+
+    <h2>What Is Changing in the LinkedIn Marketing API in October and November 2026?</h2>
+    <p>Two LinkedIn Marketing API versions are being switched off. LinkedIn's changelog lists "202510 - Oct 15, 2026" and "202511 - Nov 16, 2026" under Version Sunset, and its developer pages carry a standing banner: "The Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026." Any tool still sending either version after those dates stops getting normal responses.</p>
+    <p>This is routine for LinkedIn, which releases a new API version every month, but it lands hard on agencies and B2B teams because almost nobody using LinkedIn ads through software knows which version their tools call. Reporting dashboards, CRM connectors, audience sync tools and in-house scripts all send a version, and the oldest ones in production are usually the ones nobody has touched in a year.</p>
+
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Version header</th><th>Released</th><th>Sunset date (LinkedIn's wording)</th><th>Status on 2 October 2026</th></tr></thead>
+      <tbody>
+        <tr><td><code>202509</code></td><td>September 2025</td><td>Sep 15, 2026</td><td>Already sunset</td></tr>
+        <tr><td><code>202510</code></td><td>October 2025</td><td>Oct 15, 2026</td><td>Sunsets in 13 days</td></tr>
+        <tr><td><code>202511</code></td><td>November 2025</td><td>Nov 16, 2026</td><td>Sunsets in about six weeks</td></tr>
+        <tr><td><code>202601</code></td><td>January 2026</td><td>January 15, 2027</td><td>Active</td></tr>
+        <tr><td><code>202609</code></td><td>September 2026</td><td>September 15, 2027</td><td>Active, latest</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>One correction worth making explicit. Some automated summaries of LinkedIn's changelog have mislabelled these as 202610 and 202611. Those versions do not exist yet. The page's own sunset lists name 202510 and 202511, the October and November 2025 releases, and the migration status table confirms both dates.</p>
+
+    <h2>Explain It Like I Am Five</h2>
+    <div class="callout">
+      <div class="callout__label">The simple version</div>
+      <p>Every time your software talks to LinkedIn, it says which edition of the rulebook it is reading from, like quoting the year on a phone directory. LinkedIn prints a new directory every month and promises to keep each one working for at least a year. After that, it throws the old directory away. If your tool keeps quoting last year's edition, LinkedIn stops answering it. Nothing about your ads changes. The tool that reads or manages them just goes quiet, and often nobody notices until a report comes back empty.</p>
+    </div>
+
+    <h2>How Does LinkedIn Marketing API Versioning Work in 2026?</h2>
+    <p>LinkedIn versions its Marketing API by month and identifies each version with a request header. Its versioning page says: "Include a request header with the key 'Linkedin-Version' and set the value to the version (format: YYYYMM)." It adds that "These API versions are supported and stable for a minimum of one year before sunset." Each version is therefore a dated contract with roughly a twelve month life.</p>
+    <p>The header in LinkedIn's own example looks like this:</p>
+    <pre><code>-H 'Linkedin-Version: 202601' \</code></pre>
+    <p>Two behaviours matter for anyone running production tooling in 2026. LinkedIn states that "An error response is returned when the version header is missing in the request", and that "An error response is returned when the version header is deprecated (e.g., 202401)." There is no silent fallback to a newer version. A tool sending a sunset version gets an error, not slightly different data.</p>
+
+    <h2>Who Is Affected by the 202510 and 202511 Sunsets?</h2>
+    <p>Anyone whose software calls the LinkedIn Marketing API with either version header, which is a wider group than developers. Agencies and in-house teams are affected even if they never write code, because the tools they rely on make the calls on their behalf. The risk sits with whoever built or maintains the integration, but the consequence shows up in the marketing team's reports and campaigns.</p>
+    <ul>
+      <li><strong>Agencies with custom reporting:</strong> scripts or BI connectors pulling ad analytics into dashboards for clients.</li>
+      <li><strong>B2B teams with CRM sync:</strong> integrations sending lead or conversion data between LinkedIn and a CRM.</li>
+      <li><strong>Audience and ABM tooling:</strong> anything creating or updating matched audiences or company lists.</li>
+      <li><strong>Campaign automation:</strong> bulk campaign creation, budget pacing or bid tools that manage campaigns through the API.</li>
+      <li><strong>Third-party martech platforms:</strong> usually maintained by the vendor, but worth confirming in writing rather than assuming.</li>
+    </ul>
+
+    <h2>How Do You Check Which Version Your Tools Use in 2026?</h2>
+    <p>Look for the header value. For code you own, search the codebase and any configuration for the string <code>Linkedin-Version</code> and read the value next to it. For tools you do not own, ask the vendor which Marketing API version they currently send and when they plan to move. The answer you want is a version from 2026, not 202510 or 202511.</p>
+    <ol>
+      <li><strong>Inventory every LinkedIn integration</strong> touching your ad accounts: reporting, CRM, audiences, automation, and any freelancer-built scripts.</li>
+      <li><strong>Search owned code and config</strong> for <code>Linkedin-Version</code>, including environment variables and scheduled jobs.</li>
+      <li><strong>Email each vendor</strong> and ask for the version in use and their migration date, in writing.</li>
+      <li><strong>Check error logs</strong> for version errors after any earlier sunset, such as 202509 on 15 September 2026. An integration that broke then and was patched quietly may be close to the line again.</li>
+      <li><strong>Note which tools depend on newer features,</strong> because some 2026 capabilities only exist on recent versions.</li>
+    </ol>
+
+    <h2>What Should You Do Before 15 October 2026?</h2>
+    <p>Move every integration to a current version, ideally the latest. LinkedIn's migration guidance is that "To migrate your app from an older version to a later version, simply update the older version's YYYYMM formatted value in the header to the newer version's value." Changing the header is trivial. Testing what changed between versions is the real work, and that is why it should start now rather than on 14 October.</p>
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Step</th><th>What to do in 2026</th><th>Why</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>Pick a target version, normally <code>202609</code></td><td>The latest buys the longest runway, to 15 September 2027 per LinkedIn's table.</td></tr>
+        <tr><td>2</td><td>Read the release notes between your version and the target</td><td>Fields and behaviours change monthly.</td></tr>
+        <tr><td>3</td><td>Change the header in a test environment first</td><td>Errors appear before they reach client reports.</td></tr>
+        <tr><td>4</td><td>Re-run the key reports and compare totals</td><td>Confirms nothing silently changed in the numbers.</td></tr>
+        <tr><td>5</td><td>Deploy and diarise the next sunset</td><td>Every version you adopt has a known end date.</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>If you have questions, LinkedIn routes them through its Developer Support Request Form. The changelog notes that "The Zendesk support path will sunset on June 30th", so older support links in internal runbooks may no longer work.</p>
+
+    <h2>Why Is Upgrading Worth More Than Avoiding an Outage in 2026?</h2>
+    <p>Because several of LinkedIn's most useful 2026 changes only exist on recent versions. Staying on an old header does not just risk a shutdown. It also leaves capabilities unused that matter for B2B performance, particularly around lead quality and measurement.</p>
+    <ul>
+      <li><strong>Marketing and sales qualified lead conversion types:</strong> LinkedIn states <code>MARKETING_QUALIFIED_LEAD</code> and <code>SALES_QUALIFIED_LEAD</code> "are available starting with the 202608 version onwards." Our <a href="linkedin-conversions-api-qualified-leads-2026.html">Conversions API qualified leads guide</a> explains why they matter.</li>
+      <li><strong>Hashed name matching:</strong> the <code>hashedFirstName</code> and <code>hashedLastName</code> fields arrive "Starting with the 202609 version."</li>
+      <li><strong>Account-level dynamic UTMs:</strong> setting tracking parameters for a whole ad account starts "with the 202608 version."</li>
+      <li><strong>Company Intelligence filters and a 365-day lookback:</strong> the 365-day window starts with 202606, and LinkedIn notes "Versions 202605 and earlier continue to cap the window at 180 days."</li>
+    </ul>
+
+    <h2>What Are the Common Mistakes in 2026?</h2>
+    <ul>
+      <li><strong>Assuming a tool you pay for is already upgraded.</strong> Ask for the version in writing.</li>
+      <li><strong>Searching for 202610 or 202611.</strong> Those are mislabels from automated summaries. The sunsetting versions are 202510 and 202511.</li>
+      <li><strong>Changing the header without testing.</strong> The header is one line; behaviour differences are not.</li>
+      <li><strong>Upgrading only to the next version.</strong> Jumping to 202511 buys about a month. Move to a 2026 version.</li>
+      <li><strong>Forgetting freelancer-built scripts.</strong> They are the integrations most likely to be on an old version and least likely to be monitored.</li>
+      <li><strong>Treating it as a developer problem.</strong> The first symptom is usually an empty or incomplete client report.</li>
+    </ul>
+
+    <h2>Key Takeaways for 2026</h2>
+    <ul>
+      <li>LinkedIn Marketing API version 202510 sunsets on 15 October 2026 and 202511 on 16 November 2026.</li>
+      <li>Versions are set by the <code>Linkedin-Version</code> header in YYYYMM format and are supported for a minimum of one year.</li>
+      <li>A sunset or missing header returns an error. There is no automatic fallback.</li>
+      <li>Agencies and B2B teams are affected through their tools even if they never write code.</li>
+      <li>Check owned code for the header, get vendor answers in writing, test, then deploy.</li>
+      <li>Moving to 202608 or later also unlocks MQL and SQL conversion types and other 2026 features.</li>
+    </ul>
+    <p>Distk helps B2B teams across India and internationally audit the integrations behind their LinkedIn reporting and campaigns, and make sure an API sunset never turns into a blank client report. If you are not sure which version your stack calls, that inventory is where we start. Related reading: <a href="how-to-use-linkedin-campaign-manager-2026.html">using LinkedIn Campaign Manager in 2026</a> and the <a href="google-ads-api-v22-sunset-october-2026.html">Google Ads API v22 sunset</a>, which lands the same month.</p>
+<p><em>Every version number, date, field name and error code in this guide is quoted from LinkedIn's own developer documentation on Microsoft Learn as read on 2 October 2026. LinkedIn updates these pages monthly, so confirm against the live changelog before acting.</em></p>
+    <h2>Sources</h2>
+    <ul>
+      <li><a href="https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes" target="_blank" rel="noopener">LinkedIn Marketing API, Recent Marketing API Changes</a> (Microsoft Learn), the September, August, July and June 2026 release notes.</li>
+      <li><a href="https://learn.microsoft.com/en-us/linkedin/marketing/versioning" target="_blank" rel="noopener">LinkedIn Marketing API, Versioning</a> (Microsoft Learn).</li>
+      <li><a href="https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations" target="_blank" rel="noopener">LinkedIn Marketing API, Migrations and API Migration Status</a> (Microsoft Learn).</li>
+    </ul>
+
+  </div>
+</main>
+
+<section class="faq">
+  <div class="container">
+    <div class="section-tag">Key Questions</div>
+    <h2 class="section-title">LinkedIn API Version Sunsets in 2026: FAQs</h2>
+    <div class="faq__grid">
+      <div class="faq__item">
+        <h3>When do LinkedIn Marketing API versions 202510 and 202511 sunset?</h3>
+        <p>LinkedIn lists "202510 - Oct 15, 2026" and "202511 - Nov 16, 2026" in its September 2026 changelog. Its developer pages also state the October 2025 version will be sunset on October 15, 2026.</p>
+      </div>
+      <div class="faq__item">
+        <h3>What happens if my tool keeps calling a sunset version?</h3>
+        <p>LinkedIn states that an error response is returned when the version header is deprecated. There is no automatic fallback to a newer version, so the integration stops returning normal results.</p>
+      </div>
+      <div class="faq__item">
+        <h3>How do I find out which LinkedIn API version my tools use?</h3>
+        <p>Search code and configuration you own for the Linkedin-Version header and read its value. For third-party tools, ask the vendor which Marketing API version they send and when they will migrate, and get the answer in writing.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Are the sunsetting versions 202610 and 202611?</h3>
+        <p>No. That is a mislabel that appears in some automated summaries. LinkedIn's own sunset lists name 202510 and 202511, the October and November 2025 releases.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Which version should we migrate to?</h3>
+        <p>Normally the latest, 202609, which LinkedIn's migration table shows as supported until September 15, 2027. Moving to just the next version only buys weeks.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Does upgrading unlock anything besides avoiding an outage?</h3>
+        <p>Yes. MARKETING_QUALIFIED_LEAD and SALES_QUALIFIED_LEAD conversion types require 202608 or later, hashed first and last name matching requires 202609, and account-level dynamic UTMs require 202608.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED START -->
+<section class="related" style="padding:3.5rem 0;border-top:1px solid #e8e8e8;background:#fafafa">
+  <div style="max-width:720px;margin:0 auto;padding:0 clamp(1.2rem,4vw,3rem)">
+    <div style="font-family:'Space Mono',monospace;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:#e63312;margin-bottom:1.3rem">Related reading</div>
+    <ul style="list-style:none;margin:0;padding:0;display:grid;gap:0.9rem">
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="linkedin-conversions-api-qualified-leads-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">LinkedIn Conversions API in 2026: Qualified Leads, MQL and SQL Events, and 180-Day Attribution</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="google-ads-api-v22-sunset-october-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">Google Ads API v22 Stops Working on 7 October 2026: What You Must Check</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="how-to-use-whatsapp-business-api-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">How to Use WhatsApp Business API for Marketing 2026: Complete Setup & Campaign Guide</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="google-ads-api-v25-2-features-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">Google Ads API v25.2 for Marketers in 2026: Benchmarks, PMax Drafts and Creator Insights</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="sarvam-ai-api-guide-developers-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">Sarvam AI API Guide for Developers 2026: Speech, Translation & Indian Language Integration</a></li>
+    </ul>
+  </div>
+</section>
+<!-- RELATED END -->
+<section class="cta">
+  <div class="cta__inner">
+    <h2>Find the integration before it finds you</h2>
+    <p>Distk audits the reporting, CRM and audience integrations behind your LinkedIn ads, confirms which API version each one calls, and plans the migration before a sunset date turns into a blank client report.</p>
+    <a href="https://distk.in/#contact" class="cta__btn">Start the conversation →</a>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="container">
+    © 2026 Distk · <a href="https://distk.in">distk.in</a> · <a href="mailto:connect@distk.in">connect@distk.in</a>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xdifcafwxl");
+  </script>
+
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LinkedIn Conversions API 2026: Qualified Leads, MQL and SQL Events, 180-Day Windows | Distk</title>
+<meta name="description" content="How LinkedIn's Conversions API qualified leads work in 2026: MAX_QUALIFIED_LEAD optimisation, the new MQL and SQL conversion types, the 30-day sharing rule, the 180-day attribution window, and why cost per lead may rise while cost per qualified lead falls.">
+<meta name="keywords" content="linkedin conversions api qualified leads 2026, linkedin MAX_QUALIFIED_LEAD, linkedin MQL SQL conversion types, linkedin 180 day attribution window, linkedin capi b2b, linkedin qualified leads optimization">
+<meta name="author" content="Distk"><meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://distk.in/blog/linkedin-conversions-api-qualified-leads-2026.html">
+<meta property="og:type" content="article"><meta property="og:url" content="https://distk.in/blog/linkedin-conversions-api-qualified-leads-2026.html">
+<meta property="og:title" content="LinkedIn Conversions API in 2026: Qualified Leads, MQL and SQL Events, and 180-Day Attribution">
+<meta property="og:description" content="Stop telling LinkedIn to find form-fillers. How qualified-lead optimisation works, the timing rules that make it count, and why CPL may rise while pipeline improves.">
+<meta property="og:image" content="https://distk.in/assets/images/og-image.jpg"><meta property="og:site_name" content="Distk">
+<meta property="article:published_time" content="2026-10-02T00:00:00+05:30">
+<meta property="article:modified_time" content="2026-10-02T00:00:00+05:30">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="LinkedIn Conversions API in 2026: Qualified Leads, MQL and SQL Events, and 180-Day Attribution"><meta name="twitter:description" content="Stop telling LinkedIn to find form-fillers. How qualified-lead optimisation works, the timing rules that make it count, and why CPL may rise while pipeline improves.">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "LinkedIn Conversions API in 2026: Qualified Leads, MQL and SQL Events, and 180-Day Attribution", "description": "A B2B guide to LinkedIn's Conversions API qualified-lead features in 2026: what a qualified lead is in LinkedIn's terms, MAX_QUALIFIED_LEAD optimisation from 202602, MARKETING_QUALIFIED_LEAD and SALES_QUALIFIED_LEAD from 202608, the 30-day and 90-day timing rules, the new 180-day attribution window, setup steps and reporting on cost per qualified lead.", "author": {"@type": "Organization", "name": "Distk", "url": "https://distk.in"}, "publisher": {"@type": "Organization", "name": "Distk", "logo": {"@type": "ImageObject", "url": "https://distk.in/assets/images/Logo.png"}}, "datePublished": "2026-10-02", "dateModified": "2026-10-02", "inLanguage": "en", "about": [{"@type": "Thing", "name": "LinkedIn Conversions API"}, {"@type": "Thing", "name": "qualified leads"}, {"@type": "Thing", "name": "MAX_QUALIFIED_LEAD"}, {"@type": "Thing", "name": "marketing qualified lead"}, {"@type": "Thing", "name": "sales qualified lead"}, {"@type": "Thing", "name": "B2B demand generation"}], "mentions": [{"@type": "Thing", "name": "LinkedIn Conversions API"}, {"@type": "Thing", "name": "qualified leads"}, {"@type": "Thing", "name": "MAX_QUALIFIED_LEAD"}, {"@type": "Thing", "name": "marketing qualified lead"}, {"@type": "Thing", "name": "sales qualified lead"}, {"@type": "Thing", "name": "B2B demand generation"}], "mainEntityOfPage": {"@type": "WebPage", "@id": "https://distk.in/blog/linkedin-conversions-api-qualified-leads-2026.html"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a qualified lead in the LinkedIn Conversions API in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "A qualified lead is a lead that the advertiser has judged worth pursuing after it arrived, reported back to LinkedIn as a conversion event. LinkedIn defines the QUALIFIED_LEAD conversion type, and from API version 202608 adds MARKETING_QUALIFIED_LEAD and SALES_QUALIFIED_LEAD for users who filled out a lead generation form and were filtered by the advertiser as marketing or sales qualified."}}, {"@type": "Question", "name": "What is MAX_QUALIFIED_LEAD on LinkedIn?", "acceptedAnswer": {"@type": "Answer", "text": "Starting with version 202602, LinkedIn supports MAX_QUALIFIED_LEAD as an optimizationTargetType value in the adCampaigns and adBudgetPricing endpoints for campaigns using the LEAD_GENERATION objective. It optimises lead generation campaigns toward high-quality leads using qualified-lead data from the Conversions API or CRM data shared from Business Manager."}}, {"@type": "Question", "name": "How quickly must qualified leads be sent to LinkedIn to affect optimisation?", "acceptedAnswer": {"@type": "Answer", "text": "LinkedIn's help documentation states that qualified leads data must be shared within 30 days to be included in the optimisation of the ad set, and recommends sharing as soon as the information is available. Separately, the Conversions API rejects events whose conversion time is more than 90 days in the past."}}, {"@type": "Question", "name": "Should advertisers use both the LinkedIn Conversions API and CRM Sync for qualified leads?", "acceptedAnswer": {"@type": "Answer", "text": "LinkedIn recommends against using both sources for qualified lead events, because selecting events from both can duplicate reporting and double count conversions. If both exist in an account, LinkedIn automatically associates Conversions API events for optimisation, and auto-created CRM conversions carry a label to help avoid mixing sources."}}, {"@type": "Question", "name": "What attribution windows are available for LinkedIn conversions in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "LinkedIn's schema allows post-click and view-through windows of 1, 7, 30 and 90 days, plus 180 and 365 days for limited conversion types including SUBMIT_APPLICATION, PURCHASE, ADD_TO_CART, QUALIFIED_LEAD, LEAD, MARKETING_QUALIFIED_LEAD and SALES_QUALIFIED_LEAD. The 180-day option was added in September 2026, and the defaults are 30 days post-click and 7 days view-through."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://distk.in/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://distk.in/blog/"}, {"@type": "ListItem", "position": 3, "name": "LinkedIn Conversions API in 2026: Qualified Leads, MQL and SQL Events, and 180-Day Attribution", "item": "https://distk.in/blog/linkedin-conversions-api-qualified-leads-2026.html"}]}</script>
+<link rel="icon" type="image/png" href="../assets/images/favicon.png"><link rel="apple-touch-icon" href="../assets/images/Logo.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BWDTQ1JPL2"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-BWDTQ1JPL2');</script>
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1077520544213003');fbq('track','PageView');</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1077520544213003&ev=PageView&noscript=1"></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#0a0a0a;--paper:#fafafa;--mid:#6b6b6b;--light:#e8e8e8;--accent:#e63312;--accent-soft:rgba(230,51,18,0.08);--mono:'Space Mono',monospace;--sans:'Outfit',sans-serif;--container:1120px;--prose:720px;--gutter:clamp(1.2rem,4vw,3rem)}
+html{font-size:16px;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.container{max-width:var(--container);margin:0 auto;padding:0 var(--gutter)}
+.prose{max-width:var(--prose);margin:0 auto;padding:0 var(--gutter)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--light)}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;max-width:var(--container);margin:0 auto;padding:0.9rem var(--gutter)}
+.nav__logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;color:var(--ink)}
+.nav__logo img{height:32px;width:auto}
+.nav__logo span{font-family:var(--mono);font-weight:700;font-size:1.05rem;letter-spacing:-0.02em}
+.nav__logo small{display:block;font-size:0.55rem;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);line-height:1}
+.nav__back{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid);text-decoration:none;display:flex;align-items:center;gap:0.4rem;transition:color 0.2s}
+.nav__back:hover{color:var(--accent)}
+.nav__cta{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.6rem 1.4rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.nav__cta:hover{background:var(--accent)}
+.hero{padding:7.5rem 0 3.5rem;position:relative;overflow:hidden;border-bottom:1px solid var(--light)}
+.hero::before{content:'CAPI';position:absolute;right:-1%;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:clamp(6rem,26vw,22rem);font-weight:700;color:rgba(0,0,0,0.03);line-height:1;pointer-events:none;user-select:none;letter-spacing:-0.05em}
+.hero__tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1.5rem}
+.hero__tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.hero h1{font-family:var(--sans);font-weight:700;font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;letter-spacing:-0.03em;max-width:20ch;margin-bottom:1.5rem}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero__sub{font-size:1.1rem;color:var(--mid);max-width:56ch;line-height:1.7;margin-bottom:2rem}
+.hero__meta{display:flex;flex-wrap:wrap;gap:1.5rem;font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid)}
+.tldr{background:var(--accent-soft);border-left:3px solid var(--accent);padding:1.8rem 2rem;margin:3rem 0;position:relative}
+.tldr::before{content:'TL;DR';position:absolute;top:-0.6rem;left:2rem;font-family:var(--mono);font-size:0.62rem;font-weight:700;letter-spacing:0.12em;background:var(--accent);color:#fff;padding:0.2rem 0.6rem}
+.tldr p{font-size:0.95rem;color:var(--ink);line-height:1.7}
+.article{padding:4rem 0 5rem}
+.article h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.35rem,2.8vw,1.8rem);letter-spacing:-0.02em;line-height:1.2;margin:3rem 0 1rem;padding-top:1rem;border-top:1px solid var(--light)}
+.article h2:first-child{border-top:none;margin-top:0}
+.article h3{font-family:var(--mono);font-weight:700;font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin:2rem 0 0.6rem}
+.article p{font-size:1rem;color:#2a2a2a;line-height:1.8;margin-bottom:1.25rem}
+.article ul,.article ol{padding-left:1.4rem;margin-bottom:1.25rem}
+.article li{font-size:1rem;color:#2a2a2a;line-height:1.75;margin-bottom:0.4rem}
+.article strong{font-weight:600;color:var(--ink)}
+.article a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(230,51,18,0.3)}
+.article a:hover{border-bottom-color:var(--accent)}
+.article blockquote{border-left:3px solid var(--accent);padding:0.75rem 1.5rem;margin:2rem 0;background:var(--accent-soft)}
+.article blockquote p{color:var(--ink);font-size:1rem;margin:0}
+.table-wrap{overflow-x:auto;margin:2rem 0}
+.data-table{width:100%;border-collapse:collapse;margin:0;font-size:0.88rem}
+.data-table th{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:0.7rem 1rem;text-align:left;white-space:nowrap}
+.data-table td{padding:0.75rem 1rem;border-bottom:1px solid var(--light);vertical-align:top}
+.data-table tr:last-child td{border-bottom:none}
+.data-table tr:nth-child(even) td{background:#f5f5f5}
+.callout{border:1.5px solid var(--light);padding:1.5rem 1.8rem;margin:2rem 0}
+.callout__label{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem}
+.callout p{font-size:0.92rem;color:var(--mid);line-height:1.7;margin:0}
+.faq{padding:4rem 0;background:var(--ink);color:var(--paper)}
+.faq .section-tag{color:var(--accent)}
+.faq .section-tag::before{background:var(--accent)}
+.faq__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2.5rem;margin-top:2.5rem}
+.faq__item{border-left:2px solid var(--accent);padding-left:1.5rem}
+.faq__item h3{font-family:var(--sans);font-weight:600;font-size:0.95rem;margin-bottom:0.5rem;color:var(--paper)}
+.faq__item p{font-size:0.85rem;color:rgba(255,255,255,0.88);line-height:1.65}
+.section-tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1rem}
+.section-tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.section-title{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.15;color:var(--paper)}
+.cta{padding:5rem 0;background:var(--accent-soft);border-top:1px solid rgba(230,51,18,0.12)}
+.cta__inner{max-width:680px;margin:0 auto;padding:0 var(--gutter);text-align:center}
+.cta h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.2;margin-bottom:1rem}
+.cta p{font-size:1rem;color:var(--mid);line-height:1.7;margin-bottom:2rem}
+.cta__btn{display:inline-flex;align-items:center;gap:0.6rem;font-family:var(--mono);font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;padding:1rem 2.2rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.cta__btn:hover{background:var(--accent)}
+.foot{padding:2.5rem 0;border-top:1px solid var(--light);text-align:center;font-family:var(--mono);font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid)}
+.foot a{color:var(--mid);text-decoration:none}.foot a:hover{color:var(--accent)}
+@media(max-width:768px){.faq__grid{grid-template-columns:1fr}.nav__back span{display:none}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="https://distk.in" class="nav__logo">
+      <img src="../assets/images/Logo.png" alt="Distk">
+      <div><span>Distk</span><small>Global Growth Partner</small></div>
+    </a>
+    <a href="/blog/" class="nav__back">← <span>All articles</span></a>
+    <a href="https://distk.in/#contact" class="nav__cta">Work with us</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="prose">
+    <div class="hero__tag">Paid Media Guide</div>
+    <h1>LinkedIn Conversions API in 2026: <em>Qualified Leads</em>, MQL and SQL Events, and 180-Day Attribution</h1>
+    <p class="hero__sub">LinkedIn will now optimise lead generation for the leads your sales team actually wants, if you tell it which ones they were, fast enough. Here is how it works, the rules that decide whether the signal counts, and how to report on it honestly.</p>
+    <div class="hero__meta">
+      <span>Distk Editorial</span>
+      <span>Oct 2026</span>
+      <span>12 min read</span>
+    </div>
+  </div>
+</section>
+
+<div class="prose">
+  <div class="tldr">
+    <p>A qualified lead in LinkedIn's Conversions API is a lead your business has judged worth pursuing, reported back as a conversion so LinkedIn optimises for pipeline rather than form fills. Version 202602 added MAX_QUALIFIED_LEAD as an optimisation target for Lead Generation campaigns, and 202608 added MARKETING_QUALIFIED_LEAD and SALES_QUALIFIED_LEAD types. LinkedIn requires qualified-lead data to be shared within 30 days to count for optimisation, recommends five or more qualified leads within a two-week learning phase, rejects events older than 90 days, and advises using either the Conversions API or CRM Sync, not both. In September 2026 a 180-day attribution window joined 365 days for qualifying conversion types, while defaults stay at 30 days post-click and 7 days view-through. LinkedIn itself warns cost per lead may rise as cost per qualified lead falls, so report on CPQL and pipeline.</p>
+  </div>
+</div>
+
+<main class="article">
+  <div class="prose">
+
+    <style>
+    .article pre{background:#f3f3f3;border-left:3px solid var(--accent);padding:1rem 1.2rem;margin:1.5rem 0;overflow-x:auto}
+    .article code{font-family:var(--mono);font-size:0.85rem}
+    .article p code,.article li code,.article td code{background:#f3f3f3;padding:0.1rem 0.35rem}
+    </style>
+
+    <h2>What Is a Qualified Lead in the LinkedIn Conversions API in 2026?</h2>
+    <p>A qualified lead, in LinkedIn's terms, is a lead your own business has judged worth pursuing after it arrived, reported back to LinkedIn as a conversion event. LinkedIn's schema defines <code>QUALIFIED_LEAD</code> as "Identified lead as a qualified lead", and adds two finer types from version 202608: <code>MARKETING_QUALIFIED_LEAD</code>, where "The user filled out a lead generation form, and has been filtered by the advertiser to be a marketing qualified lead", and <code>SALES_QUALIFIED_LEAD</code>, the same at sales stage.</p>
+    <p>The point of sending that judgement back is optimisation. LinkedIn's help page describes the qualified leads optimisation goal as one that "helps provide you with high-quality leads using qualified lead data from your LinkedIn Conversions API (CAPI) or when you connect your CRM". In plain terms, instead of telling LinkedIn to find people who fill in a form, you tell it to find people who become pipeline.</p>
+
+    <h2>Explain It Like I Am Five</h2>
+    <div class="callout">
+      <div class="callout__label">The simple version</div>
+      <p>Imagine LinkedIn is a fishing boat that brings you fish. Normally it counts every fish as a success, even the ones you throw back. A qualified lead is you shouting back to the boat, "this one was good, this one was not." After a couple of weeks of that, the boat learns where the good fish swim and goes there more. You may get fewer fish overall, but more of the ones you actually wanted. If you never shout back, the boat keeps chasing whatever bites most.</p>
+    </div>
+
+    <h2>Why Does Qualified-Lead Optimisation Matter for B2B Teams in 2026?</h2>
+    <p>Because lead form volume is a weak proxy for B2B revenue, and optimising for it rewards the wrong people. LinkedIn's own guidance acknowledges the trade-off directly: with this goal "You might see an increase in qualified leads at a lower cost per qualified lead (CPQL), although the overall cost per lead (CPL) might increase as a result." It recommends "focusing on CPQL and the quality of leads generated rather than CPL and total leads."</p>
+    <p>That sentence is the commercial heart of the change. A B2B team still reporting LinkedIn performance on cost per lead will see this goal look worse on its dashboard while it performs better on pipeline. Switching the optimisation without switching the reporting is how good campaigns get paused.</p>
+
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Capability</th><th>Version or date</th><th>What LinkedIn documents</th></tr></thead>
+      <tbody>
+        <tr><td><code>MAX_QUALIFIED_LEAD</code> optimisation target</td><td>202602</td><td>Supported for <code>optimizationTargetType</code> in <code>/adCampaigns</code> and <code>/adBudgetPricing</code> with the <code>LEAD_GENERATION</code> objective</td></tr>
+        <tr><td><code>MARKETING_QUALIFIED_LEAD</code> and <code>SALES_QUALIFIED_LEAD</code> types</td><td>202608</td><td>Used in the qualified leads optimisation goal, "similar to QUALIFIED_LEAD"</td></tr>
+        <tr><td><code>SHA256_IP_ADDRESS</code> identifier</td><td>July 2026, all active versions</td><td>Hashed IPv4 address for matching</td></tr>
+        <tr><td>180-day attribution window</td><td>September 2026, all active versions</td><td>For qualifying conversion types, alongside 365 days</td></tr>
+        <tr><td><code>hashedFirstName</code> and <code>hashedLastName</code></td><td>202609</td><td>Hashed name fields for matching</td></tr>
+        <tr><td><code>costInLocalCurrencyPerPaidQualifiedLead</code></td><td>202606</td><td>Cost per paid qualified lead in Company Intelligence</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h2>How Does Qualified-Lead Bidding Work on LinkedIn?</h2>
+    <p>You run a Lead Generation campaign, choose the qualified leads goal, and feed LinkedIn the downstream outcome. LinkedIn's changelog for version 202602 says <code>MAX_QUALIFIED_LEAD</code> "optimizes lead generation campaigns to target high-quality leads using qualified lead data sent from Conversions API (where conversion rule type must be QUALIFIED_LEAD) or CRM data shared from Business Manager." Version 202608 extended that to the MQL and SQL types.</p>
+    <p>LinkedIn's help page lists the setup when creating the ad set: choose the lead generation objective, select the qualified leads optimisation goal, and "Choose qualified lead conversions from one event source." It also notes that "members who click on your ad are sent to a Lead Gen Form pre-filled with their LinkedIn profile data", so this goal runs on LinkedIn's native forms.</p>
+
+    <h3>The two event sources, and why you should pick one</h3>
+    <p>LinkedIn accepts qualified-lead signals from the Conversions API, through a direct build or partner integration, or from CRM data connected through Business Manager using CRM Sync, where LinkedIn says "we'll auto-create conversions based on that data" and "it can take up to 72 hours to create the conversion." Its strong recommendation is to use one, not both: "We recommend you don't use both Conversions API (CAPI) and CRM data connected through your Business Manager using CRM Sync qualified lead events". If both exist, "the system automatically associates CAPI events for optimization", and selecting events from both "can result in duplication in reporting and double counting of conversions."</p>
+
+    <h2>What Are the Timing Rules That Make or Break It in 2026?</h2>
+    <p>Speed of qualification decides whether the signal counts. LinkedIn's help page is explicit: "Qualified leads data must be shared with LinkedIn within 30 days to be included in the optimization of the ad set." The Conversions API itself rejects old events, with a validation message that the "Conversion time should be within 90 days." A lead qualified six weeks later may still be reportable, but it no longer teaches the campaign.</p>
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Rule</th><th>LinkedIn's wording</th><th>Implication for B2B ops in 2026</th></tr></thead>
+      <tbody>
+        <tr><td>Optimisation window</td><td>"must be shared with LinkedIn within 30 days to be included in the optimization"</td><td>Sales teams must qualify within weeks, not quarters.</td></tr>
+        <tr><td>Learning phase</td><td>"Optimization requires a two-week learning phase for peak performance"</td><td>Do not judge or change the ad set in its first fortnight.</td></tr>
+        <tr><td>Volume recommendation</td><td>"uploading five or more qualified leads within two weeks"</td><td>Low-volume niches need patience or a looser qualification rule.</td></tr>
+        <tr><td>Event age limit</td><td>"Conversion time should be within 90 days"</td><td>Backfilling old CRM history will be rejected.</td></tr>
+        <tr><td>Reporting delay</td><td>"There might be a delay in reported performance metrics for qualified leads"</td><td>Early dashboards undercount; read them later.</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h2>What Changed With Attribution Windows in 2026?</h2>
+    <p>LinkedIn added a 180-day window for long B2B cycles. Its September 2026 note says the <code>postClickAttributionWindowSize</code> and <code>viewThroughAttributionWindowSize</code> fields "now support a 180-day value, in addition to the existing 365-day option" for <code>SUBMIT_APPLICATION</code>, <code>PURCHASE</code>, <code>ADD_TO_CART</code>, <code>QUALIFIED_LEAD</code>, <code>LEAD</code>, <code>MARKETING_QUALIFIED_LEAD</code> and <code>SALES_QUALIFIED_LEAD</code>, and that "This update is available on all active versions."</p>
+    <p>The defaults have not changed, which matters for anyone who never set them. LinkedIn's schema lists the post-click default as 30 days and the view-through default as 7 days, with allowed values of 1, 7, 30 and 90, plus 180 and 365 for the limited types above. A B2B team with a four-month sales cycle that left the defaults in place is only crediting LinkedIn with a fraction of what it influenced.</p>
+    <p>Attribution counting is a separate setting. The schema's <code>attributionType</code> defaults to <code>LAST_TOUCH_BY_CAMPAIGN</code>, where conversions "are counted once for each campaign to which they can be attributed", with <code>LAST_TOUCH_BY_CONVERSION</code> as the alternative. Decide deliberately, because the default can count one conversion against several campaigns.</p>
+
+    <h2>How Do You Set Up the LinkedIn Conversions API for Qualified Leads?</h2>
+    <p>LinkedIn's requirements are three steps: "Create a Conversion Rule", "Associate campaign(s) to the conversion rule", and "Stream conversion events." The rule is created on the <code>/conversions</code> endpoint with <code>conversionMethod</code> set to <code>CONVERSIONS_API</code>, one rule per conversion type, and LinkedIn notes two headers on every request:</p>
+    <pre><code>X-Restli-Protocol-Version: 2.0.0
+Linkedin-Version: {yyyymm}</code></pre>
+    <p>Each event must identify the person. LinkedIn's validation error lists the accepted options: "SHA256_EMAIL or LINKEDIN_FIRST_PARTY_ADS_TRACKING_UUID or ACXIOM_ID or PLAINTEXT_IP_ADDRESS or GOOGLE_AID or (firstName and lastName) or externalIds or lead". For leads from LinkedIn's own forms, the <code>lead</code> identifier is a Lead Gen form response URN, which ties the qualified outcome back to the exact form submission. From 202609, hashed names also qualify; LinkedIn specifies normalising "to lowercase with no spaces or punctuation" before producing "a SHA-256 HEX-encoded string of exactly 64 characters."</p>
+    <ol>
+      <li><strong>Agree the definitions</strong> of MQL and SQL with sales before writing any code.</li>
+      <li><strong>Move to API version 202608 or later</strong> to use the MQL and SQL types; see our <a href="linkedin-marketing-api-version-sunset-2026.html">version sunset guide</a>.</li>
+      <li><strong>Create one conversion rule per type</strong> with <code>CONVERSIONS_API</code> as the method.</li>
+      <li><strong>Set the attribution window</strong> to match your real sales cycle, using 90, 180 or 365 days where allowed.</li>
+      <li><strong>Send the lead URN</strong> for Lead Gen form leads where available, plus hashed email.</li>
+      <li><strong>Automate the trigger</strong> from your CRM stage change, so qualification reaches LinkedIn within the 30-day window.</li>
+      <li><strong>Choose one event source</strong> per ad set, CAPI or CRM Sync, never both.</li>
+    </ol>
+
+    <h2>How Should B2B Teams Report on Qualified-Lead Campaigns in 2026?</h2>
+    <p>Report on cost per qualified lead and pipeline, not cost per lead. LinkedIn has started exposing the metric at account level too: from version 202606 the Company Intelligence API returns <code>costInLocalCurrencyPerPaidQualifiedLead</code>, "Derived as the ratio of total ad spend over the number of paid qualified leads collected from members of the target company within the lookback window." For ABM teams that means cost per qualified lead can be read per target account, not just per campaign.</p>
+    <p>Two related 2026 changes affect what these campaigns look like. Inbox lead generation campaigns now default to optimised rotation and carry an automatic Not Interested button, covered in our <a href="linkedin-message-ads-not-interested-cta-2026.html">Message Ads changes guide</a>. And every ad account is now capped at 1,000 audience segments, covered in the <a href="linkedin-dmp-segment-cap-geo-migration-2026.html">segment cap and geo guide</a>.</p>
+
+    <h2>What Are the Common Mistakes in 2026?</h2>
+    <ul>
+      <li><strong>Optimising for qualified leads but reporting on CPL.</strong> LinkedIn says CPL may rise while CPQL falls.</li>
+      <li><strong>Qualifying leads too slowly.</strong> Data shared after 30 days does not feed optimisation.</li>
+      <li><strong>Mixing CAPI and CRM Sync events</strong> in one ad set, causing double counting.</li>
+      <li><strong>Changing the ad set during the two-week learning phase.</strong></li>
+      <li><strong>Leaving default attribution windows</strong> on a long B2B cycle.</li>
+      <li><strong>Staying on an API version older than 202608</strong> and missing the MQL and SQL types.</li>
+      <li><strong>Backfilling old CRM history.</strong> Events older than 90 days are rejected.</li>
+    </ul>
+
+    <h2>Key Takeaways for 2026</h2>
+    <ul>
+      <li>Qualified leads are your own downstream judgement, sent back to LinkedIn so it optimises for pipeline rather than form fills.</li>
+      <li><code>MAX_QUALIFIED_LEAD</code> arrived in 202602 for Lead Generation campaigns; MQL and SQL types arrived in 202608.</li>
+      <li>Qualified-lead data must reach LinkedIn within 30 days to count for optimisation, and the goal needs a two-week learning phase and about five qualified leads in that time.</li>
+      <li>Use one event source, Conversions API or CRM Sync, not both.</li>
+      <li>A 180-day attribution window joined 365 in September 2026; defaults remain 30 days post-click and 7 days view-through.</li>
+      <li>Report on cost per qualified lead and pipeline. CPL may rise while quality improves.</li>
+    </ul>
+    <p>Distk helps B2B teams across India and internationally wire CRM outcomes back into LinkedIn, agree MQL and SQL definitions with sales, and report campaigns on pipeline rather than form volume. If your LinkedIn optimisation still stops at the form, that is the conversation to have. Related reading: <a href="linkedin-lead-generation-b2b-saas-india-2026.html">LinkedIn lead generation for B2B SaaS in India</a> and <a href="b2b-lead-generation-agency-2026.html">choosing a B2B lead generation partner</a>.</p>
+<p><em>Every version number, date, field name and error code in this guide is quoted from LinkedIn's own developer documentation on Microsoft Learn as read on 2 October 2026. LinkedIn updates these pages monthly, so confirm against the live changelog before acting.</em></p>
+    <h2>Sources</h2>
+    <ul>
+      <li><a href="https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes" target="_blank" rel="noopener">LinkedIn Marketing API, Recent Marketing API Changes</a> (Microsoft Learn), the September, August, July and June 2026 release notes.</li>
+      <li><a href="https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversions-api" target="_blank" rel="noopener">LinkedIn Marketing API, Conversions API</a> (Microsoft Learn).</li>
+      <li><a href="https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversions-api-schema" target="_blank" rel="noopener">LinkedIn Marketing API, Conversions API Schema</a> (Microsoft Learn).</li>
+      <li><a href="https://www.linkedin.com/help/lms/answer/a6553958" target="_blank" rel="noopener">LinkedIn Help, Qualified leads optimization goal</a>.</li>
+      <li><a href="https://learn.microsoft.com/en-us/linkedin/marketing/versioning" target="_blank" rel="noopener">LinkedIn Marketing API, Versioning</a> (Microsoft Learn).</li>
+    </ul>
+
+  </div>
+</main>
+
+<section class="faq">
+  <div class="container">
+    <div class="section-tag">Key Questions</div>
+    <h2 class="section-title">LinkedIn Qualified Leads and CAPI in 2026: FAQs</h2>
+    <div class="faq__grid">
+      <div class="faq__item">
+        <h3>What is a qualified lead in the LinkedIn Conversions API?</h3>
+        <p>A lead your business has judged worth pursuing, sent back to LinkedIn as a conversion. LinkedIn defines QUALIFIED_LEAD, and from version 202608 also MARKETING_QUALIFIED_LEAD and SALES_QUALIFIED_LEAD for leads filtered by the advertiser after a lead generation form.</p>
+      </div>
+      <div class="faq__item">
+        <h3>How does MAX_QUALIFIED_LEAD work?</h3>
+        <p>Introduced in version 202602, it is an optimizationTargetType for Lead Generation campaigns that optimises toward high-quality leads using qualified-lead data from the Conversions API or CRM data shared from Business Manager.</p>
+      </div>
+      <div class="faq__item">
+        <h3>How quickly must we send qualified leads to LinkedIn?</h3>
+        <p>LinkedIn says qualified leads data must be shared within 30 days to be included in the ad set's optimisation, and recommends sharing as soon as it is available. Conversion events older than 90 days are rejected.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Should we use the Conversions API and CRM Sync together?</h3>
+        <p>No. LinkedIn recommends not using both, because selecting events from both sources can double count conversions. If both exist, LinkedIn automatically associates Conversions API events for optimisation.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Why did our cost per lead go up after switching to qualified leads?</h3>
+        <p>LinkedIn warns this can happen: qualified leads may rise at a lower cost per qualified lead while overall cost per lead increases. It recommends focusing on CPQL and lead quality rather than CPL.</p>
+      </div>
+      <div class="faq__item">
+        <h3>What attribution windows can LinkedIn conversions use in 2026?</h3>
+        <p>Allowed values are 1, 7, 30 and 90 days, with 180 and 365 days for limited types including QUALIFIED_LEAD, MQL and SQL. The 180-day option was added in September 2026. Defaults are 30 days post-click and 7 days view-through.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED START -->
+<section class="related" style="padding:3.5rem 0;border-top:1px solid #e8e8e8;background:#fafafa">
+  <div style="max-width:720px;margin:0 auto;padding:0 clamp(1.2rem,4vw,3rem)">
+    <div style="font-family:'Space Mono',monospace;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:#e63312;margin-bottom:1.3rem">Related reading</div>
+    <ul style="list-style:none;margin:0;padding:0;display:grid;gap:0.9rem">
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="linkedin-marketing-api-version-sunset-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">LinkedIn Marketing API 202510 and 202511 Sunset in 2026: What Breaks and How to Check</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="google-ads-api-v22-sunset-october-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">Google Ads API v22 Stops Working on 7 October 2026: What You Must Check</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="google-ads-api-v25-2-features-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">Google Ads API v25.2 for Marketers in 2026: Benchmarks, PMax Drafts and Creator Insights</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="sarvam-ai-api-guide-developers-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">Sarvam AI API Guide for Developers 2026: Speech, Translation & Indian Language Integration</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="how-to-use-whatsapp-business-api-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">How to Use WhatsApp Business API for Marketing 2026: Complete Setup & Campaign Guide</a></li>
+    </ul>
+  </div>
+</section>
+<!-- RELATED END -->
+<section class="cta">
+  <div class="cta__inner">
+    <h2>Optimise for pipeline, not form fills</h2>
+    <p>Distk connects your CRM outcomes back to LinkedIn, agrees MQL and SQL definitions with your sales team, and reports LinkedIn campaigns on cost per qualified lead and pipeline instead of raw lead volume.</p>
+    <a href="https://distk.in/#contact" class="cta__btn">Start the conversation →</a>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="container">
+    © 2026 Distk · <a href="https://distk.in">distk.in</a> · <a href="mailto:connect@distk.in">connect@distk.in</a>
+  </div>
+</footer>
+</body>
+</html>
