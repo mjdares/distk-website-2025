@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xdifcafwxl");
+  </script>
+
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OpenAI Whisper Shutdown 26 February 2027: Transcription Migration Guide | Distk</title>
+<meta name="description" content="OpenAI removes whisper-1, gpt-4o-transcribe, gpt-4o-mini-transcribe and gpt-4o-transcribe-diarize on 26 February 2027. The replacements and their prices, how to migrate plain transcription, and the timestamps, translation and diarization gap the published guide does not yet close.">
+<meta name="keywords" content="whisper-1 shutdown 2027, OpenAI transcription deprecation, gpt-transcribe migration, gpt-4o-transcribe shutdown, gpt-live-transcribe pricing, AI marketing agency 2026">
+<meta name="author" content="Distk"><meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://distk.in/blog/openai-whisper-transcribe-shutdown-2027.html">
+<meta property="og:type" content="article"><meta property="og:url" content="https://distk.in/blog/openai-whisper-transcribe-shutdown-2027.html">
+<meta property="og:title" content="OpenAI's Transcription Models Shut Down on 26 February 2027: Whisper Migration Guide">
+<meta property="og:description" content="Four OpenAI transcription models stop working on 26 February 2027. Plain transcription has a path. Timestamps, translation and speaker labels do not, yet.">
+<meta property="og:image" content="https://distk.in/assets/images/og-image.jpg"><meta property="og:site_name" content="Distk">
+<meta property="article:published_time" content="2026-10-02T00:00:00+05:30">
+<meta property="article:modified_time" content="2026-10-02T00:00:00+05:30">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="OpenAI's Transcription Models Shut Down on 26 February 2027: Whisper Migration Guide"><meta name="twitter:description" content="Four OpenAI transcription models stop working on 26 February 2027. Plain transcription has a path. Timestamps, translation and speaker labels do not, yet.">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "OpenAI's Transcription Models Shut Down on 26 February 2027: Whisper Migration Guide", "description": "A migration guide for OpenAI's 26 February 2027 removal of whisper-1, gpt-4o-transcribe, gpt-4o-mini-transcribe and gpt-4o-transcribe-diarize: the gpt-transcribe and gpt-live-transcribe replacements and prices, the field changes for plain transcription, the earlier snapshot shutdown, and the timestamp, translation and diarization capabilities with no named replacement yet.", "author": {"@type": "Organization", "name": "Distk", "url": "https://distk.in"}, "publisher": {"@type": "Organization", "name": "Distk", "logo": {"@type": "ImageObject", "url": "https://distk.in/assets/images/Logo.png"}}, "datePublished": "2026-10-02", "dateModified": "2026-10-02", "inLanguage": "en", "about": [{"@type": "Thing", "name": "OpenAI Whisper"}, {"@type": "Thing", "name": "whisper-1"}, {"@type": "Thing", "name": "gpt-transcribe"}, {"@type": "Thing", "name": "gpt-live-transcribe"}, {"@type": "Thing", "name": "speech to text"}, {"@type": "Thing", "name": "OpenAI"}], "mentions": [{"@type": "Thing", "name": "OpenAI Whisper"}, {"@type": "Thing", "name": "whisper-1"}, {"@type": "Thing", "name": "gpt-transcribe"}, {"@type": "Thing", "name": "gpt-live-transcribe"}, {"@type": "Thing", "name": "speech to text"}, {"@type": "Thing", "name": "OpenAI"}], "mainEntityOfPage": {"@type": "WebPage", "@id": "https://distk.in/blog/openai-whisper-transcribe-shutdown-2027.html"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "When do OpenAI's Whisper and gpt-4o transcription models shut down?", "acceptedAnswer": {"@type": "Answer", "text": "OpenAI will remove whisper-1, gpt-4o-transcribe, gpt-4o-mini-transcribe and gpt-4o-transcribe-diarize from its API on 26 February 2027. It notified developers of the deprecation on 26 August 2026 and recommends gpt-live-transcribe or gpt-transcribe as replacements for all four models."}}, {"@type": "Question", "name": "What are the replacements for OpenAI whisper-1?", "acceptedAnswer": {"@type": "Answer", "text": "OpenAI recommends gpt-transcribe, a speech-to-text model for completed audio files, streamed file transcripts and committed Realtime turns priced at 0.0045 US dollars per minute, or gpt-live-transcribe, a low-latency streaming model priced at 0.017 US dollars per minute. Both were released on 28 July 2026 and support free-form context, keyword hints and multiple expected input languages."}}, {"@type": "Question", "name": "Do the new OpenAI transcription models support timestamps and diarization?", "acceptedAnswer": {"@type": "Answer", "text": "OpenAI's file transcription guide, as published, still directs word and segment timestamps and translation into English to whisper-1, and speaker diarization to gpt-4o-transcribe-diarize, all of which are scheduled for shutdown on 26 February 2027. The deprecations page names only gpt-transcribe or gpt-live-transcribe as replacements, and the guide does not name a model that provides those three capabilities after the shutdown."}}, {"@type": "Question", "name": "What request changes are needed to migrate to gpt-transcribe?", "acceptedAnswer": {"@type": "Answer", "text": "Change the model name to gpt-transcribe and replace the singular language field with languages, without sending both. Optional prompt and keywords fields improve recognition of domain terms. Keywords must not include angle brackets, carriage returns or line feeds, or the API rejects the whole request. The 25 MB file limit and supported formats are unchanged."}}, {"@type": "Question", "name": "Is any OpenAI transcription snapshot shut down before February 2027?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. OpenAI's deprecations page lists the pinned snapshot gpt-4o-mini-transcribe-2025-03-20 for shutdown on 20 January 2027, with gpt-4o-mini-transcribe-2025-12-15 as its recommended replacement."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://distk.in/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://distk.in/blog/"}, {"@type": "ListItem", "position": 3, "name": "OpenAI's Transcription Models Shut Down on 26 February 2027: Whisper Migration Guide", "item": "https://distk.in/blog/openai-whisper-transcribe-shutdown-2027.html"}]}</script>
+<link rel="icon" type="image/png" href="../assets/images/favicon.png"><link rel="apple-touch-icon" href="../assets/images/Logo.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BWDTQ1JPL2"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-BWDTQ1JPL2');</script>
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1077520544213003');fbq('track','PageView');</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1077520544213003&ev=PageView&noscript=1"></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#0a0a0a;--paper:#fafafa;--mid:#6b6b6b;--light:#e8e8e8;--accent:#e63312;--accent-soft:rgba(230,51,18,0.08);--mono:'Space Mono',monospace;--sans:'Outfit',sans-serif;--container:1120px;--prose:720px;--gutter:clamp(1.2rem,4vw,3rem)}
+html{font-size:16px;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.container{max-width:var(--container);margin:0 auto;padding:0 var(--gutter)}
+.prose{max-width:var(--prose);margin:0 auto;padding:0 var(--gutter)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--light)}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;max-width:var(--container);margin:0 auto;padding:0.9rem var(--gutter)}
+.nav__logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;color:var(--ink)}
+.nav__logo img{height:32px;width:auto}
+.nav__logo span{font-family:var(--mono);font-weight:700;font-size:1.05rem;letter-spacing:-0.02em}
+.nav__logo small{display:block;font-size:0.55rem;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);line-height:1}
+.nav__back{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid);text-decoration:none;display:flex;align-items:center;gap:0.4rem;transition:color 0.2s}
+.nav__back:hover{color:var(--accent)}
+.nav__cta{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.6rem 1.4rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.nav__cta:hover{background:var(--accent)}
+.hero{padding:7.5rem 0 3.5rem;position:relative;overflow:hidden;border-bottom:1px solid var(--light)}
+.hero::before{content:'AUDIO';position:absolute;right:-1%;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:clamp(6rem,26vw,22rem);font-weight:700;color:rgba(0,0,0,0.03);line-height:1;pointer-events:none;user-select:none;letter-spacing:-0.05em}
+.hero__tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1.5rem}
+.hero__tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.hero h1{font-family:var(--sans);font-weight:700;font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;letter-spacing:-0.03em;max-width:20ch;margin-bottom:1.5rem}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero__sub{font-size:1.1rem;color:var(--mid);max-width:56ch;line-height:1.7;margin-bottom:2rem}
+.hero__meta{display:flex;flex-wrap:wrap;gap:1.5rem;font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid)}
+.tldr{background:var(--accent-soft);border-left:3px solid var(--accent);padding:1.8rem 2rem;margin:3rem 0;position:relative}
+.tldr::before{content:'TL;DR';position:absolute;top:-0.6rem;left:2rem;font-family:var(--mono);font-size:0.62rem;font-weight:700;letter-spacing:0.12em;background:var(--accent);color:#fff;padding:0.2rem 0.6rem}
+.tldr p{font-size:0.95rem;color:var(--ink);line-height:1.7}
+.article{padding:4rem 0 5rem}
+.article h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.35rem,2.8vw,1.8rem);letter-spacing:-0.02em;line-height:1.2;margin:3rem 0 1rem;padding-top:1rem;border-top:1px solid var(--light)}
+.article h2:first-child{border-top:none;margin-top:0}
+.article h3{font-family:var(--mono);font-weight:700;font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin:2rem 0 0.6rem}
+.article p{font-size:1rem;color:#2a2a2a;line-height:1.8;margin-bottom:1.25rem}
+.article ul,.article ol{padding-left:1.4rem;margin-bottom:1.25rem}
+.article li{font-size:1rem;color:#2a2a2a;line-height:1.75;margin-bottom:0.4rem}
+.article strong{font-weight:600;color:var(--ink)}
+.article a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(230,51,18,0.3)}
+.article a:hover{border-bottom-color:var(--accent)}
+.article blockquote{border-left:3px solid var(--accent);padding:0.75rem 1.5rem;margin:2rem 0;background:var(--accent-soft)}
+.article blockquote p{color:var(--ink);font-size:1rem;margin:0}
+.table-wrap{overflow-x:auto;margin:2rem 0}
+.data-table{width:100%;border-collapse:collapse;margin:0;font-size:0.88rem}
+.data-table th{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:0.7rem 1rem;text-align:left;white-space:nowrap}
+.data-table td{padding:0.75rem 1rem;border-bottom:1px solid var(--light);vertical-align:top}
+.data-table tr:last-child td{border-bottom:none}
+.data-table tr:nth-child(even) td{background:#f5f5f5}
+.callout{border:1.5px solid var(--light);padding:1.5rem 1.8rem;margin:2rem 0}
+.callout__label{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem}
+.callout p{font-size:0.92rem;color:var(--mid);line-height:1.7;margin:0}
+.faq{padding:4rem 0;background:var(--ink);color:var(--paper)}
+.faq .section-tag{color:var(--accent)}
+.faq .section-tag::before{background:var(--accent)}
+.faq__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2.5rem;margin-top:2.5rem}
+.faq__item{border-left:2px solid var(--accent);padding-left:1.5rem}
+.faq__item h3{font-family:var(--sans);font-weight:600;font-size:0.95rem;margin-bottom:0.5rem;color:var(--paper)}
+.faq__item p{font-size:0.85rem;color:rgba(255,255,255,0.88);line-height:1.65}
+.section-tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1rem}
+.section-tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.section-title{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.15;color:var(--paper)}
+.cta{padding:5rem 0;background:var(--accent-soft);border-top:1px solid rgba(230,51,18,0.12)}
+.cta__inner{max-width:680px;margin:0 auto;padding:0 var(--gutter);text-align:center}
+.cta h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.2;margin-bottom:1rem}
+.cta p{font-size:1rem;color:var(--mid);line-height:1.7;margin-bottom:2rem}
+.cta__btn{display:inline-flex;align-items:center;gap:0.6rem;font-family:var(--mono);font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;padding:1rem 2.2rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.cta__btn:hover{background:var(--accent)}
+.foot{padding:2.5rem 0;border-top:1px solid var(--light);text-align:center;font-family:var(--mono);font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid)}
+.foot a{color:var(--mid);text-decoration:none}.foot a:hover{color:var(--accent)}
+@media(max-width:768px){.faq__grid{grid-template-columns:1fr}.nav__back span{display:none}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="https://distk.in" class="nav__logo">
+      <img src="../assets/images/Logo.png" alt="Distk">
+      <div><span>Distk</span><small>Global Growth Partner</small></div>
+    </a>
+    <a href="/blog/" class="nav__back">← <span>All articles</span></a>
+    <a href="https://distk.in/#contact" class="nav__cta">Work with us</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="prose">
+    <div class="hero__tag">AI Model Guide</div>
+    <h1>OpenAI's Transcription Models Shut Down on <em>26 February 2027</em>: Whisper Migration Guide</h1>
+    <p class="hero__sub">If your call analytics, captions or meeting notes run through OpenAI, something in the pipeline probably calls one of the four models being removed. Plain transcription migrates easily. Three capabilities do not have a published replacement yet.</p>
+    <div class="hero__meta">
+      <span>Distk Editorial</span>
+      <span>Oct 2026</span>
+      <span>9 min read</span>
+    </div>
+  </div>
+</section>
+
+<div class="prose">
+  <div class="tldr">
+    <p>On 26 August 2026 OpenAI announced that whisper-1, gpt-4o-transcribe, gpt-4o-mini-transcribe and gpt-4o-transcribe-diarize will be removed from its API on 26 February 2027, with gpt-transcribe or gpt-live-transcribe as the recommended replacements. gpt-transcribe costs 0.0045 US dollars a minute against whisper-1's 0.006; gpt-live-transcribe, for low-latency streaming, costs 0.017. Plain file transcription migrates with a model name change and switching the language field to languages. OpenAI's current transcription guide still directs word timestamps and translation into English to whisper-1, and speaker labels to gpt-4o-transcribe-diarize, without naming a replacement for those capabilities, so workflows that depend on them need a decision now. One pinned snapshot, gpt-4o-mini-transcribe-2025-03-20, stops earlier, on 20 January 2027.</p>
+  </div>
+</div>
+
+<main class="article">
+  <div class="prose">
+<style>.article pre{background:#f3f3f3;border-left:3px solid #e63312;padding:1rem 1.2rem;overflow-x:auto;margin:1.5rem 0;font-size:0.85rem;line-height:1.55}.article code{font-family:'Space Mono',monospace;font-size:0.85em}.article pre code{font-size:0.85rem}</style>
+
+    <h2>What Is Shutting Down, and When?</h2>
+    <p>OpenAI is removing four transcription models from its API on 26 February 2027. On 26 August 2026 it notified developers using <code>whisper-1</code>, <code>gpt-4o-transcribe</code>, <code>gpt-4o-mini-transcribe</code> and <code>gpt-4o-transcribe-diarize</code> "of their deprecation and removal from the API on February 26, 2027". The recommended replacement for all four is <code>gpt-live-transcribe</code> or <code>gpt-transcribe</code>.</p>
+    <p>If your business runs call analytics, meeting notes, video captions, voice-note capture or podcast transcription through OpenAI, something in that pipeline probably calls one of these models. The date is five months away, which is enough time to migrate calmly and not enough to forget about it.</p>
+
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Shutdown date</th><th>Model</th><th>OpenAI's recommended replacement</th></tr></thead>
+      <tbody>
+        <tr><td>26 February 2027</td><td><code>whisper-1</code></td><td><code>gpt-live-transcribe</code> or <code>gpt-transcribe</code></td></tr>
+        <tr><td>26 February 2027</td><td><code>gpt-4o-transcribe</code></td><td><code>gpt-live-transcribe</code> or <code>gpt-transcribe</code></td></tr>
+        <tr><td>26 February 2027</td><td><code>gpt-4o-mini-transcribe</code></td><td><code>gpt-live-transcribe</code> or <code>gpt-transcribe</code></td></tr>
+        <tr><td>26 February 2027</td><td><code>gpt-4o-transcribe-diarize</code></td><td><code>gpt-live-transcribe</code> or <code>gpt-transcribe</code></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>A separate, earlier date applies to one pinned snapshot: OpenAI's deprecations page lists <code>gpt-4o-mini-transcribe-2025-03-20</code> for shutdown on 20 January 2027, with <code>gpt-4o-mini-transcribe-2025-12-15</code> as its replacement. That snapshot is then itself removed on 26 February with the rest of the family.</p>
+
+    <h2>What Are the Replacement Models?</h2>
+    <p>OpenAI released both replacements on 28 July 2026. <code>gpt-transcribe</code> is for completed recordings and committed turns in Realtime sessions; <code>gpt-live-transcribe</code> is for low-latency streaming. Both support free-form context, keyword hints and multiple expected input languages, which the older models handled less flexibly.</p>
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Model</th><th>What OpenAI says it is for</th><th>Published price</th></tr></thead>
+      <tbody>
+        <tr><td><code>gpt-transcribe</code></td><td>"Completed audio files, streamed file transcripts, and committed turns in Realtime sessions"</td><td>0.0045 USD per minute</td></tr>
+        <tr><td><code>gpt-live-transcribe</code></td><td>"Applications that need low-latency transcript deltas from live audio"</td><td>0.017 USD per minute</td></tr>
+        <tr><td><code>whisper-1</code> (retiring)</td><td>File transcription, timestamps, translation to English</td><td>0.006 USD per minute</td></tr>
+        <tr><td><code>gpt-4o-transcribe</code> (retiring)</td><td>File transcription</td><td>0.006 USD per minute estimated</td></tr>
+        <tr><td><code>gpt-4o-mini-transcribe</code> (retiring)</td><td>File transcription</td><td>0.003 USD per minute estimated</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>For most file transcription the move is cheaper, not dearer: <code>gpt-transcribe</code> at 0.0045 US dollars a minute undercuts <code>whisper-1</code> at 0.006. Teams on <code>gpt-4o-mini-transcribe</code> at an estimated 0.003 will pay more per minute after migrating.</p>
+
+    <h2>What Does the Official Guide Not Yet Answer?</h2>
+    <p>This is the part of the migration most write-ups will miss. OpenAI's current file transcription guide still sends three capabilities to models on the shutdown list, and the deprecation table names only <code>gpt-transcribe</code> or <code>gpt-live-transcribe</code> as replacements.</p>
+    <ul>
+      <li><strong>Word and segment timestamps.</strong> The guide says to "use <code>whisper-1</code> when you need word or segment timestamps" and that the <code>timestamp_granularities[]</code> parameter "is only supported for <code>whisper-1</code>".</li>
+      <li><strong>Translation into English.</strong> The guide says to translate a recording into English "use <code>/v1/audio/translations</code> with <code>whisper-1</code>".</li>
+      <li><strong>Speaker labels.</strong> The guide says to use <code>gpt-4o-transcribe-diarize</code> "only when you need to identify who speaks", via the <code>diarized_json</code> response format.</li>
+    </ul>
+    <p>The guide's own opening line says to use a specialised model "only if you need speaker labels, word timestamps, subtitle formats, or translation into English". As published today, it does not name which model provides those after 26 February 2027. That may change as the date approaches. Until it does, any workflow built on captions with timings, English translation or speaker separation should be treated as at risk, and the gap raised with OpenAI rather than assumed to be covered.</p>
+    <div class="callout">
+      <div class="callout__label">The planning point for 2026</div>
+      <p>Plain transcription has a documented path. Captioning with timestamps, call recordings split by speaker, and translation into English do not yet have one on OpenAI's published pages. Inventory which of these your workflows depend on now, while there is time to choose an alternative.</p>
+    </div>
+
+    <h2>How Do You Migrate Plain Transcription?</h2>
+    <p>For ordinary file transcription it is mostly a model-name change, with two field changes worth knowing. OpenAI's example request for <code>gpt-transcribe</code>:</p>
+    <pre><code>curl https://api.openai.com/v1/audio/transcriptions \
+  -H "Authorization: Bearer $OPENAI_API_KEY" \
+  -F file="@/path/to/file/audio.mp3" \
+  -F model="gpt-transcribe" \
+  -F 'prompt=A customer support call about a premium plan and account AC-42.' \
+  -F 'keywords[]=premium plan' \
+  -F 'keywords[]=AC-42' \
+  -F 'languages[]=en' \
+  -F 'languages[]=fr'</code></pre>
+    <ul>
+      <li><strong><code>languages</code> replaces <code>language</code>.</strong> OpenAI says "Don't send both fields." Older models accept one language hint as <code>language</code>.</li>
+      <li><strong>Keywords are hints, not required output.</strong> OpenAI advises including only relevant terms and checking they do not cause unspoken terms to appear.</li>
+      <li><strong>Character rules reject the whole request.</strong> Keywords must not contain <code>&lt;</code>, <code>&gt;</code>, a carriage return or a line feed, and the API rejects the request if <code>prompt</code> exceeds the model's length limit.</li>
+      <li><strong>Limits are unchanged.</strong> Files up to 25 MB in <code>mp3</code>, <code>mp4</code>, <code>mpeg</code>, <code>mpga</code>, <code>m4a</code>, <code>wav</code> and <code>webm</code>.</li>
+    </ul>
+    <p>On language support, OpenAI documents the accepted code formats for <code>gpt-transcribe</code> (ISO 639-1, selected ISO 639-3, and regional Chinese codes) but does not publish a list of supported languages on the guide. Teams transcribing Hindi, Tamil, Marathi or mixed-language Indian calls should test accuracy on their own recordings rather than assume parity with Whisper's documented 98 languages.</p>
+
+    <h2>What Should You Do Before 26 February 2027?</h2>
+    <ol>
+      <li><strong>Inventory every call.</strong> Search code, no-code automations and vendor tools for the four model names, including tools you pay for that may use OpenAI underneath.</li>
+      <li><strong>Sort by capability.</strong> Separate plain transcription from timestamps, translation and diarization. The first has a documented path; the others need a decision.</li>
+      <li><strong>Test <code>gpt-transcribe</code> on real audio.</strong> Use your own calls and recordings, including Indian languages and code-switching if they matter to you.</li>
+      <li><strong>Update request fields.</strong> Swap <code>language</code> for <code>languages</code> and add keyword hints for brand and product names.</li>
+      <li><strong>Re-cost the pipeline.</strong> Most move from 0.006 to 0.0045 US dollars a minute; <code>gpt-4o-mini-transcribe</code> users move up from an estimated 0.003.</li>
+      <li><strong>Fix pinned snapshots first.</strong> Anything on <code>gpt-4o-mini-transcribe-2025-03-20</code> stops on 20 January 2027.</li>
+    </ol>
+
+    <h2>What Are the Common Mistakes in 2026?</h2>
+    <ul>
+      <li><strong>Assuming a vendor will handle it.</strong> If a captioning or call-analytics tool uses OpenAI, ask which model and what its migration plan is.</li>
+      <li><strong>Missing the January snapshot date.</strong> One pinned snapshot shuts down five weeks before the rest.</li>
+      <li><strong>Assuming timestamps and diarization migrate automatically.</strong> The published guide does not yet name replacements for them.</li>
+      <li><strong>Sending both <code>language</code> and <code>languages</code>.</strong> OpenAI says not to.</li>
+      <li><strong>Assuming Indian language accuracy.</strong> Test it; the language list for the new model is not published on the guide.</li>
+      <li><strong>Leaving it to February.</strong> Migrations found late tend to be found by a broken caption file.</li>
+    </ul>
+
+    <h2>Key Takeaways for 2026</h2>
+    <ul>
+      <li><code>whisper-1</code>, <code>gpt-4o-transcribe</code>, <code>gpt-4o-mini-transcribe</code> and <code>gpt-4o-transcribe-diarize</code> are removed from the API on 26 February 2027.</li>
+      <li>OpenAI recommends <code>gpt-transcribe</code> (0.0045 USD a minute) or <code>gpt-live-transcribe</code> (0.017 USD a minute), both released on 28 July 2026.</li>
+      <li>Plain transcription migrates with a model name change and a <code>language</code> to <code>languages</code> field change.</li>
+      <li>Timestamps, translation into English and speaker labels are still documented against retiring models, with no named replacement on the published pages.</li>
+      <li>A pinned <code>gpt-4o-mini-transcribe</code> snapshot stops earlier, on 20 January 2027.</li>
+      <li>Test Indian language accuracy on your own audio before switching production.</li>
+    </ul>
+    <p>Distk helps growth teams across India and internationally audit which tools in their stack depend on AI models with a published shutdown date, and plan migrations before they turn into an outage. If transcription sits anywhere in your marketing or support pipeline, the inventory is the place to start.</p>
+
+    <h2>Sources</h2>
+    <ul>
+      <li><a href="https://developers.openai.com/api/docs/deprecations" target="_blank" rel="noopener">OpenAI, Deprecations</a> (2026-08-26 transcription models entry).</li>
+      <li><a href="https://developers.openai.com/changelog" target="_blank" rel="noopener">OpenAI developer changelog</a>, entries for 28 July and 26 August 2026.</li>
+      <li><a href="https://developers.openai.com/api/docs/guides/speech-to-text" target="_blank" rel="noopener">OpenAI, File transcription guide</a>.</li>
+      <li><a href="https://developers.openai.com/api/docs/models/gpt-transcribe" target="_blank" rel="noopener">OpenAI, GPT Transcribe model page</a>.</li>
+      <li><a href="https://developers.openai.com/api/docs/models/gpt-live-transcribe" target="_blank" rel="noopener">OpenAI, GPT Live Transcribe model page</a>.</li>
+      <li><a href="https://developers.openai.com/api/docs/pricing" target="_blank" rel="noopener">OpenAI API pricing</a>.</li>
+    </ul>
+
+  </div>
+</main>
+
+<section class="faq">
+  <div class="container">
+    <div class="section-tag">Key Questions</div>
+    <h2 class="section-title">OpenAI Transcription Shutdown: FAQs</h2>
+    <div class="faq__grid">
+      <div class="faq__item">
+        <h3>When does whisper-1 stop working?</h3>
+        <p>OpenAI will remove whisper-1, gpt-4o-transcribe, gpt-4o-mini-transcribe and gpt-4o-transcribe-diarize from its API on 26 February 2027. Developers were notified on 26 August 2026.</p>
+      </div>
+      <div class="faq__item">
+        <h3>What replaces Whisper in the OpenAI API?</h3>
+        <p>OpenAI recommends gpt-transcribe for completed recordings and committed Realtime turns, at 0.0045 US dollars per minute, or gpt-live-transcribe for low-latency streaming transcription, at 0.017 US dollars per minute. Both were released on 28 July 2026.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Is gpt-transcribe cheaper than whisper-1?</h3>
+        <p>Yes for most users. gpt-transcribe costs 0.0045 US dollars a minute against whisper-1's 0.006. Teams on gpt-4o-mini-transcribe, estimated at 0.003 a minute, will pay more per minute after migrating.</p>
+      </div>
+      <div class="faq__item">
+        <h3>What replaces word timestamps and speaker diarization?</h3>
+        <p>OpenAI's current transcription guide still directs word timestamps and English translation to whisper-1 and speaker labels to gpt-4o-transcribe-diarize, all on the shutdown list, and does not name a replacement for those capabilities. Raise it with OpenAI and plan an alternative.</p>
+      </div>
+      <div class="faq__item">
+        <h3>What changes in the request when moving to gpt-transcribe?</h3>
+        <p>Use the languages field instead of language and do not send both. You can add a free-form prompt and keyword hints. Keywords must not contain angle brackets or line breaks, or the whole request is rejected. File limits stay at 25 MB.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Are any transcription snapshots shut down earlier?</h3>
+        <p>Yes. The pinned snapshot gpt-4o-mini-transcribe-2025-03-20 is scheduled for shutdown on 20 January 2027, with gpt-4o-mini-transcribe-2025-12-15 listed as its replacement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED START -->
+<section class="related" style="padding:3.5rem 0;border-top:1px solid #e8e8e8;background:#fafafa">
+  <div style="max-width:720px;margin:0 auto;padding:0 clamp(1.2rem,4vw,3rem)">
+    <div style="font-family:'Space Mono',monospace;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:#e63312;margin-bottom:1.3rem">Related reading</div>
+    <ul style="list-style:none;margin:0;padding:0;display:grid;gap:0.9rem">
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="what-is-typesafe-ai-jev-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">What Is TypeSafe AI and Jev in 2026? The Complete Guide to System One Models</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="how-to-use-lm-studio-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">How to Use LM Studio for Local AI Models 2026: Complete Beginner's Guide</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="how-to-use-ollama-local-llms-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">How to Use Ollama for Local LLMs 2026: Complete Guide to Running AI Models Offline</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="how-to-use-hugging-face-marketing-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">How to Use Hugging Face for Marketing 2026: Complete AI Models & NLP Guide</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="asci-ai-ad-label-exemptions-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">Do You Need to Label AI Edits? ASCI's 2026 Exemptions</a></li>
+    </ul>
+  </div>
+</section>
+<!-- RELATED END -->
+<section class="cta">
+  <div class="cta__inner">
+    <h2>Find the dependencies before February finds them</h2>
+    <p>Distk helps growth teams audit which tools in their marketing and support stack depend on AI models with a published shutdown date, and plan the migration before it becomes an outage.</p>
+    <a href="https://distk.in/#contact" class="cta__btn">Start the conversation →</a>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="container">
+    © 2026 Distk · <a href="https://distk.in">distk.in</a> · <a href="mailto:connect@distk.in">connect@distk.in</a>
+  </div>
+</footer>
+</body>
+</html>

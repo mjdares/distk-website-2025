@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xdifcafwxl");
+  </script>
+
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OpenAI Agents API and Computer Use 2026: What It Means for Automation | Distk</title>
+<meta name="description" content="The OpenAI Agents API explained for marketing and operations teams in 2026: the managed Codex harness in public beta, computer use in a hosted browser since 29 September, the origin-approval rule that does not confirm individual actions, sign-in limits, and what it costs.">
+<meta name="keywords" content="OpenAI Agents API 2026, OpenAI computer use agents, Agents API vs Agents SDK, OpenAI hosted browser agent, Agents API pricing, AI automation agency 2026">
+<meta name="author" content="Distk"><meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://distk.in/blog/openai-agents-api-computer-use-guide-2026.html">
+<meta property="og:type" content="article"><meta property="og:url" content="https://distk.in/blog/openai-agents-api-computer-use-guide-2026.html">
+<meta property="og:title" content="OpenAI's Agents API and Computer Use in 2026: What It Means for Marketing Automation">
+<meta property="og:description" content="OpenAI now runs the agent loop for you, and the agent can use a browser. The rule that matters most: approving a website does not approve each action on it.">
+<meta property="og:image" content="https://distk.in/assets/images/og-image.jpg"><meta property="og:site_name" content="Distk">
+<meta property="article:published_time" content="2026-10-02T00:00:00+05:30">
+<meta property="article:modified_time" content="2026-10-02T00:00:00+05:30">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="OpenAI's Agents API and Computer Use in 2026: What It Means for Marketing Automation"><meta name="twitter:description" content="OpenAI now runs the agent loop for you, and the agent can use a browser. The rule that matters most: approving a website does not approve each action on it.">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "OpenAI's Agents API and Computer Use in 2026: What It Means for Marketing Automation", "description": "A business guide to OpenAI's Agents API in 2026: the managed Codex harness released in public beta on 10 September, computer use in an OpenAI-hosted browser added on 29 September, how it compares with the Agents SDK and Responses API, the approval and sign-in rules, the cost meters, and where it fits in marketing operations.", "author": {"@type": "Organization", "name": "Distk", "url": "https://distk.in"}, "publisher": {"@type": "Organization", "name": "Distk", "logo": {"@type": "ImageObject", "url": "https://distk.in/assets/images/Logo.png"}}, "datePublished": "2026-10-02", "dateModified": "2026-10-02", "inLanguage": "en", "about": [{"@type": "Thing", "name": "OpenAI Agents API"}, {"@type": "Thing", "name": "OpenAI"}, {"@type": "Thing", "name": "computer use"}, {"@type": "Thing", "name": "Codex harness"}, {"@type": "Thing", "name": "AI agents"}, {"@type": "Thing", "name": "GPT-6 Astra"}], "mentions": [{"@type": "Thing", "name": "OpenAI Agents API"}, {"@type": "Thing", "name": "OpenAI"}, {"@type": "Thing", "name": "computer use"}, {"@type": "Thing", "name": "Codex harness"}, {"@type": "Thing", "name": "AI agents"}, {"@type": "Thing", "name": "GPT-6 Astra"}], "mainEntityOfPage": {"@type": "WebPage", "@id": "https://distk.in/blog/openai-agents-api-computer-use-guide-2026.html"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the OpenAI Agents API in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "The Agents API is OpenAI's managed agent runtime, released in public beta on 10 September 2026. It gives applications access to the Codex harness through an OpenAI-managed API: OpenAI manages sessions, orchestration, context compaction and recovery, while the application provides tools and chooses an OpenAI-hosted sandbox, a self-hosted sandbox, or no sandbox."}}, {"@type": "Question", "name": "What is computer use in the OpenAI Agents API?", "acceptedAnswer": {"@type": "Answer", "text": "Added on 29 September 2026, computer use lets an agent complete tasks in an OpenAI-hosted browser, such as testing a website, collecting information or using an application through its interface. It is enabled by adding the computer_use tool to the agent and setting the environment to openai_hosted with the desktop enabled. Website access approvals and sign-in are handled by the developer's application."}}, {"@type": "Question", "name": "Does approving a website origin approve every action on it?", "acceptedAnswer": {"@type": "Answer", "text": "OpenAI states that origin approval does not enforce confirmation before individual actions. Each new website origin, including public sites, needs the user's approval, but once approved the agent can act on it. OpenAI advises restricting the hosted browser to resources that cannot perform purchases or destructive changes, or using a browser runtime you control, if confirmation must be guaranteed."}}, {"@type": "Question", "name": "What sign-in methods does OpenAI Agents API computer use support?", "acceptedAnswer": {"@type": "Answer", "text": "The sign-in flow supports email addresses, passwords and verification codes. It does not support passkeys or QR-code sign-in. Only the main agent can request browser authentication, subagents cannot, and authentication requests expire after five minutes. Submitted values stay outside the agent's model input."}}, {"@type": "Question", "name": "How is the OpenAI Agents API priced in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "There is no separate Agents API charge. Model usage is billed at the selected model's API rates, OpenAI tools at their standard rates, and OpenAI-hosted sandboxes at standard container rates, which OpenAI lists as 0.03, 0.12, 0.48 and 1.92 US dollars per 20-minute session for 1 GB, 4 GB, 16 GB and 64 GB containers."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://distk.in/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://distk.in/blog/"}, {"@type": "ListItem", "position": 3, "name": "OpenAI's Agents API and Computer Use in 2026: What It Means for Marketing Automation", "item": "https://distk.in/blog/openai-agents-api-computer-use-guide-2026.html"}]}</script>
+<link rel="icon" type="image/png" href="../assets/images/favicon.png"><link rel="apple-touch-icon" href="../assets/images/Logo.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BWDTQ1JPL2"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-BWDTQ1JPL2');</script>
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1077520544213003');fbq('track','PageView');</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1077520544213003&ev=PageView&noscript=1"></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#0a0a0a;--paper:#fafafa;--mid:#6b6b6b;--light:#e8e8e8;--accent:#e63312;--accent-soft:rgba(230,51,18,0.08);--mono:'Space Mono',monospace;--sans:'Outfit',sans-serif;--container:1120px;--prose:720px;--gutter:clamp(1.2rem,4vw,3rem)}
+html{font-size:16px;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.container{max-width:var(--container);margin:0 auto;padding:0 var(--gutter)}
+.prose{max-width:var(--prose);margin:0 auto;padding:0 var(--gutter)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--light)}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;max-width:var(--container);margin:0 auto;padding:0.9rem var(--gutter)}
+.nav__logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;color:var(--ink)}
+.nav__logo img{height:32px;width:auto}
+.nav__logo span{font-family:var(--mono);font-weight:700;font-size:1.05rem;letter-spacing:-0.02em}
+.nav__logo small{display:block;font-size:0.55rem;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);line-height:1}
+.nav__back{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid);text-decoration:none;display:flex;align-items:center;gap:0.4rem;transition:color 0.2s}
+.nav__back:hover{color:var(--accent)}
+.nav__cta{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.6rem 1.4rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.nav__cta:hover{background:var(--accent)}
+.hero{padding:7.5rem 0 3.5rem;position:relative;overflow:hidden;border-bottom:1px solid var(--light)}
+.hero::before{content:'AGENTS';position:absolute;right:-1%;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:clamp(6rem,26vw,22rem);font-weight:700;color:rgba(0,0,0,0.03);line-height:1;pointer-events:none;user-select:none;letter-spacing:-0.05em}
+.hero__tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1.5rem}
+.hero__tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.hero h1{font-family:var(--sans);font-weight:700;font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;letter-spacing:-0.03em;max-width:20ch;margin-bottom:1.5rem}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero__sub{font-size:1.1rem;color:var(--mid);max-width:56ch;line-height:1.7;margin-bottom:2rem}
+.hero__meta{display:flex;flex-wrap:wrap;gap:1.5rem;font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid)}
+.tldr{background:var(--accent-soft);border-left:3px solid var(--accent);padding:1.8rem 2rem;margin:3rem 0;position:relative}
+.tldr::before{content:'TL;DR';position:absolute;top:-0.6rem;left:2rem;font-family:var(--mono);font-size:0.62rem;font-weight:700;letter-spacing:0.12em;background:var(--accent);color:#fff;padding:0.2rem 0.6rem}
+.tldr p{font-size:0.95rem;color:var(--ink);line-height:1.7}
+.article{padding:4rem 0 5rem}
+.article h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.35rem,2.8vw,1.8rem);letter-spacing:-0.02em;line-height:1.2;margin:3rem 0 1rem;padding-top:1rem;border-top:1px solid var(--light)}
+.article h2:first-child{border-top:none;margin-top:0}
+.article h3{font-family:var(--mono);font-weight:700;font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin:2rem 0 0.6rem}
+.article p{font-size:1rem;color:#2a2a2a;line-height:1.8;margin-bottom:1.25rem}
+.article ul,.article ol{padding-left:1.4rem;margin-bottom:1.25rem}
+.article li{font-size:1rem;color:#2a2a2a;line-height:1.75;margin-bottom:0.4rem}
+.article strong{font-weight:600;color:var(--ink)}
+.article a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(230,51,18,0.3)}
+.article a:hover{border-bottom-color:var(--accent)}
+.article blockquote{border-left:3px solid var(--accent);padding:0.75rem 1.5rem;margin:2rem 0;background:var(--accent-soft)}
+.article blockquote p{color:var(--ink);font-size:1rem;margin:0}
+.table-wrap{overflow-x:auto;margin:2rem 0}
+.data-table{width:100%;border-collapse:collapse;margin:0;font-size:0.88rem}
+.data-table th{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:0.7rem 1rem;text-align:left;white-space:nowrap}
+.data-table td{padding:0.75rem 1rem;border-bottom:1px solid var(--light);vertical-align:top}
+.data-table tr:last-child td{border-bottom:none}
+.data-table tr:nth-child(even) td{background:#f5f5f5}
+.callout{border:1.5px solid var(--light);padding:1.5rem 1.8rem;margin:2rem 0}
+.callout__label{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem}
+.callout p{font-size:0.92rem;color:var(--mid);line-height:1.7;margin:0}
+.faq{padding:4rem 0;background:var(--ink);color:var(--paper)}
+.faq .section-tag{color:var(--accent)}
+.faq .section-tag::before{background:var(--accent)}
+.faq__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2.5rem;margin-top:2.5rem}
+.faq__item{border-left:2px solid var(--accent);padding-left:1.5rem}
+.faq__item h3{font-family:var(--sans);font-weight:600;font-size:0.95rem;margin-bottom:0.5rem;color:var(--paper)}
+.faq__item p{font-size:0.85rem;color:rgba(255,255,255,0.88);line-height:1.65}
+.section-tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1rem}
+.section-tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.section-title{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.15;color:var(--paper)}
+.cta{padding:5rem 0;background:var(--accent-soft);border-top:1px solid rgba(230,51,18,0.12)}
+.cta__inner{max-width:680px;margin:0 auto;padding:0 var(--gutter);text-align:center}
+.cta h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.2;margin-bottom:1rem}
+.cta p{font-size:1rem;color:var(--mid);line-height:1.7;margin-bottom:2rem}
+.cta__btn{display:inline-flex;align-items:center;gap:0.6rem;font-family:var(--mono);font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;padding:1rem 2.2rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.cta__btn:hover{background:var(--accent)}
+.foot{padding:2.5rem 0;border-top:1px solid var(--light);text-align:center;font-family:var(--mono);font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid)}
+.foot a{color:var(--mid);text-decoration:none}.foot a:hover{color:var(--accent)}
+@media(max-width:768px){.faq__grid{grid-template-columns:1fr}.nav__back span{display:none}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="https://distk.in" class="nav__logo">
+      <img src="../assets/images/Logo.png" alt="Distk">
+      <div><span>Distk</span><small>Global Growth Partner</small></div>
+    </a>
+    <a href="/blog/" class="nav__back">← <span>All articles</span></a>
+    <a href="https://distk.in/#contact" class="nav__cta">Work with us</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="prose">
+    <div class="hero__tag">AI Model Guide</div>
+    <h1>OpenAI's <em>Agents API</em> and Computer Use in 2026: What It Means for Marketing Automation</h1>
+    <p class="hero__sub">OpenAI now runs the agent loop for you, and since 29 September the agent can work in a hosted browser. The capability is the headline. The approval rules are what decide whether it is safe to point at a real account.</p>
+    <div class="hero__meta">
+      <span>Distk Editorial</span>
+      <span>Oct 2026</span>
+      <span>10 min read</span>
+    </div>
+  </div>
+</section>
+
+<div class="prose">
+  <div class="tldr">
+    <p>The OpenAI Agents API entered public beta on 10 September 2026, giving applications access to OpenAI's managed Codex harness: OpenAI runs sessions, orchestration, context compaction and recovery while your application supplies tools and chooses an OpenAI-hosted, self-hosted or no sandbox. On 29 September 2026 OpenAI added computer use, so an agent can operate websites in an OpenAI-hosted browser. Every new website origin needs user approval, including public sites, but OpenAI states that origin approval does not enforce confirmation before individual actions, so consequential actions should be kept out of reach rather than gated by the agent asking first. Sign-in supports email, passwords and verification codes but not passkeys or QR codes. You pay model, tool and container rates; there is no separate Agents API fee.</p>
+  </div>
+</div>
+
+<main class="article">
+  <div class="prose">
+<style>.article pre{background:#f3f3f3;border-left:3px solid #e63312;padding:1rem 1.2rem;overflow-x:auto;margin:1.5rem 0;font-size:0.85rem;line-height:1.55}.article code{font-family:'Space Mono',monospace;font-size:0.85em}.article pre code{font-size:0.85rem}</style>
+
+    <h2>What Is the OpenAI Agents API in 2026?</h2>
+    <p>The Agents API is OpenAI's managed way to run an agent, released in public beta on 10 September 2026. OpenAI describes it as giving "your application access to the Codex harness through an OpenAI-managed API". OpenAI runs the sessions, orchestration, context compaction and recovery; your application supplies the tools and chooses where the agent executes. On 29 September 2026 OpenAI added computer use, so an agent can now work inside an OpenAI-hosted browser.</p>
+    <p>For a marketing or operations lead the useful translation is this. Until now, building an agent meant building the loop that keeps it going: remembering what it did, recovering when it failed, summarising history when the context filled up. The Agents API takes that loop off your hands. You describe the agent, give it a task, and follow its progress through events or webhooks.</p>
+
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Attribute</th><th>What OpenAI documents in 2026</th><th>Why it matters to a business team</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Status</strong></td><td>Public beta since 10 September 2026; SDK calls sit under <code>client.beta.agents</code></td><td>Beta interfaces can change. Do not build a client deliverable that assumes they will not.</td></tr>
+        <tr><td><strong>Who runs the loop</strong></td><td>OpenAI runs a managed Codex harness</td><td>Lower build effort than writing your own agent loop.</td></tr>
+        <tr><td><strong>Where work executes</strong></td><td>OpenAI-hosted sandbox, self-hosted sandbox, or no sandbox</td><td>A self-hosted sandbox keeps execution on infrastructure you control.</td></tr>
+        <tr><td><strong>State</strong></td><td>Durable sessions with saved configuration, turns and items</td><td>An agent can pick up yesterday's task without you replaying the history.</td></tr>
+        <tr><td><strong>Computer use</strong></td><td>Added 29 September 2026; runs a browser in an OpenAI-hosted environment</td><td>The agent can operate websites through their interface.</td></tr>
+        <tr><td><strong>Pricing</strong></td><td>Model usage at the selected model's API rates; hosted sandboxes at standard container rates</td><td>There is no separate Agents API fee, but the sandbox meter runs too.</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h2>How Is the Agents API Different From the Agents SDK and the Responses API?</h2>
+    <p>The difference is who runs the agent loop. OpenAI's own comparison puts the Agents API at "Low" integration effort, because OpenAI runs the managed harness and saves progress. The Agents SDK runs inside your application at "Medium" effort and gives you control over deployment, storage and approvals. The Responses API is "High" effort: you call models directly and build the agent yourself.</p>
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th></th><th>Agents API</th><th>Agents SDK</th><th>Responses API</th></tr></thead>
+      <tbody>
+        <tr><td><strong>OpenAI's stated use</strong></td><td>Long-running tasks where OpenAI manages the agent and saves its progress</td><td>Building agents with custom tools and workflows in your application</td><td>Calling models directly or building an agent from scratch</td></tr>
+        <tr><td><strong>Where the agent runs</strong></td><td>OpenAI runs a managed Codex harness</td><td>Inside your application</td><td>Your application, with optional hosted orchestration</td></tr>
+        <tr><td><strong>Integration effort</strong></td><td>Low</td><td>Medium</td><td>High</td></tr>
+        <tr><td><strong>Execution environment</strong></td><td>OpenAI hosted sandbox, self-hosted sandbox, or no sandbox</td><td>Your runtime and sandbox provider integrations</td><td>Your own execution environment</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>OpenAI lists what the managed harness provides: running commands and code in a sandbox, applying skills and instructions, connecting to external data through tools or MCP, steering the agent while it works, summarising previous work to manage the context window, delegating subtasks to subagents, and resuming a session where it left off. Its example applications include an incident response agent, a Slack bot, a read-only SQL data analyst and a document reviewer.</p>
+
+    <h2>How Does Computer Use Work in the Agents API in 2026?</h2>
+    <p>You enable it with two settings: add <code>{ "type": "computer_use" }</code> to the agent's tools, and set the environment to <code>openai_hosted</code> with the desktop enabled. The browser then runs in an OpenAI-hosted environment, and the agent decides what to do next from what it sees on screen. OpenAI frames the uses as testing a website, collecting information, or using an application through its interface.</p>
+    <pre><code>// From OpenAI's computer use guide: the two settings that enable browser access
+agent.tools: [{ "type": "computer_use" }]
+environment.type: "openai_hosted"
+environment.desktop.enabled: true</code></pre>
+    <p>Browser activity appears in session output as <code>computer_use_call</code> items, each with a status of <code>in_progress</code>, <code>completed</code>, <code>failed</code> or <code>incomplete</code>. Screenshots are excluded from API output by default; you can turn them on with <code>include_screenshots</code>, and OpenAI warns they "can contain sensitive page or account data" and should be kept out of logs.</p>
+
+    <h2>Why Do the Approval Rules Matter More Than the Capability?</h2>
+    <p>Because they decide what the agent can do without a person, and the documentation is precise about the limits. The browser "requires the user's approval before accessing each new website origin, including public websites", and enabling network access does not approve those requests. That is a stronger default than most teams would set themselves.</p>
+    <p>The sentence to read twice is OpenAI's own heading: <strong>"Origin approval does not enforce confirmation before individual actions."</strong> Approving a website lets the agent act on that website. If your application must guarantee confirmation before purchases, destructive changes or other consequential actions, OpenAI's guidance is to "restrict the hosted browser to resources that cannot perform them, or use a browser runtime you control". It adds that asking for confirmation through a function tool "relies on the agent calling that function", and that website content should be treated as untrusted.</p>
+    <div class="callout">
+      <div class="callout__label">The design rule this implies for 2026</div>
+      <p>Approving an origin is approving everything the agent might do there. If a site in scope has a "buy", "delete" or "send" button, the safe architecture is to keep that capability away from the agent entirely, not to ask the agent to check in first. OpenAI says this plainly; most agent demos do not.</p>
+    </div>
+
+    <h3>How sign-in works</h3>
+    <p>Your application handles sign-in, so credentials never pass through the conversation. Submitted sign-in values "stay outside the agent's model input and are omitted from authentication response items in session history". Three limits are documented:</p>
+    <ul>
+      <li><strong>Only the main agent</strong> can request browser authentication; subagents cannot.</li>
+      <li><strong>Supported methods</strong> are email addresses, passwords and verification codes, "but not passkeys or QR-code sign-in". Sites that require those cannot complete sign-in through this flow.</li>
+      <li><strong>Authentication requests expire after five minutes</strong>, and a <code>202</code> response confirms the submission was accepted, not that sign-in succeeded.</li>
+    </ul>
+
+    <h2>What Does It Cost to Run an Agent in 2026?</h2>
+    <p>OpenAI documents three meters. Model usage is billed at the selected model's API rates, OpenAI tools at their standard rates, and OpenAI-hosted sandboxes at standard container rates. The pricing page lists containers at "1 GB $0.03, 4 GB $0.12, 16 GB $0.48, 64 GB $1.92 per 20-minute session per container", with web search at 10 US dollars per 1,000 calls plus search content tokens at model rates.</p>
+    <p>The model choice dominates. Running the same agent on <a href="gpt-6-luna-pricing-guide-2026.html">GPT-6 Luna</a> at 0.10 US dollars per million input tokens is a very different budget from running it on <a href="gpt-6-astra-marketing-guide-2026.html">GPT-6 Astra</a> at 10 US dollars. OpenAI's own example sessions use <code>gpt-6-astra</code>; that is a demonstration choice, not a requirement.</p>
+
+    <h2>How Should Marketing and Operations Teams Use the Agents API in 2026?</h2>
+    <p>Treat it as the build option when you need an agent embedded in your own product or workflow, rather than a person working in ChatGPT. For a team that only wants a capable assistant, <a href="openai-dots-always-on-agents-guide-2026.html">OpenAI dots</a> and <a href="chatgpt-work-vs-chat-vs-codex-guide-2026.html">ChatGPT Work</a> are the no-build routes. The Agents API is for when the agent is part of something you ship or run for clients.</p>
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Workflow</th><th>Fit in 2026</th><th>Control to set</th></tr></thead>
+      <tbody>
+        <tr><td>Reading public competitor pages into a weekly brief</td><td>Strong. Read-only browsing of public origins.</td><td>Approve only the origins in scope.</td></tr>
+        <tr><td>QA of your own landing pages and forms</td><td>Strong. OpenAI names website testing as a use.</td><td>Point it at staging, not production.</td></tr>
+        <tr><td>Answering internal questions from a warehouse</td><td>Good. OpenAI's data analyst example uses read-only SQL.</td><td>Read-only credentials, always.</td></tr>
+        <tr><td>Logging into a client's ad account to change budgets</td><td>Poor without a controlled runtime.</td><td>Origin approval does not confirm individual actions.</td></tr>
+        <tr><td>Anything behind passkey or QR login</td><td>Not supported by the sign-in flow.</td><td>Use an API integration instead.</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h2>What Are the Common Mistakes With the Agents API in 2026?</h2>
+    <ul>
+      <li><strong>Treating origin approval as action approval.</strong> OpenAI says explicitly that it is not.</li>
+      <li><strong>Relying on the agent to ask before acting.</strong> A confirmation function only works if the agent calls it.</li>
+      <li><strong>Keeping your application key inside the sandbox.</strong> OpenAI's security guidance is that agent-generated code can read the environment, so keep the application key outside it.</li>
+      <li><strong>Logging screenshots.</strong> They can contain sensitive account data.</li>
+      <li><strong>Assuming closing the stream stops the task.</strong> OpenAI notes it does not; cancel the turn.</li>
+      <li><strong>Building client deliverables on a beta without a fallback.</strong> The Agents API is public beta.</li>
+      <li><strong>Forgetting the sandbox meter.</strong> Container time is billed separately from model tokens.</li>
+    </ul>
+
+    <h2>Key Takeaways for 2026</h2>
+    <ul>
+      <li>The Agents API entered public beta on 10 September 2026 and gives you OpenAI's managed Codex harness through an API.</li>
+      <li>Computer use was added on 29 September 2026, running a browser in an OpenAI-hosted environment.</li>
+      <li>Every new website origin needs user approval, including public sites, but that approval does not confirm individual actions.</li>
+      <li>Sign-in supports email, passwords and verification codes, not passkeys or QR codes, and only the main agent can request it.</li>
+      <li>You pay model rates, tool rates and container rates. There is no separate Agents API fee.</li>
+      <li>For most marketing teams, dots or ChatGPT Work are the no-build route; the Agents API is for agents inside your own product or client workflow.</li>
+    </ul>
+    <p>Distk helps growth teams across India and internationally decide where an agent belongs in a workflow, which origins and actions it should never touch, and which model tier keeps it affordable to run every day. If you are scoping an agent build in 2026, that boundary-setting is where we start.</p>
+
+    <h2>Sources</h2>
+    <ul>
+      <li><a href="https://developers.openai.com/changelog" target="_blank" rel="noopener">OpenAI developer changelog</a>, entries for 10 and 29 September 2026.</li>
+      <li><a href="https://developers.openai.com/api/docs/guides/agents" target="_blank" rel="noopener">OpenAI, Agents guide (runtime comparison)</a>.</li>
+      <li><a href="https://developers.openai.com/api/docs/guides/agents-api/overview" target="_blank" rel="noopener">OpenAI, Agents API overview</a>.</li>
+      <li><a href="https://developers.openai.com/api/docs/guides/agents-api/tools/computer-use" target="_blank" rel="noopener">OpenAI, Agents API computer use</a>.</li>
+      <li><a href="https://developers.openai.com/api/docs/guides/agents-api/environments/security" target="_blank" rel="noopener">OpenAI, Agents API environment security</a>.</li>
+      <li><a href="https://developers.openai.com/api/docs/pricing" target="_blank" rel="noopener">OpenAI API pricing</a>.</li>
+    </ul>
+
+  </div>
+</main>
+
+<section class="faq">
+  <div class="container">
+    <div class="section-tag">Key Questions</div>
+    <h2 class="section-title">OpenAI Agents API in 2026: FAQs</h2>
+    <div class="faq__grid">
+      <div class="faq__item">
+        <h3>What is the OpenAI Agents API in 2026?</h3>
+        <p>A managed way to run agents, released in public beta on 10 September 2026. OpenAI runs the Codex harness, sessions, orchestration, context compaction and recovery, while your application supplies tools and chooses an OpenAI-hosted, self-hosted or no sandbox.</p>
+      </div>
+      <div class="faq__item">
+        <h3>What did OpenAI add to the Agents API on 29 September 2026?</h3>
+        <p>Computer use. Agents can complete tasks in an OpenAI-hosted browser, with website access approvals and sign-in handled by your application. You enable it by adding the computer_use tool and an openai_hosted environment with the desktop enabled.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Does approving a website let the agent do anything on it?</h3>
+        <p>Effectively yes. OpenAI states that origin approval does not enforce confirmation before individual actions. If you need confirmation before purchases or destructive changes, restrict the browser to resources that cannot perform them, or use a browser runtime you control.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Which sign-in methods does Agents API computer use support?</h3>
+        <p>Email addresses, passwords and verification codes. Passkeys and QR-code sign-in are not supported, and only the main agent can request browser authentication, not subagents. Authentication requests expire after five minutes.</p>
+      </div>
+      <div class="faq__item">
+        <h3>How much does the OpenAI Agents API cost?</h3>
+        <p>There is no separate Agents API fee. Model usage is billed at the selected model's API rates, OpenAI tools at their standard rates, and OpenAI-hosted sandboxes at container rates of 0.03 to 1.92 US dollars per 20-minute session depending on size.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Should a marketing team use the Agents API or ChatGPT Work?</h3>
+        <p>ChatGPT Work and dots are the no-build routes for people working in ChatGPT. The Agents API is for agents embedded in your own product or a client workflow, where you need to control tools, approvals and where the agent runs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED START -->
+<section class="related" style="padding:3.5rem 0;border-top:1px solid #e8e8e8;background:#fafafa">
+  <div style="max-width:720px;margin:0 auto;padding:0 clamp(1.2rem,4vw,3rem)">
+    <div style="font-family:'Space Mono',monospace;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:#e63312;margin-bottom:1.3rem">Related reading</div>
+    <ul style="list-style:none;margin:0;padding:0;display:grid;gap:0.9rem">
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="how-to-use-openai-operator-marketing-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">How to Use OpenAI Operator for Marketing Tasks 2026: Complete AI Browser Agent Guide</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="what-are-ai-marketing-agents-agentic-workflows-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">What Are AI Marketing Agents? How to Use Agentic Workflows for Campaigns 2026</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="openai-dots-always-on-agents-guide-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">OpenAI dots in 2026: Always-On Agents, and the Permission Model That Matters More</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="how-to-use-manus-ai-marketing-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">How to Use Manus AI for Marketing 2026: Complete Autonomous Agent Guide</a></li>
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="how-to-use-replit-agent-marketing-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">How to Use Replit Agent for Marketing Tools 2026: Complete AI Coding & Deployment Guide</a></li>
+    </ul>
+  </div>
+</section>
+<!-- RELATED END -->
+<section class="cta">
+  <div class="cta__inner">
+    <h2>Decide what the agent must never touch</h2>
+    <p>Distk helps growth teams scope agents: which websites and actions are in reach, which credentials stay outside the sandbox, and which model tier keeps the agent affordable to run every day.</p>
+    <a href="https://distk.in/#contact" class="cta__btn">Start the conversation →</a>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="container">
+    © 2026 Distk · <a href="https://distk.in">distk.in</a> · <a href="mailto:connect@distk.in">connect@distk.in</a>
+  </div>
+</footer>
+</body>
+</html>
