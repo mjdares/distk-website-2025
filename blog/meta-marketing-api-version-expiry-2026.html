@@ -11,21 +11,21 @@
   </script>
 
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Meta Marketing API Version Expiry 2026: v24.0 Ends 6 October | Distk</title>
-<meta name="description" content="Meta Marketing API version expiry dates explained for 2026: why the Marketing API and Graph API tables differ, v24.0 listed as available until 6 October 2026, the 90-day support rule, how auto-upgrade works, and how agencies check which version their tools use.">
+<title>Meta Marketing API v24.0 Expired 6 October 2026: What Happens Now | Distk</title>
+<meta name="description" content="Meta Marketing API v24.0 reached its 6 October 2026 end date. What now happens to calls on it (they may fail or be auto-upgraded), how to spot an auto-upgrade from the response header, why the Graph API dates differ, and what to fix first.">
 <meta name="keywords" content="meta marketing api version expiry 2026, marketing api v24 deprecation, meta graph api versions, meta api auto upgrade, facebook marketing api sunset, meta ads api agencies">
 <meta name="author" content="Distk"><meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 <link rel="canonical" href="https://distk.in/blog/meta-marketing-api-version-expiry-2026.html">
 <meta property="og:type" content="article"><meta property="og:url" content="https://distk.in/blog/meta-marketing-api-version-expiry-2026.html">
-<meta property="og:title" content="Meta Marketing API Version Expiry in 2026: Why v24.0's Date Is 6 October, Not 2028">
-<meta property="og:description" content="Meta's Marketing API and Graph API publish different expiry dates for the same versions. On the Marketing API changelog, v24.0 ends 6 October 2026.">
+<meta property="og:title" content="Meta Marketing API v24.0 Expired on 6 October 2026: Failures, Auto-Upgrades and the Fix">
+<meta property="og:description" content="v24.0 of the Meta Marketing API reached its end date on 6 October 2026. Calls may now fail or be silently auto-upgraded. How to tell which, and what to fix.">
 <meta property="og:image" content="https://distk.in/assets/images/og-image.jpg"><meta property="og:site_name" content="Distk">
 <meta property="article:published_time" content="2026-10-02T00:00:00+05:30">
-<meta property="article:modified_time" content="2026-10-02T00:00:00+05:30">
-<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Meta Marketing API Version Expiry in 2026: Why v24.0's Date Is 6 October, Not 2028"><meta name="twitter:description" content="Meta's Marketing API and Graph API publish different expiry dates for the same versions. On the Marketing API changelog, v24.0 ends 6 October 2026.">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Meta Marketing API Version Expiry in 2026: Why v24.0's Date Is 6 October, Not 2028", "description": "A guide to Meta Marketing API version expiry in 2026: the difference between the Marketing API and Graph API version tables, v24.0 listed as available until 6 October 2026 on the Marketing API changelog, the at-least-90-days support rule, auto-upgrade behaviour and how to disable it, and how agencies check which version their scripts and tools call.", "author": {"@type": "Organization", "name": "Distk", "url": "https://distk.in"}, "publisher": {"@type": "Organization", "name": "Distk", "logo": {"@type": "ImageObject", "url": "https://distk.in/assets/images/Logo.png"}}, "datePublished": "2026-10-02", "dateModified": "2026-10-02", "inLanguage": "en", "about": [{"@type": "Thing", "name": "Meta Marketing API"}, {"@type": "Thing", "name": "Graph API"}, {"@type": "Thing", "name": "API versioning"}, {"@type": "Thing", "name": "Meta"}, {"@type": "Thing", "name": "Facebook ads"}], "mentions": [{"@type": "Thing", "name": "Meta Marketing API"}, {"@type": "Thing", "name": "Graph API"}, {"@type": "Thing", "name": "API versioning"}, {"@type": "Thing", "name": "Meta"}, {"@type": "Thing", "name": "Facebook ads"}], "mainEntityOfPage": {"@type": "WebPage", "@id": "https://distk.in/blog/meta-marketing-api-version-expiry-2026.html"}}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "When does Meta Marketing API v24.0 expire in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "Meta's Marketing API changelog lists v24.0 as available until 6 October 2026, and v23.0 as available until 9 June 2026. The Graph API changelog lists the same version numbers with longer windows, such as v24.0 until 18 February 2028, because Meta runs separate schedules for the two APIs."}}, {"@type": "Question", "name": "Why do Meta's Marketing API and Graph API version dates differ?", "acceptedAnswer": {"@type": "Answer", "text": "Meta's versioning documentation states that the Marketing API has its own versioning scheme and that both its version numbers and schedules are different from the Graph API's. Teams running advertising integrations should plan against the Marketing API schedule."}}, {"@type": "Question", "name": "How long does Meta support an old Marketing API version?", "acceptedAnswer": {"@type": "Answer", "text": "According to Meta's Marketing API versioning documentation, when a new Marketing API version is released the previous version is supported for at least 90 days, after which the deprecated version stops working. Graph API versions, by contrast, remain for at least two years from release."}}, {"@type": "Question", "name": "How does Meta Marketing API version auto-upgrade work?", "acceptedAnswer": {"@type": "Answer", "text": "Meta's documentation says that if an endpoint is not affected by a version change, the platform will upgrade the call to the next available version. Auto-upgrade can be disabled in the Marketing API Version setting under Marketing API App Product Page, Settings. Meta's pages give different start dates for the feature, May 2024 and 29 July 2026."}}, {"@type": "Question", "name": "How can an agency check which Meta API version its tools use?", "acceptedAnswer": {"@type": "Answer", "text": "Check request paths for the version segment such as graph.facebook.com/v26.0, check SDK version parameters such as the version setting in FB.init or GraphRequest.setVersion, ask each third-party vendor in writing which Marketing API version they call, and confirm the version in the Marketing API app settings."}}]}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://distk.in/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://distk.in/blog/"}, {"@type": "ListItem", "position": 3, "name": "Meta Marketing API Version Expiry in 2026: Why v24.0's Date Is 6 October, Not 2028", "item": "https://distk.in/blog/meta-marketing-api-version-expiry-2026.html"}]}</script>
+<meta property="article:modified_time" content="2026-10-09T00:00:00+05:30">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Meta Marketing API v24.0 Expired on 6 October 2026: Failures, Auto-Upgrades and the Fix"><meta name="twitter:description" content="v24.0 of the Meta Marketing API reached its end date on 6 October 2026. Calls may now fail or be silently auto-upgraded. How to tell which, and what to fix.">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Meta Marketing API v24.0 Expired on 6 October 2026: Failures, Auto-Upgrades and the Fix", "description": "Meta Marketing API v24.0 reached its 6 October 2026 end date. What now happens to calls on it (they may fail or be auto-upgraded), how to spot an auto-upgrade from the response header, why the Graph API dates differ, and what to fix first.", "author": {"@type": "Organization", "name": "Distk", "url": "https://distk.in"}, "publisher": {"@type": "Organization", "name": "Distk", "logo": {"@type": "ImageObject", "url": "https://distk.in/assets/images/Logo.png"}}, "datePublished": "2026-10-02", "dateModified": "2026-10-09", "inLanguage": "en", "about": [{"@type": "Thing", "name": "Meta Marketing API"}, {"@type": "Thing", "name": "Graph API"}, {"@type": "Thing", "name": "API versioning"}, {"@type": "Thing", "name": "Meta"}, {"@type": "Thing", "name": "Facebook ads"}], "mentions": [{"@type": "Thing", "name": "Meta Marketing API"}, {"@type": "Thing", "name": "Graph API"}, {"@type": "Thing", "name": "API versioning"}, {"@type": "Thing", "name": "Meta"}, {"@type": "Thing", "name": "Facebook ads"}], "mainEntityOfPage": {"@type": "WebPage", "@id": "https://distk.in/blog/meta-marketing-api-version-expiry-2026.html"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "When did Meta Marketing API v24.0 expire in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "Meta's Marketing API version table lists v24.0 as available until 6 October 2026, and as of 9 October 2026 that date has passed. Meta's versioning documentation says calls to an unavailable version may fail or be upgraded to the next available version, and that auto-upgraded calls carry an X-Ad-Api-Version-Warning response header. The Graph API follows a separate schedule and lists v24.0 until 18 February 2028. The current Marketing API version is v26.0."}}, {"@type": "Question", "name": "Why do Meta's Marketing API and Graph API version dates differ?", "acceptedAnswer": {"@type": "Answer", "text": "Meta's versioning documentation states that the Marketing API has its own versioning scheme and that both its version numbers and schedules are different from the Graph API's. Teams running advertising integrations should plan against the Marketing API schedule."}}, {"@type": "Question", "name": "How long does Meta support an old Marketing API version?", "acceptedAnswer": {"@type": "Answer", "text": "According to Meta's Marketing API versioning documentation, when a new Marketing API version is released the previous version is supported for at least 90 days, after which the deprecated version stops working. Graph API versions, by contrast, remain for at least two years from release."}}, {"@type": "Question", "name": "How does Meta Marketing API version auto-upgrade work?", "acceptedAnswer": {"@type": "Answer", "text": "Meta's documentation says that if an endpoint is not affected by a version change, the platform will upgrade the call to the next available version. Auto-upgrade can be disabled in the Marketing API Version setting under Marketing API App Product Page, Settings. Meta's pages give different start dates for the feature, May 2024 and 29 July 2026."}}, {"@type": "Question", "name": "How can an agency check which Meta API version its tools use?", "acceptedAnswer": {"@type": "Answer", "text": "Check request paths for the version segment such as graph.facebook.com/v26.0, check SDK version parameters such as the version setting in FB.init or GraphRequest.setVersion, ask each third-party vendor in writing which Marketing API version they call, and confirm the version in the Marketing API app settings."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://distk.in/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://distk.in/blog/"}, {"@type": "ListItem", "position": 3, "name": "Meta Marketing API v24.0 Expired on 6 October 2026: Failures, Auto-Upgrades and the Fix", "item": "https://distk.in/blog/meta-marketing-api-version-expiry-2026.html"}]}</script>
 <link rel="icon" type="image/png" href="../assets/images/favicon.png"><link rel="apple-touch-icon" href="../assets/images/Logo.png">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-BWDTQ1JPL2"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-BWDTQ1JPL2');</script>
@@ -118,8 +118,8 @@ body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-heigh
 <section class="hero">
   <div class="prose">
     <div class="hero__tag">Paid Media Guide</div>
-    <h1>Meta <em>Marketing API</em> Version Expiry in 2026: Why v24.0's Date Is 6 October, Not 2028</h1>
-    <p class="hero__sub">Meta publishes two version tables with the same numbers and very different end dates. For anyone running ads through scripts or tools, the Marketing API table is the one that matters, and its next date is 6 October 2026.</p>
+    <h1>Meta <em>Marketing API v24.0</em> Expired on 6 October 2026: Failures, Auto-Upgrades and the Fix</h1>
+    <p class="hero__sub">The end date Meta published for Marketing API v24.0 has passed. Calls to it may now fail, or may be quietly upgraded to a newer version, and the two outcomes need different fixes. Updated 9 October 2026 with the current version tables and how to tell which one happened to you.</p>
     <div class="hero__meta">
       <span>Distk Editorial</span>
       <span>Oct 2026</span>
@@ -130,14 +130,30 @@ body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-heigh
 
 <div class="prose">
   <div class="tldr">
-    <p>Meta's Marketing API and Graph API have separate versioning schedules, and Meta's own versioning guide says so. The Marketing API changelog lists v24.0 as available until 6 October 2026, with v23.0 already ended on 9 June 2026, while the Graph API changelog lists the same version numbers with far longer windows, such as v24.0 until 18 February 2028. Marketing API support after a new release is at least 90 days, compared with at least two years for Graph API versions. Auto-upgrade moves calls to the next version only where an endpoint is unaffected and can be disabled in app settings, and Meta's pages give different start dates for it. Because the Marketing API changelog may predate v26.0, confirm in your app dashboard, and audit every script and vendor this week.</p>
+    <p>Meta Marketing API v24.0 reached its listed end date on 6 October 2026. As of 9 October 2026, Meta's Marketing API version table lists v24.0 as available until 6 October 2026, with v25.0 and v26.0 both marked TBD and v26.0 as the current version. Meta's versioning documentation says that once a version is unavailable, calls to it "may fail or be upgraded to the next available version": auto-upgrade applies only to endpoints unaffected by the version change, and an auto-upgraded call carries the response header X-Ad-Api-Version-Warning. Auto-upgrade can be switched off in the Marketing API settings of your app. The Graph API has a separate, longer schedule that lists v24.0 until 18 February 2028, which is why the dates repeated online often disagree. Anything you run on Marketing API v24.0 or earlier should be upgraded to v26.0 now, and any vendor tool should give you a written confirmation of its version.</p>
   </div>
 </div>
 
 <main class="article">
   <div class="prose">
+    <h2>What Is the Status of Meta Marketing API v24.0 as of 9 October 2026?</h2>
+    <p>Its listed end date has passed. As of 9 October 2026, the "Available Marketing API versions" table on Meta's Marketing API changelog shows v24.0, introduced 8 October 2025, as available until 6 October 2026. The same table shows v25.0 and v26.0 with end dates of TBD, and Meta's versioning page states that "the current version of the Marketing API is v26.0". The Graph API changelog's own Marketing API table gives the same three rows, so on this point Meta's pages now agree.</p>
+    <p>What happens to a call that still targets v24.0 depends on the endpoint. Meta's versioning documentation says that once a version is unavailable, "any calls made to that version number may fail or be upgraded to the next available version." Some integrations will therefore have broken loudly, and others will have kept working while being moved onto a newer version you never tested against. The second case is the one teams miss.</p>
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Marketing API version</th><th>Introduced</th><th>Available until (as listed 9 October 2026)</th></tr></thead>
+      <tbody>
+        <tr><td><strong>v26.0</strong> (current)</td><td>29 July 2026</td><td>TBD</td></tr>
+        <tr><td>v25.0</td><td>18 February 2026</td><td>TBD</td></tr>
+        <tr><td>v24.0</td><td>8 October 2025</td><td>6 October 2026 (passed)</td></tr>
+        <tr><td>v23.0</td><td>29 May 2025</td><td>Ended 9 June 2026</td></tr>
+      </tbody>
+    </table>
+    </div>
 
-    <h2>Which Meta API Versions Expire Next in 2026?</h2>
+
+
+    <h2>Which Meta API Versions Have Expired, and Which Are Next, in 2026?</h2>
     <p>Meta publishes two different version tables, and they do not say the same thing. The Marketing API changelog lists "Available Marketing API versions" with v24.0 available until 6 October 2026. The Graph API changelog lists the same version numbers with much longer windows, including v24.0 available until 18 February 2028. Meta's own versioning guide explains why: "The Marketing API has its own versioning scheme," and both version numbers and schedules differ from the Graph API's.</p>
     <p>For anyone running ads through scripts, connectors, reporting tools or a third-party platform, that distinction is the whole story. The Graph API dates are the ones most widely repeated. The Marketing API dates are the ones that govern advertising endpoints, and on Meta's own Marketing API page the next one falls on 6 October 2026, four days after this guide was published.</p>
 
@@ -158,7 +174,7 @@ body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-heigh
 
     <div class="callout">
       <div class="callout__label">Read this before you plan against either table in 2026</div>
-      <p>The Marketing API changelog's version table and its most recent dated entry, 05/04/2026, predate the v26.0 release that the Graph API changelog lists on 29 July 2026, so that page may not reflect every version change since. The safe position is to treat 6 October 2026 as the deadline for anything calling Marketing API v24.0 or earlier, and to confirm the current state in your app's dashboard rather than in a blog post, including this one.</p>
+      <p>When this guide was first published on 2 October 2026, the Marketing API changelog's most recent dated entry was 05/04/2026, which raised the question of whether its version table was current. As of 9 October 2026 the version table on that page lists v26.0, introduced 29 July 2026, and matches the Marketing API table on the Graph API changelog, so both now give 6 October 2026 for v24.0. As always, confirm the state of your own app in its dashboard rather than in any blog post, including this one.</p>
     </div>
 
     <h2>Why Does the Marketing API Schedule Matter More Than the Graph API One?</h2>
@@ -200,8 +216,8 @@ body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-heigh
       <li><strong>Test on a non-critical account first</strong> after upgrading, and compare report outputs before and after.</li>
     </ol>
 
-    <h2>What Should Agencies Do This Week in 2026?</h2>
-    <p>Find every integration on Marketing API v24.0 or earlier and either upgrade it or get a written date from the vendor that owns it. The Marketing API changelog puts v24.0's end at 6 October 2026. Even if a later Meta update extends that date, finding your exposure now costs an afternoon and finding it after an outage costs a client conversation.</p>
+    <h2>What Should Agencies Do Now in 2026?</h2>
+    <p>Find every integration on Marketing API v24.0 or earlier and upgrade it to v26.0, or get a written date from the vendor that owns it. v24.0's listed end date of 6 October 2026 has passed, so any remaining exposure is now either failing or running on an auto-upgraded version you did not choose. Finding it costs an afternoon; finding it through a client asking why their report is wrong costs considerably more.</p>
     <div class="table-wrap">
     <table class="data-table">
       <thead><tr><th>Who</th><th>Action in 2026</th></tr></thead>
@@ -213,7 +229,18 @@ body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-heigh
       </tbody>
     </table>
     </div>
-    <p>Two other Meta changes this month are worth reading alongside this one. Meta's <a href="meta-creator-marketing-hub-guide-2026.html">Creator Marketing Hub</a> update expanded the creator APIs, and the wider campaign structure is covered in our <a href="meta-ads-complete-guide-2026.html">Meta Ads complete guide for 2026</a>. For the Google side of the same problem, see our <a href="google-ads-api-v22-sunset-october-2026.html">Google Ads API v22 sunset guide</a>, which falls on 7 October 2026.</p>
+    <p>Two other Meta changes this month are worth reading alongside this one. Meta's <a href="meta-creator-marketing-hub-guide-2026.html">Creator Marketing Hub</a> update expanded the creator APIs, and the wider campaign structure is covered in our <a href="meta-ads-complete-guide-2026.html">Meta Ads complete guide for 2026</a>. For the Google side of the same problem, see our <a href="google-ads-api-v22-sunset-october-2026.html">Google Ads API v22 sunset guide</a>, whose date was 7 October 2026.</p>
+
+    <h2>How Do You Tell Whether a Meta Call Failed or Was Auto-Upgraded in 2026?</h2>
+    <p>Check the response headers, then check behaviour. Meta's documentation says that an API call targeting a deprecated version that has been automatically upgraded includes a notification header, which Meta shows as <code>X-Ad-Api-Version-Warning</code>, stating that the call has been auto-upgraded to a newer version. A call that failed outright returns an error instead. The two need different responses.</p>
+    <ol>
+      <li><strong>Look for the symptoms.</strong> Reporting that stopped refreshing on or after 6 October 2026, a sync or ad-management job showing errors, conversion data that stopped arriving, or, more subtly, a tool that still works but returns fields or values that look different from before.</li>
+      <li><strong>Read the headers.</strong> If your logs or tool expose response headers, search for <code>X-Ad-Api-Version-Warning</code>. Its presence means Meta upgraded the call for you, and the integration is now running on a version it was not built against.</li>
+      <li><strong>If calls are failing, upgrade.</strong> Move the integration to v26.0, the current Marketing API version, and test the endpoints you actually use before rolling out to every ad account.</li>
+      <li><strong>If calls were auto-upgraded, still upgrade deliberately.</strong> Auto-upgrade only applies where Meta judges an endpoint unaffected, so it is a safety net rather than a migration. Set the version explicitly and test, so the next change does not happen to you silently.</li>
+      <li><strong>Decide whether you want auto-upgrade at all.</strong> Meta's documentation says it can be disabled via the Marketing API version setting under Marketing API, App Product Page, Settings. Some teams prefer a clean failure they can see to a silent change they cannot.</li>
+      <li><strong>If a vendor owns the tool,</strong> ask in writing which Marketing API version it calls, whether its calls were auto-upgraded, and when it will move to v26.0.</li>
+    </ol>
 
     <h2>What Are the Common Mistakes With Meta API Versions in 2026?</h2>
     <ul>
@@ -227,7 +254,7 @@ body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-heigh
 
     <h2>Key Takeaways for 2026</h2>
     <ul>
-      <li>Meta's Marketing API changelog lists v24.0 as available until 6 October 2026; v23.0 already ended on 9 June 2026.</li>
+      <li>Meta Marketing API v24.0 reached its listed end date on 6 October 2026, and v23.0 ended on 9 June 2026. v26.0 is the current version, with v25.0 and v26.0 end dates TBD.</li>
       <li>The Graph API changelog lists far longer windows for the same numbers, such as v24.0 until 18 February 2028. Meta says the two schedules differ.</li>
       <li>Marketing API support after a new release is "at least 90 days"; Graph API versions last "at least 2 years from release".</li>
       <li>Auto-upgrade covers only unaffected endpoints and can be disabled in the Marketing API App Product Page settings.</li>
@@ -253,8 +280,8 @@ body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-heigh
     <h2 class="section-title">Meta Marketing API Versions in 2026: FAQs</h2>
     <div class="faq__grid">
       <div class="faq__item">
-        <h3>When does Meta Marketing API v24.0 expire?</h3>
-        <p>Meta's Marketing API changelog lists v24.0 as available until 6 October 2026. The Graph API changelog lists v24.0 until 18 February 2028, because the two APIs have separate schedules. Confirm the current date in your app dashboard.</p>
+        <h3>When did Meta Marketing API v24.0 expire?</h3>
+        <p>Meta's Marketing API version table lists v24.0 as available until 6 October 2026, a date that has now passed; calls to it may fail or be auto-upgraded. The Graph API lists v24.0 until 18 February 2028 because the two APIs have separate schedules. Move to v26.0, the current version.</p>
       </div>
       <div class="faq__item">
         <h3>Why do the Marketing API and Graph API show different dates?</h3>
@@ -285,8 +312,8 @@ body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-heigh
   <div style="max-width:720px;margin:0 auto;padding:0 clamp(1.2rem,4vw,3rem)">
     <div style="font-family:'Space Mono',monospace;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:#e63312;margin-bottom:1.3rem">Related reading</div>
     <ul style="list-style:none;margin:0;padding:0;display:grid;gap:0.9rem">
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="google-ads-api-v22-sunset-october-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">Google Ads API v22 Sunset on 7 October 2026: What Broke and How to Fix It</a></li>
       <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="linkedin-marketing-api-version-sunset-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">LinkedIn Marketing API 202510 and 202511 Sunset in 2026: What Breaks and How to Check</a></li>
-      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="google-ads-api-v22-sunset-october-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">Google Ads API v22 Stops Working on 7 October 2026: What You Must Check</a></li>
       <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="how-to-use-whatsapp-business-api-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">How to Use WhatsApp Business API for Marketing 2026: Complete Setup & Campaign Guide</a></li>
       <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="linkedin-conversions-api-qualified-leads-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">LinkedIn Conversions API in 2026: Qualified Leads, MQL and SQL Events, and 180-Day Attribution</a></li>
       <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="google-ads-api-v25-2-features-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">Google Ads API v25.2 for Marketers in 2026: Benchmarks, PMax Drafts and Creator Insights</a></li>
@@ -296,8 +323,8 @@ body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-heigh
 <!-- RELATED END -->
 <section class="cta">
   <div class="cta__inner">
-    <h2>Find every integration on an old version</h2>
-    <p>Distk audits the scripts, connectors and tools that touch your ad accounts so Meta and Google API version changes never surface as a broken report.</p>
+    <h2>Find every integration still on an old version</h2>
+    <p>Distk audits the scripts, connectors and tools that touch your Meta and Google ad accounts, finds anything failing or silently auto-upgraded after this month's version changes, and moves it to a version you have actually tested.</p>
     <a href="https://distk.in/#contact" class="cta__btn">Start the conversation →</a>
   </div>
 </section>

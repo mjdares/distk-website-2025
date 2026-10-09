@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xdifcafwxl");
+  </script>
+
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meridian GeoX 2026: Geo Experiments to Prove Incrementality, Explained | Distk</title>
+<meta name="description" content="Meridian GeoX is now generally available: Google's open-source, publisher-agnostic geo experiment library. How holdback, go-dark and heavy-up tests work, the data you need, how to install it, how it calibrates Meridian MMM, and what it does not do.">
+<meta name="keywords" content="meridian geox 2026, geo experiments incrementality, google meridian geox, geo lift test, marketing mix model calibration, incrementality testing india">
+<meta name="author" content="Distk"><meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://distk.in/blog/meridian-geox-geo-experiments-guide-2026.html">
+<meta property="og:type" content="article"><meta property="og:url" content="https://distk.in/blog/meridian-geox-geo-experiments-guide-2026.html">
+<meta property="og:title" content="Meridian GeoX in 2026: Running Geo Experiments to Prove Incrementality">
+<meta property="og:description" content="Google's open-source geo experiment library is now generally available. What it proves, what data it needs, and what it does not do for you.">
+<meta property="og:image" content="https://distk.in/assets/images/og-image.jpg"><meta property="og:site_name" content="Distk">
+<meta property="article:published_time" content="2026-10-09T00:00:00+05:30">
+<meta property="article:modified_time" content="2026-10-09T00:00:00+05:30">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Meridian GeoX in 2026: Running Geo Experiments to Prove Incrementality"><meta name="twitter:description" content="Google's open-source geo experiment library is now generally available. What it proves, what data it needs, and what it does not do for you.">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Meridian GeoX in 2026: Running Geo Experiments to Prove Incrementality", "description": "A guide to Google's Meridian GeoX, generally available globally from September 2026: what open-source, publisher-agnostic geo experiments measure, the holdback, go-dark and heavy-up designs, data requirements, installation, MMM calibration, and the limits Indian teams should plan for.", "author": {"@type": "Organization", "name": "Distk", "url": "https://distk.in"}, "publisher": {"@type": "Organization", "name": "Distk", "logo": {"@type": "ImageObject", "url": "https://distk.in/assets/images/Logo.png"}}, "datePublished": "2026-10-09", "dateModified": "2026-10-09", "inLanguage": "en", "about": [{"@type": "Thing", "name": "Meridian GeoX"}, {"@type": "Thing", "name": "Google Meridian"}, {"@type": "Thing", "name": "geo experiments"}, {"@type": "Thing", "name": "incrementality"}, {"@type": "Thing", "name": "marketing mix modelling"}, {"@type": "Thing", "name": "Google"}], "mentions": [{"@type": "Thing", "name": "Meridian GeoX"}, {"@type": "Thing", "name": "Google Meridian"}, {"@type": "Thing", "name": "geo experiments"}, {"@type": "Thing", "name": "incrementality"}, {"@type": "Thing", "name": "marketing mix modelling"}, {"@type": "Thing", "name": "Google"}], "mainEntityOfPage": {"@type": "WebPage", "@id": "https://distk.in/blog/meridian-geox-geo-experiments-guide-2026.html"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is Meridian GeoX in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "Meridian GeoX is Google's global, open-source incrementality solution for running transparent, cost-effective and publisher-agnostic geo experiments. Google announced on 10 September 2026 that GeoX is generally available globally in Meridian, and GitHub shows version 1.0.0 released on 1 September 2026."}}, {"@type": "Question", "name": "What data does a Meridian GeoX experiment require?", "acceptedAnswer": {"@type": "Answer", "text": "All Meridian GeoX experiments require historical geo-level daily KPI time series data. For designs that modify existing budgets, such as heavy-up or go-dark, Google states that historical daily geo-level spend data must also be collected, which allows GeoX to estimate the budget required for the experiment."}}, {"@type": "Question", "name": "What experiment designs does Meridian GeoX support?", "acceptedAnswer": {"@type": "Answer", "text": "Google's documentation lists holdback, go-dark and heavy-up designs, and multi-cell capability that compares multiple treatment arms with a common control group in the same study. It also offers a flexible API that can, for example, force certain regions to be excluded from testing to avoid large media disruptions."}}, {"@type": "Question", "name": "How does Meridian GeoX work with the Meridian marketing mix model?", "acceptedAnswer": {"@type": "Answer", "text": "Meridian GeoX integrates with Meridian MMM by suggesting experiments based on model results and by converting experiment results into priors that calibrate the model's ROI estimates. Google intends the experiment to anchor the model with causal evidence."}}, {"@type": "Question", "name": "How do you install Meridian GeoX?", "acceptedAnswer": {"@type": "Answer", "text": "Meridian GeoX installs from PyPI with pip install --upgrade meridian-geox, or together with Meridian using pip install --upgrade 'google-meridian[meridian-geox]'. Python 3.10 or later is required for GeoX alone and Python 3.11 or later when used alongside Meridian."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://distk.in/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://distk.in/blog/"}, {"@type": "ListItem", "position": 3, "name": "Meridian GeoX in 2026: Running Geo Experiments to Prove Incrementality", "item": "https://distk.in/blog/meridian-geox-geo-experiments-guide-2026.html"}]}</script>
+<link rel="icon" type="image/png" href="../assets/images/favicon.png"><link rel="apple-touch-icon" href="../assets/images/Logo.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BWDTQ1JPL2"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-BWDTQ1JPL2');</script>
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1077520544213003');fbq('track','PageView');</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1077520544213003&ev=PageView&noscript=1"></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#0a0a0a;--paper:#fafafa;--mid:#6b6b6b;--light:#e8e8e8;--accent:#e63312;--accent-soft:rgba(230,51,18,0.08);--mono:'Space Mono',monospace;--sans:'Outfit',sans-serif;--container:1120px;--prose:720px;--gutter:clamp(1.2rem,4vw,3rem)}
+html{font-size:16px;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.container{max-width:var(--container);margin:0 auto;padding:0 var(--gutter)}
+.prose{max-width:var(--prose);margin:0 auto;padding:0 var(--gutter)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--light)}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;max-width:var(--container);margin:0 auto;padding:0.9rem var(--gutter)}
+.nav__logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;color:var(--ink)}
+.nav__logo img{height:32px;width:auto}
+.nav__logo span{font-family:var(--mono);font-weight:700;font-size:1.05rem;letter-spacing:-0.02em}
+.nav__logo small{display:block;font-size:0.55rem;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);line-height:1}
+.nav__back{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid);text-decoration:none;display:flex;align-items:center;gap:0.4rem;transition:color 0.2s}
+.nav__back:hover{color:var(--accent)}
+.nav__cta{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.6rem 1.4rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.nav__cta:hover{background:var(--accent)}
+.hero{padding:7.5rem 0 3.5rem;position:relative;overflow:hidden;border-bottom:1px solid var(--light)}
+.hero::before{content:'GEOX';position:absolute;right:-1%;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:clamp(6rem,26vw,22rem);font-weight:700;color:rgba(0,0,0,0.03);line-height:1;pointer-events:none;user-select:none;letter-spacing:-0.05em}
+.hero__tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1.5rem}
+.hero__tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.hero h1{font-family:var(--sans);font-weight:700;font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;letter-spacing:-0.03em;max-width:20ch;margin-bottom:1.5rem}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero__sub{font-size:1.1rem;color:var(--mid);max-width:56ch;line-height:1.7;margin-bottom:2rem}
+.hero__meta{display:flex;flex-wrap:wrap;gap:1.5rem;font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid)}
+.tldr{background:var(--accent-soft);border-left:3px solid var(--accent);padding:1.8rem 2rem;margin:3rem 0;position:relative}
+.tldr::before{content:'TL;DR';position:absolute;top:-0.6rem;left:2rem;font-family:var(--mono);font-size:0.62rem;font-weight:700;letter-spacing:0.12em;background:var(--accent);color:#fff;padding:0.2rem 0.6rem}
+.tldr p{font-size:0.95rem;color:var(--ink);line-height:1.7}
+.article{padding:4rem 0 5rem}
+.article h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.35rem,2.8vw,1.8rem);letter-spacing:-0.02em;line-height:1.2;margin:3rem 0 1rem;padding-top:1rem;border-top:1px solid var(--light)}
+.article h2:first-child{border-top:none;margin-top:0}
+.article h3{font-family:var(--mono);font-weight:700;font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin:2rem 0 0.6rem}
+.article p{font-size:1rem;color:#2a2a2a;line-height:1.8;margin-bottom:1.25rem}
+.article ul,.article ol{padding-left:1.4rem;margin-bottom:1.25rem}
+.article li{font-size:1rem;color:#2a2a2a;line-height:1.75;margin-bottom:0.4rem}
+.article strong{font-weight:600;color:var(--ink)}
+.article a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(230,51,18,0.3)}
+.article a:hover{border-bottom-color:var(--accent)}
+.article blockquote{border-left:3px solid var(--accent);padding:0.75rem 1.5rem;margin:2rem 0;background:var(--accent-soft)}
+.article blockquote p{color:var(--ink);font-size:1rem;margin:0}
+.table-wrap{overflow-x:auto;margin:2rem 0}
+.data-table{width:100%;border-collapse:collapse;margin:0;font-size:0.88rem}
+.data-table th{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:0.7rem 1rem;text-align:left;white-space:nowrap}
+.data-table td{padding:0.75rem 1rem;border-bottom:1px solid var(--light);vertical-align:top}
+.data-table tr:last-child td{border-bottom:none}
+.data-table tr:nth-child(even) td{background:#f5f5f5}
+.callout{border:1.5px solid var(--light);padding:1.5rem 1.8rem;margin:2rem 0}
+.callout__label{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem}
+.callout p{font-size:0.92rem;color:var(--mid);line-height:1.7;margin:0}
+.faq{padding:4rem 0;background:var(--ink);color:var(--paper)}
+.faq .section-tag{color:var(--accent)}
+.faq .section-tag::before{background:var(--accent)}
+.faq__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2.5rem;margin-top:2.5rem}
+.faq__item{border-left:2px solid var(--accent);padding-left:1.5rem}
+.faq__item h3{font-family:var(--sans);font-weight:600;font-size:0.95rem;margin-bottom:0.5rem;color:var(--paper)}
+.faq__item p{font-size:0.85rem;color:rgba(255,255,255,0.88);line-height:1.65}
+.section-tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1rem}
+.section-tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+.section-title{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.15;color:var(--paper)}
+.cta{padding:5rem 0;background:var(--accent-soft);border-top:1px solid rgba(230,51,18,0.12)}
+.cta__inner{max-width:680px;margin:0 auto;padding:0 var(--gutter);text-align:center}
+.cta h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.025em;line-height:1.2;margin-bottom:1rem}
+.cta p{font-size:1rem;color:var(--mid);line-height:1.7;margin-bottom:2rem}
+.cta__btn{display:inline-flex;align-items:center;gap:0.6rem;font-family:var(--mono);font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;padding:1rem 2.2rem;background:var(--ink);color:var(--paper);text-decoration:none;transition:background 0.25s}
+.cta__btn:hover{background:var(--accent)}
+.foot{padding:2.5rem 0;border-top:1px solid var(--light);text-align:center;font-family:var(--mono);font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid)}
+.foot a{color:var(--mid);text-decoration:none}.foot a:hover{color:var(--accent)}
+@media(max-width:768px){.faq__grid{grid-template-columns:1fr}.nav__back span{display:none}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="https://distk.in" class="nav__logo">
+      <img src="../assets/images/Logo.png" alt="Distk">
+      <div><span>Distk</span><small>Global Growth Partner</small></div>
+    </a>
+    <a href="/blog/" class="nav__back">← <span>All articles</span></a>
+    <a href="https://distk.in/#contact" class="nav__cta">Work with us</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="prose">
+    <div class="hero__tag">Paid Media Guide</div>
+    <h1><em>Meridian GeoX</em> in 2026: Running Geo Experiments to Prove Incrementality</h1>
+    <p class="hero__sub">Attribution tells you which ad touched a customer. It cannot tell you whether they would have bought anyway. Google's open-source GeoX library tests that directly, on any channel you can switch on and off by region. Here is how it works and what it asks of you.</p>
+    <div class="hero__meta">
+      <span>Distk Editorial</span>
+      <span>Oct 2026</span>
+      <span>9 min read</span>
+    </div>
+  </div>
+</section>
+
+<div class="prose">
+  <div class="tldr">
+    <p>Meridian GeoX is Google's open-source, publisher-agnostic library for geo experiments, which Google said on 10 September 2026 is generally available globally in Meridian; GitHub shows v1.0.0 released on 1 September 2026. It tests whether media causes extra sales by comparing regions that receive a change with comparable regions that do not, using holdback, go-dark or heavy-up designs, including multi-cell studies against a common control. You need historical daily KPI data by region, plus spend data for heavy-up and go-dark designs, and you implement the geo targeting in each ad platform yourself. Results can be converted into priors to calibrate Meridian's marketing mix model. Python 3.10 or later is required for GeoX alone, 3.11 or later alongside Meridian. Google publishes no India-specific guidance.</p>
+  </div>
+</div>
+
+<main class="article">
+  <div class="prose">
+<style>.article pre{background:#f3f3f3;border-left:3px solid var(--accent);padding:1rem 1.2rem;overflow-x:auto;margin:1.5rem 0}.article pre code{font-family:var(--mono);font-size:0.85rem;line-height:1.6;color:#1a1a1a}</style>
+    <h2>What Is Meridian GeoX in 2026?</h2>
+    <p>Meridian GeoX is Google's open-source library for running geo experiments, which test whether advertising actually caused extra sales by switching media on, off or up in some regions and comparing them with similar regions left alone. Google's documentation calls it "Google's global, open-source incrementality solution that lets you run transparent, cost-effective, and publisher-agnostic Geo experiments (GeoX)". In its 10 September 2026 measurement announcement, Google said that "GeoX is generally available globally in Meridian".</p>
+    <p>The phrase that matters for most teams is "publisher-agnostic". GeoX is not a Google Ads feature that only measures Google Ads. It is a Python library you run yourself, on your own data, to test any channel that can be targeted by geography. Google positions it alongside Meridian, its open-source marketing mix model, so that experiment results can correct the model's estimates.</p>
+
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Attribute</th><th>What Google published in 2026</th><th>What it means for you</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Status</strong></td><td>"Generally available globally in Meridian" (10 September 2026)</td><td>No longer a beta. GitHub shows v1.0.0 on 1 September 2026 and v1.0.1 on 3 September 2026.</td></tr>
+        <tr><td><strong>Type</strong></td><td>Open-source Python library</td><td>Your analysts run it. There is no button in Google Ads.</td></tr>
+        <tr><td><strong>Scope</strong></td><td>"Publisher-agnostic" geo experiments</td><td>Can test Meta, TV, outdoor or Google media, as long as you can target by region.</td></tr>
+        <tr><td><strong>Designs</strong></td><td>Holdback, go-dark and heavy-up</td><td>Choose by whether you want to add, remove or increase spend in test regions.</td></tr>
+        <tr><td><strong>Multi-cell</strong></td><td>Compares multiple treatment arms against a common control</td><td>Test several budget levels in one study instead of several.</td></tr>
+        <tr><td><strong>Python</strong></td><td>3.10 or later for GeoX alone; 3.11 or later alongside Meridian</td><td>Check your environment before installing.</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h2>Why Do Geo Experiments Matter in 2026?</h2>
+    <p>Because attribution reports and marketing mix models often disagree, and a well-run experiment is the closest thing to a tiebreaker. Attribution tells you which ad touched a customer before they converted. It cannot tell you whether that customer would have bought anyway. A geo experiment answers the second question directly, by comparing regions that saw the media with regions that did not.</p>
+    <p>Google frames its 2026 measurement strategy around three things, which it lists as "a strong data foundation to fuel AI", "multiple signals to see the full picture" and "causal proof to drive real-world results". GeoX is the causal proof part. Google's Ads Decoded episode on building a measurement stack, published 2 September 2026, is framed around the same problem: evaluating a media strategy "can be tough" when "real-time attribution, periodic incrementality tests, and media mix models (MMM) conflict".</p>
+    <p>For a growth team in India, the practical case is simple. If you are spending meaningfully on a channel whose attribution you do not trust, such as YouTube, Meta upper funnel or offline, and you can target it by state or city, a geo experiment can tell you whether that spend is creating sales or just being credited with them.</p>
+
+    <h2>How Does a Meridian GeoX Experiment Work in 2026?</h2>
+    <p>Google's introduction to GeoX describes a journey of six main steps, with two optional ones for teams that also use Meridian's marketing mix model. The shape is the same as any well-designed experiment: prepare historical data, design the test, run it, collect results, then analyse.</p>
+    <ol>
+      <li><strong>(Optional) MMM-suggested experiment.</strong> If you use Meridian, Google says "the MMM model output might suggest running a experiment to better calibrate your Meridian Model".</li>
+      <li><strong>Data collection and preparation.</strong> "All experiments require gathering historical geo-level KPI daily time series data." For heavy-up or go-dark designs, "you must also collect historical daily geo-level spend data", which lets GeoX estimate the budget the experiment needs.</li>
+      <li><strong>Study design.</strong> You choose an experiment type and use "the Google design algorithms to generate a list of ranked, viable designs based on your specific marketing objectives".</li>
+      <li><strong>Implementation.</strong> The test runs in-platform, "through Google or other media channels", typically by "setting up geo-level targeting in your designated campaigns".</li>
+      <li><strong>Results data collection.</strong> After the test, you gather geo-level daily KPI data for the experiment period. "All conversions and spend for tested campaigns are required for each geo." An optional cooldown period can follow.</li>
+      <li><strong>Analysis and inference.</strong> Results are analysed "using counterfactual modeling (such as time-based regression) and robust inference methods to evaluate the statistical significance of incremental effect".</li>
+      <li><strong>(Optional) MMM calibration.</strong> If the data passes quality checks, Meridian users "can use the incrementality findings to calibrate their MMM model".</li>
+    </ol>
+
+    <h3>The three experiment designs</h3>
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Design</th><th>What changes in test regions</th><th>Question it answers in 2026</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Holdback</strong></td><td>Media is withheld from test regions</td><td>What do we lose if this channel does not run?</td></tr>
+        <tr><td><strong>Go-dark</strong></td><td>Existing media is switched off in test regions</td><td>Is this ongoing spend actually incremental?</td></tr>
+        <tr><td><strong>Heavy-up</strong></td><td>Spend is increased in test regions</td><td>Would more budget produce more sales?</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Google's documentation lists these three by name. The descriptions in the middle column are the plain-language meaning of each term; the documentation does not define them in a single table. GeoX also offers what Google calls a "flexible API to accommodate operational constraints", including "forcing certain geos to be excluded from testing to avoid large media disruptions", which matters if a handful of cities carry most of your revenue.</p>
+
+    <h2>How Do You Install Meridian GeoX in 2026?</h2>
+    <p>GeoX installs from PyPI like any Python package. The project's GitHub readme gives three commands: one for GeoX alone, one for GeoX together with Meridian, and one for the development version. It also notes that installing GeoX will "automatically install CPU-based JAX", and recommends setting up JAX with GPU support if you plan heavy simulations.</p>
+    <pre><code>$ pip install --upgrade meridian-geox
+
+$ pip install --upgrade 'google-meridian[meridian-geox]'
+
+$ pip install --upgrade git+https://github.com/google/meridian-geox.git</code></pre>
+    <p>Google's documentation also provides Colab notebooks for single-cell and multi-cell studies, including comparing designs and calibrating MMM, plus an API reference and a page on identifying which Meridian channels would benefit most from an experiment.</p>
+
+    <h2>What Does Meridian GeoX Not Do in 2026?</h2>
+    <p>GeoX is a statistics library, not a managed service, and that shapes what it can and cannot do for you. Being clear about these limits up front saves a team from starting an experiment it cannot finish.</p>
+    <ul>
+      <li><strong>It does not run the media for you.</strong> Implementation means you set geo targeting and budgets in each platform yourself.</li>
+      <li><strong>It does not supply your data.</strong> You need historical daily KPI data by region, and spend data for heavy-up or go-dark designs.</li>
+      <li><strong>It does not work for channels you cannot target by geography.</strong> If a channel cannot be switched on and off by region, it cannot be geo-tested.</li>
+      <li><strong>It does not guarantee a readable result.</strong> Google's description of a bonus Ads Decoded episode, in which AdVenture Media discuss implementing Meridian, highlights "why data variance matters more than budget size". That point was made about Meridian modelling, but the same caution applies to experiments: noisy regional data can make a test inconclusive.</li>
+      <li><strong>It does not publish India-specific guidance.</strong> "Global" availability is stated; nothing in the documentation addresses Indian geographic units, festival seasonality or regional sales patterns. You will need to make those design choices yourself.</li>
+    </ul>
+
+    <div class="callout">
+      <div class="callout__label">A practical note for Indian brands in 2026</div>
+      <p>India's sales patterns vary sharply by region and festival calendar, so geo experiments need careful region matching and timing. A test that compares cities across Onam, Durga Puja or Diwali windows can produce a result that reflects the festival rather than the media. The GeoX design tools help choose comparable regions, but they cannot choose the calendar for you.</p>
+    </div>
+
+    <h2>How Does GeoX Fit With Meridian MMM in 2026?</h2>
+    <p>GeoX and Meridian answer different questions and correct each other. A marketing mix model estimates the contribution of every channel over time from aggregate data, which makes it broad but dependent on assumptions. A geo experiment measures one channel's causal effect very directly, which makes it precise but narrow. Google's design is to use experiments to anchor the model: GeoX results can be converted into what Google calls "priors" to calibrate Meridian's ROI estimates.</p>
+    <p>Google also announced Meridian upgrades on 10 September 2026, including "new agentic capabilities" to "audit data quality, resolve errors, and guide model building in real time", and the ability to "include relevant brand signals (e.g. Branded Google Query Volume) directly in Meridian models". The Meridian repository shows a v2.1.0 release on 24 September 2026. Teams that already run Meridian are the natural first users of GeoX, because the integration is built in.</p>
+
+    <h2>What Are the Common Mistakes With Geo Experiments in 2026?</h2>
+    <ul>
+      <li><strong>Starting without historical regional data.</strong> GeoX requires geo-level daily KPI history before you can design anything.</li>
+      <li><strong>Testing a channel you cannot target by region.</strong> If it cannot be switched off by geography, it cannot be geo-tested.</li>
+      <li><strong>Ignoring the festival calendar.</strong> Regional seasonality in India can swamp a media effect.</li>
+      <li><strong>Changing other campaigns mid-test.</strong> Any other regional change contaminates the comparison.</li>
+      <li><strong>Reading an inconclusive result as "no effect".</strong> A test without enough statistical power has not proved anything.</li>
+      <li><strong>Treating GeoX as a Google Ads button.</strong> It is a library your analysts run.</li>
+    </ul>
+
+    <h2>Key Takeaways for 2026</h2>
+    <ul>
+      <li>Google says Meridian GeoX is "generally available globally in Meridian", announced 10 September 2026, with v1.0.0 released on GitHub on 1 September 2026.</li>
+      <li>GeoX is open source and publisher-agnostic, so it can test any channel you can target by region, not only Google media.</li>
+      <li>It supports holdback, go-dark and heavy-up designs, and multi-cell tests against a common control.</li>
+      <li>You need historical daily KPI data by region, plus spend data for heavy-up and go-dark designs.</li>
+      <li>Results can calibrate Meridian MMM as priors, which is how Google intends the two to work together.</li>
+      <li>No India-specific guidance is published, so regional and festival design choices are yours to make.</li>
+    </ul>
+    <p>Distk helps performance and analytics teams in India and internationally decide which channel deserves a geo experiment, design one that can produce a readable answer, and connect the result to the budget decisions it was meant to inform. If you are spending on media you cannot prove, that experiment design is where we start.</p>
+
+    <h2>Sources</h2>
+    <ul>
+      <li><a href="https://blog.google/products/ads-commerce/data-strength-updates/" target="_blank" rel="noopener">Google, Drive profitable growth with new data and measurement tools</a>, 10 September 2026</li>
+      <li><a href="https://developers.google.com/meridian/geox" target="_blank" rel="noopener">Google for Developers, Meridian GeoX</a></li>
+      <li><a href="https://developers.google.com/meridian/geox/intro-to-geox" target="_blank" rel="noopener">Google for Developers, An introduction to Meridian GeoX</a> (last updated 14 August 2026)</li>
+      <li><a href="https://github.com/google/meridian-geox" target="_blank" rel="noopener">GitHub, google/meridian-geox</a> (installation and releases)</li>
+      <li><a href="https://developers.google.com/meridian" target="_blank" rel="noopener">Google for Developers, Meridian</a></li>
+      <li><a href="https://blog.google/products/ads-commerce/ads-decoded-podcast-measurement-stack/" target="_blank" rel="noopener">Google, Build a measurement stack you can rely on to steer your campaigns</a>, 2 September 2026</li>
+    </ul>
+
+  </div>
+</main>
+
+<section class="faq">
+  <div class="container">
+    <div class="section-tag">Key Questions</div>
+    <h2 class="section-title">Meridian GeoX in 2026: FAQs</h2>
+    <div class="faq__grid">
+      <div class="faq__item">
+        <h3>Is Meridian GeoX generally available?</h3>
+        <p>Yes. Google's 10 September 2026 measurement announcement says GeoX is generally available globally in Meridian. GitHub shows version 1.0.0 released on 1 September 2026 and 1.0.1 on 3 September 2026.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Does Meridian GeoX only measure Google Ads?</h3>
+        <p>No. Google describes it as publisher-agnostic. It is an open-source Python library you run on your own data, so it can test any channel you can target by geography, including non-Google media.</p>
+      </div>
+      <div class="faq__item">
+        <h3>What data do I need to run a GeoX experiment?</h3>
+        <p>Historical geo-level daily KPI time series data for every experiment. For heavy-up or go-dark designs, you also need historical daily geo-level spend data, which GeoX uses to estimate the budget the experiment requires.</p>
+      </div>
+      <div class="faq__item">
+        <h3>What experiment designs does GeoX support?</h3>
+        <p>Holdback, go-dark and heavy-up, plus multi-cell studies that compare multiple treatment arms against a common control group in a single study to save cost and time.</p>
+      </div>
+      <div class="faq__item">
+        <h3>How do I install Meridian GeoX?</h3>
+        <p>With pip: pip install --upgrade meridian-geox for GeoX alone, or pip install --upgrade 'google-meridian[meridian-geox]' to install it with Meridian. Python 3.10 or later is required for GeoX alone and 3.11 or later alongside Meridian.</p>
+      </div>
+      <div class="faq__item">
+        <h3>Is there India-specific guidance for GeoX?</h3>
+        <p>No. Google states global availability but publishes no guidance on Indian geographic units or seasonality. Region matching and timing around festivals are design decisions your team has to make.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="cta__inner">
+    <h2>Prove the spend you cannot attribute</h2>
+    <p>Distk helps teams choose which channel deserves a geo experiment, design one that can produce a readable answer, and connect the result to the budget decision it was meant to inform.</p>
+    <a href="https://distk.in/#contact" class="cta__btn">Start the conversation →</a>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="container">
+    © 2026 Distk · <a href="https://distk.in">distk.in</a> · <a href="mailto:connect@distk.in">connect@distk.in</a>
+  </div>
+</footer>
+</body>
+</html>

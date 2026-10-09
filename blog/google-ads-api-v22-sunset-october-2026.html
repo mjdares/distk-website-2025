@@ -11,21 +11,21 @@
   </script>
 
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Google Ads API v22 Sunset 7 October 2026: What Agencies Must Check Now | Distk</title>
-<meta name="description" content="Google Ads API v22 sunsets on 7 October 2026 and all v22 requests will fail. Who is affected even without developers, how to check which API version your tools use in Google Cloud Console, which version to move to, and a this-week checklist for agencies.">
+<title>Google Ads API v22 Sunset, 7 October 2026: What Broke and How to Fix It | Distk</title>
+<meta name="description" content="Google Ads API v22 reached its 7 October 2026 sunset date. How to tell whether a dashboard, script, connector or bid tool broke, confirm it in Google Cloud Console, pick the version to move to, and close the reporting gap.">
 <meta name="keywords" content="google ads api v22 sunset, google ads api october 2026, google ads api version check, google ads api upgrade 2026, google ads api deprecation, google ads reporting broken october 2026">
 <meta name="author" content="Distk"><meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 <link rel="canonical" href="https://distk.in/blog/google-ads-api-v22-sunset-october-2026.html">
 <meta property="og:type" content="article"><meta property="og:url" content="https://distk.in/blog/google-ads-api-v22-sunset-october-2026.html">
-<meta property="og:title" content="Google Ads API v22 Stops Working on 7 October 2026: What Agencies and Tool Users Must Check">
-<meta property="og:description" content="From 7 October 2026 every v22 request fails. Your ads keep running; your dashboards, scripts and connectors may not. How to check in five minutes.">
+<meta property="og:title" content="Google Ads API v22 Sunset, 7 October 2026: What Broke and How to Fix It">
+<meta property="og:description" content="The v22 sunset date has passed. Your ads keep serving; dashboards, scripts and connectors still calling v22 do not. How to find what broke and fix it.">
 <meta property="og:image" content="https://distk.in/assets/images/og-image.jpg"><meta property="og:site_name" content="Distk">
 <meta property="article:published_time" content="2026-10-02T00:00:00+05:30">
-<meta property="article:modified_time" content="2026-10-02T00:00:00+05:30">
-<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Google Ads API v22 Stops Working on 7 October 2026: What Agencies and Tool Users Must Check"><meta name="twitter:description" content="From 7 October 2026 every v22 request fails. Your ads keep running; your dashboards, scripts and connectors may not. How to check in five minutes.">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Google Ads API v22 Stops Working on 7 October 2026: What Agencies and Tool Users Must Check", "description": "An agency guide to the Google Ads API v22 sunset on 7 October 2026: what stops working, who is affected including users of third-party tools, how to check which API version your tools call in the Google Cloud Console, the version timetable, major versus minor upgrades, and a checklist for this week.", "author": {"@type": "Organization", "name": "Distk", "url": "https://distk.in"}, "publisher": {"@type": "Organization", "name": "Distk", "logo": {"@type": "ImageObject", "url": "https://distk.in/assets/images/Logo.png"}}, "datePublished": "2026-10-02", "dateModified": "2026-10-02", "inLanguage": "en", "about": [{"@type": "Thing", "name": "Google Ads API"}, {"@type": "Thing", "name": "Google Ads API v22"}, {"@type": "Thing", "name": "API sunset"}, {"@type": "Thing", "name": "Google Cloud Console"}, {"@type": "Thing", "name": "Google Ads reporting"}], "mentions": [{"@type": "Thing", "name": "Google Ads API"}, {"@type": "Thing", "name": "Google Ads API v22"}, {"@type": "Thing", "name": "API sunset"}, {"@type": "Thing", "name": "Google Cloud Console"}, {"@type": "Thing", "name": "Google Ads reporting"}], "mainEntityOfPage": {"@type": "WebPage", "@id": "https://distk.in/blog/google-ads-api-v22-sunset-october-2026.html"}}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "When does Google Ads API v22 stop working?", "acceptedAnswer": {"@type": "Answer", "text": "Google Ads API v22 sunsets on 7 October 2026. Google's reminder on its Ads Developer Blog dated 2 September 2026 states that starting on this date all v22 API requests will begin to fail. Google's deprecation timetable lists the sunset as October 2026 (tentative), and the reminder specifies the day."}}, {"@type": "Question", "name": "Do Google Ads campaigns stop when the API version sunsets?", "acceptedAnswer": {"@type": "Answer", "text": "No. Campaigns run inside Google Ads and continue to serve. The sunset affects only tools, scripts, connectors, dashboards and integrations that read from or write to Google Ads through API version 22, which will receive errors from 7 October 2026."}}, {"@type": "Question", "name": "How can I check which Google Ads API version my tools are using?", "acceptedAnswer": {"@type": "Answer", "text": "Google documents a method in the Google Cloud Console: open APIs and Services, click Google Ads API, and on the Metrics subtab view the Methods table. Each method name includes the API version, a service and a method, such as google.ads.googleads.v22.services.GoogleAdsService.Mutate. Any method containing v22 indicates a tool still calling the sunsetting version."}}, {"@type": "Question", "name": "Which Google Ads API version should I upgrade to from v22?", "acceptedAnswer": {"@type": "Answer", "text": "Google recommends always upgrading to the newest version and allows skipping versions, for example from N directly to N+2. Per Google's timetable, v23 sunsets in February 2027 while v25 and v25.2 sunset in August 2027, so moving to a later version generally avoids a second migration within months."}}, {"@type": "Question", "name": "Is upgrading from Google Ads API v22 a breaking change?", "acceptedAnswer": {"@type": "Answer", "text": "Moving from v22 to any later version is a major-version upgrade. Google states that the endpoint changes when you change major versions and that major releases can include changes such as renamed or removed fields, so testing is needed. Google describes only minor versions, such as v25 to v25.2, as containing no breaking changes."}}]}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://distk.in/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://distk.in/blog/"}, {"@type": "ListItem", "position": 3, "name": "Google Ads API v22 Stops Working on 7 October 2026: What Agencies and Tool Users Must Check", "item": "https://distk.in/blog/google-ads-api-v22-sunset-october-2026.html"}]}</script>
+<meta property="article:modified_time" content="2026-10-09T00:00:00+05:30">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Google Ads API v22 Sunset, 7 October 2026: What Broke and How to Fix It"><meta name="twitter:description" content="The v22 sunset date has passed. Your ads keep serving; dashboards, scripts and connectors still calling v22 do not. How to find what broke and fix it.">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Google Ads API v22 Sunset, 7 October 2026: What Broke and How to Fix It", "description": "Google Ads API v22 reached its 7 October 2026 sunset date. How to tell whether a dashboard, script, connector or bid tool broke, confirm it in Google Cloud Console, pick the version to move to, and close the reporting gap.", "author": {"@type": "Organization", "name": "Distk", "url": "https://distk.in"}, "publisher": {"@type": "Organization", "name": "Distk", "logo": {"@type": "ImageObject", "url": "https://distk.in/assets/images/Logo.png"}}, "datePublished": "2026-10-02", "dateModified": "2026-10-09", "inLanguage": "en", "about": [{"@type": "Thing", "name": "Google Ads API"}, {"@type": "Thing", "name": "Google Ads API v22"}, {"@type": "Thing", "name": "API sunset"}, {"@type": "Thing", "name": "Google Cloud Console"}, {"@type": "Thing", "name": "Google Ads reporting"}], "mentions": [{"@type": "Thing", "name": "Google Ads API"}, {"@type": "Thing", "name": "Google Ads API v22"}, {"@type": "Thing", "name": "API sunset"}, {"@type": "Thing", "name": "Google Cloud Console"}, {"@type": "Thing", "name": "Google Ads reporting"}], "mainEntityOfPage": {"@type": "WebPage", "@id": "https://distk.in/blog/google-ads-api-v22-sunset-october-2026.html"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "When did Google Ads API v22 stop working in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "Google's reminder of 2 September 2026 named 7 October 2026 as the Google Ads API v22 sunset date and states that from that date all v22 API requests will begin to fail. As of 9 October 2026 Google's sunset timetable, last updated 30 September 2026, still listed v22 with a sunset of October 2026 (tentative), which Google says means the sunset could happen any time in that month. Teams should treat v22 as switched off."}}, {"@type": "Question", "name": "Do Google Ads campaigns stop when the API version sunsets?", "acceptedAnswer": {"@type": "Answer", "text": "No. Campaigns run inside Google Ads and continue to serve. The sunset affects only tools, scripts, connectors, dashboards and integrations that read from or write to Google Ads through API version 22, which will receive errors from 7 October 2026."}}, {"@type": "Question", "name": "How can I check which Google Ads API version my tools are using?", "acceptedAnswer": {"@type": "Answer", "text": "Google documents a method in the Google Cloud Console: open APIs and Services, click Google Ads API, and on the Metrics subtab view the Methods table. Each method name includes the API version, a service and a method, such as google.ads.googleads.v22.services.GoogleAdsService.Mutate. Any method containing v22 indicates a tool still calling the sunsetting version."}}, {"@type": "Question", "name": "Which Google Ads API version should I upgrade to from v22?", "acceptedAnswer": {"@type": "Answer", "text": "Google recommends always upgrading to the newest version and allows skipping versions, for example from N directly to N+2. Per Google's timetable, v23 sunsets in February 2027 while v25 and v25.2 sunset in August 2027, so moving to a later version generally avoids a second migration within months."}}, {"@type": "Question", "name": "Is upgrading from Google Ads API v22 a breaking change?", "acceptedAnswer": {"@type": "Answer", "text": "Moving from v22 to any later version is a major-version upgrade. Google states that the endpoint changes when you change major versions and that major releases can include changes such as renamed or removed fields, so testing is needed. Google describes only minor versions, such as v25 to v25.2, as containing no breaking changes."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://distk.in/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://distk.in/blog/"}, {"@type": "ListItem", "position": 3, "name": "Google Ads API v22 Sunset, 7 October 2026: What Broke and How to Fix It", "item": "https://distk.in/blog/google-ads-api-v22-sunset-october-2026.html"}]}</script>
 <link rel="icon" type="image/png" href="../assets/images/favicon.png"><link rel="apple-touch-icon" href="../assets/images/Logo.png">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-BWDTQ1JPL2"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-BWDTQ1JPL2');</script>
@@ -118,8 +118,8 @@ body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-heigh
 <section class="hero">
   <div class="prose">
     <div class="hero__tag">Paid Media Guide</div>
-    <h1>Google Ads API <em>v22</em> Stops Working on 7 October 2026: What You Must Check</h1>
-    <p class="hero__sub">Your campaigns will keep serving. The dashboards, scripts, connectors and bid tools reading from them may not, and they will fail quietly. Here is how to find out in five minutes whether anything you rely on is still calling v22.</p>
+    <h1>Google Ads API <em>v22</em> Sunset on 7 October 2026: What Broke and How to Fix It</h1>
+    <p class="hero__sub">The 7 October date has passed. Your campaigns kept serving; the dashboards, scripts, connectors and bid tools reading from them are what to check. Updated 9 October 2026 with where the sunset stands, how to confirm a broken tool is still calling v22, and how to fix it.</p>
     <div class="hero__meta">
       <span>Distk Editorial</span>
       <span>Oct 2026</span>
@@ -130,7 +130,7 @@ body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-heigh
 
 <div class="prose">
   <div class="tldr">
-    <p>Google Ads API v22 sunsets on 7 October 2026. Google's reminder of 2 September 2026 states that from that date all v22 API requests will begin to fail. Campaigns keep serving, but any script, connector, reporting dashboard, bid tool, CRM conversion sync or AI agent that still calls v22 will stop working, often without an alert. You are affected even without developers if a third-party tool calls v22 for you. To check, open APIs and Services in the Google Cloud Console, click Google Ads API, and look in the Methods table on the Metrics subtab for method names containing v22, such as google.ads.googleads.v22.services.GoogleAdsService.Mutate. Google lets you skip versions: moving to v25 lasts until August 2027, while v23 sunsets in February 2027.</p>
+    <p>Google Ads API v22 reached its sunset date on 7 October 2026. Google's reminder of 2 September 2026 states that from that date "all v22 API requests will begin to fail." As of 9 October 2026, Google had not published a separate post-sunset notice and its sunset timetable, last updated 30 September, still lists v22 as "October 2026 (tentative)", which Google says means the sunset could happen any time in that month. Treat v22 as switched off. Campaigns keep serving, but any script, connector, reporting dashboard, bid tool, CRM conversion sync or AI agent still calling v22 should be expected to fail, often without an alert, including third-party tools that call it for you. To confirm, open APIs and Services in Google Cloud Console, click Google Ads API, and look in the Methods table on the Metrics subtab for method names containing v22. Move to a current version, newest listed is v25.2, and once fixed, re-query any reporting dates the tool missed.</p>
   </div>
 </div>
 
@@ -141,8 +141,25 @@ body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-heigh
 .prose pre code{font-family:var(--mono);font-size:0.85rem;color:#1a1a1a;background:none;padding:0;white-space:pre}
 .prose p code,.prose li code,.prose td code{font-family:var(--mono);font-size:0.86em;background:#f0f0f0;padding:0.1rem 0.35rem;border-radius:2px}
 </style>
+    <h2>What Is the Status of the Google Ads API v22 Sunset as of 9 October 2026?</h2>
+    <p>The date Google gave has passed. In its reminder of 2 September 2026, Google wrote: "Google Ads API v22 will sunset on October 7, 2026. Starting on this date, all v22 API requests will begin to fail." As of 9 October 2026, Google's Ads developer blog had not published a separate post-sunset notice, and the official sunset timetable, last updated 30 September 2026, still listed v22 with a sunset of "October 2026 (tentative)".</p>
+    <p>Google's timetable explains that "the tentative date means that the sunset could happen any time in that month, and the dates could change." The practical reading for any team in 2026 is to treat v22 as switched off: if a tool you rely on still calls it, expect it to be failing already, or to start failing without further notice before October ends.</p>
+    <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Version</th><th>Released</th><th>Sunset (Google's timetable, 9 October 2026)</th></tr></thead>
+      <tbody>
+        <tr><td><strong>v22</strong></td><td>15 October 2025</td><td>7 October 2026 per the 2 September reminder; timetable says October 2026 (tentative)</td></tr>
+        <tr><td>v23, v23.1, v23.2</td><td>January to March 2026</td><td>February 2027</td></tr>
+        <tr><td>v24, v24.1</td><td>April and May 2026</td><td>May 2027</td></tr>
+        <tr><td>v24.2</td><td>24 June 2026</td><td>June 2027</td></tr>
+        <tr><td>v25, v25.1, v25.2</td><td>July to September 2026</td><td>August 2027</td></tr>
+        <tr><td>v26 (upcoming)</td><td>October 2026</td><td>November 2027</td></tr>
+      </tbody>
+    </table>
+    </div>
 
-    <h2>What Stops Working on 7 October 2026?</h2>
+
+    <h2>What Stopped Working on 7 October 2026?</h2>
     <p>Version 22 of the Google Ads API. Google's own announcement is one sentence long and leaves no room for interpretation: "Google Ads API v22 will sunset on October 7, 2026. Starting on this date, all v22 API requests will begin to fail." Any script, connector, dashboard, bid tool or integration that still sends requests to v22 will start returning errors from that day, and Google's documentation adds that sunset versions "are no longer supported after the sunset date".</p>
     <p>Your ads keep running. Campaigns live inside Google Ads, not inside the API, so nothing stops serving. What breaks is everything that reads from or writes to Google Ads through v22: the overnight report that fills a client dashboard, the script that pauses out-of-stock products, the connector that pushes spend into a BI tool, the bid management software, the AI agent you wired up last quarter. The failure is quiet. A dashboard that stops refreshing does not send an alert. It just shows last week's numbers.</p>
 
@@ -177,7 +194,7 @@ body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-heigh
     <p>The last group is where October failures concentrate. An integration built once and left alone keeps calling the version it was built on until the day that version stops answering.</p>
 
     <h2>How Do You Check Which API Version Your Tools Use in 2026?</h2>
-    <p>Google documents a direct method using the Google Cloud Console, and it works whether or not you wrote the code. Every request to the Google Ads API is logged against the Google Cloud project that made it, and the method name in that log includes the version number. If you see <code>v22</code> in the list, something you own is still calling the version that sunsets on 7 October.</p>
+    <p>Google documents a direct method using the Google Cloud Console, and it works whether or not you wrote the code. Every request to the Google Ads API is logged against the Google Cloud project that made it, and the method name in that log includes the version number. If you see <code>v22</code> in the list, something you own is still calling the version that reached its sunset date on 7 October.</p>
     <h3>The Google Cloud Console method, as Google describes it</h3>
     <ol>
       <li>Open APIs and Services in the Google Cloud Console.</li>
@@ -193,7 +210,7 @@ body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-heigh
     <p>Then you cannot see the logs, because the tool calls the API from its own project. Ask the vendor or the person who built it directly, in writing, and ask for a version number rather than reassurance:</p>
     <ul>
       <li>"Which Google Ads API version does your integration currently call?"</li>
-      <li>"Will it be on v23 or later before 7 October 2026?"</li>
+      <li>"Is it on v23 or later now, and if not, by what date?"</li>
       <li>"Which Google Cloud project and developer access does it use?"</li>
     </ul>
     <p>That third question matters for a separate reason. Google's updated developer policy now prohibits programmatic proxies, and how a tool connects is the deciding factor. Our <a href="google-ads-developer-policy-api-proxies-2026.html">guide to the 2026 proxy and MCP policy</a> covers what to listen for in the answer.</p>
@@ -216,7 +233,7 @@ body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-heigh
     <p>Google notes these minimums are sufficient for the major release; minor releases such as v25.2 may need a later library version, listed in each language's changelog.</p>
 
     <h2>Which Version Should You Move To in 2026?</h2>
-    <p>The newest one you can test properly before 7 October. Google's guidance is that "we recommend that you always upgrade to the newest version", and that you do not have to upgrade in strict order: you can move from version N directly to N+2. Moving from v22 straight to v25 is allowed and saves you a second migration next year.</p>
+    <p>The newest one you can test properly, now that the 7 October date has passed. Google's guidance is that "we recommend that you always upgrade to the newest version", and that you do not have to upgrade in strict order: you can move from version N directly to N+2. Moving from v22 straight to v25 is allowed and saves you a second migration next year.</p>
     <div class="table-wrap">
     <table class="data-table">
       <thead><tr><th>Version</th><th>Released</th><th>Sunset (Google's timetable)</th></tr></thead>
@@ -236,7 +253,7 @@ body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-heigh
     <p>The distinction decides how much testing you need. Google states that minor versions "don't contain breaking changes", so moving from v25 to v25.2 is described as a drop-in upgrade. Major versions are different: Google's migration guide says "your endpoint will change when you change major versions", and major releases can rename or remove fields. A move from v22 to anything later is a major-version change and needs real testing.</p>
     <p>Google's policy also explains the cadence you are on. It aims to sunset "a version 1 year after its release", releases a new version "every 3 to 4 months" on average, and says "you'll have to perform at most two upgrades per year." Build that into the maintenance plan for every integration, so October is a scheduled task rather than an emergency.</p>
 
-    <h2>What Should You Do This Week in 2026?</h2>
+    <h2>What Should You Do Now in 2026?</h2>
     <ol>
       <li><strong>Inventory every tool that touches Google Ads.</strong> Include scripts, connectors, dashboards, feed and bid tools, CRM conversion syncs and AI agents.</li>
       <li><strong>Check your Google Cloud Console Methods table</strong> for anything beginning <code>google.ads.googleads.v22</code>, across at least a month of history.</li>
@@ -246,6 +263,20 @@ body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-heigh
       <li><strong>Set a check for 7 and 8 October:</strong> confirm dashboards refreshed, scheduled scripts ran, and conversion syncs arrived.</li>
       <li><strong>Calendar the next one.</strong> If you land on v23, its sunset is February 2027.</li>
     </ol>
+
+    <h2>How Do You Fix a Tool That Broke After the v22 Sunset in 2026?</h2>
+    <p>Find the tool, confirm the API version is the cause, then upgrade it yourself or escalate to the vendor, and finally close the gap in your data. Campaigns themselves keep serving through an API sunset, so the symptoms show up in the tools around your Google Ads account, usually as reports that stop updating rather than as an obvious error.</p>
+    <ol>
+      <li><strong>Look for the symptoms.</strong> A dashboard or report that stopped refreshing on or after 7 October 2026, a connector or sync job showing errors, CRM or offline conversions that stopped arriving in Google Ads, a bid or budget script that no longer runs, or an AI agent that can no longer read the account.</li>
+      <li><strong>Confirm the cause.</strong> In Google Cloud Console, open APIs and Services, click Google Ads API, and check the Methods table on the Metrics subtab. Method names include the version, for example <code>google.ads.googleads.v22.services.GoogleAdsService.Mutate</code>. Any v22 method in the days around 7 October points to the tool that broke.</li>
+      <li><strong>If you own the code, upgrade the client library.</strong> Move to a currently supported version. The newest listed on 9 October 2026 is v25.2, and as the version guidance earlier in this article sets out, Google does not require you to step through every version in between.</li>
+      <li><strong>If a vendor owns the tool, escalate in writing.</strong> Ask which Google Ads API version it calls, the date it will be fixed, and whether it will recover the period it missed. A tool running in the vendor's own Google Cloud project will not appear in your Console, so the vendor's answer is the only evidence you have.</li>
+      <li><strong>Close the data gap.</strong> Google Ads API reporting queries take a date range, so once a tool is on a supported version it can usually re-query the dates it missed. Anything that was meant to be written into Google Ads during the outage, such as conversion uploads or bid changes, needs checking against the tool's own logs and against the time limits Google applies to that specific data, which this guide does not cover.</li>
+    </ol>
+    <div class="callout">
+      <div class="callout__label">Worth doing even if nothing broke</div>
+      <p>The same check will matter again soon. Google's timetable gives v23, v23.1 and v23.2 a sunset of February 2027. Note which versions your tools call now, while the Methods table is fresh in mind, so the next deadline is a calendar entry rather than an incident.</p>
+    </div>
 
     <h2>What Are the Common Mistakes in 2026?</h2>
     <ul>
@@ -260,14 +291,14 @@ body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-heigh
 
     <h2>Key Takeaways for 2026</h2>
     <ul>
-      <li>Google Ads API v22 sunsets on 7 October 2026, and from that date "all v22 API requests will begin to fail."</li>
+      <li>Google Ads API v22 reached its sunset date on 7 October 2026; Google's reminder says from that date "all v22 API requests will begin to fail." As of 9 October the timetable still read "October 2026 (tentative)".</li>
       <li>Campaigns keep serving. The tools that read from or write to Google Ads through v22 stop.</li>
       <li>Check the Google Cloud Console Methods table for method names containing <code>v22</code>, over a long enough window to catch monthly jobs.</li>
       <li>If a vendor calls the API for you, get the version number and upgrade date in writing.</li>
       <li>You can skip versions. Moving to v25 lasts until August 2027; v23 only until February 2027.</li>
       <li>Google upgrades the API every three to four months and expects at most two upgrades a year, so plan the next one now.</li>
     </ul>
-    <p>Distk audits the scripts, connectors and tools behind Google Ads accounts for agencies and in-house teams in India and internationally, finds anything still calling a sunsetting version, and makes the upgrade before the reporting goes quiet. With 7 October 2026 days away, that audit is where we start.</p>
+    <p>Distk audits the scripts, connectors and tools behind Google Ads accounts for agencies and in-house teams in India and internationally, finds anything still calling a retired or sunsetting version, and makes the upgrade so the reporting comes back. If something went quiet after 7 October 2026, that audit is where we start.</p>
 
     <h2>Sources</h2>
     <ul>
@@ -286,8 +317,8 @@ body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-heigh
     <h2 class="section-title">Google Ads API v22 Sunset: FAQs</h2>
     <div class="faq__grid">
       <div class="faq__item">
-        <h3>When does Google Ads API v22 stop working?</h3>
-        <p>On 7 October 2026. Google's reminder of 2 September 2026 states that from this date all v22 API requests will begin to fail. Google's sunset timetable lists the month as October 2026 (tentative), and the reminder names the specific day.</p>
+        <h3>When did Google Ads API v22 stop working?</h3>
+        <p>Google's reminder of 2 September 2026 named 7 October 2026 and states that from that date all v22 API requests will begin to fail. As of 9 October 2026 Google's sunset timetable still listed the month as October 2026 (tentative), so treat v22 as switched off.</p>
       </div>
       <div class="faq__item">
         <h3>Will my Google Ads campaigns stop running?</h3>
@@ -318,8 +349,8 @@ body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-heigh
   <div style="max-width:720px;margin:0 auto;padding:0 clamp(1.2rem,4vw,3rem)">
     <div style="font-family:'Space Mono',monospace;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:#e63312;margin-bottom:1.3rem">Related reading</div>
     <ul style="list-style:none;margin:0;padding:0;display:grid;gap:0.9rem">
+      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="meta-marketing-api-version-expiry-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">Meta Marketing API v24.0 Expired on 6 October 2026: Failures, Auto-Upgrades and the Fix</a></li>
       <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="google-ads-api-v25-2-features-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">Google Ads API v25.2 for Marketers in 2026: Benchmarks, PMax Drafts and Creator Insights</a></li>
-      <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="meta-marketing-api-version-expiry-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">Meta Marketing API Version Expiry in 2026: Why v24.0's Date Is 6 October, Not 2028</a></li>
       <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="linkedin-marketing-api-version-sunset-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">LinkedIn Marketing API 202510 and 202511 Sunset in 2026: What Breaks and How to Check</a></li>
       <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="linkedin-conversions-api-qualified-leads-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">LinkedIn Conversions API in 2026: Qualified Leads, MQL and SQL Events, and 180-Day Attribution</a></li>
       <li style="border-left:2px solid #e63312;padding-left:1rem"><a href="google-ads-developer-policy-api-proxies-2026.html" style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;color:#0a0a0a;text-decoration:none;line-height:1.5">Google Bans Programmatic Proxies in 2026: What It Means for Your Agency's Tools</a></li>
@@ -329,8 +360,8 @@ body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-heigh
 <!-- RELATED END -->
 <section class="cta">
   <div class="cta__inner">
-    <h2>Find what is still calling v22 before it breaks</h2>
-    <p>Distk audits the scripts, connectors, dashboards and third-party tools behind your Google Ads accounts, identifies anything on a sunsetting API version, and completes the upgrade before your reporting goes quiet on 7 October.</p>
+    <h2>Find what is still calling v22, and fix it</h2>
+    <p>Distk audits the scripts, connectors, dashboards and third-party tools behind your Google Ads accounts, finds anything still calling v22 or another retiring version, fixes it, and closes the reporting gap it left.</p>
     <a href="https://distk.in/#contact" class="cta__btn">Start the conversation →</a>
   </div>
 </section>
