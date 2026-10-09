@@ -45,6 +45,8 @@ Distk is a business consulting company based in Bengaluru, India. We help SMEs a
 
 ## Featured Guides (September 2026)
 
+- [Digital Marketing Agency Cost in India 2026](https://distk.in/blog/digital-marketing-agency-cost-india-2026.html): Typical monthly agency quotes in India, GST and TDS on Google Ads per Google's own help pages, this year's cost changes, the AI-search line items Google says are unnecessary, and a method for setting a budget ceiling from your own margins. Updated October 2026.
+
 - [Google's September 2026 Demand Gen Drop](https://distk.in/blog/google-demand-gen-september-2026-drop.html): Google's September 2026 Demand Gen Drop explained: Business Agent for YouTube Ads, one-click landing pages on Shorts and Gmail image ads, and Affiliate Location Extensions in Google Maps, with the specs, the Google-reported figures and what is not yet stated.
 - [Meridian GeoX in 2026](https://distk.in/blog/meridian-geox-geo-experiments-guide-2026.html): Meridian GeoX is now generally available: Google's open-source, publisher-agnostic geo experiment library. How holdback, go-dark and heavy-up tests work, the data you need, how to install it, how it calibrates Meridian MMM, and what it does not do.
 - [AI Max for Search in 2026](https://distk.in/blog/google-ai-max-ai-brief-reporting-2026.html): Google's September 2026 AI Max update explained: AI Brief closed beta in seven more languages, the announced unified Search ads journey report (availability later this year), the AI Max reports you can use today, and the February 2027 DSA upgrade.
